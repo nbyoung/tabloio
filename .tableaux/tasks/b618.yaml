@@ -1,0 +1,12 @@
+title: Write commands
+description: >
+  The propose, record, review, reaffirm and authorise subcommands. Each writes
+  the task or status file the method prescribes, or composes the commit with the
+  right trailers, and shows the commit before making it. Propose allocates a
+  fresh id; review and authorise accept several tasks at once.
+assignee: noreply@anthropic.com
+requires:
+  - { id: "0a2f", from: implementation, to: implementation, text: The module and tablo's trailer subcommand }
+junctions:
+  mockup:         { applies: false }
+parent: { id: "07e0", order: 4 }

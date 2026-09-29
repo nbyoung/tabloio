@@ -1,0 +1,13 @@
+title: Read commands
+description: >
+  One subcommand per view, with the focusing flags the abstract view defines: a
+  task id, a person, a gate window or a list of columns, a ref or a ref range,
+  a role that selects the disclosure level, and --markdown, the default, or
+  --text. Output goes to stdout or to a file such as STATUS.md, and never
+  changes project state. The view data as JSON or YAML comes from tablo view.
+assignee: noreply@anthropic.com
+requires:
+  - { id: "1093", from: implementation, to: implementation, text: The renderers }
+junctions:
+  mockup:         { applies: false }
+parent: { id: "07e0", order: 3 }

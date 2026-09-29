@@ -1,0 +1,11 @@
+title: Renderers
+description: >
+  One renderer per view and format from tablo's view data. Markdown reproduces
+  the mockups in the tableaux repository, fits one file, uses tables and symbols
+  that plain renderers show, and links tasks and references to files in the
+  repository. Text draws the same content with Unicode box characters and the
+  gate symbols for a terminal or a log with no Markdown viewer. Scripts that
+  want the view data as JSON or YAML call tablo view instead. Each renderer
+  has a golden test against the corpus.
+assignee: noreply@anthropic.com
+parent: { id: "07e0", order: 2 }

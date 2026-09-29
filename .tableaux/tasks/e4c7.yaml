@@ -1,0 +1,12 @@
+title: Agent briefs
+description: >
+  A brief flag on the work queue command that writes a self-contained Markdown
+  brief for one queue item: the task, the gate and its criteria, the junction
+  references, the requirement texts and the commit the agent makes when done.
+  A person or a harness pastes the brief into an agent's session.
+assignee: noreply@anthropic.com
+requires:
+  - { id: "5ca9", from: implementation, to: implementation, text: The work queue command }
+junctions:
+  mockup:         { applies: false }
+parent: { id: "07e0", order: 6 }

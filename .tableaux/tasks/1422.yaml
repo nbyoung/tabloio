@@ -1,0 +1,12 @@
+title: Snapshot workflow
+description: >
+  A reusable continuous-integration recipe that validates the project on every
+  push and regenerates STATUS.md on the trunk, and a pre-commit hook that
+  validates before a commit lands.
+assignee: noreply@anthropic.com
+requires:
+  - { id: "5ca9", from: implementation, to: implementation, text: The commands the workflow runs }
+junctions:
+  mockup:         { applies: false }
+  function:       { applies: false }
+parent: { id: "07e0", order: 5 }

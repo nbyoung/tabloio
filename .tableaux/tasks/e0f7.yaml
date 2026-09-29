@@ -1,0 +1,12 @@
+title: Text renderers
+description: >
+  The --text format for every view: the same content as the Markdown
+  rendering drawn with Unicode box characters, the gate and state symbols,
+  and indentation for the tree, sized to a terminal width, for a shell, a log
+  or a message where no Markdown viewer exists.
+assignee: noreply@anthropic.com
+requires:
+  - { id: "a3cc", from: implementation, to: design, text: The Markdown status renderers whose layout the text follows }
+junctions:
+  mockup:         { applies: false }
+parent: { id: "1093", order: 5 }

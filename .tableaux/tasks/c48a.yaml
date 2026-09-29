@@ -1,0 +1,9 @@
+title: Structural renderers
+description: >
+  The authority delegation and task assignment views.
+assignee: noreply@anthropic.com
+requires:
+  - { id: "0a2f", from: implementation, to: implementation, text: The module }
+junctions:
+  mockup:         { applies: false }
+parent: { id: "1093", order: 2 }

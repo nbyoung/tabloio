@@ -1,0 +1,9 @@
+title: Temporal renderers
+description: >
+  The history and audit views.
+assignee: noreply@anthropic.com
+requires:
+  - { id: "0a2f", from: implementation, to: implementation, text: The module }
+junctions:
+  mockup:         { applies: false }
+parent: { id: "1093", order: 4 }
