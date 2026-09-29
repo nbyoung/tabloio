@@ -1,0 +1,8 @@
+# Build output
+/dist/
+/tabloio
+/tabloio.exe
+
+# A personal Go workspace lives above the repository, never in it
+go.work
+go.work.sum

@@ -7,6 +7,8 @@ description: >
 assignee: noreply@anthropic.com
 references:
   - { url: README.md, text: The charter }
+  - { url: README.md#layout, text: The module layout }
+  - { url: README.md#dependency-on-tablo, text: The dependency policy }
   - { url: https://github.com/nbyoung/tableaux/blob/main/PLAN.md#language, text: "Go, prebuilt binaries, no user installs Go" }
   - { url: https://github.com/nbyoung/tableaux/blob/main/PLAN.md#next-steps, text: The Go workspace for the family }
 junctions:
