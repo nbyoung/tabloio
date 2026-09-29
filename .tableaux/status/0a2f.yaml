@@ -1,2 +1,4 @@
 gate: defined
 state: nominal
+reason: review
+note: The module skeleton, CI and release design on branch task/0a2f awaits the owner's design review; CI verification waits for implementation because no Go toolchain runs here
