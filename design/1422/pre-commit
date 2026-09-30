@@ -1,0 +1,26 @@
+#!/bin/sh
+# DRAFT: the design of tabloio task 1422, not the implementation.
+# Lands as hooks/pre-commit. Validates the Tableaux project in the staged tree,
+# not the working tree. Bypass once with `git commit --no-verify`.
+set -eu
+
+project=$(git config --get tableaux.project || echo .)
+dir=${project#./}
+[ "$dir" = . ] && dir= || dir=$dir/
+
+# Fast path: a commit that stages nothing under .tableaux skips validation.
+git diff --cached --quiet -- "${dir}.tableaux" && exit 0
+
+command -v tablo >/dev/null 2>&1 || {
+    echo "pre-commit: tablo is not on PATH; install it, or commit with --no-verify" >&2
+    exit 1
+}
+
+# The index as a tree object: tablo reads it through git ls-tree and cat-file,
+# so unstaged edits in the working tree neither fail nor pass the commit.
+tree=$(git write-tree)
+top=$(git rev-parse --show-toplevel)
+tablo -C "$top/$project" --ref "$tree" validate || {
+    echo "pre-commit: the staged .tableaux fails validation; fix and stage it, or commit with --no-verify" >&2
+    exit 1
+}
