@@ -5,6 +5,11 @@ description: >
   references, the requirement texts and the commit the agent makes when done.
   A person or a harness pastes the brief into an agent's session.
 assignee: noreply@anthropic.com
+references:
+  - { url: https://github.com/nbyoung/tableaux/blob/main/.tableaux/tasks/e9c6.yaml, text: "The abstract views and their focusing parameters" }
+  - { url: https://github.com/nbyoung/tableaux/blob/main/.tableaux/tasks/c74a.yaml, text: "The work queue in Markdown, with its brief" }
+  - { url: https://github.com/nbyoung/tableaux/blob/main/README.md#roles, text: "The agent role and its brief" }
+  - { url: https://github.com/nbyoung/tableaux/blob/main/PLAN.md#findings, text: "F20, the model a junction states" }
 requires:
   - { id: "5ca9", from: implementation, to: implementation, text: The work queue command }
 junctions:
