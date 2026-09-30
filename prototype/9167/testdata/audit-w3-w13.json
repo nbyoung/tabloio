@@ -1,0 +1,10 @@
+[
+  {
+    "rule": "PROPOSED",
+    "severity": "warning",
+    "task": "9f31",
+    "message": "The task stands proposed: no trailer or owner commit on the trunk authorises it",
+    "since": "91aa774",
+    "range": "resolved"
+  }
+]
