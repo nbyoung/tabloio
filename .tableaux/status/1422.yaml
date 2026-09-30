@@ -1,3 +1,4 @@
 gate: defined
 state: nominal
-note: The design is next and no requirement gates it
+reason: review
+note: The snapshot workflow design on branch wave/1422 awaits the owner's review at the design gate
