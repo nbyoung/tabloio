@@ -5,6 +5,11 @@ description: >
   right trailers, and shows the commit before making it. Propose allocates a
   fresh id; review and authorise accept several tasks at once.
 assignee: noreply@anthropic.com
+references:
+  - { url: https://github.com/nbyoung/tableaux/blob/main/SYNTAX.md#commit-trailers, text: "The trailers each write command composes" }
+  - { url: https://github.com/nbyoung/tableaux/blob/main/README.md#proposed-and-authorised-tasks, text: "Proposing and authorising tasks" }
+  - { url: https://github.com/nbyoung/tableaux/blob/main/README.md#status, text: "What recording and reviewing a status writes" }
+  - { url: README.md#what-it-does, text: "The write commands and their commits" }
 requires:
   - { id: "0a2f", from: implementation, to: implementation, text: The module and tablo's trailer subcommand }
 junctions:

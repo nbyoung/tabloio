@@ -6,6 +6,11 @@ description: >
   --text. Output goes to stdout or to a file such as STATUS.md, and never
   changes project state. The view data as JSON or YAML comes from tablo view.
 assignee: noreply@anthropic.com
+references:
+  - { url: https://github.com/nbyoung/tableaux/blob/main/.tableaux/tasks/e9c6.yaml, text: "The abstract views and their focusing parameters" }
+  - { url: https://github.com/nbyoung/tableaux/blob/main/PLAN.md#views, text: "The focusing parameters and the formats" }
+  - { url: https://github.com/nbyoung/tableaux/blob/main/README.md#roles, text: "The roles that set the disclosure level" }
+  - { url: README.md#what-it-does, text: "The commands and their output" }
 requires:
   - { id: "1093", from: implementation, to: implementation, text: The renderers }
 junctions:
