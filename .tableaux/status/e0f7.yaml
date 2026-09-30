@@ -1,3 +1,3 @@
-gate: defined
+gate: function
 state: nominal
-note: The functional prototype is next and no requirement gates it
+note: prototype/e0f7 draws the global tableau in Unicode boxes at a terminal width and keeps columns aligned under three models of emoji and variation-selector width
