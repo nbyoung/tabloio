@@ -1,0 +1,16 @@
+{
+  "view": "contributor-work-queue",
+  "ref": "main",
+  "person": "opus@example.org",
+  "order": "kind",
+  "items": [
+    {
+      "kind": "work ready",
+      "task": "c07d",
+      "title": "Node firmware",
+      "gate": "unit",
+      "status_date": "2026-09-17",
+      "dependents": 0
+    }
+  ]
+}
