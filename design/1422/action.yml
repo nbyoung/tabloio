@@ -1,0 +1,57 @@
+# DRAFT: the design of tabloio task 1422, not the implementation.
+# Lands as snapshot/action.yml; a consumer calls it as nbyoung/tabloio/snapshot@<tag>.
+name: Tableaux snapshot
+description: Validate a Tableaux project on every push and regenerate STATUS.md on the trunk
+
+inputs:
+  project:
+    description: The directory that holds .tableaux, relative to the repository root
+    default: "."
+  output:
+    description: The file the snapshot writes, relative to the repository root
+    default: STATUS.md
+  view:
+    description: The tabloio arguments that render the snapshot
+    default: tableau --level glance
+  trunk:
+    description: The branch whose pushes regenerate the snapshot
+    default: ${{ github.event.repository.default_branch }}
+  tabloio-version:
+    description: The tabloio release to install; empty takes the tag this action runs at
+    default: ""
+  tablo-version:
+    description: The tablo release to install; empty takes the version tabloio builds against
+    default: ""
+
+runs:
+  using: composite
+  steps:
+    - name: Install tabloio and tablo
+      shell: bash
+      env:
+        TABLOIO_VERSION: ${{ inputs.tabloio-version }}
+        TABLO_VERSION: ${{ inputs.tablo-version }}
+        ACTION_REF: ${{ github.action_ref }}
+      run: |
+        bin="$RUNNER_TEMP/tableaux-bin"
+        mkdir -p "$bin"
+        "$GITHUB_ACTION_PATH/snapshot.sh" install tabloio "${TABLOIO_VERSION:-$ACTION_REF}" "$bin"
+        "$GITHUB_ACTION_PATH/snapshot.sh" install tablo \
+          "${TABLO_VERSION:-$("$bin/tabloio" version --json | jq -r .data.tablo)}" "$bin"
+        echo "$bin" >> "$GITHUB_PATH"
+
+    - name: Validate
+      shell: bash
+      run: '"$GITHUB_ACTION_PATH/snapshot.sh" validate "${{ inputs.project }}"'
+
+    - name: Regenerate the snapshot
+      if: github.event_name == 'push' && github.ref == format('refs/heads/{0}', inputs.trunk)
+      shell: bash
+      env:
+        PROJECT: ${{ inputs.project }}
+        OUTPUT: ${{ inputs.output }}
+        VIEW: ${{ inputs.view }}
+        TRUNK: ${{ inputs.trunk }}
+      run: |
+        "$GITHUB_ACTION_PATH/snapshot.sh" render "$PROJECT" "$OUTPUT" $VIEW
+        "$GITHUB_ACTION_PATH/snapshot.sh" commit "$OUTPUT" "$TRUNK"
