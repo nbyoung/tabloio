@@ -1,3 +1,3 @@
-gate: defined
+gate: function
 state: nominal
-note: The functional prototype is next and no requirement gates it
+note: prototype/e3ed renders the gate and task definition views as Markdown at three levels from tablo view data
