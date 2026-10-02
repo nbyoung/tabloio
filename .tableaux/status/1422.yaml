@@ -1,4 +1,3 @@
-gate: defined
+gate: design
 state: nominal
-reason: review
-note: The snapshot workflow design on branch wave/1422 awaits the owner's review at the design gate
+note: design/1422.md is on the trunk with the owner's seven decisions; implementation waits for the Read commands (5ca9) at implementation
