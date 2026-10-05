@@ -1,3 +1,4 @@
 gate: function
 state: nominal
-note: prototype/e4c7 writes the Markdown brief of one queue item from the queue, task and gate views, with the junction model and the commit
+reason: review
+note: design/e4c7.md on branch wave/e4c7 awaits the owner's review at the design gate
