@@ -1,0 +1,21 @@
+usage: tabloio [-C <dir>] <command> [<options>]
+
+Read commands write one view and change nothing in the project.
+
+  gates         What do the columns and symbols mean?
+  task <id>     What is this task and where does it stand?
+  authority     Who may accept what?
+  assignment    What does each person carry?
+  queue         What do I do next?
+  blockage      What waits on what?
+  tableau       How does the whole project stand?
+  context       How does my corner stand?
+  history       What happened, when, and who did it?
+  audit         Where do files and history disagree?
+
+Other commands.
+
+  version       Print the version
+  help          Print this text, or the options of one command
+
+Run 'tabloio <command> --help' for the options of one command.
