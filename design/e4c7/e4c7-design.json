@@ -1,0 +1,127 @@
+{
+  "schema": "tablo/1",
+  "command": "view",
+  "ref": {
+    "name": "main",
+    "commit": "4593882a7b506cd9461fef8f9ccc6a6d653f6390"
+  },
+  "data": {
+    "view": "work-queue",
+    "params": {
+      "person": "noreply@anthropic.com",
+      "level": "provenance",
+      "brief": {
+        "task": "e4c7",
+        "gate": "design"
+      }
+    },
+    "brief": {
+      "kind": "work ready",
+      "cause": "",
+      "person": "noreply@anthropic.com",
+      "ref": {
+        "name": "main",
+        "commit": "4593882a7b506cd9461fef8f9ccc6a6d653f6390",
+        "date": "2026-10-02"
+      },
+      "task": {
+        "id": "e4c7",
+        "title": "Agent briefs",
+        "description": "A brief flag on the work queue command that writes a self-contained Markdown brief for one queue item: the task, the gate and its criteria, the junction references, the requirement texts and the commit the agent makes when done. A person or a harness pastes the brief into an agent's session.",
+        "references": [
+          {
+            "url": "https://github.com/nbyoung/tableaux/blob/main/.tableaux/tasks/e9c6.yaml",
+            "text": "The abstract views and their focusing parameters"
+          },
+          {
+            "url": "https://github.com/nbyoung/tableaux/blob/main/.tableaux/tasks/c74a.yaml",
+            "text": "The work queue in Markdown, with its brief"
+          },
+          {
+            "url": "https://github.com/nbyoung/tableaux/blob/main/README.md#roles",
+            "text": "The agent role and its brief"
+          },
+          {
+            "url": "https://github.com/nbyoung/tableaux/blob/main/PLAN.md#findings",
+            "text": "F20, the model a junction states"
+          }
+        ],
+        "path": [
+          {
+            "id": "07e0",
+            "title": "tabloio"
+          }
+        ]
+      },
+      "gate": {
+        "key": "design",
+        "symbol": "📐",
+        "name": "Design",
+        "criteria": "A model and sufficient tests exist",
+        "follows": "plain"
+      },
+      "junction": {
+        "contributor": {
+          "value": "noreply@anthropic.com",
+          "source": {
+            "kind": "task",
+            "id": "07e0",
+            "title": "tabloio"
+          }
+        },
+        "model": {
+          "value": "claude-opus",
+          "source": {
+            "kind": "task",
+            "id": "07e0",
+            "title": "tabloio"
+          }
+        },
+        "reviewer": {
+          "value": "nbyoung@nbyoung.com",
+          "source": {
+            "kind": "task",
+            "id": "07e0",
+            "title": "tabloio"
+          }
+        },
+        "references": []
+      },
+      "supplier": {
+        "id": "07e0",
+        "title": "tabloio",
+        "description": "The Tableaux command-line front end. Its output side renders every view in a textual format for static media, Markdown or Unicode text, and never changes project state; its input side operates the method through Git commits. This project is one subproject of the Tableaux tooling plan in the tableaux repository, whose task for it delegates every gate after defined here. It inherits that plan's review policy: agents contribute at every gate, each on the model family the junction names, and the owner reviews mockups, designs, validation and releases."
+      },
+      "requires": [
+        {
+          "id": "5ca9",
+          "title": "Read commands",
+          "from": "implementation",
+          "to": "implementation",
+          "text": "The work queue command",
+          "condition": "unmet"
+        }
+      ],
+      "dependents": [],
+      "parent": {
+        "id": "07e0",
+        "title": "tabloio",
+        "dependents": []
+      },
+      "status": {
+        "path": ".tableaux/status/e4c7.yaml",
+        "gate": "function",
+        "gate_symbol": "🔧",
+        "state": "nominal",
+        "state_symbol": "🟢",
+        "reason": "",
+        "reason_symbol": "",
+        "note": "prototype/e4c7 writes the Markdown brief of one queue item from the queue, task and gate views, with the junction model and the commit",
+        "date": "2026-09-30",
+        "recorder": "noreply@anthropic.com",
+        "commit": "baab0e56e65e136dfdf012fc8654149342b85d2c"
+      }
+    }
+  },
+  "diagnostics": []
+}
