@@ -299,6 +299,10 @@ func countHeading(level int, name string, n int) doc.Heading {
 	return heading(level, txt(name+": "+c))
 }
 
+// emptyForm is the one bold sentence that stands in place of the first table
+// of a view with no item (R9).
+func emptyForm(sentence string) doc.Para { return para(doc.Strong{txt(sentence)}) }
+
 // R16 Words for a requirement.
 
 // edge prints `<from> → <to>`.
