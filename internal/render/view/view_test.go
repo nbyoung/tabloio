@@ -24,6 +24,7 @@ func fixture(t *testing.T, view, name string) []byte {
 func TestDecode(t *testing.T) {
 	cases := []struct{ view, name string }{
 		{"gates", "draft"},
+		{"task", "e9c6"},
 	}
 	for _, c := range cases {
 		t.Run(c.view+"/"+c.name, func(t *testing.T) {
