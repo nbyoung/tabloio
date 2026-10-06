@@ -1,0 +1,81 @@
+file	line	command	verdict	becomes
+assignment.md	11	tabloio assignment --ref 3cdae52 --level glance	stands	
+assignment.md	25	tabloio assignment --ref 3cdae52 --level detail	stands	
+assignment.md	27	--for EMAIL	changes	--person EMAIL
+assignment.md	322	tabloio assignment --ref 3cdae52 --level provenance	stands	
+audit.md	12	tabloio audit --ref main --stale 7 --level glance	stands	
+audit.md	36	tabloio audit --ref main --stale 7 --level detail	stands	
+audit.md	55	tabloio audit --ref main --stale 7 --level provenance	stands	
+audit.md	140	tabloio audit --ref main --stale 7 --for nbyoung@nbyoung.com --level detail	changes	tabloio audit --ref main --stale 7 --person nbyoung@nbyoung.com --level detail
+audit.md	149	--for noreply@anthropic.com	changes	--person noreply@anthropic.com
+authority.md	9	tabloio authority --ref main --level glance	stands	
+authority.md	34	--task bc86	stands	
+authority.md	41	tabloio authority --ref main --level detail	stands	
+authority.md	157	tabloio authority --ref main --level provenance	stands	
+authority.md	190	tabloio authority --ref main --proposed	stands	
+blockage.md	11	tabloio blockage --ref 3cdae52 --level glance	stands	
+blockage.md	19	tabloio blockage --ref 3cdae52 --level detail	stands	
+blockage.md	54	tabloio blockage --ref 3cdae52 --level provenance	stands	
+blockage.md	109	tabloio blockage --ref 3cdae52 --level provenance	stands	
+blockage.md	156	tabloio review 5471 mockup	write command, b618	
+context.md	34	tabloio context --task 2034 --level glance	stands	
+context.md	85	tabloio context --task 2034 --level detail	stands	
+context.md	140	tabloio context --task 2034 --level provenance	stands	
+context.md	173	tabloio context --person nbyoung@nbyoung.com --level glance	stands	
+context.md	205	tabloio context --person nbyoung@nbyoung.com --level detail	stands	
+context.md	220	tabloio context --person nbyoung@nbyoung.com --level provenance	stands	
+gates.md	11	tabloio gates --ref 3cdae52 --level glance	stands	
+gates.md	60	tabloio gates --ref 3cdae52 --level detail	stands	
+gates.md	117	tabloio gates --ref 3cdae52 --level provenance	stands	
+gates.md	204	tabloio gates --ref 3cdae52 --task e9c6 --level detail	stands	
+history.md	36	tabloio history --task e9c6 --ref main --level glance	stands	
+history.md	80	tabloio history --task e9c6 --ref main --level detail	stands	
+history.md	191	tabloio history --task e9c6 --ref main --level provenance	stands	
+history.md	226	tabloio history --ref 0704a09..main --level glance	stands	
+history.md	247	tabloio -C subprojects/tabloio history --ref 62261d4..7eba1e5	stands	
+history.md	301	tabloio -C subprojects/tabloio history --ref cb9ff8f..4593882	stands	
+history.md	313	tabloio -C subprojects/tablotui history --ref 334df71..a2878b5	stands	
+history.md	327	tabloio -C subprojects/tableaud history --ref cffbfa6..e6ec4ec	stands	
+history.md	342	tabloio history --ref 0704a09..main --level detail	stands	
+history.md	372	tabloio -C subprojects/tabloio history --ref 62261d4..7eba1e5	stands	
+history.md	526	tabloio -C subprojects/tabloio history --ref cb9ff8f..4593882	stands	
+history.md	550	tabloio -C subprojects/tablotui history --ref 334df71..a2878b5	stands	
+history.md	576	tabloio -C subprojects/tableaud history --ref cffbfa6..e6ec4ec	stands	
+history.md	612	tabloio history --ref 0704a09..main --level provenance	stands	
+history.md	618	tabloio history --ref a7932ae..37a08e9	stands	
+history.md	634	tabloio -C subprojects/tablo history --ref dc669dd	stands	
+history.md	649	tabloio -C subprojects/tabloio history --ref 46521bc	stands	
+history.md	664	tabloio -C subprojects/tablotui history --ref 4544042	stands	
+history.md	679	tabloio -C subprojects/tableaud history --ref 59783a9	stands	
+queue.md	63	tabloio queue --person noreply@anthropic.com --ref main --level glance	stands	
+queue.md	77	tabloio queue --ref main --level glance	stands	
+queue.md	105	tabloio queue --person noreply@anthropic.com --ref main --brief c2ad validate	stands	
+queue.md	117	tabloio queue --person noreply@anthropic.com --ref main --brief e9c6 implementation	stands	
+queue.md	131	tabloio queue --person noreply@anthropic.com --ref main --brief 99f0 mockup	stands	
+queue.md	145	tabloio queue --person noreply@anthropic.com --ref main --brief 05a9 mockup	stands	
+queue.md	159	tabloio queue --person noreply@anthropic.com --ref main --brief a9ce mockup	stands	
+queue.md	161	--task <id>	stands	
+queue.md	175	tabloio queue --person noreply@anthropic.com --ref main --brief e3cb validate	stands	
+queue.md	187	tabloio queue --person noreply@anthropic.com --ref main --brief fcec unit	stands	
+queue.md	198	tabloio queue --person noreply@anthropic.com --ref main --brief ac33 implementation	stands	
+queue.md	209	tabloio queue --person noreply@anthropic.com --ref main --brief 9f3f implementation	stands	
+queue.md	220	tabloio queue --person noreply@anthropic.com --ref main --brief 7861 validate	stands	
+queue.md	231	tabloio queue --person noreply@anthropic.com --ref main --brief 7166 implementation	stands	
+queue.md	344	tabloio queue --person noreply@anthropic.com --ref main --level detail	stands	
+queue.md	370	tabloio queue --ref main --level detail	stands	
+queue.md	454	tabloio queue --person noreply@anthropic.com --ref 3cdae52 --brief c74a mockup	stands	
+queue.md	455	tabloio task c74a --ref 3cdae52	stands	
+queue.md	458	tabloio queue --person noreply@anthropic.com --ref 3cdae52 --brief c74a mockup	stands	
+queue.md	484	tabloio review e9c6 design	write command, b618	
+tableau.md	30	tabloio tableau --ref main --level glance	stands	
+tableau.md	94	tabloio tableau --ref main --level detail	stands	
+tableau.md	225	tabloio tableau --ref main --level provenance	stands	
+tableau.md	246	tabloio tableau --ref main --level detail --historical	stands	
+tableau.md	263	tabloio tableau --ref main --level detail --person nbyoung@nbyoung.com	stands	
+tableau.md	282	tabloio tableau --ref main --level detail --window 0	stands	
+task.md	20	tabloio task e9c6 --ref 3cdae52 --for nbyoung@nbyoung.com --level glance	changes	tabloio task e9c6 --ref 3cdae52 --person nbyoung@nbyoung.com --level glance
+task.md	96	tabloio task e9c6 --ref 3cdae52 --for nbyoung@nbyoung.com --level detail	changes	tabloio task e9c6 --ref 3cdae52 --person nbyoung@nbyoung.com --level detail
+task.md	282	tabloio task e9c6 --ref 3cdae52 --for nbyoung@nbyoung.com --level provenance	changes	tabloio task e9c6 --ref 3cdae52 --person nbyoung@nbyoung.com --level provenance
+task.md	303	tabloio task 5fe3 --ref 3cdae52 --for nbyoung@nbyoung.com --level glance	changes	tabloio task 5fe3 --ref 3cdae52 --person nbyoung@nbyoung.com --level glance
+task.md	348	tabloio task 595e --ref 3cdae52 --for nbyoung@nbyoung.com --level glance	changes	tabloio task 595e --ref 3cdae52 --person nbyoung@nbyoung.com --level glance
+task.md	411	tabloio task 595e --ref 3cdae52 --for nbyoung@nbyoung.com --level provenance	changes	tabloio task 595e --ref 3cdae52 --person nbyoung@nbyoung.com --level provenance
