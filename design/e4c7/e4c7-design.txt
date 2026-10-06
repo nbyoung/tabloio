@@ -1,0 +1,93 @@
+Brief: e4c7 Agent briefs at design
+
+This brief stands alone. It is one item of the work queue of
+noreply@anthropic.com on main at 4593882, 2026-10-02: work ready.
+
+1. The item
+
+  Task         e4c7 Agent briefs
+  Gate         📐 design, Design: A model and sufficient tests exist
+  Contributor  noreply@anthropic.com   (tabloio, 07e0)
+  Model        claude-opus             (tabloio, 07e0)
+  Reviewer     nbyoung@nbyoung.com     (tabloio, 07e0)
+
+  The model is the plan's statement. Run on a model that matches it, as an
+  identifier or by prefix, and record the model you in fact run in the
+  Model: trailer.
+
+2. The task
+
+  A brief flag on the work queue command that writes a self-contained
+  Markdown brief for one queue item: the task, the gate and its criteria,
+  the junction references, the requirement texts and the commit the agent
+  makes when done. A person or a harness pastes the brief into an agent's
+  session.
+
+  Reference: https://github.com/nbyoung/tableaux/blob/main/.tableaux/tasks/e9c6.yaml, The abstract views and their focusing parameters
+  Reference: https://github.com/nbyoung/tableaux/blob/main/.tableaux/tasks/c74a.yaml, The work queue in Markdown, with its brief
+  Reference: https://github.com/nbyoung/tableaux/blob/main/README.md#roles, The agent role and its brief
+  Reference: https://github.com/nbyoung/tableaux/blob/main/PLAN.md#findings, F20, the model a junction states
+  Junction references: none
+  Under: tabloio
+
+  tabloio (07e0), whose entry sends this work to you: The Tableaux
+  command-line front end. Its output side renders every view in a textual
+  format for static media, Markdown or Unicode text, and never changes
+  project state; its input side operates the method through Git commits.
+  This project is one subproject of the Tableaux tooling plan in the
+  tableaux repository, whose task for it delegates every gate after defined
+  here. It inherits that plan's review policy: agents contribute at every
+  gate, each on the model family the junction names, and the owner reviews
+  mockups, designs, validation and releases.
+
+3. The requirements
+
+  Requires: 5ca9 Read commands from implementation to implementation, The
+  work queue command: unmet
+  Unblocks: nothing; no task requires e4c7
+
+4. The status
+
+  🔧 function 🟢 nominal, 2026-09-30, noreply@anthropic.com, baab0e5:
+  prototype/e4c7 writes the Markdown brief of one queue item from the queue,
+  task and gate views, with the junction model and the commit
+
+5. The commit you make when done
+
+  Commit your work and .tableaux/status/e4c7.yaml, as noreply@anthropic.com,
+  on a branch off main. Do not merge. The reviewer nbyoung@nbyoung.com
+  accepts this gate, so hand the work off: the status stays at the gate it
+  stands at and takes the reason review.
+
+    gate: function
+    state: nominal
+    reason: review
+    note: <one line that says what waits on the branch>
+
+  Edit the file by hand so that it reads as above, with the note on one line
+  and no colon followed by a space inside it. Change no other file under
+  .tableaux.
+
+  Author and committer are both noreply@anthropic.com. Set the identity in
+  the environment, which no configuration overrides, and check it on each
+  commit:
+
+    export GIT_AUTHOR_EMAIL=noreply@anthropic.com
+    export GIT_COMMITTER_EMAIL=noreply@anthropic.com
+    export GIT_AUTHOR_NAME="<your model's display name>"
+    export GIT_COMMITTER_NAME="<your model's display name>"
+    git log -1 --format='%an <%ae> / %cn <%ce>%n%B'
+
+  End each commit message with one final paragraph of trailers, with no
+  blank line between them and nothing after them.
+
+    Model: <the identifier your harness reports, matching claude-opus>
+    Co-Authored-By: <your model's display name> <noreply@anthropic.com>
+
+  The reviewer merges the branch and passes the gate with a commit that
+  carries the trailer Reviewed: e4c7 design
+
+6. The commands that reproduce this brief and show the task
+
+  tabloio queue --person noreply@anthropic.com --ref 4593882 --brief e4c7 design
+  tabloio task e4c7 --ref 4593882
