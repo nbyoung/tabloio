@@ -1,3 +1,4 @@
 gate: function
 state: nominal
-note: prototype/9167 renders the history and audit views as Markdown at three levels from tablo 8ed1 view data
+reason: review
+note: design/9167.md on branch wave/renderers awaits the owner's review at the design gate

@@ -1,3 +1,4 @@
 gate: function
 state: nominal
-note: prototype/c48a renders the authority delegation and task assignment views as Markdown at three levels from tablo prototype 493e data.
+reason: review
+note: design/c48a.md on branch wave/renderers awaits the owner's review at the design gate

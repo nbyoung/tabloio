@@ -1,3 +1,4 @@
 gate: function
 state: nominal
-note: prototype/a3cc renders the four status views as Markdown from tablo's 886d view data, with tests on the weather-station copies
+reason: review
+note: design/a3cc.md on branch wave/renderers awaits the owner's review at the design gate
