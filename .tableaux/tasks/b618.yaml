@@ -12,6 +12,7 @@ references:
   - { url: README.md#what-it-does, text: "The write commands and their commits" }
 requires:
   - { id: "0a2f", from: implementation, to: implementation, text: The module and tablo's trailer subcommand }
+  - { id: "5ca9", from: implementation, to: implementation, text: The dispatcher and the command table the write commands enter }
 junctions:
   mockup:         { applies: false }
 parent: { id: "07e0", order: 4 }

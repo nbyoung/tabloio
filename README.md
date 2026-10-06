@@ -26,8 +26,8 @@ never reads a task file itself.
 ```
 tabloio tableau > STATUS.md                    # the global tableau in Markdown
 tabloio tableau --text                         # the same drawn in Unicode
-tabloio context --for ben@example.org          # a contributor's neighbourhood
-tabloio queue --for opus@example.org --brief   # a brief for an agent session
+tabloio context --person ben@example.org        # a contributor's neighbourhood
+tabloio queue --person opus@example.org --brief  # a brief for an agent session
 tabloio review 9f31 design                     # commit 'Reviewed: 9f31 design'
 tabloio authorise 9f31 c07d                    # accept two proposals at once
 ```
