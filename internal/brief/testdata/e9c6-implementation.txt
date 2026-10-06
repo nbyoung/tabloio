@@ -1,0 +1,94 @@
+Brief: e9c6 Abstract views at implementation
+
+This brief stands alone. It is one item of the work queue of
+noreply@anthropic.com on main at 3cdae52, 2026-10-05: work ready.
+
+1. The item
+
+  Task         e9c6 Abstract views
+  Gate         🧱 implementation, Implementation: Artifacts suffice for unit, integration and validation tests
+  Contributor  noreply@anthropic.com   (Tableaux tooling, 437e)
+  Model        claude-sonnet           (Tableaux tooling, 437e)
+  Reviewer     noreply@anthropic.com   (the assignee; the junction states none)
+
+  The model is the plan's statement. Run on a model that matches it, as an
+  identifier or by prefix, and record the model you in fact run in the
+  Model: trailer.
+
+2. The task
+
+  VIEWS.md defines each view independently of any format: its question, the
+  roles it serves, the data it draws from the project and the history, the
+  parameters that focus it (a task, a person, a gate window or a list of
+  columns, a ref) and its progressive-disclosure levels. The views are the
+  gate definition, the task definition, authority delegation, task
+  assignment, the contributor work queue, the work-blockage tree, the global
+  tableau, the contextual tableau, the history and the audit.
+
+  Reference: PLAN.md#views, Proposed views
+  Junction references: none
+  Under: Tableaux tooling › Method › Views
+
+  Tableaux tooling (437e), whose entry sends this work to you: Software that
+  supports planning and tracking with Tableaux: the method itself, a backend
+  that parses, validates, audits and derives views from a project, and one
+  front end per mode of use. The effort dog-foods the method to refine and
+  validate it as a means to maximise human productivity through agentic
+  assistance. Agents contribute at every gate, each on the model the
+  junction names; people review at the strategic junctions this task states,
+  and every task inherits them.
+
+3. The requirements
+
+  Requires: c2ad Roles from design to design, The role names the views refer
+  to: met
+  Unblocks: 77b2 tablo: backend library and plumbing at design, The abstract
+  views it derives
+  Also required by: 20 tasks, 99f0 to a8b4, from design to mockup, The
+  abstract definition of the view: met
+
+4. The status
+
+  📐 design 🟢 nominal, 2026-09-30, noreply@anthropic.com, 879b447:
+  VIEWS.md is on the trunk at language 0.3.1; the twenty mockups may start,
+  and implementation puts the text in place
+
+5. The commit you make when done
+
+  Commit your work and .tableaux/status/e9c6.yaml, as noreply@anthropic.com,
+  on a branch off main. Do not merge. You are the reviewer of this gate as
+  well as its contributor, so the commit that records the status passes the
+  gate.
+
+    gate: implementation
+    state: nominal
+    note: <one line that says what the gate now holds>
+
+  Edit the file by hand so that it reads as above, with the note on one line
+  and no colon followed by a space inside it. Change no other file under
+  .tableaux.
+
+  Author and committer are both noreply@anthropic.com. Set the identity in
+  the environment, which no configuration overrides, and check it on each
+  commit:
+
+    export GIT_AUTHOR_EMAIL=noreply@anthropic.com
+    export GIT_COMMITTER_EMAIL=noreply@anthropic.com
+    export GIT_AUTHOR_NAME="<your model's display name>"
+    export GIT_COMMITTER_NAME="<your model's display name>"
+    git log -1 --format='%an <%ae> / %cn <%ce>%n%B'
+
+  End each commit message with one final paragraph of trailers, with no
+  blank line between them and nothing after them. The commit that changes
+  the status file carries all three; an earlier commit carries the last two.
+
+    Reviewed: e9c6 implementation
+    Model: <the identifier your harness reports, matching claude-sonnet>
+    Co-Authored-By: <your model's display name> <noreply@anthropic.com>
+
+  Whoever dispatches you merges the branch.
+
+6. The commands that reproduce this brief and show the task
+
+  tabloio queue --person noreply@anthropic.com --ref 3cdae52 --brief e9c6 implementation
+  tabloio task e9c6 --ref 3cdae52
