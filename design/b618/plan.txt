@@ -1,0 +1,20 @@
+record b618 on main at <base>
+author    Claude Sonnet 5.5 <noreply@anthropic.com>
+committer Claude Sonnet 5.5 <noreply@anthropic.com>
+
+    Record write commands (b618) at function
+
+    Reviewed: b618 function
+    Model: claude-sonnet-5-5
+    Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>
+
+diff --git a/.tableaux/status/b618.yaml b/.tableaux/status/b618.yaml
+index 49edd55..0881b37 100644
+--- a/.tableaux/status/b618.yaml
++++ b/.tableaux/status/b618.yaml
+@@ -1,3 +1,3 @@
+-gate: defined
++gate: function
+ state: nominal
+-note: The functional prototype is next
++note: "prototype/b618 composes commits: trailers, status and task files as text"
