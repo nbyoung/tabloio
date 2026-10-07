@@ -1,3 +1,4 @@
 gate: design
 state: nominal
-note: internal/brief stands with T1 to T14; the --brief wiring in cmd/tabloio and T15 wait for the queue command (5ca9); the standing text per gate waits on the owner's plan change (decision 5)
+reason: blocked
+note: internal/brief stands with T1 to T14; the --brief wiring in cmd/tabloio and T15 wait for the queue command (5ca9), which waits for the renderers (1093); the standing text per gate waits on the owner's plan change (decision 5)
