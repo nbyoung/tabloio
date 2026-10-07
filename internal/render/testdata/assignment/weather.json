@@ -1,0 +1,1173 @@
+{
+  "view": "assignment",
+  "level": "provenance",
+  "project": {
+    "id": "a1c0",
+    "title": "Weather station"
+  },
+  "ref": {
+    "name": "main",
+    "commit": "edb30d2baa5ea3c7e3fb8eef8ac6cce6e145221a",
+    "date": "2026-09-28",
+    "on_trunk": true
+  },
+  "params": {},
+  "legend": {
+    "gates": [
+      {
+        "key": "undefined",
+        "symbol": "❔",
+        "name": "Undefined",
+        "criteria": "No one has started work on the definition"
+      },
+      {
+        "key": "defined",
+        "symbol": "📝",
+        "name": "Defined",
+        "criteria": "Title, description, assignee and references exist"
+      },
+      {
+        "key": "mockup",
+        "symbol": "📌",
+        "name": "Mockup",
+        "criteria": "A non-technical mockup of the outcome exists"
+      },
+      {
+        "key": "function",
+        "symbol": "⚙️",
+        "name": "Functional prototype",
+        "criteria": "A technical demonstration of function exists"
+      },
+      {
+        "key": "performance",
+        "symbol": "⚡",
+        "name": "Performance prototype",
+        "criteria": "Target performance shown in the deliverable's technology"
+      },
+      {
+        "key": "reliability",
+        "symbol": "⚓",
+        "name": "Reliability prototype",
+        "criteria": "Target reliability shown in the fundamental technology"
+      },
+      {
+        "key": "design",
+        "symbol": "📐",
+        "name": "Design",
+        "criteria": "A model and sufficient tests exist"
+      },
+      {
+        "key": "implementation",
+        "symbol": "🛠️",
+        "name": "Implementation",
+        "criteria": "Artifacts suffice for unit, integration and validation tests"
+      },
+      {
+        "key": "unit",
+        "symbol": "🧩",
+        "name": "Unit test",
+        "criteria": "All prescribed tests pass"
+      },
+      {
+        "key": "integrate",
+        "symbol": "🖼️",
+        "name": "Integration",
+        "criteria": "Assembled with neighbouring components"
+      },
+      {
+        "key": "validate",
+        "symbol": "🌍",
+        "name": "Validation",
+        "criteria": "Passes user and field tests"
+      },
+      {
+        "key": "release",
+        "symbol": "🚀",
+        "name": "Release",
+        "criteria": "All variants documented and approved"
+      }
+    ],
+    "states": [
+      {
+        "key": "undefined",
+        "symbol": "⚪",
+        "severity": 0,
+        "synopsis": "The work has not yet been defined"
+      },
+      {
+        "key": "nominal",
+        "symbol": "🟢",
+        "severity": 1,
+        "synopsis": "The work is proceeding as expected"
+      },
+      {
+        "key": "at_risk",
+        "symbol": "🟡",
+        "severity": 2,
+        "synopsis": "The work is at risk of stalling"
+      },
+      {
+        "key": "stalled",
+        "symbol": "🔴",
+        "severity": 3,
+        "synopsis": "Practically all progress has stalled"
+      },
+      {
+        "key": "complete",
+        "symbol": "✅",
+        "severity": 0,
+        "synopsis": "All deliverables satisfy their requirements"
+      }
+    ],
+    "reasons": [
+      {
+        "key": "overloaded",
+        "symbol": "🪫",
+        "synopsis": "The assigned resource is overloaded"
+      },
+      {
+        "key": "blocked",
+        "symbol": "⛔",
+        "synopsis": "An external resource is unavailable"
+      },
+      {
+        "key": "review",
+        "symbol": "👓",
+        "synopsis": "The work waits for its reviewer",
+        "reserved": true
+      }
+    ],
+    "marks": [
+      {
+        "key": "person",
+        "symbol": "🧑",
+        "meaning": "A person contributes",
+        "junction": "Plain; the contributor is a person"
+      },
+      {
+        "key": "agent",
+        "symbol": "🤖",
+        "meaning": "An agent contributes",
+        "junction": "Plain; the junction states a `model`"
+      },
+      {
+        "key": "reviewer",
+        "symbol": "👀",
+        "meaning": "A reviewer accepts",
+        "junction": "Plain; the reviewer accepts the work at the gate"
+      },
+      {
+        "key": "subproject",
+        "symbol": "🪆",
+        "meaning": "A subproject does the work",
+        "junction": "Recursive; another Tableaux project does the work"
+      },
+      {
+        "key": "exempt",
+        "symbol": "—",
+        "meaning": "The gate does not apply",
+        "junction": "Not applicable; the entry exempts the task from the gate"
+      }
+    ]
+  },
+  "people": [
+    {
+      "email": "ada@example.org",
+      "assigned": 3,
+      "contributes_next": 2,
+      "reviews_next": 0,
+      "models": []
+    },
+    {
+      "email": "ben@example.org",
+      "assigned": 2,
+      "contributes_next": 0,
+      "reviews_next": 0,
+      "models": []
+    },
+    {
+      "email": "dan@example.org",
+      "assigned": 1,
+      "contributes_next": 1,
+      "reviews_next": 0,
+      "models": []
+    },
+    {
+      "email": "opus@example.org",
+      "assigned": 0,
+      "contributes_next": 0,
+      "reviews_next": 0,
+      "models": [
+        "claude-opus-5-5"
+      ]
+    }
+  ],
+  "recursive": [],
+  "sections": [
+    {
+      "email": "ada@example.org",
+      "assigned": [
+        {
+          "id": "a1c0",
+          "title": "Weather station",
+          "under": "",
+          "status": {
+            "gate": "defined",
+            "state": "nominal",
+            "reason": "",
+            "note": "",
+            "date": "",
+            "recorder": ""
+          },
+          "next": null,
+          "next_gate": ""
+        },
+        {
+          "id": "9f31",
+          "title": "Sensor board",
+          "under": "4e2b",
+          "status": {
+            "gate": "function",
+            "state": "stalled",
+            "reason": "blocked",
+            "note": "",
+            "date": "",
+            "recorder": ""
+          },
+          "next": {
+            "marks": [
+              "person"
+            ],
+            "acts": false
+          },
+          "next_gate": "performance"
+        },
+        {
+          "id": "7b2e",
+          "title": "Gateway",
+          "under": "a1c0",
+          "status": {
+            "gate": "undefined",
+            "state": "undefined",
+            "reason": "",
+            "note": "",
+            "date": "",
+            "recorder": ""
+          },
+          "next": {
+            "marks": [
+              "person"
+            ],
+            "acts": false
+          },
+          "next_gate": "defined"
+        }
+      ],
+      "recursive": [],
+      "contributes": [
+        {
+          "task": {
+            "id": "9f31",
+            "title": "Sensor board"
+          },
+          "gate": "defined",
+          "contributor": "ada@example.org",
+          "model": "",
+          "reviewer": "",
+          "when": "passed"
+        },
+        {
+          "task": {
+            "id": "7b2e",
+            "title": "Gateway"
+          },
+          "gate": "defined",
+          "contributor": "ada@example.org",
+          "model": "",
+          "reviewer": "",
+          "when": "next"
+        },
+        {
+          "task": {
+            "id": "9f31",
+            "title": "Sensor board"
+          },
+          "gate": "mockup",
+          "contributor": "ada@example.org",
+          "model": "",
+          "reviewer": "ben@example.org",
+          "when": "passed"
+        },
+        {
+          "task": {
+            "id": "7b2e",
+            "title": "Gateway"
+          },
+          "gate": "mockup",
+          "contributor": "ada@example.org",
+          "model": "",
+          "reviewer": "",
+          "when": "later"
+        },
+        {
+          "task": {
+            "id": "9f31",
+            "title": "Sensor board"
+          },
+          "gate": "function",
+          "contributor": "ada@example.org",
+          "model": "",
+          "reviewer": "",
+          "when": "passed"
+        },
+        {
+          "task": {
+            "id": "7b2e",
+            "title": "Gateway"
+          },
+          "gate": "function",
+          "contributor": "ada@example.org",
+          "model": "",
+          "reviewer": "",
+          "when": "later"
+        },
+        {
+          "task": {
+            "id": "9f31",
+            "title": "Sensor board"
+          },
+          "gate": "performance",
+          "contributor": "ada@example.org",
+          "model": "",
+          "reviewer": "",
+          "when": "next"
+        },
+        {
+          "task": {
+            "id": "7b2e",
+            "title": "Gateway"
+          },
+          "gate": "performance",
+          "contributor": "ada@example.org",
+          "model": "",
+          "reviewer": "",
+          "when": "later"
+        },
+        {
+          "task": {
+            "id": "9f31",
+            "title": "Sensor board"
+          },
+          "gate": "reliability",
+          "contributor": "ada@example.org",
+          "model": "",
+          "reviewer": "",
+          "when": "later"
+        },
+        {
+          "task": {
+            "id": "7b2e",
+            "title": "Gateway"
+          },
+          "gate": "reliability",
+          "contributor": "ada@example.org",
+          "model": "",
+          "reviewer": "",
+          "when": "later"
+        },
+        {
+          "task": {
+            "id": "9f31",
+            "title": "Sensor board"
+          },
+          "gate": "design",
+          "contributor": "ada@example.org",
+          "model": "",
+          "reviewer": "",
+          "when": "later"
+        },
+        {
+          "task": {
+            "id": "7b2e",
+            "title": "Gateway"
+          },
+          "gate": "design",
+          "contributor": "ada@example.org",
+          "model": "",
+          "reviewer": "",
+          "when": "later"
+        },
+        {
+          "task": {
+            "id": "9f31",
+            "title": "Sensor board"
+          },
+          "gate": "implementation",
+          "contributor": "ada@example.org",
+          "model": "",
+          "reviewer": "",
+          "when": "later"
+        },
+        {
+          "task": {
+            "id": "7b2e",
+            "title": "Gateway"
+          },
+          "gate": "implementation",
+          "contributor": "ada@example.org",
+          "model": "",
+          "reviewer": "",
+          "when": "later"
+        }
+      ],
+      "reviews": [],
+      "models": [],
+      "counts": [
+        {
+          "gate": "undefined",
+          "standing": 1,
+          "contributes": 0,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "defined",
+          "standing": 1,
+          "contributes": 2,
+          "contributes_next": 1,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "mockup",
+          "standing": 0,
+          "contributes": 2,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "function",
+          "standing": 1,
+          "contributes": 2,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "performance",
+          "standing": 0,
+          "contributes": 2,
+          "contributes_next": 1,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "reliability",
+          "standing": 0,
+          "contributes": 2,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "design",
+          "standing": 0,
+          "contributes": 2,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "implementation",
+          "standing": 0,
+          "contributes": 2,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "unit",
+          "standing": 0,
+          "contributes": 0,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "integrate",
+          "standing": 0,
+          "contributes": 0,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "validate",
+          "standing": 0,
+          "contributes": 0,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "release",
+          "standing": 0,
+          "contributes": 0,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        }
+      ],
+      "authority": [
+        {
+          "task": {
+            "id": "a1c0",
+            "title": "Weather station"
+          },
+          "descendants": 5
+        }
+      ],
+      "positions": [
+        {
+          "kind": "assignee",
+          "gate": "",
+          "tasks": [
+            "a1c0",
+            "9f31",
+            "7b2e"
+          ],
+          "reviewer": "",
+          "from": {
+            "by": "",
+            "key": "assignee",
+            "file": ".tableaux/tasks/ID.yaml",
+            "commit": "68d9021"
+          },
+          "reviewer_from": {
+            "by": "",
+            "key": "",
+            "file": "",
+            "commit": ""
+          },
+          "url": "",
+          "pin": ""
+        },
+        {
+          "kind": "authority",
+          "gate": "",
+          "tasks": [
+            "a1c0"
+          ],
+          "reviewer": "",
+          "from": {
+            "by": "a1c0",
+            "key": "assignee",
+            "file": ".tableaux/tasks/a1c0.yaml",
+            "commit": "68d9021"
+          },
+          "reviewer_from": {
+            "by": "",
+            "key": "",
+            "file": "",
+            "commit": ""
+          },
+          "url": "",
+          "pin": ""
+        },
+        {
+          "kind": "contributes",
+          "gate": "defined",
+          "tasks": [
+            "9f31",
+            "7b2e"
+          ],
+          "reviewer": "",
+          "from": {
+            "by": "default",
+            "key": "",
+            "file": ".tableaux/tasks/default.yaml",
+            "commit": ""
+          },
+          "reviewer_from": {
+            "by": "",
+            "key": "",
+            "file": "",
+            "commit": ""
+          },
+          "url": "",
+          "pin": ""
+        }
+      ]
+    },
+    {
+      "email": "ben@example.org",
+      "assigned": [
+        {
+          "id": "4e2b",
+          "title": "Sensor node",
+          "under": "a1c0",
+          "status": {
+            "gate": "function",
+            "state": "stalled",
+            "reason": "blocked",
+            "note": "",
+            "date": "",
+            "recorder": ""
+          },
+          "next": null,
+          "next_gate": ""
+        },
+        {
+          "id": "c07d",
+          "title": "Node firmware",
+          "under": "4e2b",
+          "status": {
+            "gate": "design",
+            "state": "nominal",
+            "reason": "",
+            "note": "",
+            "date": "",
+            "recorder": ""
+          },
+          "next": {
+            "marks": [
+              "person"
+            ],
+            "acts": false
+          },
+          "next_gate": "implementation"
+        }
+      ],
+      "recursive": [],
+      "contributes": [
+        {
+          "task": {
+            "id": "c07d",
+            "title": "Node firmware"
+          },
+          "gate": "defined",
+          "contributor": "ben@example.org",
+          "model": "",
+          "reviewer": "",
+          "when": "passed"
+        },
+        {
+          "task": {
+            "id": "c07d",
+            "title": "Node firmware"
+          },
+          "gate": "mockup",
+          "contributor": "ben@example.org",
+          "model": "",
+          "reviewer": "ben@example.org",
+          "when": "passed"
+        },
+        {
+          "task": {
+            "id": "c07d",
+            "title": "Node firmware"
+          },
+          "gate": "function",
+          "contributor": "ben@example.org",
+          "model": "",
+          "reviewer": "",
+          "when": "passed"
+        },
+        {
+          "task": {
+            "id": "c07d",
+            "title": "Node firmware"
+          },
+          "gate": "performance",
+          "contributor": "ben@example.org",
+          "model": "",
+          "reviewer": "",
+          "when": "passed"
+        },
+        {
+          "task": {
+            "id": "c07d",
+            "title": "Node firmware"
+          },
+          "gate": "design",
+          "contributor": "ben@example.org",
+          "model": "",
+          "reviewer": "",
+          "when": "passed"
+        }
+      ],
+      "reviews": [
+        {
+          "task": {
+            "id": "9f31",
+            "title": "Sensor board"
+          },
+          "gate": "mockup",
+          "contributor": "ada@example.org",
+          "model": "",
+          "reviewer": "ben@example.org",
+          "when": "passed"
+        },
+        {
+          "task": {
+            "id": "c07d",
+            "title": "Node firmware"
+          },
+          "gate": "mockup",
+          "contributor": "ben@example.org",
+          "model": "",
+          "reviewer": "ben@example.org",
+          "when": "passed"
+        }
+      ],
+      "models": [],
+      "counts": [
+        {
+          "gate": "undefined",
+          "standing": 0,
+          "contributes": 0,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "defined",
+          "standing": 0,
+          "contributes": 1,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "mockup",
+          "standing": 0,
+          "contributes": 1,
+          "contributes_next": 0,
+          "reviews": 2,
+          "reviews_next": 0
+        },
+        {
+          "gate": "function",
+          "standing": 1,
+          "contributes": 1,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "performance",
+          "standing": 0,
+          "contributes": 1,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "reliability",
+          "standing": 0,
+          "contributes": 0,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "design",
+          "standing": 1,
+          "contributes": 1,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "implementation",
+          "standing": 0,
+          "contributes": 0,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "unit",
+          "standing": 0,
+          "contributes": 0,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "integrate",
+          "standing": 0,
+          "contributes": 0,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "validate",
+          "standing": 0,
+          "contributes": 0,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "release",
+          "standing": 0,
+          "contributes": 0,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        }
+      ],
+      "authority": [
+        {
+          "task": {
+            "id": "4e2b",
+            "title": "Sensor node"
+          },
+          "descendants": 2
+        }
+      ],
+      "positions": []
+    },
+    {
+      "email": "dan@example.org",
+      "assigned": [
+        {
+          "id": "3c5d",
+          "title": "Dashboard",
+          "under": "a1c0",
+          "status": {
+            "gate": "defined",
+            "state": "nominal",
+            "reason": "",
+            "note": "",
+            "date": "",
+            "recorder": ""
+          },
+          "next": {
+            "marks": [
+              "person"
+            ],
+            "acts": false
+          },
+          "next_gate": "mockup"
+        }
+      ],
+      "recursive": [],
+      "contributes": [
+        {
+          "task": {
+            "id": "3c5d",
+            "title": "Dashboard"
+          },
+          "gate": "defined",
+          "contributor": "dan@example.org",
+          "model": "",
+          "reviewer": "",
+          "when": "passed"
+        },
+        {
+          "task": {
+            "id": "3c5d",
+            "title": "Dashboard"
+          },
+          "gate": "mockup",
+          "contributor": "dan@example.org",
+          "model": "",
+          "reviewer": "",
+          "when": "next"
+        },
+        {
+          "task": {
+            "id": "3c5d",
+            "title": "Dashboard"
+          },
+          "gate": "function",
+          "contributor": "dan@example.org",
+          "model": "",
+          "reviewer": "",
+          "when": "later"
+        },
+        {
+          "task": {
+            "id": "3c5d",
+            "title": "Dashboard"
+          },
+          "gate": "performance",
+          "contributor": "dan@example.org",
+          "model": "",
+          "reviewer": "",
+          "when": "later"
+        },
+        {
+          "task": {
+            "id": "3c5d",
+            "title": "Dashboard"
+          },
+          "gate": "reliability",
+          "contributor": "dan@example.org",
+          "model": "",
+          "reviewer": "",
+          "when": "later"
+        },
+        {
+          "task": {
+            "id": "3c5d",
+            "title": "Dashboard"
+          },
+          "gate": "design",
+          "contributor": "dan@example.org",
+          "model": "",
+          "reviewer": "",
+          "when": "later"
+        },
+        {
+          "task": {
+            "id": "3c5d",
+            "title": "Dashboard"
+          },
+          "gate": "implementation",
+          "contributor": "dan@example.org",
+          "model": "",
+          "reviewer": "",
+          "when": "later"
+        }
+      ],
+      "reviews": [],
+      "models": [],
+      "counts": [
+        {
+          "gate": "undefined",
+          "standing": 0,
+          "contributes": 0,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "defined",
+          "standing": 1,
+          "contributes": 1,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "mockup",
+          "standing": 0,
+          "contributes": 1,
+          "contributes_next": 1,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "function",
+          "standing": 0,
+          "contributes": 1,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "performance",
+          "standing": 0,
+          "contributes": 1,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "reliability",
+          "standing": 0,
+          "contributes": 1,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "design",
+          "standing": 0,
+          "contributes": 1,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "implementation",
+          "standing": 0,
+          "contributes": 1,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "unit",
+          "standing": 0,
+          "contributes": 0,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "integrate",
+          "standing": 0,
+          "contributes": 0,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "validate",
+          "standing": 0,
+          "contributes": 0,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "release",
+          "standing": 0,
+          "contributes": 0,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        }
+      ],
+      "authority": [],
+      "positions": []
+    },
+    {
+      "email": "opus@example.org",
+      "assigned": [],
+      "recursive": [],
+      "contributes": [],
+      "reviews": [],
+      "models": [
+        {
+          "gate": "design",
+          "model": "claude-opus-5-5",
+          "stated_by": "a1c0",
+          "junctions": 0,
+          "next": 0
+        }
+      ],
+      "counts": [
+        {
+          "gate": "undefined",
+          "standing": 0,
+          "contributes": 0,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "defined",
+          "standing": 0,
+          "contributes": 0,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "mockup",
+          "standing": 0,
+          "contributes": 0,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "function",
+          "standing": 0,
+          "contributes": 0,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "performance",
+          "standing": 0,
+          "contributes": 0,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "reliability",
+          "standing": 0,
+          "contributes": 0,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "design",
+          "standing": 0,
+          "contributes": 0,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "implementation",
+          "standing": 0,
+          "contributes": 0,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "unit",
+          "standing": 0,
+          "contributes": 0,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "integrate",
+          "standing": 0,
+          "contributes": 0,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "validate",
+          "standing": 0,
+          "contributes": 0,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        },
+        {
+          "gate": "release",
+          "standing": 0,
+          "contributes": 0,
+          "contributes_next": 0,
+          "reviews": 0,
+          "reviews_next": 0
+        }
+      ],
+      "authority": [],
+      "positions": []
+    }
+  ],
+  "commits": [
+    {
+      "hash": "68d9021",
+      "subject": "Plan the weather station",
+      "date": "2026-09-15",
+      "author": {
+        "email": "ada@example.org"
+      },
+      "committer": {
+        "email": "ada@example.org"
+      }
+    }
+  ],
+  "commands": []
+}

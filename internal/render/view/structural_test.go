@@ -11,6 +11,8 @@ func TestDecodeStructural(t *testing.T) {
 	for _, c := range []struct{ view, name string }{
 		{"authority", "tooling"},
 		{"authority", "weather-proposed"},
+		{"assignment", "tooling"},
+		{"assignment", "weather"},
 	} {
 		t.Run(c.view+"/"+c.name, func(t *testing.T) {
 			data := fixture(t, c.view, c.name)
@@ -42,5 +44,17 @@ func TestDecodeStructural(t *testing.T) {
 	}
 	if m := v.Parents[1].Defaults[0]; m.Gate != "design" || len(m.Marks) != 2 || m.ReviewerFrom != "437e" {
 		t.Errorf("a default: %+v", m)
+	}
+
+	a, err := Decode("assignment", fixture(t, "assignment", "tooling"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	w := a.(*Assignment)
+	if len(w.People) != 2 || len(w.Sections) != 2 || len(w.Recursive) != 4 || len(w.Sections[1].Contributes) != 79 {
+		t.Errorf("assignment: %d people, %d sections", len(w.People), len(w.Sections))
+	}
+	if r := w.Sections[0].Assigned[3]; r.ID != "ac33" || r.Under != "bc63" || r.Next == nil || r.Gate != "implementation" {
+		t.Errorf("an assigned row: %+v", r)
 	}
 }

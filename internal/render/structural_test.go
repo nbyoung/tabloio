@@ -14,6 +14,9 @@ import (
 var structuralGoldens = []golden{
 	// T1: the tooling plan, against the drafts of design c48a
 	{view: "authority", name: "tooling", levels: allLevels},
+	// T2 and T3
+	{view: "assignment", name: "tooling", levels: allLevels},
+	{view: "assignment", name: "tooling-nbyoung", levels: []view.Level{view.Detail}},
 	// T4: the weather station: a proposed task, a person's view, a ref off the trunk
 	{view: "authority", name: "weather", levels: allLevels},
 	{view: "authority", name: "weather-ada", levels: []view.Level{view.Detail}},
@@ -21,9 +24,11 @@ var structuralGoldens = []golden{
 	// T7: --proposed and its empty form
 	{view: "authority", name: "weather-proposed", levels: allLevels},
 	{view: "authority", name: "tooling-proposed", levels: allLevels},
+	// T9: empty sections
+	{view: "assignment", name: "weather", levels: allLevels},
 }
 
-// T1, T4 and T7: each fixture at each level against its golden file,
+// T1 to T4, T7 and T9: each fixture at each level against its golden file,
 // byte for byte.
 func TestStructuralGolden(t *testing.T) {
 	for _, g := range structuralGoldens {
