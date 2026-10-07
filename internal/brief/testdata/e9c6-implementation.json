@@ -1,0 +1,290 @@
+{
+  "schema": "tablo/1",
+  "command": "view",
+  "ref": {
+    "name": "main",
+    "commit": "3cdae527d47d37fdff55bc302c76c017cf91c606"
+  },
+  "data": {
+    "view": "work-queue",
+    "params": {
+      "person": "noreply@anthropic.com",
+      "level": "provenance",
+      "brief": {
+        "task": "e9c6",
+        "gate": "implementation"
+      }
+    },
+    "brief": {
+      "kind": "work ready",
+      "cause": "",
+      "person": "noreply@anthropic.com",
+      "ref": {
+        "name": "main",
+        "commit": "3cdae527d47d37fdff55bc302c76c017cf91c606",
+        "date": "2026-10-05"
+      },
+      "task": {
+        "id": "e9c6",
+        "title": "Abstract views",
+        "description": "VIEWS.md defines each view independently of any format: its question, the roles it serves, the data it draws from the project and the history, the parameters that focus it (a task, a person, a gate window or a list of columns, a ref) and its progressive-disclosure levels. The views are the gate definition, the task definition, authority delegation, task assignment, the contributor work queue, the work-blockage tree, the global tableau, the contextual tableau, the history and the audit.",
+        "references": [
+          {
+            "url": "PLAN.md#views",
+            "text": "Proposed views"
+          }
+        ],
+        "path": [
+          {
+            "id": "437e",
+            "title": "Tableaux tooling"
+          },
+          {
+            "id": "bc63",
+            "title": "Method"
+          },
+          {
+            "id": "2034",
+            "title": "Views"
+          }
+        ]
+      },
+      "gate": {
+        "key": "implementation",
+        "symbol": "🧱",
+        "name": "Implementation",
+        "criteria": "Artifacts suffice for unit, integration and validation tests",
+        "follows": "plain"
+      },
+      "junction": {
+        "contributor": {
+          "value": "noreply@anthropic.com",
+          "source": {
+            "kind": "task",
+            "id": "437e",
+            "title": "Tableaux tooling"
+          }
+        },
+        "model": {
+          "value": "claude-sonnet",
+          "source": {
+            "kind": "task",
+            "id": "437e",
+            "title": "Tableaux tooling"
+          }
+        },
+        "reviewer": {
+          "value": "noreply@anthropic.com",
+          "source": {
+            "kind": "assignee"
+          }
+        },
+        "references": []
+      },
+      "supplier": {
+        "id": "437e",
+        "title": "Tableaux tooling",
+        "description": "Software that supports planning and tracking with Tableaux: the method itself, a backend that parses, validates, audits and derives views from a project, and one front end per mode of use. The effort dog-foods the method to refine and validate it as a means to maximise human productivity through agentic assistance. Agents contribute at every gate, each on the model the junction names; people review at the strategic junctions this task states, and every task inherits them."
+      },
+      "requires": [
+        {
+          "id": "c2ad",
+          "title": "Roles",
+          "from": "design",
+          "to": "design",
+          "text": "The role names the views refer to",
+          "condition": "met"
+        }
+      ],
+      "dependents": [
+        {
+          "id": "99f0",
+          "title": "Gate definition view in Markdown",
+          "from": "design",
+          "to": "mockup",
+          "text": "The abstract definition of the view",
+          "condition": "met"
+        },
+        {
+          "id": "05a9",
+          "title": "Task definition view in Markdown",
+          "from": "design",
+          "to": "mockup",
+          "text": "The abstract definition of the view",
+          "condition": "met"
+        },
+        {
+          "id": "a9ce",
+          "title": "Authority delegation view in Markdown",
+          "from": "design",
+          "to": "mockup",
+          "text": "The abstract definition of the view",
+          "condition": "met"
+        },
+        {
+          "id": "bb7c",
+          "title": "Task assignment view in Markdown",
+          "from": "design",
+          "to": "mockup",
+          "text": "The abstract definition of the view",
+          "condition": "met"
+        },
+        {
+          "id": "c74a",
+          "title": "Contributor work queue view in Markdown",
+          "from": "design",
+          "to": "mockup",
+          "text": "The abstract definition of the view",
+          "condition": "met"
+        },
+        {
+          "id": "efff",
+          "title": "Work-blockage tree view in Markdown",
+          "from": "design",
+          "to": "mockup",
+          "text": "The abstract definition of the view",
+          "condition": "met"
+        },
+        {
+          "id": "ab8e",
+          "title": "Global tableau view in Markdown",
+          "from": "design",
+          "to": "mockup",
+          "text": "The abstract definition of the view",
+          "condition": "met"
+        },
+        {
+          "id": "c545",
+          "title": "Contextual tableau view in Markdown",
+          "from": "design",
+          "to": "mockup",
+          "text": "The abstract definition of the view",
+          "condition": "met"
+        },
+        {
+          "id": "d615",
+          "title": "History view in Markdown",
+          "from": "design",
+          "to": "mockup",
+          "text": "The abstract definition of the view",
+          "condition": "met"
+        },
+        {
+          "id": "b14e",
+          "title": "Audit view in Markdown",
+          "from": "design",
+          "to": "mockup",
+          "text": "The abstract definition of the view",
+          "condition": "met"
+        },
+        {
+          "id": "a6f7",
+          "title": "Gate definition view in Html",
+          "from": "design",
+          "to": "mockup",
+          "text": "The abstract definition of the view",
+          "condition": "met"
+        },
+        {
+          "id": "7dff",
+          "title": "Task definition view in Html",
+          "from": "design",
+          "to": "mockup",
+          "text": "The abstract definition of the view",
+          "condition": "met"
+        },
+        {
+          "id": "b1b7",
+          "title": "Authority delegation view in Html",
+          "from": "design",
+          "to": "mockup",
+          "text": "The abstract definition of the view",
+          "condition": "met"
+        },
+        {
+          "id": "ea51",
+          "title": "Task assignment view in Html",
+          "from": "design",
+          "to": "mockup",
+          "text": "The abstract definition of the view",
+          "condition": "met"
+        },
+        {
+          "id": "7783",
+          "title": "Contributor work queue view in Html",
+          "from": "design",
+          "to": "mockup",
+          "text": "The abstract definition of the view",
+          "condition": "met"
+        },
+        {
+          "id": "5471",
+          "title": "Work-blockage tree view in Html",
+          "from": "design",
+          "to": "mockup",
+          "text": "The abstract definition of the view",
+          "condition": "met"
+        },
+        {
+          "id": "32e7",
+          "title": "Global tableau view in Html",
+          "from": "design",
+          "to": "mockup",
+          "text": "The abstract definition of the view",
+          "condition": "met"
+        },
+        {
+          "id": "69eb",
+          "title": "Contextual tableau view in Html",
+          "from": "design",
+          "to": "mockup",
+          "text": "The abstract definition of the view",
+          "condition": "met"
+        },
+        {
+          "id": "3194",
+          "title": "History view in Html",
+          "from": "design",
+          "to": "mockup",
+          "text": "The abstract definition of the view",
+          "condition": "met"
+        },
+        {
+          "id": "a8b4",
+          "title": "Audit view in Html",
+          "from": "design",
+          "to": "mockup",
+          "text": "The abstract definition of the view",
+          "condition": "met"
+        },
+        {
+          "id": "77b2",
+          "title": "tablo: backend library and plumbing",
+          "from": "implementation",
+          "to": "design",
+          "text": "The abstract views it derives",
+          "condition": "unmet"
+        }
+      ],
+      "parent": {
+        "id": "2034",
+        "title": "Views",
+        "dependents": []
+      },
+      "status": {
+        "path": ".tableaux/status/e9c6.yaml",
+        "gate": "design",
+        "gate_symbol": "📐",
+        "state": "nominal",
+        "state_symbol": "🟢",
+        "reason": "",
+        "reason_symbol": "",
+        "note": "VIEWS.md is on the trunk at language 0.3.1; the twenty mockups may start, and implementation puts the text in place",
+        "date": "2026-09-30",
+        "recorder": "noreply@anthropic.com",
+        "commit": "879b447a920aad55e698906812350ea7d3785b4c"
+      }
+    }
+  },
+  "diagnostics": []
+}

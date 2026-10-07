@@ -1,0 +1,144 @@
+{
+  "schema": "tablo/1",
+  "command": "view",
+  "ref": {
+    "name": "main",
+    "commit": "3cdae527d47d37fdff55bc302c76c017cf91c606"
+  },
+  "data": {
+    "view": "work-queue",
+    "params": {
+      "person": "noreply@anthropic.com",
+      "level": "provenance",
+      "brief": {
+        "task": "c74a",
+        "gate": "mockup"
+      }
+    },
+    "brief": {
+      "kind": "work ready",
+      "cause": "",
+      "person": "noreply@anthropic.com",
+      "ref": {
+        "name": "main",
+        "commit": "3cdae527d47d37fdff55bc302c76c017cf91c606",
+        "date": "2026-10-05"
+      },
+      "task": {
+        "id": "c74a",
+        "title": "Contributor work queue view in Markdown",
+        "description": "For one contributor, the junctions where they act next: work at a gate whose requirements are met, reviews they owe, authorisations they owe, and statuses they last reaffirmed longest ago. Each item carries the gate criteria, the junction references and the requirement texts, so an agent can start from the queue alone. It serves contributors, reviewers and authorities. The mockup, docs/mockups/queue.md, depicts this project.",
+        "references": [
+          {
+            "url": "docs/mockups/queue.md",
+            "text": "The mockup"
+          }
+        ],
+        "path": [
+          {
+            "id": "437e",
+            "title": "Tableaux tooling"
+          },
+          {
+            "id": "bc63",
+            "title": "Method"
+          },
+          {
+            "id": "2034",
+            "title": "Views"
+          },
+          {
+            "id": "bc86",
+            "title": "Markdown views"
+          }
+        ]
+      },
+      "gate": {
+        "key": "mockup",
+        "symbol": "📌",
+        "name": "Mockup",
+        "criteria": "A non-technical mockup of the outcome exists",
+        "follows": "plain"
+      },
+      "junction": {
+        "contributor": {
+          "value": "noreply@anthropic.com",
+          "source": {
+            "kind": "task",
+            "id": "437e",
+            "title": "Tableaux tooling"
+          }
+        },
+        "model": {
+          "value": "claude-opus",
+          "source": {
+            "kind": "task",
+            "id": "437e",
+            "title": "Tableaux tooling"
+          }
+        },
+        "reviewer": {
+          "value": "nbyoung@nbyoung.com",
+          "source": {
+            "kind": "task",
+            "id": "437e",
+            "title": "Tableaux tooling"
+          }
+        },
+        "references": []
+      },
+      "supplier": {
+        "id": "437e",
+        "title": "Tableaux tooling",
+        "description": "Software that supports planning and tracking with Tableaux: the method itself, a backend that parses, validates, audits and derives views from a project, and one front end per mode of use. The effort dog-foods the method to refine and validate it as a means to maximise human productivity through agentic assistance. Agents contribute at every gate, each on the model the junction names; people review at the strategic junctions this task states, and every task inherits them."
+      },
+      "requires": [
+        {
+          "id": "e9c6",
+          "title": "Abstract views",
+          "from": "design",
+          "to": "mockup",
+          "text": "The abstract definition of the view",
+          "condition": "met"
+        }
+      ],
+      "dependents": [],
+      "parent": {
+        "id": "bc86",
+        "title": "Markdown views",
+        "dependents": [
+          {
+            "id": "6103",
+            "title": "tabloio: command line, output and input",
+            "from": "mockup",
+            "to": "design",
+            "text": "The Markdown mockups it reproduces",
+            "condition": "unmet"
+          },
+          {
+            "id": "c6e8",
+            "title": "tablotui: terminal user interface",
+            "from": "mockup",
+            "to": "design",
+            "text": "The Markdown mockups that fix the textual layout",
+            "condition": "unmet"
+          }
+        ]
+      },
+      "status": {
+        "path": ".tableaux/status/c74a.yaml",
+        "gate": "defined",
+        "gate_symbol": "📝",
+        "state": "nominal",
+        "state_symbol": "🟢",
+        "reason": "",
+        "reason_symbol": "",
+        "note": "Mockup waits for Abstract views (e9c6) at design",
+        "date": "2026-09-29",
+        "recorder": "noreply@anthropic.com",
+        "commit": "1a17bfcca843d4436e2eb4c75b5cfa98ec05d658"
+      }
+    }
+  },
+  "diagnostics": []
+}

@@ -1,0 +1,79 @@
+Brief: c74a Contributor work queue view in Markdown at mockup
+
+This brief stands alone. It is one item of the work queue of
+noreply@anthropic.com on main at 3cdae52, 2026-10-05: work ready.
+
+1. The item
+
+  Task         c74a Contributor work queue view in Markdown
+  Gate         📌 mockup, Mockup: A non-technical mockup of the outcome exists
+  Contributor  noreply@anthropic.com   (Tableaux tooling, 437e)
+  Model        claude-opus             (Tableaux tooling, 437e)
+  Reviewer     nbyoung@nbyoung.com     (Tableaux tooling, 437e)
+
+  The model is the plan's statement. Run on a model that matches it, as an
+  identifier or by prefix, and record the model you in fact run in the
+  Model: trailer.
+
+2. The task
+
+  For one contributor, the junctions where they act next: work at a gate
+  whose requirements are met, reviews they owe, authorisations they owe, and
+  statuses they last reaffirmed longest ago. Each item carries the gate
+  criteria, the junction references and the requirement texts, so an agent
+  can start from the queue alone. It serves contributors, reviewers and
+  authorities. The mockup, docs/mockups/queue.md, depicts this project.
+
+  Reference: docs/mockups/queue.md, The mockup
+  Junction references: none
+  Under: Tableaux tooling › Method › Views › Markdown views
+
+  Tableaux tooling (437e), whose entry sends this work to you: Software that
+  supports planning and tracking with Tableaux: the method itself, a backend
+  that parses, validates, audits and derives views from a project, and one
+  front end per mode of use. The effort dog-foods the method to refine and
+  validate it as a means to maximise human productivity through agentic
+  assistance. Agents contribute at every gate, each on the model the
+  junction names; people review at the strategic junctions this task states,
+  and every task inherits them.
+
+3. The requirements
+
+  Requires: e9c6 Abstract views from design to mockup, The abstract
+  definition of the view: met
+  Unblocks: nothing; no task requires c74a
+  Its parent bc86 Markdown views at mockup is required by:
+    6103 tabloio: command line, output and input at design, The Markdown
+    mockups it reproduces
+    c6e8 tablotui: terminal user interface at design, The Markdown mockups
+    that fix the textual layout
+
+4. The status
+
+  📝 defined 🟢 nominal, 2026-09-29, noreply@anthropic.com, 1a17bfc:
+  Mockup waits for Abstract views (e9c6) at design
+
+5. The commit you make when done
+
+  Commit docs/mockups/queue.md and .tableaux/status/c74a.yaml, as
+  noreply@anthropic.com, on a branch off main. Do not merge. The reviewer
+  nbyoung@nbyoung.com accepts this gate, so hand the work off: the status
+  stays at the gate it stands at and takes the reason review.
+
+    gate: defined
+    state: nominal
+    reason: review
+    note: <one line that says what waits on the branch>
+
+  End the commit message with one paragraph of two trailers:
+
+    Model: <the identifier your harness reports, matching claude-opus>
+    Co-Authored-By: <your model's display name> <noreply@anthropic.com>
+
+  The reviewer merges the branch and passes the gate with a commit that
+  carries the trailer Reviewed: c74a mockup
+
+6. The commands that reproduce this brief and show the task
+
+  tabloio queue --person noreply@anthropic.com --ref 3cdae52 --brief c74a mockup
+  tabloio task c74a --ref 3cdae52
