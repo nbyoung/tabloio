@@ -1,3 +1,3 @@
-gate: implementation
+gate: unit
 state: nominal
-note: The global and contextual tableau, work-blockage tree and work queue renderers stand with T1 to T12 and their golden files; the unit gate runs go test over them; the integrate gate regenerates the fixtures from tablo's views and joins the brief of e4c7 at the hook of A6, and the Read commands (5ca9) wait on this task
+note: T1 to T12 pass under go test ./internal/render/... with no skip and no cached run, and the five checks and go test -race pass on the whole worktree; the detail golden of the blockage illustration keeps the glance table as R1 and T6 nest the levels, which the draft lacks; T9 proves the hook at provenance with the stub ErrFormat, and the brief itself waits for e4c7 at the integrate gate; the integrate gate regenerates the fixtures from tablo view
