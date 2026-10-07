@@ -1,0 +1,1132 @@
+{
+  "view": "authority",
+  "level": "provenance",
+  "project": {
+    "id": "437e",
+    "title": "Tableaux tooling"
+  },
+  "ref": {
+    "name": "main",
+    "commit": "3cdae527d47d37fdff55bc302c76c017cf91c606",
+    "date": "2026-10-05",
+    "on_trunk": true
+  },
+  "params": {},
+  "legend": {
+    "gates": [
+      {
+        "key": "undefined",
+        "symbol": "❔",
+        "name": "Undefined",
+        "criteria": "No one has started work on the definition"
+      },
+      {
+        "key": "defined",
+        "symbol": "📝",
+        "name": "Defined",
+        "criteria": "Title, description, assignee and references exist"
+      },
+      {
+        "key": "mockup",
+        "symbol": "📌",
+        "name": "Mockup",
+        "criteria": "A non-technical mockup of the outcome exists"
+      },
+      {
+        "key": "function",
+        "symbol": "🔧",
+        "name": "Functional prototype",
+        "criteria": "A technical demonstration of function exists"
+      },
+      {
+        "key": "design",
+        "symbol": "📐",
+        "name": "Design",
+        "criteria": "A model and sufficient tests exist"
+      },
+      {
+        "key": "implementation",
+        "symbol": "🧱",
+        "name": "Implementation",
+        "criteria": "Artifacts suffice for unit, integration and validation tests"
+      },
+      {
+        "key": "unit",
+        "symbol": "📏",
+        "name": "Unit test",
+        "criteria": "All prescribed tests pass"
+      },
+      {
+        "key": "integrate",
+        "symbol": "🔗",
+        "name": "Integration",
+        "criteria": "Assembled with neighbouring components"
+      },
+      {
+        "key": "validate",
+        "symbol": "🌍",
+        "name": "Validation",
+        "criteria": "Passes user and field tests"
+      },
+      {
+        "key": "release",
+        "symbol": "🚀",
+        "name": "Release",
+        "criteria": "All variants documented and approved"
+      }
+    ],
+    "states": [
+      {
+        "key": "undefined",
+        "symbol": "⚪",
+        "severity": 0,
+        "synopsis": "The work has not yet been defined"
+      },
+      {
+        "key": "nominal",
+        "symbol": "🟢",
+        "severity": 1,
+        "synopsis": "The work is proceeding as expected"
+      },
+      {
+        "key": "at_risk",
+        "symbol": "🟡",
+        "severity": 2,
+        "synopsis": "The work is at risk of stalling"
+      },
+      {
+        "key": "stalled",
+        "symbol": "🔴",
+        "severity": 3,
+        "synopsis": "Practically all progress has stalled"
+      },
+      {
+        "key": "complete",
+        "symbol": "✅",
+        "severity": 0,
+        "synopsis": "All deliverables satisfy their requirements"
+      }
+    ],
+    "reasons": [
+      {
+        "key": "overloaded",
+        "symbol": "🪫",
+        "synopsis": "The assigned resource is overloaded"
+      },
+      {
+        "key": "blocked",
+        "symbol": "⛔",
+        "synopsis": "An external resource is unavailable"
+      },
+      {
+        "key": "review",
+        "symbol": "👓",
+        "synopsis": "The work waits for its reviewer",
+        "reserved": true
+      }
+    ],
+    "marks": [
+      {
+        "key": "person",
+        "symbol": "🧑",
+        "meaning": "A person contributes",
+        "junction": "Plain; the contributor is a person"
+      },
+      {
+        "key": "agent",
+        "symbol": "🤖",
+        "meaning": "An agent contributes",
+        "junction": "Plain; the junction states a `model`"
+      },
+      {
+        "key": "reviewer",
+        "symbol": "👀",
+        "meaning": "A reviewer accepts",
+        "junction": "Plain; the reviewer accepts the work at the gate"
+      },
+      {
+        "key": "subproject",
+        "symbol": "🪆",
+        "meaning": "A subproject does the work",
+        "junction": "Recursive; another Tableaux project does the work"
+      },
+      {
+        "key": "exempt",
+        "symbol": "—",
+        "meaning": "The gate does not apply",
+        "junction": "Not applicable; the entry exempts the task from the gate"
+      }
+    ]
+  },
+  "rows": [
+    {
+      "id": "437e",
+      "title": "Tableaux tooling",
+      "depth": 0,
+      "assignee": "nbyoung@nbyoung.com",
+      "parent": true,
+      "delegated": false,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "bc63",
+      "title": "Method",
+      "depth": 1,
+      "assignee": "nbyoung@nbyoung.com",
+      "parent": true,
+      "delegated": false,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "c2ad",
+      "title": "Roles",
+      "depth": 2,
+      "assignee": "noreply@anthropic.com",
+      "parent": false,
+      "delegated": true,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "2034",
+      "title": "Views",
+      "depth": 2,
+      "assignee": "nbyoung@nbyoung.com",
+      "parent": true,
+      "delegated": false,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "e9c6",
+      "title": "Abstract views",
+      "depth": 3,
+      "assignee": "noreply@anthropic.com",
+      "parent": false,
+      "delegated": true,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "bc86",
+      "title": "Markdown views",
+      "depth": 3,
+      "assignee": "noreply@anthropic.com",
+      "parent": true,
+      "delegated": true,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "99f0",
+      "title": "Gate definition view in Markdown",
+      "depth": 4,
+      "assignee": "noreply@anthropic.com",
+      "parent": false,
+      "delegated": false,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "05a9",
+      "title": "Task definition view in Markdown",
+      "depth": 4,
+      "assignee": "noreply@anthropic.com",
+      "parent": false,
+      "delegated": false,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "a9ce",
+      "title": "Authority delegation view in Markdown",
+      "depth": 4,
+      "assignee": "noreply@anthropic.com",
+      "parent": false,
+      "delegated": false,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "bb7c",
+      "title": "Task assignment view in Markdown",
+      "depth": 4,
+      "assignee": "noreply@anthropic.com",
+      "parent": false,
+      "delegated": false,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "c74a",
+      "title": "Contributor work queue view in Markdown",
+      "depth": 4,
+      "assignee": "noreply@anthropic.com",
+      "parent": false,
+      "delegated": false,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "efff",
+      "title": "Work-blockage tree view in Markdown",
+      "depth": 4,
+      "assignee": "noreply@anthropic.com",
+      "parent": false,
+      "delegated": false,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "ab8e",
+      "title": "Global tableau view in Markdown",
+      "depth": 4,
+      "assignee": "noreply@anthropic.com",
+      "parent": false,
+      "delegated": false,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "c545",
+      "title": "Contextual tableau view in Markdown",
+      "depth": 4,
+      "assignee": "noreply@anthropic.com",
+      "parent": false,
+      "delegated": false,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "d615",
+      "title": "History view in Markdown",
+      "depth": 4,
+      "assignee": "noreply@anthropic.com",
+      "parent": false,
+      "delegated": false,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "b14e",
+      "title": "Audit view in Markdown",
+      "depth": 4,
+      "assignee": "noreply@anthropic.com",
+      "parent": false,
+      "delegated": false,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "5fe3",
+      "title": "HTML views",
+      "depth": 3,
+      "assignee": "noreply@anthropic.com",
+      "parent": true,
+      "delegated": true,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "a6f7",
+      "title": "Gate definition view in Html",
+      "depth": 4,
+      "assignee": "noreply@anthropic.com",
+      "parent": false,
+      "delegated": false,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "7dff",
+      "title": "Task definition view in Html",
+      "depth": 4,
+      "assignee": "noreply@anthropic.com",
+      "parent": false,
+      "delegated": false,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "b1b7",
+      "title": "Authority delegation view in Html",
+      "depth": 4,
+      "assignee": "noreply@anthropic.com",
+      "parent": false,
+      "delegated": false,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "ea51",
+      "title": "Task assignment view in Html",
+      "depth": 4,
+      "assignee": "noreply@anthropic.com",
+      "parent": false,
+      "delegated": false,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "7783",
+      "title": "Contributor work queue view in Html",
+      "depth": 4,
+      "assignee": "noreply@anthropic.com",
+      "parent": false,
+      "delegated": false,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "5471",
+      "title": "Work-blockage tree view in Html",
+      "depth": 4,
+      "assignee": "noreply@anthropic.com",
+      "parent": false,
+      "delegated": false,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "32e7",
+      "title": "Global tableau view in Html",
+      "depth": 4,
+      "assignee": "noreply@anthropic.com",
+      "parent": false,
+      "delegated": false,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "69eb",
+      "title": "Contextual tableau view in Html",
+      "depth": 4,
+      "assignee": "noreply@anthropic.com",
+      "parent": false,
+      "delegated": false,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "3194",
+      "title": "History view in Html",
+      "depth": 4,
+      "assignee": "noreply@anthropic.com",
+      "parent": false,
+      "delegated": false,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "a8b4",
+      "title": "Audit view in Html",
+      "depth": 4,
+      "assignee": "noreply@anthropic.com",
+      "parent": false,
+      "delegated": false,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "e3cb",
+      "title": "Schema files",
+      "depth": 2,
+      "assignee": "noreply@anthropic.com",
+      "parent": false,
+      "delegated": true,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "fcec",
+      "title": "Conformance corpus",
+      "depth": 2,
+      "assignee": "noreply@anthropic.com",
+      "parent": false,
+      "delegated": true,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "ac33",
+      "title": "Agent identity",
+      "depth": 2,
+      "assignee": "nbyoung@nbyoung.com",
+      "parent": false,
+      "delegated": false,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "9f3f",
+      "title": "Subproject linkage",
+      "depth": 2,
+      "assignee": "nbyoung@nbyoung.com",
+      "parent": false,
+      "delegated": false,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "7861",
+      "title": "Productivity evidence",
+      "depth": 2,
+      "assignee": "noreply@anthropic.com",
+      "parent": false,
+      "delegated": true,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "7166",
+      "title": "Language clarifications",
+      "depth": 2,
+      "assignee": "nbyoung@nbyoung.com",
+      "parent": false,
+      "delegated": false,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "77b2",
+      "title": "tablo: backend library and plumbing",
+      "depth": 1,
+      "assignee": "nbyoung@nbyoung.com",
+      "parent": false,
+      "delegated": false,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "6103",
+      "title": "tabloio: command line, output and input",
+      "depth": 1,
+      "assignee": "nbyoung@nbyoung.com",
+      "parent": false,
+      "delegated": false,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "c6e8",
+      "title": "tablotui: terminal user interface",
+      "depth": 1,
+      "assignee": "nbyoung@nbyoung.com",
+      "parent": false,
+      "delegated": false,
+      "proposed": false,
+      "differs_from_trunk": false
+    },
+    {
+      "id": "595e",
+      "title": "tableaud: local daemon and HTML",
+      "depth": 1,
+      "assignee": "nbyoung@nbyoung.com",
+      "parent": false,
+      "delegated": false,
+      "proposed": false,
+      "differs_from_trunk": false
+    }
+  ],
+  "parents": [
+    {
+      "id": "437e",
+      "title": "Tableaux tooling",
+      "assignee": "nbyoung@nbyoung.com",
+      "authorities": [
+        {
+          "email": "nbyoung@nbyoung.com",
+          "by": "437e"
+        }
+      ],
+      "children": [
+        "bc63",
+        "77b2",
+        "6103",
+        "c6e8",
+        "595e"
+      ],
+      "defaults": [
+        {
+          "gate": "defined",
+          "marks": [
+            "agent"
+          ],
+          "acts": false,
+          "contributor": "noreply@anthropic.com",
+          "model": "claude-haiku",
+          "reviewer": "",
+          "contributor_from": "",
+          "model_from": "",
+          "reviewer_from": ""
+        },
+        {
+          "gate": "mockup",
+          "marks": [
+            "agent",
+            "reviewer"
+          ],
+          "acts": false,
+          "contributor": "noreply@anthropic.com",
+          "model": "claude-opus",
+          "reviewer": "nbyoung@nbyoung.com",
+          "contributor_from": "",
+          "model_from": "",
+          "reviewer_from": ""
+        },
+        {
+          "gate": "function",
+          "marks": [
+            "agent"
+          ],
+          "acts": false,
+          "contributor": "noreply@anthropic.com",
+          "model": "claude-sonnet",
+          "reviewer": "",
+          "contributor_from": "",
+          "model_from": "",
+          "reviewer_from": ""
+        },
+        {
+          "gate": "design",
+          "marks": [
+            "agent",
+            "reviewer"
+          ],
+          "acts": false,
+          "contributor": "noreply@anthropic.com",
+          "model": "claude-opus",
+          "reviewer": "nbyoung@nbyoung.com",
+          "contributor_from": "",
+          "model_from": "",
+          "reviewer_from": ""
+        },
+        {
+          "gate": "implementation",
+          "marks": [
+            "agent"
+          ],
+          "acts": false,
+          "contributor": "noreply@anthropic.com",
+          "model": "claude-sonnet",
+          "reviewer": "",
+          "contributor_from": "",
+          "model_from": "",
+          "reviewer_from": ""
+        },
+        {
+          "gate": "unit",
+          "marks": [
+            "agent"
+          ],
+          "acts": false,
+          "contributor": "noreply@anthropic.com",
+          "model": "claude-sonnet",
+          "reviewer": "",
+          "contributor_from": "",
+          "model_from": "",
+          "reviewer_from": ""
+        },
+        {
+          "gate": "integrate",
+          "marks": [
+            "agent"
+          ],
+          "acts": false,
+          "contributor": "noreply@anthropic.com",
+          "model": "claude-sonnet",
+          "reviewer": "",
+          "contributor_from": "",
+          "model_from": "",
+          "reviewer_from": ""
+        },
+        {
+          "gate": "validate",
+          "marks": [
+            "agent",
+            "reviewer"
+          ],
+          "acts": false,
+          "contributor": "noreply@anthropic.com",
+          "model": "claude-sonnet",
+          "reviewer": "nbyoung@nbyoung.com",
+          "contributor_from": "",
+          "model_from": "",
+          "reviewer_from": ""
+        },
+        {
+          "gate": "release",
+          "marks": [
+            "person"
+          ],
+          "acts": false,
+          "contributor": "nbyoung@nbyoung.com",
+          "model": "",
+          "reviewer": "",
+          "contributor_from": "",
+          "model_from": "",
+          "reviewer_from": ""
+        }
+      ]
+    },
+    {
+      "id": "bc63",
+      "title": "Method",
+      "assignee": "nbyoung@nbyoung.com",
+      "authorities": [
+        {
+          "email": "nbyoung@nbyoung.com",
+          "by": "bc63"
+        },
+        {
+          "email": "nbyoung@nbyoung.com",
+          "by": "437e"
+        }
+      ],
+      "children": [
+        "c2ad",
+        "2034",
+        "e3cb",
+        "fcec",
+        "ac33",
+        "9f3f",
+        "7861",
+        "7166"
+      ],
+      "defaults": [
+        {
+          "gate": "design",
+          "marks": [
+            "agent",
+            "reviewer"
+          ],
+          "acts": false,
+          "contributor": "noreply@anthropic.com",
+          "model": "claude-fable",
+          "reviewer": "nbyoung@nbyoung.com",
+          "contributor_from": "",
+          "model_from": "",
+          "reviewer_from": "437e"
+        },
+        {
+          "gate": "validate",
+          "marks": [
+            "agent",
+            "reviewer"
+          ],
+          "acts": false,
+          "contributor": "noreply@anthropic.com",
+          "model": "claude-opus",
+          "reviewer": "nbyoung@nbyoung.com",
+          "contributor_from": "",
+          "model_from": "",
+          "reviewer_from": "437e"
+        }
+      ]
+    },
+    {
+      "id": "2034",
+      "title": "Views",
+      "assignee": "nbyoung@nbyoung.com",
+      "authorities": [
+        {
+          "email": "nbyoung@nbyoung.com",
+          "by": "2034"
+        },
+        {
+          "email": "nbyoung@nbyoung.com",
+          "by": "bc63"
+        },
+        {
+          "email": "nbyoung@nbyoung.com",
+          "by": "437e"
+        }
+      ],
+      "children": [
+        "e9c6",
+        "bc86",
+        "5fe3"
+      ],
+      "defaults": []
+    },
+    {
+      "id": "bc86",
+      "title": "Markdown views",
+      "assignee": "noreply@anthropic.com",
+      "authorities": [
+        {
+          "email": "noreply@anthropic.com",
+          "by": "bc86"
+        },
+        {
+          "email": "nbyoung@nbyoung.com",
+          "by": "2034"
+        },
+        {
+          "email": "nbyoung@nbyoung.com",
+          "by": "bc63"
+        },
+        {
+          "email": "nbyoung@nbyoung.com",
+          "by": "437e"
+        }
+      ],
+      "children": [
+        "99f0",
+        "05a9",
+        "a9ce",
+        "bb7c",
+        "c74a",
+        "efff",
+        "ab8e",
+        "c545",
+        "d615",
+        "b14e"
+      ],
+      "defaults": [
+        {
+          "gate": "function",
+          "marks": [
+            "exempt"
+          ],
+          "acts": false,
+          "contributor": "",
+          "model": "",
+          "reviewer": "",
+          "contributor_from": "",
+          "model_from": "",
+          "reviewer_from": ""
+        },
+        {
+          "gate": "design",
+          "marks": [
+            "exempt"
+          ],
+          "acts": false,
+          "contributor": "",
+          "model": "",
+          "reviewer": "",
+          "contributor_from": "",
+          "model_from": "",
+          "reviewer_from": ""
+        },
+        {
+          "gate": "implementation",
+          "marks": [
+            "exempt"
+          ],
+          "acts": false,
+          "contributor": "",
+          "model": "",
+          "reviewer": "",
+          "contributor_from": "",
+          "model_from": "",
+          "reviewer_from": ""
+        },
+        {
+          "gate": "unit",
+          "marks": [
+            "exempt"
+          ],
+          "acts": false,
+          "contributor": "",
+          "model": "",
+          "reviewer": "",
+          "contributor_from": "",
+          "model_from": "",
+          "reviewer_from": ""
+        },
+        {
+          "gate": "integrate",
+          "marks": [
+            "exempt"
+          ],
+          "acts": false,
+          "contributor": "",
+          "model": "",
+          "reviewer": "",
+          "contributor_from": "",
+          "model_from": "",
+          "reviewer_from": ""
+        },
+        {
+          "gate": "validate",
+          "marks": [
+            "exempt"
+          ],
+          "acts": false,
+          "contributor": "",
+          "model": "",
+          "reviewer": "",
+          "contributor_from": "",
+          "model_from": "",
+          "reviewer_from": ""
+        },
+        {
+          "gate": "release",
+          "marks": [
+            "exempt"
+          ],
+          "acts": false,
+          "contributor": "",
+          "model": "",
+          "reviewer": "",
+          "contributor_from": "",
+          "model_from": "",
+          "reviewer_from": ""
+        }
+      ]
+    },
+    {
+      "id": "5fe3",
+      "title": "HTML views",
+      "assignee": "noreply@anthropic.com",
+      "authorities": [
+        {
+          "email": "noreply@anthropic.com",
+          "by": "5fe3"
+        },
+        {
+          "email": "nbyoung@nbyoung.com",
+          "by": "2034"
+        },
+        {
+          "email": "nbyoung@nbyoung.com",
+          "by": "bc63"
+        },
+        {
+          "email": "nbyoung@nbyoung.com",
+          "by": "437e"
+        }
+      ],
+      "children": [
+        "a6f7",
+        "7dff",
+        "b1b7",
+        "ea51",
+        "7783",
+        "5471",
+        "32e7",
+        "69eb",
+        "3194",
+        "a8b4"
+      ],
+      "defaults": [
+        {
+          "gate": "function",
+          "marks": [
+            "exempt"
+          ],
+          "acts": false,
+          "contributor": "",
+          "model": "",
+          "reviewer": "",
+          "contributor_from": "",
+          "model_from": "",
+          "reviewer_from": ""
+        },
+        {
+          "gate": "design",
+          "marks": [
+            "exempt"
+          ],
+          "acts": false,
+          "contributor": "",
+          "model": "",
+          "reviewer": "",
+          "contributor_from": "",
+          "model_from": "",
+          "reviewer_from": ""
+        },
+        {
+          "gate": "implementation",
+          "marks": [
+            "exempt"
+          ],
+          "acts": false,
+          "contributor": "",
+          "model": "",
+          "reviewer": "",
+          "contributor_from": "",
+          "model_from": "",
+          "reviewer_from": ""
+        },
+        {
+          "gate": "unit",
+          "marks": [
+            "exempt"
+          ],
+          "acts": false,
+          "contributor": "",
+          "model": "",
+          "reviewer": "",
+          "contributor_from": "",
+          "model_from": "",
+          "reviewer_from": ""
+        },
+        {
+          "gate": "integrate",
+          "marks": [
+            "exempt"
+          ],
+          "acts": false,
+          "contributor": "",
+          "model": "",
+          "reviewer": "",
+          "contributor_from": "",
+          "model_from": "",
+          "reviewer_from": ""
+        },
+        {
+          "gate": "validate",
+          "marks": [
+            "exempt"
+          ],
+          "acts": false,
+          "contributor": "",
+          "model": "",
+          "reviewer": "",
+          "contributor_from": "",
+          "model_from": "",
+          "reviewer_from": ""
+        },
+        {
+          "gate": "release",
+          "marks": [
+            "exempt"
+          ],
+          "acts": false,
+          "contributor": "",
+          "model": "",
+          "reviewer": "",
+          "contributor_from": "",
+          "model_from": "",
+          "reviewer_from": ""
+        }
+      ]
+    }
+  ],
+  "deciding": [
+    {
+      "commit": {
+        "hash": "8eb0cae",
+        "subject": "",
+        "date": "2026-09-30",
+        "author": {
+          "email": "nbyoung@nbyoung.com"
+        },
+        "committer": {
+          "email": "nbyoung@nbyoung.com"
+        }
+      },
+      "way": "merge",
+      "merged": "320cf2b",
+      "by": "both",
+      "tasks": [
+        "437e",
+        "bc63"
+      ]
+    },
+    {
+      "commit": {
+        "hash": "16fe62f",
+        "subject": "",
+        "date": "2026-09-30",
+        "author": {
+          "email": "nbyoung@nbyoung.com"
+        },
+        "committer": {
+          "email": "nbyoung@nbyoung.com"
+        }
+      },
+      "way": "merge",
+      "merged": "018814a",
+      "by": "both",
+      "tasks": [
+        "ac33"
+      ]
+    },
+    {
+      "commit": {
+        "hash": "8d8b070",
+        "subject": "",
+        "date": "2026-09-30",
+        "author": {
+          "email": "nbyoung@nbyoung.com"
+        },
+        "committer": {
+          "email": "nbyoung@nbyoung.com"
+        }
+      },
+      "way": "merge",
+      "merged": "9d9fb88",
+      "by": "both",
+      "tasks": [
+        "7166"
+      ]
+    },
+    {
+      "commit": {
+        "hash": "6b6c99a",
+        "subject": "",
+        "date": "2026-09-29",
+        "author": {
+          "email": "nbyoung@nbyoung.com"
+        },
+        "committer": {
+          "email": "nbyoung@nbyoung.com"
+        }
+      },
+      "way": "change",
+      "merged": "",
+      "by": "both",
+      "tasks": [
+        "c2ad",
+        "2034",
+        "e9c6",
+        "bc86",
+        "99f0",
+        "05a9",
+        "a9ce",
+        "bb7c",
+        "c74a",
+        "efff",
+        "ab8e",
+        "c545",
+        "d615",
+        "b14e",
+        "5fe3",
+        "a6f7",
+        "7dff",
+        "b1b7",
+        "ea51",
+        "7783",
+        "5471",
+        "32e7",
+        "69eb",
+        "3194",
+        "a8b4",
+        "e3cb",
+        "fcec",
+        "9f3f",
+        "7861",
+        "77b2",
+        "6103",
+        "c6e8",
+        "595e"
+      ]
+    }
+  ],
+  "commands": [
+    {
+      "text": "git log --first-parent -1 --format='%h %as %ae %ce %p' main -- .tableaux/tasks/437e.yaml",
+      "comment": ""
+    },
+    {
+      "text": "git log --first-parent -1 --format='%h %as %ae %ce %p' -E --grep='^Authorised: 437e$' main",
+      "comment": ""
+    }
+  ]
+}
