@@ -1,3 +1,3 @@
-gate: implementation
+gate: unit
 state: nominal
-note: The authority and assignment renderers, their view types, fixtures, golden files and tests T1 to T10 stand under internal/render; the unit gate runs go test over them, the integrate gate regenerates the fixtures from tablo's views, and the Read commands (5ca9) wait to call the renderers
+note: T1 to T10 pass under go test ./internal/render/... with no skip and no cached run, and the five checks and go test -race pass on the whole worktree; T8 and T6 read the run fold and the collapse as decisions 1 and 3 of the design amend them, so the golden file of the person detail shows five alike rows where the draft folds them; no prescribed test waits for a later gate; the integrate gate regenerates the fixtures from tablo view
