@@ -57,6 +57,8 @@ Packages under `internal/` stay private to this module. The actions behind the
 write commands are the exception in prospect: `tablotui` reuses them, so the
 Write commands task designs them as an exported package.
 
+A prototype under `prototype/` is the function gate's demonstration. It goes when its task records `implementation`: the design's account of what it kept from the prototype and `git log -- prototype/<id>` keep what it showed, and the trunk builds what it ships.
+
 ## Build and test
 
 Development needs Go at the version `go.mod` names, or newer; the toolchain
