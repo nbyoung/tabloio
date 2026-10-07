@@ -1,0 +1,48 @@
+# Work-blockage tree
+
+**What waits on what?** Tableaux tooling · ref `main` at `3cdae52`, 2026-10-05 · level provenance
+
+Legend: `tabloio gates`.
+
+2 causes: 1 unmet requirement, 0 statuses off nominal, 1 review outstanding, 0 authorisations outstanding, 0 snapshots not advanced.
+
+| Cause | Who acts | Holds |
+|---|---|--:|
+| `5471` Work-blockage tree view in Html awaits review at 📌 mockup | 👀 nbyoung@nbyoung.com reviews | 4 |
+| `efff` Work-blockage tree view in Markdown has not passed 📌 mockup | 🤖 noreply@anthropic.com contributes | 3 |
+
+1. **`5471` Work-blockage tree view in Html awaits review at 📌 mockup** · 👀 nbyoung@nbyoung.com reviews · holds 4
+   - Action: nbyoung@nbyoung.com accepts the mockup with a commit that carries `Reviewed: 5471 mockup`.
+   - `5471` Work-blockage tree view in Html at 📌 mockup: the cause holds the task itself.
+     - `5fe3` **HTML views** at 📌 mockup: the parent of `5471`.
+       - `c6e8` tablotui: terminal user interface at 📐 design: requires `5fe3` at 📌 mockup, The HTML mockups that fix the disclosure levels. Also under cause 2.
+       - `595e` tableaud: local daemon and HTML at 📐 design: requires `5fe3` at 📌 mockup, The HTML mockups it reproduces.
+   - **The status.** `.tableaux/status/5471.yaml` reads `gate: defined`, `state: nominal`, `reason: review`.
+   - **The junction.** `5471` at mockup: contributor noreply@anthropic.com, model `claude-opus`, reviewer nbyoung@nbyoung.com, all three from `437e`.
+   - **The review.** No commit carries `Reviewed: 5471 mockup`.
+   - **The deciding commits.** `6b6c99a` Plan the Tableaux tooling, 2026-09-29, author and committer nbyoung@nbyoung.com.
+   ```
+   tabloio review 5471 mockup
+   git commit --allow-empty --trailer 'Reviewed: 5471 mockup' -m 'Accept the work-blockage tree mockup in HTML'
+   ```
+2. **`efff` Work-blockage tree view in Markdown has not passed 📌 mockup** · 🤖 noreply@anthropic.com contributes · holds 3
+   - Action: noreply@anthropic.com draws the mockup and hands it off with the reason `review`.
+   - `bc86` **Markdown views** at 📌 mockup: the parent of `efff`.
+     - `6103` tabloio: command line, output and input at 📐 design: requires `bc86` at 📌 mockup, The Markdown mockups it reproduces.
+     - `c6e8` tablotui: terminal user interface at 📐 design: requires `bc86` at 📌 mockup, The Markdown mockups that fix the textual layout. Also under cause 1.
+   - **The status.** `.tableaux/status/efff.yaml` reads `gate: defined`, `state: nominal`.
+   ```
+   tabloio queue --person noreply@anthropic.com --brief efff mockup
+   ```
+
+## Next: 1 requirement not yet due
+
+- `77b2` **tablo: backend library and plumbing** stands at 📝 defined 🟢 nominal; next 📌 mockup.
+  - 🧱 implementation: requires `e3cb` Schema files at 🧱 implementation, The schema files it embeds: met, not yet due.
+
+```
+git ls-tree 3cdae52 subprojects/ # the four pins
+tabloio blockage --ref 3cdae52 --level provenance # this rendering
+```
+
+Command: `tabloio blockage --ref 3cdae52 --level provenance`
