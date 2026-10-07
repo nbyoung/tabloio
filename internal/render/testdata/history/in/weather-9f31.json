@@ -1,0 +1,387 @@
+{
+  "level": "detail",
+  "project": {
+    "id": "a1c0",
+    "title": "Weather station"
+  },
+  "ref": {
+    "name": "main",
+    "commit": "edb30d2baa5ea3c7e3fb8eef8ac6cce6e145221a",
+    "date": "2026-09-28",
+    "on_trunk": true
+  },
+  "params": {
+    "task": "9f31"
+  },
+  "legend": {
+    "gates": [
+      {
+        "key": "undefined",
+        "symbol": "❔",
+        "name": "Undefined",
+        "criteria": "No one has started work on the definition"
+      },
+      {
+        "key": "defined",
+        "symbol": "📝",
+        "name": "Defined",
+        "criteria": "Title, description, assignee and references exist"
+      },
+      {
+        "key": "mockup",
+        "symbol": "📌",
+        "name": "Mockup",
+        "criteria": "A non-technical mockup of the outcome exists"
+      },
+      {
+        "key": "function",
+        "symbol": "⚙️",
+        "name": "Functional prototype",
+        "criteria": "A technical demonstration of function exists"
+      },
+      {
+        "key": "performance",
+        "symbol": "⚡",
+        "name": "Performance prototype",
+        "criteria": "Target performance shown in the deliverable's technology"
+      },
+      {
+        "key": "reliability",
+        "symbol": "⚓",
+        "name": "Reliability prototype",
+        "criteria": "Target reliability shown in the fundamental technology"
+      },
+      {
+        "key": "design",
+        "symbol": "📐",
+        "name": "Design",
+        "criteria": "A model and sufficient tests exist"
+      },
+      {
+        "key": "implementation",
+        "symbol": "🛠️",
+        "name": "Implementation",
+        "criteria": "Artifacts suffice for unit, integration and validation tests"
+      },
+      {
+        "key": "unit",
+        "symbol": "🧩",
+        "name": "Unit test",
+        "criteria": "All prescribed tests pass"
+      },
+      {
+        "key": "integrate",
+        "symbol": "🖼️",
+        "name": "Integration",
+        "criteria": "Assembled with neighbouring components"
+      },
+      {
+        "key": "validate",
+        "symbol": "🌍",
+        "name": "Validation",
+        "criteria": "Passes user and field tests"
+      },
+      {
+        "key": "release",
+        "symbol": "🚀",
+        "name": "Release",
+        "criteria": "All variants documented and approved"
+      }
+    ],
+    "states": [
+      {
+        "key": "undefined",
+        "symbol": "⚪",
+        "severity": 0,
+        "synopsis": "The work has not yet been defined"
+      },
+      {
+        "key": "nominal",
+        "symbol": "🟢",
+        "severity": 1,
+        "synopsis": "The work is proceeding as expected"
+      },
+      {
+        "key": "at_risk",
+        "symbol": "🟡",
+        "severity": 2,
+        "synopsis": "The work is at risk of stalling"
+      },
+      {
+        "key": "stalled",
+        "symbol": "🔴",
+        "severity": 3,
+        "synopsis": "Practically all progress has stalled"
+      },
+      {
+        "key": "complete",
+        "symbol": "✅",
+        "severity": 0,
+        "synopsis": "All deliverables satisfy their requirements"
+      }
+    ],
+    "reasons": [
+      {
+        "key": "overloaded",
+        "symbol": "🪫",
+        "synopsis": "The assigned resource is overloaded"
+      },
+      {
+        "key": "blocked",
+        "symbol": "⛔",
+        "synopsis": "An external resource is unavailable"
+      },
+      {
+        "key": "review",
+        "symbol": "👓",
+        "synopsis": "The work waits for its reviewer",
+        "reserved": true
+      }
+    ],
+    "marks": [
+      {
+        "key": "person",
+        "symbol": "🧑",
+        "meaning": "A person contributes",
+        "junction": "Plain; the contributor is a person"
+      },
+      {
+        "key": "agent",
+        "symbol": "🤖",
+        "meaning": "An agent contributes",
+        "junction": "Plain; the junction states a `model`"
+      },
+      {
+        "key": "reviewer",
+        "symbol": "👀",
+        "meaning": "A reviewer accepts",
+        "junction": "Plain; the reviewer accepts the work at the gate"
+      },
+      {
+        "key": "subproject",
+        "symbol": "🪆",
+        "meaning": "A subproject does the work",
+        "junction": "Recursive; another Tableaux project does the work"
+      },
+      {
+        "key": "exempt",
+        "symbol": "—",
+        "meaning": "The gate does not apply",
+        "junction": "Not applicable; the entry exempts the task from the gate"
+      }
+    ]
+  },
+  "subject": {
+    "id": "9f31",
+    "title": "Sensor board"
+  },
+  "lines": [
+    {
+      "date": "2026-09-18",
+      "by": "ada@example.org",
+      "kinds": [
+        "task"
+      ],
+      "task": {
+        "id": "9f31",
+        "title": "Sensor board"
+      },
+      "after": {
+        "gate": "undefined",
+        "state": "undefined"
+      },
+      "effect": "proposed"
+    },
+    {
+      "date": "2026-09-19",
+      "by": "ben@example.org",
+      "kinds": [
+        "authorised"
+      ],
+      "task": {
+        "id": "9f31",
+        "title": "Sensor board"
+      },
+      "after": {
+        "gate": "undefined",
+        "state": "undefined"
+      },
+      "unchanged": true,
+      "effect": "authorised-merge"
+    },
+    {
+      "date": "2026-09-22",
+      "by": "ada@example.org",
+      "kinds": [
+        "status"
+      ],
+      "task": {
+        "id": "9f31",
+        "title": "Sensor board"
+      },
+      "status": {
+        "gate": "mockup",
+        "state": "nominal"
+      },
+      "after": {
+        "gate": "mockup",
+        "state": "nominal"
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "by": "ben@example.org",
+      "kinds": [
+        "reviewed"
+      ],
+      "task": {
+        "id": "9f31",
+        "title": "Sensor board"
+      },
+      "gate": "mockup",
+      "after": {
+        "gate": "mockup",
+        "state": "nominal"
+      },
+      "unchanged": true,
+      "effect": "accepts"
+    },
+    {
+      "date": "2026-09-25",
+      "by": "ada@example.org",
+      "kinds": [
+        "status"
+      ],
+      "task": {
+        "id": "9f31",
+        "title": "Sensor board"
+      },
+      "status": {
+        "gate": "function",
+        "state": "stalled",
+        "reason": "blocked",
+        "note": "Barometer ICs on 14-week backorder"
+      },
+      "after": {
+        "gate": "function",
+        "state": "stalled",
+        "reason": "blocked",
+        "note": "Barometer ICs on 14-week backorder"
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "by": "ada@example.org",
+      "kinds": [
+        "reaffirmed"
+      ],
+      "task": {
+        "id": "9f31",
+        "title": "Sensor board"
+      },
+      "after": {
+        "gate": "function",
+        "state": "stalled",
+        "reason": "blocked",
+        "note": "Barometer ICs on 14-week backorder"
+      },
+      "unchanged": true
+    }
+  ],
+  "events": 6,
+  "commits": 6,
+  "kinds": [
+    {
+      "kind": "task",
+      "count": 1
+    },
+    {
+      "kind": "authorised",
+      "count": 1
+    },
+    {
+      "kind": "status",
+      "count": 2
+    },
+    {
+      "kind": "reaffirmed",
+      "count": 1
+    },
+    {
+      "kind": "reviewed",
+      "count": 1
+    },
+    {
+      "kind": "pin",
+      "count": 0
+    }
+  ],
+  "days": [
+    {
+      "date": "2026-09-18",
+      "events": 1,
+      "commits": 1,
+      "kinds": [
+        {
+          "kind": "task",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-19",
+      "events": 1,
+      "commits": 1,
+      "kinds": [
+        {
+          "kind": "authorised",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-22",
+      "events": 1,
+      "commits": 1,
+      "kinds": [
+        {
+          "kind": "status",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "events": 1,
+      "commits": 1,
+      "kinds": [
+        {
+          "kind": "reviewed",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-25",
+      "events": 1,
+      "commits": 1,
+      "kinds": [
+        {
+          "kind": "status",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "events": 1,
+      "commits": 1,
+      "kinds": [
+        {
+          "kind": "reaffirmed",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}
