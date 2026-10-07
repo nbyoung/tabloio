@@ -1,6 +1,8 @@
 # Model e0f7: the text writer
 
-This draft holds the Go of `internal/render/text` in full, as the trial of [design e0f7](../e0f7.md) compiles it: three files, 621 lines with their comments. The design's prose states the rules; this draft is their exact form, so that the implementation takes no decision. The golden drafts beside it are this code's output. The implementation lands these files as they stand and adds the tests of the design.
+This draft holds the Go of `internal/render/text` in full, as the trial of [design e0f7](../e0f7.md) compiles it: three files, 580 lines with their comments. The design's prose states the rules; this draft is their exact form, so that the implementation takes no decision. The golden drafts beside it are this code's output. The implementation lands these files as they stand and adds the tests of the design.
+
+The writer holds one rule for the variation selector and no option for it (decision 1 of the design, as the owner rules on 2026-10-07).
 
 ## `text.go`
 
@@ -13,10 +15,13 @@ The options, `Write`, the blocks and the spans.
 // ends in a space, and the output ends in one newline. The output holds no
 // control character but \n and no escape sequence. No line is wider than
 // the width, but for the lines of a Pre, which print as given.
+//
+// The writer offers no option for the variation selector U+FE0F: outside a
+// Pre it writes a code point one cell wide without a selector after it, and
+// counts the cells of what it writes.
 package text
 
 import (
-	"fmt"
 	"io"
 	"strconv"
 	"strings"
@@ -24,34 +29,6 @@ import (
 
 	"github.com/nbyoung/tabloio/internal/render/doc"
 )
-
-// Selector is the policy for U+FE0F, the variation selector that asks for
-// the emoji form of a symbol, where it follows a code point one cell wide.
-type Selector int
-
-// The policies.
-const (
-	Strip Selector = iota // remove the selector: the symbol takes one cell
-	Keep                  // keep the selector and count the pair as two cells
-)
-
-// ParseSelector reads "strip" or "keep".
-func ParseSelector(s string) (Selector, error) {
-	switch s {
-	case "strip":
-		return Strip, nil
-	case "keep":
-		return Keep, nil
-	}
-	return Strip, fmt.Errorf("unknown selector policy %q", s)
-}
-
-func (s Selector) String() string {
-	if s == Keep {
-		return "keep"
-	}
-	return "strip"
-}
 
 // The widths, in cells.
 const (
@@ -65,15 +42,10 @@ const (
 	preIndent = "    " // before each line of a Pre
 )
 
-// Options holds the width and the selector policy. The zero value is 80
-// cells and Strip.
+// Options holds the width. The zero value is 80 cells.
 type Options struct {
-	Width    int // cells per line; 0 is DefaultWidth, and less than MinWidth is MinWidth
-	Selector Selector
+	Width int // cells per line; 0 is DefaultWidth, and less than MinWidth is MinWidth
 }
-
-// writer draws blocks under one measure.
-type writer struct{ measure }
 
 // Write prints d to w in one call to w.Write, so a failing writer sees the
 // whole text at once and its error passes through unwrapped. An empty
@@ -84,10 +56,9 @@ func Write(w io.Writer, d doc.Doc, o Options) error {
 		width = DefaultWidth
 	}
 	width = max(width, MinWidth)
-	x := writer{measure{o.Selector}}
 	var parts []string
 	for _, b := range d.Blocks {
-		if s := strings.Join(x.block(b, width), "\n"); s != "" {
+		if s := strings.Join(block(b, width), "\n"); s != "" {
 			parts = append(parts, s)
 		}
 	}
@@ -103,26 +74,26 @@ func Write(w io.Writer, d doc.Doc, o Options) error {
 }
 
 // block returns the lines of one block at w cells, without line ends.
-func (x writer) block(b doc.Block, w int) []string {
+func block(b doc.Block, w int) []string {
 	switch b := b.(type) {
 	case doc.Heading:
-		return x.heading(b, w)
+		return heading(b, w)
 	case doc.Para:
-		return x.wrap(x.flat(b.Text), w)
+		return wrap(flat(b.Text), w)
 	case doc.Table:
-		return x.table(b, w)
+		return table(b, w)
 	case doc.List:
-		return x.list(b, w)
+		return list(b, w)
 	case doc.Pre:
-		return x.pre(b)
+		return pre(b)
 	}
 	return nil
 }
 
 // heading prints the text and, under it, a rule as wide as its widest line:
 // ═ for level 1, ─ for level 2, · below.
-func (x writer) heading(h doc.Heading, w int) []string {
-	lines := x.wrap(x.flat(h.Text), w)
+func heading(h doc.Heading, w int) []string {
+	lines := wrap(flat(h.Text), w)
 	if len(lines) == 0 {
 		return nil
 	}
@@ -135,14 +106,14 @@ func (x writer) heading(h doc.Heading, w int) []string {
 	}
 	n := 0
 	for _, ln := range lines {
-		n = max(n, x.width(ln))
+		n = max(n, cells(ln))
 	}
 	return append(lines, strings.Repeat(rule, n))
 }
 
 // list prints each item after "- " or "<n>. ", its further lines and its
 // nested blocks indented by the marker's width.
-func (x writer) list(l doc.List, w int) []string {
+func list(l doc.List, w int) []string {
 	var lines []string
 	for i, it := range l.Items {
 		marker := "- "
@@ -151,7 +122,7 @@ func (x writer) list(l doc.List, w int) []string {
 		}
 		pad := strings.Repeat(" ", len(marker))
 		inner := max(w-len(marker), minText)
-		text := x.wrap(x.flat(it.Text), inner)
+		text := wrap(flat(it.Text), inner)
 		if len(text) == 0 {
 			text = []string{""}
 		}
@@ -163,7 +134,7 @@ func (x writer) list(l doc.List, w int) []string {
 			}
 		}
 		for _, b := range it.Blocks {
-			for _, ln := range x.block(b, inner) {
+			for _, ln := range block(b, inner) {
 				if ln != "" {
 					ln = pad + ln
 				}
@@ -176,10 +147,10 @@ func (x writer) list(l doc.List, w int) []string {
 
 // pre prints each line as given after four spaces, without its trailing
 // spaces; an empty line stays empty. No line wraps.
-func (x writer) pre(p doc.Pre) []string {
+func pre(p doc.Pre) []string {
 	var lines []string
 	for _, ln := range p.Lines {
-		ln = strings.TrimRight(x.cleanPre(ln), " ")
+		ln = strings.TrimRight(cleanPre(ln), " ")
 		if ln != "" {
 			ln = preIndent + ln
 		}
@@ -190,7 +161,7 @@ func (x writer) pre(p doc.Pre) []string {
 
 // cleanPre keeps a line as given but for its control characters: a tab
 // prints as a space and any other as U+FFFD.
-func (x writer) cleanPre(s string) string {
+func cleanPre(s string) string {
 	var b strings.Builder
 	for _, r := range s {
 		switch {
@@ -207,8 +178,8 @@ func (x writer) cleanPre(s string) string {
 
 // flat prints a run of spans as one line of plain text, cleaned and with
 // no space at either end.
-func (x writer) flat(xs []doc.Inline) string {
-	return strings.TrimSpace(x.clean(spans(xs)))
+func flat(xs []doc.Inline) string {
+	return strings.TrimSpace(clean(spans(xs)))
 }
 
 // spans prints a run of spans: Text, Code and Symbol as given, Strong
@@ -267,7 +238,7 @@ func spaces(s string) string {
 
 ## `width.go`
 
-The measure: cells, the selector policy, units and wrapping.
+The measure: cells, the one rule for U+FE0F, units and wrapping.
 
 ```go
 package text
@@ -279,10 +250,8 @@ import (
 	"golang.org/x/text/width"
 )
 
-const selector = '️'
-
-// measure counts terminal cells under one selector policy.
-type measure struct{ sel Selector }
+// selector is U+FE0F, the variation selector that asks for the emoji form.
+const selector = '\uFE0F'
 
 // runeWidth is the number of cells one code point takes: 0, 1 or 2.
 func runeWidth(r rune) int {
@@ -299,34 +268,26 @@ func runeWidth(r rune) int {
 	return 1
 }
 
-// width is the number of cells s takes.
-func (m measure) width(s string) int {
-	n, prev := 0, 0
+// cells is the number of cells s takes: the sum over its code points.
+func cells(s string) int {
+	n := 0
 	for _, r := range s {
-		w := runeWidth(r)
-		if r == selector && m.sel == Keep && prev == 1 {
-			w = 1
-		}
-		n += w
-		if r != selector {
-			prev = runeWidth(r)
-		} else {
-			prev = 0
-		}
+		n += runeWidth(r)
 	}
 	return n
 }
 
-// clean replaces each control character with U+FFFD and, under Strip,
-// removes each U+FE0F that follows a code point one cell wide.
-func (m measure) clean(s string) string {
+// clean replaces each control character with U+FFFD and removes each U+FE0F
+// that follows a code point one cell wide, so that the symbol prints as the
+// plain character and takes the one cell the measure counts.
+func clean(s string) string {
 	var b strings.Builder
 	prev := 0
 	for _, r := range s {
 		if unicode.IsControl(r) {
 			r = unicode.ReplacementChar
 		}
-		if r == selector && m.sel == Strip && prev == 1 {
+		if r == selector && prev == 1 {
 			prev = 0
 			continue
 		}
@@ -348,14 +309,14 @@ func units(s string) []string {
 		} else {
 			out = append(out, string(r))
 		}
-		joined = r == '‍'
+		joined = r == '\u200D'
 	}
 	return out
 }
 
 // wrap fills lines of at most w cells with the words of s, which single
 // spaces separate. A word wider than w breaks between units.
-func (m measure) wrap(s string, w int) []string {
+func wrap(s string, w int) []string {
 	if s == "" {
 		return nil
 	}
@@ -367,7 +328,7 @@ func (m measure) wrap(s string, w int) []string {
 		line, used = "", 0
 	}
 	for _, word := range strings.Split(s, " ") {
-		ww := m.width(word)
+		ww := cells(word)
 		if used > 0 && used+1+ww <= w {
 			line += " " + word
 			used += 1 + ww
@@ -381,7 +342,7 @@ func (m measure) wrap(s string, w int) []string {
 			continue
 		}
 		for _, u := range units(word) {
-			uw := m.width(u)
+			uw := cells(u)
 			if used > 0 && used+uw > w {
 				flush()
 			}
@@ -396,10 +357,10 @@ func (m measure) wrap(s string, w int) []string {
 }
 
 // widestWord is the width of the widest word of s.
-func (m measure) widestWord(s string) int {
+func widestWord(s string) int {
 	n := 0
 	for _, word := range strings.Split(s, " ") {
-		n = max(n, m.width(word))
+		n = max(n, cells(word))
 	}
 	return n
 }
@@ -427,7 +388,7 @@ type tcell struct {
 // table draws t in the first form that fits w: a box with every column at
 // its natural width; a tight box, where centred columns lose their padding
 // and the widest columns narrow to their floors; or the stacked form.
-func (x writer) table(t doc.Table, w int) []string {
+func table(t doc.Table, w int) []string {
 	n := len(t.Head)
 	for _, r := range t.Rows {
 		n = max(n, len(r))
@@ -438,7 +399,7 @@ func (x writer) table(t doc.Table, w int) []string {
 	conv := func(cells []doc.Cell) []tcell {
 		out := make([]tcell, n)
 		for i, c := range cells {
-			out[i] = tcell{indent: 2 * max(c.Indent, 0), text: x.flat(c.Text)}
+			out[i] = tcell{indent: 2 * max(c.Indent, 0), text: flat(c.Text)}
 		}
 		return out
 	}
@@ -456,8 +417,8 @@ func (x writer) table(t doc.Table, w int) []string {
 	}
 	for _, r := range append([][]tcell{head}, rows...) {
 		for i, c := range r {
-			nat[i] = max(nat[i], c.indent+x.width(c.text))
-			floor[i] = max(floor[i], c.indent+min(x.widestWord(c.text), wordCap))
+			nat[i] = max(nat[i], c.indent+cells(c.text))
+			floor[i] = max(floor[i], c.indent+min(widestWord(c.text), wordCap))
 		}
 	}
 	// overhead is the cells the bars and the padding take.
@@ -471,7 +432,7 @@ func (x writer) table(t doc.Table, w int) []string {
 		return over
 	}
 	if sum(nat)+overhead(false) <= w {
-		return x.boxed(head, rows, align, nat, false)
+		return boxed(head, rows, align, nat, false)
 	}
 	if over := overhead(true); sum(floor)+over <= w {
 		widths := append([]int(nil), nat...)
@@ -484,9 +445,9 @@ func (x writer) table(t doc.Table, w int) []string {
 			}
 			widths[best]--
 		}
-		return x.boxed(head, rows, align, widths, true)
+		return boxed(head, rows, align, widths, true)
 	}
-	return x.stacked(head, rows, align, w)
+	return stacked(head, rows, align, w)
 }
 
 // sum adds the widths.
@@ -500,7 +461,7 @@ func sum(xs []int) int {
 
 // boxed draws the table as a box. A cell wraps inside its column, and a
 // row is as tall as its tallest cell.
-func (x writer) boxed(head []tcell, rows [][]tcell, align []doc.Align, widths []int, tight bool) []string {
+func boxed(head []tcell, rows [][]tcell, align []doc.Align, widths []int, tight bool) []string {
 	pad := make([]string, len(widths))
 	for i := range widths {
 		if !tight || align[i] != doc.Centre {
@@ -518,7 +479,7 @@ func (x writer) boxed(head []tcell, rows [][]tcell, align []doc.Align, widths []
 		cols := make([][]string, len(widths))
 		height := 1
 		for i, c := range r {
-			for _, ln := range x.wrap(c.text, widths[i]-c.indent) {
+			for _, ln := range wrap(c.text, widths[i]-c.indent) {
 				cols[i] = append(cols[i], strings.Repeat(" ", c.indent)+ln)
 			}
 			height = max(height, len(cols[i]))
@@ -532,7 +493,7 @@ func (x writer) boxed(head []tcell, rows [][]tcell, align []doc.Align, widths []
 				if k < len(cols[i]) {
 					s = cols[i][k]
 				}
-				gap := w - x.width(s)
+				gap := w - cells(s)
 				left := 0
 				switch align[i] {
 				case doc.Centre:
@@ -553,7 +514,7 @@ func (x writer) boxed(head []tcell, rows [][]tcell, align []doc.Align, widths []
 	for i, r := range rows {
 		body[i] = draw(r)
 		tall = tall || len(body[i]) > 1
-		if r[0].text == "" || len(x.wrap(r[0].text, widths[0]-r[0].indent)) > 1 {
+		if r[0].text == "" || len(wrap(r[0].text, widths[0]-r[0].indent)) > 1 {
 			told = false
 		}
 	}
@@ -573,7 +534,7 @@ func (x writer) boxed(head []tcell, rows [][]tcell, align []doc.Align, widths []
 // names the columns, joined by " · ". Each row follows: its first cell,
 // then one line per further cell that is not empty, as "<head>: <cell>".
 // A run of centred columns shares one line.
-func (x writer) stacked(head []tcell, rows [][]tcell, align []doc.Align, w int) []string {
+func stacked(head []tcell, rows [][]tcell, align []doc.Align, w int) []string {
 	rule := strings.Repeat("─", w)
 	lines := []string{rule}
 	var names []string
@@ -583,7 +544,7 @@ func (x writer) stacked(head []tcell, rows [][]tcell, align []doc.Align, w int) 
 		}
 	}
 	if len(names) > 0 {
-		lines = append(append(lines, x.fill(names, w)...), rule)
+		lines = append(append(lines, fill(names, w)...), rule)
 	}
 	pair := func(i int, c tcell) string {
 		if head[i].text == "" {
@@ -593,7 +554,7 @@ func (x writer) stacked(head []tcell, rows [][]tcell, align []doc.Align, w int) 
 	}
 	for _, r := range rows {
 		first := r[0]
-		for _, ln := range x.wrap(first.text, max(w-first.indent, minText)) {
+		for _, ln := range wrap(first.text, max(w-first.indent, minText)) {
 			lines = append(lines, strings.Repeat(" ", first.indent)+ln)
 		}
 		for i := 1; i < len(r); i++ {
@@ -607,7 +568,7 @@ func (x writer) stacked(head []tcell, rows [][]tcell, align []doc.Align, w int) 
 					pairs = append(pairs, pair(i, r[i]))
 				}
 			}
-			for k, ln := range x.fill(pairs, w-4) {
+			for k, ln := range fill(pairs, w-4) {
 				if k == 0 {
 					lines = append(lines, "  "+ln)
 				} else {
@@ -622,7 +583,7 @@ func (x writer) stacked(head []tcell, rows [][]tcell, align []doc.Align, w int) 
 
 // fill joins pairs by " · " into lines of at most w cells and breaks
 // between pairs; a pair wider than w wraps by its words.
-func (x writer) fill(pairs []string, w int) []string {
+func fill(pairs []string, w int) []string {
 	if len(pairs) == 0 {
 		return nil
 	}
@@ -633,13 +594,13 @@ func (x writer) fill(pairs []string, w int) []string {
 		switch {
 		case line == "":
 			line = p
-		case x.width(line)+x.width(sep)+x.width(p) <= w:
+		case cells(line)+cells(sep)+cells(p) <= w:
 			line += sep + p
 		default:
-			lines = append(lines, x.wrap(line, w)...)
+			lines = append(lines, wrap(line, w)...)
 			line = p
 		}
 	}
-	return append(lines, x.wrap(line, w)...)
+	return append(lines, wrap(line, w)...)
 }
 ```

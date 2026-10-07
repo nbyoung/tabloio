@@ -1,61 +1,61 @@
-kind	symbol	code points	strip writes	strip cells	keep cells
-gate	❔	U+2754	U+2754	2	2
-gate	📝	U+1F4DD	U+1F4DD	2	2
-gate	📌	U+1F4CC	U+1F4CC	2	2
-gate	🔧	U+1F527	U+1F527	2	2
-gate	⚙️	U+2699 U+FE0F	U+2699	1	2
-gate	⚡	U+26A1	U+26A1	2	2
-gate	⚓	U+2693	U+2693	2	2
-gate	📐	U+1F4D0	U+1F4D0	2	2
-gate	🧱	U+1F9F1	U+1F9F1	2	2
-gate	🛠️	U+1F6E0 U+FE0F	U+1F6E0	1	2
-gate	📏	U+1F4CF	U+1F4CF	2	2
-gate	🧩	U+1F9E9	U+1F9E9	2	2
-gate	🔗	U+1F517	U+1F517	2	2
-gate	🖼️	U+1F5BC U+FE0F	U+1F5BC	1	2
-gate	🌍	U+1F30D	U+1F30D	2	2
-gate	🚀	U+1F680	U+1F680	2	2
-state	⚪	U+26AA	U+26AA	2	2
-state	🟢	U+1F7E2	U+1F7E2	2	2
-state	🟡	U+1F7E1	U+1F7E1	2	2
-state	🔴	U+1F534	U+1F534	2	2
-state	✅	U+2705	U+2705	2	2
-reason	🪫	U+1FAAB	U+1FAAB	2	2
-reason	⛔	U+26D4	U+26D4	2	2
-reason	👓	U+1F453	U+1F453	2	2
-mark	🧑	U+1F9D1	U+1F9D1	2	2
-mark	🤖	U+1F916	U+1F916	2	2
-mark	👀	U+1F440	U+1F440	2	2
-mark	🪆	U+1FA86	U+1FA86	2	2
-mark	—	U+2014	U+2014	1	1
-sign	·	U+00B7	U+00B7	1	1
-sign	…	U+2026	U+2026	1	1
-sign	→	U+2192	U+2192	1	1
-sign	›	U+203A	U+203A	1	1
-sign	×	U+00D7	U+00D7	1	1
-sign	*	U+002A	U+002A	1	1
-sign	-	U+002D	U+002D	1	1
-sign	<	U+003C	U+003C	1	1
-sign	>	U+003E	U+003E	1	1
-sign	:	U+003A	U+003A	1	1
-sign	[	U+005B	U+005B	1	1
-sign	]	U+005D	U+005D	1	1
-drawing	─	U+2500	U+2500	1	1
-drawing	│	U+2502	U+2502	1	1
-drawing	┌	U+250C	U+250C	1	1
-drawing	┬	U+252C	U+252C	1	1
-drawing	┐	U+2510	U+2510	1	1
-drawing	├	U+251C	U+251C	1	1
-drawing	┼	U+253C	U+253C	1	1
-drawing	┤	U+2524	U+2524	1	1
-drawing	└	U+2514	U+2514	1	1
-drawing	┴	U+2534	U+2534	1	1
-drawing	┘	U+2518	U+2518	1	1
-drawing	═	U+2550	U+2550	1	1
-other	�	U+FFFD	U+FFFD	1	1
-other	é	U+00E9	U+00E9	1	1
-other	é	U+0065 U+0301	U+0065 U+0301	1	1
-other	日	U+65E5	U+65E5	2	2
-other	👩‍💻	U+1F469 U+200D U+1F4BB	U+1F469 U+200D U+1F4BB	4	4
-other	🇫🇷	U+1F1EB U+1F1F7	U+1F1EB U+1F1F7	2	2
-other	⚡️	U+26A1 U+FE0F	U+26A1 U+FE0F	2	2
+kind	symbol	code points	writes	cells
+gate	❔	U+2754	U+2754	2
+gate	📝	U+1F4DD	U+1F4DD	2
+gate	📌	U+1F4CC	U+1F4CC	2
+gate	🔧	U+1F527	U+1F527	2
+gate	⚡	U+26A1	U+26A1	2
+gate	⚓	U+2693	U+2693	2
+gate	📐	U+1F4D0	U+1F4D0	2
+gate	🧱	U+1F9F1	U+1F9F1	2
+gate	📏	U+1F4CF	U+1F4CF	2
+gate	🔗	U+1F517	U+1F517	2
+gate	🌍	U+1F30D	U+1F30D	2
+gate	🚀	U+1F680	U+1F680	2
+former gate	⚙️	U+2699 U+FE0F	U+2699	1
+former gate	🛠️	U+1F6E0 U+FE0F	U+1F6E0	1
+former gate	🧩	U+1F9E9	U+1F9E9	2
+former gate	🖼️	U+1F5BC U+FE0F	U+1F5BC	1
+state	⚪	U+26AA	U+26AA	2
+state	🟢	U+1F7E2	U+1F7E2	2
+state	🟡	U+1F7E1	U+1F7E1	2
+state	🔴	U+1F534	U+1F534	2
+state	✅	U+2705	U+2705	2
+reason	🪫	U+1FAAB	U+1FAAB	2
+reason	⛔	U+26D4	U+26D4	2
+reason	👓	U+1F453	U+1F453	2
+mark	🧑	U+1F9D1	U+1F9D1	2
+mark	🤖	U+1F916	U+1F916	2
+mark	👀	U+1F440	U+1F440	2
+mark	🪆	U+1FA86	U+1FA86	2
+mark	—	U+2014	U+2014	1
+sign	·	U+00B7	U+00B7	1
+sign	…	U+2026	U+2026	1
+sign	→	U+2192	U+2192	1
+sign	›	U+203A	U+203A	1
+sign	×	U+00D7	U+00D7	1
+sign	*	U+002A	U+002A	1
+sign	-	U+002D	U+002D	1
+sign	<	U+003C	U+003C	1
+sign	>	U+003E	U+003E	1
+sign	:	U+003A	U+003A	1
+sign	[	U+005B	U+005B	1
+sign	]	U+005D	U+005D	1
+drawing	─	U+2500	U+2500	1
+drawing	│	U+2502	U+2502	1
+drawing	┌	U+250C	U+250C	1
+drawing	┬	U+252C	U+252C	1
+drawing	┐	U+2510	U+2510	1
+drawing	├	U+251C	U+251C	1
+drawing	┼	U+253C	U+253C	1
+drawing	┤	U+2524	U+2524	1
+drawing	└	U+2514	U+2514	1
+drawing	┴	U+2534	U+2534	1
+drawing	┘	U+2518	U+2518	1
+drawing	═	U+2550	U+2550	1
+other	�	U+FFFD	U+FFFD	1
+other	é	U+00E9	U+00E9	1
+other	é	U+0065 U+0301	U+0065 U+0301	1
+other	日	U+65E5	U+65E5	2
+other	👩‍💻	U+1F469 U+200D U+1F4BB	U+1F469 U+200D U+1F4BB	4
+other	🇫🇷	U+1F1EB U+1F1F7	U+1F1EB U+1F1F7	2
+other	⚡️	U+26A1 U+FE0F	U+26A1 U+FE0F	2
