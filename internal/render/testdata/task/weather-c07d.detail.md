@@ -66,4 +66,4 @@ Reads the sensors, sleeps between readings and publishes to the gateway.
 | Recorded | 2026-09-17 |
 | Children | None |
 
-Command: `tabloio task c07d --ref main --person ben@example.org --level detail`
+Command: `tabloio task c07d --person ben@example.org --ref main --level detail`

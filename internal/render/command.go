@@ -39,23 +39,18 @@ func refName(r view.Ref) string {
 // the words the user typed, but `tabloio`, the view's command, its
 // positional argument, then the flags in force, each only when in force.
 //
-// The flags follow the order of the mockups: --ref, --task, --person,
-// --window or --columns, --historical, --proposed, --stale, --level. The
-// --ref flag is absent when the name is HEAD. At provenance the flag names
-// the commit, so the command reproduces the bytes; below it, the ref as
-// given, so a snapshot does not change with every push. A view with a
-// positional argument never repeats it as --task.
+// The flags follow the order R12 states, which the queue mockup, the agent
+// briefs and the Status renderers share (the owner's ruling of 2026-10-06;
+// gates.md and task.md draw --ref first): --task, --person, --ref, --window
+// or --columns, --historical, --proposed, --stale, --level. The --ref flag
+// is absent when the name is HEAD. At provenance the flag names the commit,
+// so the command reproduces the bytes; below it, the ref as given, so a
+// snapshot does not change with every push. A view with a positional
+// argument never repeats it as --task.
 func command(name, positional string, h *view.Head, o Options) string {
 	parts := []string{"tabloio", name}
 	if positional != "" {
 		parts = append(parts, positional)
-	}
-	ref := refName(h.Ref)
-	if o.Level >= view.Provenance && h.Ref.Commit != "" {
-		ref = short(h.Ref.Commit)
-	}
-	if ref != "HEAD" {
-		parts = append(parts, flagRef, ref)
 	}
 	par := h.Params
 	if par.Task != "" && positional == "" {
@@ -63,6 +58,13 @@ func command(name, positional string, h *view.Head, o Options) string {
 	}
 	if par.Person != "" {
 		parts = append(parts, flagPerson, par.Person)
+	}
+	ref := refName(h.Ref)
+	if o.Level >= view.Provenance && h.Ref.Commit != "" {
+		ref = short(h.Ref.Commit)
+	}
+	if ref != "HEAD" {
+		parts = append(parts, flagRef, ref)
 	}
 	if par.Window != nil {
 		parts = append(parts, flagWindow, strconv.Itoa(*par.Window))

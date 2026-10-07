@@ -13,4 +13,4 @@ Legend: `tabloio gates`.
 | Note | Sleep scheduler in progress |
 | Recorded | 2026-09-17, from the subproject |
 
-Command: `tabloio task c07d --ref main --person ben@example.org --level glance`
+Command: `tabloio task c07d --person ben@example.org --ref main --level glance`

@@ -241,19 +241,19 @@ func TestRefAndCommit(t *testing.T) {
 		absent string // in neither
 	}{
 		{"glance", nil, Options{Level: view.Glance},
-			"Tableaux tooling · ref `main` · task", "`tabloio task e9c6 --ref main " + person + " --level glance`", "3cdae52"},
+			"Tableaux tooling · ref `main` · task", "`tabloio task e9c6 " + person + " --ref main --level glance`", "3cdae52"},
 		{"glance with a stamp", nil, Options{Level: view.Glance, Stamp: true},
-			"ref `main` at `3cdae52`, 2026-10-05 · task", "`tabloio task e9c6 --ref main " + person + " --level glance`", ""},
+			"ref `main` at `3cdae52`, 2026-10-05 · task", "`tabloio task e9c6 " + person + " --ref main --level glance`", ""},
 		{"provenance", nil, Options{Level: view.Provenance},
-			"ref `main` at `3cdae52`, 2026-10-05 · task", "`tabloio task e9c6 --ref 3cdae52 " + person + " --level provenance`", ""},
+			"ref `main` at `3cdae52`, 2026-10-05 · task", "`tabloio task e9c6 " + person + " --ref 3cdae52 --level provenance`", ""},
 		{"HEAD at glance", func(v *view.Task) { v.Ref.Name = "HEAD" }, Options{Level: view.Glance},
 			"ref `HEAD` · task", "`tabloio task e9c6 " + person + " --level glance`", "--ref"},
 		{"HEAD at provenance", func(v *view.Task) { v.Ref.Name = "HEAD" }, Options{Level: view.Provenance},
-			"ref `HEAD` at `3cdae52`, 2026-10-05 · task", "`tabloio task e9c6 --ref 3cdae52 " + person + " --level provenance`", ""},
+			"ref `HEAD` at `3cdae52`, 2026-10-05 · task", "`tabloio task e9c6 " + person + " --ref 3cdae52 --level provenance`", ""},
 		{"off the trunk", func(v *view.Task) { v.Ref.OnTrunk = false }, Options{Level: view.Glance},
-			"ref `main`, off the trunk · task", "`tabloio task e9c6 --ref main " + person + " --level glance`", ""},
+			"ref `main`, off the trunk · task", "`tabloio task e9c6 " + person + " --ref main --level glance`", ""},
 		{"a range", func(v *view.Task) { v.Ref.From = "v1" }, Options{Level: view.Glance},
-			"ref `v1..main` · task", "`tabloio task e9c6 --ref v1..main " + person + " --level glance`", ""},
+			"ref `v1..main` · task", "`tabloio task e9c6 " + person + " --ref v1..main --level glance`", ""},
 	}
 	for _, c := range cases {
 		t.Run(c.name, func(t *testing.T) {
@@ -281,7 +281,7 @@ func TestCommand(t *testing.T) {
 	h := &view.Head{Ref: view.Ref{Name: "main", Commit: "0123456789abcdef"}}
 	h.Params = view.Params{Task: "e9c6", Person: "a@b.c", Window: &two, Historical: true, Proposed: true, Stale: 7}
 	got := command("context", "", h, Options{Level: view.Detail})
-	want := "tabloio context --ref main --task e9c6 --person a@b.c --window 2 --historical --proposed --stale 7 --level detail"
+	want := "tabloio context --task e9c6 --person a@b.c --ref main --window 2 --historical --proposed --stale 7 --level detail"
 	if got != want {
 		t.Errorf("got  %s\nwant %s", got, want)
 	}

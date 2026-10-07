@@ -132,4 +132,4 @@ Reads the sensors, sleeps between readings and publishes to the gateway.
 git log --format='%as %h %ae' main -- .tableaux/tasks/c07d.yaml .tableaux/status/c07d.yaml firmware
 ```
 
-Command: `tabloio task c07d --ref edb30d2 --person ben@example.org --level provenance`
+Command: `tabloio task c07d --person ben@example.org --ref edb30d2 --level provenance`

@@ -47,4 +47,4 @@ The method reserves `review`: the contributor has handed the next junction's wor
 | 🪆 | A subproject does the work | Recursive; another Tableaux project does the work |
 | — | The gate does not apply | Not applicable; the entry exempts the task from the gate |
 
-Command: `tabloio gates --ref main --task e9c6 --level detail`
+Command: `tabloio gates --task e9c6 --ref main --level detail`
