@@ -1,0 +1,51 @@
+# Contributor work queue
+
+**What do I do next?** Weather station · ref `main` · person ada@example.org · level detail
+
+Legend: `tabloio gates`.
+
+4 items: 0 reviews owed, 1 authorisation owed, 1 work ready, 1 reaffirmation, 1 work waiting.
+
+| Kind | Task | Gate | Model | Since |
+|---|---|---|---|---|
+| Authorisation owed | `3c5d` Dashboard; proposed; the deciding commit is not by an authority | 📌 mockup |  | 2026-09-22 |
+| Work ready | `7b2e` Gateway | 📝 defined |  | 2026-09-15 |
+| Reaffirmation | `9f31` Sensor board | ⚙️ function |  | 2026-09-28, 3 days |
+| Work waiting | `9f31` Sensor board; blocked: Barometer ICs on 14-week backorder | ⚡ performance |  | 2026-09-28 |
+
+## 1. Reviews owed: none
+
+## 2. Authorisations owed: 1
+
+**`3c5d` Dashboard** at 📌 mockup
+
+- Gate: 📌 mockup, Mockup: A non-technical mockup of the outcome exists
+- Cause: proposed; the deciding commit is not by an authority
+- To authorise: `tabloio authorise 3c5d`
+
+## 3. Work ready: 1
+
+**`7b2e` Gateway** at 📝 defined
+
+- Gate: 📝 defined, Defined: Title, description, assignee and references exist
+- Status: ❔ undefined ⚪ undefined, 2026-09-15, **ada@example.org**, `W1`
+- Brief: `tabloio queue --person ada@example.org --ref main --brief 7b2e defined`
+
+## 4. Reaffirmations: 1
+
+**`9f31` Sensor board**, ⚙️ function, 2026-09-28, 3 days
+
+- Gate: ⚙️ function, Functional prototype: A technical demonstration of function exists
+- Status: ⚙️ function 🔴 stalled ⛔ blocked, 2026-09-28, **ada@example.org**, `W13`: Barometer ICs on 14-week backorder
+- To reaffirm: `tabloio reaffirm 9f31`
+
+## 5. Work waiting: 1
+
+**`9f31` Sensor board** at ⚡ performance
+
+- Gate: ⚡ performance, Performance prototype: Target performance shown in the deliverable's technology
+- Requires: `7b2e` Gateway, undefined → performance, Readings API: unmet
+- Waits for: blocked: Barometer ICs on 14-week backorder
+- Do not start: the cause stands.
+
+Command: `tabloio queue --person ada@example.org --ref main --level detail`
