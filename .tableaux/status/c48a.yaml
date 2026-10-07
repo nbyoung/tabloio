@@ -1,3 +1,3 @@
-gate: design
+gate: implementation
 state: nominal
-note: design/c48a.md is on the trunk with the owner's decisions of 2026-10-06; implementation waits for the shared architecture (e3ed) at implementation
+note: The authority and assignment renderers, their view types, fixtures, golden files and tests T1 to T10 stand under internal/render; the unit gate runs go test over them, the integrate gate regenerates the fixtures from tablo's views, and the Read commands (5ca9) wait to call the renderers
