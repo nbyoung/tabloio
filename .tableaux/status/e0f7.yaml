@@ -1,3 +1,4 @@
 gate: function
 state: nominal
-note: prototype/e0f7 draws the global tableau in Unicode boxes at a terminal width and keeps columns aligned under three models of emoji and variation-selector width
+reason: review
+note: design/e0f7.md on branch wave/e0f7 awaits the owner's review at the design gate
