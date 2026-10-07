@@ -1,3 +1,3 @@
-gate: implementation
+gate: unit
 state: nominal
-note: The history and audit renderers, their view types and fixtures stand under internal/render; the unit gate runs go test over them; the integrate gate regenerates the fixtures from tablo's views; the Read commands (5ca9) wait for the three renderer branches to merge.
+note: T1 to T12 pass under go test ./internal/render/... with no skip and no cached run, and the five checks and go test -race pass on the whole worktree; the fixtures stand under testdata/<view>/in so the shared level test nests the temporal views by heading alone, as their accepted drafts hold no column nesting; no prescribed test waits for a later gate; the integrate gate regenerates the fixtures from tablo view
