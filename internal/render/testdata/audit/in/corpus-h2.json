@@ -1,0 +1,166 @@
+{
+  "level": "provenance",
+  "project": {
+    "id": "e4a1",
+    "title": "Base"
+  },
+  "ref": {
+    "name": "main",
+    "commit": "70642890a0993adfaadc9bf56bdb6f4b189858db",
+    "date": "2026-09-02",
+    "on_trunk": true
+  },
+  "params": {
+    "stale": 7
+  },
+  "legend": {
+    "gates": [
+      {
+        "key": "undefined",
+        "symbol": "❔",
+        "name": "Undefined",
+        "criteria": "No one has started work on the definition"
+      },
+      {
+        "key": "defined",
+        "symbol": "📝",
+        "name": "Defined",
+        "criteria": "Title, description, assignee and references exist"
+      },
+      {
+        "key": "design",
+        "symbol": "📐",
+        "name": "Design",
+        "criteria": "A model and sufficient tests exist"
+      },
+      {
+        "key": "release",
+        "symbol": "🚀",
+        "name": "Release",
+        "criteria": "All variants documented and approved"
+      }
+    ],
+    "states": [
+      {
+        "key": "undefined",
+        "symbol": "⚪",
+        "severity": 0,
+        "synopsis": "The work has not yet been defined"
+      },
+      {
+        "key": "nominal",
+        "symbol": "🟢",
+        "severity": 1,
+        "synopsis": "The work is proceeding as expected"
+      },
+      {
+        "key": "stalled",
+        "symbol": "🔴",
+        "severity": 3,
+        "synopsis": "Practically all progress has stalled"
+      },
+      {
+        "key": "complete",
+        "symbol": "✅",
+        "severity": 0,
+        "synopsis": "All deliverables satisfy their requirements"
+      }
+    ],
+    "reasons": [
+      {
+        "key": "blocked",
+        "symbol": "⛔",
+        "synopsis": "An external resource is unavailable"
+      }
+    ],
+    "marks": [
+      {
+        "key": "person",
+        "symbol": "🧑",
+        "meaning": "A person contributes",
+        "junction": "Plain; the contributor is a person"
+      },
+      {
+        "key": "agent",
+        "symbol": "🤖",
+        "meaning": "An agent contributes",
+        "junction": "Plain; the junction states a `model`"
+      },
+      {
+        "key": "reviewer",
+        "symbol": "👀",
+        "meaning": "A reviewer accepts",
+        "junction": "Plain; the reviewer accepts the work at the gate"
+      },
+      {
+        "key": "subproject",
+        "symbol": "🪆",
+        "meaning": "A subproject does the work",
+        "junction": "Recursive; another Tableaux project does the work"
+      },
+      {
+        "key": "exempt",
+        "symbol": "—",
+        "meaning": "The gate does not apply",
+        "junction": "Not applicable; the entry exempts the task from the gate"
+      }
+    ]
+  },
+  "findings": [
+    {
+      "rule": "H2",
+      "severity": "warning",
+      "kind": "A `Reviewed:` trailer from someone other than the reviewer",
+      "tasks": [
+        {
+          "id": "b2c9",
+          "title": "Leaf"
+        }
+      ],
+      "gate": "design",
+      "message": "pat is not the reviewer of the design junction; olive is",
+      "action": "Have olive@example.org accept the gate with `Reviewed: b2c9 design`",
+      "resolver": "olive@example.org",
+      "sentence": "A `Reviewed:` commit from anyone other than the junction's reviewer has no effect, and the audit reports it.",
+      "source": {
+        "text": "README.md, Status",
+        "url": "README.md#status"
+      },
+      "facts": [
+        {
+          "name": "Junction",
+          "value": "pat@example.org contributes at 📐 design. olive@example.org reviews it."
+        }
+      ],
+      "commits": [
+        {
+          "hash": "70642890a0993adfaadc9bf56bdb6f4b189858db",
+          "subject": "Accept the design",
+          "date": "2026-09-02",
+          "author": {
+            "email": "pat@example.org"
+          },
+          "committer": {
+            "email": "pat@example.org"
+          },
+          "trailers": [
+            "Reviewed: b2c9 design"
+          ]
+        }
+      ],
+      "commands": [
+        {
+          "text": "git log --format='%h %ae %(trailers:key=Reviewed)' -E --grep='^Reviewed: b2c9 '",
+          "comment": "shows the finding"
+        }
+      ]
+    }
+  ],
+  "errors": 0,
+  "warnings": 1,
+  "information": 0,
+  "most": {
+    "email": "olive@example.org",
+    "count": 1
+  }
+}

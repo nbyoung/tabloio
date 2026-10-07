@@ -1,0 +1,166 @@
+{
+  "level": "provenance",
+  "project": {
+    "id": "e4a1",
+    "title": "Base"
+  },
+  "ref": {
+    "name": "main",
+    "commit": "df6b60cbb2a98df9ff66fa8e4253022b06502979",
+    "date": "2026-09-04",
+    "on_trunk": true
+  },
+  "params": {
+    "stale": 7
+  },
+  "legend": {
+    "gates": [
+      {
+        "key": "undefined",
+        "symbol": "❔",
+        "name": "Undefined",
+        "criteria": "No one has started work on the definition"
+      },
+      {
+        "key": "defined",
+        "symbol": "📝",
+        "name": "Defined",
+        "criteria": "Title, description, assignee and references exist"
+      },
+      {
+        "key": "design",
+        "symbol": "📐",
+        "name": "Design",
+        "criteria": "A model and sufficient tests exist"
+      },
+      {
+        "key": "release",
+        "symbol": "🚀",
+        "name": "Release",
+        "criteria": "All variants documented and approved"
+      }
+    ],
+    "states": [
+      {
+        "key": "undefined",
+        "symbol": "⚪",
+        "severity": 0,
+        "synopsis": "The work has not yet been defined"
+      },
+      {
+        "key": "nominal",
+        "symbol": "🟢",
+        "severity": 1,
+        "synopsis": "The work is proceeding as expected"
+      },
+      {
+        "key": "stalled",
+        "symbol": "🔴",
+        "severity": 3,
+        "synopsis": "Practically all progress has stalled"
+      },
+      {
+        "key": "complete",
+        "symbol": "✅",
+        "severity": 0,
+        "synopsis": "All deliverables satisfy their requirements"
+      }
+    ],
+    "reasons": [
+      {
+        "key": "blocked",
+        "symbol": "⛔",
+        "synopsis": "An external resource is unavailable"
+      }
+    ],
+    "marks": [
+      {
+        "key": "person",
+        "symbol": "🧑",
+        "meaning": "A person contributes",
+        "junction": "Plain; the contributor is a person"
+      },
+      {
+        "key": "agent",
+        "symbol": "🤖",
+        "meaning": "An agent contributes",
+        "junction": "Plain; the junction states a `model`"
+      },
+      {
+        "key": "reviewer",
+        "symbol": "👀",
+        "meaning": "A reviewer accepts",
+        "junction": "Plain; the reviewer accepts the work at the gate"
+      },
+      {
+        "key": "subproject",
+        "symbol": "🪆",
+        "meaning": "A subproject does the work",
+        "junction": "Recursive; another Tableaux project does the work"
+      },
+      {
+        "key": "exempt",
+        "symbol": "—",
+        "meaning": "The gate does not apply",
+        "junction": "Not applicable; the entry exempts the task from the gate"
+      }
+    ]
+  },
+  "findings": [
+    {
+      "rule": "H6",
+      "severity": "warning",
+      "kind": "A commit at a model junction with no `Model:` trailer",
+      "tasks": [
+        {
+          "id": "b2c9",
+          "title": "Leaf"
+        }
+      ],
+      "gate": "design",
+      "files": [
+        "status/b2c9.yaml"
+      ],
+      "message": "The contributor's commit at the design junction carries no Model: trailer; the junction states claude-fable",
+      "action": "Name the model in the next commit at the junction",
+      "resolver": "bot@example.org",
+      "sentence": "a commit at the junction by its contributor that carries no trailer, unless the project's `version.yaml` at that commit states a language before 0.2.1",
+      "source": {
+        "text": "README.md, Junctions",
+        "url": "README.md#junctions"
+      },
+      "facts": [
+        {
+          "name": "Junction",
+          "value": "`b2c9` takes 📐 design from itself: contributor bot@example.org, model `claude-fable`."
+        }
+      ],
+      "commits": [
+        {
+          "hash": "df6b60cbb2a98df9ff66fa8e4253022b06502979",
+          "subject": "Draft the design",
+          "date": "2026-09-04",
+          "author": {
+            "email": "bot@example.org"
+          },
+          "committer": {
+            "email": "bot@example.org"
+          }
+        }
+      ],
+      "commands": [
+        {
+          "text": "git log --format='%h %(trailers:key=Model,valueonly)' -- .tableaux/status/b2c9.yaml",
+          "comment": "shows the finding"
+        }
+      ]
+    }
+  ],
+  "errors": 0,
+  "warnings": 1,
+  "information": 0,
+  "most": {
+    "email": "bot@example.org",
+    "count": 1
+  }
+}

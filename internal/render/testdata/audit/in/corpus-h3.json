@@ -1,0 +1,169 @@
+{
+  "level": "provenance",
+  "project": {
+    "id": "e4a1",
+    "title": "Base"
+  },
+  "ref": {
+    "name": "main",
+    "commit": "f20514edbdbfca64bc7af4ae385fef45b7a1609f",
+    "date": "2026-09-04",
+    "on_trunk": true
+  },
+  "params": {
+    "stale": 7
+  },
+  "legend": {
+    "gates": [
+      {
+        "key": "undefined",
+        "symbol": "❔",
+        "name": "Undefined",
+        "criteria": "No one has started work on the definition"
+      },
+      {
+        "key": "defined",
+        "symbol": "📝",
+        "name": "Defined",
+        "criteria": "Title, description, assignee and references exist"
+      },
+      {
+        "key": "design",
+        "symbol": "📐",
+        "name": "Design",
+        "criteria": "A model and sufficient tests exist"
+      },
+      {
+        "key": "release",
+        "symbol": "🚀",
+        "name": "Release",
+        "criteria": "All variants documented and approved"
+      }
+    ],
+    "states": [
+      {
+        "key": "undefined",
+        "symbol": "⚪",
+        "severity": 0,
+        "synopsis": "The work has not yet been defined"
+      },
+      {
+        "key": "nominal",
+        "symbol": "🟢",
+        "severity": 1,
+        "synopsis": "The work is proceeding as expected"
+      },
+      {
+        "key": "stalled",
+        "symbol": "🔴",
+        "severity": 3,
+        "synopsis": "Practically all progress has stalled"
+      },
+      {
+        "key": "complete",
+        "symbol": "✅",
+        "severity": 0,
+        "synopsis": "All deliverables satisfy their requirements"
+      }
+    ],
+    "reasons": [
+      {
+        "key": "blocked",
+        "symbol": "⛔",
+        "synopsis": "An external resource is unavailable"
+      }
+    ],
+    "marks": [
+      {
+        "key": "person",
+        "symbol": "🧑",
+        "meaning": "A person contributes",
+        "junction": "Plain; the contributor is a person"
+      },
+      {
+        "key": "agent",
+        "symbol": "🤖",
+        "meaning": "An agent contributes",
+        "junction": "Plain; the junction states a `model`"
+      },
+      {
+        "key": "reviewer",
+        "symbol": "👀",
+        "meaning": "A reviewer accepts",
+        "junction": "Plain; the reviewer accepts the work at the gate"
+      },
+      {
+        "key": "subproject",
+        "symbol": "🪆",
+        "meaning": "A subproject does the work",
+        "junction": "Recursive; another Tableaux project does the work"
+      },
+      {
+        "key": "exempt",
+        "symbol": "—",
+        "meaning": "The gate does not apply",
+        "junction": "Not applicable; the entry exempts the task from the gate"
+      }
+    ]
+  },
+  "findings": [
+    {
+      "rule": "H3",
+      "severity": "warning",
+      "kind": "A `Model:` trailer outside the junction's model",
+      "tasks": [
+        {
+          "id": "b2c9",
+          "title": "Leaf"
+        }
+      ],
+      "gate": "design",
+      "files": [
+        "status/b2c9.yaml"
+      ],
+      "message": "Model claude-sonnet-5 is outside the stated model claude-fable",
+      "action": "Revise the file: state the model that ran at the junction",
+      "resolver": "olive@example.org",
+      "sentence": "the audit reports a commit at the junction whose trailer names a model outside the one stated",
+      "source": {
+        "text": "README.md, Junctions",
+        "url": "README.md#junctions"
+      },
+      "facts": [
+        {
+          "name": "Junction",
+          "value": "`b2c9` takes 📐 design from itself: contributor bot@example.org, model `claude-fable`. The model reads as a prefix; `claude-sonnet-5` lies outside it."
+        }
+      ],
+      "commits": [
+        {
+          "hash": "b16817cda3528588ee33642676fbb623a598baed",
+          "subject": "Record the leaf at design",
+          "date": "2026-09-02",
+          "author": {
+            "email": "bot@example.org"
+          },
+          "committer": {
+            "email": "bot@example.org"
+          },
+          "trailers": [
+            "Model: claude-sonnet-5"
+          ]
+        }
+      ],
+      "commands": [
+        {
+          "text": "git log --format='%h %(trailers:key=Model,valueonly)' -- .tableaux/status/b2c9.yaml",
+          "comment": "shows the finding"
+        }
+      ]
+    }
+  ],
+  "errors": 0,
+  "warnings": 1,
+  "information": 0,
+  "most": {
+    "email": "olive@example.org",
+    "count": 1
+  }
+}
