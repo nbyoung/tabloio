@@ -1,3 +1,3 @@
-gate: function
+gate: design
 state: nominal
-note: prototype/e0f7 draws the global tableau in Unicode boxes at a terminal width and keeps columns aligned under three models of emoji and variation-selector width
+note: design/e0f7.md is on the trunk with the owner's decisions of 2026-10-07, after two revisions; implementation follows, with one writer over doc.Doc, golang.org/x/text for the width table, one rule for the variation selector and no option for it, and --width as the one new option; no terminal draws the output before validate
