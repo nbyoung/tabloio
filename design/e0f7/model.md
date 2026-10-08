@@ -1,8 +1,8 @@
 # Model e0f7: the text writer
 
-This draft holds the Go of `internal/render/text` in full, as the trial of [design e0f7](../e0f7.md) compiles it: three files, 580 lines with their comments. The design's prose states the rules; this draft is their exact form, so that the implementation takes no decision. The golden drafts beside it are this code's output. The implementation lands these files as they stand and adds the tests of the design.
+This draft holds the Go of `internal/render/text` in full, as the trial of [design e0f7](../e0f7.md) compiles it: three files, 588 lines with their comments. The design's prose states the rules; this draft is their exact form, so that the implementation takes no decision. The golden drafts beside it are this code's output. The implementation lands these files as they stand and adds the tests of the design.
 
-The writer holds one rule for the variation selector and no option for it (decision 1 of the design, as the owner rules on 2026-10-07).
+The writer holds one rule for the variation selector and no option for it (decision 1 of the design, as the owner rules on 2026-10-07), and it refuses a width under 20 (decision 4).
 
 ## `text.go`
 
@@ -22,6 +22,7 @@ The options, `Write`, the blocks and the spans.
 package text
 
 import (
+	"errors"
 	"io"
 	"strconv"
 	"strings"
@@ -33,8 +34,11 @@ import (
 // The widths, in cells.
 const (
 	DefaultWidth = 80 // what Options.Width 0 means
-	MinWidth     = 20 // a smaller Options.Width counts as this
+	MinWidth     = 20 // the least width; Write refuses a smaller one
 )
+
+// ErrWidth is what Write returns for a width under MinWidth.
+var ErrWidth = errors.New("text: the width is under 20 cells")
 
 const (
 	minText   = 16     // the least width a nested block or an indented line wraps at
@@ -44,18 +48,22 @@ const (
 
 // Options holds the width. The zero value is 80 cells.
 type Options struct {
-	Width int // cells per line; 0 is DefaultWidth, and less than MinWidth is MinWidth
+	Width int // cells per line; 0 is DefaultWidth, and any other value under MinWidth is an error
 }
 
 // Write prints d to w in one call to w.Write, so a failing writer sees the
 // whole text at once and its error passes through unwrapped. An empty
-// document writes nothing.
+// document writes nothing. A width of 0 is DefaultWidth; for any other
+// width under MinWidth, a negative one included, Write returns ErrWidth and
+// writes nothing: it adjusts no width.
 func Write(w io.Writer, d doc.Doc, o Options) error {
 	width := o.Width
 	if width == 0 {
 		width = DefaultWidth
 	}
-	width = max(width, MinWidth)
+	if width < MinWidth {
+		return ErrWidth
+	}
 	var parts []string
 	for _, b := range d.Blocks {
 		if s := strings.Join(block(b, width), "\n"); s != "" {
