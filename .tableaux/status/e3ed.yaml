@@ -1,3 +1,3 @@
-gate: implementation
+gate: unit
 state: nominal
-note: The shared renderer packages and the gate and task renderers stand with T1 to T15 and their golden files; the unit gate runs go test over them; the integrate gate waits on tablo's view tasks and the Read commands (5ca9), and the structural, status and temporal renderers build on this task
+note: T1 to T15 pass under go test ./internal/render/... with no skip and no cached run, and the five checks and go test -race pass on the whole worktree; no prescribed test waits for a later gate; the integrate gate replaces the transcribed fixtures with tablo view output and the Read commands (5ca9) call the renderers
