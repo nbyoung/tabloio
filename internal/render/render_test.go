@@ -501,8 +501,8 @@ func TestErrors(t *testing.T) {
 	if err := render(task, Options{Level: view.Detail}); err != nil {
 		t.Errorf("a detail fixture asked for detail: %v", err)
 	}
-	if err := render(gates, Options{Format: Text, Level: view.Glance}); !errors.Is(err, ErrFormat) {
-		t.Errorf("Format Text: %v", err)
+	if err := render(gates, Options{Format: Text, Level: view.Glance}); err != nil {
+		t.Errorf("Format Text renders: %v", err)
 	}
 	if err := render(gates, Options{Format: Format(9)}); !errors.Is(err, ErrFormat) {
 		t.Errorf("an unknown format: %v", err)

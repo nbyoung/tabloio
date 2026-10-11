@@ -5,6 +5,9 @@
   {"args": ["tableau", "--ref=main", "--level=detail", "--window=0"], "invocation": {"query": {"view": "tableau", "ref": "main", "window": 0, "level": "detail"}}},
   {"args": ["tableau", "--columns", "design,implementation,at-risk_2"], "invocation": {"query": {"view": "tableau", "columns": ["design", "implementation", "at-risk_2"], "level": "glance"}}},
   {"args": ["tableau", "--person", "nbyoung@nbyoung.com", "--text", "-o", "out.txt"], "invocation": {"query": {"view": "tableau", "person": "nbyoung@nbyoung.com", "level": "glance"}, "text": true, "output": "out.txt"}},
+  {"args": ["tableau", "--text", "--width", "100"], "invocation": {"query": {"view": "tableau", "level": "glance"}, "text": true, "draw": {"width": 100}}},
+  {"args": ["tableau", "--text", "--width", "20"], "invocation": {"query": {"view": "tableau", "level": "glance"}, "text": true, "draw": {"width": 20}}},
+  {"args": ["task", "e9c6", "--text", "--width=132"], "invocation": {"query": {"view": "task", "task": "e9c6", "level": "glance"}, "text": true, "draw": {"width": 132}}},
   {"args": ["--level", "provenance", "tableau", "--output", "-"], "invocation": {"query": {"view": "tableau", "level": "provenance"}}},
   {"args": ["task", "e9c6", "--ref", "3cdae52", "--person", "nbyoung@nbyoung.com", "--level", "glance"], "invocation": {"query": {"view": "task", "ref": "3cdae52", "task": "e9c6", "person": "nbyoung@nbyoung.com", "level": "glance"}}},
   {"args": ["task", "--level", "detail", "e9c6"], "invocation": {"query": {"view": "task", "task": "e9c6", "level": "detail"}}},
@@ -66,5 +69,16 @@
   {"args": ["queue", "--brief", "c2ad:validate", "x"], "error": "a task id and a gate key"},
   {"args": ["queue", "--brief", "c2ad", "validate", "--level", "detail"], "error": "--brief excludes"},
   {"args": ["queue", "--brief", "c2ad", "validate", "--task", "2034"], "error": "--brief excludes"},
-  {"args": ["audit", "--stale", "7d"], "error": "whole number"}
+  {"args": ["audit", "--stale", "7d"], "error": "whole number"},
+  {"args": ["tableau", "--width", "100"], "error": "--width applies to --text only"},
+  {"args": ["tableau", "--text", "--width", "19"], "error": "--width takes a whole number, 20 or more, not \"19\""},
+  {"args": ["tableau", "--text", "--width", "0"], "error": "--width takes a whole number, 20 or more, not \"0\""},
+  {"args": ["tableau", "--text", "--width", "wide"], "error": "--width takes a whole number, 20 or more, not \"wide\""},
+  {"args": ["tableau", "--text", "--width", "-5"], "error": "--width takes a whole number, 20 or more, not \"-5\""},
+  {"args": ["tableau", "--text", "--width", "1.5"], "error": "--width takes a whole number, 20 or more, not \"1.5\""},
+  {"args": ["tableau", "--text", "--width="], "error": "--width takes a whole number, 20 or more, not \"\""},
+  {"args": ["queue", "--brief", "c2ad", "validate", "--text", "--width", "100"], "error": "--brief excludes --width"},
+  {"args": ["tableau", "--text", "--width"], "error": "--width needs a value"},
+  {"args": ["tableau", "--text", "--width", "100", "--width", "120"], "error": "--width is given twice"},
+  {"args": ["version", "--width", "80"], "error": "--width does not apply to version"}
 ]

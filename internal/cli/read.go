@@ -8,6 +8,8 @@ import (
 	"regexp"
 	"strconv"
 	"strings"
+
+	rtext "github.com/nbyoung/tabloio/internal/render/text"
 )
 
 var (
@@ -21,9 +23,10 @@ var (
 // where the bytes go, and whether the person comes from the viewer.
 type invocation struct {
 	Query  Query
-	Text   bool   // --text; false is Markdown
-	Output string // the --output path as given; "" is standard output
-	Viewer bool   // the person defaults to the viewer, and none was given
+	Text   bool          // --text; false is Markdown
+	Draw   rtext.Options // --width; zero where absent
+	Output string        // the --output path as given; "" is standard output
+	Viewer bool          // the person defaults to the viewer, and none was given
 }
 
 // readInvocation checks a view command's operands and options, in the
@@ -81,6 +84,16 @@ func readInvocation(c *Command, a *Args) (*invocation, error) {
 		return nil, errors.New("--markdown and --text exclude each other")
 	}
 	inv.Text = has("text")
+	if v, ok := value("width"); ok {
+		if !inv.Text {
+			return nil, errors.New("--width applies to --text only")
+		}
+		n, err := strconv.Atoi(v)
+		if err != nil || !numberPattern.MatchString(v) || n < rtext.MinWidth {
+			return nil, fmt.Errorf("--width takes a whole number, %d or more, not %q", rtext.MinWidth, v)
+		}
+		inv.Draw.Width = n
+	}
 	if v, ok := value("output"); ok {
 		if v == "" {
 			return nil, errors.New("--output takes a path, or - for standard output")
@@ -141,6 +154,9 @@ func readInvocation(c *Command, a *Args) (*invocation, error) {
 		if has("level") || has("task") {
 			return nil, errors.New("--brief excludes --level and --task")
 		}
+		if has("width") {
+			return nil, errors.New("--brief excludes --width")
+		}
 		q.Brief = &Brief{Task: v[0], Gate: v[1]}
 		q.Level = "provenance"
 	}
@@ -187,16 +203,27 @@ func runRead(ctx context.Context, env *Env, a *Args) int {
 	}
 	q := &inv.Query
 
-	format, table := "markdown", markdown
-	if inv.Text {
-		format, table = "text", text
+	// The brief is plain text, the same bytes under both formats, so it
+	// reads the markdown table; any other view reads the table its format
+	// names.
+	format := "markdown"
+	var render renderFunc
+	var drawText textFunc
+	var ok bool
+	switch {
+	case q.Brief != nil:
+		render, ok = markdown["brief"]
+	case inv.Text:
+		format = "text"
+		drawText, ok = text[q.View]
+	default:
+		render, ok = markdown[q.View]
 	}
-	key := q.View
-	if q.Brief != nil {
-		key = "brief"
-	}
-	render, ok := table[key]
 	if !ok {
+		key := q.View
+		if q.Brief != nil {
+			key = "brief"
+		}
 		return usageError(env, c, fmt.Errorf("the %s format does not cover %s yet", format, key))
 	}
 
@@ -236,7 +263,12 @@ func runRead(ctx context.Context, env *Env, a *Args) int {
 	if out != "" {
 		base = linkBase(q.Dir, out)
 	}
-	b, err := render(res.Data, q.Level, base)
+	var b []byte
+	if drawText != nil {
+		b, err = drawText(res.Data, q.Level, base, inv.Draw)
+	} else {
+		b, err = render(res.Data, q.Level, base)
+	}
 	if err != nil {
 		return failure(env, c, err)
 	}

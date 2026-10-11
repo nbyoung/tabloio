@@ -1,0 +1,101 @@
+Gate definition for e9c6 Abstract views
+═══════════════════════════════════════
+
+*What do the columns and symbols mean?* Tableaux tooling · ref main · task e9c6
+· level detail
+
+Gates
+─────
+
+┌────┬──────┬────────────────┬────────────────┬───────────────┬────────────────┐
+│  # │Symbol│ Gate           │ Key            │ Criteria      │ For e9c6       │
+├────┼──────┼────────────────┼────────────────┼───────────────┼────────────────┤
+│  1 │  ❔  │ Undefined      │ undefined      │ No one has    │ Applies        │
+│    │      │                │                │ started work  │                │
+│    │      │                │                │ on the        │                │
+│    │      │                │                │ definition    │                │
+│  2 │  📝  │ Defined        │ defined        │ Title,        │ Applies        │
+│    │      │                │                │ description,  │                │
+│    │      │                │                │ assignee and  │                │
+│    │      │                │                │ references    │                │
+│    │      │                │                │ exist         │                │
+│  3 │  📌  │ Mockup         │ mockup         │ A             │ — The gate     │
+│    │      │                │                │ non-technical │ does not apply │
+│    │      │                │                │ mockup of the │                │
+│    │      │                │                │ outcome       │                │
+│    │      │                │                │ exists        │                │
+│  4 │  🔧  │ Functional     │ function       │ A technical   │ — The gate     │
+│    │      │ prototype      │                │ demonstration │ does not apply │
+│    │      │                │                │ of function   │                │
+│    │      │                │                │ exists        │                │
+│  5 │  📐  │ Design         │ design         │ A model and   │ Applies        │
+│    │      │                │                │ sufficient    │                │
+│    │      │                │                │ tests exist   │                │
+│  6 │  🧱  │ Implementation │ implementation │ Artifacts     │ Applies        │
+│    │      │                │                │ suffice for   │                │
+│    │      │                │                │ unit,         │                │
+│    │      │                │                │ integration   │                │
+│    │      │                │                │ and           │                │
+│    │      │                │                │ validation    │                │
+│    │      │                │                │ tests         │                │
+│  7 │  📏  │ Unit test      │ unit           │ All           │ — The gate     │
+│    │      │                │                │ prescribed    │ does not apply │
+│    │      │                │                │ tests pass    │                │
+│  8 │  🔗  │ Integration    │ integrate      │ Assembled     │ — The gate     │
+│    │      │                │                │ with          │ does not apply │
+│    │      │                │                │ neighbouring  │                │
+│    │      │                │                │ components    │                │
+│  9 │  🌍  │ Validation     │ validate       │ Passes user   │ Applies        │
+│    │      │                │                │ and field     │                │
+│    │      │                │                │ tests         │                │
+│ 10 │  🚀  │ Release        │ release        │ All variants  │ Applies        │
+│    │      │                │                │ documented    │                │
+│    │      │                │                │ and approved  │                │
+└────┴──────┴────────────────┴────────────────┴───────────────┴────────────────┘
+
+States
+──────
+
+┌────────┬───────────┬──────────┬─────────────────────────────────────────────┐
+│ Symbol │ State     │ Severity │ Synopsis                                    │
+├────────┼───────────┼──────────┼─────────────────────────────────────────────┤
+│   ⚪   │ undefined │        0 │ The work has not yet been defined           │
+│   🟢   │ nominal   │        1 │ The work is proceeding as expected          │
+│   🟡   │ at_risk   │        2 │ The work is at risk of stalling             │
+│   🔴   │ stalled   │        3 │ Practically all progress has stalled        │
+│   ✅   │ complete  │        0 │ All deliverables satisfy their requirements │
+└────────┴───────────┴──────────┴─────────────────────────────────────────────┘
+
+Reasons
+───────
+
+┌────────┬────────────┬─────────────────────────────────────┐
+│ Symbol │ Reason     │ Synopsis                            │
+├────────┼────────────┼─────────────────────────────────────┤
+│   🪫   │ overloaded │ The assigned resource is overloaded │
+│   ⛔   │ blocked    │ An external resource is unavailable │
+│   👓   │ review     │ The work waits for its reviewer     │
+└────────┴────────────┴─────────────────────────────────────┘
+
+The method reserves review: the contributor has handed the next junction's work
+to its reviewer, and the work queue lists the review as owed. 👓 beside a state
+says the work waits for its reviewer; 👀 in a cell says a reviewer accepts the
+work there.
+
+Junction marks
+──────────────
+
+┌────┬────────────────────────────┬────────────────────────────────────────────┐
+│Mark│ Meaning                    │ Junction                                   │
+├────┼────────────────────────────┼────────────────────────────────────────────┤
+│ 🧑 │ A person contributes       │ Plain; the contributor is a person         │
+│ 🤖 │ An agent contributes       │ Plain; the junction states a model         │
+│ 👀 │ A reviewer accepts         │ Plain; the reviewer accepts the work at    │
+│    │                            │ the gate                                   │
+│ 🪆 │ A subproject does the work │ Recursive; another Tableaux project does   │
+│    │                            │ the work                                   │
+│ —  │ The gate does not apply    │ Not applicable; the entry exempts the task │
+│    │                            │ from the gate                              │
+└────┴────────────────────────────┴────────────────────────────────────────────┘
+
+Command: tabloio gates --task e9c6 --ref main --level detail --text

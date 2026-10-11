@@ -1,0 +1,213 @@
+Global tableau
+══════════════
+
+*How does the whole project stand?* Tableaux tooling · ref main · window 1 ·
+level detail
+
+Legend: tabloio gates.
+
+┌──────┬──────────────────────────────┬─────┬──┬────┬──┬────┬────┬──┬──┬────┬──┐
+│ Id   │ Task                         │❔ ×0│📝│ 📌 │🔧│ 📐 │ 🧱 │📏│🔗│ 🌍 │🚀│
+├──────┼──────────────────────────────┼─────┼──┼────┼──┼────┼────┼──┼──┼────┼──┤
+│ 437e │ *Tableaux tooling*           │     │🟢│🤖👀│🤖│🤖👀│ 🤖 │🤖│🤖│🤖👀│🧑│
+│ bc63 │   *Method*                   │     │🟢│🤖👀│🤖│🤖👀│ 🤖 │🤖│🤖│🤖👀│🧑│
+│ c2ad │     Roles                    │     │  │    │  │    │ 🟢 │— │— │🤖👀│🧑│
+│ 2034 │     *Views*                  │     │🟢│🤖👀│🤖│🤖👀│ 🤖 │🤖│🤖│🤖👀│🧑│
+│ e9c6 │       Abstract views         │     │  │    │  │ 🟢 │ 🤖 │— │— │🤖👀│🧑│
+│ bc86 │       *Markdown views*       │     │🟢│🤖👀│— │ —  │ —  │— │— │ —  │— │
+│ 99f0 │         Gate definition view │     │🟢│🤖👀│— │ —  │ —  │— │— │ —  │— │
+│      │         in Markdown          │     │  │    │  │    │    │  │  │    │  │
+│ 05a9 │         Task definition view │     │🟢│🤖👀│— │ —  │ —  │— │— │ —  │— │
+│      │         in Markdown          │     │  │    │  │    │    │  │  │    │  │
+│ a9ce │         Authority delegation │     │🟢│🤖👀│— │ —  │ —  │— │— │ —  │— │
+│      │         view in Markdown     │     │  │    │  │    │    │  │  │    │  │
+│ bb7c │         Task assignment view │     │🟢│🤖👀│— │ —  │ —  │— │— │ —  │— │
+│      │         in Markdown          │     │  │    │  │    │    │  │  │    │  │
+│ c74a │         Contributor work     │     │🟢│🤖👀│— │ —  │ —  │— │— │ —  │— │
+│      │         queue view in        │     │  │    │  │    │    │  │  │    │  │
+│      │         Markdown             │     │  │    │  │    │    │  │  │    │  │
+│ efff │         Work-blockage tree   │     │🟢│🤖👀│— │ —  │ —  │— │— │ —  │— │
+│      │         view in Markdown     │     │  │    │  │    │    │  │  │    │  │
+│ ab8e │         Global tableau view  │     │🟢│🤖👀│— │ —  │ —  │— │— │ —  │— │
+│      │         in Markdown          │     │  │    │  │    │    │  │  │    │  │
+│ c545 │         Contextual tableau   │     │🟢│🤖👀│— │ —  │ —  │— │— │ —  │— │
+│      │         view in Markdown     │     │  │    │  │    │    │  │  │    │  │
+│ d615 │         History view in      │     │🟢│🤖👀│— │ —  │ —  │— │— │ —  │— │
+│      │         Markdown             │     │  │    │  │    │    │  │  │    │  │
+│ b14e │         Audit view in        │     │🟢│🤖👀│— │ —  │ —  │— │— │ —  │— │
+│      │         Markdown             │     │  │    │  │    │    │  │  │    │  │
+│ 5fe3 │       *HTML views*           │     │🟢│🤖👀│— │ —  │ —  │— │— │ —  │— │
+│ a6f7 │         Gate definition view │     │🟢│🤖👀│— │ —  │ —  │— │— │ —  │— │
+│      │         in Html              │     │  │    │  │    │    │  │  │    │  │
+│ 7dff │         Task definition view │     │🟢│🤖👀│— │ —  │ —  │— │— │ —  │— │
+│      │         in Html              │     │  │    │  │    │    │  │  │    │  │
+│ b1b7 │         Authority delegation │     │🟢│🤖👀│— │ —  │ —  │— │— │ —  │— │
+│      │         view in Html         │     │  │    │  │    │    │  │  │    │  │
+│ ea51 │         Task assignment view │     │🟢│🤖👀│— │ —  │ —  │— │— │ —  │— │
+│      │         in Html              │     │  │    │  │    │    │  │  │    │  │
+│ 7783 │         Contributor work     │     │🟢│🤖👀│— │ —  │ —  │— │— │ —  │— │
+│      │         queue view in Html   │     │  │    │  │    │    │  │  │    │  │
+│ 5471 │         Work-blockage tree   │     │🟢│🤖👀│— │ —  │ —  │— │— │ —  │— │
+│      │         view in Html         │     │  │    │  │    │    │  │  │    │  │
+│ 32e7 │         Global tableau view  │     │🟢│🤖👀│— │ —  │ —  │— │— │ —  │— │
+│      │         in Html              │     │  │    │  │    │    │  │  │    │  │
+│ 69eb │         Contextual tableau   │     │🟢│🤖👀│— │ —  │ —  │— │— │ —  │— │
+│      │         view in Html         │     │  │    │  │    │    │  │  │    │  │
+│ 3194 │         History view in Html │     │🟢│🤖👀│— │ —  │ —  │— │— │ —  │— │
+│ a8b4 │         Audit view in Html   │     │🟢│🤖👀│— │ —  │ —  │— │— │ —  │— │
+│ e3cb │     Schema files             │     │  │    │  │    │    │🟢│— │🤖👀│🧑│
+│ fcec │     Conformance corpus       │     │  │    │  │    │ 🟢 │🤖│🤖│🤖👀│🧑│
+│ ac33 │     Agent identity           │     │  │    │  │ 🟢 │🤖👀│— │— │🤖👀│🧑│
+│ 9f3f │     Subproject linkage       │     │  │    │  │ 🟢 │🤖👀│— │— │🤖👀│🧑│
+│ 7861 │     Productivity evidence    │     │  │    │  │    │ 🟢 │— │— │🤖👀│🧑│
+│ 7166 │     Language clarifications  │     │  │    │  │ 🟢 │🤖👀│— │— │🤖👀│🧑│
+│ 77b2 │   tablo: backend library and │     │🟢│ 🪆 │🪆│ 🪆 │ 🪆 │🪆│🪆│ 🪆 │🪆│
+│      │   plumbing                   │     │  │    │  │    │    │  │  │    │  │
+│ 6103 │   tabloio: command line,     │     │🟢│ 🪆 │🪆│ 🪆 │ 🪆 │🪆│🪆│ 🪆 │🪆│
+│      │   output and input           │     │  │    │  │    │    │  │  │    │  │
+│ c6e8 │   tablotui: terminal user    │     │🟢│ 🪆 │🪆│ 🪆 │ 🪆 │🪆│🪆│ 🪆 │🪆│
+│      │   interface                  │     │  │    │  │    │    │  │  │    │  │
+│ 595e │   tableaud: local daemon and │     │🟢│ 🪆 │🪆│ 🪆 │ 🪆 │🪆│🪆│ 🪆 │🪆│
+│      │   HTML                       │     │  │    │  │    │    │  │  │    │  │
+└──────┴──────────────────────────────┴─────┴──┴────┴──┴────┴────┴──┴──┴────┴──┘
+
+❔ undefined · 📝 defined · 📌 mockup · 🔧 function · 📐 design · 🧱
+implementation · 📏 unit · 🔗 integrate · 🌍 validate · 🚀 release · 🟢 nominal
+· 🧑 a person contributes · 🤖 an agent contributes · 👀 a reviewer accepts · 🪆
+a subproject does the work · — the gate does not apply.
+
+Notes
+─────
+
+┌────────────────────┬────────────┬─────────────────────┬──────────────────────┐
+│ Rows               │ Date       │ Note                │ From                 │
+├────────────────────┼────────────┼─────────────────────┼──────────────────────┤
+│ 437e bc63 2034     │ 2026-09-29 │ Mockup waits for    │ rolled up from 99f0  │
+│ bc86               │            │ Abstract views      │ Gate definition view │
+│                    │            │ (e9c6) at design    │ in Markdown          │
+├────────────────────┼────────────┼─────────────────────┼──────────────────────┤
+│ c2ad               │ 2026-09-30 │ The Roles text is   │                      │
+│                    │            │ on the trunk and    │                      │
+│                    │            │ covers all seven    │                      │
+│                    │            │ roles; the validate │                      │
+│                    │            │ gate awaits the     │                      │
+│                    │            │ owner               │                      │
+├────────────────────┼────────────┼─────────────────────┼──────────────────────┤
+│ e9c6               │ 2026-09-30 │ VIEWS.md is on the  │                      │
+│                    │            │ trunk at language   │                      │
+│                    │            │ 0.3.1; the twenty   │                      │
+│                    │            │ mockups may start,  │                      │
+│                    │            │ and implementation  │                      │
+│                    │            │ puts the text in    │                      │
+│                    │            │ place               │                      │
+├────────────────────┼────────────┼─────────────────────┼──────────────────────┤
+│ 99f0 05a9 a9ce     │ 2026-09-29 │ Mockup waits for    │                      │
+│ bb7c c74a efff     │            │ Abstract views      │                      │
+│ ab8e c545 d615     │            │ (e9c6) at design    │                      │
+│ b14e a6f7 7dff     │            │                     │                      │
+│ b1b7 ea51 7783     │            │                     │                      │
+│ 5471 32e7 69eb     │            │                     │                      │
+│ 3194 a8b4          │            │                     │                      │
+├────────────────────┼────────────┼─────────────────────┼──────────────────────┤
+│ 5fe3               │ 2026-09-29 │ Mockup waits for    │ rolled up from a6f7  │
+│                    │            │ Abstract views      │ Gate definition view │
+│                    │            │ (e9c6) at design    │ in Html              │
+├────────────────────┼────────────┼─────────────────────┼──────────────────────┤
+│ e3cb               │ 2026-09-30 │ schemas/check.sh    │                      │
+│                    │            │ (files agree with   │                      │
+│                    │            │ SYNTAX.md, version  │                      │
+│                    │            │ 0.2.1) and          │                      │
+│                    │            │ schemas/load.py     │                      │
+│                    │            │ (files load as JSON │                      │
+│                    │            │ Schema 2020-12)     │                      │
+│                    │            │ pass; every         │                      │
+│                    │            │ .tableaux file      │                      │
+│                    │            │ validates           │                      │
+├────────────────────┼────────────┼─────────────────────┼──────────────────────┤
+│ fcec               │ 2026-09-30 │ The corpus builds   │                      │
+│                    │            │ and checks clean,   │                      │
+│                    │            │ with 85 entries on  │                      │
+│                    │            │ the trunk; all      │                      │
+│                    │            │ three corrections   │                      │
+│                    │            │ from the tablo      │                      │
+│                    │            │ prototypes are in;  │                      │
+│                    │            │ the unit gate runs  │                      │
+│                    │            │ the tablo           │                      │
+│                    │            │ conformance test    │                      │
+│                    │            │ against it          │                      │
+├────────────────────┼────────────┼─────────────────────┼──────────────────────┤
+│ ac33               │ 2026-09-30 │ The model           │                      │
+│                    │            │ plan-and-record     │                      │
+│                    │            │ rule (F20) is on    │                      │
+│                    │            │ the trunk; F1, F2   │                      │
+│                    │            │ and F10 remain for  │                      │
+│                    │            │ design              │                      │
+├────────────────────┼────────────┼─────────────────────┼──────────────────────┤
+│ 9f3f               │ 2026-09-30 │ The subproject      │                      │
+│                    │            │ linkage rule (F3,   │                      │
+│                    │            │ F5, F12) is on the  │                      │
+│                    │            │ trunk at language   │                      │
+│                    │            │ 0.3.0; tablo and    │                      │
+│                    │            │ the subprojects     │                      │
+│                    │            │ follow              │                      │
+├────────────────────┼────────────┼─────────────────────┼──────────────────────┤
+│ 7861               │ 2026-09-30 │ The full report,    │                      │
+│                    │            │ its 23 tests and an │                      │
+│                    │            │ example over five   │                      │
+│                    │            │ repositories are on │                      │
+│                    │            │ the trunk           │                      │
+├────────────────────┼────────────┼─────────────────────┼──────────────────────┤
+│ 7166               │ 2026-09-30 │ The trunk           │                      │
+│                    │            │ clarification (F19) │                      │
+│                    │            │ is on the trunk; F7 │                      │
+│                    │            │ and F9 remain for   │                      │
+│                    │            │ design              │                      │
+├────────────────────┼────────────┼─────────────────────┼──────────────────────┤
+│ 77b2               │ 2026-09-30 │ The design is next  │ b2c1 tablo in        │
+│                    │            │ and no requirement  │ subprojects/tablo at │
+│                    │            │ gates it            │ 00f8f68, at 📝       │
+│                    │            │                     │ defined              │
+├────────────────────┼────────────┼─────────────────────┼──────────────────────┤
+│ 6103               │ 2026-09-30 │ prototype/e3ed      │ 07e0 tabloio in      │
+│                    │            │ renders the gate    │ subprojects/tabloio  │
+│                    │            │ and task definition │ at 4593882, at 🔧    │
+│                    │            │ views as Markdown   │ function             │
+│                    │            │ at three levels     │                      │
+│                    │            │ from tablo view     │                      │
+│                    │            │ data                │                      │
+├────────────────────┼────────────┼─────────────────────┼──────────────────────┤
+│ c6e8               │ 2026-09-30 │ prototype/679b      │ 40e8 tablotui in     │
+│                    │            │ renders the global  │ subprojects/tablotui │
+│                    │            │ tableau as a Bubble │ at a2878b5, at 🔧    │
+│                    │            │ Tea grid with tree  │ function             │
+│                    │            │ expand and          │                      │
+│                    │            │ collapse,           │                      │
+│                    │            │ scrolling, a folded │                      │
+│                    │            │ gate window and     │                      │
+│                    │            │ hidden columns kept │                      │
+│                    │            │ in a settings file; │                      │
+│                    │            │ emoji lines align   │                      │
+│                    │            │ where the terminal  │                      │
+│                    │            │ widens U+FE0F       │                      │
+├────────────────────┼────────────┼─────────────────────┼──────────────────────┤
+│ 595e               │ 2026-09-30 │ prototype/49ce      │ 8608 tableaud in     │
+│                    │            │ serves the ten      │ subprojects/tableaud │
+│                    │            │ views with a stdlib │ at e6ec4ec, at 🔧    │
+│                    │            │ HEAD and .tableaux  │ function             │
+│                    │            │ watcher, ETag 304   │                      │
+│                    │            │ polling through     │                      │
+│                    │            │ htmx, a Source      │                      │
+│                    │            │ interface and a     │                      │
+│                    │            │ loopback Host check │                      │
+└────────────────────┴────────────┴─────────────────────┴──────────────────────┘
+
+Folded columns
+──────────────
+
+┌───────────────┬──────────────┬───────┐
+│ Folded column │ Gate         │ Tasks │
+├───────────────┼──────────────┼───────┤
+│      ❔       │ ❔ undefined │     0 │
+└───────────────┴──────────────┴───────┘
+
+Command: tabloio tableau --ref main --window 1 --level detail --text

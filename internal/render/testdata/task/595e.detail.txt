@@ -1,0 +1,134 @@
+Task definition: 595e tableaud: local daemon and HTML
+═════════════════════════════════════════════════════
+
+*What is this task and where does it stand?* Tableaux tooling · ref main · task
+595e · person nbyoung@nbyoung.com · level detail
+
+Legend: tabloio gates.
+
+┌──────────┬───────────────────────────────────────────────────────────────────┐
+│ Field    │ Value                                                             │
+├──────────┼───────────────────────────────────────────────────────────────────┤
+│ Task     │ 595e tableaud: local daemon and HTML                              │
+│ Assignee │ *nbyoung@nbyoung.com*                                             │
+│ Parent   │ 437e Tableaux tooling, order 5                                    │
+│ Status   │ 📝 defined 🟢 nominal, 🪆 from the subproject                     │
+│          │ subprojects/tableaud                                              │
+│ Note     │ prototype/49ce serves the ten views with a stdlib HEAD and        │
+│          │ .tableaux watcher, ETag 304 polling through htmx, a Source        │
+│          │ interface and a loopback Host check                               │
+│ Recorded │ 2026-09-30, from the subproject                                   │
+└──────────┴───────────────────────────────────────────────────────────────────┘
+
+Place in the tree
+─────────────────
+
+┌─────────────┬──────────────────────────────────────────────────────────────┐
+│ Field       │ Value                                                        │
+├─────────────┼──────────────────────────────────────────────────────────────┤
+│ Path        │ 437e Tableaux tooling › 595e tableaud: local daemon and HTML │
+│ Order       │ 5 of 6 under 437e                                            │
+│ Children    │ None                                                         │
+│ Authorities │ *nbyoung@nbyoung.com* (437e)                                 │
+│ Authorised  │ Yes                                                          │
+└─────────────┴──────────────────────────────────────────────────────────────┘
+
+Requires: 2
+───────────
+
+┌──────────────┬────────────────┬──────────────┬───────────────┬───────────────┐
+│ Task         │ Edge           │ What passes  │ Its status    │ Condition     │
+├──────────────┼────────────────┼──────────────┼───────────────┼───────────────┤
+│ 77b2 tablo:  │ implementation │ The library  │ 📝 defined 🟢 │ unmet, not    │
+│ backend      │ →              │ it embeds    │ nominal       │ yet due       │
+│ library and  │ implementation │              │               │               │
+│ plumbing     │                │              │               │               │
+├──────────────┼────────────────┼──────────────┼───────────────┼───────────────┤
+│ 5fe3 HTML    │ mockup →       │ The HTML     │ 📝 defined 🟢 │ unmet, not    │
+│ views        │ design         │ mockups it   │ nominal       │ yet due       │
+│              │                │ reproduces   │               │               │
+└──────────────┴────────────────┴──────────────┴───────────────┴───────────────┘
+
+Dependents: none
+────────────────
+
+Junctions
+─────────
+
+────────────────────────────────────────────────────────────────────────────────
+Gate · Marks · Contributor · Model · Reviewer · Subproject · Stands
+────────────────────────────────────────────────────────────────────────────────
+❔ undefined
+  Stands: passed
+────────────────────────────────────────────────────────────────────────────────
+📝 defined
+  Marks: 🤖👀
+  Contributor: noreply@anthropic.com
+  Model: claude-haiku
+  Reviewer: the assignee, *nbyoung@nbyoung.com*
+  Stands: passed; the status stands here
+────────────────────────────────────────────────────────────────────────────────
+📌 mockup
+  Marks: 🪆
+  Subproject: subprojects/tableaud 8608 tableaud
+  Stands: next
+────────────────────────────────────────────────────────────────────────────────
+🔧 function
+  Marks: 🪆
+  Subproject: subprojects/tableaud 8608 tableaud
+  Stands: later
+────────────────────────────────────────────────────────────────────────────────
+📐 design
+  Marks: 🪆
+  Subproject: subprojects/tableaud 8608 tableaud
+  Stands: later
+────────────────────────────────────────────────────────────────────────────────
+🧱 implementation
+  Marks: 🪆
+  Subproject: subprojects/tableaud 8608 tableaud
+  Stands: later
+────────────────────────────────────────────────────────────────────────────────
+📏 unit
+  Marks: 🪆
+  Subproject: subprojects/tableaud 8608 tableaud
+  Stands: later
+────────────────────────────────────────────────────────────────────────────────
+🔗 integrate
+  Marks: 🪆
+  Subproject: subprojects/tableaud 8608 tableaud
+  Stands: later
+────────────────────────────────────────────────────────────────────────────────
+🌍 validate
+  Marks: 🪆
+  Subproject: subprojects/tableaud 8608 tableaud
+  Stands: later
+────────────────────────────────────────────────────────────────────────────────
+🚀 release
+  Marks: 🪆
+  Subproject: subprojects/tableaud 8608 tableaud
+  Stands: later
+────────────────────────────────────────────────────────────────────────────────
+
+🤖 an agent contributes · 👀 a reviewer accepts · 🪆 a subproject does the work.
+
+Subproject snapshot
+───────────────────
+
+┌────────────┬─────────────────────────────────────────────────────────────────┐
+│ Field      │ Value                                                           │
+├────────────┼─────────────────────────────────────────────────────────────────┤
+│ Subproject │ subprojects/tableaud                                            │
+│ Task       │ 8608 tableaud                                                   │
+│ Assignee   │ *nbyoung@nbyoung.com*                                           │
+│ Status     │ 🔧 function 🟢 nominal, rolled up from 49ce Server              │
+│ Note       │ prototype/49ce serves the ten views with a stdlib HEAD and      │
+│            │ .tableaux watcher, ETag 304 polling through htmx, a Source      │
+│            │ interface and a loopback Host check                             │
+│ Recorded   │ 2026-09-30, the oldest among its children                       │
+│ Children   │ 7425 🧱 implementation 🟢 nominal; 49ce 🔧 function 🟢 nominal; │
+│            │ 097c 🔧 function 🟢 nominal; db74 🔧 function 🟢 nominal; 6160  │
+│            │ 🔧 function 🟢 nominal; 5a2f 🔧 function 🟢 nominal             │
+└────────────┴─────────────────────────────────────────────────────────────────┘
+
+Command: tabloio task 595e --person nbyoung@nbyoung.com --ref main --level
+detail --text

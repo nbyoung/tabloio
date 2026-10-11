@@ -12,6 +12,8 @@ import (
 	"sort"
 	"strings"
 	"testing"
+
+	rtext "github.com/nbyoung/tabloio/internal/render/text"
 )
 
 type testCase struct {
@@ -19,6 +21,7 @@ type testCase struct {
 	Invocation *struct {
 		Query  Query
 		Text   bool
+		Draw   rtext.Options
 		Output string
 		Viewer bool
 	}
@@ -51,7 +54,7 @@ func invocationOf(argv []string) (*invocation, error) {
 	return readInvocation(c, a)
 }
 
-// TestCases is T1: the 67 command lines of cases.json build the invocation
+// TestCases is T1: the 81 command lines of cases.json build the invocation
 // the draft names, or earn the usage error it names.
 func TestCases(t *testing.T) {
 	cases := loadCases(t)
@@ -65,7 +68,7 @@ func TestCases(t *testing.T) {
 				t.Errorf("%s: %v", name, err)
 				continue
 			}
-			if want := (invocation{Query: c.Invocation.Query, Text: c.Invocation.Text, Output: c.Invocation.Output, Viewer: c.Invocation.Viewer}); !reflect.DeepEqual(*inv, want) {
+			if want := (invocation{Query: c.Invocation.Query, Text: c.Invocation.Text, Draw: c.Invocation.Draw, Output: c.Invocation.Output, Viewer: c.Invocation.Viewer}); !reflect.DeepEqual(*inv, want) {
 				t.Errorf("%s:\n got %+v\nwant %+v", name, *inv, want)
 			}
 			continue
@@ -75,8 +78,8 @@ func TestCases(t *testing.T) {
 			t.Errorf("%s: error %v, want one with %q", name, err, c.Error)
 		}
 	}
-	if accepted != 24 || refused != 43 {
-		t.Errorf("cases.json holds %d accepted and %d refused lines, want 24 and 43", accepted, refused)
+	if accepted != 27 || refused != 54 {
+		t.Errorf("cases.json holds %d accepted and %d refused lines, want 27 and 54", accepted, refused)
 	}
 }
 
@@ -517,11 +520,26 @@ func TestFormat(t *testing.T) {
 	t.Run("--text with an entry", func(t *testing.T) {
 		fakeTables(t, true, "tableau")
 		code, out, _ := run(t, newSource(), "tableau", "--text")
-		if code != ExitOK || out != "fake text tableau: data=the data level=glance base=\"\"\n" {
+		if code != ExitOK || out != "fake text tableau: data=the data level=glance base=\"\" width=0\n" {
 			t.Errorf("exit %d, stdout %q", code, out)
 		}
 		if code, _, errs := run(t, newSource(), "gates", "--text"); code != ExitUsage || !strings.Contains(errs, "does not cover gates yet") {
 			t.Errorf("a view with no entry: exit %d, stderr %q", code, errs)
+		}
+	})
+	t.Run("--width reaches the entry with the link base", func(t *testing.T) {
+		fakeTables(t, true, "tableau")
+		dir := t.TempDir()
+		if err := os.Mkdir(filepath.Join(dir, "docs"), 0o755); err != nil {
+			t.Fatal(err)
+		}
+		code, out, errs := run(t, newSource(), "-C", dir, "tableau", "--text", "--width", "100", "-o", "docs/S.txt")
+		if code != ExitOK || errs != "" || out != "" {
+			t.Fatalf("exit %d, stdout %q, stderr %q", code, out, errs)
+		}
+		got, err := os.ReadFile(filepath.Join(dir, "docs", "S.txt"))
+		if want := "fake text tableau: data=the data level=glance base=\"..\" width=100\n"; err != nil || string(got) != want {
+			t.Errorf("the file holds %q, %v; want %q", got, err, want)
 		}
 	})
 	t.Run("--markdown and the default agree", func(t *testing.T) {
@@ -535,6 +553,13 @@ func TestFormat(t *testing.T) {
 	t.Run("--brief selects the brief entry", func(t *testing.T) {
 		fakeTables(t, true)
 		code, out, _ := run(t, newSource(), "queue", "--person", "a@b.c", "--brief", "c2ad", "validate")
+		if code != ExitOK || out != "fake markdown brief: data=the data level=provenance base=\"\"\n" {
+			t.Errorf("exit %d, stdout %q", code, out)
+		}
+	})
+	t.Run("--text --brief writes the markdown entry", func(t *testing.T) {
+		fakeTables(t, true)
+		code, out, _ := run(t, newSource(), "queue", "--person", "a@b.c", "--brief", "c2ad", "validate", "--text")
 		if code != ExitOK || out != "fake markdown brief: data=the data level=provenance base=\"\"\n" {
 			t.Errorf("exit %d, stdout %q", code, out)
 		}
@@ -663,5 +688,34 @@ func TestChangesNothingButTheOutput(t *testing.T) {
 	sort.Strings(written)
 	if !reflect.DeepEqual(written, []string{"out.txt"}) {
 		t.Errorf("the named outputs written: %v, want out.txt", written)
+	}
+}
+
+// TestTextThroughRun renders a real view in text through Run with a fake
+// source (T15): the output file under docs/out/ holds the reference's
+// address as seen from there.
+func TestTextThroughRun(t *testing.T) {
+	dir := t.TempDir()
+	if err := os.MkdirAll(filepath.Join(dir, "docs", "out"), 0o755); err != nil {
+		t.Fatal(err)
+	}
+	src := newSource()
+	src.result = Result{Data: decode(t, "task", "task/e9c6.json")}
+	out := filepath.Join(dir, "docs", "out", "e9c6.txt")
+	code, stdout, stderr := run(t, src, "-C", dir, "task", "e9c6", "--level", "detail", "--text", "--width", "200", "-o", out)
+	if code != ExitOK || stdout != "" || stderr != "" {
+		t.Fatalf("exit %d, stdout %q, stderr %q", code, stdout, stderr)
+	}
+	got, err := os.ReadFile(out)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !strings.Contains(string(got), "Proposed views <../../PLAN.md#views>") {
+		t.Errorf("no address from docs/out/ in\n%s", got)
+	}
+	// On standard output the address reads from the project directory.
+	code, stdout, _ = run(t, src, "-C", dir, "task", "e9c6", "--level", "detail", "--text")
+	if code != ExitOK || !strings.Contains(stdout, "Proposed views <PLAN.md#views>") {
+		t.Errorf("exit %d, stdout\n%s", code, stdout)
 	}
 }

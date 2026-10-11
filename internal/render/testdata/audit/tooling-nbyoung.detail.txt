@@ -1,0 +1,38 @@
+Audit
+═════
+
+*Where do files and history disagree?* Tableaux tooling · ref main · person
+nbyoung@nbyoung.com · stale 7 days · level detail
+
+Legend: tabloio gates.
+
+*0 errors, 3 warnings, 0 items of information*: 3 findings in 2 rows.
+
+────────────────────────────────────────────────────────────────────────────────
+Rule · Severity · Task · Gate · File · Message · Action · Resolver
+────────────────────────────────────────────────────────────────────────────────
+H3
+  Severity: warning
+  Task: 437e bc63
+  Gate: 📝 defined
+  File: tasks/437e.yaml, tasks/bc63.yaml
+  Message: 320cf2b edits both task files under Model: claude-fable-5-1; the
+    junction states claude-haiku
+  Action: Revise the file: state the model that ran at the junction
+  Resolver: *nbyoung@nbyoung.com*
+────────────────────────────────────────────────────────────────────────────────
+H3
+  Severity: warning
+  Task: ac33 Agent identity
+  Gate: 📝 defined
+  File: tasks/ac33.yaml
+  Message: 018814a edits the task file under Model: claude-fable-5-1; the
+    junction states claude-haiku
+  Action: Revise the file: state the model that ran at the junction
+  Resolver: *nbyoung@nbyoung.com*
+────────────────────────────────────────────────────────────────────────────────
+
+*Most to resolve:* *nbyoung@nbyoung.com*, 3 of 3.
+
+Command: tabloio audit --person nbyoung@nbyoung.com --ref main --stale 7 --level
+detail --text

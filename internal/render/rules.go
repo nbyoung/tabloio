@@ -396,8 +396,10 @@ func (p *page) foldRows(rows []taskRow) [][]doc.Cell {
 
 // fileLink links a task's phrase to its file when Links.Project is set. The
 // target is <Project>/.tableaux/tasks/<id>.yaml, cleaned as a slash path.
+// Under Format Text it adds no link: an address after every id costs a grid
+// its width, and the id names the file.
 func (p *page) fileLink(t view.TaskRef, text []doc.Inline) []doc.Inline {
-	if p.o.Links.Project == "" || t.ID == "" {
+	if p.o.Format == Text || p.o.Links.Project == "" || t.ID == "" {
 		return text
 	}
 	return one(doc.Link{Text: text, URL: path.Join(p.o.Links.Project, ".tableaux", "tasks", t.ID+".yaml")})

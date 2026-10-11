@@ -1,11 +1,13 @@
 package cli
 
 import (
+	"errors"
 	"os"
 	"path/filepath"
 	"strings"
 	"testing"
 
+	rtext "github.com/nbyoung/tabloio/internal/render/text"
 	"github.com/nbyoung/tabloio/internal/render/view"
 )
 
@@ -38,8 +40,8 @@ func decode(t *testing.T, name, file string) view.View {
 }
 
 // TestMarkdownTableIsComplete is T15: the markdown table holds the ten views.
-// The brief entry and the text table wait for the tasks that own them, and
-// their cases skip with that reason until the entries stand.
+// The brief entry waits for the task that owns it, and its case skips with
+// that reason until the entry stands.
 func TestMarkdownTableIsComplete(t *testing.T) {
 	for _, v := range views {
 		t.Run(v.name, func(t *testing.T) {
@@ -74,13 +76,26 @@ func TestMarkdownTableIsComplete(t *testing.T) {
 		}
 	})
 	t.Run("text", func(t *testing.T) {
-		if len(text) == 0 {
-			t.Skip("the text table waits for the Text renderers task, e0f7")
-		}
 		for _, v := range views {
-			if text[v.name] == nil {
+			entry, ok := text[v.name]
+			if !ok {
 				t.Errorf("the text table has no entry for %s", v.name)
+				continue
 			}
+			out, err := entry(decode(t, v.name, v.data), "glance", "", rtext.Options{})
+			if err != nil {
+				t.Errorf("%s: %v", v.name, err)
+				continue
+			}
+			if !strings.HasSuffix(string(out), "\n") || strings.HasPrefix(string(out), "# ") {
+				t.Errorf("%s: not a text document ending in a newline:\n%s", v.name, out)
+			}
+		}
+		if _, ok := text["brief"]; ok {
+			t.Error("the text table holds a brief entry")
+		}
+		if len(text) != len(views) {
+			t.Errorf("the text table holds %d entries, want %d", len(text), len(views))
 		}
 	})
 }
@@ -149,5 +164,38 @@ func TestMarkdownLinkBase(t *testing.T) {
 		if !strings.Contains(string(out), want) {
 			t.Errorf("link base %q: no %s in\n%s", base, want, out)
 		}
+	}
+}
+
+// TestTextLinkBase is the text counterpart of TestMarkdownLinkBase (T15): the
+// link base reaches the address of a reference, and the text adds no
+// task-file link.
+func TestTextLinkBase(t *testing.T) {
+	data := decode(t, "task", "task/e9c6.json")
+	for base, want := range map[string]string{
+		"":        "Proposed views <PLAN.md#views>",
+		"..":      "Proposed views <../PLAN.md#views>",
+		"../proj": "Proposed views <../proj/PLAN.md#views>",
+	} {
+		out, err := text["task"](data, "detail", base, rtext.Options{Width: 200})
+		if err != nil {
+			t.Fatal(err)
+		}
+		if !strings.Contains(string(out), want) {
+			t.Errorf("link base %q: no %s in\n%s", base, want, out)
+		}
+		if strings.Contains(string(out), ".tableaux/tasks/") {
+			t.Errorf("link base %q: the text holds a task-file link", base)
+		}
+	}
+}
+
+func TestTextEntryChecksItsData(t *testing.T) {
+	tableau := decode(t, "tableau", "tableau/tooling.json")
+	if _, err := text["context"](tableau, "glance", "", rtext.Options{}); err == nil || !strings.Contains(err.Error(), "the context view cannot render") {
+		t.Errorf("error %v", err)
+	}
+	if _, err := text["tableau"](tableau, "glance", "", rtext.Options{Width: 19}); !errors.Is(err, rtext.ErrWidth) {
+		t.Errorf("width 19: error %v", err)
 	}
 }
