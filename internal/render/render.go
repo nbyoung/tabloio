@@ -7,6 +7,7 @@ import (
 
 	"github.com/nbyoung/tabloio/internal/render/doc"
 	"github.com/nbyoung/tabloio/internal/render/markdown"
+	"github.com/nbyoung/tabloio/internal/render/text"
 	"github.com/nbyoung/tabloio/internal/render/view"
 )
 
@@ -16,7 +17,7 @@ type Format int
 // The output forms.
 const (
 	Markdown Format = iota // the default
-	Text                   // Unicode drawing; Render returns ErrFormat until task e0f7 lands
+	Text                   // Unicode drawing in cells (package text)
 )
 
 // Options holds what the command line fixes for one rendering.
@@ -26,6 +27,7 @@ type Options struct {
 	Stamp  bool       // name the ref's commit and date below provenance too (R12)
 	Unfold bool       // draw every row: no run fold, no collapsed children (R10, R11)
 	Links  Links
+	Text   text.Options // the width of the text format; Markdown ignores it
 }
 
 // Links says where a rendering's links lead (R13).
@@ -53,10 +55,15 @@ func register[V view.View](build func(V, Options) doc.Doc) {
 }
 
 // Render writes one view at one level. It is a pure function of v and o.
+// Besides the errors below it returns text.ErrWidth for a width under 20 cells
+// under Format Text.
 func Render(w io.Writer, v view.View, o Options) error {
 	d, err := buildDoc(v, o)
 	if err != nil {
 		return err
+	}
+	if o.Format == Text {
+		return text.Write(w, d, o.Text)
 	}
 	return markdown.Write(w, d)
 }
@@ -64,7 +71,7 @@ func Render(w io.Writer, v view.View, o Options) error {
 // buildDoc checks the options against the view and returns the view's
 // document. Render and the tests of the document model share it.
 func buildDoc(v view.View, o Options) (doc.Doc, error) {
-	if o.Format != Markdown {
+	if o.Format != Markdown && o.Format != Text {
 		return doc.Doc{}, ErrFormat
 	}
 	if v == nil {

@@ -1,0 +1,199 @@
+Contextual tableau: nbyoung@nbyoung.com
+═══════════════════════════════════════
+
+*How does my corner stand?* Tableaux tooling · ref main at 3cdae52, 2026-10-05 ·
+person nbyoung@nbyoung.com · window 1 · level provenance
+
+Legend: tabloio gates.
+
+┌──────┬──────────────────────────────┬─────┬──┬────┬──┬────┬──────┬──┬────────┐
+│ Id   │ Task                         │❔ ×0│📝│ 📌 │🔧│ 📐 │  🧱  │📏│🔗…🚀 ×0│
+├──────┼──────────────────────────────┼─────┼──┼────┼──┼────┼──────┼──┼────────┤
+│ 437e │ *Tableaux tooling*           │     │🟢│🤖👀│🤖│🤖👀│  🤖  │🤖│        │
+│ bc63 │   *Method* (4)               │     │🟢│🤖👀│🤖│🤖👀│  🤖  │🤖│        │
+│ 2034 │     *Views* (3)              │     │🟢│🤖👀│🤖│🤖👀│  🤖  │🤖│        │
+│ ac33 │     Agent identity           │     │  │    │  │ 🟢 │[🤖👀]│— │        │
+│ 9f3f │     Subproject linkage       │     │  │    │  │ 🟢 │[🤖👀]│— │        │
+│ 7166 │     Language clarifications  │     │  │    │  │ 🟢 │[🤖👀]│— │        │
+│ 77b2 │   tablo: backend library and │     │🟢│ 🪆 │🪆│ 🪆 │  🪆  │🪆│        │
+│      │   plumbing                   │     │  │    │  │    │      │  │        │
+│ 6103 │   tabloio: command line,     │     │🟢│ 🪆 │🪆│ 🪆 │  🪆  │🪆│        │
+│      │   output and input           │     │  │    │  │    │      │  │        │
+│ c6e8 │   tablotui: terminal user    │     │🟢│ 🪆 │🪆│ 🪆 │  🪆  │🪆│        │
+│      │   interface                  │     │  │    │  │    │      │  │        │
+│ 595e │   tableaud: local daemon and │     │🟢│ 🪆 │🪆│ 🪆 │  🪆  │🪆│        │
+│      │   HTML                       │     │  │    │  │    │      │  │        │
+└──────┴──────────────────────────────┴─────┴──┴────┴──┴────┴──────┴──┴────────┘
+
+❔ undefined · 📝 defined · 📌 mockup · 🔧 function · 📐 design · 🧱
+implementation · 📏 unit · 🔗 integrate · 🚀 release · 🟢 nominal · 🤖 an agent
+contributes · 👀 a reviewer accepts · 🪆 a subproject does the work · — the gate
+does not apply.
+
+Notes
+─────
+
+┌────────────────┬────────────┬───────────────────────┬────────────────────────┐
+│ Rows           │ Date       │ Note                  │ From                   │
+├────────────────┼────────────┼───────────────────────┼────────────────────────┤
+│ 437e bc63 2034 │ 2026-09-29 │ Mockup waits for      │ rolled up from 99f0    │
+│                │            │ Abstract views (e9c6) │ Gate definition view   │
+│                │            │ at design             │ in Markdown            │
+│ ac33           │ 2026-09-30 │ The model             │                        │
+│                │            │ plan-and-record rule  │                        │
+│                │            │ (F20) is on the       │                        │
+│                │            │ trunk; F1, F2 and F10 │                        │
+│                │            │ remain for design     │                        │
+│ 9f3f           │ 2026-09-30 │ The subproject        │                        │
+│                │            │ linkage rule (F3, F5, │                        │
+│                │            │ F12) is on the trunk  │                        │
+│                │            │ at language 0.3.0;    │                        │
+│                │            │ tablo and the         │                        │
+│                │            │ subprojects follow    │                        │
+│ 7166           │ 2026-09-30 │ The trunk             │                        │
+│                │            │ clarification (F19)   │                        │
+│                │            │ is on the trunk; F7   │                        │
+│                │            │ and F9 remain for     │                        │
+│                │            │ design                │                        │
+│ 77b2           │ 2026-09-30 │ The design is next    │ b2c1 tablo in          │
+│                │            │ and no requirement    │ subprojects/tablo at   │
+│                │            │ gates it              │ 00f8f68, at 📝 defined │
+│ 6103           │ 2026-09-30 │ prototype/e3ed        │ 07e0 tabloio in        │
+│                │            │ renders the gate and  │ subprojects/tabloio at │
+│                │            │ task definition views │ 4593882, at 🔧         │
+│                │            │ as Markdown at three  │ function               │
+│                │            │ levels from tablo     │                        │
+│                │            │ view data             │                        │
+│ c6e8           │ 2026-09-30 │ prototype/679b        │ 40e8 tablotui in       │
+│                │            │ renders the global    │ subprojects/tablotui   │
+│                │            │ tableau as a Bubble   │ at a2878b5, at 🔧      │
+│                │            │ Tea grid with tree    │ function               │
+│                │            │ expand and collapse,  │                        │
+│                │            │ scrolling, a folded   │                        │
+│                │            │ gate window and       │                        │
+│                │            │ hidden columns kept   │                        │
+│                │            │ in a settings file;   │                        │
+│                │            │ emoji lines align     │                        │
+│                │            │ where the terminal    │                        │
+│                │            │ widens U+FE0F         │                        │
+│ 595e           │ 2026-09-30 │ prototype/49ce serves │ 8608 tableaud in       │
+│                │            │ the ten views with a  │ subprojects/tableaud   │
+│                │            │ stdlib HEAD and       │ at e6ec4ec, at 🔧      │
+│                │            │ .tableaux watcher,    │ function               │
+│                │            │ ETag 304 polling      │                        │
+│                │            │ through htmx, a       │                        │
+│                │            │ Source interface and  │                        │
+│                │            │ a loopback Host check │                        │
+└────────────────┴────────────┴───────────────────────┴────────────────────────┘
+
+Folded columns
+──────────────
+
+┌───────────────┬──────────────┬───────┐
+│ Folded column │ Gate         │ Tasks │
+├───────────────┼──────────────┼───────┤
+│      ❔       │ ❔ undefined │     0 │
+│     🔗…🚀     │ 🔗 integrate │     0 │
+│     🔗…🚀     │ 🌍 validate  │     0 │
+│     🔗…🚀     │ 🚀 release   │     0 │
+└───────────────┴──────────────┴───────┘
+
+Status cells: 1
+───────────────
+
+────────────────────────────────────────────────────────────────────────────────
+Rows · Cell · Date · Recorder · Deciding commit · Committer · Trailers
+────────────────────────────────────────────────────────────────────────────────
+77b2 6103 c6e8 595e
+  Cell: 📝 defined
+  Date: 2026-09-30
+  Recorder: noreply@anthropic.com
+  Deciding commit: e66abe2 Record the defined gate for the subproject tasks
+  Committer: noreply@anthropic.com
+────────────────────────────────────────────────────────────────────────────────
+
+Roll-ups: 3
+───────────
+
+┌─────────────────────┬─────────────────────┬─────────────────────┬────────────┐
+│ Parent              │ Shows               │ Rolls up from       │ Date       │
+├─────────────────────┼─────────────────────┼─────────────────────┼────────────┤
+│ 437e Tableaux       │ 📝 defined 🟢       │ bc63 Method         │ 2026-09-29 │
+│ tooling             │ nominal             │                     │            │
+├─────────────────────┼─────────────────────┼─────────────────────┼────────────┤
+│ bc63 Method         │ 📝 defined 🟢       │ 2034 Views          │ 2026-09-29 │
+│                     │ nominal             │                     │            │
+├─────────────────────┼─────────────────────┼─────────────────────┼────────────┤
+│ 2034 Views          │ 📝 defined 🟢       │ bc86 Markdown views │ 2026-09-29 │
+│                     │ nominal             │                     │            │
+└─────────────────────┴─────────────────────┴─────────────────────┴────────────┘
+
+Marks: 5
+────────
+
+┌────────────────┬────┬──────┬────────────────────────┬────────────────────────┐
+│ Gate           │Mark│ Rows │ Contributor and model  │ Reviewer               │
+├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
+│ 📐 design      │🤖👀│ 437e │ noreply@anthropic.com, │ *nbyoung@nbyoung.com*, │
+│                │    │      │ claude-opus, from 437e │ from 437e              │
+├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
+│ 🧱             │ 🤖 │ 437e │ noreply@anthropic.com, │                        │
+│ implementation │    │ bc63 │ claude-sonnet, from    │                        │
+│                │    │ 2034 │ 437e                   │                        │
+├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
+│ 🧱             │🤖👀│ ac33 │ noreply@anthropic.com, │ *nbyoung@nbyoung.com*, │
+│ implementation │    │ 9f3f │ claude-sonnet, from    │ by default             │
+│                │    │ 7166 │ 437e                   │                        │
+├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
+│ 📐 design      │ 🪆 │ 77b2 │                        │                        │
+│                │    │ 6103 │                        │                        │
+│                │    │ c6e8 │                        │                        │
+│                │    │ 595e │                        │                        │
+├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
+│ 🧱             │ 🪆 │ 77b2 │                        │                        │
+│ implementation │    │ 6103 │                        │                        │
+│                │    │ c6e8 │                        │                        │
+│                │    │ 595e │                        │                        │
+└────────────────┴────┴──────┴────────────────────────┴────────────────────────┘
+
+🤖 an agent contributes · 👀 a reviewer accepts · 🪆 a subproject does the work.
+
+Snapshots: 4
+────────────
+
+────────────────────────────────────────────────────────────────────────────────
+Row · Subproject · Pin · Pin set by · Root task at the pin · Rolls up from
+────────────────────────────────────────────────────────────────────────────────
+77b2
+  Subproject: subprojects/tablo
+  Pin: 00f8f68
+  Pin set by: 552d38f, 2026-10-02, *nbyoung@nbyoung.com*
+  Root task at the pin: b2c1 tablo: 📝 defined 🟢 nominal
+  Rolls up from: 4b4f Conformance
+────────────────────────────────────────────────────────────────────────────────
+6103
+  Subproject: subprojects/tabloio
+  Pin: 4593882
+  Pin set by: 1c0f04d, 2026-10-02, *nbyoung@nbyoung.com*
+  Root task at the pin: 07e0 tabloio: 🔧 function 🟢 nominal
+  Rolls up from: 1093 Renderers
+────────────────────────────────────────────────────────────────────────────────
+c6e8
+  Subproject: subprojects/tablotui
+  Pin: a2878b5
+  Pin set by: fa4551e, 2026-10-04, *nbyoung@nbyoung.com*
+  Root task at the pin: 40e8 tablotui: 🔧 function 🟢 nominal
+  Rolls up from: 679b Tableau grid
+────────────────────────────────────────────────────────────────────────────────
+595e
+  Subproject: subprojects/tableaud
+  Pin: e6ec4ec
+  Pin set by: 3cdae52, 2026-10-05, *nbyoung@nbyoung.com*
+  Root task at the pin: 8608 tableaud: 🔧 function 🟢 nominal
+  Rolls up from: 49ce Server
+────────────────────────────────────────────────────────────────────────────────
+
+    git ls-tree HEAD subprojects/ # the pin each snapshot reads
+
+Command: tabloio context --person nbyoung@nbyoung.com --ref 3cdae52 --window 1
+--level provenance --text

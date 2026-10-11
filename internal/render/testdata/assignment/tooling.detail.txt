@@ -1,0 +1,549 @@
+Task assignment
+═══════════════
+
+*What does each person carry?* Tableaux tooling · ref main · level detail
+
+Legend: tabloio gates.
+
+┌───────────────────────┬──────────┬─────────────┬─────────────┬───────────────┐
+│ Email                 │ Assigned │ Contributes │     Reviews │ Models        │
+│                       │          │        next │        next │               │
+├───────────────────────┼──────────┼─────────────┼─────────────┼───────────────┤
+│ nbyoung@nbyoung.com   │       10 │           0 │          26 │               │
+│ noreply@anthropic.com │       27 │          28 │           2 │ claude-haiku, │
+│                       │          │             │             │ claude-opus,  │
+│                       │          │             │             │ claude-fable, │
+│                       │          │             │             │ claude-sonnet │
+└───────────────────────┴──────────┴─────────────┴─────────────┴───────────────┘
+
+🪆 4 tasks hand their next junction to a subproject: 77b2 6103 c6e8 595e.
+
+nbyoung@nbyoung.com
+───────────────────
+
+Tasks assigned: 10
+··················
+
+┌──────────────────────┬───────┬───────────────────────┬───────────────────────┐
+│ Task                 │ Under │ Status                │ Next junction         │
+├──────────────────────┼───────┼───────────────────────┼───────────────────────┤
+│ 437e Tableaux        │       │ 📝 defined 🟢         │                       │
+│ tooling              │       │ nominal, rolled up    │                       │
+│                      │       │ from 99f0 Gate        │                       │
+│                      │       │ definition view in    │                       │
+│                      │       │ Markdown              │                       │
+├──────────────────────┼───────┼───────────────────────┼───────────────────────┤
+│ bc63 Method          │ 437e  │ 📝 defined 🟢         │                       │
+│                      │       │ nominal, rolled up    │                       │
+│                      │       │ from 99f0 Gate        │                       │
+│                      │       │ definition view in    │                       │
+│                      │       │ Markdown              │                       │
+├──────────────────────┼───────┼───────────────────────┼───────────────────────┤
+│ 2034 Views           │ bc63  │ 📝 defined 🟢         │                       │
+│                      │       │ nominal, rolled up    │                       │
+│                      │       │ from 99f0 Gate        │                       │
+│                      │       │ definition view in    │                       │
+│                      │       │ Markdown              │                       │
+├──────────────────────┼───────┼───────────────────────┼───────────────────────┤
+│ ac33 Agent identity  │ bc63  │ 📐 design 🟢 nominal  │ 🧱 implementation     │
+│                      │       │                       │ 🤖👀                  │
+├──────────────────────┼───────┼───────────────────────┼───────────────────────┤
+│ 9f3f Subproject      │ bc63  │ 📐 design 🟢 nominal  │ 🧱 implementation     │
+│ linkage              │       │                       │ 🤖👀                  │
+├──────────────────────┼───────┼───────────────────────┼───────────────────────┤
+│ 7166 Language        │ bc63  │ 📐 design 🟢 nominal  │ 🧱 implementation     │
+│ clarifications       │       │                       │ 🤖👀                  │
+├──────────────────────┼───────┼───────────────────────┼───────────────────────┤
+│ 77b2 tablo: backend  │ 437e  │ 📝 defined 🟢         │ 📌 mockup 🪆          │
+│ library and plumbing │       │ nominal, 🪆 from the  │                       │
+│                      │       │ subproject            │                       │
+│                      │       │ subprojects/tablo     │                       │
+├──────────────────────┼───────┼───────────────────────┼───────────────────────┤
+│ 6103 tabloio:        │ 437e  │ 📝 defined 🟢         │ 📌 mockup 🪆          │
+│ command line, output │       │ nominal, 🪆 from the  │                       │
+│ and input            │       │ subproject            │                       │
+│                      │       │ subprojects/tabloio   │                       │
+├──────────────────────┼───────┼───────────────────────┼───────────────────────┤
+│ c6e8 tablotui:       │ 437e  │ 📝 defined 🟢         │ 📌 mockup 🪆          │
+│ terminal user        │       │ nominal, 🪆 from the  │                       │
+│ interface            │       │ subproject            │                       │
+│                      │       │ subprojects/tablotui  │                       │
+├──────────────────────┼───────┼───────────────────────┼───────────────────────┤
+│ 595e tableaud: local │ 437e  │ 📝 defined 🟢         │ 📌 mockup 🪆          │
+│ daemon and HTML      │       │ nominal, 🪆 from the  │                       │
+│                      │       │ subproject            │                       │
+│                      │       │ subprojects/tableaud  │                       │
+└──────────────────────┴───────┴───────────────────────┴───────────────────────┘
+
+🤖 an agent contributes · 👀 a reviewer accepts · 🪆 a subproject does the work.
+
+No contributor in this project: 4
+·································
+
+┌───────────────────┬──────────────┬──────────────────────┬────────────────────┐
+│ Task              │ Next gate    │ Subproject           │ Its root task      │
+│                   │              │                      │ stands at          │
+├───────────────────┼──────────────┼──────────────────────┼────────────────────┤
+│ 77b2 tablo:       │ 📌 mockup 🪆 │ subprojects/tablo    │ b2c1 📝 defined 🟢 │
+│ backend library   │              │                      │ nominal            │
+│ and plumbing      │              │                      │                    │
+├───────────────────┼──────────────┼──────────────────────┼────────────────────┤
+│ 6103 tabloio:     │ 📌 mockup 🪆 │ subprojects/tabloio  │ 07e0 🔧 function   │
+│ command line,     │              │                      │ 🟢 nominal         │
+│ output and input  │              │                      │                    │
+├───────────────────┼──────────────┼──────────────────────┼────────────────────┤
+│ c6e8 tablotui:    │ 📌 mockup 🪆 │ subprojects/tablotui │ 40e8 🔧 function   │
+│ terminal user     │              │                      │ 🟢 nominal         │
+│ interface         │              │                      │                    │
+├───────────────────┼──────────────┼──────────────────────┼────────────────────┤
+│ 595e tableaud:    │ 📌 mockup 🪆 │ subprojects/tableaud │ 8608 🔧 function   │
+│ local daemon and  │              │                      │ 🟢 nominal         │
+│ HTML              │              │                      │                    │
+└───────────────────┴──────────────┴──────────────────────┴────────────────────┘
+
+Contributes: 8 junctions, 0 next
+································
+
+*🚀 release* · 8 junctions · 0 next
+
+┌──────────────────────────────┬───────┬──────────┬───────┐
+│ Task                         │ Model │ Reviewer │ When  │
+├──────────────────────────────┼───────┼──────────┼───────┤
+│ c2ad Roles                   │       │          │ later │
+│ e9c6 Abstract views          │       │          │ later │
+│ e3cb Schema files            │       │          │ later │
+│ fcec Conformance corpus      │       │          │ later │
+│ ac33 Agent identity          │       │          │ later │
+│ 9f3f Subproject linkage      │       │          │ later │
+│ 7861 Productivity evidence   │       │          │ later │
+│ 7166 Language clarifications │       │          │ later │
+└──────────────────────────────┴───────┴──────────┴───────┘
+
+Reviews: 46 junctions, 26 next
+······························
+
+*📝 defined* · 7 junctions · 0 next
+
+┌──────────────────────────────┬───────────────────────┬──────────────┬────────┐
+│ Task                         │ Contributor           │ Model        │ When   │
+├──────────────────────────────┼───────────────────────┼──────────────┼────────┤
+│ ac33 Agent identity          │ noreply@anthropic.com │ claude-haiku │ passed │
+├──────────────────────────────┼───────────────────────┼──────────────┼────────┤
+│ 9f3f Subproject linkage      │ noreply@anthropic.com │ claude-haiku │ passed │
+├──────────────────────────────┼───────────────────────┼──────────────┼────────┤
+│ 7166 Language clarifications │ noreply@anthropic.com │ claude-haiku │ passed │
+├──────────────────────────────┼───────────────────────┼──────────────┼────────┤
+│ 77b2 tablo: backend library  │ noreply@anthropic.com │ claude-haiku │ passed │
+│ and plumbing                 │                       │              │        │
+├──────────────────────────────┼───────────────────────┼──────────────┼────────┤
+│ 6103 tabloio: command line,  │ noreply@anthropic.com │ claude-haiku │ passed │
+│ output and input             │                       │              │        │
+├──────────────────────────────┼───────────────────────┼──────────────┼────────┤
+│ c6e8 tablotui: terminal user │ noreply@anthropic.com │ claude-haiku │ passed │
+│ interface                    │                       │              │        │
+├──────────────────────────────┼───────────────────────┼──────────────┼────────┤
+│ 595e tableaud: local daemon  │ noreply@anthropic.com │ claude-haiku │ passed │
+│ and HTML                     │                       │              │        │
+└──────────────────────────────┴───────────────────────┴──────────────┴────────┘
+
+*📌 mockup* · 20 junctions · 20 next
+
+┌─────────────────────────────────┬───────────────────────┬─────────────┬──────┐
+│ Task                            │ Contributor           │ Model       │ When │
+├─────────────────────────────────┼───────────────────────┼─────────────┼──────┤
+│ 99f0 Gate definition view in    │ noreply@anthropic.com │ claude-opus │ next │
+│ Markdown                        │                       │             │      │
+├─────────────────────────────────┼───────────────────────┼─────────────┼──────┤
+│ 05a9 Task definition view in    │ noreply@anthropic.com │ claude-opus │ next │
+│ Markdown                        │                       │             │      │
+├─────────────────────────────────┼───────────────────────┼─────────────┼──────┤
+│ a9ce Authority delegation view  │ noreply@anthropic.com │ claude-opus │ next │
+│ in Markdown                     │                       │             │      │
+├─────────────────────────────────┼───────────────────────┼─────────────┼──────┤
+│ … and 17 more: bb7c c74a efff   │ noreply@anthropic.com │ claude-opus │ next │
+│ ab8e c545 d615 b14e a6f7 7dff   │                       │             │      │
+│ b1b7 ea51 7783 5471 32e7 69eb   │                       │             │      │
+│ 3194 a8b4                       │                       │             │      │
+└─────────────────────────────────┴───────────────────────┴─────────────┴──────┘
+
+*📐 design* · 8 junctions · 0 next
+
+┌──────────────────────────────┬───────────────────────┬──────────────┬────────┐
+│ Task                         │ Contributor           │ Model        │ When   │
+├──────────────────────────────┼───────────────────────┼──────────────┼────────┤
+│ c2ad Roles                   │ noreply@anthropic.com │ claude-fable │ passed │
+│ e9c6 Abstract views          │ noreply@anthropic.com │ claude-fable │ passed │
+│ e3cb Schema files            │ noreply@anthropic.com │ claude-fable │ passed │
+│ fcec Conformance corpus      │ noreply@anthropic.com │ claude-fable │ passed │
+│ ac33 Agent identity          │ noreply@anthropic.com │ claude-fable │ passed │
+│ 9f3f Subproject linkage      │ noreply@anthropic.com │ claude-fable │ passed │
+│ 7861 Productivity evidence   │ noreply@anthropic.com │ claude-fable │ passed │
+│ 7166 Language clarifications │ noreply@anthropic.com │ claude-fable │ passed │
+└──────────────────────────────┴───────────────────────┴──────────────┴────────┘
+
+*🧱 implementation* · 3 junctions · 3 next
+
+┌──────────────────────────────┬───────────────────────┬───────────────┬──────┐
+│ Task                         │ Contributor           │ Model         │ When │
+├──────────────────────────────┼───────────────────────┼───────────────┼──────┤
+│ ac33 Agent identity          │ noreply@anthropic.com │ claude-sonnet │ next │
+│ 9f3f Subproject linkage      │ noreply@anthropic.com │ claude-sonnet │ next │
+│ 7166 Language clarifications │ noreply@anthropic.com │ claude-sonnet │ next │
+└──────────────────────────────┴───────────────────────┴───────────────┴──────┘
+
+*🌍 validate* · 8 junctions · 3 next
+
+┌──────────────────────────────┬───────────────────────┬─────────────┬───────┐
+│ Task                         │ Contributor           │ Model       │ When  │
+├──────────────────────────────┼───────────────────────┼─────────────┼───────┤
+│ c2ad Roles                   │ noreply@anthropic.com │ claude-opus │ next  │
+│ e9c6 Abstract views          │ noreply@anthropic.com │ claude-opus │ later │
+│ e3cb Schema files            │ noreply@anthropic.com │ claude-opus │ next  │
+│ fcec Conformance corpus      │ noreply@anthropic.com │ claude-opus │ later │
+│ ac33 Agent identity          │ noreply@anthropic.com │ claude-opus │ later │
+│ 9f3f Subproject linkage      │ noreply@anthropic.com │ claude-opus │ later │
+│ 7861 Productivity evidence   │ noreply@anthropic.com │ claude-opus │ next  │
+│ 7166 Language clarifications │ noreply@anthropic.com │ claude-opus │ later │
+└──────────────────────────────┴───────────────────────┴─────────────┴───────┘
+
+Counts by gate
+··············
+
+┌────────────────┬───────────┬─────────────┬────────────┬─────────┬────────────┐
+│ Gate           │     Tasks │ Contributes │   of which │ Reviews │   of which │
+│                │  standing │             │       next │         │       next │
+│                │      here │             │            │         │            │
+├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
+│ ❔ undefined   │         0 │           0 │          0 │       0 │          0 │
+├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
+│ 📝 defined     │         7 │           0 │          0 │       7 │          0 │
+├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
+│ 📌 mockup      │         0 │           0 │          0 │      20 │         20 │
+├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
+│ 🔧 function    │         0 │           0 │          0 │       0 │          0 │
+├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
+│ 📐 design      │         3 │           0 │          0 │       8 │          0 │
+├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
+│ 🧱             │         0 │           0 │          0 │       3 │          3 │
+│ implementation │           │             │            │         │            │
+├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
+│ 📏 unit        │         0 │           0 │          0 │       0 │          0 │
+├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
+│ 🔗 integrate   │         0 │           0 │          0 │       0 │          0 │
+├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
+│ 🌍 validate    │         0 │           0 │          0 │       8 │          3 │
+├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
+│ 🚀 release     │         0 │           8 │          0 │       0 │          0 │
+├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
+│ *Total*        │      *10* │         *8* │        *0* │    *46* │       *26* │
+└────────────────┴───────────┴─────────────┴────────────┴─────────┴────────────┘
+
+Authority
+·········
+
+Over 437e Tableaux tooling and its 36 descendants.
+
+noreply@anthropic.com
+─────────────────────
+
+Tasks assigned: 27
+··················
+
+┌───────────────────────┬───────┬───────────────────────┬──────────────────────┐
+│ Task                  │ Under │ Status                │ Next junction        │
+├───────────────────────┼───────┼───────────────────────┼──────────────────────┤
+│ c2ad Roles            │ bc63  │ 🧱 implementation 🟢  │ 🌍 validate 🤖👀     │
+│                       │       │ nominal               │                      │
+├───────────────────────┼───────┼───────────────────────┼──────────────────────┤
+│ e9c6 Abstract views   │ 2034  │ 📐 design 🟢 nominal  │ 🧱 implementation 🤖 │
+├───────────────────────┼───────┼───────────────────────┼──────────────────────┤
+│ bc86 Markdown views   │ 2034  │ 📝 defined 🟢         │                      │
+│                       │       │ nominal, rolled up    │                      │
+│                       │       │ from 99f0 Gate        │                      │
+│                       │       │ definition view in    │                      │
+│                       │       │ Markdown              │                      │
+├───────────────────────┼───────┼───────────────────────┼──────────────────────┤
+│ 99f0 Gate definition  │ bc86  │ 📝 defined 🟢 nominal │ 📌 mockup 🤖👀       │
+│ view in Markdown      │       │                       │                      │
+├───────────────────────┼───────┼───────────────────────┼──────────────────────┤
+│ 05a9 Task definition  │ bc86  │ 📝 defined 🟢 nominal │ 📌 mockup 🤖👀       │
+│ view in Markdown      │       │                       │                      │
+├───────────────────────┼───────┼───────────────────────┼──────────────────────┤
+│ a9ce Authority        │ bc86  │ 📝 defined 🟢 nominal │ 📌 mockup 🤖👀       │
+│ delegation view in    │       │                       │                      │
+│ Markdown              │       │                       │                      │
+├───────────────────────┼───────┼───────────────────────┼──────────────────────┤
+│ … and 7 more: bb7c    │ bc86  │ 📝 defined 🟢 nominal │ 📌 mockup 🤖👀       │
+│ c74a efff ab8e c545   │       │                       │                      │
+│ d615 b14e             │       │                       │                      │
+├───────────────────────┼───────┼───────────────────────┼──────────────────────┤
+│ 5fe3 HTML views       │ 2034  │ 📝 defined 🟢         │                      │
+│                       │       │ nominal, rolled up    │                      │
+│                       │       │ from a6f7 Gate        │                      │
+│                       │       │ definition view in    │                      │
+│                       │       │ Html                  │                      │
+├───────────────────────┼───────┼───────────────────────┼──────────────────────┤
+│ a6f7 Gate definition  │ 5fe3  │ 📝 defined 🟢 nominal │ 📌 mockup 🤖👀       │
+│ view in Html          │       │                       │                      │
+├───────────────────────┼───────┼───────────────────────┼──────────────────────┤
+│ 7dff Task definition  │ 5fe3  │ 📝 defined 🟢 nominal │ 📌 mockup 🤖👀       │
+│ view in Html          │       │                       │                      │
+├───────────────────────┼───────┼───────────────────────┼──────────────────────┤
+│ b1b7 Authority        │ 5fe3  │ 📝 defined 🟢 nominal │ 📌 mockup 🤖👀       │
+│ delegation view in    │       │                       │                      │
+│ Html                  │       │                       │                      │
+├───────────────────────┼───────┼───────────────────────┼──────────────────────┤
+│ … and 7 more: ea51    │ 5fe3  │ 📝 defined 🟢 nominal │ 📌 mockup 🤖👀       │
+│ 7783 5471 32e7 69eb   │       │                       │                      │
+│ 3194 a8b4             │       │                       │                      │
+├───────────────────────┼───────┼───────────────────────┼──────────────────────┤
+│ e3cb Schema files     │ bc63  │ 📏 unit 🟢 nominal    │ 🌍 validate 🤖👀     │
+├───────────────────────┼───────┼───────────────────────┼──────────────────────┤
+│ fcec Conformance      │ bc63  │ 🧱 implementation 🟢  │ 📏 unit 🤖           │
+│ corpus                │       │ nominal               │                      │
+├───────────────────────┼───────┼───────────────────────┼──────────────────────┤
+│ 7861 Productivity     │ bc63  │ 🧱 implementation 🟢  │ 🌍 validate 🤖👀     │
+│ evidence              │       │ nominal               │                      │
+└───────────────────────┴───────┴───────────────────────┴──────────────────────┘
+
+🤖 an agent contributes · 👀 a reviewer accepts.
+
+Contributes: 79 junctions, 28 next
+··································
+
+*📝 defined* · 32 junctions · 0 next
+
+┌──────────────────────────────┬──────────────┬───────────────────────┬────────┐
+│ Task                         │ Model        │ Reviewer              │ When   │
+├──────────────────────────────┼──────────────┼───────────────────────┼────────┤
+│ c2ad Roles                   │ claude-haiku │ noreply@anthropic.com │ passed │
+├──────────────────────────────┼──────────────┼───────────────────────┼────────┤
+│ e9c6 Abstract views          │ claude-haiku │ noreply@anthropic.com │ passed │
+├──────────────────────────────┼──────────────┼───────────────────────┼────────┤
+│ 99f0 Gate definition view in │ claude-haiku │ noreply@anthropic.com │ passed │
+│ Markdown                     │              │                       │        │
+├──────────────────────────────┼──────────────┼───────────────────────┼────────┤
+│ … and 21 more: 05a9 a9ce     │ claude-haiku │ noreply@anthropic.com │ passed │
+│ bb7c c74a efff ab8e c545     │              │                       │        │
+│ d615 b14e a6f7 7dff b1b7     │              │                       │        │
+│ ea51 7783 5471 32e7 69eb     │              │                       │        │
+│ 3194 a8b4 e3cb fcec          │              │                       │        │
+├──────────────────────────────┼──────────────┼───────────────────────┼────────┤
+│ ac33 Agent identity          │ claude-haiku │ nbyoung@nbyoung.com   │ passed │
+├──────────────────────────────┼──────────────┼───────────────────────┼────────┤
+│ 9f3f Subproject linkage      │ claude-haiku │ nbyoung@nbyoung.com   │ passed │
+├──────────────────────────────┼──────────────┼───────────────────────┼────────┤
+│ 7861 Productivity evidence   │ claude-haiku │ noreply@anthropic.com │ passed │
+├──────────────────────────────┼──────────────┼───────────────────────┼────────┤
+│ 7166 Language clarifications │ claude-haiku │ nbyoung@nbyoung.com   │ passed │
+├──────────────────────────────┼──────────────┼───────────────────────┼────────┤
+│ 77b2 tablo: backend library  │ claude-haiku │ nbyoung@nbyoung.com   │ passed │
+│ and plumbing                 │              │                       │        │
+├──────────────────────────────┼──────────────┼───────────────────────┼────────┤
+│ 6103 tabloio: command line,  │ claude-haiku │ nbyoung@nbyoung.com   │ passed │
+│ output and input             │              │                       │        │
+├──────────────────────────────┼──────────────┼───────────────────────┼────────┤
+│ c6e8 tablotui: terminal user │ claude-haiku │ nbyoung@nbyoung.com   │ passed │
+│ interface                    │              │                       │        │
+├──────────────────────────────┼──────────────┼───────────────────────┼────────┤
+│ 595e tableaud: local daemon  │ claude-haiku │ nbyoung@nbyoung.com   │ passed │
+│ and HTML                     │              │                       │        │
+└──────────────────────────────┴──────────────┴───────────────────────┴────────┘
+
+*📌 mockup* · 20 junctions · 20 next
+
+┌───────────────────────────────────┬─────────────┬─────────────────────┬──────┐
+│ Task                              │ Model       │ Reviewer            │ When │
+├───────────────────────────────────┼─────────────┼─────────────────────┼──────┤
+│ 99f0 Gate definition view in      │ claude-opus │ nbyoung@nbyoung.com │ next │
+│ Markdown                          │             │                     │      │
+├───────────────────────────────────┼─────────────┼─────────────────────┼──────┤
+│ 05a9 Task definition view in      │ claude-opus │ nbyoung@nbyoung.com │ next │
+│ Markdown                          │             │                     │      │
+├───────────────────────────────────┼─────────────┼─────────────────────┼──────┤
+│ a9ce Authority delegation view in │ claude-opus │ nbyoung@nbyoung.com │ next │
+│ Markdown                          │             │                     │      │
+├───────────────────────────────────┼─────────────┼─────────────────────┼──────┤
+│ … and 17 more: bb7c c74a efff     │ claude-opus │ nbyoung@nbyoung.com │ next │
+│ ab8e c545 d615 b14e a6f7 7dff     │             │                     │      │
+│ b1b7 ea51 7783 5471 32e7 69eb     │             │                     │      │
+│ 3194 a8b4                         │             │                     │      │
+└───────────────────────────────────┴─────────────┴─────────────────────┴──────┘
+
+*📐 design* · 8 junctions · 0 next
+
+┌──────────────────────────────┬──────────────┬─────────────────────┬────────┐
+│ Task                         │ Model        │ Reviewer            │ When   │
+├──────────────────────────────┼──────────────┼─────────────────────┼────────┤
+│ c2ad Roles                   │ claude-fable │ nbyoung@nbyoung.com │ passed │
+│ e9c6 Abstract views          │ claude-fable │ nbyoung@nbyoung.com │ passed │
+│ e3cb Schema files            │ claude-fable │ nbyoung@nbyoung.com │ passed │
+│ fcec Conformance corpus      │ claude-fable │ nbyoung@nbyoung.com │ passed │
+│ ac33 Agent identity          │ claude-fable │ nbyoung@nbyoung.com │ passed │
+│ 9f3f Subproject linkage      │ claude-fable │ nbyoung@nbyoung.com │ passed │
+│ 7861 Productivity evidence   │ claude-fable │ nbyoung@nbyoung.com │ passed │
+│ 7166 Language clarifications │ claude-fable │ nbyoung@nbyoung.com │ passed │
+└──────────────────────────────┴──────────────┴─────────────────────┴────────┘
+
+*🧱 implementation* · 8 junctions · 4 next
+
+┌─────────────────────────────┬───────────────┬───────────────────────┬────────┐
+│ Task                        │ Model         │ Reviewer              │ When   │
+├─────────────────────────────┼───────────────┼───────────────────────┼────────┤
+│ c2ad Roles                  │ claude-sonnet │ noreply@anthropic.com │ passed │
+├─────────────────────────────┼───────────────┼───────────────────────┼────────┤
+│ e9c6 Abstract views         │ claude-sonnet │ noreply@anthropic.com │ next   │
+├─────────────────────────────┼───────────────┼───────────────────────┼────────┤
+│ e3cb Schema files           │ claude-sonnet │ noreply@anthropic.com │ passed │
+├─────────────────────────────┼───────────────┼───────────────────────┼────────┤
+│ fcec Conformance corpus     │ claude-sonnet │ noreply@anthropic.com │ passed │
+├─────────────────────────────┼───────────────┼───────────────────────┼────────┤
+│ ac33 Agent identity         │ claude-sonnet │ nbyoung@nbyoung.com   │ next   │
+├─────────────────────────────┼───────────────┼───────────────────────┼────────┤
+│ 9f3f Subproject linkage     │ claude-sonnet │ nbyoung@nbyoung.com   │ next   │
+├─────────────────────────────┼───────────────┼───────────────────────┼────────┤
+│ 7861 Productivity evidence  │ claude-sonnet │ noreply@anthropic.com │ passed │
+├─────────────────────────────┼───────────────┼───────────────────────┼────────┤
+│ 7166 Language               │ claude-sonnet │ nbyoung@nbyoung.com   │ next   │
+│ clarifications              │               │                       │        │
+└─────────────────────────────┴───────────────┴───────────────────────┴────────┘
+
+*📏 unit* · 2 junctions · 1 next
+
+┌─────────────────────────┬───────────────┬───────────────────────┬────────┐
+│ Task                    │ Model         │ Reviewer              │ When   │
+├─────────────────────────┼───────────────┼───────────────────────┼────────┤
+│ e3cb Schema files       │ claude-sonnet │ noreply@anthropic.com │ passed │
+│ fcec Conformance corpus │ claude-sonnet │ noreply@anthropic.com │ next   │
+└─────────────────────────┴───────────────┴───────────────────────┴────────┘
+
+*🔗 integrate* · 1 junctions · 0 next
+
+┌─────────────────────────┬───────────────┬───────────────────────┬───────┐
+│ Task                    │ Model         │ Reviewer              │ When  │
+├─────────────────────────┼───────────────┼───────────────────────┼───────┤
+│ fcec Conformance corpus │ claude-sonnet │ noreply@anthropic.com │ later │
+└─────────────────────────┴───────────────┴───────────────────────┴───────┘
+
+*🌍 validate* · 8 junctions · 3 next
+
+┌──────────────────────────────┬─────────────┬─────────────────────┬───────┐
+│ Task                         │ Model       │ Reviewer            │ When  │
+├──────────────────────────────┼─────────────┼─────────────────────┼───────┤
+│ c2ad Roles                   │ claude-opus │ nbyoung@nbyoung.com │ next  │
+│ e9c6 Abstract views          │ claude-opus │ nbyoung@nbyoung.com │ later │
+│ e3cb Schema files            │ claude-opus │ nbyoung@nbyoung.com │ next  │
+│ fcec Conformance corpus      │ claude-opus │ nbyoung@nbyoung.com │ later │
+│ ac33 Agent identity          │ claude-opus │ nbyoung@nbyoung.com │ later │
+│ 9f3f Subproject linkage      │ claude-opus │ nbyoung@nbyoung.com │ later │
+│ 7861 Productivity evidence   │ claude-opus │ nbyoung@nbyoung.com │ next  │
+│ 7166 Language clarifications │ claude-opus │ nbyoung@nbyoung.com │ later │
+└──────────────────────────────┴─────────────┴─────────────────────┴───────┘
+
+Reviews: 33 junctions, 2 next
+·····························
+
+*📝 defined* · 25 junctions · 0 next
+
+┌──────────────────────────────┬───────────────────────┬──────────────┬────────┐
+│ Task                         │ Contributor           │ Model        │ When   │
+├──────────────────────────────┼───────────────────────┼──────────────┼────────┤
+│ c2ad Roles                   │ noreply@anthropic.com │ claude-haiku │ passed │
+├──────────────────────────────┼───────────────────────┼──────────────┼────────┤
+│ e9c6 Abstract views          │ noreply@anthropic.com │ claude-haiku │ passed │
+├──────────────────────────────┼───────────────────────┼──────────────┼────────┤
+│ 99f0 Gate definition view in │ noreply@anthropic.com │ claude-haiku │ passed │
+│ Markdown                     │                       │              │        │
+├──────────────────────────────┼───────────────────────┼──────────────┼────────┤
+│ … and 22 more: 05a9 a9ce     │ noreply@anthropic.com │ claude-haiku │ passed │
+│ bb7c c74a efff ab8e c545     │                       │              │        │
+│ d615 b14e a6f7 7dff b1b7     │                       │              │        │
+│ ea51 7783 5471 32e7 69eb     │                       │              │        │
+│ 3194 a8b4 e3cb fcec 7861     │                       │              │        │
+└──────────────────────────────┴───────────────────────┴──────────────┴────────┘
+
+*🧱 implementation* · 5 junctions · 1 next
+
+┌────────────────────────────┬───────────────────────┬───────────────┬────────┐
+│ Task                       │ Contributor           │ Model         │ When   │
+├────────────────────────────┼───────────────────────┼───────────────┼────────┤
+│ c2ad Roles                 │ noreply@anthropic.com │ claude-sonnet │ passed │
+│ e9c6 Abstract views        │ noreply@anthropic.com │ claude-sonnet │ next   │
+│ e3cb Schema files          │ noreply@anthropic.com │ claude-sonnet │ passed │
+│ fcec Conformance corpus    │ noreply@anthropic.com │ claude-sonnet │ passed │
+│ 7861 Productivity evidence │ noreply@anthropic.com │ claude-sonnet │ passed │
+└────────────────────────────┴───────────────────────┴───────────────┴────────┘
+
+*📏 unit* · 2 junctions · 1 next
+
+┌─────────────────────────┬───────────────────────┬───────────────┬────────┐
+│ Task                    │ Contributor           │ Model         │ When   │
+├─────────────────────────┼───────────────────────┼───────────────┼────────┤
+│ e3cb Schema files       │ noreply@anthropic.com │ claude-sonnet │ passed │
+│ fcec Conformance corpus │ noreply@anthropic.com │ claude-sonnet │ next   │
+└─────────────────────────┴───────────────────────┴───────────────┴────────┘
+
+*🔗 integrate* · 1 junctions · 0 next
+
+┌─────────────────────────┬───────────────────────┬───────────────┬───────┐
+│ Task                    │ Contributor           │ Model         │ When  │
+├─────────────────────────┼───────────────────────┼───────────────┼───────┤
+│ fcec Conformance corpus │ noreply@anthropic.com │ claude-sonnet │ later │
+└─────────────────────────┴───────────────────────┴───────────────┴───────┘
+
+Models by gate
+··············
+
+┌───────────────────┬───────────────┬───────────┬───────────┬──────┐
+│ Gate              │ Model         │ Stated by │ Junctions │ Next │
+├───────────────────┼───────────────┼───────────┼───────────┼──────┤
+│ 📝 defined        │ claude-haiku  │ 437e      │        32 │    0 │
+│ 📌 mockup         │ claude-opus   │ 437e      │        20 │   20 │
+│ 🔧 function       │ claude-sonnet │ 437e      │         0 │    0 │
+│ 📐 design         │ claude-fable  │ bc63      │         8 │    0 │
+│ 🧱 implementation │ claude-sonnet │ 437e      │         8 │    4 │
+│ 📏 unit           │ claude-sonnet │ 437e      │         2 │    1 │
+│ 🔗 integrate      │ claude-sonnet │ 437e      │         1 │    0 │
+│ 🌍 validate       │ claude-opus   │ bc63      │         8 │    3 │
+└───────────────────┴───────────────┴───────────┴───────────┴──────┘
+
+Counts by gate
+··············
+
+┌────────────────┬───────────┬─────────────┬────────────┬─────────┬────────────┐
+│ Gate           │     Tasks │ Contributes │   of which │ Reviews │   of which │
+│                │  standing │             │       next │         │       next │
+│                │      here │             │            │         │            │
+├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
+│ ❔ undefined   │         0 │           0 │          0 │       0 │          0 │
+├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
+│ 📝 defined     │        22 │          32 │          0 │      25 │          0 │
+├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
+│ 📌 mockup      │         0 │          20 │         20 │       0 │          0 │
+├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
+│ 🔧 function    │         0 │           0 │          0 │       0 │          0 │
+├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
+│ 📐 design      │         1 │           8 │          0 │       0 │          0 │
+├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
+│ 🧱             │         3 │           8 │          4 │       5 │          1 │
+│ implementation │           │             │            │         │            │
+├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
+│ 📏 unit        │         1 │           2 │          1 │       2 │          1 │
+├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
+│ 🔗 integrate   │         0 │           1 │          0 │       1 │          0 │
+├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
+│ 🌍 validate    │         0 │           8 │          3 │       0 │          0 │
+├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
+│ 🚀 release     │         0 │           0 │          0 │       0 │          0 │
+├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
+│ *Total*        │      *27* │        *79* │       *28* │    *33* │        *2* │
+└────────────────┴───────────┴─────────────┴────────────┴─────────┴────────────┘
+
+Authority
+·········
+
+Over bc86 Markdown views and its 10 descendants.
+
+Over 5fe3 HTML views and its 10 descendants.
+
+Command: tabloio assignment --ref main --level detail --text

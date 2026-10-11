@@ -1,0 +1,58 @@
+Audit
+═════
+
+*Where do files and history disagree?* Tableaux tooling · ref main · stale 7
+days · level glance
+
+Legend: tabloio gates.
+
+*1 error, 3 warnings, 28 items of information*: 32 findings.
+
+┌─────────────┬──────┬────────────┬──────────┬─────────┬───────────────────────┐
+│ Severity    │ Rule │ Kind       │ Findings │ Tasks   │ Resolver              │
+├─────────────┼──────┼────────────┼──────────┼─────────┼───────────────────────┤
+│ error       │ S11  │ A status   │        1 │ e3cb    │ noreply@anthropic.com │
+│             │      │ past a     │          │ Schema  │                       │
+│             │      │ reviewed   │          │ files   │                       │
+│             │      │ junction   │          │         │                       │
+│             │      │ with no    │          │         │                       │
+│             │      │ review     │          │         │                       │
+│ warning     │ H3   │ A Model:   │        3 │ 437e    │ nbyoung@nbyoung.com   │
+│             │      │ trailer    │          │ bc63    │                       │
+│             │      │ outside    │          │ ac33    │                       │
+│             │      │ the        │          │         │                       │
+│             │      │ junction's │          │         │                       │
+│             │      │ model      │          │         │                       │
+│ information │ H4   │ A hand-off │       28 │ 99f0    │ noreply@anthropic.com │
+│             │      │ the        │          │ 05a9    │                       │
+│             │      │ history    │          │ a9ce    │                       │
+│             │      │ implies    │          │ bb7c    │                       │
+│             │      │            │          │ c74a    │                       │
+│             │      │            │          │ efff    │                       │
+│             │      │            │          │ ab8e    │                       │
+│             │      │            │          │ c545    │                       │
+│             │      │            │          │ d615    │                       │
+│             │      │            │          │ b14e    │                       │
+│             │      │            │          │ a6f7    │                       │
+│             │      │            │          │ 7dff    │                       │
+│             │      │            │          │ b1b7    │                       │
+│             │      │            │          │ ea51    │                       │
+│             │      │            │          │ 7783    │                       │
+│             │      │            │          │ 5471    │                       │
+│             │      │            │          │ 32e7    │                       │
+│             │      │            │          │ 69eb    │                       │
+│             │      │            │          │ 3194    │                       │
+│             │      │            │          │ a8b4    │                       │
+│             │      │            │          │ ac33    │                       │
+│             │      │            │          │ 9f3f    │                       │
+│             │      │            │          │ 7166    │                       │
+│             │      │            │          │ e9c6    │                       │
+│             │      │            │          │ fcec    │                       │
+│             │      │            │          │ c2ad    │                       │
+│             │      │            │          │ e3cb    │                       │
+│             │      │            │          │ 7861    │                       │
+└─────────────┴──────┴────────────┴──────────┴─────────┴───────────────────────┘
+
+*Most to resolve:* noreply@anthropic.com, 29 of 32.
+
+Command: tabloio audit --ref main --stale 7 --level glance --text

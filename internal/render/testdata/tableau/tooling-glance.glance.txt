@@ -1,0 +1,66 @@
+Global tableau
+══════════════
+
+*How does the whole project stand?* Tableaux tooling · ref main · window 1 ·
+level glance
+
+Legend: tabloio gates.
+
+┌──────┬────────────────────────────────┬─────┬──┬────┬──┬────┬──┬──┬──┬────┬──┐
+│ Id   │ Task                           │❔ ×0│📝│ 📌 │🔧│ 📐 │🧱│📏│🔗│ 🌍 │🚀│
+├──────┼────────────────────────────────┼─────┼──┼────┼──┼────┼──┼──┼──┼────┼──┤
+│ 437e │ *Tableaux tooling*             │     │🟢│🤖👀│🤖│🤖👀│🤖│🤖│🤖│🤖👀│🧑│
+│ bc63 │   *Method* (31)                │     │🟢│🤖👀│🤖│🤖👀│🤖│🤖│🤖│🤖👀│🧑│
+│ 77b2 │   tablo: backend library and   │     │🟢│ 🪆 │🪆│ 🪆 │🪆│🪆│🪆│ 🪆 │🪆│
+│      │   plumbing                     │     │  │    │  │    │  │  │  │    │  │
+│ 6103 │   tabloio: command line,       │     │🟢│ 🪆 │🪆│ 🪆 │🪆│🪆│🪆│ 🪆 │🪆│
+│      │   output and input             │     │  │    │  │    │  │  │  │    │  │
+│ c6e8 │   tablotui: terminal user      │     │🟢│ 🪆 │🪆│ 🪆 │🪆│🪆│🪆│ 🪆 │🪆│
+│      │   interface                    │     │  │    │  │    │  │  │  │    │  │
+│ 595e │   tableaud: local daemon and   │     │🟢│ 🪆 │🪆│ 🪆 │🪆│🪆│🪆│ 🪆 │🪆│
+│      │   HTML                         │     │  │    │  │    │  │  │  │    │  │
+└──────┴────────────────────────────────┴─────┴──┴────┴──┴────┴──┴──┴──┴────┴──┘
+
+❔ undefined · 📝 defined · 📌 mockup · 🔧 function · 📐 design · 🧱
+implementation · 📏 unit · 🔗 integrate · 🌍 validate · 🚀 release · 🟢 nominal
+· 🧑 a person contributes · 🤖 an agent contributes · 👀 a reviewer accepts · 🪆
+a subproject does the work.
+
+Notes
+─────
+
+┌───────────┬────────────┬──────────────────────────┬──────────────────────────┐
+│ Rows      │ Date       │ Note                     │ From                     │
+├───────────┼────────────┼──────────────────────────┼──────────────────────────┤
+│ 437e bc63 │ 2026-09-29 │ Mockup waits for         │ rolled up from 99f0 Gate │
+│           │            │ Abstract views (e9c6) at │ definition view in       │
+│           │            │ design                   │ Markdown                 │
+│ 77b2      │ 2026-09-30 │ The design is next and   │ b2c1 tablo in            │
+│           │            │ no requirement gates it  │ subprojects/tablo at     │
+│           │            │                          │ 00f8f68, at 📝 defined   │
+│ 6103      │ 2026-09-30 │ prototype/e3ed renders   │ 07e0 tabloio in          │
+│           │            │ the gate and task        │ subprojects/tabloio at   │
+│           │            │ definition views as      │ 4593882, at 🔧 function  │
+│           │            │ Markdown at three levels │                          │
+│           │            │ from tablo view data     │                          │
+│ c6e8      │ 2026-09-30 │ prototype/679b renders   │ 40e8 tablotui in         │
+│           │            │ the global tableau as a  │ subprojects/tablotui at  │
+│           │            │ Bubble Tea grid with     │ a2878b5, at 🔧 function  │
+│           │            │ tree expand and          │                          │
+│           │            │ collapse, scrolling, a   │                          │
+│           │            │ folded gate window and   │                          │
+│           │            │ hidden columns kept in a │                          │
+│           │            │ settings file; emoji     │                          │
+│           │            │ lines align where the    │                          │
+│           │            │ terminal widens U+FE0F   │                          │
+│ 595e      │ 2026-09-30 │ prototype/49ce serves    │ 8608 tableaud in         │
+│           │            │ the ten views with a     │ subprojects/tableaud at  │
+│           │            │ stdlib HEAD and          │ e6ec4ec, at 🔧 function  │
+│           │            │ .tableaux watcher, ETag  │                          │
+│           │            │ 304 polling through      │                          │
+│           │            │ htmx, a Source interface │                          │
+│           │            │ and a loopback Host      │                          │
+│           │            │ check                    │                          │
+└───────────┴────────────┴──────────────────────────┴──────────────────────────┘
+
+Command: tabloio tableau --ref main --window 1 --level glance --text

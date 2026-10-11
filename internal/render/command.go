@@ -5,6 +5,7 @@ import (
 	"strings"
 
 	"github.com/nbyoung/tabloio/internal/render/doc"
+	"github.com/nbyoung/tabloio/internal/render/text"
 	"github.com/nbyoung/tabloio/internal/render/view"
 )
 
@@ -20,6 +21,8 @@ const (
 	flagProposed   = "--proposed"
 	flagStale      = "--stale"
 	flagLevel      = "--level"
+	flagText       = "--text"
+	flagWidth      = "--width"
 )
 
 // refName is the ref as given, with a range as <from>..<name>; HEAD stands
@@ -81,6 +84,12 @@ func command(name, positional string, h *view.Head, o Options) string {
 		parts = append(parts, flagStale, strconv.Itoa(par.Stale))
 	}
 	parts = append(parts, flagLevel, o.Level.String())
+	if o.Format == Text {
+		parts = append(parts, flagText)
+		if w := o.Text.Width; w != 0 && w != text.DefaultWidth {
+			parts = append(parts, flagWidth, strconv.Itoa(w))
+		}
+	}
 	return strings.Join(parts, " ")
 }
 
