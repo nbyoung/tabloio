@@ -6,6 +6,7 @@ import (
 	"runtime"
 
 	"github.com/nbyoung/tabloio/internal/render"
+	rtext "github.com/nbyoung/tabloio/internal/render/text"
 	"github.com/nbyoung/tabloio/internal/render/view"
 )
 
@@ -14,10 +15,14 @@ import (
 // forward slashes, and "" when they are the same.
 type renderFunc func(data any, level string, linkBase string) ([]byte, error)
 
+// textFunc renders one view's data at one level as Unicode text. linkBase
+// is as renderFunc has it.
+type textFunc func(data any, level string, linkBase string, o rtext.Options) ([]byte, error)
+
 // markdown and text map a view to its renderer. The key "brief" is for the
-// renderer of the Agent briefs task (e4c7), which fills it with the key of
-// the markdown table. text starts empty; the Text renderers task (e0f7)
-// fills it.
+// renderer of the Agent briefs task (e4c7), which fills it in the markdown
+// table alone: the brief is the same bytes under both formats, so a text
+// rendering of it reads the markdown entry.
 var markdown = map[string]renderFunc{
 	"gates":      viaRender[*view.Gates]("gates", nil),
 	"task":       viaRender[*view.Task]("task", nil),
@@ -31,54 +36,77 @@ var markdown = map[string]renderFunc{
 	"audit":      viaRender[*view.Audit]("audit", nil),
 }
 
-var text = map[string]renderFunc{}
+var text = map[string]textFunc{
+	"gates":      viaText[*view.Gates]("gates", nil),
+	"task":       viaText[*view.Task]("task", nil),
+	"authority":  viaText[*view.Delegation]("authority", nil),
+	"assignment": viaText[*view.Assignment]("assignment", nil),
+	"queue":      viaText[*view.Queue]("queue", nil),
+	"blockage":   viaText[*view.Blockage]("blockage", nil),
+	"tableau":    viaText("tableau", func(t *view.Tableau) bool { return !t.Contextual }),
+	"context":    viaText("context", func(t *view.Tableau) bool { return t.Contextual }),
+	"history":    viaText[*view.History]("history", nil),
+	"audit":      viaText[*view.Audit]("audit", nil),
+}
 
 // viaRender returns the Markdown renderer of one view. Package render
 // dispatches by the concrete type of the data, so every entry reaches the
 // same function, render.Render; the entry only checks that the data is the
 // type its view returns, and, where fits is set, that it is the right one of
 // two views that share a type (tableau and context).
+func viaRender[V view.View](name string, fits func(V) bool) renderFunc {
+	return func(data any, level, linkBase string) ([]byte, error) {
+		return draw(name, fits, data, level, linkBase, render.Options{Format: render.Markdown})
+	}
+}
+
+// viaText returns the text renderer of one view: draw with Format Text and
+// the options.
+func viaText[V view.View](name string, fits func(V) bool) textFunc {
+	return func(data any, level, linkBase string, o rtext.Options) ([]byte, error) {
+		return draw(name, fits, data, level, linkBase, render.Options{Format: render.Text, Text: o})
+	}
+}
+
+// draw is what viaRender and viaText share: the type check, the level, the
+// recovery of a builder's panic, the link base as Links.Project ("." for
+// ""), and the call of render.Render. It sets Level and Links on o.
 //
 // A builder of package render that cannot return its error panics with it;
-// the entry turns that panic back into the error.
-func viaRender[V view.View](name string, fits func(V) bool) renderFunc {
-	return func(data any, level, linkBase string) (out []byte, err error) {
-		v, ok := data.(V)
-		if !ok || (fits != nil && !fits(v)) {
-			return nil, fmt.Errorf("the %s view cannot render %T", name, data)
+// draw turns that panic back into the error.
+func draw[V view.View](name string, fits func(V) bool, data any, level, linkBase string, o render.Options) (out []byte, err error) {
+	v, ok := data.(V)
+	if !ok || (fits != nil && !fits(v)) {
+		return nil, fmt.Errorf("the %s view cannot render %T", name, data)
+	}
+	l, err := view.ParseLevel(level)
+	if err != nil {
+		return nil, err
+	}
+	defer func() {
+		r := recover()
+		if r == nil {
+			return
 		}
-		l, err := view.ParseLevel(level)
-		if err != nil {
-			return nil, err
-		}
-		defer func() {
-			r := recover()
-			if r == nil {
+		if e, ok := r.(error); ok {
+			if _, runtimeErr := r.(runtime.Error); !runtimeErr {
+				out, err = nil, e
 				return
 			}
-			if e, ok := r.(error); ok {
-				if _, runtimeErr := r.(runtime.Error); !runtimeErr {
-					out, err = nil, e
-					return
-				}
-			}
-			panic(r)
-		}()
-		// Links.Project "" writes no file link, where a link base "" says
-		// the output stands in the project directory.
-		project := linkBase
-		if project == "" {
-			project = "."
 		}
-		var buf bytes.Buffer
-		err = render.Render(&buf, v, render.Options{
-			Format: render.Markdown,
-			Level:  l,
-			Links:  render.Links{Project: project},
-		})
-		if err != nil {
-			return nil, err
-		}
-		return buf.Bytes(), nil
+		panic(r)
+	}()
+	// Links.Project "" writes no file link, where a link base "" says
+	// the output stands in the project directory.
+	project := linkBase
+	if project == "" {
+		project = "."
 	}
+	o.Level = l
+	o.Links = render.Links{Project: project}
+	var buf bytes.Buffer
+	if err := render.Render(&buf, v, o); err != nil {
+		return nil, err
+	}
+	return buf.Bytes(), nil
 }

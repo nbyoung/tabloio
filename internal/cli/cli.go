@@ -48,7 +48,7 @@ var groups = []struct{ name, heading string }{
 var commands []Command
 
 func init() {
-	common := []string{"ref", "level", "markdown", "text", "output"}
+	common := []string{"ref", "level", "markdown", "text", "width", "output"}
 	with := func(more ...string) []string { return append(append([]string(nil), common...), more...) }
 	read := func(name, operands, summary string, more ...string) Command {
 		return Command{Name: name, Group: "read", Operands: operands, Summary: summary, Options: with(more...), Run: runRead}

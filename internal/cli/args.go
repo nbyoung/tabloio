@@ -35,6 +35,8 @@ var vocabulary = []Option{
 		Help: "Write at glance (the default), detail or provenance"},
 	{Name: "markdown", Help: "Write Markdown (the default)"},
 	{Name: "text", Help: "Write Unicode text"},
+	{Name: "width", Arity: 1, Values: "<n>",
+		Help: "With --text, wrap at <n> cells: 20 or more, 80 by default"},
 	{Name: "output", Short: 'o', Arity: 1, Values: "<file>",
 		Help: "Write to <file>; - is standard output (the default)"},
 	{Name: "task", Arity: 1, Values: "<id>",

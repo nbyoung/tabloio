@@ -7,6 +7,7 @@ How does the whole project stand?
   --level <level>        Write at glance (the default), detail or provenance
   --markdown             Write Markdown (the default)
   --text                 Write Unicode text
+  --width <n>            With --text, wrap at <n> cells: 20 or more, 80 by default
   -o, --output <file>    Write to <file>; - is standard output (the default)
   --person <email>       Focus on one person
   --window <n>           Show <n> gate columns either side of the next gates in view

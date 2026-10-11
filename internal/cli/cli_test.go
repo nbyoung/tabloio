@@ -8,6 +8,8 @@ import (
 	"regexp"
 	"strings"
 	"testing"
+
+	rtext "github.com/nbyoung/tabloio/internal/render/text"
 )
 
 // fakeSource is a Source that records what it is asked and returns what the
@@ -47,13 +49,20 @@ func fakeRender(name string) renderFunc {
 	}
 }
 
+// fakeText returns bytes that spell its arguments, the width among them.
+func fakeText(name string) textFunc {
+	return func(data any, level, linkBase string, o rtext.Options) ([]byte, error) {
+		return []byte(fmt.Sprintf("fake %s: data=%v level=%s base=%q width=%d\n", name, data, level, linkBase, o.Width)), nil
+	}
+}
+
 // fakeTables replaces the two tables with fakes for the test's length: the
 // ten views and brief in markdown, and the given names in text.
 func fakeTables(t *testing.T, withBrief bool, textNames ...string) {
 	t.Helper()
 	oldMarkdown, oldText := markdown, text
 	t.Cleanup(func() { markdown, text = oldMarkdown, oldText })
-	markdown, text = map[string]renderFunc{}, map[string]renderFunc{}
+	markdown, text = map[string]renderFunc{}, map[string]textFunc{}
 	for _, v := range views {
 		markdown[v.name] = fakeRender("markdown " + v.name)
 	}
@@ -61,7 +70,7 @@ func fakeTables(t *testing.T, withBrief bool, textNames ...string) {
 		markdown["brief"] = fakeRender("markdown brief")
 	}
 	for _, n := range textNames {
-		text[n] = fakeRender("text " + n)
+		text[n] = fakeText("text " + n)
 	}
 }
 
@@ -101,7 +110,7 @@ var ownOptions = map[string][]string{
 	"help":       nil,
 }
 
-var commonOptions = []string{"--ref <ref>", "--level <level>", "--markdown", "--text", "-o, --output <file>"}
+var commonOptions = []string{"--ref <ref>", "--level <level>", "--markdown", "--text", "--width <n>", "-o, --output <file>"}
 
 var helpLine = regexp.MustCompile(`^  (.+?) {2,}\S`)
 
