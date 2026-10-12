@@ -25,9 +25,9 @@ Legend: tabloio gates.
 │      │   HTML                       │     │  │    │  │    │      │  │        │
 └──────┴──────────────────────────────┴─────┴──┴────┴──┴────┴──────┴──┴────────┘
 
-❔ undefined · 📝 defined · 📌 mockup · 🔧 function · 📐 design · 🧱
-implementation · 📏 unit · 🔗 integrate · 🚀 release · 🟢 nominal · 🤖 an agent
-contributes · 👀 a reviewer accepts · 🪆 a subproject does the work · — the gate
-does not apply.
+❔ undefined · 📝 defined · 📌 mockup · 🔧 function · 📐 design ·
+🧱 implementation · 📏 unit · 🔗 integrate · 🚀 release · 🟢 nominal · 🤖 an
+agent contributes · 👀 a reviewer accepts · 🪆 a subproject does the work ·
+— the gate does not apply.
 
 Command: tabloio context --person nbyoung@nbyoung.com --ref main --window 1 --level glance --text

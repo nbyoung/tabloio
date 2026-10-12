@@ -14,10 +14,11 @@ Legend: tabloio gates.
 │ c07d │     Node firmware │        │ 🧑 │🧑│— │🟢│🪆│🤖👀│       │
 └──────┴───────────────────┴────────┴────┴──┴──┴──┴──┴────┴───────┘
 
-❔ undefined · 📌 mockup · ⚙ function · ⚡ performance · ⚓ reliability · 📐
-design · 🛠 implementation · 🧩 unit · 🖼 integrate · 🚀 release · 🟢 nominal · 🔴
-stalled · ⛔ blocked · 🧑 a person contributes · 🤖 an agent contributes · 👀 a
-reviewer accepts · 🪆 a subproject does the work · — the gate does not apply.
+❔ undefined · 📌 mockup · ⚙ function · ⚡ performance · ⚓ reliability ·
+📐 design · 🛠 implementation · 🧩 unit · 🖼 integrate · 🚀 release · 🟢 nominal ·
+🔴 stalled · ⛔ blocked · 🧑 a person contributes · 🤖 an agent contributes ·
+👀 a reviewer accepts · 🪆 a subproject does the work · — the gate does not
+apply.
 
 Notes
 ─────
@@ -30,8 +31,8 @@ Notes
 │ 9f31 │ 2026-09-28 │ Barometer ICs on 14-week   │                             │
 │      │            │ backorder                  │                             │
 │ c07d │ 2026-09-17 │ Sleep scheduler in         │ f1a0 Weather node image in  │
-│      │            │ progress                   │ firmware at F2, at 📐       │
-│      │            │                            │ design                      │
+│      │            │ progress                   │ firmware at F2, at          │
+│      │            │                            │ 📐 design                   │
 └──────┴────────────┴────────────────────────────┴─────────────────────────────┘
 
 Folded columns

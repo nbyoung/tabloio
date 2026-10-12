@@ -15,9 +15,9 @@ Legend: tabloio gates.
 │ 5fe3 │   *HTML views* (10)     │     │🟢│🤖👀│— │ —  │— │— │        │
 └──────┴─────────────────────────┴─────┴──┴────┴──┴────┴──┴──┴────────┘
 
-❔ undefined · 📝 defined · 📌 mockup · 🔧 function · 📐 design · 🧱
-implementation · 📏 unit · 🔗 integrate · 🚀 release · 🟢 nominal · 🤖 an agent
-contributes · 👀 a reviewer accepts · — the gate does not apply.
+❔ undefined · 📝 defined · 📌 mockup · 🔧 function · 📐 design ·
+🧱 implementation · 📏 unit · 🔗 integrate · 🚀 release · 🟢 nominal · 🤖 an
+agent contributes · 👀 a reviewer accepts · — the gate does not apply.
 
 Notes
 ─────
@@ -79,13 +79,13 @@ Roll-ups: 3
 ┌─────────────────────┬─────────────────────┬─────────────────────┬────────────┐
 │ Parent              │ Shows               │ Rolls up from       │ Date       │
 ├─────────────────────┼─────────────────────┼─────────────────────┼────────────┤
-│ 2034 Views          │ 📝 defined 🟢       │ bc86 Markdown views │ 2026-09-29 │
-│                     │ nominal             │                     │            │
-│ bc86 Markdown views │ 📝 defined 🟢       │ 99f0 Gate           │ 2026-09-29 │
-│                     │ nominal             │ definition view in  │            │
+│ 2034 Views          │ 📝 defined          │ bc86 Markdown views │ 2026-09-29 │
+│                     │ 🟢 nominal          │                     │            │
+│ bc86 Markdown views │ 📝 defined          │ 99f0 Gate           │ 2026-09-29 │
+│                     │ 🟢 nominal          │ definition view in  │            │
 │                     │                     │ Markdown            │            │
-│ 5fe3 HTML views     │ 📝 defined 🟢       │ a6f7 Gate           │ 2026-09-29 │
-│                     │ nominal             │ definition view in  │            │
+│ 5fe3 HTML views     │ 📝 defined          │ a6f7 Gate           │ 2026-09-29 │
+│                     │ 🟢 nominal          │ definition view in  │            │
 │                     │                     │ Html                │            │
 └─────────────────────┴─────────────────────┴─────────────────────┴────────────┘
 

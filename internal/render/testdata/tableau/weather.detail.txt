@@ -17,11 +17,11 @@ Legend: tabloio gates.
 │ 3c5d │   Dashboard         │  │🟢│ 🧑 │ 🧑 │🧑│🧑│🧑│🧑│ 🧑 │       │
 └──────┴─────────────────────┴──┴──┴────┴────┴──┴──┴──┴──┴────┴───────┘
 
-❔ undefined · 📝 defined · 📌 mockup · ⚙ function · ⚡ performance · ⚓
-reliability · 📐 design · 🛠 implementation · 🧩 unit · 🖼 integrate · 🚀 release
-· ⚪ undefined · 🟢 nominal · 🔴 stalled · ⛔ blocked · 🧑 a person contributes
-· 🤖 an agent contributes · 👀 a reviewer accepts · 🪆 a subproject does the
-work · — the gate does not apply.
+❔ undefined · 📝 defined · 📌 mockup · ⚙ function · ⚡ performance ·
+⚓ reliability · 📐 design · 🛠 implementation · 🧩 unit · 🖼 integrate ·
+🚀 release · ⚪ undefined · 🟢 nominal · 🔴 stalled · ⛔ blocked · 🧑 a person
+contributes · 🤖 an agent contributes · 👀 a reviewer accepts · 🪆 a subproject
+does the work · — the gate does not apply.
 
 Notes
 ─────
@@ -36,8 +36,8 @@ Notes
 │ 9f31 │ 2026-09-28 │ Barometer ICs on 14-week   │                             │
 │      │            │ backorder                  │                             │
 │ c07d │ 2026-09-17 │ Sleep scheduler in         │ f1a0 Weather node image in  │
-│      │            │ progress                   │ firmware at F2, at 📐       │
-│      │            │                            │ design                      │
+│      │            │ progress                   │ firmware at F2, at          │
+│      │            │                            │ 📐 design                   │
 │ 7b2e │ 2026-09-15 │                            │                             │
 │ 3c5d │ 2026-09-22 │                            │                             │
 └──────┴────────────┴────────────────────────────┴─────────────────────────────┘

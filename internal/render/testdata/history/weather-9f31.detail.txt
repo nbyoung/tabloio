@@ -27,8 +27,8 @@ Legend: tabloio gates.
 2026-09-22 · 1 event in 1 commit: 1 status
 ──────────────────────────────────────────
 
-- *2026-09-22* · ada@example.org · status · 9f31 Sensor board · 📌 mockup 🟢
-  nominal
+- *2026-09-22* · ada@example.org · status · 9f31 Sensor board · 📌 mockup
+  🟢 nominal
   - Status after: 📌 mockup 🟢 nominal
 
 2026-09-24 · 1 event in 1 commit: 1 reviewed
@@ -41,8 +41,8 @@ Legend: tabloio gates.
 2026-09-25 · 1 event in 1 commit: 1 status
 ──────────────────────────────────────────
 
-- *2026-09-25* · ada@example.org · status · 9f31 Sensor board · ⚙ function 🔴
-  stalled ⛔ blocked
+- *2026-09-25* · ada@example.org · status · 9f31 Sensor board · ⚙ function
+  🔴 stalled ⛔ blocked
   - Status after: ⚙ function 🔴 stalled ⛔ blocked
   - Note: Barometer ICs on 14-week backorder
 

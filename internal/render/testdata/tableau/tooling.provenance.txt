@@ -71,10 +71,10 @@ Legend: tabloio gates.
 │      │   HTML                       │     │  │    │  │    │    │  │  │    │  │
 └──────┴──────────────────────────────┴─────┴──┴────┴──┴────┴────┴──┴──┴────┴──┘
 
-❔ undefined · 📝 defined · 📌 mockup · 🔧 function · 📐 design · 🧱
-implementation · 📏 unit · 🔗 integrate · 🌍 validate · 🚀 release · 🟢 nominal
-· 🧑 a person contributes · 🤖 an agent contributes · 👀 a reviewer accepts · 🪆
-a subproject does the work · — the gate does not apply.
+❔ undefined · 📝 defined · 📌 mockup · 🔧 function · 📐 design ·
+🧱 implementation · 📏 unit · 🔗 integrate · 🌍 validate · 🚀 release ·
+🟢 nominal · 🧑 a person contributes · 🤖 an agent contributes · 👀 a reviewer
+accepts · 🪆 a subproject does the work · — the gate does not apply.
 
 Notes
 ─────
@@ -165,21 +165,21 @@ Notes
 ├────────────────────┼────────────┼─────────────────────┼──────────────────────┤
 │ 77b2               │ 2026-09-30 │ The design is next  │ b2c1 tablo in        │
 │                    │            │ and no requirement  │ subprojects/tablo at │
-│                    │            │ gates it            │ 00f8f68, at 📝       │
-│                    │            │                     │ defined              │
+│                    │            │ gates it            │ 00f8f68, at          │
+│                    │            │                     │ 📝 defined           │
 ├────────────────────┼────────────┼─────────────────────┼──────────────────────┤
 │ 6103               │ 2026-09-30 │ prototype/e3ed      │ 07e0 tabloio in      │
 │                    │            │ renders the gate    │ subprojects/tabloio  │
-│                    │            │ and task definition │ at 4593882, at 🔧    │
-│                    │            │ views as Markdown   │ function             │
+│                    │            │ and task definition │ at 4593882, at       │
+│                    │            │ views as Markdown   │ 🔧 function          │
 │                    │            │ at three levels     │                      │
 │                    │            │ from tablo view     │                      │
 │                    │            │ data                │                      │
 ├────────────────────┼────────────┼─────────────────────┼──────────────────────┤
 │ c6e8               │ 2026-09-30 │ prototype/679b      │ 40e8 tablotui in     │
 │                    │            │ renders the global  │ subprojects/tablotui │
-│                    │            │ tableau as a Bubble │ at a2878b5, at 🔧    │
-│                    │            │ Tea grid with tree  │ function             │
+│                    │            │ tableau as a Bubble │ at a2878b5, at       │
+│                    │            │ Tea grid with tree  │ 🔧 function          │
 │                    │            │ expand and          │                      │
 │                    │            │ collapse,           │                      │
 │                    │            │ scrolling, a folded │                      │
@@ -192,8 +192,8 @@ Notes
 ├────────────────────┼────────────┼─────────────────────┼──────────────────────┤
 │ 595e               │ 2026-09-30 │ prototype/49ce      │ 8608 tableaud in     │
 │                    │            │ serves the ten      │ subprojects/tableaud │
-│                    │            │ views with a stdlib │ at e6ec4ec, at 🔧    │
-│                    │            │ HEAD and .tableaux  │ function             │
+│                    │            │ views with a stdlib │ at e6ec4ec, at       │
+│                    │            │ HEAD and .tableaux  │ 🔧 function          │
 │                    │            │ watcher, ETag 304   │                      │
 │                    │            │ polling through     │                      │
 │                    │            │ htmx, a Source      │                      │
@@ -304,330 +304,212 @@ Roll-ups: 5
 ┌─────────────────────┬─────────────────────┬─────────────────────┬────────────┐
 │ Parent              │ Shows               │ Rolls up from       │ Date       │
 ├─────────────────────┼─────────────────────┼─────────────────────┼────────────┤
-│ 437e Tableaux       │ 📝 defined 🟢       │ bc63 Method         │ 2026-09-29 │
-│ tooling             │ nominal             │                     │            │
+│ 437e Tableaux       │ 📝 defined          │ bc63 Method         │ 2026-09-29 │
+│ tooling             │ 🟢 nominal          │                     │            │
 ├─────────────────────┼─────────────────────┼─────────────────────┼────────────┤
-│ bc63 Method         │ 📝 defined 🟢       │ 2034 Views          │ 2026-09-29 │
-│                     │ nominal             │                     │            │
+│ bc63 Method         │ 📝 defined          │ 2034 Views          │ 2026-09-29 │
+│                     │ 🟢 nominal          │                     │            │
 ├─────────────────────┼─────────────────────┼─────────────────────┼────────────┤
-│ 2034 Views          │ 📝 defined 🟢       │ bc86 Markdown views │ 2026-09-29 │
-│                     │ nominal             │                     │            │
+│ 2034 Views          │ 📝 defined          │ bc86 Markdown views │ 2026-09-29 │
+│                     │ 🟢 nominal          │                     │            │
 ├─────────────────────┼─────────────────────┼─────────────────────┼────────────┤
-│ bc86 Markdown views │ 📝 defined 🟢       │ 99f0 Gate           │ 2026-09-29 │
-│                     │ nominal             │ definition view in  │            │
+│ bc86 Markdown views │ 📝 defined          │ 99f0 Gate           │ 2026-09-29 │
+│                     │ 🟢 nominal          │ definition view in  │            │
 │                     │                     │ Markdown            │            │
 ├─────────────────────┼─────────────────────┼─────────────────────┼────────────┤
-│ 5fe3 HTML views     │ 📝 defined 🟢       │ a6f7 Gate           │ 2026-09-29 │
-│                     │ nominal             │ definition view in  │            │
+│ 5fe3 HTML views     │ 📝 defined          │ a6f7 Gate           │ 2026-09-29 │
+│                     │ 🟢 nominal          │ definition view in  │            │
 │                     │                     │ Html                │            │
 └─────────────────────┴─────────────────────┴─────────────────────┴────────────┘
 
 Marks: 36
 ─────────
 
-┌────────────────┬────┬──────┬────────────────────────┬────────────────────────┐
-│ Gate           │Mark│ Rows │ Contributor and model  │ Reviewer               │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 📌 mockup      │🤖👀│ 437e │ noreply@anthropic.com, │ nbyoung@nbyoung.com,   │
-│                │    │ bc63 │ claude-opus, from 437e │ from 437e              │
-│                │    │ 2034 │                        │                        │
-│                │    │ bc86 │                        │                        │
-│                │    │ 5fe3 │                        │                        │
-│                │    │ 99f0 │                        │                        │
-│                │    │ 05a9 │                        │                        │
-│                │    │ a9ce │                        │                        │
-│                │    │ bb7c │                        │                        │
-│                │    │ c74a │                        │                        │
-│                │    │ efff │                        │                        │
-│                │    │ ab8e │                        │                        │
-│                │    │ c545 │                        │                        │
-│                │    │ d615 │                        │                        │
-│                │    │ b14e │                        │                        │
-│                │    │ a6f7 │                        │                        │
-│                │    │ 7dff │                        │                        │
-│                │    │ b1b7 │                        │                        │
-│                │    │ ea51 │                        │                        │
-│                │    │ 7783 │                        │                        │
-│                │    │ 5471 │                        │                        │
-│                │    │ 32e7 │                        │                        │
-│                │    │ 69eb │                        │                        │
-│                │    │ 3194 │                        │                        │
-│                │    │ a8b4 │                        │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 🔧 function    │ 🤖 │ 437e │ noreply@anthropic.com, │                        │
-│                │    │ bc63 │ claude-sonnet, from    │                        │
-│                │    │ 2034 │ 437e                   │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 📐 design      │🤖👀│ 437e │ noreply@anthropic.com, │ nbyoung@nbyoung.com,   │
-│                │    │      │ claude-opus, from 437e │ from 437e              │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 📐 design      │🤖👀│ bc63 │ noreply@anthropic.com, │ nbyoung@nbyoung.com,   │
-│                │    │ 2034 │ claude-fable, from     │ from 437e              │
-│                │    │      │ bc63                   │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 🧱             │ 🤖 │ 437e │ noreply@anthropic.com, │                        │
-│ implementation │    │ bc63 │ claude-sonnet, from    │                        │
-│                │    │ 2034 │ 437e                   │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 🧱             │ 🤖 │ e9c6 │ noreply@anthropic.com, │ noreply@anthropic.com, │
-│ implementation │    │      │ claude-sonnet, from    │ by default             │
-│                │    │      │ 437e                   │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 🧱             │🤖👀│ ac33 │ noreply@anthropic.com, │ nbyoung@nbyoung.com,   │
-│ implementation │    │ 9f3f │ claude-sonnet, from    │ by default             │
-│                │    │ 7166 │ 437e                   │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 📏 unit        │ 🤖 │ 437e │ noreply@anthropic.com, │                        │
-│                │    │ bc63 │ claude-sonnet, from    │                        │
-│                │    │ 2034 │ 437e                   │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 📏 unit        │ 🤖 │ fcec │ noreply@anthropic.com, │ noreply@anthropic.com, │
-│                │    │      │ claude-sonnet, from    │ by default             │
-│                │    │      │ 437e                   │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 🔗 integrate   │ 🤖 │ 437e │ noreply@anthropic.com, │                        │
-│                │    │ bc63 │ claude-sonnet, from    │                        │
-│                │    │ 2034 │ 437e                   │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 🔗 integrate   │ 🤖 │ fcec │ noreply@anthropic.com, │ noreply@anthropic.com, │
-│                │    │      │ claude-sonnet, from    │ by default             │
-│                │    │      │ 437e                   │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 🌍 validate    │🤖👀│ 437e │ noreply@anthropic.com, │ nbyoung@nbyoung.com,   │
-│                │    │      │ claude-sonnet, from    │ from 437e              │
-│                │    │      │ 437e                   │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 🌍 validate    │🤖👀│ bc63 │ noreply@anthropic.com, │ nbyoung@nbyoung.com,   │
-│                │    │ 2034 │ claude-opus, from bc63 │ from 437e              │
-│                │    │ c2ad │                        │                        │
-│                │    │ e9c6 │                        │                        │
-│                │    │ e3cb │                        │                        │
-│                │    │ fcec │                        │                        │
-│                │    │ ac33 │                        │                        │
-│                │    │ 9f3f │                        │                        │
-│                │    │ 7861 │                        │                        │
-│                │    │ 7166 │                        │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 🚀 release     │ 🧑 │ 437e │ nbyoung@nbyoung.com,   │                        │
-│                │    │ bc63 │ from 437e              │                        │
-│                │    │ 2034 │                        │                        │
-│                │    │ c2ad │                        │                        │
-│                │    │ e9c6 │                        │                        │
-│                │    │ e3cb │                        │                        │
-│                │    │ fcec │                        │                        │
-│                │    │ ac33 │                        │                        │
-│                │    │ 9f3f │                        │                        │
-│                │    │ 7861 │                        │                        │
-│                │    │ 7166 │                        │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 📌 mockup      │ 🪆 │ 77b2 │                        │                        │
-│                │    │ 6103 │                        │                        │
-│                │    │ c6e8 │                        │                        │
-│                │    │ 595e │                        │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 🔧 function    │ 🪆 │ 77b2 │                        │                        │
-│                │    │ 6103 │                        │                        │
-│                │    │ c6e8 │                        │                        │
-│                │    │ 595e │                        │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 📐 design      │ 🪆 │ 77b2 │                        │                        │
-│                │    │ 6103 │                        │                        │
-│                │    │ c6e8 │                        │                        │
-│                │    │ 595e │                        │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 🧱             │ 🪆 │ 77b2 │                        │                        │
-│ implementation │    │ 6103 │                        │                        │
-│                │    │ c6e8 │                        │                        │
-│                │    │ 595e │                        │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 📏 unit        │ 🪆 │ 77b2 │                        │                        │
-│                │    │ 6103 │                        │                        │
-│                │    │ c6e8 │                        │                        │
-│                │    │ 595e │                        │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 🔗 integrate   │ 🪆 │ 77b2 │                        │                        │
-│                │    │ 6103 │                        │                        │
-│                │    │ c6e8 │                        │                        │
-│                │    │ 595e │                        │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 🌍 validate    │ 🪆 │ 77b2 │                        │                        │
-│                │    │ 6103 │                        │                        │
-│                │    │ c6e8 │                        │                        │
-│                │    │ 595e │                        │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 🚀 release     │ 🪆 │ 77b2 │                        │                        │
-│                │    │ 6103 │                        │                        │
-│                │    │ c6e8 │                        │                        │
-│                │    │ 595e │                        │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 🔧 function    │ —  │ bc86 │ Exempt, from bc86      │                        │
-│                │    │ 99f0 │                        │                        │
-│                │    │ 05a9 │                        │                        │
-│                │    │ a9ce │                        │                        │
-│                │    │ bb7c │                        │                        │
-│                │    │ c74a │                        │                        │
-│                │    │ efff │                        │                        │
-│                │    │ ab8e │                        │                        │
-│                │    │ c545 │                        │                        │
-│                │    │ d615 │                        │                        │
-│                │    │ b14e │                        │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 🔧 function    │ —  │ 5fe3 │ Exempt, from 5fe3      │                        │
-│                │    │ a6f7 │                        │                        │
-│                │    │ 7dff │                        │                        │
-│                │    │ b1b7 │                        │                        │
-│                │    │ ea51 │                        │                        │
-│                │    │ 7783 │                        │                        │
-│                │    │ 5471 │                        │                        │
-│                │    │ 32e7 │                        │                        │
-│                │    │ 69eb │                        │                        │
-│                │    │ 3194 │                        │                        │
-│                │    │ a8b4 │                        │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 📐 design      │ —  │ bc86 │ Exempt, from bc86      │                        │
-│                │    │ 99f0 │                        │                        │
-│                │    │ 05a9 │                        │                        │
-│                │    │ a9ce │                        │                        │
-│                │    │ bb7c │                        │                        │
-│                │    │ c74a │                        │                        │
-│                │    │ efff │                        │                        │
-│                │    │ ab8e │                        │                        │
-│                │    │ c545 │                        │                        │
-│                │    │ d615 │                        │                        │
-│                │    │ b14e │                        │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 📐 design      │ —  │ 5fe3 │ Exempt, from 5fe3      │                        │
-│                │    │ a6f7 │                        │                        │
-│                │    │ 7dff │                        │                        │
-│                │    │ b1b7 │                        │                        │
-│                │    │ ea51 │                        │                        │
-│                │    │ 7783 │                        │                        │
-│                │    │ 5471 │                        │                        │
-│                │    │ 32e7 │                        │                        │
-│                │    │ 69eb │                        │                        │
-│                │    │ 3194 │                        │                        │
-│                │    │ a8b4 │                        │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 🧱             │ —  │ bc86 │ Exempt, from bc86      │                        │
-│ implementation │    │ 99f0 │                        │                        │
-│                │    │ 05a9 │                        │                        │
-│                │    │ a9ce │                        │                        │
-│                │    │ bb7c │                        │                        │
-│                │    │ c74a │                        │                        │
-│                │    │ efff │                        │                        │
-│                │    │ ab8e │                        │                        │
-│                │    │ c545 │                        │                        │
-│                │    │ d615 │                        │                        │
-│                │    │ b14e │                        │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 🧱             │ —  │ 5fe3 │ Exempt, from 5fe3      │                        │
-│ implementation │    │ a6f7 │                        │                        │
-│                │    │ 7dff │                        │                        │
-│                │    │ b1b7 │                        │                        │
-│                │    │ ea51 │                        │                        │
-│                │    │ 7783 │                        │                        │
-│                │    │ 5471 │                        │                        │
-│                │    │ 32e7 │                        │                        │
-│                │    │ 69eb │                        │                        │
-│                │    │ 3194 │                        │                        │
-│                │    │ a8b4 │                        │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 📏 unit        │ —  │ bc86 │ Exempt, from bc86      │                        │
-│                │    │ 99f0 │                        │                        │
-│                │    │ 05a9 │                        │                        │
-│                │    │ a9ce │                        │                        │
-│                │    │ bb7c │                        │                        │
-│                │    │ c74a │                        │                        │
-│                │    │ efff │                        │                        │
-│                │    │ ab8e │                        │                        │
-│                │    │ c545 │                        │                        │
-│                │    │ d615 │                        │                        │
-│                │    │ b14e │                        │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 📏 unit        │ —  │ 5fe3 │ Exempt, from 5fe3      │                        │
-│                │    │ a6f7 │                        │                        │
-│                │    │ 7dff │                        │                        │
-│                │    │ b1b7 │                        │                        │
-│                │    │ ea51 │                        │                        │
-│                │    │ 7783 │                        │                        │
-│                │    │ 5471 │                        │                        │
-│                │    │ 32e7 │                        │                        │
-│                │    │ 69eb │                        │                        │
-│                │    │ 3194 │                        │                        │
-│                │    │ a8b4 │                        │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 🔗 integrate   │ —  │ bc86 │ Exempt, from bc86      │                        │
-│                │    │ 99f0 │                        │                        │
-│                │    │ 05a9 │                        │                        │
-│                │    │ a9ce │                        │                        │
-│                │    │ bb7c │                        │                        │
-│                │    │ c74a │                        │                        │
-│                │    │ efff │                        │                        │
-│                │    │ ab8e │                        │                        │
-│                │    │ c545 │                        │                        │
-│                │    │ d615 │                        │                        │
-│                │    │ b14e │                        │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 🔗 integrate   │ —  │ 5fe3 │ Exempt, from 5fe3      │                        │
-│                │    │ a6f7 │                        │                        │
-│                │    │ 7dff │                        │                        │
-│                │    │ b1b7 │                        │                        │
-│                │    │ ea51 │                        │                        │
-│                │    │ 7783 │                        │                        │
-│                │    │ 5471 │                        │                        │
-│                │    │ 32e7 │                        │                        │
-│                │    │ 69eb │                        │                        │
-│                │    │ 3194 │                        │                        │
-│                │    │ a8b4 │                        │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 🌍 validate    │ —  │ bc86 │ Exempt, from bc86      │                        │
-│                │    │ 99f0 │                        │                        │
-│                │    │ 05a9 │                        │                        │
-│                │    │ a9ce │                        │                        │
-│                │    │ bb7c │                        │                        │
-│                │    │ c74a │                        │                        │
-│                │    │ efff │                        │                        │
-│                │    │ ab8e │                        │                        │
-│                │    │ c545 │                        │                        │
-│                │    │ d615 │                        │                        │
-│                │    │ b14e │                        │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 🌍 validate    │ —  │ 5fe3 │ Exempt, from 5fe3      │                        │
-│                │    │ a6f7 │                        │                        │
-│                │    │ 7dff │                        │                        │
-│                │    │ b1b7 │                        │                        │
-│                │    │ ea51 │                        │                        │
-│                │    │ 7783 │                        │                        │
-│                │    │ 5471 │                        │                        │
-│                │    │ 32e7 │                        │                        │
-│                │    │ 69eb │                        │                        │
-│                │    │ 3194 │                        │                        │
-│                │    │ a8b4 │                        │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 🚀 release     │ —  │ bc86 │ Exempt, from bc86      │                        │
-│                │    │ 99f0 │                        │                        │
-│                │    │ 05a9 │                        │                        │
-│                │    │ a9ce │                        │                        │
-│                │    │ bb7c │                        │                        │
-│                │    │ c74a │                        │                        │
-│                │    │ efff │                        │                        │
-│                │    │ ab8e │                        │                        │
-│                │    │ c545 │                        │                        │
-│                │    │ d615 │                        │                        │
-│                │    │ b14e │                        │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 🚀 release     │ —  │ 5fe3 │ Exempt, from 5fe3      │                        │
-│                │    │ a6f7 │                        │                        │
-│                │    │ 7dff │                        │                        │
-│                │    │ b1b7 │                        │                        │
-│                │    │ ea51 │                        │                        │
-│                │    │ 7783 │                        │                        │
-│                │    │ 5471 │                        │                        │
-│                │    │ 32e7 │                        │                        │
-│                │    │ 69eb │                        │                        │
-│                │    │ 3194 │                        │                        │
-│                │    │ a8b4 │                        │                        │
-└────────────────┴────┴──────┴────────────────────────┴────────────────────────┘
+────────────────────────────────────────────────────────────────────────────────
+Gate · Mark · Rows · Contributor and model · Reviewer
+────────────────────────────────────────────────────────────────────────────────
+📌 mockup
+  Mark: 🤖👀
+  Rows: 437e bc63 2034 bc86 5fe3 99f0 05a9 a9ce bb7c c74a efff ab8e c545 d615
+    b14e a6f7 7dff b1b7 ea51 7783 5471 32e7 69eb 3194 a8b4
+  Contributor and model: noreply@anthropic.com, claude-opus, from 437e
+  Reviewer: nbyoung@nbyoung.com, from 437e
+────────────────────────────────────────────────────────────────────────────────
+🔧 function
+  Mark: 🤖
+  Rows: 437e bc63 2034
+  Contributor and model: noreply@anthropic.com, claude-sonnet, from 437e
+────────────────────────────────────────────────────────────────────────────────
+📐 design
+  Mark: 🤖👀
+  Rows: 437e
+  Contributor and model: noreply@anthropic.com, claude-opus, from 437e
+  Reviewer: nbyoung@nbyoung.com, from 437e
+────────────────────────────────────────────────────────────────────────────────
+📐 design
+  Mark: 🤖👀
+  Rows: bc63 2034
+  Contributor and model: noreply@anthropic.com, claude-fable, from bc63
+  Reviewer: nbyoung@nbyoung.com, from 437e
+────────────────────────────────────────────────────────────────────────────────
+🧱 implementation
+  Mark: 🤖
+  Rows: 437e bc63 2034
+  Contributor and model: noreply@anthropic.com, claude-sonnet, from 437e
+────────────────────────────────────────────────────────────────────────────────
+🧱 implementation
+  Mark: 🤖
+  Rows: e9c6
+  Contributor and model: noreply@anthropic.com, claude-sonnet, from 437e
+  Reviewer: noreply@anthropic.com, by default
+────────────────────────────────────────────────────────────────────────────────
+🧱 implementation
+  Mark: 🤖👀
+  Rows: ac33 9f3f 7166
+  Contributor and model: noreply@anthropic.com, claude-sonnet, from 437e
+  Reviewer: nbyoung@nbyoung.com, by default
+────────────────────────────────────────────────────────────────────────────────
+📏 unit
+  Mark: 🤖
+  Rows: 437e bc63 2034
+  Contributor and model: noreply@anthropic.com, claude-sonnet, from 437e
+────────────────────────────────────────────────────────────────────────────────
+📏 unit
+  Mark: 🤖
+  Rows: fcec
+  Contributor and model: noreply@anthropic.com, claude-sonnet, from 437e
+  Reviewer: noreply@anthropic.com, by default
+────────────────────────────────────────────────────────────────────────────────
+🔗 integrate
+  Mark: 🤖
+  Rows: 437e bc63 2034
+  Contributor and model: noreply@anthropic.com, claude-sonnet, from 437e
+────────────────────────────────────────────────────────────────────────────────
+🔗 integrate
+  Mark: 🤖
+  Rows: fcec
+  Contributor and model: noreply@anthropic.com, claude-sonnet, from 437e
+  Reviewer: noreply@anthropic.com, by default
+────────────────────────────────────────────────────────────────────────────────
+🌍 validate
+  Mark: 🤖👀
+  Rows: 437e
+  Contributor and model: noreply@anthropic.com, claude-sonnet, from 437e
+  Reviewer: nbyoung@nbyoung.com, from 437e
+────────────────────────────────────────────────────────────────────────────────
+🌍 validate
+  Mark: 🤖👀
+  Rows: bc63 2034 c2ad e9c6 e3cb fcec ac33 9f3f 7861 7166
+  Contributor and model: noreply@anthropic.com, claude-opus, from bc63
+  Reviewer: nbyoung@nbyoung.com, from 437e
+────────────────────────────────────────────────────────────────────────────────
+🚀 release
+  Mark: 🧑
+  Rows: 437e bc63 2034 c2ad e9c6 e3cb fcec ac33 9f3f 7861 7166
+  Contributor and model: nbyoung@nbyoung.com, from 437e
+────────────────────────────────────────────────────────────────────────────────
+📌 mockup
+  Mark: 🪆
+  Rows: 77b2 6103 c6e8 595e
+────────────────────────────────────────────────────────────────────────────────
+🔧 function
+  Mark: 🪆
+  Rows: 77b2 6103 c6e8 595e
+────────────────────────────────────────────────────────────────────────────────
+📐 design
+  Mark: 🪆
+  Rows: 77b2 6103 c6e8 595e
+────────────────────────────────────────────────────────────────────────────────
+🧱 implementation
+  Mark: 🪆
+  Rows: 77b2 6103 c6e8 595e
+────────────────────────────────────────────────────────────────────────────────
+📏 unit
+  Mark: 🪆
+  Rows: 77b2 6103 c6e8 595e
+────────────────────────────────────────────────────────────────────────────────
+🔗 integrate
+  Mark: 🪆
+  Rows: 77b2 6103 c6e8 595e
+────────────────────────────────────────────────────────────────────────────────
+🌍 validate
+  Mark: 🪆
+  Rows: 77b2 6103 c6e8 595e
+────────────────────────────────────────────────────────────────────────────────
+🚀 release
+  Mark: 🪆
+  Rows: 77b2 6103 c6e8 595e
+────────────────────────────────────────────────────────────────────────────────
+🔧 function
+  Mark: —
+  Rows: bc86 99f0 05a9 a9ce bb7c c74a efff ab8e c545 d615 b14e
+  Contributor and model: Exempt, from bc86
+────────────────────────────────────────────────────────────────────────────────
+🔧 function
+  Mark: —
+  Rows: 5fe3 a6f7 7dff b1b7 ea51 7783 5471 32e7 69eb 3194 a8b4
+  Contributor and model: Exempt, from 5fe3
+────────────────────────────────────────────────────────────────────────────────
+📐 design
+  Mark: —
+  Rows: bc86 99f0 05a9 a9ce bb7c c74a efff ab8e c545 d615 b14e
+  Contributor and model: Exempt, from bc86
+────────────────────────────────────────────────────────────────────────────────
+📐 design
+  Mark: —
+  Rows: 5fe3 a6f7 7dff b1b7 ea51 7783 5471 32e7 69eb 3194 a8b4
+  Contributor and model: Exempt, from 5fe3
+────────────────────────────────────────────────────────────────────────────────
+🧱 implementation
+  Mark: —
+  Rows: bc86 99f0 05a9 a9ce bb7c c74a efff ab8e c545 d615 b14e
+  Contributor and model: Exempt, from bc86
+────────────────────────────────────────────────────────────────────────────────
+🧱 implementation
+  Mark: —
+  Rows: 5fe3 a6f7 7dff b1b7 ea51 7783 5471 32e7 69eb 3194 a8b4
+  Contributor and model: Exempt, from 5fe3
+────────────────────────────────────────────────────────────────────────────────
+📏 unit
+  Mark: —
+  Rows: bc86 99f0 05a9 a9ce bb7c c74a efff ab8e c545 d615 b14e
+  Contributor and model: Exempt, from bc86
+────────────────────────────────────────────────────────────────────────────────
+📏 unit
+  Mark: —
+  Rows: 5fe3 a6f7 7dff b1b7 ea51 7783 5471 32e7 69eb 3194 a8b4
+  Contributor and model: Exempt, from 5fe3
+────────────────────────────────────────────────────────────────────────────────
+🔗 integrate
+  Mark: —
+  Rows: bc86 99f0 05a9 a9ce bb7c c74a efff ab8e c545 d615 b14e
+  Contributor and model: Exempt, from bc86
+────────────────────────────────────────────────────────────────────────────────
+🔗 integrate
+  Mark: —
+  Rows: 5fe3 a6f7 7dff b1b7 ea51 7783 5471 32e7 69eb 3194 a8b4
+  Contributor and model: Exempt, from 5fe3
+────────────────────────────────────────────────────────────────────────────────
+🌍 validate
+  Mark: —
+  Rows: bc86 99f0 05a9 a9ce bb7c c74a efff ab8e c545 d615 b14e
+  Contributor and model: Exempt, from bc86
+────────────────────────────────────────────────────────────────────────────────
+🌍 validate
+  Mark: —
+  Rows: 5fe3 a6f7 7dff b1b7 ea51 7783 5471 32e7 69eb 3194 a8b4
+  Contributor and model: Exempt, from 5fe3
+────────────────────────────────────────────────────────────────────────────────
+🚀 release
+  Mark: —
+  Rows: bc86 99f0 05a9 a9ce bb7c c74a efff ab8e c545 d615 b14e
+  Contributor and model: Exempt, from bc86
+────────────────────────────────────────────────────────────────────────────────
+🚀 release
+  Mark: —
+  Rows: 5fe3 a6f7 7dff b1b7 ea51 7783 5471 32e7 69eb 3194 a8b4
+  Contributor and model: Exempt, from 5fe3
+────────────────────────────────────────────────────────────────────────────────
 
 🧑 a person contributes · 🤖 an agent contributes · 👀 a reviewer accepts · 🪆 a
 subproject does the work · — the gate does not apply.

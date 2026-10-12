@@ -21,9 +21,10 @@ Legend: tabloio gates.
 │      │     clarifications       │         │    │  │    │    │  │  │    │     │
 └──────┴──────────────────────────┴─────────┴────┴──┴────┴────┴──┴──┴────┴─────┘
 
-❔ undefined · 📝 defined · 📌 mockup · 🔧 function · 📐 design · 🧱
-implementation · 📏 unit · 🔗 integrate · 🌍 validate · 🚀 release · 🟢 nominal
-· 🤖 an agent contributes · 👀 a reviewer accepts · — the gate does not apply.
+❔ undefined · 📝 defined · 📌 mockup · 🔧 function · 📐 design ·
+🧱 implementation · 📏 unit · 🔗 integrate · 🌍 validate · 🚀 release ·
+🟢 nominal · 🤖 an agent contributes · 👀 a reviewer accepts · — the gate does
+not apply.
 
 Notes
 ─────

@@ -28,13 +28,13 @@ Legend: tabloio gates.
 │            │                 │            │ board          │ appears         │
 │ 2026-09-19 │ ben@example.org │ authorised │ 9f31 Sensor    │                 │
 │            │                 │            │ board          │                 │
-│ 2026-09-22 │ ada@example.org │ status     │ 9f31 Sensor    │ 📌 mockup 🟢    │
-│            │                 │            │ board          │ nominal         │
+│ 2026-09-22 │ ada@example.org │ status     │ 9f31 Sensor    │ 📌 mockup       │
+│            │                 │            │ board          │ 🟢 nominal      │
 │ 2026-09-24 │ ben@example.org │ reviewed   │ 9f31 Sensor    │ 📌 mockup       │
 │            │                 │            │ board          │                 │
-│ 2026-09-25 │ ada@example.org │ status     │ 9f31 Sensor    │ ⚙ function 🔴   │
-│            │                 │            │ board          │ stalled ⛔      │
-│            │                 │            │                │ blocked         │
+│ 2026-09-25 │ ada@example.org │ status     │ 9f31 Sensor    │ ⚙ function      │
+│            │                 │            │ board          │ 🔴 stalled      │
+│            │                 │            │                │ ⛔ blocked      │
 │ 2026-09-28 │ ada@example.org │ reaffirmed │ 9f31 Sensor    │                 │
 │            │                 │            │ board          │                 │
 └────────────┴─────────────────┴────────────┴────────────────┴─────────────────┘

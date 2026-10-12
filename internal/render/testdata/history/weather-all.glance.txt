@@ -45,15 +45,15 @@ status, 1 reaffirmed, 2 reviewed, 1 pin.
 │            │                 │               │ Dashboard     │ appears       │
 │ 2026-09-21 │ ada@example.org │ authorised    │ 3c5d          │               │
 │            │                 │               │ Dashboard     │               │
-│ 2026-09-22 │ ada@example.org │ status        │ 9f31 Sensor   │ 📌 mockup 🟢  │
-│            │                 │               │ board         │ nominal       │
-│ 2026-09-22 │ dan@example.org │ status        │ 3c5d          │ 📝 defined 🟢 │
-│            │                 │               │ Dashboard     │ nominal       │
+│ 2026-09-22 │ ada@example.org │ status        │ 9f31 Sensor   │ 📌 mockup     │
+│            │                 │               │ board         │ 🟢 nominal    │
+│ 2026-09-22 │ dan@example.org │ status        │ 3c5d          │ 📝 defined    │
+│            │                 │               │ Dashboard     │ 🟢 nominal    │
 │ 2026-09-24 │ ben@example.org │ reviewed      │ 9f31 Sensor   │ 📌 mockup     │
 │            │                 │               │ board         │               │
-│ 2026-09-25 │ ada@example.org │ status        │ 9f31 Sensor   │ ⚙ function 🔴 │
-│            │                 │               │ board         │ stalled ⛔    │
-│            │                 │               │               │ blocked       │
+│ 2026-09-25 │ ada@example.org │ status        │ 9f31 Sensor   │ ⚙ function    │
+│            │                 │               │ board         │ 🔴 stalled    │
+│            │                 │               │               │ ⛔ blocked    │
 │ 2026-09-26 │ ben@example.org │ status,       │ c07d Node     │ 📐 design     │
 │            │                 │ reviewed, pin │ firmware      │               │
 │ 2026-09-27 │ dan@example.org │ task          │ 3c5d          │ the task file │

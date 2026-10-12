@@ -68,9 +68,9 @@ Requires: 1
 ┌───────────────┬────────────────┬────────────────┬────────────────┬───────────┐
 │ Task          │ Edge           │ What passes    │ Its status     │ Condition │
 ├───────────────┼────────────────┼────────────────┼────────────────┼───────────┤
-│ 9f31 Sensor   │ design →       │ Pin map and    │ ⚙ function 🔴  │ unmet     │
-│ board         │ implementation │ sensor bus     │ stalled ⛔     │           │
-│               │                │                │ blocked        │           │
+│ 9f31 Sensor   │ design →       │ Pin map and    │ ⚙ function     │ unmet     │
+│ board         │ implementation │ sensor bus     │ 🔴 stalled     │           │
+│               │                │                │ ⛔ blocked     │           │
 └───────────────┴────────────────┴────────────────┴────────────────┴───────────┘
 
 Dependents: none
@@ -221,8 +221,8 @@ Newest events
 │                 │         │                   │          │ cf5b169           │
 │ 2026-09-26      │ 97e4231 │ *ben@example.org* │ reviewed │ 📌 mockup         │
 │ 2026-09-26      │ 97e4231 │ *ben@example.org* │ status   │ 📐 design         │
-│ 2026-09-17      │ cf5b169 │ *ben@example.org* │ status   │ 📐 design 🟢      │
-│                 │         │                   │          │ nominal: Sleep    │
+│ 2026-09-17      │ cf5b169 │ *ben@example.org* │ status   │ 📐 design         │
+│                 │         │                   │          │ 🟢 nominal: Sleep │
 │                 │         │                   │          │ scheduler in      │
 │                 │         │                   │          │ progress          │
 │ 2026-09-16      │ 22a758b │ *ben@example.org* │ task     │                   │

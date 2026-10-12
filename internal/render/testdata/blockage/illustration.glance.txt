@@ -15,8 +15,8 @@ authorisations outstanding, 0 snapshots not advanced.
 │ Html awaits review at 📌 mockup  │                                   │       │
 ├──────────────────────────────────┼───────────────────────────────────┼───────┤
 │ efff Work-blockage tree view in  │ 🤖 noreply@anthropic.com          │     3 │
-│ Markdown has not passed 📌       │ contributes                       │       │
-│ mockup                           │                                   │       │
+│ Markdown has not passed          │ contributes                       │       │
+│ 📌 mockup                        │                                   │       │
 └──────────────────────────────────┴───────────────────────────────────┴───────┘
 
 Next: 1 requirement is not yet due, 0 of them unmet.

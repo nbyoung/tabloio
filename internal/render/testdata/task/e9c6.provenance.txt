@@ -77,13 +77,13 @@ Authorisation commit
 Requires: 1
 ───────────
 
-┌────────────┬─────────────────┬─────────────────┬─────────────────┬───────────┐
-│ Task       │ Edge            │ What passes     │ Its status      │ Condition │
-├────────────┼─────────────────┼─────────────────┼─────────────────┼───────────┤
-│ c2ad Roles │ design → design │ The role names  │ 🧱              │ met       │
-│            │                 │ the views refer │ implementation  │           │
-│            │                 │ to              │ 🟢 nominal      │           │
-└────────────┴─────────────────┴─────────────────┴─────────────────┴───────────┘
+┌────────────┬────────────────┬────────────────┬───────────────────┬───────────┐
+│ Task       │ Edge           │ What passes    │ Its status        │ Condition │
+├────────────┼────────────────┼────────────────┼───────────────────┼───────────┤
+│ c2ad Roles │ design →       │ The role names │ 🧱 implementation │ met       │
+│            │ design         │ the views      │ 🟢 nominal        │           │
+│            │                │ refer to       │                   │           │
+└────────────┴────────────────┴────────────────┴───────────────────┴───────────┘
 
 Dependents: 21
 ──────────────
@@ -175,8 +175,8 @@ Gate · Marks · Contributor · Model · Reviewer · Stands
   Stands: later
 ────────────────────────────────────────────────────────────────────────────────
 
-🧑 a person contributes · 🤖 an agent contributes · 👀 a reviewer accepts · —
-the gate does not apply.
+🧑 a person contributes · 🤖 an agent contributes · 👀 a reviewer accepts ·
+— the gate does not apply.
 
 Where each junction field comes from
 ────────────────────────────────────

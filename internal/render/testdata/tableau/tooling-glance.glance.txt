@@ -21,10 +21,10 @@ Legend: tabloio gates.
 │      │   HTML                         │     │  │    │  │    │  │  │  │    │  │
 └──────┴────────────────────────────────┴─────┴──┴────┴──┴────┴──┴──┴──┴────┴──┘
 
-❔ undefined · 📝 defined · 📌 mockup · 🔧 function · 📐 design · 🧱
-implementation · 📏 unit · 🔗 integrate · 🌍 validate · 🚀 release · 🟢 nominal
-· 🧑 a person contributes · 🤖 an agent contributes · 👀 a reviewer accepts · 🪆
-a subproject does the work.
+❔ undefined · 📝 defined · 📌 mockup · 🔧 function · 📐 design ·
+🧱 implementation · 📏 unit · 🔗 integrate · 🌍 validate · 🚀 release ·
+🟢 nominal · 🧑 a person contributes · 🤖 an agent contributes · 👀 a reviewer
+accepts · 🪆 a subproject does the work.
 
 Notes
 ─────

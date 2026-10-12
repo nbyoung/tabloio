@@ -13,10 +13,10 @@ Legend: tabloio gates.
 │      │         Markdown                 │     │    │    │  │  │  │  │  │  │  │
 └──────┴──────────────────────────────────┴─────┴────┴────┴──┴──┴──┴──┴──┴──┴──┘
 
-❔ undefined · 📝 defined · 📌 mockup · 🔧 function · 📐 design · 🧱
-implementation · 📏 unit · 🔗 integrate · 🌍 validate · 🚀 release · 🟢 nominal
-· 👓 review · 🤖 an agent contributes · 👀 a reviewer accepts · — the gate does
-not apply.
+❔ undefined · 📝 defined · 📌 mockup · 🔧 function · 📐 design ·
+🧱 implementation · 📏 unit · 🔗 integrate · 🌍 validate · 🚀 release ·
+🟢 nominal · 👓 review · 🤖 an agent contributes · 👀 a reviewer accepts · — the
+gate does not apply.
 
 Folded columns
 ──────────────

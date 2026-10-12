@@ -27,8 +27,8 @@ Place in the tree
 │ Path        │ 437e Tableaux tooling › bc63 Method › 2034 Views › 5fe3 HTML   │
 │             │ views                                                          │
 │ Order       │ 3 of 3 under 2034                                              │
-│ Children    │ a6f7 7dff b1b7 ea51 7783 5471 32e7 69eb 3194 a8b4, each at 📝  │
-│             │ defined 🟢 nominal                                             │
+│ Children    │ a6f7 7dff b1b7 ea51 7783 5471 32e7 69eb 3194 a8b4, each at     │
+│             │ 📝 defined 🟢 nominal                                          │
 │ Authorities │ *nbyoung@nbyoung.com* (2034, bc63, 437e)                       │
 │ Authorised  │ Yes                                                            │
 └─────────────┴────────────────────────────────────────────────────────────────┘

@@ -41,9 +41,9 @@ Requires: 1
 ┌───────────────┬────────────────┬────────────────┬────────────────┬───────────┐
 │ Task          │ Edge           │ What passes    │ Its status     │ Condition │
 ├───────────────┼────────────────┼────────────────┼────────────────┼───────────┤
-│ 9f31 Sensor   │ design →       │ Pin map and    │ ⚙ function 🔴  │ unmet     │
-│ board         │ implementation │ sensor bus     │ stalled ⛔     │           │
-│               │                │                │ blocked        │           │
+│ 9f31 Sensor   │ design →       │ Pin map and    │ ⚙ function     │ unmet     │
+│ board         │ implementation │ sensor bus     │ 🔴 stalled     │           │
+│               │                │                │ ⛔ blocked     │           │
 └───────────────┴────────────────┴────────────────┴────────────────┴───────────┘
 
 Dependents: none

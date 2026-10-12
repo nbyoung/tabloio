@@ -117,17 +117,16 @@ func TestTextGolden(t *testing.T) {
 	}
 }
 
-// T6 and T9: the golden files of the global tableau equal the drafts, but
-// for the drafts that decision 8 of design e0f7 outdates. The closing
-// command prints on one line past the width (8c), so the draft
-// tableau.weather.detail.w48.txt, which wraps it at 48 cells, left the
-// comparison.
+// T6 and T9: the golden files equal the drafts, but for the drafts that
+// decision 8 of design e0f7 outdates. The closing command prints on one
+// line past the width (8c), so tableau.weather.detail.w48.txt, which wraps
+// it at 48 cells, left the comparison. A symbol keeps the word after it
+// (8e), so tableau.weather.detail.txt, tableau.weather.detail.w100.txt and
+// blockage.illustration.provenance.txt, which part a symbol from its word,
+// left it too. Only queue.weather-ada.detail.txt stays.
 func TestTextDrafts(t *testing.T) {
 	drafts := map[string]string{
-		"tableau/weather.detail.txt":           "tableau.weather.detail.txt",
-		"tableau/weather.detail.w100.txt":      "tableau.weather.detail.w100.txt",
-		"blockage/illustration.provenance.txt": "blockage.illustration.provenance.txt",
-		"queue/weather-ada.detail.txt":         "queue.weather-ada.detail.txt",
+		"queue/weather-ada.detail.txt": "queue.weather-ada.detail.txt",
 	}
 	for golden, draft := range drafts {
 		want, err := os.ReadFile(filepath.Join("..", "..", "design", "e0f7", draft))

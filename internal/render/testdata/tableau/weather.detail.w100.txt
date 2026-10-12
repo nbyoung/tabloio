@@ -16,9 +16,9 @@ Legend: tabloio gates.
 │ 3c5d │   Dashboard         │    │ 🟢 │  🧑  │  🧑  │ 🧑 │ 🧑 │ 🧑 │ 🧑 │  🧑  │         │
 └──────┴─────────────────────┴────┴────┴──────┴──────┴────┴────┴────┴────┴──────┴─────────┘
 
-❔ undefined · 📝 defined · 📌 mockup · ⚙ function · ⚡ performance · ⚓ reliability · 📐 design · 🛠
-implementation · 🧩 unit · 🖼 integrate · 🚀 release · ⚪ undefined · 🟢 nominal · 🔴 stalled · ⛔
-blocked · 🧑 a person contributes · 🤖 an agent contributes · 👀 a reviewer accepts · 🪆 a
+❔ undefined · 📝 defined · 📌 mockup · ⚙ function · ⚡ performance · ⚓ reliability · 📐 design ·
+🛠 implementation · 🧩 unit · 🖼 integrate · 🚀 release · ⚪ undefined · 🟢 nominal · 🔴 stalled ·
+⛔ blocked · 🧑 a person contributes · 🤖 an agent contributes · 👀 a reviewer accepts · 🪆 a
 subproject does the work · — the gate does not apply.
 
 Notes

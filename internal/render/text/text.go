@@ -188,22 +188,39 @@ func cleanPre(s string) string {
 // flat prints a run of spans as one line of plain text, cleaned and with
 // no space at either end.
 func flat(xs []doc.Inline) string {
-	return strings.TrimSpace(clean(spans(xs)))
+	return strings.Trim(clean(spans(xs)), " \t\n"+string(bound))
 }
 
 // spans prints a run of spans: Text, Code and Symbol as given, Strong
 // between asterisks, and a Link as its text and then its URL in angle
-// brackets, unless the text is the URL.
+// brackets, unless the text is the URL. The space between a Symbol and the
+// word that follows it prints as bound, so that the pair stays on one line.
 func spans(xs []doc.Inline) string {
 	var b strings.Builder
+	afterSymbol := false
 	for _, in := range xs {
+		s, plain := "", false
 		switch in := in.(type) {
 		case doc.Text:
-			b.WriteString(spaces(string(in)))
+			s, plain = spaces(string(in)), true
 		case doc.Code:
-			b.WriteString(spaces(string(in)))
+			s, plain = spaces(string(in)), true
 		case doc.Symbol:
 			b.WriteString(spaces(string(in)))
+			afterSymbol = true
+			continue
+		}
+		if plain {
+			if afterSymbol && strings.HasPrefix(s, " ") {
+				s = string(bound) + s[1:]
+			}
+			// A space alone ties the symbol to the next span.
+			afterSymbol = afterSymbol && s == string(bound)
+			b.WriteString(s)
+			continue
+		}
+		afterSymbol = false
+		switch in := in.(type) {
 		case doc.Strong:
 			if s := strings.TrimSpace(spans(in)); s != "" {
 				b.WriteString("*" + s + "*")
@@ -228,6 +245,9 @@ func spaces(s string) string {
 	var b strings.Builder
 	space := false
 	for _, r := range s {
+		if r == bound {
+			r = unicode.ReplacementChar
+		}
 		if unicode.IsSpace(r) {
 			space = true
 			continue
