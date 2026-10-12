@@ -1,3 +1,3 @@
-gate: implementation
+gate: unit
 state: nominal
-note: internal/render/text, the Text format of render and the --width option with the text table of cli stand, with the 126 text golden files and the tests T1 to T17; the unit gate runs those tests; the text goldens meet tablo's own output at the integrate gate of 5ca9, and no terminal draws them before validate
+note: T1 to T17 pass on this host with no skip, run by name and again whole with go test -race -count=1; T6 and T9 compare one draft only, so four of the five drafts no longer serve as an oracle, and the 126 goldens stand on T8 to T12 with one file per view read against its Markdown twin, all agreeing; TestTextDrafts goes at the integrate gate of 5ca9 (8a) and no terminal draws the text before validate, with the stacked gate table of gates/weather-9f31 for that person's eye (8d); integrate regenerates the fixtures from tablo view and reads the text goldens through Run

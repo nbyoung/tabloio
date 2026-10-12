@@ -117,14 +117,16 @@ func TestTextGolden(t *testing.T) {
 	}
 }
 
-// T6 and T9: the golden files of the global tableau equal the drafts.
+// T6 and T9: the golden files equal the drafts, but for the drafts that
+// decision 8 of design e0f7 outdates. The closing command prints on one
+// line past the width (8c), so tableau.weather.detail.w48.txt, which wraps
+// it at 48 cells, left the comparison. A symbol keeps the word after it
+// (8e), so tableau.weather.detail.txt, tableau.weather.detail.w100.txt and
+// blockage.illustration.provenance.txt, which part a symbol from its word,
+// left it too. Only queue.weather-ada.detail.txt stays.
 func TestTextDrafts(t *testing.T) {
 	drafts := map[string]string{
-		"tableau/weather.detail.txt":           "tableau.weather.detail.txt",
-		"tableau/weather.detail.w100.txt":      "tableau.weather.detail.w100.txt",
-		"tableau/weather.detail.w48.txt":       "tableau.weather.detail.w48.txt",
-		"blockage/illustration.provenance.txt": "blockage.illustration.provenance.txt",
-		"queue/weather-ada.detail.txt":         "queue.weather-ada.detail.txt",
+		"queue/weather-ada.detail.txt": "queue.weather-ada.detail.txt",
 	}
 	for golden, draft := range drafts {
 		want, err := os.ReadFile(filepath.Join("..", "..", "design", "e0f7", draft))
@@ -202,8 +204,11 @@ func TestTextInvariants(t *testing.T) {
 				}
 			}
 			var box []string
-			for i, ln := range strings.Split(strings.TrimSuffix(out, "\n"), "\n") {
-				isPre := pre[strings.TrimSpace(ln)] && strings.HasPrefix(ln, "    ")
+			lines := strings.Split(strings.TrimSuffix(out, "\n"), "\n")
+			for i, ln := range lines {
+				// The closing command prints on one line, past the limit if need be (decision 8c).
+				isPre := pre[strings.TrimSpace(ln)] && strings.HasPrefix(ln, "    ") ||
+					i == len(lines)-1 && strings.HasPrefix(ln, "Command: ")
 				if strings.HasSuffix(ln, " ") {
 					t.Errorf("line %d ends in a space: %q", i+1, ln)
 				}
@@ -372,12 +377,17 @@ func TestTextWidth(t *testing.T) {
 	}
 }
 
-// closing returns the closing command of a text rendering, its lines joined.
+// closing returns the closing command of a text rendering as written: it
+// stands alone on one line, the last of the output.
 func closing(t *testing.T, out string) string {
 	t.Helper()
 	for _, para := range strings.Split(out, "\n\n") {
 		if strings.HasPrefix(para, "Command: ") {
-			return strings.Join(strings.Fields(para), " ")
+			para = strings.TrimSuffix(para, "\n")
+			if strings.Contains(para, "\n") || !strings.HasSuffix(out, "\n"+para+"\n") {
+				t.Fatalf("the closing command does not stand on one last line: %q", para)
+			}
+			return para
 		}
 	}
 	t.Fatalf("no closing command in\n%s", out)

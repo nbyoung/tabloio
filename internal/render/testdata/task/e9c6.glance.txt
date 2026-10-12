@@ -18,5 +18,4 @@ Legend: tabloio gates.
 │ Recorded │ 2026-09-30 by noreply@anthropic.com                               │
 └──────────┴───────────────────────────────────────────────────────────────────┘
 
-Command: tabloio task e9c6 --person nbyoung@nbyoung.com --ref main --level
-glance --text
+Command: tabloio task e9c6 --person nbyoung@nbyoung.com --ref main --level glance --text

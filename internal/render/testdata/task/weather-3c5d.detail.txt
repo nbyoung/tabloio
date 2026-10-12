@@ -56,36 +56,24 @@ Dependents: none
 Junctions
 ─────────
 
-┌─────────────────┬─────┬─────────────────┬───────┬──────────┬─────────────────┐
-│ Gate            │Marks│ Contributor     │ Model │ Reviewer │ Stands          │
-├─────────────────┼─────┼─────────────────┼───────┼──────────┼─────────────────┤
-│ ❔ undefined    │     │                 │       │          │ passed          │
-├─────────────────┼─────┼─────────────────┼───────┼──────────┼─────────────────┤
-│ 📝 defined      │ 🧑  │ dan@example.org │       │          │ passed; the     │
-│                 │     │                 │       │          │ status stands   │
-│                 │     │                 │       │          │ here            │
-├─────────────────┼─────┼─────────────────┼───────┼──────────┼─────────────────┤
-│ 📌 mockup       │ 🧑  │ dan@example.org │       │          │ next            │
-├─────────────────┼─────┼─────────────────┼───────┼──────────┼─────────────────┤
-│ ⚙ function      │ 🧑  │ dan@example.org │       │          │ later           │
-├─────────────────┼─────┼─────────────────┼───────┼──────────┼─────────────────┤
-│ ⚡ performance  │ 🧑  │ dan@example.org │       │          │ later           │
-├─────────────────┼─────┼─────────────────┼───────┼──────────┼─────────────────┤
-│ ⚓ reliability  │ 🧑  │ dan@example.org │       │          │ later           │
-├─────────────────┼─────┼─────────────────┼───────┼──────────┼─────────────────┤
-│ 📐 design       │ 🧑  │ dan@example.org │       │          │ later           │
-├─────────────────┼─────┼─────────────────┼───────┼──────────┼─────────────────┤
-│ 🛠               │ 🧑  │ dan@example.org │       │          │ later           │
-│ implementation  │     │                 │       │          │                 │
-├─────────────────┼─────┼─────────────────┼───────┼──────────┼─────────────────┤
-│ 🧩 unit         │ 🧑  │ dan@example.org │       │          │ later           │
-├─────────────────┼─────┼─────────────────┼───────┼──────────┼─────────────────┤
-│ 🖼 integrate     │ 🧑  │ dan@example.org │       │          │ later           │
-├─────────────────┼─────┼─────────────────┼───────┼──────────┼─────────────────┤
-│ 🌍 validate     │ 🧑  │ dan@example.org │       │          │ later           │
-├─────────────────┼─────┼─────────────────┼───────┼──────────┼─────────────────┤
-│ 🚀 release      │ 🧑  │ dan@example.org │       │          │ later           │
-└─────────────────┴─────┴─────────────────┴───────┴──────────┴─────────────────┘
+┌──────────────────┬─────┬─────────────────┬───────┬──────────┬────────────────┐
+│ Gate             │Marks│ Contributor     │ Model │ Reviewer │ Stands         │
+├──────────────────┼─────┼─────────────────┼───────┼──────────┼────────────────┤
+│ ❔ undefined     │     │                 │       │          │ passed         │
+│ 📝 defined       │ 🧑  │ dan@example.org │       │          │ passed; the    │
+│                  │     │                 │       │          │ status stands  │
+│                  │     │                 │       │          │ here           │
+│ 📌 mockup        │ 🧑  │ dan@example.org │       │          │ next           │
+│ ⚙ function       │ 🧑  │ dan@example.org │       │          │ later          │
+│ ⚡ performance   │ 🧑  │ dan@example.org │       │          │ later          │
+│ ⚓ reliability   │ 🧑  │ dan@example.org │       │          │ later          │
+│ 📐 design        │ 🧑  │ dan@example.org │       │          │ later          │
+│ 🛠 implementation │ 🧑  │ dan@example.org │       │          │ later          │
+│ 🧩 unit          │ 🧑  │ dan@example.org │       │          │ later          │
+│ 🖼 integrate      │ 🧑  │ dan@example.org │       │          │ later          │
+│ 🌍 validate      │ 🧑  │ dan@example.org │       │          │ later          │
+│ 🚀 release       │ 🧑  │ dan@example.org │       │          │ later          │
+└──────────────────┴─────┴─────────────────┴───────┴──────────┴────────────────┘
 
 🧑 a person contributes.
 

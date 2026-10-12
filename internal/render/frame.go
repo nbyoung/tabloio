@@ -32,7 +32,9 @@ func (p *page) frame(f frame) doc.Doc {
 		}
 		blocks = append(blocks, para(spans(one(txt("See also: ")), joined(", ", runs...), one(txt(".")))...))
 	}
-	blocks = append(blocks, para(txt("Command: "), code(command(f.Name, f.Positional, p.h, p.o))))
+	closing := para(txt("Command: "), code(command(f.Name, f.Positional, p.h, p.o)))
+	closing.OneLine = true // a reader copies the command, so it never wraps
+	blocks = append(blocks, closing)
 	return doc.Doc{Blocks: blocks}
 }
 

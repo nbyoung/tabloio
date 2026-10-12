@@ -11,12 +11,12 @@ authorisation outstanding, 0 snapshots not advanced.
 ┌─────────────────────────────────────┬────────────────────────────────┬───────┐
 │ Cause                               │ Who acts                       │ Holds │
 ├─────────────────────────────────────┼────────────────────────────────┼───────┤
-│ 9f31 Sensor board stands at ⚙       │ 🧑 ada@example.org records     │     2 │
-│ function 🔴 stalled ⛔ blocked:     │                                │       │
+│ 9f31 Sensor board stands at         │ 🧑 ada@example.org records     │     2 │
+│ ⚙ function 🔴 stalled ⛔ blocked:   │                                │       │
 │ Barometer ICs on 14-week backorder  │                                │       │
 ├─────────────────────────────────────┼────────────────────────────────┼───────┤
-│ 9f31 Sensor board has not passed 📐 │ 🧑 ada@example.org contributes │     1 │
-│ design                              │                                │       │
+│ 9f31 Sensor board has not passed    │ 🧑 ada@example.org contributes │     1 │
+│ 📐 design                           │                                │       │
 ├─────────────────────────────────────┼────────────────────────────────┼───────┤
 │ 3c5d Dashboard is proposed          │ 🧑 ada@example.org authorises  │     1 │
 └─────────────────────────────────────┴────────────────────────────────┴───────┘

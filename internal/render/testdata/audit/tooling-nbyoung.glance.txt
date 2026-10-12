@@ -21,5 +21,4 @@ Legend: tabloio gates.
 
 *Most to resolve:* *nbyoung@nbyoung.com*, 3 of 3.
 
-Command: tabloio audit --person nbyoung@nbyoung.com --ref main --stale 7 --level
-glance --text
+Command: tabloio audit --person nbyoung@nbyoung.com --ref main --stale 7 --level glance --text

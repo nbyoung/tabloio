@@ -220,11 +220,10 @@ func runRead(ctx context.Context, env *Env, a *Args) int {
 		render, ok = markdown[q.View]
 	}
 	if !ok {
-		key := q.View
 		if q.Brief != nil {
-			key = "brief"
+			return usageError(env, c, errors.New("no renderer covers the brief yet"))
 		}
-		return usageError(env, c, fmt.Errorf("the %s format does not cover %s yet", format, key))
+		return usageError(env, c, fmt.Errorf("the %s format does not cover %s yet", format, q.View))
 	}
 
 	out := inv.Output

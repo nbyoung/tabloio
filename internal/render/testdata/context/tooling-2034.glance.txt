@@ -15,8 +15,8 @@ Legend: tabloio gates.
 │ 5fe3 │   *HTML views* (10)     │     │🟢│🤖👀│— │ —  │— │— │        │
 └──────┴─────────────────────────┴─────┴──┴────┴──┴────┴──┴──┴────────┘
 
-❔ undefined · 📝 defined · 📌 mockup · 🔧 function · 📐 design · 🧱
-implementation · 📏 unit · 🔗 integrate · 🚀 release · 🟢 nominal · 🤖 an agent
-contributes · 👀 a reviewer accepts · — the gate does not apply.
+❔ undefined · 📝 defined · 📌 mockup · 🔧 function · 📐 design ·
+🧱 implementation · 📏 unit · 🔗 integrate · 🚀 release · 🟢 nominal · 🤖 an
+agent contributes · 👀 a reviewer accepts · — the gate does not apply.
 
 Command: tabloio context --task 2034 --ref main --window 1 --level glance --text

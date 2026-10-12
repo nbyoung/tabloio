@@ -19,11 +19,11 @@ Legend: tabloio gates.
 │      │     corner            │     │    │    │    │    │  │  │  │    │       │
 └──────┴───────────────────────┴─────┴────┴────┴────┴────┴──┴──┴──┴────┴───────┘
 
-❔ undefined · 📝 defined · 📌 mockup · ⚙ function · ⚡ performance · ⚓
-reliability · 📐 design · 🛠 implementation · 🧩 unit · 🖼 integrate · 🚀 release
-· 🟢 nominal · 🔴 stalled · ⛔ blocked · 🧑 a person contributes · 🤖 an agent
-contributes · 👀 a reviewer accepts · 🪆 a subproject does the work · — the gate
-does not apply.
+❔ undefined · 📝 defined · 📌 mockup · ⚙ function · ⚡ performance ·
+⚓ reliability · 📐 design · 🛠 implementation · 🧩 unit · 🖼 integrate ·
+🚀 release · 🟢 nominal · 🔴 stalled · ⛔ blocked · 🧑 a person contributes ·
+🤖 an agent contributes · 👀 a reviewer accepts · 🪆 a subproject does the work
+· — the gate does not apply.
 
 Notes
 ─────
@@ -38,8 +38,8 @@ Notes
 │ 9f31 │ 2026-09-28 │ Barometer ICs on 14-week   │                             │
 │      │            │ backorder                  │                             │
 │ c07d │ 2026-09-17 │ Sleep scheduler in         │ f1a0 Weather node image in  │
-│      │            │ progress                   │ firmware at F2, at 📐       │
-│      │            │                            │ design                      │
+│      │            │ progress                   │ firmware at F2, at          │
+│      │            │                            │ 📐 design                   │
 └──────┴────────────┴────────────────────────────┴─────────────────────────────┘
 
 Folded columns
@@ -54,5 +54,4 @@ Folded columns
 │     🖼…🚀      │ 🚀 release   │     0 │
 └───────────────┴──────────────┴───────┘
 
-Command: tabloio context --person ben@example.org --ref main --window 1 --level
-detail --text
+Command: tabloio context --person ben@example.org --ref main --window 1 --level detail --text

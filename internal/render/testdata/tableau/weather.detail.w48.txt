@@ -41,14 +41,14 @@ c07d
     📐: 🧑 · 🛠: 🧑 · 🧩: 🧑
 ────────────────────────────────────────────────
 
-❔ undefined · 📝 defined · 📌 mockup · ⚙
-function · ⚡ performance · ⚓ reliability · 📐
-design · 🛠 implementation · 🧩 unit · 🖼
-integrate · 🚀 release · ⚪ undefined · 🟢
-nominal · 🔴 stalled · ⛔ blocked · 🧑 a person
-contributes · 🤖 an agent contributes · 👀 a
-reviewer accepts · 🪆 a subproject does the work
-· — the gate does not apply.
+❔ undefined · 📝 defined · 📌 mockup ·
+⚙ function · ⚡ performance · ⚓ reliability ·
+📐 design · 🛠 implementation · 🧩 unit ·
+🖼 integrate · 🚀 release · ⚪ undefined ·
+🟢 nominal · 🔴 stalled · ⛔ blocked · 🧑 a
+person contributes · 🤖 an agent contributes ·
+👀 a reviewer accepts · 🪆 a subproject does the
+work · — the gate does not apply.
 
 Notes
 ─────
@@ -88,5 +88,4 @@ Folded columns
 │     🖼…🚀      │ 🚀 release  │     0 │
 └───────────────┴─────────────┴───────┘
 
-Command: tabloio tableau --ref main --window 1
---level detail --text --width 48
+Command: tabloio tableau --ref main --window 1 --level detail --text --width 48

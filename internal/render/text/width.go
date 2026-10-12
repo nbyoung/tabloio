@@ -10,6 +10,12 @@ import (
 // selector is U+FE0F, the variation selector that asks for the emoji form.
 const selector = '\uFE0F'
 
+// bound is a space that keeps its two words on one line: spans writes it
+// between a Symbol and the word after it, and wrap writes a plain space in
+// its place. It is a private-use code point one cell wide, and spaces
+// removes it from the text it reads.
+const bound = '\uE000'
+
 // runeWidth is the number of cells one code point takes: 0, 1 or 2.
 func runeWidth(r rune) int {
 	switch {
@@ -81,7 +87,7 @@ func wrap(s string, w int) []string {
 	var lines []string
 	line, used := "", 0
 	flush := func() {
-		lines = append(lines, line)
+		lines = append(lines, strings.ReplaceAll(line, string(bound), " "))
 		line, used = "", 0
 	}
 	for _, word := range strings.Split(s, " ") {

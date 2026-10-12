@@ -71,10 +71,10 @@ Legend: tabloio gates.
 │      │   HTML                       │     │  │    │  │    │    │  │  │    │  │
 └──────┴──────────────────────────────┴─────┴──┴────┴──┴────┴────┴──┴──┴────┴──┘
 
-❔ undefined · 📝 defined · 📌 mockup · 🔧 function · 📐 design · 🧱
-implementation · 📏 unit · 🔗 integrate · 🌍 validate · 🚀 release · 🟢 nominal
-· 🧑 a person contributes · 🤖 an agent contributes · 👀 a reviewer accepts · 🪆
-a subproject does the work · — the gate does not apply.
+❔ undefined · 📝 defined · 📌 mockup · 🔧 function · 📐 design ·
+🧱 implementation · 📏 unit · 🔗 integrate · 🌍 validate · 🚀 release ·
+🟢 nominal · 🧑 a person contributes · 🤖 an agent contributes · 👀 a reviewer
+accepts · 🪆 a subproject does the work · — the gate does not apply.
 
 Notes
 ─────
@@ -165,21 +165,21 @@ Notes
 ├────────────────────┼────────────┼─────────────────────┼──────────────────────┤
 │ 77b2               │ 2026-09-30 │ The design is next  │ b2c1 tablo in        │
 │                    │            │ and no requirement  │ subprojects/tablo at │
-│                    │            │ gates it            │ 00f8f68, at 📝       │
-│                    │            │                     │ defined              │
+│                    │            │ gates it            │ 00f8f68, at          │
+│                    │            │                     │ 📝 defined           │
 ├────────────────────┼────────────┼─────────────────────┼──────────────────────┤
 │ 6103               │ 2026-09-30 │ prototype/e3ed      │ 07e0 tabloio in      │
 │                    │            │ renders the gate    │ subprojects/tabloio  │
-│                    │            │ and task definition │ at 4593882, at 🔧    │
-│                    │            │ views as Markdown   │ function             │
+│                    │            │ and task definition │ at 4593882, at       │
+│                    │            │ views as Markdown   │ 🔧 function          │
 │                    │            │ at three levels     │                      │
 │                    │            │ from tablo view     │                      │
 │                    │            │ data                │                      │
 ├────────────────────┼────────────┼─────────────────────┼──────────────────────┤
 │ c6e8               │ 2026-09-30 │ prototype/679b      │ 40e8 tablotui in     │
 │                    │            │ renders the global  │ subprojects/tablotui │
-│                    │            │ tableau as a Bubble │ at a2878b5, at 🔧    │
-│                    │            │ Tea grid with tree  │ function             │
+│                    │            │ tableau as a Bubble │ at a2878b5, at       │
+│                    │            │ Tea grid with tree  │ 🔧 function          │
 │                    │            │ expand and          │                      │
 │                    │            │ collapse,           │                      │
 │                    │            │ scrolling, a folded │                      │
@@ -192,8 +192,8 @@ Notes
 ├────────────────────┼────────────┼─────────────────────┼──────────────────────┤
 │ 595e               │ 2026-09-30 │ prototype/49ce      │ 8608 tableaud in     │
 │                    │            │ serves the ten      │ subprojects/tableaud │
-│                    │            │ views with a stdlib │ at e6ec4ec, at 🔧    │
-│                    │            │ HEAD and .tableaux  │ function             │
+│                    │            │ views with a stdlib │ at e6ec4ec, at       │
+│                    │            │ HEAD and .tableaux  │ 🔧 function          │
 │                    │            │ watcher, ETag 304   │                      │
 │                    │            │ polling through     │                      │
 │                    │            │ htmx, a Source      │                      │

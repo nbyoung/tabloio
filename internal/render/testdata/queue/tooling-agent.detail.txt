@@ -367,5 +367,4 @@ b14e a6f7 7dff b1b7 ea51 7783 5471 32e7 69eb 3194 a8b4.
 5. Work waiting: none
 ─────────────────────
 
-Command: tabloio queue --person noreply@anthropic.com --ref main --level detail
---text
+Command: tabloio queue --person noreply@anthropic.com --ref main --level detail --text

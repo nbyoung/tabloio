@@ -25,10 +25,10 @@ Legend: tabloio gates.
 │      │   HTML                       │     │  │    │  │    │      │  │        │
 └──────┴──────────────────────────────┴─────┴──┴────┴──┴────┴──────┴──┴────────┘
 
-❔ undefined · 📝 defined · 📌 mockup · 🔧 function · 📐 design · 🧱
-implementation · 📏 unit · 🔗 integrate · 🚀 release · 🟢 nominal · 🤖 an agent
-contributes · 👀 a reviewer accepts · 🪆 a subproject does the work · — the gate
-does not apply.
+❔ undefined · 📝 defined · 📌 mockup · 🔧 function · 📐 design ·
+🧱 implementation · 📏 unit · 🔗 integrate · 🚀 release · 🟢 nominal · 🤖 an
+agent contributes · 👀 a reviewer accepts · 🪆 a subproject does the work ·
+— the gate does not apply.
 
 Notes
 ─────
@@ -60,14 +60,14 @@ Notes
 │                │            │ gates it              │ 00f8f68, at 📝 defined │
 │ 6103           │ 2026-09-30 │ prototype/e3ed        │ 07e0 tabloio in        │
 │                │            │ renders the gate and  │ subprojects/tabloio at │
-│                │            │ task definition views │ 4593882, at 🔧         │
-│                │            │ as Markdown at three  │ function               │
+│                │            │ task definition views │ 4593882, at            │
+│                │            │ as Markdown at three  │ 🔧 function            │
 │                │            │ levels from tablo     │                        │
 │                │            │ view data             │                        │
 │ c6e8           │ 2026-09-30 │ prototype/679b        │ 40e8 tablotui in       │
 │                │            │ renders the global    │ subprojects/tablotui   │
-│                │            │ tableau as a Bubble   │ at a2878b5, at 🔧      │
-│                │            │ Tea grid with tree    │ function               │
+│                │            │ tableau as a Bubble   │ at a2878b5, at         │
+│                │            │ Tea grid with tree    │ 🔧 function            │
 │                │            │ expand and collapse,  │                        │
 │                │            │ scrolling, a folded   │                        │
 │                │            │ gate window and       │                        │
@@ -78,8 +78,8 @@ Notes
 │                │            │ widens U+FE0F         │                        │
 │ 595e           │ 2026-09-30 │ prototype/49ce serves │ 8608 tableaud in       │
 │                │            │ the ten views with a  │ subprojects/tableaud   │
-│                │            │ stdlib HEAD and       │ at e6ec4ec, at 🔧      │
-│                │            │ .tableaux watcher,    │ function               │
+│                │            │ stdlib HEAD and       │ at e6ec4ec, at         │
+│                │            │ .tableaux watcher,    │ 🔧 function            │
 │                │            │ ETag 304 polling      │                        │
 │                │            │ through htmx, a       │                        │
 │                │            │ Source interface and  │                        │
@@ -98,5 +98,4 @@ Folded columns
 │     🔗…🚀     │ 🚀 release   │     0 │
 └───────────────┴──────────────┴───────┘
 
-Command: tabloio context --person nbyoung@nbyoung.com --ref main --window 1
---level detail --text
+Command: tabloio context --person nbyoung@nbyoung.com --ref main --window 1 --level detail --text

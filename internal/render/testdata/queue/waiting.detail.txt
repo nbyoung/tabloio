@@ -51,5 +51,4 @@ work waiting.
   Mockup waits for Abstract views (e9c6) at design
 - Do not start: the cause stands.
 
-Command: tabloio queue --person noreply@anthropic.com --ref main --level detail
---text
+Command: tabloio queue --person noreply@anthropic.com --ref main --level detail --text

@@ -68,9 +68,9 @@ Requires: 1
 ┌───────────────┬────────────────┬────────────────┬────────────────┬───────────┐
 │ Task          │ Edge           │ What passes    │ Its status     │ Condition │
 ├───────────────┼────────────────┼────────────────┼────────────────┼───────────┤
-│ 9f31 Sensor   │ design →       │ Pin map and    │ ⚙ function 🔴  │ unmet     │
-│ board         │ implementation │ sensor bus     │ stalled ⛔     │           │
-│               │                │                │ blocked        │           │
+│ 9f31 Sensor   │ design →       │ Pin map and    │ ⚙ function     │ unmet     │
+│ board         │ implementation │ sensor bus     │ 🔴 stalled     │           │
+│               │                │                │ ⛔ blocked     │           │
 └───────────────┴────────────────┴────────────────┴────────────────┴───────────┘
 
 Dependents: none
@@ -221,8 +221,8 @@ Newest events
 │                 │         │                   │          │ cf5b169           │
 │ 2026-09-26      │ 97e4231 │ *ben@example.org* │ reviewed │ 📌 mockup         │
 │ 2026-09-26      │ 97e4231 │ *ben@example.org* │ status   │ 📐 design         │
-│ 2026-09-17      │ cf5b169 │ *ben@example.org* │ status   │ 📐 design 🟢      │
-│                 │         │                   │          │ nominal: Sleep    │
+│ 2026-09-17      │ cf5b169 │ *ben@example.org* │ status   │ 📐 design         │
+│                 │         │                   │          │ 🟢 nominal: Sleep │
 │                 │         │                   │          │ scheduler in      │
 │                 │         │                   │          │ progress          │
 │ 2026-09-16      │ 22a758b │ *ben@example.org* │ task     │                   │
@@ -231,5 +231,4 @@ Newest events
 
     git log --format='%as %h %ae' main -- .tableaux/tasks/c07d.yaml .tableaux/status/c07d.yaml firmware
 
-Command: tabloio task c07d --person ben@example.org --ref edb30d2 --level
-provenance --text
+Command: tabloio task c07d --person ben@example.org --ref edb30d2 --level provenance --text

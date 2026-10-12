@@ -28,20 +28,20 @@ Tasks assigned: 10
 ┌──────────────────────┬───────┬───────────────────────┬───────────────────────┐
 │ Task                 │ Under │ Status                │ Next junction         │
 ├──────────────────────┼───────┼───────────────────────┼───────────────────────┤
-│ 437e Tableaux        │       │ 📝 defined 🟢         │                       │
-│ tooling              │       │ nominal, rolled up    │                       │
+│ 437e Tableaux        │       │ 📝 defined            │                       │
+│ tooling              │       │ 🟢 nominal, rolled up │                       │
 │                      │       │ from 99f0 Gate        │                       │
 │                      │       │ definition view in    │                       │
 │                      │       │ Markdown              │                       │
 ├──────────────────────┼───────┼───────────────────────┼───────────────────────┤
-│ bc63 Method          │ 437e  │ 📝 defined 🟢         │                       │
-│                      │       │ nominal, rolled up    │                       │
+│ bc63 Method          │ 437e  │ 📝 defined            │                       │
+│                      │       │ 🟢 nominal, rolled up │                       │
 │                      │       │ from 99f0 Gate        │                       │
 │                      │       │ definition view in    │                       │
 │                      │       │ Markdown              │                       │
 ├──────────────────────┼───────┼───────────────────────┼───────────────────────┤
-│ 2034 Views           │ bc63  │ 📝 defined 🟢         │                       │
-│                      │       │ nominal, rolled up    │                       │
+│ 2034 Views           │ bc63  │ 📝 defined            │                       │
+│                      │       │ 🟢 nominal, rolled up │                       │
 │                      │       │ from 99f0 Gate        │                       │
 │                      │       │ definition view in    │                       │
 │                      │       │ Markdown              │                       │
@@ -55,24 +55,24 @@ Tasks assigned: 10
 │ 7166 Language        │ bc63  │ 📐 design 🟢 nominal  │ 🧱 implementation     │
 │ clarifications       │       │                       │ 🤖👀                  │
 ├──────────────────────┼───────┼───────────────────────┼───────────────────────┤
-│ 77b2 tablo: backend  │ 437e  │ 📝 defined 🟢         │ 📌 mockup 🪆          │
-│ library and plumbing │       │ nominal, 🪆 from the  │                       │
-│                      │       │ subproject            │                       │
+│ 77b2 tablo: backend  │ 437e  │ 📝 defined            │ 📌 mockup 🪆          │
+│ library and plumbing │       │ 🟢 nominal, 🪆 from   │                       │
+│                      │       │ the subproject        │                       │
 │                      │       │ subprojects/tablo     │                       │
 ├──────────────────────┼───────┼───────────────────────┼───────────────────────┤
-│ 6103 tabloio:        │ 437e  │ 📝 defined 🟢         │ 📌 mockup 🪆          │
-│ command line, output │       │ nominal, 🪆 from the  │                       │
-│ and input            │       │ subproject            │                       │
+│ 6103 tabloio:        │ 437e  │ 📝 defined            │ 📌 mockup 🪆          │
+│ command line, output │       │ 🟢 nominal, 🪆 from   │                       │
+│ and input            │       │ the subproject        │                       │
 │                      │       │ subprojects/tabloio   │                       │
 ├──────────────────────┼───────┼───────────────────────┼───────────────────────┤
-│ c6e8 tablotui:       │ 437e  │ 📝 defined 🟢         │ 📌 mockup 🪆          │
-│ terminal user        │       │ nominal, 🪆 from the  │                       │
-│ interface            │       │ subproject            │                       │
+│ c6e8 tablotui:       │ 437e  │ 📝 defined            │ 📌 mockup 🪆          │
+│ terminal user        │       │ 🟢 nominal, 🪆 from   │                       │
+│ interface            │       │ the subproject        │                       │
 │                      │       │ subprojects/tablotui  │                       │
 ├──────────────────────┼───────┼───────────────────────┼───────────────────────┤
-│ 595e tableaud: local │ 437e  │ 📝 defined 🟢         │ 📌 mockup 🪆          │
-│ daemon and HTML      │       │ nominal, 🪆 from the  │                       │
-│                      │       │ subproject            │                       │
+│ 595e tableaud: local │ 437e  │ 📝 defined            │ 📌 mockup 🪆          │
+│ daemon and HTML      │       │ 🟢 nominal, 🪆 from   │                       │
+│                      │       │ the subproject        │                       │
 │                      │       │ subprojects/tableaud  │                       │
 └──────────────────────┴───────┴───────────────────────┴───────────────────────┘
 
@@ -85,8 +85,8 @@ No contributor in this project: 4
 │ Task              │ Next gate    │ Subproject           │ Its root task      │
 │                   │              │                      │ stands at          │
 ├───────────────────┼──────────────┼──────────────────────┼────────────────────┤
-│ 77b2 tablo:       │ 📌 mockup 🪆 │ subprojects/tablo    │ b2c1 📝 defined 🟢 │
-│ backend library   │              │                      │ nominal            │
+│ 77b2 tablo:       │ 📌 mockup 🪆 │ subprojects/tablo    │ b2c1 📝 defined    │
+│ backend library   │              │                      │ 🟢 nominal         │
 │ and plumbing      │              │                      │                    │
 ├───────────────────┼──────────────┼──────────────────────┼────────────────────┤
 │ 6103 tabloio:     │ 📌 mockup 🪆 │ subprojects/tabloio  │ 07e0 🔧 function   │
@@ -210,34 +210,23 @@ Reviews: 46 junctions, 26 next
 Counts by gate
 ··············
 
-┌────────────────┬───────────┬─────────────┬────────────┬─────────┬────────────┐
-│ Gate           │     Tasks │ Contributes │   of which │ Reviews │   of which │
-│                │  standing │             │       next │         │       next │
-│                │      here │             │            │         │            │
-├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
-│ ❔ undefined   │         0 │           0 │          0 │       0 │          0 │
-├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
-│ 📝 defined     │         7 │           0 │          0 │       7 │          0 │
-├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
-│ 📌 mockup      │         0 │           0 │          0 │      20 │         20 │
-├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
-│ 🔧 function    │         0 │           0 │          0 │       0 │          0 │
-├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
-│ 📐 design      │         3 │           0 │          0 │       8 │          0 │
-├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
-│ 🧱             │         0 │           0 │          0 │       3 │          3 │
-│ implementation │           │             │            │         │            │
-├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
-│ 📏 unit        │         0 │           0 │          0 │       0 │          0 │
-├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
-│ 🔗 integrate   │         0 │           0 │          0 │       0 │          0 │
-├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
-│ 🌍 validate    │         0 │           0 │          0 │       8 │          3 │
-├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
-│ 🚀 release     │         0 │           8 │          0 │       0 │          0 │
-├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
-│ *Total*        │      *10* │         *8* │        *0* │    *46* │       *26* │
-└────────────────┴───────────┴─────────────┴────────────┴─────────┴────────────┘
+┌───────────────────┬──────────┬─────────────┬───────────┬─────────┬───────────┐
+│ Gate              │    Tasks │ Contributes │  of which │ Reviews │  of which │
+│                   │ standing │             │      next │         │      next │
+│                   │     here │             │           │         │           │
+├───────────────────┼──────────┼─────────────┼───────────┼─────────┼───────────┤
+│ ❔ undefined      │        0 │           0 │         0 │       0 │         0 │
+│ 📝 defined        │        7 │           0 │         0 │       7 │         0 │
+│ 📌 mockup         │        0 │           0 │         0 │      20 │        20 │
+│ 🔧 function       │        0 │           0 │         0 │       0 │         0 │
+│ 📐 design         │        3 │           0 │         0 │       8 │         0 │
+│ 🧱 implementation │        0 │           0 │         0 │       3 │         3 │
+│ 📏 unit           │        0 │           0 │         0 │       0 │         0 │
+│ 🔗 integrate      │        0 │           0 │         0 │       0 │         0 │
+│ 🌍 validate       │        0 │           0 │         0 │       8 │         3 │
+│ 🚀 release        │        0 │           8 │         0 │       0 │         0 │
+│ *Total*           │     *10* │         *8* │       *0* │    *46* │      *26* │
+└───────────────────┴──────────┴─────────────┴───────────┴─────────┴───────────┘
 
 Authority
 ·········
@@ -253,13 +242,13 @@ Tasks assigned: 27
 ┌───────────────────────┬───────┬───────────────────────┬──────────────────────┐
 │ Task                  │ Under │ Status                │ Next junction        │
 ├───────────────────────┼───────┼───────────────────────┼──────────────────────┤
-│ c2ad Roles            │ bc63  │ 🧱 implementation 🟢  │ 🌍 validate 🤖👀     │
-│                       │       │ nominal               │                      │
+│ c2ad Roles            │ bc63  │ 🧱 implementation     │ 🌍 validate 🤖👀     │
+│                       │       │ 🟢 nominal            │                      │
 ├───────────────────────┼───────┼───────────────────────┼──────────────────────┤
 │ e9c6 Abstract views   │ 2034  │ 📐 design 🟢 nominal  │ 🧱 implementation 🤖 │
 ├───────────────────────┼───────┼───────────────────────┼──────────────────────┤
-│ bc86 Markdown views   │ 2034  │ 📝 defined 🟢         │                      │
-│                       │       │ nominal, rolled up    │                      │
+│ bc86 Markdown views   │ 2034  │ 📝 defined            │                      │
+│                       │       │ 🟢 nominal, rolled up │                      │
 │                       │       │ from 99f0 Gate        │                      │
 │                       │       │ definition view in    │                      │
 │                       │       │ Markdown              │                      │
@@ -278,8 +267,8 @@ Tasks assigned: 27
 │ c74a efff ab8e c545   │       │                       │                      │
 │ d615 b14e             │       │                       │                      │
 ├───────────────────────┼───────┼───────────────────────┼──────────────────────┤
-│ 5fe3 HTML views       │ 2034  │ 📝 defined 🟢         │                      │
-│                       │       │ nominal, rolled up    │                      │
+│ 5fe3 HTML views       │ 2034  │ 📝 defined            │                      │
+│                       │       │ 🟢 nominal, rolled up │                      │
 │                       │       │ from a6f7 Gate        │                      │
 │                       │       │ definition view in    │                      │
 │                       │       │ Html                  │                      │
@@ -300,11 +289,11 @@ Tasks assigned: 27
 ├───────────────────────┼───────┼───────────────────────┼──────────────────────┤
 │ e3cb Schema files     │ bc63  │ 📏 unit 🟢 nominal    │ 🌍 validate 🤖👀     │
 ├───────────────────────┼───────┼───────────────────────┼──────────────────────┤
-│ fcec Conformance      │ bc63  │ 🧱 implementation 🟢  │ 📏 unit 🤖           │
-│ corpus                │       │ nominal               │                      │
+│ fcec Conformance      │ bc63  │ 🧱 implementation     │ 📏 unit 🤖           │
+│ corpus                │       │ 🟢 nominal            │                      │
 ├───────────────────────┼───────┼───────────────────────┼──────────────────────┤
-│ 7861 Productivity     │ bc63  │ 🧱 implementation 🟢  │ 🌍 validate 🤖👀     │
-│ evidence              │       │ nominal               │                      │
+│ 7861 Productivity     │ bc63  │ 🧱 implementation     │ 🌍 validate 🤖👀     │
+│ evidence              │       │ 🟢 nominal            │                      │
 └───────────────────────┴───────┴───────────────────────┴──────────────────────┘
 
 🤖 an agent contributes · 👀 a reviewer accepts.
@@ -511,34 +500,23 @@ Models by gate
 Counts by gate
 ··············
 
-┌────────────────┬───────────┬─────────────┬────────────┬─────────┬────────────┐
-│ Gate           │     Tasks │ Contributes │   of which │ Reviews │   of which │
-│                │  standing │             │       next │         │       next │
-│                │      here │             │            │         │            │
-├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
-│ ❔ undefined   │         0 │           0 │          0 │       0 │          0 │
-├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
-│ 📝 defined     │        22 │          32 │          0 │      25 │          0 │
-├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
-│ 📌 mockup      │         0 │          20 │         20 │       0 │          0 │
-├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
-│ 🔧 function    │         0 │           0 │          0 │       0 │          0 │
-├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
-│ 📐 design      │         1 │           8 │          0 │       0 │          0 │
-├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
-│ 🧱             │         3 │           8 │          4 │       5 │          1 │
-│ implementation │           │             │            │         │            │
-├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
-│ 📏 unit        │         1 │           2 │          1 │       2 │          1 │
-├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
-│ 🔗 integrate   │         0 │           1 │          0 │       1 │          0 │
-├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
-│ 🌍 validate    │         0 │           8 │          3 │       0 │          0 │
-├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
-│ 🚀 release     │         0 │           0 │          0 │       0 │          0 │
-├────────────────┼───────────┼─────────────┼────────────┼─────────┼────────────┤
-│ *Total*        │      *27* │        *79* │       *28* │    *33* │        *2* │
-└────────────────┴───────────┴─────────────┴────────────┴─────────┴────────────┘
+┌───────────────────┬──────────┬─────────────┬───────────┬─────────┬───────────┐
+│ Gate              │    Tasks │ Contributes │  of which │ Reviews │  of which │
+│                   │ standing │             │      next │         │      next │
+│                   │     here │             │           │         │           │
+├───────────────────┼──────────┼─────────────┼───────────┼─────────┼───────────┤
+│ ❔ undefined      │        0 │           0 │         0 │       0 │         0 │
+│ 📝 defined        │       22 │          32 │         0 │      25 │         0 │
+│ 📌 mockup         │        0 │          20 │        20 │       0 │         0 │
+│ 🔧 function       │        0 │           0 │         0 │       0 │         0 │
+│ 📐 design         │        1 │           8 │         0 │       0 │         0 │
+│ 🧱 implementation │        3 │           8 │         4 │       5 │         1 │
+│ 📏 unit           │        1 │           2 │         1 │       2 │         1 │
+│ 🔗 integrate      │        0 │           1 │         0 │       1 │         0 │
+│ 🌍 validate       │        0 │           8 │         3 │       0 │         0 │
+│ 🚀 release        │        0 │           0 │         0 │       0 │         0 │
+│ *Total*           │     *27* │        *79* │      *28* │    *33* │       *2* │
+└───────────────────┴──────────┴─────────────┴───────────┴─────────┴───────────┘
 
 Authority
 ·········
@@ -572,67 +550,45 @@ nbyoung@nbyoung.com, provenance
 │             │ 7166       │                          │          │             │
 └─────────────┴────────────┴──────────────────────────┴──────────┴─────────────┘
 
-┌────────────────┬───────┬──────────────────────────┬──────────────────────────┐
-│ Reviews at     │ Tasks │ Reviewer from            │ Contributor and model    │
-│                │       │                          │ from                     │
-├────────────────┼───────┼──────────────────────────┼──────────────────────────┤
-│ 📝 defined     │ 7:    │ the plain default,       │ 437e Tableaux tooling,   │
-│                │ ac33  │ assignee in              │ junctions.defined in     │
-│                │ 9f3f  │ .tableaux/tasks/ID.yaml, │ .tableaux/tasks/437e.yam │
-│                │ 7166  │ commit 6b6c99a           │ l, commit 320cf2b        │
-│                │ 77b2  │                          │                          │
-│                │ 6103  │                          │                          │
-│                │ c6e8  │                          │                          │
-│                │ 595e  │                          │                          │
-├────────────────┼───────┼──────────────────────────┼──────────────────────────┤
-│ 📌 mockup      │ 20:   │ 437e Tableaux tooling,   │ 437e Tableaux tooling,   │
-│                │ 99f0  │ junctions.mockup in      │ junctions.mockup in      │
-│                │ 05a9  │ .tableaux/tasks/437e.yam │ .tableaux/tasks/437e.yam │
-│                │ a9ce  │ l, commit 320cf2b        │ l, commit 320cf2b        │
-│                │ bb7c  │                          │                          │
-│                │ c74a  │                          │                          │
-│                │ efff  │                          │                          │
-│                │ ab8e  │                          │                          │
-│                │ c545  │                          │                          │
-│                │ d615  │                          │                          │
-│                │ b14e  │                          │                          │
-│                │ a6f7  │                          │                          │
-│                │ 7dff  │                          │                          │
-│                │ b1b7  │                          │                          │
-│                │ ea51  │                          │                          │
-│                │ 7783  │                          │                          │
-│                │ 5471  │                          │                          │
-│                │ 32e7  │                          │                          │
-│                │ 69eb  │                          │                          │
-│                │ 3194  │                          │                          │
-│                │ a8b4  │                          │                          │
-├────────────────┼───────┼──────────────────────────┼──────────────────────────┤
-│ 📐 design      │ 8:    │ 437e Tableaux tooling,   │ bc63 Method,             │
-│                │ c2ad  │ junctions.design in      │ junctions.design in      │
-│                │ e9c6  │ .tableaux/tasks/437e.yam │ .tableaux/tasks/bc63.yam │
-│                │ e3cb  │ l, commit 320cf2b        │ l, commit 320cf2b        │
-│                │ fcec  │                          │                          │
-│                │ ac33  │                          │                          │
-│                │ 9f3f  │                          │                          │
-│                │ 7861  │                          │                          │
-│                │ 7166  │                          │                          │
-├────────────────┼───────┼──────────────────────────┼──────────────────────────┤
-│ 🧱             │ 3:    │ the plain default,       │ 437e Tableaux tooling,   │
-│ implementation │ ac33  │ assignee in              │ junctions.implementation │
-│                │ 9f3f  │ .tableaux/tasks/ID.yaml, │ in                       │
-│                │ 7166  │ commit 6b6c99a           │ .tableaux/tasks/437e.yam │
-│                │       │                          │ l, commit 320cf2b        │
-├────────────────┼───────┼──────────────────────────┼──────────────────────────┤
-│ 🌍 validate    │ 8:    │ 437e Tableaux tooling,   │ bc63 Method,             │
-│                │ c2ad  │ junctions.validate in    │ junctions.validate in    │
-│                │ e9c6  │ .tableaux/tasks/437e.yam │ .tableaux/tasks/bc63.yam │
-│                │ e3cb  │ l, commit 320cf2b        │ l, commit 320cf2b        │
-│                │ fcec  │                          │                          │
-│                │ ac33  │                          │                          │
-│                │ 9f3f  │                          │                          │
-│                │ 7861  │                          │                          │
-│                │ 7166  │                          │                          │
-└────────────────┴───────┴──────────────────────────┴──────────────────────────┘
+────────────────────────────────────────────────────────────────────────────────
+Reviews at · Tasks · Reviewer from · Contributor and model from
+────────────────────────────────────────────────────────────────────────────────
+📝 defined
+  Tasks: 7: ac33 9f3f 7166 77b2 6103 c6e8 595e
+  Reviewer from: the plain default, assignee in .tableaux/tasks/ID.yaml,
+    commit 6b6c99a
+  Contributor and model from: 437e Tableaux tooling, junctions.defined in
+    .tableaux/tasks/437e.yaml, commit 320cf2b
+────────────────────────────────────────────────────────────────────────────────
+📌 mockup
+  Tasks: 20: 99f0 05a9 a9ce bb7c c74a efff ab8e c545 d615 b14e a6f7 7dff b1b7
+    ea51 7783 5471 32e7 69eb 3194 a8b4
+  Reviewer from: 437e Tableaux tooling, junctions.mockup in
+    .tableaux/tasks/437e.yaml, commit 320cf2b
+  Contributor and model from: 437e Tableaux tooling, junctions.mockup in
+    .tableaux/tasks/437e.yaml, commit 320cf2b
+────────────────────────────────────────────────────────────────────────────────
+📐 design
+  Tasks: 8: c2ad e9c6 e3cb fcec ac33 9f3f 7861 7166
+  Reviewer from: 437e Tableaux tooling, junctions.design in
+    .tableaux/tasks/437e.yaml, commit 320cf2b
+  Contributor and model from: bc63 Method, junctions.design in
+    .tableaux/tasks/bc63.yaml, commit 320cf2b
+────────────────────────────────────────────────────────────────────────────────
+🧱 implementation
+  Tasks: 3: ac33 9f3f 7166
+  Reviewer from: the plain default, assignee in .tableaux/tasks/ID.yaml,
+    commit 6b6c99a
+  Contributor and model from: 437e Tableaux tooling, junctions.implementation
+    in .tableaux/tasks/437e.yaml, commit 320cf2b
+────────────────────────────────────────────────────────────────────────────────
+🌍 validate
+  Tasks: 8: c2ad e9c6 e3cb fcec ac33 9f3f 7861 7166
+  Reviewer from: 437e Tableaux tooling, junctions.validate in
+    .tableaux/tasks/437e.yaml, commit 320cf2b
+  Contributor and model from: bc63 Method, junctions.validate in
+    .tableaux/tasks/bc63.yaml, commit 320cf2b
+────────────────────────────────────────────────────────────────────────────────
 
 ┌──────┬───────────────────────────────────────────────────────────┬───────────┐
 │ Task │ Stated in                                                 │ Pinned at │
@@ -744,54 +700,38 @@ Contributes at · Tasks · Contributor and model from · Reviewer · Reviewer fr
     .tableaux/tasks/437e.yaml, commit 320cf2b
 ────────────────────────────────────────────────────────────────────────────────
 
-┌────────────────┬───────┬──────────────────────────┬──────────────────────────┐
-│ Reviews at     │ Tasks │ Reviewer from            │ Contributor and model    │
-│                │       │                          │ from                     │
-├────────────────┼───────┼──────────────────────────┼──────────────────────────┤
-│ 📝 defined     │ 25:   │ the plain default,       │ 437e Tableaux tooling,   │
-│                │ c2ad  │ assignee in              │ junctions.defined in     │
-│                │ e9c6  │ .tableaux/tasks/ID.yaml, │ .tableaux/tasks/437e.yam │
-│                │ 99f0  │ commit 6b6c99a           │ l, commit 320cf2b        │
-│                │ 05a9  │                          │                          │
-│                │ a9ce  │                          │                          │
-│                │ bb7c  │                          │                          │
-│                │ c74a  │                          │                          │
-│                │ efff  │                          │                          │
-│                │ ab8e  │                          │                          │
-│                │ c545  │                          │                          │
-│                │ d615  │                          │                          │
-│                │ b14e  │                          │                          │
-│                │ a6f7  │                          │                          │
-│                │ 7dff  │                          │                          │
-│                │ b1b7  │                          │                          │
-│                │ ea51  │                          │                          │
-│                │ 7783  │                          │                          │
-│                │ 5471  │                          │                          │
-│                │ 32e7  │                          │                          │
-│                │ 69eb  │                          │                          │
-│                │ 3194  │                          │                          │
-│                │ a8b4  │                          │                          │
-│                │ e3cb  │                          │                          │
-│                │ fcec  │                          │                          │
-│                │ 7861  │                          │                          │
-├────────────────┼───────┼──────────────────────────┼──────────────────────────┤
-│ 🧱             │ 5:    │ the plain default,       │ 437e Tableaux tooling,   │
-│ implementation │ c2ad  │ assignee in              │ junctions.implementation │
-│                │ e9c6  │ .tableaux/tasks/ID.yaml, │ in                       │
-│                │ e3cb  │ commit 6b6c99a           │ .tableaux/tasks/437e.yam │
-│                │ fcec  │                          │ l, commit 320cf2b        │
-│                │ 7861  │                          │                          │
-├────────────────┼───────┼──────────────────────────┼──────────────────────────┤
-│ 📏 unit        │ 2:    │ the plain default,       │ 437e Tableaux tooling,   │
-│                │ e3cb  │ assignee in              │ junctions.unit in        │
-│                │ fcec  │ .tableaux/tasks/ID.yaml, │ .tableaux/tasks/437e.yam │
-│                │       │ commit 6b6c99a           │ l, commit 320cf2b        │
-├────────────────┼───────┼──────────────────────────┼──────────────────────────┤
-│ 🔗 integrate   │ 1:    │ the plain default,       │ 437e Tableaux tooling,   │
-│                │ fcec  │ assignee in              │ junctions.integrate in   │
-│                │       │ .tableaux/tasks/ID.yaml, │ .tableaux/tasks/437e.yam │
-│                │       │ commit 6b6c99a           │ l, commit 320cf2b        │
-└────────────────┴───────┴──────────────────────────┴──────────────────────────┘
+────────────────────────────────────────────────────────────────────────────────
+Reviews at · Tasks · Reviewer from · Contributor and model from
+────────────────────────────────────────────────────────────────────────────────
+📝 defined
+  Tasks: 25: c2ad e9c6 99f0 05a9 a9ce bb7c c74a efff ab8e c545 d615 b14e a6f7
+    7dff b1b7 ea51 7783 5471 32e7 69eb 3194 a8b4 e3cb fcec 7861
+  Reviewer from: the plain default, assignee in .tableaux/tasks/ID.yaml,
+    commit 6b6c99a
+  Contributor and model from: 437e Tableaux tooling, junctions.defined in
+    .tableaux/tasks/437e.yaml, commit 320cf2b
+────────────────────────────────────────────────────────────────────────────────
+🧱 implementation
+  Tasks: 5: c2ad e9c6 e3cb fcec 7861
+  Reviewer from: the plain default, assignee in .tableaux/tasks/ID.yaml,
+    commit 6b6c99a
+  Contributor and model from: 437e Tableaux tooling, junctions.implementation
+    in .tableaux/tasks/437e.yaml, commit 320cf2b
+────────────────────────────────────────────────────────────────────────────────
+📏 unit
+  Tasks: 2: e3cb fcec
+  Reviewer from: the plain default, assignee in .tableaux/tasks/ID.yaml,
+    commit 6b6c99a
+  Contributor and model from: 437e Tableaux tooling, junctions.unit in
+    .tableaux/tasks/437e.yaml, commit 320cf2b
+────────────────────────────────────────────────────────────────────────────────
+🔗 integrate
+  Tasks: 1: fcec
+  Reviewer from: the plain default, assignee in .tableaux/tasks/ID.yaml,
+    commit 6b6c99a
+  Contributor and model from: 437e Tableaux tooling, junctions.integrate in
+    .tableaux/tasks/437e.yaml, commit 320cf2b
+────────────────────────────────────────────────────────────────────────────────
 
 Commits: 2
 ──────────

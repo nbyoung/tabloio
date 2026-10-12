@@ -39,13 +39,13 @@ Requires: 2
 ┌──────────────┬────────────────┬──────────────┬───────────────┬───────────────┐
 │ Task         │ Edge           │ What passes  │ Its status    │ Condition     │
 ├──────────────┼────────────────┼──────────────┼───────────────┼───────────────┤
-│ 77b2 tablo:  │ implementation │ The library  │ 📝 defined 🟢 │ unmet, not    │
-│ backend      │ →              │ it embeds    │ nominal       │ yet due       │
+│ 77b2 tablo:  │ implementation │ The library  │ 📝 defined    │ unmet, not    │
+│ backend      │ →              │ it embeds    │ 🟢 nominal    │ yet due       │
 │ library and  │ implementation │              │               │               │
 │ plumbing     │                │              │               │               │
 ├──────────────┼────────────────┼──────────────┼───────────────┼───────────────┤
-│ 5fe3 HTML    │ mockup →       │ The HTML     │ 📝 defined 🟢 │ unmet, not    │
-│ views        │ design         │ mockups it   │ nominal       │ yet due       │
+│ 5fe3 HTML    │ mockup →       │ The HTML     │ 📝 defined    │ unmet, not    │
+│ views        │ design         │ mockups it   │ 🟢 nominal    │ yet due       │
 │              │                │ reproduces   │               │               │
 └──────────────┴────────────────┴──────────────┴───────────────┴───────────────┘
 
@@ -130,5 +130,4 @@ Subproject snapshot
 │            │ 🔧 function 🟢 nominal; 5a2f 🔧 function 🟢 nominal             │
 └────────────┴─────────────────────────────────────────────────────────────────┘
 
-Command: tabloio task 595e --person nbyoung@nbyoung.com --ref main --level
-detail --text
+Command: tabloio task 595e --person nbyoung@nbyoung.com --ref main --level detail --text

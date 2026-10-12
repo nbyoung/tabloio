@@ -116,15 +116,21 @@ Authorities of its 8 children, nearest first: nbyoung@nbyoung.com (bc63, 437e).
 
 Children: c2ad 2034 e3cb fcec ac33 9f3f 7861 7166.
 
-┌──────────┬─────┬───────────────────────┬──────────────┬──────────────────────┐
-│ Gate     │Marks│ Contributor           │ Model        │ Reviewer             │
-├──────────┼─────┼───────────────────────┼──────────────┼──────────────────────┤
-│ 📐       │🤖👀 │ noreply@anthropic.com │ claude-fable │ nbyoung@nbyoung.com, │
-│ design   │     │                       │              │ from 437e            │
-├──────────┼─────┼───────────────────────┼──────────────┼──────────────────────┤
-│ 🌍       │🤖👀 │ noreply@anthropic.com │ claude-opus  │ nbyoung@nbyoung.com, │
-│ validate │     │                       │              │ from 437e            │
-└──────────┴─────┴───────────────────────┴──────────────┴──────────────────────┘
+────────────────────────────────────────────────────────────────────────────────
+Gate · Marks · Contributor · Model · Reviewer
+────────────────────────────────────────────────────────────────────────────────
+📐 design
+  Marks: 🤖👀
+  Contributor: noreply@anthropic.com
+  Model: claude-fable
+  Reviewer: nbyoung@nbyoung.com, from 437e
+────────────────────────────────────────────────────────────────────────────────
+🌍 validate
+  Marks: 🤖👀
+  Contributor: noreply@anthropic.com
+  Model: claude-opus
+  Reviewer: nbyoung@nbyoung.com, from 437e
+────────────────────────────────────────────────────────────────────────────────
 
 🤖 an agent contributes · 👀 a reviewer accepts.
 

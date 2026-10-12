@@ -14,9 +14,10 @@ Legend: tabloio gates.
 │ c07d │     Node firmware │        │ 🧑 │🧑│— │🟢│🪆│🤖👀│       │
 └──────┴───────────────────┴────────┴────┴──┴──┴──┴──┴────┴───────┘
 
-❔ undefined · 📌 mockup · ⚙ function · ⚡ performance · ⚓ reliability · 📐
-design · 🛠 implementation · 🧩 unit · 🖼 integrate · 🚀 release · 🟢 nominal · 🔴
-stalled · ⛔ blocked · 🧑 a person contributes · 🤖 an agent contributes · 👀 a
-reviewer accepts · 🪆 a subproject does the work · — the gate does not apply.
+❔ undefined · 📌 mockup · ⚙ function · ⚡ performance · ⚓ reliability ·
+📐 design · 🛠 implementation · 🧩 unit · 🖼 integrate · 🚀 release · 🟢 nominal ·
+🔴 stalled · ⛔ blocked · 🧑 a person contributes · 🤖 an agent contributes ·
+👀 a reviewer accepts · 🪆 a subproject does the work · — the gate does not
+apply.
 
 Command: tabloio context --task 4e2b --ref main --window 1 --level glance --text

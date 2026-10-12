@@ -25,10 +25,10 @@ Legend: tabloio gates.
 │      │   HTML                       │     │  │    │  │    │      │  │        │
 └──────┴──────────────────────────────┴─────┴──┴────┴──┴────┴──────┴──┴────────┘
 
-❔ undefined · 📝 defined · 📌 mockup · 🔧 function · 📐 design · 🧱
-implementation · 📏 unit · 🔗 integrate · 🚀 release · 🟢 nominal · 🤖 an agent
-contributes · 👀 a reviewer accepts · 🪆 a subproject does the work · — the gate
-does not apply.
+❔ undefined · 📝 defined · 📌 mockup · 🔧 function · 📐 design ·
+🧱 implementation · 📏 unit · 🔗 integrate · 🚀 release · 🟢 nominal · 🤖 an
+agent contributes · 👀 a reviewer accepts · 🪆 a subproject does the work ·
+— the gate does not apply.
 
 Notes
 ─────
@@ -60,14 +60,14 @@ Notes
 │                │            │ gates it              │ 00f8f68, at 📝 defined │
 │ 6103           │ 2026-09-30 │ prototype/e3ed        │ 07e0 tabloio in        │
 │                │            │ renders the gate and  │ subprojects/tabloio at │
-│                │            │ task definition views │ 4593882, at 🔧         │
-│                │            │ as Markdown at three  │ function               │
+│                │            │ task definition views │ 4593882, at            │
+│                │            │ as Markdown at three  │ 🔧 function            │
 │                │            │ levels from tablo     │                        │
 │                │            │ view data             │                        │
 │ c6e8           │ 2026-09-30 │ prototype/679b        │ 40e8 tablotui in       │
 │                │            │ renders the global    │ subprojects/tablotui   │
-│                │            │ tableau as a Bubble   │ at a2878b5, at 🔧      │
-│                │            │ Tea grid with tree    │ function               │
+│                │            │ tableau as a Bubble   │ at a2878b5, at         │
+│                │            │ Tea grid with tree    │ 🔧 function            │
 │                │            │ expand and collapse,  │                        │
 │                │            │ scrolling, a folded   │                        │
 │                │            │ gate window and       │                        │
@@ -78,8 +78,8 @@ Notes
 │                │            │ widens U+FE0F         │                        │
 │ 595e           │ 2026-09-30 │ prototype/49ce serves │ 8608 tableaud in       │
 │                │            │ the ten views with a  │ subprojects/tableaud   │
-│                │            │ stdlib HEAD and       │ at e6ec4ec, at 🔧      │
-│                │            │ .tableaux watcher,    │ function               │
+│                │            │ stdlib HEAD and       │ at e6ec4ec, at         │
+│                │            │ .tableaux watcher,    │ 🔧 function            │
 │                │            │ ETag 304 polling      │                        │
 │                │            │ through htmx, a       │                        │
 │                │            │ Source interface and  │                        │
@@ -118,43 +118,47 @@ Roll-ups: 3
 ┌─────────────────────┬─────────────────────┬─────────────────────┬────────────┐
 │ Parent              │ Shows               │ Rolls up from       │ Date       │
 ├─────────────────────┼─────────────────────┼─────────────────────┼────────────┤
-│ 437e Tableaux       │ 📝 defined 🟢       │ bc63 Method         │ 2026-09-29 │
-│ tooling             │ nominal             │                     │            │
+│ 437e Tableaux       │ 📝 defined          │ bc63 Method         │ 2026-09-29 │
+│ tooling             │ 🟢 nominal          │                     │            │
 ├─────────────────────┼─────────────────────┼─────────────────────┼────────────┤
-│ bc63 Method         │ 📝 defined 🟢       │ 2034 Views          │ 2026-09-29 │
-│                     │ nominal             │                     │            │
+│ bc63 Method         │ 📝 defined          │ 2034 Views          │ 2026-09-29 │
+│                     │ 🟢 nominal          │                     │            │
 ├─────────────────────┼─────────────────────┼─────────────────────┼────────────┤
-│ 2034 Views          │ 📝 defined 🟢       │ bc86 Markdown views │ 2026-09-29 │
-│                     │ nominal             │                     │            │
+│ 2034 Views          │ 📝 defined          │ bc86 Markdown views │ 2026-09-29 │
+│                     │ 🟢 nominal          │                     │            │
 └─────────────────────┴─────────────────────┴─────────────────────┴────────────┘
 
 Marks: 5
 ────────
 
-┌────────────────┬────┬──────┬────────────────────────┬────────────────────────┐
-│ Gate           │Mark│ Rows │ Contributor and model  │ Reviewer               │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 📐 design      │🤖👀│ 437e │ noreply@anthropic.com, │ *nbyoung@nbyoung.com*, │
-│                │    │      │ claude-opus, from 437e │ from 437e              │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 🧱             │ 🤖 │ 437e │ noreply@anthropic.com, │                        │
-│ implementation │    │ bc63 │ claude-sonnet, from    │                        │
-│                │    │ 2034 │ 437e                   │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 🧱             │🤖👀│ ac33 │ noreply@anthropic.com, │ *nbyoung@nbyoung.com*, │
-│ implementation │    │ 9f3f │ claude-sonnet, from    │ by default             │
-│                │    │ 7166 │ 437e                   │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 📐 design      │ 🪆 │ 77b2 │                        │                        │
-│                │    │ 6103 │                        │                        │
-│                │    │ c6e8 │                        │                        │
-│                │    │ 595e │                        │                        │
-├────────────────┼────┼──────┼────────────────────────┼────────────────────────┤
-│ 🧱             │ 🪆 │ 77b2 │                        │                        │
-│ implementation │    │ 6103 │                        │                        │
-│                │    │ c6e8 │                        │                        │
-│                │    │ 595e │                        │                        │
-└────────────────┴────┴──────┴────────────────────────┴────────────────────────┘
+────────────────────────────────────────────────────────────────────────────────
+Gate · Mark · Rows · Contributor and model · Reviewer
+────────────────────────────────────────────────────────────────────────────────
+📐 design
+  Mark: 🤖👀
+  Rows: 437e
+  Contributor and model: noreply@anthropic.com, claude-opus, from 437e
+  Reviewer: *nbyoung@nbyoung.com*, from 437e
+────────────────────────────────────────────────────────────────────────────────
+🧱 implementation
+  Mark: 🤖
+  Rows: 437e bc63 2034
+  Contributor and model: noreply@anthropic.com, claude-sonnet, from 437e
+────────────────────────────────────────────────────────────────────────────────
+🧱 implementation
+  Mark: 🤖👀
+  Rows: ac33 9f3f 7166
+  Contributor and model: noreply@anthropic.com, claude-sonnet, from 437e
+  Reviewer: *nbyoung@nbyoung.com*, by default
+────────────────────────────────────────────────────────────────────────────────
+📐 design
+  Mark: 🪆
+  Rows: 77b2 6103 c6e8 595e
+────────────────────────────────────────────────────────────────────────────────
+🧱 implementation
+  Mark: 🪆
+  Rows: 77b2 6103 c6e8 595e
+────────────────────────────────────────────────────────────────────────────────
 
 🤖 an agent contributes · 👀 a reviewer accepts · 🪆 a subproject does the work.
 
@@ -195,5 +199,4 @@ c6e8
 
     git ls-tree HEAD subprojects/ # the pin each snapshot reads
 
-Command: tabloio context --person nbyoung@nbyoung.com --ref 3cdae52 --window 1
---level provenance --text
+Command: tabloio context --person nbyoung@nbyoung.com --ref 3cdae52 --window 1 --level provenance --text

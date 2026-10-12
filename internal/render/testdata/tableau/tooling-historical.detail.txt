@@ -20,10 +20,10 @@ Legend: tabloio gates.
 │      │     clarifications         │     │    │    │  │    │    │  │  │    │  │
 └──────┴────────────────────────────┴─────┴────┴────┴──┴────┴────┴──┴──┴────┴──┘
 
-❔ undefined · 📝 defined · 📌 mockup · 🔧 function · 📐 design · 🧱
-implementation · 📏 unit · 🔗 integrate · 🌍 validate · 🚀 release · 🟢 nominal
-· 🧑 a person contributes · 🤖 an agent contributes · 👀 a reviewer accepts · —
-the gate does not apply.
+❔ undefined · 📝 defined · 📌 mockup · 🔧 function · 📐 design ·
+🧱 implementation · 📏 unit · 🔗 integrate · 🌍 validate · 🚀 release ·
+🟢 nominal · 🧑 a person contributes · 🤖 an agent contributes · 👀 a reviewer
+accepts · — the gate does not apply.
 
 Notes
 ─────
@@ -79,5 +79,4 @@ Folded columns
 │      ❔       │ ❔ undefined │     0 │
 └───────────────┴──────────────┴───────┘
 
-Command: tabloio tableau --ref main --window 1 --historical --level detail
---text
+Command: tabloio tableau --ref main --window 1 --historical --level detail --text

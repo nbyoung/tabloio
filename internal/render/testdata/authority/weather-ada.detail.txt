@@ -44,5 +44,4 @@ Children: 9f31 c07d.
 
 👀 a reviewer accepts.
 
-Command: tabloio authority --person ada@example.org --ref main --level detail
---text
+Command: tabloio authority --person ada@example.org --ref main --level detail --text

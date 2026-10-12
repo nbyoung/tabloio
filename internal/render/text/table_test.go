@@ -100,3 +100,44 @@ func TestRowRule(t *testing.T) {
 		t.Errorf("odd gap:\n%s", got)
 	}
 }
+
+// Decision 8e: a Symbol stays on one line with the word after it, in a
+// paragraph and in a cell.
+func TestSymbolKeepsItsWord(t *testing.T) {
+	sym := func(s, key string) []doc.Inline { return []doc.Inline{doc.Symbol(s), doc.Text(" " + key)} }
+	// "at 📐 design" fills 12 cells; a width of 20 puts the break after
+	// the symbol, since "aaaa bbbb cccc 📐" takes 16 cells and "design" 6.
+	runs := append([]doc.Inline{doc.Text("aaaa bbbb cccc ")}, sym("📐", "design")...)
+	got := draw(t, doc.Doc{Blocks: []doc.Block{doc.Para{Text: runs}}}, 20)
+	if want := "aaaa bbbb cccc\n📐 design\n"; got != want {
+		t.Errorf("paragraph: got %q, want %q", got, want)
+	}
+	// A cell: at 20 cells the State column narrows to 11, where "one two 🟢"
+	// fits and "nominal" falls under it; the floor of the column is the pair.
+	d := doc.Doc{Blocks: []doc.Block{doc.Table{
+		Head: cells("Id", "State"),
+		Rows: [][]doc.Cell{{cell("a1"), {Text: append([]doc.Inline{doc.Text("one two ")}, sym("🟢", "nominal")...)}}},
+	}}}
+	got = draw(t, d, 20)
+	if !strings.Contains(got, "│ a1 │ one two") || strings.Contains(got, "one two 🟢") {
+		t.Errorf("the cell does not break before the pair:\n%s", got)
+	}
+	for _, ln := range strings.Split(got, "\n") {
+		if strings.Contains(ln, "🟢") && !strings.Contains(ln, "🟢 nominal") {
+			t.Errorf("the symbol parts from its word: %q\n%s", ln, got)
+		}
+	}
+	if !strings.Contains(got, "🟢 nominal") {
+		t.Errorf("no pair in\n%s", got)
+	}
+	// A symbol with no word after it, and a symbol joined to nothing, stay.
+	got = draw(t, doc.Doc{Blocks: []doc.Block{doc.Para{Text: []doc.Inline{doc.Text("aaaa bbbb cccc dddd "), doc.Symbol("📐")}}}}, 20)
+	if want := "aaaa bbbb cccc dddd\n📐\n"; got != want {
+		t.Errorf("last symbol: got %q, want %q", got, want)
+	}
+	// The private marker does not come from the text.
+	got = draw(t, doc.Doc{Blocks: []doc.Block{doc.Para{Text: []doc.Inline{doc.Symbol("📐"), doc.Text(" a\uE000b")}}}}, 80)
+	if want := "📐 a�b\n"; got != want {
+		t.Errorf("marker in text: got %q, want %q", got, want)
+	}
+}
