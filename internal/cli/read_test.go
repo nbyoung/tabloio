@@ -568,7 +568,7 @@ func TestFormat(t *testing.T) {
 		fakeTables(t, false)
 		src := newSource()
 		code, out, errs := run(t, src, "queue", "--person", "a@b.c", "--brief", "c2ad", "validate")
-		if code != ExitUsage || out != "" || !strings.Contains(errs, "the markdown format does not cover brief yet") || !src.untouched() {
+		if code != ExitUsage || out != "" || !strings.Contains(errs, "no renderer covers the brief yet") || !src.untouched() {
 			t.Errorf("exit %d, stdout %q, stderr %q", code, out, errs)
 		}
 	})
