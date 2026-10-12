@@ -105,5 +105,4 @@ Gate · Marks · Contributor · Model · Reviewer · Stands
 
 🤖 an agent contributes · 👀 a reviewer accepts · — the gate does not apply.
 
-Command: tabloio task 5fe3 --person nbyoung@nbyoung.com --ref main --level
-detail --text
+Command: tabloio task 5fe3 --person nbyoung@nbyoung.com --ref main --level detail --text

@@ -17,8 +17,13 @@ type Heading struct {
 	Text  []Inline
 }
 
-// Para is a paragraph.
-type Para struct{ Text []Inline }
+// Para is a paragraph. A writer that wraps lines prints a paragraph with
+// OneLine set on one line, past its width if need be; a writer that does
+// not wrap ignores the field.
+type Para struct {
+	Text    []Inline
+	OneLine bool
+}
 
 // Table is a table with one header row.
 type Table struct {

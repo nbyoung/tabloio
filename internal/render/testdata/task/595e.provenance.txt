@@ -232,5 +232,4 @@ Newest events
     git -C subprojects/tableaud show e6ec4ec:.tableaux/tasks/8608.yaml
     git log --format='%as %h %ae' 3cdae52 -- .tableaux/tasks/595e.yaml .tableaux/status/595e.yaml subprojects/tableaud
 
-Command: tabloio task 595e --person nbyoung@nbyoung.com --ref 3cdae52 --level
-provenance --text
+Command: tabloio task 595e --person nbyoung@nbyoung.com --ref 3cdae52 --level provenance --text

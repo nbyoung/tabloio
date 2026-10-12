@@ -17,5 +17,4 @@ Legend: tabloio gates.
 │ Recorded │ 2026-09-17, from the subproject                       │
 └──────────┴───────────────────────────────────────────────────────┘
 
-Command: tabloio task c07d --person ben@example.org --ref main --level glance
---text
+Command: tabloio task c07d --person ben@example.org --ref main --level glance --text

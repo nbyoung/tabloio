@@ -130,5 +130,4 @@ Subproject snapshot
 │            │ 🔧 function 🟢 nominal; 5a2f 🔧 function 🟢 nominal             │
 └────────────┴─────────────────────────────────────────────────────────────────┘
 
-Command: tabloio task 595e --person nbyoung@nbyoung.com --ref main --level
-detail --text
+Command: tabloio task 595e --person nbyoung@nbyoung.com --ref main --level detail --text

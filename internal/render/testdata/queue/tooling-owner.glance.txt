@@ -11,5 +11,4 @@ Legend: tabloio gates.
 
 *The queue is empty.*
 
-Command: tabloio queue --person nbyoung@nbyoung.com --ref main --level glance
---text
+Command: tabloio queue --person nbyoung@nbyoung.com --ref main --level glance --text

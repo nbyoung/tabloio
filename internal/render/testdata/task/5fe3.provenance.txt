@@ -183,5 +183,4 @@ Models: none
 Newest events: none
 ───────────────────
 
-Command: tabloio task 5fe3 --person nbyoung@nbyoung.com --ref 3cdae52 --level
-provenance --text
+Command: tabloio task 5fe3 --person nbyoung@nbyoung.com --ref 3cdae52 --level provenance --text

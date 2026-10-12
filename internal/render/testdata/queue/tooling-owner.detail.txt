@@ -26,5 +26,4 @@ Legend: tabloio gates.
 5. Work waiting: none
 ─────────────────────
 
-Command: tabloio queue --person nbyoung@nbyoung.com --ref main --level detail
---text
+Command: tabloio queue --person nbyoung@nbyoung.com --ref main --level detail --text

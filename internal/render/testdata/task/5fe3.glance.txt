@@ -18,5 +18,4 @@ Legend: tabloio gates.
 │ Recorded │ 2026-09-29, the oldest among its children                         │
 └──────────┴───────────────────────────────────────────────────────────────────┘
 
-Command: tabloio task 5fe3 --person nbyoung@nbyoung.com --ref main --level
-glance --text
+Command: tabloio task 5fe3 --person nbyoung@nbyoung.com --ref main --level glance --text

@@ -25,5 +25,4 @@ reliability · 📐 design · 🛠 implementation · 🧩 unit · 🖼 integrate
 contributes · 👀 a reviewer accepts · 🪆 a subproject does the work · — the gate
 does not apply.
 
-Command: tabloio context --person ben@example.org --ref main --window 1 --level
-glance --text
+Command: tabloio context --person ben@example.org --ref main --window 1 --level glance --text

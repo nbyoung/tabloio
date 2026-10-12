@@ -167,5 +167,4 @@ Reaffirmation
   Since: 2026-09-30, 5 days
 ────────────────────────────────────────────────────────────────────────────────
 
-Command: tabloio queue --person noreply@anthropic.com --ref main --level glance
---text
+Command: tabloio queue --person noreply@anthropic.com --ref main --level glance --text

@@ -88,5 +88,4 @@ Folded columns
 │     🖼…🚀      │ 🚀 release  │     0 │
 └───────────────┴─────────────┴───────┘
 
-Command: tabloio tableau --ref main --window 1
---level detail --text --width 48
+Command: tabloio tableau --ref main --window 1 --level detail --text --width 48

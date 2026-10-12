@@ -195,5 +195,4 @@ c6e8
 
     git ls-tree HEAD subprojects/ # the pin each snapshot reads
 
-Command: tabloio context --person nbyoung@nbyoung.com --ref 3cdae52 --window 1
---level provenance --text
+Command: tabloio context --person nbyoung@nbyoung.com --ref 3cdae52 --window 1 --level provenance --text

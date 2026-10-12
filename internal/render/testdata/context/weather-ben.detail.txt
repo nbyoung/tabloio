@@ -54,5 +54,4 @@ Folded columns
 │     🖼…🚀      │ 🚀 release   │     0 │
 └───────────────┴──────────────┴───────┘
 
-Command: tabloio context --person ben@example.org --ref main --window 1 --level
-detail --text
+Command: tabloio context --person ben@example.org --ref main --window 1 --level detail --text

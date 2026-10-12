@@ -30,5 +30,4 @@ implementation · 📏 unit · 🔗 integrate · 🚀 release · 🟢 nominal ·
 contributes · 👀 a reviewer accepts · 🪆 a subproject does the work · — the gate
 does not apply.
 
-Command: tabloio context --person nbyoung@nbyoung.com --ref main --window 1
---level glance --text
+Command: tabloio context --person nbyoung@nbyoung.com --ref main --window 1 --level glance --text

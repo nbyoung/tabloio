@@ -3,7 +3,8 @@
 // Blocks print with one blank line between them, lines end in \n, no line
 // ends in a space, and the output ends in one newline. The output holds no
 // control character but \n and no escape sequence. No line is wider than
-// the width, but for the lines of a Pre, which print as given.
+// the width, but for the lines of a Pre, which print as given, and for a
+// paragraph marked OneLine, such as the closing command.
 //
 // The writer offers no option for the variation selector U+FE0F: outside a
 // Pre it writes a code point one cell wide without a selector after it, and
@@ -76,6 +77,9 @@ func block(b doc.Block, w int) []string {
 	case doc.Heading:
 		return heading(b, w)
 	case doc.Para:
+		if b.OneLine {
+			return oneLine(b)
+		}
 		return wrap(flat(b.Text), w)
 	case doc.Table:
 		return table(b, w)
@@ -83,6 +87,14 @@ func block(b doc.Block, w int) []string {
 		return list(b, w)
 	case doc.Pre:
 		return pre(b)
+	}
+	return nil
+}
+
+// oneLine prints a paragraph on one line, past the width if need be.
+func oneLine(p doc.Para) []string {
+	if s := flat(p.Text); s != "" {
+		return []string{s}
 	}
 	return nil
 }

@@ -80,5 +80,4 @@ Folded columns
 │      ❔       │ ❔ undefined │     0 │
 └───────────────┴──────────────┴───────┘
 
-Command: tabloio tableau --person nbyoung@nbyoung.com --ref main --window 1
---level detail --text
+Command: tabloio tableau --person nbyoung@nbyoung.com --ref main --window 1 --level detail --text

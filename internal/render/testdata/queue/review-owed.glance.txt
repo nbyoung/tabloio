@@ -15,5 +15,4 @@ work waiting.
 │ Review owed │ e9c6 Abstract views │ 📐 design │ claude-fable │ 2026-09-30 │
 └─────────────┴─────────────────────┴───────────┴──────────────┴────────────┘
 
-Command: tabloio queue --person nbyoung@nbyoung.com --ref 26defc7 --level glance
---text
+Command: tabloio queue --person nbyoung@nbyoung.com --ref 26defc7 --level glance --text

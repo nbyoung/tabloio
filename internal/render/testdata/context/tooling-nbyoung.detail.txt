@@ -98,5 +98,4 @@ Folded columns
 │     🔗…🚀     │ 🚀 release   │     0 │
 └───────────────┴──────────────┴───────┘
 
-Command: tabloio context --person nbyoung@nbyoung.com --ref main --window 1
---level detail --text
+Command: tabloio context --person nbyoung@nbyoung.com --ref main --window 1 --level detail --text

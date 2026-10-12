@@ -18,5 +18,4 @@ work waiting.
 │              │ design                 │           │             │            │
 └──────────────┴────────────────────────┴───────────┴─────────────┴────────────┘
 
-Command: tabloio queue --person noreply@anthropic.com --ref main --level glance
---text
+Command: tabloio queue --person noreply@anthropic.com --ref main --level glance --text

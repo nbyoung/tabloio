@@ -185,3 +185,17 @@ func TestWrite(t *testing.T) {
 type countWriter struct{ calls int }
 
 func (c *countWriter) Write(p []byte) (int, error) { c.calls++; return io.Discard.Write(p) }
+
+// A paragraph marked OneLine prints on one line past the width; one that
+// is not marked wraps.
+func TestOneLine(t *testing.T) {
+	spans := []doc.Inline{doc.Text("Command: "), doc.Code("tabloio queue --person someone@example.com --level detail --text")}
+	got := write(t, doc.Doc{Blocks: []doc.Block{doc.Para{Text: spans, OneLine: true}}}, 20)
+	if want := "Command: tabloio queue --person someone@example.com --level detail --text\n"; got != want {
+		t.Errorf("OneLine: got %q, want %q", got, want)
+	}
+	got = write(t, doc.Doc{Blocks: []doc.Block{doc.Para{Text: spans}}}, 20)
+	if strings.Count(got, "\n") < 2 {
+		t.Errorf("a plain paragraph does not wrap: %q", got)
+	}
+}

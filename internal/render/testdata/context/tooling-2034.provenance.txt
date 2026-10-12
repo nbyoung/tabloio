@@ -122,5 +122,4 @@ Snapshots: none
 
     git log -1 --format='%as %ae %h' -- .tableaux/status/e9c6.yaml # date, recorder and deciding commit
 
-Command: tabloio context --task 2034 --ref 3cdae52 --window 1 --level provenance
---text
+Command: tabloio context --task 2034 --ref 3cdae52 --window 1 --level provenance --text

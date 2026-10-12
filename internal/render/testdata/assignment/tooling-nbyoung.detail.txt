@@ -239,5 +239,4 @@ Authority
 
 Over 437e Tableaux tooling and its 36 descendants.
 
-Command: tabloio assignment --person nbyoung@nbyoung.com --ref main --level
-detail --text
+Command: tabloio assignment --person nbyoung@nbyoung.com --ref main --level detail --text

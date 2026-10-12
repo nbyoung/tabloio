@@ -79,5 +79,4 @@ Folded columns
 │      ❔       │ ❔ undefined │     0 │
 └───────────────┴──────────────┴───────┘
 
-Command: tabloio tableau --ref main --window 1 --historical --level detail
---text
+Command: tabloio tableau --ref main --window 1 --historical --level detail --text

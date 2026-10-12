@@ -34,5 +34,4 @@ H3
 
 *Most to resolve:* *nbyoung@nbyoung.com*, 3 of 3.
 
-Command: tabloio audit --person nbyoung@nbyoung.com --ref main --stale 7 --level
-detail --text
+Command: tabloio audit --person nbyoung@nbyoung.com --ref main --stale 7 --level detail --text
