@@ -5,12 +5,12 @@ import "testing"
 // TestDecodeAudit: Decode reads the audit, ignores an unknown key and leaves
 // an absent field zero.
 func TestDecodeAudit(t *testing.T) {
-	v, err := Decode("audit", []byte(`{
-		"level": "provenance", "extra": 1, "errors": 1,
+	v, err := Decode("audit", []byte(`{"command": "audit", "params": {"level": "provenance"}, "extra": 1, "data": {
+		"extra": 1, "errors": 1,
 		"most": {"email": "a@example.org", "count": 3},
 		"findings": [{"rule": "S11", "severity": "error", "tasks": [{"id": "e3cb"}], "files": ["status/e3cb.yaml"],
 			"source": {"text": "README.md", "url": "README.md#status"}, "facts": [{"name": "Junction", "value": "v"}],
-			"commits": [{"hash": "abc"}], "commands": [{"text": "git log", "comment": "c"}]}]}`))
+			"commits": [{"hash": "abc"}], "commands": [{"text": "git log", "comment": "c"}]}]}}`))
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -24,7 +24,7 @@ func TestDecodeAudit(t *testing.T) {
 		t.Errorf("decoded %+v", a)
 	}
 
-	if _, err := Decode("audit", []byte(`{"level": "deep"}`)); err == nil {
+	if _, err := Decode("audit", []byte(`{"command": "audit", "params": {"level": "deep"}, "data": {}}`)); err == nil {
 		t.Error("an unknown level decodes")
 	}
 }

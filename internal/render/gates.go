@@ -224,8 +224,8 @@ func (p *page) marksTable(v *view.Gates) []doc.Block {
 	b := []doc.Block{heading(2, txt("Junction marks")), doc.Table{Align: align, Head: head, Rows: rows}}
 	if p.o.Level >= view.Provenance {
 		xs := one(code("README.md"), txt(", Junctions"))
-		if v.Language != "" {
-			xs = append(xs, txt(", at language "+v.Language))
+		if lang := p.h.Project.Tableaux; lang != "" {
+			xs = append(xs, txt(", at language "+lang))
 		}
 		b = append(b, source(xs...))
 	}
@@ -235,7 +235,7 @@ func (p *page) marksTable(v *view.Gates) []doc.Block {
 // gatesProvenance builds the Provenance section: the facts, the files with
 // the commits that last changed them, and the commands.
 func (p *page) gatesProvenance(v *view.Gates) []doc.Block {
-	r := p.h.Ref
+	r := p.h.Source
 	refValue := one(code(refName(r)))
 	if r.Commit != "" {
 		refValue = append(refValue, txt(" at "), code(short(r.Commit)))
@@ -252,8 +252,8 @@ func (p *page) gatesProvenance(v *view.Gates) []doc.Block {
 		return one(code(key), txt(" in "), code(".tableaux/version.yaml"))
 	}
 	facts := [][]doc.Cell{
-		{cellText("Language version"), cellText(v.Language), cell(versionFile("tableaux"))},
-		{cellText("Trunk"), cell(codeOrNone(v.Trunk)), cell(versionFile("trunk"))},
+		{cellText("Language version"), cellText(p.h.Project.Tableaux), cell(versionFile("tableaux"))},
+		{cellText("Trunk"), cell(codeOrNone(r.Trunk.Name)), cell(versionFile("trunk"))},
 		{cellText("Ref"), cell(refValue), cell(one(txt("The "), code(flagRef), txt(" parameter")))},
 	}
 	b := []doc.Block{
@@ -263,15 +263,18 @@ func (p *page) gatesProvenance(v *view.Gates) []doc.Block {
 	if len(v.Files) > 0 {
 		var rows [][]doc.Cell
 		for _, f := range v.Files {
-			c := f.Commit
-			rows = append(rows, []doc.Cell{
-				cell(one(code(f.Path))),
-				cell(commit(c.Hash)),
-				cellText(c.Date),
-				cell(p.actor(c.Author)),
-				cell(p.actor(c.Committer)),
-				cellText(c.Subject),
-			})
+			row := []doc.Cell{cell(one(code(f.Path))), {}, {}, {}, {}, {}}
+			if c := f.Commit; c != nil {
+				row = []doc.Cell{
+					row[0],
+					cell(commit(c.Hash)),
+					cellText(c.Date),
+					cell(p.actor(c.Author)),
+					cell(p.actor(c.Committer)),
+					cellText(c.Subject),
+				}
+			}
+			rows = append(rows, row)
 		}
 		b = append(b, doc.Table{
 			Head: heads("File", "Last changed by", "Date", "Author", "Committer", "Subject"),

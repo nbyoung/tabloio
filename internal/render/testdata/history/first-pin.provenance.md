@@ -15,7 +15,7 @@ Legend: `tabloio gates`.
   - Commit: `37a08e92e840ea3cb48bc7ca6a5041c44096ef8e`
   - Subject: Pin the subprojects
   - Author: Norman Young \<nbyoung@nbyoung.com>, 2026-09-29 17:30:02 -0400
-  - Committer: Norman Young \<nbyoung@nbyoung.com>, 2026-09-29 17:30:02 -0400
+  - Committer: Norman Young \<nbyoung@nbyoung.com>
   - Trailers: `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`
   - Files: `subprojects/tablo` (pin), `subprojects/tabloio` (pin), `subprojects/tablotui` (pin), `subprojects/tableaud` (pin)
   - Reproduce:
@@ -31,7 +31,7 @@ Legend: `tabloio gates`.
   - Commit: `37a08e92e840ea3cb48bc7ca6a5041c44096ef8e`
   - Subject: Pin the subprojects
   - Author: Norman Young \<nbyoung@nbyoung.com>, 2026-09-29 17:30:02 -0400
-  - Committer: Norman Young \<nbyoung@nbyoung.com>, 2026-09-29 17:30:02 -0400
+  - Committer: Norman Young \<nbyoung@nbyoung.com>
   - Trailers: `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`
   - Files: `subprojects/tablo` (pin), `subprojects/tabloio` (pin), `subprojects/tablotui` (pin), `subprojects/tableaud` (pin)
   - Reproduce:
@@ -47,7 +47,7 @@ Legend: `tabloio gates`.
   - Commit: `37a08e92e840ea3cb48bc7ca6a5041c44096ef8e`
   - Subject: Pin the subprojects
   - Author: Norman Young \<nbyoung@nbyoung.com>, 2026-09-29 17:30:02 -0400
-  - Committer: Norman Young \<nbyoung@nbyoung.com>, 2026-09-29 17:30:02 -0400
+  - Committer: Norman Young \<nbyoung@nbyoung.com>
   - Trailers: `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`
   - Files: `subprojects/tablo` (pin), `subprojects/tabloio` (pin), `subprojects/tablotui` (pin), `subprojects/tableaud` (pin)
   - Reproduce:
@@ -63,7 +63,7 @@ Legend: `tabloio gates`.
   - Commit: `37a08e92e840ea3cb48bc7ca6a5041c44096ef8e`
   - Subject: Pin the subprojects
   - Author: Norman Young \<nbyoung@nbyoung.com>, 2026-09-29 17:30:02 -0400
-  - Committer: Norman Young \<nbyoung@nbyoung.com>, 2026-09-29 17:30:02 -0400
+  - Committer: Norman Young \<nbyoung@nbyoung.com>
   - Trailers: `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`
   - Files: `subprojects/tablo` (pin), `subprojects/tabloio` (pin), `subprojects/tablotui` (pin), `subprojects/tableaud` (pin)
   - Reproduce:

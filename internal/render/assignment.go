@@ -338,7 +338,7 @@ func taskTitles(v *view.Assignment) map[string]string {
 			titles[t.ID] = t.Title
 		}
 	}
-	add(v.Project)
+	add(view.TaskRef{ID: v.Project.Root, Title: v.Project.Title})
 	for _, s := range v.Sections {
 		for _, r := range s.Assigned {
 			add(r.TaskRef)
@@ -359,29 +359,34 @@ func taskTitles(v *view.Assignment) map[string]string {
 	return titles
 }
 
-// stated words where a field stands: the task that states it (R4) or the
-// plain default, the key in a code span with its file, and the commit (R6),
+// stated words where a field stands: the task that states it (R4), or the
+// phrase of statedBy, then the key in a code span with its file and line,
 // joined by commas.
 func stated(s view.Stated, titles map[string]string) []doc.Inline {
 	var parts [][]doc.Inline
-	switch s.By {
-	case "":
-	case "default":
-		parts = append(parts, one(txt("the plain default")))
-	default:
+	if by, ok := statedBy[s.By]; ok {
+		parts = append(parts, one(txt(by)))
+	} else if s.By != "" {
 		parts = append(parts, task(view.TaskRef{ID: s.By, Title: titles[s.By]}))
 	}
 	if s.Key != "" {
 		key := one(code(s.Key))
 		if s.File != "" {
 			key = append(key, txt(" in "), code(s.File))
+			if s.Line > 0 {
+				key = append(key, txt(", line "+strconv.Itoa(s.Line)))
+			}
 		}
 		parts = append(parts, key)
 	}
-	if s.Commit != "" {
-		parts = append(parts, one(txt("commit "), code(short(s.Commit))))
-	}
 	return joined(", ", parts...)
+}
+
+// statedBy words the sources of a Stated that are no task id.
+var statedBy = map[string]string{
+	"default":  "the plain default",
+	"own":      "each task's own file",
+	"assignee": "the assignee",
 }
 
 // tasksCell prints the count of a position's tasks, a colon and every id.

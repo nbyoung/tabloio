@@ -4,13 +4,13 @@ import "testing"
 
 // TestDecodeHistory: Decode reads the history, ignores an unknown key and leaves an absent field zero.
 func TestDecodeHistory(t *testing.T) {
-	v, err := Decode("history", []byte(`{
-		"level": "detail", "extra": 1,
+	v, err := Decode("history", []byte(`{"command": "history", "params": {"level": "detail"}, "data": {
+		"extra": 1,
 		"subject": {"id": "e9c6", "title": "Abstract views"},
 		"lines": [{"date": "2026-09-29", "kinds": ["task", "authorised"], "task": {"id": "e9c6"},
 			"pin": {"url": "u", "new": "abc"}, "subproject": {"url": "u", "events": 2, "lines": [{"model": "m"}]}}],
 		"events": 2, "commits": 1, "kinds": [{"kind": "task", "count": 1}],
-		"days": [{"date": "2026-09-29", "events": 2, "commits": 1}]}`))
+		"days": [{"date": "2026-09-29", "events": 2, "commits": 1}]}}`))
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -26,7 +26,7 @@ func TestDecodeHistory(t *testing.T) {
 		t.Errorf("decoded line %+v", l)
 	}
 
-	if _, err := Decode("history", []byte(`{"level": "deep"}`)); err == nil {
+	if _, err := Decode("history", []byte(`{"command": "history", "params": {"level": "deep"}, "data": {}}`)); err == nil {
 		t.Error("an unknown level decodes")
 	}
 }

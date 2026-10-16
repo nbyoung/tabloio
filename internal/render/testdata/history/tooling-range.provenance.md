@@ -16,7 +16,7 @@ Legend: `tabloio gates`.
   - Commit: `879b447a920aad55e698906812350ea7d3785b4c`
   - Subject: Advance the abstract views task to its design gate
   - Author: Claude Fable 5.1 \<noreply@anthropic.com>, 2026-09-30 15:17:53 -0400
-  - Committer: Claude Fable 5.1 \<noreply@anthropic.com>, 2026-09-30 15:17:53 -0400
+  - Committer: Claude Fable 5.1 \<noreply@anthropic.com>
   - Trailers: `Model: claude-fable-5-1`, `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`
   - Files: `.tableaux/status/e9c6.yaml` (changed)
   - Reproduce:
@@ -42,7 +42,7 @@ Legend: `tabloio gates`.
   - Commit: `55e32e32d65e9cc04da707b215f4b9009a4806e6`
   - Subject: Advance tabloio to its function prototypes
   - Author: Norman Young \<nbyoung@nbyoung.com>, 2026-10-02 07:07:09 -0400
-  - Committer: Norman Young \<nbyoung@nbyoung.com>, 2026-10-02 07:07:09 -0400
+  - Committer: Norman Young \<nbyoung@nbyoung.com>
   - Trailers: `Model: claude-opus-5-5`, `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`
   - Files: `subprojects/tabloio` (pin)
   - Reproduce:
@@ -59,7 +59,7 @@ Legend: `tabloio gates`.
   - Commit: `fb8c0b2b527789760956b0a238c5f07b97c7f277`
   - Subject: Advance the subprojects to the eyeglasses review symbol
   - Author: Norman Young \<nbyoung@nbyoung.com>, 2026-10-02 07:12:40 -0400
-  - Committer: Norman Young \<nbyoung@nbyoung.com>, 2026-10-02 07:12:40 -0400
+  - Committer: Norman Young \<nbyoung@nbyoung.com>
   - Trailers: `Model: claude-opus-5-5`, `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`
   - Files: `subprojects/tablo` (pin), `subprojects/tabloio` (pin), `subprojects/tablotui` (pin), `subprojects/tableaud` (pin)
   - Reproduce:
@@ -76,7 +76,7 @@ Legend: `tabloio gates`.
   - Commit: `fb8c0b2b527789760956b0a238c5f07b97c7f277`
   - Subject: Advance the subprojects to the eyeglasses review symbol
   - Author: Norman Young \<nbyoung@nbyoung.com>, 2026-10-02 07:12:40 -0400
-  - Committer: Norman Young \<nbyoung@nbyoung.com>, 2026-10-02 07:12:40 -0400
+  - Committer: Norman Young \<nbyoung@nbyoung.com>
   - Trailers: `Model: claude-opus-5-5`, `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`
   - Files: `subprojects/tablo` (pin), `subprojects/tabloio` (pin), `subprojects/tablotui` (pin), `subprojects/tableaud` (pin)
   - Reproduce:
@@ -93,7 +93,7 @@ Legend: `tabloio gates`.
   - Commit: `fb8c0b2b527789760956b0a238c5f07b97c7f277`
   - Subject: Advance the subprojects to the eyeglasses review symbol
   - Author: Norman Young \<nbyoung@nbyoung.com>, 2026-10-02 07:12:40 -0400
-  - Committer: Norman Young \<nbyoung@nbyoung.com>, 2026-10-02 07:12:40 -0400
+  - Committer: Norman Young \<nbyoung@nbyoung.com>
   - Trailers: `Model: claude-opus-5-5`, `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`
   - Files: `subprojects/tablo` (pin), `subprojects/tabloio` (pin), `subprojects/tablotui` (pin), `subprojects/tableaud` (pin)
   - Reproduce:
@@ -110,7 +110,7 @@ Legend: `tabloio gates`.
   - Commit: `fb8c0b2b527789760956b0a238c5f07b97c7f277`
   - Subject: Advance the subprojects to the eyeglasses review symbol
   - Author: Norman Young \<nbyoung@nbyoung.com>, 2026-10-02 07:12:40 -0400
-  - Committer: Norman Young \<nbyoung@nbyoung.com>, 2026-10-02 07:12:40 -0400
+  - Committer: Norman Young \<nbyoung@nbyoung.com>
   - Trailers: `Model: claude-opus-5-5`, `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`
   - Files: `subprojects/tablo` (pin), `subprojects/tabloio` (pin), `subprojects/tablotui` (pin), `subprojects/tableaud` (pin)
   - Reproduce:
@@ -127,7 +127,7 @@ Legend: `tabloio gates`.
   - Commit: `552d38fd8adf40e41b39f65d5904e6fc6a88b265`
   - Subject: Advance the subprojects to the wrench, brick, ruler and link gate symbols
   - Author: Norman Young \<nbyoung@nbyoung.com>, 2026-10-02 07:34:57 -0400
-  - Committer: Norman Young \<nbyoung@nbyoung.com>, 2026-10-02 07:34:57 -0400
+  - Committer: Norman Young \<nbyoung@nbyoung.com>
   - Trailers: `Model: claude-opus-5-5`, `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`
   - Files: `subprojects/tablo` (pin), `subprojects/tabloio` (pin), `subprojects/tablotui` (pin), `subprojects/tableaud` (pin)
   - Reproduce:
@@ -144,7 +144,7 @@ Legend: `tabloio gates`.
   - Commit: `552d38fd8adf40e41b39f65d5904e6fc6a88b265`
   - Subject: Advance the subprojects to the wrench, brick, ruler and link gate symbols
   - Author: Norman Young \<nbyoung@nbyoung.com>, 2026-10-02 07:34:57 -0400
-  - Committer: Norman Young \<nbyoung@nbyoung.com>, 2026-10-02 07:34:57 -0400
+  - Committer: Norman Young \<nbyoung@nbyoung.com>
   - Trailers: `Model: claude-opus-5-5`, `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`
   - Files: `subprojects/tablo` (pin), `subprojects/tabloio` (pin), `subprojects/tablotui` (pin), `subprojects/tableaud` (pin)
   - Reproduce:
@@ -161,7 +161,7 @@ Legend: `tabloio gates`.
   - Commit: `552d38fd8adf40e41b39f65d5904e6fc6a88b265`
   - Subject: Advance the subprojects to the wrench, brick, ruler and link gate symbols
   - Author: Norman Young \<nbyoung@nbyoung.com>, 2026-10-02 07:34:57 -0400
-  - Committer: Norman Young \<nbyoung@nbyoung.com>, 2026-10-02 07:34:57 -0400
+  - Committer: Norman Young \<nbyoung@nbyoung.com>
   - Trailers: `Model: claude-opus-5-5`, `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`
   - Files: `subprojects/tablo` (pin), `subprojects/tabloio` (pin), `subprojects/tablotui` (pin), `subprojects/tableaud` (pin)
   - Reproduce:
@@ -178,7 +178,7 @@ Legend: `tabloio gates`.
   - Commit: `552d38fd8adf40e41b39f65d5904e6fc6a88b265`
   - Subject: Advance the subprojects to the wrench, brick, ruler and link gate symbols
   - Author: Norman Young \<nbyoung@nbyoung.com>, 2026-10-02 07:34:57 -0400
-  - Committer: Norman Young \<nbyoung@nbyoung.com>, 2026-10-02 07:34:57 -0400
+  - Committer: Norman Young \<nbyoung@nbyoung.com>
   - Trailers: `Model: claude-opus-5-5`, `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`
   - Files: `subprojects/tablo` (pin), `subprojects/tabloio` (pin), `subprojects/tablotui` (pin), `subprojects/tableaud` (pin)
   - Reproduce:
@@ -198,7 +198,7 @@ Legend: `tabloio gates`.
   - Commit: `1c0f04daa18af8b4140e8eab2948466981b65010`
   - Subject: Advance tabloio to its snapshot workflow design
   - Author: Norman Young \<nbyoung@nbyoung.com>, 2026-10-02 13:48:21 -0400
-  - Committer: Norman Young \<nbyoung@nbyoung.com>, 2026-10-02 13:48:21 -0400
+  - Committer: Norman Young \<nbyoung@nbyoung.com>
   - Trailers: `Model: claude-opus-5-5`, `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`
   - Files: `subprojects/tabloio` (pin)
   - Reproduce:
@@ -223,7 +223,7 @@ Legend: `tabloio gates`.
   - Commit: `fa4551ecdc8d106722ac41b25a9213abc453fab0`
   - Subject: Advance tablotui to its five function prototypes
   - Author: Norman Young \<nbyoung@nbyoung.com>, 2026-10-04 16:38:02 -0400
-  - Committer: Norman Young \<nbyoung@nbyoung.com>, 2026-10-04 16:38:02 -0400
+  - Committer: Norman Young \<nbyoung@nbyoung.com>
   - Trailers: `Model: claude-opus-5-5`, `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`
   - Files: `subprojects/tablotui` (pin)
   - Reproduce:
@@ -256,7 +256,7 @@ Legend: `tabloio gates`.
   - Commit: `3cdae527d47d37fdff55bc302c76c017cf91c606`
   - Subject: Advance tableaud to the eight function prototypes
   - Author: Norman Young \<nbyoung@nbyoung.com>, 2026-10-05 12:59:45 -0400
-  - Committer: Norman Young \<nbyoung@nbyoung.com>, 2026-10-05 12:59:45 -0400
+  - Committer: Norman Young \<nbyoung@nbyoung.com>
   - Trailers: `Model: claude-opus-5-5`, `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`
   - Files: `subprojects/tableaud` (pin)
   - Reproduce:

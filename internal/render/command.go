@@ -27,13 +27,13 @@ const (
 
 // refName is the ref as given, with a range as <from>..<name>; HEAD stands
 // for an empty name.
-func refName(r view.Ref) string {
-	name := r.Name
+func refName(r view.Source) string {
+	name := r.Ref
 	if name == "" {
 		name = "HEAD"
 	}
-	if r.From != "" {
-		return r.From + ".." + name
+	if r.From != nil && r.From.Ref != "" {
+		return r.From.Ref + ".." + name
 	}
 	return name
 }
@@ -62,9 +62,9 @@ func command(name, positional string, h *view.Head, o Options) string {
 	if par.Person != "" {
 		parts = append(parts, flagPerson, par.Person)
 	}
-	ref := refName(h.Ref)
-	if o.Level >= view.Provenance && h.Ref.Commit != "" {
-		ref = short(h.Ref.Commit)
+	ref := refName(h.Source)
+	if o.Level >= view.Provenance && h.Source.Commit != "" {
+		ref = short(h.Source.Commit)
 	}
 	if ref != "HEAD" {
 		parts = append(parts, flagRef, ref)
@@ -97,7 +97,7 @@ func command(name, positional string, h *view.Head, o Options) string {
 // commit and date at provenance or with Options.Stamp, and `, off the
 // trunk` for a ref off the trunk.
 func (p *page) refSpans() []doc.Inline {
-	r := p.h.Ref
+	r := p.h.Source
 	out := one(txt("ref "), code(refName(r)))
 	if (p.o.Level >= view.Provenance || p.o.Stamp) && r.Commit != "" {
 		out = append(out, txt(" at "), code(short(r.Commit)))

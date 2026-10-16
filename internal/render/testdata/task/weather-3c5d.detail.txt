@@ -59,7 +59,6 @@ Junctions
 ┌──────────────────┬─────┬─────────────────┬───────┬──────────┬────────────────┐
 │ Gate             │Marks│ Contributor     │ Model │ Reviewer │ Stands         │
 ├──────────────────┼─────┼─────────────────┼───────┼──────────┼────────────────┤
-│ ❔ undefined     │     │                 │       │          │ passed         │
 │ 📝 defined       │ 🧑  │ dan@example.org │       │          │ passed; the    │
 │                  │     │                 │       │          │ status stands  │
 │                  │     │                 │       │          │ here           │

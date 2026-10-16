@@ -291,7 +291,7 @@ func (p *page) historyItem(v *view.History, l view.Line) doc.Item {
 		fact("Effect:", one(txt(words)))
 	}
 	if l.SubjectAfter != nil {
-		subject := v.Project
+		subject := view.TaskRef{ID: v.Project.Root, Title: v.Project.Title}
 		if v.Subject != nil {
 			subject = *v.Subject
 		}
@@ -392,7 +392,7 @@ func (p *page) historyProvenance(l view.Line) []doc.Item {
 		if a := p.historyActor(c.Author, c.AuthorTime); len(a) > 0 {
 			add("Author:", a)
 		}
-		if a := p.historyActor(c.Committer, c.CommitterTime); len(a) > 0 {
+		if a := p.historyActor(c.Committer, ""); len(a) > 0 {
 			add("Committer:", a)
 		}
 		if len(c.Trailers) > 0 {

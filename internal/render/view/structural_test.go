@@ -20,7 +20,7 @@ func TestDecodeStructural(t *testing.T) {
 			if err != nil {
 				t.Fatal(err)
 			}
-			if h := v.Header(); h.Level != Provenance || h.Project.ID == "" || len(h.Legend.Gates) == 0 {
+			if h := v.Header(); h.Level != Provenance || h.Project.Root == "" || len(h.Legend.Gates) == 0 {
 				t.Errorf("head not decoded: %+v", h.Project)
 			}
 			extra := bytes.Replace(data, []byte("{"), []byte(`{"unknown_key": [1, {"a": 2}], `), 1)

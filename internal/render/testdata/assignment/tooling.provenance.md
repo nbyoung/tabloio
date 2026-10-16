@@ -308,54 +308,54 @@ Over `5fe3` HTML views and its 10 descendants.
 
 | Position | Tasks | Stated in |
 |---|---|---|
-| Assignee | 10: `437e` `bc63` `2034` `ac33` `9f3f` `7166` `77b2` `6103` `c6e8` `595e` | `assignee` in `.tableaux/tasks/ID.yaml`, commit `6b6c99a` |
-| Authority | 1: `437e` | `437e` Tableaux tooling, `assignee` in `.tableaux/tasks/437e.yaml`, commit `6b6c99a` |
+| Assignee | 10: `437e` `bc63` `2034` `ac33` `9f3f` `7166` `77b2` `6103` `c6e8` `595e` | `assignee` in `.tableaux/tasks/ID.yaml` |
+| Authority | 1: `437e` | `437e` Tableaux tooling, `assignee` in `.tableaux/tasks/437e.yaml` |
 
 | Contributes at | Tasks | Contributor and model from | Reviewer | Reviewer from |
 |---|---|---|---|---|
-| 🚀 release | 8: `c2ad` `e9c6` `e3cb` `fcec` `ac33` `9f3f` `7861` `7166` | `437e` Tableaux tooling, `junctions.release` in `.tableaux/tasks/437e.yaml`, commit `6b6c99a` |  |  |
+| 🚀 release | 8: `c2ad` `e9c6` `e3cb` `fcec` `ac33` `9f3f` `7861` `7166` | `437e` Tableaux tooling, `junctions.release` in `.tableaux/tasks/437e.yaml` |  |  |
 
 | Reviews at | Tasks | Reviewer from | Contributor and model from |
 |---|---|---|---|
-| 📝 defined | 7: `ac33` `9f3f` `7166` `77b2` `6103` `c6e8` `595e` | the plain default, `assignee` in `.tableaux/tasks/ID.yaml`, commit `6b6c99a` | `437e` Tableaux tooling, `junctions.defined` in `.tableaux/tasks/437e.yaml`, commit `320cf2b` |
-| 📌 mockup | 20: `99f0` `05a9` `a9ce` `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` | `437e` Tableaux tooling, `junctions.mockup` in `.tableaux/tasks/437e.yaml`, commit `320cf2b` | `437e` Tableaux tooling, `junctions.mockup` in `.tableaux/tasks/437e.yaml`, commit `320cf2b` |
-| 📐 design | 8: `c2ad` `e9c6` `e3cb` `fcec` `ac33` `9f3f` `7861` `7166` | `437e` Tableaux tooling, `junctions.design` in `.tableaux/tasks/437e.yaml`, commit `320cf2b` | `bc63` Method, `junctions.design` in `.tableaux/tasks/bc63.yaml`, commit `320cf2b` |
-| 🧱 implementation | 3: `ac33` `9f3f` `7166` | the plain default, `assignee` in `.tableaux/tasks/ID.yaml`, commit `6b6c99a` | `437e` Tableaux tooling, `junctions.implementation` in `.tableaux/tasks/437e.yaml`, commit `320cf2b` |
-| 🌍 validate | 8: `c2ad` `e9c6` `e3cb` `fcec` `ac33` `9f3f` `7861` `7166` | `437e` Tableaux tooling, `junctions.validate` in `.tableaux/tasks/437e.yaml`, commit `320cf2b` | `bc63` Method, `junctions.validate` in `.tableaux/tasks/bc63.yaml`, commit `320cf2b` |
+| 📝 defined | 7: `ac33` `9f3f` `7166` `77b2` `6103` `c6e8` `595e` | the plain default, `assignee` in `.tableaux/tasks/ID.yaml` | `437e` Tableaux tooling, `junctions.defined` in `.tableaux/tasks/437e.yaml` |
+| 📌 mockup | 20: `99f0` `05a9` `a9ce` `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` | `437e` Tableaux tooling, `junctions.mockup` in `.tableaux/tasks/437e.yaml` | `437e` Tableaux tooling, `junctions.mockup` in `.tableaux/tasks/437e.yaml` |
+| 📐 design | 8: `c2ad` `e9c6` `e3cb` `fcec` `ac33` `9f3f` `7861` `7166` | `437e` Tableaux tooling, `junctions.design` in `.tableaux/tasks/437e.yaml` | `bc63` Method, `junctions.design` in `.tableaux/tasks/bc63.yaml` |
+| 🧱 implementation | 3: `ac33` `9f3f` `7166` | the plain default, `assignee` in `.tableaux/tasks/ID.yaml` | `437e` Tableaux tooling, `junctions.implementation` in `.tableaux/tasks/437e.yaml` |
+| 🌍 validate | 8: `c2ad` `e9c6` `e3cb` `fcec` `ac33` `9f3f` `7861` `7166` | `437e` Tableaux tooling, `junctions.validate` in `.tableaux/tasks/437e.yaml` | `bc63` Method, `junctions.validate` in `.tableaux/tasks/bc63.yaml` |
 
 | Task | Stated in | Pinned at |
 |---|---|---|
-| `77b2` | `junctions.mockup.subproject.url` in `.tableaux/tasks/77b2.yaml`, commit `6b6c99a` | `00f8f68` |
-| `6103` | `junctions.mockup.subproject.url` in `.tableaux/tasks/6103.yaml`, commit `6b6c99a` | `4593882` |
-| `c6e8` | `junctions.mockup.subproject.url` in `.tableaux/tasks/c6e8.yaml`, commit `6b6c99a` | `a2878b5` |
-| `595e` | `junctions.mockup.subproject.url` in `.tableaux/tasks/595e.yaml`, commit `6b6c99a` | `e6ec4ec` |
+| `77b2` | `junctions.mockup.subproject.url` in `.tableaux/tasks/77b2.yaml` | `00f8f68` |
+| `6103` | `junctions.mockup.subproject.url` in `.tableaux/tasks/6103.yaml` | `4593882` |
+| `c6e8` | `junctions.mockup.subproject.url` in `.tableaux/tasks/c6e8.yaml` | `a2878b5` |
+| `595e` | `junctions.mockup.subproject.url` in `.tableaux/tasks/595e.yaml` | `e6ec4ec` |
 
 ## noreply@anthropic.com, provenance
 
 | Position | Tasks | Stated in |
 |---|---|---|
-| Assignee | 27: `c2ad` `e9c6` `bc86` `99f0` `05a9` `a9ce` `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `5fe3` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` `e3cb` `fcec` `7861` | `assignee` in `.tableaux/tasks/ID.yaml`, commit `6b6c99a` |
-| Authority | 1: `bc86` | `bc86` Markdown views, `assignee` in `.tableaux/tasks/bc86.yaml`, commit `6b6c99a` |
-| Authority | 1: `5fe3` | `5fe3` HTML views, `assignee` in `.tableaux/tasks/5fe3.yaml`, commit `6b6c99a` |
+| Assignee | 27: `c2ad` `e9c6` `bc86` `99f0` `05a9` `a9ce` `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `5fe3` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` `e3cb` `fcec` `7861` | `assignee` in `.tableaux/tasks/ID.yaml` |
+| Authority | 1: `bc86` | `bc86` Markdown views, `assignee` in `.tableaux/tasks/bc86.yaml` |
+| Authority | 1: `5fe3` | `5fe3` HTML views, `assignee` in `.tableaux/tasks/5fe3.yaml` |
 
 | Contributes at | Tasks | Contributor and model from | Reviewer | Reviewer from |
 |---|---|---|---|---|
-| 📝 defined | 25: `c2ad` `e9c6` `99f0` `05a9` `a9ce` `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` `e3cb` `fcec` `7861` | `437e` Tableaux tooling, `junctions.defined` in `.tableaux/tasks/437e.yaml`, commit `320cf2b` | noreply@anthropic.com | the plain default, `assignee` in `.tableaux/tasks/ID.yaml`, commit `6b6c99a` |
-| 📝 defined | 7: `ac33` `9f3f` `7166` `77b2` `6103` `c6e8` `595e` | `437e` Tableaux tooling, `junctions.defined` in `.tableaux/tasks/437e.yaml`, commit `320cf2b` | nbyoung@nbyoung.com | the plain default, `assignee` in `.tableaux/tasks/ID.yaml`, commit `6b6c99a` |
-| 📌 mockup | 20: `99f0` `05a9` `a9ce` `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` | `437e` Tableaux tooling, `junctions.mockup` in `.tableaux/tasks/437e.yaml`, commit `320cf2b` | nbyoung@nbyoung.com | `437e` Tableaux tooling, `junctions.mockup` in `.tableaux/tasks/437e.yaml`, commit `320cf2b` |
-| 📐 design | 8: `c2ad` `e9c6` `e3cb` `fcec` `ac33` `9f3f` `7861` `7166` | `bc63` Method, `junctions.design` in `.tableaux/tasks/bc63.yaml`, commit `320cf2b` | nbyoung@nbyoung.com | `437e` Tableaux tooling, `junctions.design` in `.tableaux/tasks/437e.yaml`, commit `320cf2b` |
-| 🧱 implementation | 5: `c2ad` `e9c6` `e3cb` `fcec` `7861` | `437e` Tableaux tooling, `junctions.implementation` in `.tableaux/tasks/437e.yaml`, commit `320cf2b` | noreply@anthropic.com | the plain default, `assignee` in `.tableaux/tasks/ID.yaml`, commit `6b6c99a` |
-| 🧱 implementation | 3: `ac33` `9f3f` `7166` | `437e` Tableaux tooling, `junctions.implementation` in `.tableaux/tasks/437e.yaml`, commit `320cf2b` | nbyoung@nbyoung.com | the plain default, `assignee` in `.tableaux/tasks/ID.yaml`, commit `6b6c99a` |
-| 📏 unit | 2: `e3cb` `fcec` | `437e` Tableaux tooling, `junctions.unit` in `.tableaux/tasks/437e.yaml`, commit `320cf2b` | noreply@anthropic.com | the plain default, `assignee` in `.tableaux/tasks/ID.yaml`, commit `6b6c99a` |
-| 🔗 integrate | 1: `fcec` | `437e` Tableaux tooling, `junctions.integrate` in `.tableaux/tasks/437e.yaml`, commit `320cf2b` | noreply@anthropic.com | the plain default, `assignee` in `.tableaux/tasks/ID.yaml`, commit `6b6c99a` |
-| 🌍 validate | 8: `c2ad` `e9c6` `e3cb` `fcec` `ac33` `9f3f` `7861` `7166` | `bc63` Method, `junctions.validate` in `.tableaux/tasks/bc63.yaml`, commit `320cf2b` | nbyoung@nbyoung.com | `437e` Tableaux tooling, `junctions.validate` in `.tableaux/tasks/437e.yaml`, commit `320cf2b` |
+| 📝 defined | 25: `c2ad` `e9c6` `99f0` `05a9` `a9ce` `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` `e3cb` `fcec` `7861` | `437e` Tableaux tooling, `junctions.defined` in `.tableaux/tasks/437e.yaml` | noreply@anthropic.com | the plain default, `assignee` in `.tableaux/tasks/ID.yaml` |
+| 📝 defined | 7: `ac33` `9f3f` `7166` `77b2` `6103` `c6e8` `595e` | `437e` Tableaux tooling, `junctions.defined` in `.tableaux/tasks/437e.yaml` | nbyoung@nbyoung.com | the plain default, `assignee` in `.tableaux/tasks/ID.yaml` |
+| 📌 mockup | 20: `99f0` `05a9` `a9ce` `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` | `437e` Tableaux tooling, `junctions.mockup` in `.tableaux/tasks/437e.yaml` | nbyoung@nbyoung.com | `437e` Tableaux tooling, `junctions.mockup` in `.tableaux/tasks/437e.yaml` |
+| 📐 design | 8: `c2ad` `e9c6` `e3cb` `fcec` `ac33` `9f3f` `7861` `7166` | `bc63` Method, `junctions.design` in `.tableaux/tasks/bc63.yaml` | nbyoung@nbyoung.com | `437e` Tableaux tooling, `junctions.design` in `.tableaux/tasks/437e.yaml` |
+| 🧱 implementation | 5: `c2ad` `e9c6` `e3cb` `fcec` `7861` | `437e` Tableaux tooling, `junctions.implementation` in `.tableaux/tasks/437e.yaml` | noreply@anthropic.com | the plain default, `assignee` in `.tableaux/tasks/ID.yaml` |
+| 🧱 implementation | 3: `ac33` `9f3f` `7166` | `437e` Tableaux tooling, `junctions.implementation` in `.tableaux/tasks/437e.yaml` | nbyoung@nbyoung.com | the plain default, `assignee` in `.tableaux/tasks/ID.yaml` |
+| 📏 unit | 2: `e3cb` `fcec` | `437e` Tableaux tooling, `junctions.unit` in `.tableaux/tasks/437e.yaml` | noreply@anthropic.com | the plain default, `assignee` in `.tableaux/tasks/ID.yaml` |
+| 🔗 integrate | 1: `fcec` | `437e` Tableaux tooling, `junctions.integrate` in `.tableaux/tasks/437e.yaml` | noreply@anthropic.com | the plain default, `assignee` in `.tableaux/tasks/ID.yaml` |
+| 🌍 validate | 8: `c2ad` `e9c6` `e3cb` `fcec` `ac33` `9f3f` `7861` `7166` | `bc63` Method, `junctions.validate` in `.tableaux/tasks/bc63.yaml` | nbyoung@nbyoung.com | `437e` Tableaux tooling, `junctions.validate` in `.tableaux/tasks/437e.yaml` |
 
 | Reviews at | Tasks | Reviewer from | Contributor and model from |
 |---|---|---|---|
-| 📝 defined | 25: `c2ad` `e9c6` `99f0` `05a9` `a9ce` `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` `e3cb` `fcec` `7861` | the plain default, `assignee` in `.tableaux/tasks/ID.yaml`, commit `6b6c99a` | `437e` Tableaux tooling, `junctions.defined` in `.tableaux/tasks/437e.yaml`, commit `320cf2b` |
-| 🧱 implementation | 5: `c2ad` `e9c6` `e3cb` `fcec` `7861` | the plain default, `assignee` in `.tableaux/tasks/ID.yaml`, commit `6b6c99a` | `437e` Tableaux tooling, `junctions.implementation` in `.tableaux/tasks/437e.yaml`, commit `320cf2b` |
-| 📏 unit | 2: `e3cb` `fcec` | the plain default, `assignee` in `.tableaux/tasks/ID.yaml`, commit `6b6c99a` | `437e` Tableaux tooling, `junctions.unit` in `.tableaux/tasks/437e.yaml`, commit `320cf2b` |
-| 🔗 integrate | 1: `fcec` | the plain default, `assignee` in `.tableaux/tasks/ID.yaml`, commit `6b6c99a` | `437e` Tableaux tooling, `junctions.integrate` in `.tableaux/tasks/437e.yaml`, commit `320cf2b` |
+| 📝 defined | 25: `c2ad` `e9c6` `99f0` `05a9` `a9ce` `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` `e3cb` `fcec` `7861` | the plain default, `assignee` in `.tableaux/tasks/ID.yaml` | `437e` Tableaux tooling, `junctions.defined` in `.tableaux/tasks/437e.yaml` |
+| 🧱 implementation | 5: `c2ad` `e9c6` `e3cb` `fcec` `7861` | the plain default, `assignee` in `.tableaux/tasks/ID.yaml` | `437e` Tableaux tooling, `junctions.implementation` in `.tableaux/tasks/437e.yaml` |
+| 📏 unit | 2: `e3cb` `fcec` | the plain default, `assignee` in `.tableaux/tasks/ID.yaml` | `437e` Tableaux tooling, `junctions.unit` in `.tableaux/tasks/437e.yaml` |
+| 🔗 integrate | 1: `fcec` | the plain default, `assignee` in `.tableaux/tasks/ID.yaml` | `437e` Tableaux tooling, `junctions.integrate` in `.tableaux/tasks/437e.yaml` |
 
 ## Commits: 2
 

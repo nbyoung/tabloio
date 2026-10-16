@@ -22,7 +22,7 @@ type QueueItem struct {
 	Cause string  `json:"cause"` // waiting, authorisation: worded text (R17)
 
 	Junction       *Junction     `json:"junction"` // detail from here
-	Sources        []FieldSource `json:"sources"`  // who supplies contributor, model, reviewer
+	Sources        []Supplier    `json:"sources"`  // who supplies contributor, model, reviewer
 	TaskReferences []Reference   `json:"task_references"`
 	Requires       []Requirement `json:"requires"`
 	Unblocks       []Requirement `json:"unblocks"`         // dependents this junction's gate meets

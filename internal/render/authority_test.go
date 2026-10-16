@@ -127,8 +127,8 @@ func TestTreeRule(t *testing.T) {
 func treeOf(kids ...view.DelegationRow) *view.Delegation {
 	v := &view.Delegation{}
 	v.Level = view.Provenance
-	v.Project = view.TaskRef{ID: "r000", Title: "Root"}
-	v.Ref = view.Ref{Name: "main", OnTrunk: true}
+	v.Project = view.Project{Root: "r000", Title: "Root"}
+	v.Source = view.Source{Ref: "main", OnTrunk: true}
 	root := view.DelegationRow{TaskRef: view.TaskRef{ID: "r000", Title: "Root"}, Assignee: "a@x.org", Parent: true}
 	v.Rows = append([]view.DelegationRow{root}, kids...)
 	return v

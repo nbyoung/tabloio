@@ -15,7 +15,7 @@ Legend: `tabloio gates`.
   - Commit: `6b6c99a2ca35f684674ad886a33916979137f227`
   - Subject: Plan the Tableaux tooling
   - Author: Norman Young \<nbyoung@nbyoung.com>, 2026-09-29 16:38:16 -0400
-  - Committer: Norman Young \<nbyoung@nbyoung.com>, 2026-09-29 16:38:16 -0400
+  - Committer: Norman Young \<nbyoung@nbyoung.com>
   - Trailers: `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`
   - Files: `.tableaux/tasks/e9c6.yaml` (added)
   - Reproduce:
@@ -30,7 +30,7 @@ Legend: `tabloio gates`.
   - Commit: `1a17bfcca843d4436e2eb4c75b5cfa98ec05d658`
   - Subject: Record the defined gate for the views and mockups
   - Author: Claude Fable 5.1 \<noreply@anthropic.com>, 2026-09-29 17:46:53 -0400
-  - Committer: Norman Young \<nbyoung@nbyoung.com>, 2026-09-29 17:46:53 -0400
+  - Committer: Norman Young \<nbyoung@nbyoung.com>
   - Trailers: `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`
   - Files: `.tableaux/status/e9c6.yaml` (added)
   - Reproduce:
@@ -46,7 +46,7 @@ Legend: `tabloio gates`.
   - Commit: `5958858ff25a624aea18f26471f95b92616fc7e6`
   - Subject: Accept the defined gate of the views and mockups
   - Author: Claude Fable 5.1 \<noreply@anthropic.com>, 2026-09-29 18:01:32 -0400
-  - Committer: Norman Young \<nbyoung@nbyoung.com>, 2026-09-29 18:01:32 -0400
+  - Committer: Norman Young \<nbyoung@nbyoung.com>
   - Trailers: `Reviewed: e9c6 defined`, `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`
   - Reproduce:
     ```
@@ -63,7 +63,7 @@ Legend: `tabloio gates`.
   - Commit: `0fed913a401606e7d6d2bbee72385f2c56204231`
   - Subject: Mark the abstract views design as awaiting review
   - Author: Claude Fable 5.1 \<noreply@anthropic.com>, 2026-09-30 07:43:32 -0400
-  - Committer: Claude Fable 5.1 \<noreply@anthropic.com>, 2026-09-30 07:43:32 -0400
+  - Committer: Claude Fable 5.1 \<noreply@anthropic.com>
   - Trailers: `Model: claude-fable-5-1`, `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`
   - Files: `.tableaux/status/e9c6.yaml` (changed)
   - Reproduce:
@@ -79,7 +79,7 @@ Legend: `tabloio gates`.
   - Commit: `26defc75c452b21dcd9c86d4a2bfa71b685e52a3`
   - Subject: Mark the revised abstract views design as awaiting acceptance
   - Author: Claude Fable 5.1 \<noreply@anthropic.com>, 2026-09-30 15:12:04 -0400
-  - Committer: Claude Fable 5.1 \<noreply@anthropic.com>, 2026-09-30 15:12:04 -0400
+  - Committer: Claude Fable 5.1 \<noreply@anthropic.com>
   - Trailers: `Model: claude-fable-5-1`, `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`
   - Files: `.tableaux/status/e9c6.yaml` (changed)
   - Reproduce:
@@ -94,7 +94,7 @@ Legend: `tabloio gates`.
   - Commit: `0704a0912297b3de0218b821384cf1b9956a44bb`
   - Subject: Accept the abstract views design
   - Author: Norman Young \<nbyoung@nbyoung.com>, 2026-09-30 15:16:33 -0400
-  - Committer: Norman Young \<nbyoung@nbyoung.com>, 2026-09-30 15:16:33 -0400
+  - Committer: Norman Young \<nbyoung@nbyoung.com>
   - Trailers: `Reviewed: e9c6 design`, `Model: claude-opus-5-5`, `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`
   - Reproduce:
     ```
@@ -107,7 +107,7 @@ Legend: `tabloio gates`.
   - Commit: `879b447a920aad55e698906812350ea7d3785b4c`
   - Subject: Advance the abstract views task to its design gate
   - Author: Claude Fable 5.1 \<noreply@anthropic.com>, 2026-09-30 15:17:53 -0400
-  - Committer: Claude Fable 5.1 \<noreply@anthropic.com>, 2026-09-30 15:17:53 -0400
+  - Committer: Claude Fable 5.1 \<noreply@anthropic.com>
   - Trailers: `Model: claude-fable-5-1`, `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`
   - Files: `.tableaux/status/e9c6.yaml` (changed)
   - Reproduce:

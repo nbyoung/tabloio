@@ -427,7 +427,7 @@ func (p *page) queueBriefCommand(it view.QueueItem) string {
 	if par := p.h.Params; par.Person != "" {
 		s += " " + flagPerson + " " + par.Person
 	}
-	if ref := refName(p.h.Ref); ref != "HEAD" {
+	if ref := refName(p.h.Source); ref != "HEAD" {
 		s += " " + flagRef + " " + ref
 	}
 	return s + " --brief " + it.Task.ID + " " + it.Gate

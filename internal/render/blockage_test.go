@@ -20,10 +20,10 @@ func TestBlockageGolden(t *testing.T) { runStatusGoldens(t, blockageGoldens) }
 // T10, the decoding half: an unknown key is ignored and an unknown level is
 // rejected.
 func TestDecodeBlockage(t *testing.T) {
-	if _, err := view.Decode("blockage", []byte(`{"level": "glance", "unknown": 1}`)); err != nil {
+	if _, err := view.Decode("blockage", []byte(`{"command": "blockage", "params": {"level": "glance"}, "data": {"unknown": 1}}`)); err != nil {
 		t.Error(err)
 	}
-	if _, err := view.Decode("blockage", []byte(`{"level": "deep"}`)); err == nil {
+	if _, err := view.Decode("blockage", []byte(`{"command": "blockage", "params": {"level": "deep"}, "data": {}}`)); err == nil {
 		t.Error("an unknown level decodes")
 	}
 }

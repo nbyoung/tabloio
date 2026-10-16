@@ -149,8 +149,8 @@ func TestTemporalFixtures(t *testing.T) {
 func historyOf(n, days int) *view.History {
 	v := &view.History{}
 	v.Level = view.Provenance
-	v.Project = view.TaskRef{ID: "437e", Title: "Tableaux tooling"}
-	v.Ref = view.Ref{Name: "main", Commit: "3cdae527d47d37fdff55bc302c76c017cf91c606", OnTrunk: true}
+	v.Project = view.Project{Root: "437e", Title: "Tableaux tooling"}
+	v.Source = view.Source{Ref: "main", Commit: "3cdae527d47d37fdff55bc302c76c017cf91c606", OnTrunk: true}
 	v.Legend = view.Legend{
 		Gates:  []view.Gate{{Key: "defined", Symbol: "📝"}},
 		States: []view.State{{Key: "nominal", Symbol: "🟢"}},

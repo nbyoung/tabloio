@@ -48,8 +48,8 @@ func TestAuditMerge(t *testing.T) {
 	}
 	v := &view.Audit{}
 	v.Level = view.Detail
-	v.Project = view.TaskRef{ID: "437e", Title: "Tableaux tooling"}
-	v.Ref = view.Ref{Name: "main", OnTrunk: true}
+	v.Project = view.Project{Root: "437e", Title: "Tableaux tooling"}
+	v.Source = view.Source{Ref: "main", OnTrunk: true}
 	v.Params.Stale = 7
 	v.Findings = []view.Finding{
 		{Rule: "H3", Severity: "warning", Kind: "First kind", Tasks: ref("aaaa", "bbbb"), Resolver: "x@example.org"},
@@ -95,7 +95,7 @@ func TestAuditMerge(t *testing.T) {
 func TestAuditCounts(t *testing.T) {
 	v := &view.Audit{}
 	v.Level = view.Detail
-	v.Ref = view.Ref{Name: "main", OnTrunk: true}
+	v.Source = view.Source{Ref: "main", OnTrunk: true}
 	v.Params.Stale = 7
 	v.Errors, v.Warnings, v.Information = 1, 1, 1
 	v.Findings = []view.Finding{{Rule: "S11", Severity: "error", Tasks: []view.TaskRef{{ID: "aaaa"}}}}

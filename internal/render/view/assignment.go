@@ -97,11 +97,3 @@ type Position struct {
 	URL      string   `json:"url"`           // recursive: the subproject
 	Pin      string   `json:"pin"`           // recursive: the commit it is read at
 }
-
-// Stated says where a field stands.
-type Stated struct {
-	By     string `json:"by"`     // a task id, or "default"
-	Key    string `json:"key"`    // for example junctions.release
-	File   string `json:"file"`   // the file that holds it
-	Commit string `json:"commit"` // the commit that last changed the line
-}

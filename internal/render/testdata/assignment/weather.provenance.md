@@ -290,8 +290,8 @@ None.
 
 | Position | Tasks | Stated in |
 |---|---|---|
-| Assignee | 3: `a1c0` `9f31` `7b2e` | `assignee` in `.tableaux/tasks/ID.yaml`, commit `68d9021` |
-| Authority | 1: `a1c0` | `a1c0` Weather station, `assignee` in `.tableaux/tasks/a1c0.yaml`, commit `68d9021` |
+| Assignee | 3: `a1c0` `9f31` `7b2e` | `assignee` in `.tableaux/tasks/ID.yaml` |
+| Authority | 1: `a1c0` | `a1c0` Weather station, `assignee` in `.tableaux/tasks/a1c0.yaml` |
 
 | Contributes at | Tasks | Contributor and model from | Reviewer | Reviewer from |
 |---|---|---|---|---|

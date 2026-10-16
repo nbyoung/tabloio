@@ -27,10 +27,10 @@ func TestQueueGolden(t *testing.T) { runStatusGoldens(t, queueGoldens) }
 // T8, the decoding half: an unknown key is ignored and an unknown level is
 // rejected.
 func TestDecodeQueue(t *testing.T) {
-	if _, err := view.Decode("queue", []byte(`{"level": "glance", "unknown": 1}`)); err != nil {
+	if _, err := view.Decode("queue", []byte(`{"command": "queue", "params": {"level": "glance"}, "data": {"unknown": 1}}`)); err != nil {
 		t.Error(err)
 	}
-	if _, err := view.Decode("queue", []byte(`{"level": "deep"}`)); err == nil {
+	if _, err := view.Decode("queue", []byte(`{"command": "queue", "params": {"level": "deep"}, "data": {}}`)); err == nil {
 		t.Error("an unknown level decodes")
 	}
 }
