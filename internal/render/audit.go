@@ -1,6 +1,7 @@
 package render
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
 
@@ -16,8 +17,9 @@ var auditSeeAlso = []string{"history", "task", "queue", "tableau"}
 
 // buildAudit builds the audit view: the count line and the findings merged by
 // severity and rule at glance, one row per finding at detail, and one section
-// per finding at provenance. It words nothing about a rule: the kind, the
-// message, the action, the sentence and the facts are tablo's words (R17).
+// per finding at provenance. The kind, the message and the sentence are
+// tablo's words (R17); the builder words the action from the act and the
+// typed facts as every other view words them (dada decision 8).
 func buildAudit(v *view.Audit, o Options) doc.Doc {
 	p := newPage(&v.Head, o)
 	b := []doc.Block{p.auditCount(v)}
@@ -107,7 +109,10 @@ func auditRows(findings []view.Finding) []*auditRow {
 	seenResolver := map[*auditRow]map[string]bool{}
 	for _, f := range findings {
 		key := f.Severity + "\x00" + f.Rule
-		if f.Rule == "" {
+		switch {
+		case f.Key != "":
+			key = f.Severity + "\x00" + f.Key
+		case f.Rule == "":
 			key += "\x00" + f.Kind
 		}
 		r := byKey[key]
@@ -174,7 +179,7 @@ func (p *page) auditDetailTable(v *view.Audit) doc.Table {
 			cell(p.gate(f.Gate)),
 			cell(auditFiles(f.Files)),
 			cell(worded(f.Message)),
-			cell(worded(f.Action)),
+			cell(p.auditAction(f)),
 			cell(p.person(f.Resolver)),
 		})
 	}
@@ -206,9 +211,7 @@ func (p *page) auditSection(f view.Finding) []doc.Block {
 		}
 		b = append(b, para(rule...))
 	}
-	for _, fact := range f.Facts {
-		b = append(b, para(spans(one(doc.Strong{txt(fact.Name + ".")}, txt(" ")), worded(fact.Value))...))
-	}
+	b = append(b, p.auditFacts(f)...)
 	if len(f.Commits) > 0 {
 		b = append(b, p.auditCommits(f.Commits))
 	}
@@ -216,6 +219,129 @@ func (p *page) auditSection(f view.Finding) []doc.Block {
 		b = append(b, *pre)
 	}
 	return b
+}
+
+// auditAction words the action that resolves a finding by its act, one
+// phrase per act in the words of VIEWS.md#audit, with the task's id where
+// the finding names one task. The act none has no action (R9).
+func (p *page) auditAction(f view.Finding) []doc.Inline {
+	id := "<id>"
+	if len(f.Tasks) == 1 {
+		id = f.Tasks[0].ID
+	}
+	switch f.Act {
+	case "authorise":
+		return one(txt("Authorise: commit "), code("Authorised: "+id))
+	case "review":
+		return one(txt("Review: commit "), code("Reviewed: "+id+" "+f.Gate))
+	case "reaffirm":
+		return one(txt("Reaffirm: commit "), code("Reaffirmed: "+id))
+	case "record_handoff":
+		return spans(one(txt("Record the hand-off: the reason ")), p.reason("review"), one(txt(" when the work is done; or work on")))
+	case "clear_handoff":
+		return one(txt("Clear the hand-off: record the gate, or the next hand-off"))
+	case "revise":
+		return one(txt("Revise the file"))
+	case "move_pin":
+		return one(txt("Move the pin or the "), code("commit"))
+	case "checkout":
+		return one(txt("Check out the submodule"))
+	case "await":
+		for _, x := range f.Facts {
+			if r := x.Requirement; r != nil {
+				return spans(one(txt("Await "), code(r.Task.ID), txt(" at ")), p.gate(r.From))
+			}
+		}
+		return one(txt("Await the task the requirement names"))
+	}
+	return nil
+}
+
+// auditFacts words the typed facts of a finding, one paragraph per kind of
+// fact and per value: the tasks whose fact reads alike share it, in the
+// order of Tasks.
+func (p *page) auditFacts(f view.Finding) []doc.Block {
+	kinds := []struct {
+		name, sep string
+		value     func(view.FindingFacts) []doc.Inline
+	}{
+		{"The junction", " at ", func(x view.FindingFacts) []doc.Inline {
+			if x.Junction == nil {
+				return nil
+			}
+			return p.junctionFields(*x.Junction)
+		}},
+		{"The status", ": ", func(x view.FindingFacts) []doc.Inline {
+			if x.Status == nil {
+				return nil
+			}
+			return p.statusLine(*x.Status)
+		}},
+		{"The requirement", ": ", func(x view.FindingFacts) []doc.Inline {
+			if x.Requirement == nil {
+				return nil
+			}
+			return p.queueEntry(*x.Requirement)
+		}},
+		{"The authorisation", ": ", func(x view.FindingFacts) []doc.Inline {
+			if x.Authorisation == nil {
+				return nil
+			}
+			return p.authorisationLine(*x.Authorisation)
+		}},
+		{"The linkage", ": ", func(x view.FindingFacts) []doc.Inline {
+			if x.Linkage == nil {
+				return nil
+			}
+			return p.linkageLine(*x.Linkage)
+		}},
+		{"The model check", ": ", func(x view.FindingFacts) []doc.Inline {
+			if x.Model == nil {
+				return nil
+			}
+			return p.modelLine(*x.Model)
+		}},
+	}
+	var b []doc.Block
+	for _, k := range kinds {
+		type group struct {
+			ids   []string
+			value []doc.Inline
+		}
+		var groups []*group
+		index := map[string]*group{}
+		for _, x := range f.Facts {
+			v := k.value(x)
+			if len(v) == 0 {
+				continue
+			}
+			key := fmt.Sprintf("%#v", v)
+			g, ok := index[key]
+			if !ok {
+				g = &group{value: v}
+				index[key] = g
+				groups = append(groups, g)
+			}
+			g.ids = append(g.ids, x.Task)
+		}
+		for _, g := range groups {
+			b = append(b, para(spans(one(doc.Strong{txt(k.name + ".")}, txt(" ")), ids(g.ids), one(txt(k.sep)), g.value, one(txt(".")))...))
+		}
+	}
+	return b
+}
+
+// modelLine words a model check on one line: the commit and the gate, the
+// model the junction states, the commit's Model: trailer, and the reading.
+func (p *page) modelLine(m view.ModelCheck) []doc.Inline {
+	out := spans(commit(m.Commit), one(txt(" at ")), p.gate(m.Gate))
+	if m.Stated != "" {
+		out = append(out, txt(", the junction states "), code(m.Stated))
+	}
+	if m.Trailer != "" {
+		out = append(out, txt(", the trailer "), code("Model: "+m.Trailer))
+	}
+	return append(out, txt(": "+reading(m.Reading)))
 }
 
 // auditCommits is the table of the commits a finding involves, oldest first;

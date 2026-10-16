@@ -129,19 +129,12 @@
           "status/b2c9.yaml"
         ],
         "message": "The newest event is the contributor's and the status states no review; olive may have a design to review",
-        "action": "Record the hand-off: the reason review when the work is done; or work on",
         "resolver": "pat@example.org",
         "sentence": "it reports, as information, a task whose next junction has a reviewer, whose newest event is the contributor's and whose status states no `review`, since the work may be done or in progress",
         "source": {
           "text": "README.md, Status",
           "url": "README.md#status"
         },
-        "facts": [
-          {
-            "name": "Junction",
-            "value": "pat@example.org contributes at 📐 design. olive@example.org reviews it."
-          }
-        ],
         "commits": [
           {
             "hash": "041ae3bf89c96b77ba5c91b9fc2a95e16a1dfb9a",
@@ -159,6 +152,28 @@
           {
             "text": "git log -1 --format='%as %h %ae' -- .tableaux/tasks/b2c9.yaml .tableaux/status/b2c9.yaml",
             "comment": "shows the finding: the newest event and who made it"
+          }
+        ],
+        "key": "H4",
+        "demoted": false,
+        "act": "record_handoff",
+        "facts": [
+          {
+            "task": "b2c9",
+            "junction": {
+              "gate": "design",
+              "kind": "plain",
+              "contributor": "pat@example.org",
+              "model": "",
+              "reviewer": "olive@example.org",
+              "reviewer_by_default": false,
+              "from": []
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
           }
         ]
       }

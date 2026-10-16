@@ -135,19 +135,12 @@
           "status/b2c9.yaml"
         ],
         "message": "The status still states review after olive accepted design in S3",
-        "action": "Record the gate, or the next hand-off, so that the status no longer states review",
         "resolver": "pat@example.org",
         "sentence": "it reports a status that still states `review` after the reviewer's `Reviewed:` commit for that junction",
         "source": {
           "text": "README.md, Status",
           "url": "README.md#status"
         },
-        "facts": [
-          {
-            "name": "Junction",
-            "value": "pat@example.org contributes at 📐 design. olive@example.org reviews it."
-          }
-        ],
         "commits": [
           {
             "hash": "1ff946dcb4b7118fbd68dba5aca89b67759efdfa",
@@ -179,6 +172,28 @@
           {
             "text": "git log --format='%h %(trailers:key=Reviewed)' -E --grep='^Reviewed: b2c9 '",
             "comment": "shows the finding"
+          }
+        ],
+        "key": "H5",
+        "demoted": false,
+        "act": "clear_handoff",
+        "facts": [
+          {
+            "task": "b2c9",
+            "junction": {
+              "gate": "design",
+              "kind": "plain",
+              "contributor": "pat@example.org",
+              "model": "",
+              "reviewer": "olive@example.org",
+              "reviewer_by_default": false,
+              "from": []
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
           }
         ]
       }

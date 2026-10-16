@@ -12,8 +12,7 @@ reviewed, 0 pin.
 2026-10-07 · 1 event in 1 commit: 1 reaffirmed
 ──────────────────────────────────────────────
 
-- *2026-10-07* · noreply@anthropic.com · reaffirmed · e9c6 Abstract views ·
-  📐 design 🟢 nominal
+- *2026-10-07* · noreply@anthropic.com · reaffirmed · e9c6 Abstract views
   - Status after: 📐 design 🟢 nominal, unchanged
   - Model: claude-fable-5-1
 

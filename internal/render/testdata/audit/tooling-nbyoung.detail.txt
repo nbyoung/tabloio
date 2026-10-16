@@ -18,7 +18,7 @@ H3
   File: tasks/437e.yaml, tasks/bc63.yaml
   Message: 320cf2b edits both task files under Model: claude-fable-5-1; the
     junction states claude-haiku
-  Action: Revise the file: state the model that ran at the junction
+  Action: Revise the file
   Resolver: *nbyoung@nbyoung.com*
 ────────────────────────────────────────────────────────────────────────────────
 H3
@@ -28,7 +28,7 @@ H3
   File: tasks/ac33.yaml
   Message: 018814a edits the task file under Model: claude-fable-5-1; the
     junction states claude-haiku
-  Action: Revise the file: state the model that ran at the junction
+  Action: Revise the file
   Resolver: *nbyoung@nbyoung.com*
 ────────────────────────────────────────────────────────────────────────────────
 

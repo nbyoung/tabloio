@@ -170,7 +170,6 @@
       "id": "e9c6",
       "title": "Abstract views"
     },
-    "lines": [],
     "events": 0,
     "commits": 0,
     "kinds": [
@@ -198,7 +197,8 @@
         "kind": "pin",
         "count": 0
       }
-    ]
+    ],
+    "lines": []
   },
   "diagnostics": []
 }

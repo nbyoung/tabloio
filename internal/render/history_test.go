@@ -144,12 +144,18 @@ func TestTemporalFixtures(t *testing.T) {
 	}
 }
 
+// statusEvent is a status event that records defined, nominal.
+func statusEvent(date, by string) view.Event {
+	return view.Event{Date: date, By: by, Kind: "status", Recorded: &view.EventStatus{Gate: "defined", State: "nominal"}}
+}
+
 // historyOf makes a history of n status lines, one commit each, spread over
 // the given number of days.
 func historyOf(n, days int) *view.History {
 	v := &view.History{}
 	v.Level = view.Provenance
 	v.Project = view.Project{Root: "437e", Title: "Tableaux tooling"}
+	v.Subject = view.TaskRef{ID: "437e", Title: "Tableaux tooling"}
 	v.Source = view.Source{Ref: "main", Commit: "3cdae527d47d37fdff55bc302c76c017cf91c606", OnTrunk: true}
 	v.Legend = view.Legend{
 		Gates:  []view.Gate{{Key: "defined", Symbol: "📝"}},
@@ -160,11 +166,8 @@ func historyOf(n, days int) *view.History {
 		d := i * days / n
 		perDay[d]++
 		v.Lines = append(v.Lines, view.Line{
-			Date:   fmt.Sprintf("2026-09-%02d", d+1),
-			By:     "a@example.org",
-			Kinds:  []string{"status"},
 			Task:   view.TaskRef{ID: fmt.Sprintf("%04x", i)},
-			Status: &view.Status{Gate: "defined", State: "nominal"},
+			Events: []view.Event{statusEvent(fmt.Sprintf("2026-09-%02d", d+1), "a@example.org")},
 		})
 	}
 	v.Events, v.Commits = n, n
@@ -234,9 +237,9 @@ func TestHistoryWords(t *testing.T) {
 		return renderString(t, v, Options{Level: view.Detail})
 	}
 	effects := map[string]string{
-		"authorised-commit":  "an authority commits the task file on the trunk, so the task is authorised",
-		"authorised-merge":   "an authority merges the change, so the task is authorised",
-		"authorised-trailer": "an authority's trailer authorises the task",
+		"authorised_commit":  "an authority commits the task file on the trunk, so the task is authorised",
+		"authorised_merge":   "an authority merges the change, so the task is authorised",
+		"authorised_trailer": "an authority's trailer authorises the task",
 		"proposed":           "no authority accepts the change, so the task stands proposed",
 		"handoff":            "the contributor hands the work to the reviewer",
 		"accepts":            "the reviewer accepts the work at the gate",
@@ -245,12 +248,12 @@ func TestHistoryWords(t *testing.T) {
 		"unheard-of":         "unheard-of",
 	}
 	for key, words := range effects {
-		l := view.Line{Date: "2026-09-01", Kinds: []string{"status"}, Effect: key}
+		l := view.Line{Events: []view.Event{statusEvent("2026-09-01", "")}, Effect: key}
 		if out := render(l); !strings.Contains(out, "\n  - Effect: "+words+"\n") {
 			t.Errorf("effect %q does not read %q:\n%s", key, words, out)
 		}
 	}
-	if out := render(view.Line{Date: "2026-09-01", Kinds: []string{"status"}}); strings.Contains(out, "Effect:") || strings.Contains(out, "Model:") {
+	if out := render(view.Line{Events: []view.Event{statusEvent("2026-09-01", "")}}); strings.Contains(out, "Effect:") || strings.Contains(out, "Model:") {
 		t.Errorf("a line with no effect and no model prints them:\n%s", out)
 	}
 	readings := []struct {
@@ -258,17 +261,18 @@ func TestHistoryWords(t *testing.T) {
 		l    view.Line
 		want string
 	}{
-		{"agrees", view.Line{Reading: "agrees", Model: "m-1", Stated: "m", StatedGate: "defined"}, "`m-1`; the 📝 defined junction states `m`"},
-		{"differs", view.Line{Reading: "differs", Model: "x-1", Stated: "m", StatedGate: "defined"}, "`x-1`; the 📝 defined junction states `m`, which differs"},
-		{"missing", view.Line{Reading: "missing", Stated: "m", StatedGate: "defined"}, "no trailer; the 📝 defined junction states `m`"},
-		{"exempt", view.Line{Reading: "exempt"}, "none recorded; exempt"},
-		{"a trailer and no reading", view.Line{Model: "m-1"}, "`m-1`"},
-		{"a stated model and no gate", view.Line{Reading: "agrees", Model: "m-1", Stated: "m"}, "`m-1`; the junction states `m`"},
-		{"an unknown reading", view.Line{Reading: "puzzling", Model: "m-1"}, "`m-1`"},
+		{"agrees", view.Line{Check: &view.ModelCheck{Reading: "agrees", Stated: "m", Gate: "defined"}, Model: "m-1"}, "`m-1`; the 📝 defined junction states `m`"},
+		{"differs", view.Line{Check: &view.ModelCheck{Reading: "differs", Stated: "m", Gate: "defined"}, Model: "x-1"}, "`x-1`; the 📝 defined junction states `m`, which differs"},
+		{"missing", view.Line{Check: &view.ModelCheck{Reading: "missing", Stated: "m", Gate: "defined"}}, "no trailer; the 📝 defined junction states `m`"},
+		{"exempt", view.Line{Check: &view.ModelCheck{Reading: "exempt"}}, "none recorded; exempt"},
+		{"unstated", view.Line{Check: &view.ModelCheck{Reading: "unstated", Gate: "defined"}, Model: "m-1"}, "`m-1`; the junction states no model"},
+		{"a trailer and no check", view.Line{Model: "m-1"}, "`m-1`"},
+		{"a stated model and no gate", view.Line{Check: &view.ModelCheck{Reading: "agrees", Stated: "m"}, Model: "m-1"}, "`m-1`; the junction states `m`"},
+		{"an unknown reading", view.Line{Check: &view.ModelCheck{Reading: "puzzling"}, Model: "m-1"}, "`m-1`"},
 	}
 	for _, c := range readings {
 		t.Run(c.name, func(t *testing.T) {
-			c.l.Date, c.l.Kinds = "2026-09-01", []string{"status"}
+			c.l.Events = []view.Event{statusEvent("2026-09-01", "")}
 			if out := render(c.l); !strings.Contains(out, "\n  - Model: "+c.want+"\n") {
 				t.Errorf("want %q:\n%s", c.want, out)
 			}
@@ -282,14 +286,24 @@ func TestHistoryWords(t *testing.T) {
 func TestHistoryCells(t *testing.T) {
 	v := historyOf(1, 1)
 	v.Params.Person = "a@example.org"
+	ev := func(by, kind string, mod func(*view.Event)) view.Event {
+		e := view.Event{Date: "2026-09-01", By: by, Kind: kind}
+		if mod != nil {
+			mod(&e)
+		}
+		return e
+	}
+	status := func(e *view.Event) { e.Recorded = &view.EventStatus{Gate: "defined"} }
+	review := func(e *view.Event) { e.Gate = "defined" }
+	pin := func(e *view.Event) { e.Pin = &view.PinMove{URL: "u", New: "0123456789"} }
 	v.Lines = []view.Line{
-		{Date: "2026-09-01", By: "a@example.org", Kinds: []string{"status", "reviewed", "pin"}, Task: view.TaskRef{ID: "aaaa"},
-			Status: &view.Status{Gate: "defined"}, Gate: "defined", Pin: &view.PinMove{URL: "u", New: "0123456789"}},
-		{Date: "2026-09-01", By: "b@example.org", Kinds: []string{"reviewed", "pin"}, Task: view.TaskRef{ID: "bbbb"},
-			Gate: "defined", Pin: &view.PinMove{URL: "u", New: "0123456789"}},
-		{Date: "2026-09-01", By: "b@example.org", Kinds: []string{"pin"}, Task: view.TaskRef{ID: "cccc"},
-			Pin: &view.PinMove{URL: "u", Old: "abcdefabcdef", New: "0123456789"}},
-		{Date: "2026-09-01", By: "b@example.org", Kinds: []string{"authorised"}, Task: view.TaskRef{ID: "dddd"}},
+		{Task: view.TaskRef{ID: "aaaa"}, Events: []view.Event{
+			ev("a@example.org", "status", status), ev("a@example.org", "reviewed", review), ev("a@example.org", "pin", pin)}},
+		{Task: view.TaskRef{ID: "bbbb"}, Events: []view.Event{ev("b@example.org", "reviewed", review), ev("b@example.org", "pin", pin)}},
+		{Task: view.TaskRef{ID: "cccc"}, Events: []view.Event{ev("b@example.org", "pin", func(e *view.Event) {
+			e.Pin = &view.PinMove{URL: "u", Old: "abcdefabcdef", New: "0123456789"}
+		})}},
+		{Task: view.TaskRef{ID: "dddd"}, Events: []view.Event{ev("b@example.org", "authorised", nil)}},
 	}
 	out := renderString(t, v, Options{Level: view.Glance})
 	for _, want := range []string{
@@ -310,6 +324,43 @@ func TestHistoryCells(t *testing.T) {
 		if got := gitTime(in); got != want {
 			t.Errorf("gitTime(%q) = %q, want %q", in, got, want)
 		}
+	}
+}
+
+// TestHistoryTaken: the subject titles the history, the root by default
+// (8ed1 decision 5); a line taken from a subproject nests beneath the pin of
+// that subproject that follows it, which counts its events, and stands in
+// its place with no such pin (8ed1 decision 2).
+func TestHistoryTaken(t *testing.T) {
+	v := historyOf(1, 1)
+	from := &view.SubEvent{URL: "firmware", Task: "f1a0"}
+	took := func(commit string) view.Event {
+		e := statusEvent("2026-09-01", "b@example.org")
+		e.Commit, e.Subproject = commit, from
+		return e
+	}
+	pin := view.Event{Date: "2026-09-02", By: "b@example.org", Kind: "pin", Pin: &view.PinMove{URL: "firmware", New: "0123456789"}}
+	v.Lines = []view.Line{
+		{Task: view.TaskRef{ID: "c07d"}, Events: []view.Event{took("c1"), took("c1")}},
+		{Task: view.TaskRef{ID: "c07d"}, Events: []view.Event{took("c2")}},
+		{Task: view.TaskRef{ID: "c07d"}, Events: []view.Event{pin}},
+		{Task: view.TaskRef{ID: "c07d"}, Events: []view.Event{took("c3")}},
+	}
+	out := renderString(t, v, Options{Level: view.Detail})
+	for _, want := range []string{
+		"# History: `437e` Tableaux tooling\n",
+		"- **2026-09-02** · b@example.org · pin · `c07d` · `firmware` new `0123456`\n" +
+			"  - Subproject events: 3 events in 2 commits of `firmware`\n" +
+			"    - 2026-09-01 · b@example.org · status, status · `f1a0` · 📝 defined 🟢 nominal\n" +
+			"    - 2026-09-01 · b@example.org · status · `f1a0` · 📝 defined 🟢 nominal\n",
+		"- **2026-09-01** · b@example.org · status · `c07d`, taken from `firmware` `f1a0` · 📝 defined 🟢 nominal\n",
+	} {
+		if !strings.Contains(out, want) {
+			t.Errorf("the output lacks %q:\n%s", want, out)
+		}
+	}
+	if n := strings.Count(out, "taken from"); n != 1 {
+		t.Errorf("%d taken lines stand in their place, want 1:\n%s", n, out)
 	}
 }
 

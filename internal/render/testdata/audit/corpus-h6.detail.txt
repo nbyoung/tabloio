@@ -18,7 +18,6 @@ H6
   File: status/b2c9.yaml
   Message: The contributor's commit at the design junction carries no Model:
     trailer; the junction states claude-fable
-  Action: Name the model in the next commit at the junction
   Resolver: bot@example.org
 ────────────────────────────────────────────────────────────────────────────────
 

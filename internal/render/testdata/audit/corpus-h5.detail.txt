@@ -17,8 +17,7 @@ H5
   Gate: 📐 design
   File: status/b2c9.yaml
   Message: The status still states review after olive accepted design in S3
-  Action: Record the gate, or the next hand-off, so that the status no longer
-    states review
+  Action: Clear the hand-off: record the gate, or the next hand-off
   Resolver: pat@example.org
 ────────────────────────────────────────────────────────────────────────────────
 

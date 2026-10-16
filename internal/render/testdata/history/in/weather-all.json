@@ -177,198 +177,10 @@
         }
       ]
     },
-    "lines": [
-      {
-        "date": "2026-09-15",
-        "by": "ada@example.org",
-        "kinds": [
-          "task"
-        ],
-        "task": {
-          "id": "4e2b",
-          "title": "Sensor node"
-        }
-      },
-      {
-        "date": "2026-09-15",
-        "by": "ada@example.org",
-        "kinds": [
-          "task"
-        ],
-        "task": {
-          "id": "7b2e",
-          "title": "Gateway"
-        }
-      },
-      {
-        "date": "2026-09-15",
-        "by": "ada@example.org",
-        "kinds": [
-          "task"
-        ],
-        "task": {
-          "id": "a1c0",
-          "title": "Weather station"
-        }
-      },
-      {
-        "date": "2026-09-16",
-        "by": "ben@example.org",
-        "kinds": [
-          "task"
-        ],
-        "task": {
-          "id": "c07d",
-          "title": "Node firmware"
-        }
-      },
-      {
-        "date": "2026-09-18",
-        "by": "ada@example.org",
-        "kinds": [
-          "task"
-        ],
-        "task": {
-          "id": "9f31",
-          "title": "Sensor board"
-        }
-      },
-      {
-        "date": "2026-09-19",
-        "by": "ben@example.org",
-        "kinds": [
-          "authorised"
-        ],
-        "task": {
-          "id": "9f31",
-          "title": "Sensor board"
-        }
-      },
-      {
-        "date": "2026-09-20",
-        "by": "dan@example.org",
-        "kinds": [
-          "task"
-        ],
-        "task": {
-          "id": "3c5d",
-          "title": "Dashboard"
-        }
-      },
-      {
-        "date": "2026-09-21",
-        "by": "ada@example.org",
-        "kinds": [
-          "authorised"
-        ],
-        "task": {
-          "id": "3c5d",
-          "title": "Dashboard"
-        }
-      },
-      {
-        "date": "2026-09-22",
-        "by": "ada@example.org",
-        "kinds": [
-          "status"
-        ],
-        "task": {
-          "id": "9f31",
-          "title": "Sensor board"
-        },
-        "status": {
-          "gate": "mockup",
-          "state": "nominal"
-        }
-      },
-      {
-        "date": "2026-09-22",
-        "by": "dan@example.org",
-        "kinds": [
-          "status"
-        ],
-        "task": {
-          "id": "3c5d",
-          "title": "Dashboard"
-        },
-        "status": {
-          "gate": "defined",
-          "state": "nominal"
-        }
-      },
-      {
-        "date": "2026-09-24",
-        "by": "ben@example.org",
-        "kinds": [
-          "reviewed"
-        ],
-        "task": {
-          "id": "9f31",
-          "title": "Sensor board"
-        },
-        "gate": "mockup"
-      },
-      {
-        "date": "2026-09-25",
-        "by": "ada@example.org",
-        "kinds": [
-          "status"
-        ],
-        "task": {
-          "id": "9f31",
-          "title": "Sensor board"
-        },
-        "status": {
-          "gate": "function",
-          "state": "stalled",
-          "reason": "blocked",
-          "note": "Barometer ICs on 14-week backorder"
-        }
-      },
-      {
-        "date": "2026-09-26",
-        "by": "ben@example.org",
-        "kinds": [
-          "status",
-          "reviewed",
-          "pin"
-        ],
-        "task": {
-          "id": "c07d",
-          "title": "Node firmware"
-        },
-        "gate": "mockup",
-        "status": {
-          "gate": "design"
-        },
-        "pin": {
-          "url": "firmware",
-          "new": "cf5b169"
-        }
-      },
-      {
-        "date": "2026-09-27",
-        "by": "dan@example.org",
-        "kinds": [
-          "task"
-        ],
-        "task": {
-          "id": "3c5d",
-          "title": "Dashboard"
-        }
-      },
-      {
-        "date": "2026-09-28",
-        "by": "ada@example.org",
-        "kinds": [
-          "reaffirmed"
-        ],
-        "task": {
-          "id": "9f31",
-          "title": "Sensor board"
-        }
-      }
-    ],
+    "subject": {
+      "id": "a1c0",
+      "title": "Weather station"
+    },
     "events": 17,
     "commits": 13,
     "kinds": [
@@ -535,6 +347,336 @@
           {
             "kind": "reaffirmed",
             "count": 1
+          }
+        ]
+      }
+    ],
+    "lines": [
+      {
+        "task": {
+          "id": "4e2b",
+          "title": "Sensor node"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-15",
+            "commit": "",
+            "by": "ada@example.org",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": null
+          }
+        ]
+      },
+      {
+        "task": {
+          "id": "7b2e",
+          "title": "Gateway"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-15",
+            "commit": "",
+            "by": "ada@example.org",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": null
+          }
+        ]
+      },
+      {
+        "task": {
+          "id": "a1c0",
+          "title": "Weather station"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-15",
+            "commit": "",
+            "by": "ada@example.org",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": null
+          }
+        ]
+      },
+      {
+        "task": {
+          "id": "c07d",
+          "title": "Node firmware"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-16",
+            "commit": "",
+            "by": "ben@example.org",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": null
+          }
+        ]
+      },
+      {
+        "task": {
+          "id": "9f31",
+          "title": "Sensor board"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-18",
+            "commit": "",
+            "by": "ada@example.org",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": null
+          }
+        ]
+      },
+      {
+        "task": {
+          "id": "9f31",
+          "title": "Sensor board"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-19",
+            "commit": "",
+            "by": "ben@example.org",
+            "kind": "authorised",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": null
+          }
+        ]
+      },
+      {
+        "task": {
+          "id": "3c5d",
+          "title": "Dashboard"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-20",
+            "commit": "",
+            "by": "dan@example.org",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": null
+          }
+        ]
+      },
+      {
+        "task": {
+          "id": "3c5d",
+          "title": "Dashboard"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-21",
+            "commit": "",
+            "by": "ada@example.org",
+            "kind": "authorised",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": null
+          }
+        ]
+      },
+      {
+        "task": {
+          "id": "9f31",
+          "title": "Sensor board"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-22",
+            "commit": "",
+            "by": "ada@example.org",
+            "kind": "status",
+            "recorded": {
+              "gate": "mockup",
+              "state": "nominal",
+              "reason": "",
+              "note": ""
+            },
+            "gate": "",
+            "pin": null,
+            "subproject": null
+          }
+        ]
+      },
+      {
+        "task": {
+          "id": "3c5d",
+          "title": "Dashboard"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-22",
+            "commit": "",
+            "by": "dan@example.org",
+            "kind": "status",
+            "recorded": {
+              "gate": "defined",
+              "state": "nominal",
+              "reason": "",
+              "note": ""
+            },
+            "gate": "",
+            "pin": null,
+            "subproject": null
+          }
+        ]
+      },
+      {
+        "task": {
+          "id": "9f31",
+          "title": "Sensor board"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-24",
+            "commit": "",
+            "by": "ben@example.org",
+            "kind": "reviewed",
+            "recorded": null,
+            "gate": "mockup",
+            "pin": null,
+            "subproject": null
+          }
+        ]
+      },
+      {
+        "task": {
+          "id": "9f31",
+          "title": "Sensor board"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-25",
+            "commit": "",
+            "by": "ada@example.org",
+            "kind": "status",
+            "recorded": {
+              "gate": "function",
+              "state": "stalled",
+              "reason": "blocked",
+              "note": "Barometer ICs on 14-week backorder"
+            },
+            "gate": "",
+            "pin": null,
+            "subproject": null
+          }
+        ]
+      },
+      {
+        "task": {
+          "id": "c07d",
+          "title": "Node firmware"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-26",
+            "commit": "",
+            "by": "ben@example.org",
+            "kind": "status",
+            "recorded": {
+              "gate": "design",
+              "state": "",
+              "reason": "",
+              "note": ""
+            },
+            "gate": "",
+            "pin": null,
+            "subproject": null
+          },
+          {
+            "date": "2026-09-26",
+            "commit": "",
+            "by": "ben@example.org",
+            "kind": "reviewed",
+            "recorded": null,
+            "gate": "mockup",
+            "pin": null,
+            "subproject": null
+          },
+          {
+            "date": "2026-09-26",
+            "commit": "",
+            "by": "ben@example.org",
+            "kind": "pin",
+            "recorded": null,
+            "gate": "",
+            "pin": {
+              "url": "firmware",
+              "new": "cf5b169"
+            },
+            "subproject": null
+          }
+        ]
+      },
+      {
+        "task": {
+          "id": "3c5d",
+          "title": "Dashboard"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-27",
+            "commit": "",
+            "by": "dan@example.org",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": null
+          }
+        ]
+      },
+      {
+        "task": {
+          "id": "9f31",
+          "title": "Sensor board"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-28",
+            "commit": "",
+            "by": "ada@example.org",
+            "kind": "reaffirmed",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": null
           }
         ]
       }

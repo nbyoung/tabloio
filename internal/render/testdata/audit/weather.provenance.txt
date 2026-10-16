@@ -16,7 +16,7 @@ Rule · Severity · Task · Gate · File · Message · Action · Resolver
   File: tasks/9f31.yaml
   Message: The task stands proposed: no trailer or owner commit on the trunk
     authorises it
-  Action: Have an authority merge the task or commit the Authorised: trailer
+  Action: Authorise: commit Authorised: 9f31
   Resolver: ada@example.org
 ────────────────────────────────────────────────────────────────────────────────
   Severity: warning
@@ -25,7 +25,7 @@ Rule · Severity · Task · Gate · File · Message · Action · Resolver
   File: status/3c5d.yaml
   Message: The status dates from 2026-09-22, more than 3 days before
     2026-09-28, with no later reaffirmation
-  Action: Reaffirm the status with Reaffirmed: 3c5d, or record the next event
+  Action: Reaffirm: commit Reaffirmed: 3c5d
   Resolver: dan@example.org
 ────────────────────────────────────────────────────────────────────────────────
 
@@ -34,8 +34,8 @@ Rule · Severity · Task · Gate · File · Message · Action · Resolver
 A proposed task, warning: 9f31
 ──────────────────────────────
 
-*Authorisation.* No Authorised: trailer and no commit of an authority on the
-trunk names 9f31.
+*The authorisation.* 9f31: 91aa774, 2026-09-18, author and committer
+ada@example.org, not by an authority.
 
 ┌─────────┬────────────┬─────────────────┬───────────┬─────────┬──────────┐
 │ Commit  │ Date       │ Author          │ Committer │ Subject │ Trailers │
@@ -49,8 +49,7 @@ trunk names 9f31.
 A status older than the days stated, warning: 3c5d at 📝 defined
 ────────────────────────────────────────────────────────────────
 
-*Status.* 3c5d stands at 📝 defined 🟢 nominal, recorded on 2026-09-22 by
-55f57c1.
+*The status.* 3c5d: 📝 defined 🟢 nominal, recorded 2026-09-22.
 
 ┌─────────┬────────────┬─────────────────┬───────────┬─────────┬──────────┐
 │ Commit  │ Date       │ Author          │ Committer │ Subject │ Trailers │

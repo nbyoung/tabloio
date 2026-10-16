@@ -8,7 +8,7 @@ Legend: `tabloio gates`.
 
 | Rule | Severity | Task | Gate | File | Message | Action | Resolver |
 |---|---|---|---|---|---|---|---|
-| H5 | warning | `b2c9` Leaf | 📐 design | `status/b2c9.yaml` | The status still states review after olive accepted design in S3 | Record the gate, or the next hand-off, so that the status no longer states review | pat@example.org |
+| H5 | warning | `b2c9` Leaf | 📐 design | `status/b2c9.yaml` | The status still states review after olive accepted design in S3 | Clear the hand-off: record the gate, or the next hand-off | pat@example.org |
 
 **Most to resolve:** pat@example.org, 1 of 1.
 
@@ -16,7 +16,7 @@ Legend: `tabloio gates`.
 
 **Rule.** "it reports a status that still states `review` after the reviewer's `Reviewed:` commit for that junction" [README.md, Status](README.md#status)
 
-**Junction.** pat@example.org contributes at 📐 design. olive@example.org reviews it.
+**The junction.** `b2c9` at 📐 design: contributor pat@example.org, reviewer olive@example.org.
 
 | Commit | Date | Author | Committer | Subject | Trailers |
 |---|---|---|---|---|---|

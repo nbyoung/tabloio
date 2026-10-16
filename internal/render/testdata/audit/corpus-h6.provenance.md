@@ -8,7 +8,7 @@ Legend: `tabloio gates`.
 
 | Rule | Severity | Task | Gate | File | Message | Action | Resolver |
 |---|---|---|---|---|---|---|---|
-| H6 | warning | `b2c9` Leaf | 📐 design | `status/b2c9.yaml` | The contributor's commit at the design junction carries no Model: trailer; the junction states claude-fable | Name the model in the next commit at the junction | bot@example.org |
+| H6 | warning | `b2c9` Leaf | 📐 design | `status/b2c9.yaml` | The contributor's commit at the design junction carries no Model: trailer; the junction states claude-fable |  | bot@example.org |
 
 **Most to resolve:** bot@example.org, 1 of 1.
 
@@ -16,7 +16,7 @@ Legend: `tabloio gates`.
 
 **Rule.** "a commit at the junction by its contributor that carries no trailer, unless the project's `version.yaml` at that commit states a language before 0.2.1" [README.md, Junctions](README.md#junctions)
 
-**Junction.** `b2c9` takes 📐 design from itself: contributor bot@example.org, model `claude-fable`.
+**The junction.** `b2c9` at 📐 design: contributor bot@example.org, model `claude-fable`, from `b2c9`.
 
 | Commit | Date | Author | Committer | Subject | Trailers |
 |---|---|---|---|---|---|

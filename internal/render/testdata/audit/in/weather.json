@@ -192,14 +192,7 @@
           "tasks/9f31.yaml"
         ],
         "message": "The task stands proposed: no trailer or owner commit on the trunk authorises it",
-        "action": "Have an authority merge the task or commit the `Authorised:` trailer",
         "resolver": "ada@example.org",
-        "facts": [
-          {
-            "name": "Authorisation",
-            "value": "No `Authorised:` trailer and no commit of an authority on the trunk names `9f31`."
-          }
-        ],
         "commits": [
           {
             "hash": "91aa774",
@@ -217,6 +210,35 @@
             "text": "git log --format='%as %h %ae' -E --grep='^Authorised: 9f31$'",
             "comment": "shows the finding"
           }
+        ],
+        "rule": "",
+        "key": "proposed",
+        "demoted": false,
+        "act": "authorise",
+        "facts": [
+          {
+            "task": "9f31",
+            "junction": null,
+            "status": null,
+            "requirement": null,
+            "authorisation": {
+              "commit": {
+                "hash": "91aa774",
+                "date": "2026-09-18",
+                "author": {
+                  "email": "ada@example.org"
+                },
+                "committer": {
+                  "email": "ada@example.org"
+                }
+              },
+              "way": "",
+              "by": "",
+              "why": ""
+            },
+            "linkage": null,
+            "model": null
+          }
         ]
       },
       {
@@ -233,14 +255,7 @@
           "status/3c5d.yaml"
         ],
         "message": "The status dates from 2026-09-22, more than 3 days before 2026-09-28, with no later reaffirmation",
-        "action": "Reaffirm the status with `Reaffirmed: 3c5d`, or record the next event",
         "resolver": "dan@example.org",
-        "facts": [
-          {
-            "name": "Status",
-            "value": "`3c5d` stands at 📝 defined 🟢 nominal, recorded on 2026-09-22 by `55f57c1`."
-          }
-        ],
         "commits": [
           {
             "hash": "55f57c1",
@@ -257,6 +272,28 @@
           {
             "text": "git log -1 --format='%as %h %ae' -- .tableaux/status/3c5d.yaml",
             "comment": "shows the finding"
+          }
+        ],
+        "rule": "",
+        "key": "stale",
+        "demoted": false,
+        "act": "reaffirm",
+        "facts": [
+          {
+            "task": "3c5d",
+            "junction": null,
+            "status": {
+              "gate": "defined",
+              "state": "nominal",
+              "reason": "",
+              "note": "",
+              "date": "2026-09-22",
+              "recorder": ""
+            },
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
           }
         ]
       }

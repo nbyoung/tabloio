@@ -16,7 +16,7 @@ Legend: `tabloio gates`.
 
 **Rule.** "it reports, as information, a task whose next junction has a reviewer, whose newest event is the contributor's and whose status states no `review`, since the work may be done or in progress" [README.md, Status](README.md#status)
 
-**Junction.** pat@example.org contributes at 📐 design. olive@example.org reviews it.
+**The junction.** `b2c9` at 📐 design: contributor pat@example.org, reviewer olive@example.org.
 
 | Commit | Date | Author | Committer | Subject | Trailers |
 |---|---|---|---|---|---|

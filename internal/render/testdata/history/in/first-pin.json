@@ -167,329 +167,10 @@
         }
       ]
     },
-    "lines": [
-      {
-        "date": "2026-09-29",
-        "by": "nbyoung@nbyoung.com",
-        "kinds": [
-          "pin"
-        ],
-        "task": {
-          "id": "77b2"
-        },
-        "pin": {
-          "url": "subprojects/tablo",
-          "new": "dc669dd"
-        },
-        "after": {
-          "gate": "undefined",
-          "state": "undefined",
-          "from": {
-            "kind": "snapshot",
-            "task": {
-              "id": "b2c1"
-            },
-            "url": "subprojects/tablo",
-            "pin": "dc669dd"
-          }
-        },
-        "reading": "exempt",
-        "subproject": {
-          "url": "subprojects/tablo",
-          "events": 12,
-          "commits": 1,
-          "lines": []
-        },
-        "commit": {
-          "hash": "37a08e92e840ea3cb48bc7ca6a5041c44096ef8e",
-          "subject": "Pin the subprojects",
-          "date": "2026-09-29",
-          "author": {
-            "name": "Norman Young",
-            "email": "nbyoung@nbyoung.com"
-          },
-          "committer": {
-            "name": "Norman Young",
-            "email": "nbyoung@nbyoung.com"
-          },
-          "author_time": "2026-09-29T17:30:02-04:00",
-          "trailers": [
-            "Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
-          ],
-          "files": [
-            {
-              "path": "subprojects/tablo",
-              "change": "pin"
-            },
-            {
-              "path": "subprojects/tabloio",
-              "change": "pin"
-            },
-            {
-              "path": "subprojects/tablotui",
-              "change": "pin"
-            },
-            {
-              "path": "subprojects/tableaud",
-              "change": "pin"
-            }
-          ]
-        },
-        "commands": [
-          {
-            "text": "git log --format='%as %h %ae' a7932ae..37a08e9 -- .tableaux/tasks/77b2.yaml .tableaux/status/77b2.yaml subprojects/tablo"
-          },
-          {
-            "text": "git diff --raw --abbrev=7 37a08e9^ 37a08e9 -- subprojects/tablo"
-          },
-          {
-            "text": "git -C subprojects/tablo log --format='%as %h %ae' dc669dd -- .tableaux/tasks .tableaux/status"
-          }
-        ]
-      },
-      {
-        "date": "2026-09-29",
-        "by": "nbyoung@nbyoung.com",
-        "kinds": [
-          "pin"
-        ],
-        "task": {
-          "id": "6103"
-        },
-        "pin": {
-          "url": "subprojects/tabloio",
-          "new": "46521bc"
-        },
-        "after": {
-          "gate": "undefined",
-          "state": "undefined",
-          "from": {
-            "kind": "snapshot",
-            "task": {
-              "id": "07e0"
-            },
-            "url": "subprojects/tabloio",
-            "pin": "46521bc"
-          }
-        },
-        "reading": "exempt",
-        "subproject": {
-          "url": "subprojects/tabloio",
-          "events": 12,
-          "commits": 1,
-          "lines": []
-        },
-        "commit": {
-          "hash": "37a08e92e840ea3cb48bc7ca6a5041c44096ef8e",
-          "subject": "Pin the subprojects",
-          "date": "2026-09-29",
-          "author": {
-            "name": "Norman Young",
-            "email": "nbyoung@nbyoung.com"
-          },
-          "committer": {
-            "name": "Norman Young",
-            "email": "nbyoung@nbyoung.com"
-          },
-          "author_time": "2026-09-29T17:30:02-04:00",
-          "trailers": [
-            "Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
-          ],
-          "files": [
-            {
-              "path": "subprojects/tablo",
-              "change": "pin"
-            },
-            {
-              "path": "subprojects/tabloio",
-              "change": "pin"
-            },
-            {
-              "path": "subprojects/tablotui",
-              "change": "pin"
-            },
-            {
-              "path": "subprojects/tableaud",
-              "change": "pin"
-            }
-          ]
-        },
-        "commands": [
-          {
-            "text": "git log --format='%as %h %ae' a7932ae..37a08e9 -- .tableaux/tasks/6103.yaml .tableaux/status/6103.yaml subprojects/tabloio"
-          },
-          {
-            "text": "git diff --raw --abbrev=7 37a08e9^ 37a08e9 -- subprojects/tabloio"
-          },
-          {
-            "text": "git -C subprojects/tabloio log --format='%as %h %ae' 46521bc -- .tableaux/tasks .tableaux/status"
-          }
-        ]
-      },
-      {
-        "date": "2026-09-29",
-        "by": "nbyoung@nbyoung.com",
-        "kinds": [
-          "pin"
-        ],
-        "task": {
-          "id": "c6e8"
-        },
-        "pin": {
-          "url": "subprojects/tablotui",
-          "new": "4544042"
-        },
-        "after": {
-          "gate": "undefined",
-          "state": "undefined",
-          "from": {
-            "kind": "snapshot",
-            "task": {
-              "id": "40e8"
-            },
-            "url": "subprojects/tablotui",
-            "pin": "4544042"
-          }
-        },
-        "reading": "exempt",
-        "subproject": {
-          "url": "subprojects/tablotui",
-          "events": 7,
-          "commits": 1,
-          "lines": []
-        },
-        "commit": {
-          "hash": "37a08e92e840ea3cb48bc7ca6a5041c44096ef8e",
-          "subject": "Pin the subprojects",
-          "date": "2026-09-29",
-          "author": {
-            "name": "Norman Young",
-            "email": "nbyoung@nbyoung.com"
-          },
-          "committer": {
-            "name": "Norman Young",
-            "email": "nbyoung@nbyoung.com"
-          },
-          "author_time": "2026-09-29T17:30:02-04:00",
-          "trailers": [
-            "Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
-          ],
-          "files": [
-            {
-              "path": "subprojects/tablo",
-              "change": "pin"
-            },
-            {
-              "path": "subprojects/tabloio",
-              "change": "pin"
-            },
-            {
-              "path": "subprojects/tablotui",
-              "change": "pin"
-            },
-            {
-              "path": "subprojects/tableaud",
-              "change": "pin"
-            }
-          ]
-        },
-        "commands": [
-          {
-            "text": "git log --format='%as %h %ae' a7932ae..37a08e9 -- .tableaux/tasks/c6e8.yaml .tableaux/status/c6e8.yaml subprojects/tablotui"
-          },
-          {
-            "text": "git diff --raw --abbrev=7 37a08e9^ 37a08e9 -- subprojects/tablotui"
-          },
-          {
-            "text": "git -C subprojects/tablotui log --format='%as %h %ae' 4544042 -- .tableaux/tasks .tableaux/status"
-          }
-        ]
-      },
-      {
-        "date": "2026-09-29",
-        "by": "nbyoung@nbyoung.com",
-        "kinds": [
-          "pin"
-        ],
-        "task": {
-          "id": "595e"
-        },
-        "pin": {
-          "url": "subprojects/tableaud",
-          "new": "59783a9"
-        },
-        "after": {
-          "gate": "undefined",
-          "state": "undefined",
-          "from": {
-            "kind": "snapshot",
-            "task": {
-              "id": "8608"
-            },
-            "url": "subprojects/tableaud",
-            "pin": "59783a9"
-          }
-        },
-        "reading": "exempt",
-        "subproject": {
-          "url": "subprojects/tableaud",
-          "events": 11,
-          "commits": 1,
-          "lines": []
-        },
-        "commit": {
-          "hash": "37a08e92e840ea3cb48bc7ca6a5041c44096ef8e",
-          "subject": "Pin the subprojects",
-          "date": "2026-09-29",
-          "author": {
-            "name": "Norman Young",
-            "email": "nbyoung@nbyoung.com"
-          },
-          "committer": {
-            "name": "Norman Young",
-            "email": "nbyoung@nbyoung.com"
-          },
-          "author_time": "2026-09-29T17:30:02-04:00",
-          "trailers": [
-            "Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
-          ],
-          "files": [
-            {
-              "path": "subprojects/tablo",
-              "change": "pin"
-            },
-            {
-              "path": "subprojects/tabloio",
-              "change": "pin"
-            },
-            {
-              "path": "subprojects/tablotui",
-              "change": "pin"
-            },
-            {
-              "path": "subprojects/tableaud",
-              "change": "pin"
-            }
-          ]
-        },
-        "commands": [
-          {
-            "text": "git log --format='%as %h %ae' a7932ae..37a08e9 -- .tableaux/tasks/595e.yaml .tableaux/status/595e.yaml subprojects/tableaud"
-          },
-          {
-            "text": "git diff --raw --abbrev=7 37a08e9^ 37a08e9 -- subprojects/tableaud"
-          },
-          {
-            "text": "git -C subprojects/tableaud log --format='%as %h %ae' 59783a9 -- .tableaux/tasks .tableaux/status"
-          }
-        ]
-      }
-    ],
-    "commands": [
-      {
-        "text": "git log --format='%as %h %ae' a7932ae..37a08e9 -- .tableaux/tasks .tableaux/status subprojects/tablo subprojects/tabloio subprojects/tablotui subprojects/tableaud"
-      }
-    ],
+    "subject": {
+      "id": "437e",
+      "title": "Tableaux tooling"
+    },
     "events": 4,
     "commits": 1,
     "kinds": [
@@ -529,6 +210,325 @@
             "count": 4
           }
         ]
+      }
+    ],
+    "lines": [
+      {
+        "task": {
+          "id": "77b2"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "37a08e92e840ea3cb48bc7ca6a5041c44096ef8e",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "pin",
+            "recorded": null,
+            "gate": "",
+            "pin": {
+              "url": "subprojects/tablo",
+              "new": "dc669dd"
+            },
+            "subproject": null
+          }
+        ],
+        "after": {
+          "gate": "undefined",
+          "state": "undefined",
+          "from": {
+            "kind": "snapshot",
+            "task": {
+              "id": "b2c1"
+            },
+            "url": "subprojects/tablo",
+            "pin": "dc669dd"
+          }
+        },
+        "effect": "",
+        "model": "",
+        "check": {
+          "commit": "37a08e92e840ea3cb48bc7ca6a5041c44096ef8e",
+          "gate": "",
+          "stated": "",
+          "trailer": "",
+          "reading": "exempt"
+        },
+        "committer": "",
+        "commit": {
+          "hash": "37a08e92e840ea3cb48bc7ca6a5041c44096ef8e",
+          "subject": "Pin the subprojects",
+          "date": "2026-09-29",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "author_time": "2026-09-29T17:30:02-04:00",
+          "trailers": [
+            "Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": "subprojects/tablo",
+              "change": "pin"
+            },
+            {
+              "path": "subprojects/tabloio",
+              "change": "pin"
+            },
+            {
+              "path": "subprojects/tablotui",
+              "change": "pin"
+            },
+            {
+              "path": "subprojects/tableaud",
+              "change": "pin"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "6103"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "37a08e92e840ea3cb48bc7ca6a5041c44096ef8e",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "pin",
+            "recorded": null,
+            "gate": "",
+            "pin": {
+              "url": "subprojects/tabloio",
+              "new": "46521bc"
+            },
+            "subproject": null
+          }
+        ],
+        "after": {
+          "gate": "undefined",
+          "state": "undefined",
+          "from": {
+            "kind": "snapshot",
+            "task": {
+              "id": "07e0"
+            },
+            "url": "subprojects/tabloio",
+            "pin": "46521bc"
+          }
+        },
+        "effect": "",
+        "model": "",
+        "check": {
+          "commit": "37a08e92e840ea3cb48bc7ca6a5041c44096ef8e",
+          "gate": "",
+          "stated": "",
+          "trailer": "",
+          "reading": "exempt"
+        },
+        "committer": "",
+        "commit": {
+          "hash": "37a08e92e840ea3cb48bc7ca6a5041c44096ef8e",
+          "subject": "Pin the subprojects",
+          "date": "2026-09-29",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "author_time": "2026-09-29T17:30:02-04:00",
+          "trailers": [
+            "Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": "subprojects/tablo",
+              "change": "pin"
+            },
+            {
+              "path": "subprojects/tabloio",
+              "change": "pin"
+            },
+            {
+              "path": "subprojects/tablotui",
+              "change": "pin"
+            },
+            {
+              "path": "subprojects/tableaud",
+              "change": "pin"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "c6e8"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "37a08e92e840ea3cb48bc7ca6a5041c44096ef8e",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "pin",
+            "recorded": null,
+            "gate": "",
+            "pin": {
+              "url": "subprojects/tablotui",
+              "new": "4544042"
+            },
+            "subproject": null
+          }
+        ],
+        "after": {
+          "gate": "undefined",
+          "state": "undefined",
+          "from": {
+            "kind": "snapshot",
+            "task": {
+              "id": "40e8"
+            },
+            "url": "subprojects/tablotui",
+            "pin": "4544042"
+          }
+        },
+        "effect": "",
+        "model": "",
+        "check": {
+          "commit": "37a08e92e840ea3cb48bc7ca6a5041c44096ef8e",
+          "gate": "",
+          "stated": "",
+          "trailer": "",
+          "reading": "exempt"
+        },
+        "committer": "",
+        "commit": {
+          "hash": "37a08e92e840ea3cb48bc7ca6a5041c44096ef8e",
+          "subject": "Pin the subprojects",
+          "date": "2026-09-29",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "author_time": "2026-09-29T17:30:02-04:00",
+          "trailers": [
+            "Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": "subprojects/tablo",
+              "change": "pin"
+            },
+            {
+              "path": "subprojects/tabloio",
+              "change": "pin"
+            },
+            {
+              "path": "subprojects/tablotui",
+              "change": "pin"
+            },
+            {
+              "path": "subprojects/tableaud",
+              "change": "pin"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "595e"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "37a08e92e840ea3cb48bc7ca6a5041c44096ef8e",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "pin",
+            "recorded": null,
+            "gate": "",
+            "pin": {
+              "url": "subprojects/tableaud",
+              "new": "59783a9"
+            },
+            "subproject": null
+          }
+        ],
+        "after": {
+          "gate": "undefined",
+          "state": "undefined",
+          "from": {
+            "kind": "snapshot",
+            "task": {
+              "id": "8608"
+            },
+            "url": "subprojects/tableaud",
+            "pin": "59783a9"
+          }
+        },
+        "effect": "",
+        "model": "",
+        "check": {
+          "commit": "37a08e92e840ea3cb48bc7ca6a5041c44096ef8e",
+          "gate": "",
+          "stated": "",
+          "trailer": "",
+          "reading": "exempt"
+        },
+        "committer": "",
+        "commit": {
+          "hash": "37a08e92e840ea3cb48bc7ca6a5041c44096ef8e",
+          "subject": "Pin the subprojects",
+          "date": "2026-09-29",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "author_time": "2026-09-29T17:30:02-04:00",
+          "trailers": [
+            "Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": "subprojects/tablo",
+              "change": "pin"
+            },
+            {
+              "path": "subprojects/tabloio",
+              "change": "pin"
+            },
+            {
+              "path": "subprojects/tablotui",
+              "change": "pin"
+            },
+            {
+              "path": "subprojects/tableaud",
+              "change": "pin"
+            }
+          ]
+        }
+      }
+    ],
+    "commands": [
+      {
+        "text": "git log --format='%as %h %ae' a7932ae..37a08e9 -- .tableaux/tasks .tableaux/status subprojects/tablo subprojects/tabloio subprojects/tablotui subprojects/tableaud"
       }
     ]
   },

@@ -130,12 +130,6 @@ type Linkage struct {
 	SetBy        *Commit `json:"set_by"`        // the commit of the newest pin event of the link
 }
 
-// Fact is a name and a value in tablo's words.
-type Fact struct {
-	Name  string `json:"name"`
-	Value string `json:"value"`
-}
-
 // Supplier says what supplies one field of one junction.
 type Supplier struct {
 	Gate  string `json:"gate"`

@@ -170,29 +170,6 @@
       "id": "e9c6",
       "title": "Abstract views"
     },
-    "lines": [
-      {
-        "date": "2026-10-07",
-        "by": "noreply@anthropic.com",
-        "kinds": [
-          "reaffirmed"
-        ],
-        "task": {
-          "id": "e9c6",
-          "title": "Abstract views"
-        },
-        "status": {
-          "gate": "design",
-          "state": "nominal"
-        },
-        "after": {
-          "gate": "design",
-          "state": "nominal"
-        },
-        "unchanged": true,
-        "model": "claude-fable-5-1"
-      }
-    ],
     "events": 1,
     "commits": 1,
     "kinds": [
@@ -232,6 +209,36 @@
             "count": 1
           }
         ]
+      }
+    ],
+    "lines": [
+      {
+        "task": {
+          "id": "e9c6",
+          "title": "Abstract views"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-10-07",
+            "commit": "",
+            "by": "noreply@anthropic.com",
+            "kind": "reaffirmed",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": null
+          }
+        ],
+        "after": {
+          "gate": "design",
+          "state": "nominal"
+        },
+        "unchanged": true,
+        "effect": "",
+        "model": "claude-fable-5-1",
+        "check": null,
+        "committer": ""
       }
     ]
   },

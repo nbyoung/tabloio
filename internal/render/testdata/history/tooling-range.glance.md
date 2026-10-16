@@ -1,4 +1,4 @@
-# History
+# History: `437e` Tableaux tooling
 
 **What happened, when, and who did it?** Tableaux tooling · ref `0704a09..main` · level glance
 

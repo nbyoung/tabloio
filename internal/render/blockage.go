@@ -226,18 +226,14 @@ func (p *page) blockageFacts(c view.Cause) doc.List {
 		}
 	}
 	if c.Status.Gate != "" {
-		st := p.status(c.Status)
-		if c.Status.Note != "" {
-			st = append(st, txt(": "+c.Status.Note))
-		}
-		st = spans(st, prefixed(", recorded ", p.recorded(c.Status)))
+		st := p.statusLine(c.Status)
 		if c.StatusCommit != nil {
 			st = spans(st, one(txt(", by the commit ")), p.commitLine(*c.StatusCommit))
 		}
 		add("The status", st)
 	}
 	if j := c.Junction; j != nil {
-		add("The junction", p.junctionLine(c.Task.ID, *j))
+		add("The junction", p.junctionLine([]string{c.Task.ID}, *j))
 	}
 	if a := c.Authorisation; a != nil {
 		add("The authorisation", p.authorisationLine(*a))
@@ -248,10 +244,26 @@ func (p *page) blockageFacts(c view.Cause) doc.List {
 	return facts
 }
 
-// junctionLine words a junction on one line: `<id>` at <gate>, then its
-// contributor, model and reviewer, and the tasks whose entries supply it.
-func (p *page) junctionLine(id string, j view.Junction) []doc.Inline {
-	out := spans(one(code(id), txt(" at ")), p.gate(j.Gate))
+// statusLine words a status on one line: the phrase with its origin, the
+// note after a colon, and when and by whom it was recorded.
+func (p *page) statusLine(st view.Status) []doc.Inline {
+	out := p.status(st)
+	if st.Note != "" {
+		out = append(out, txt(": "+st.Note))
+	}
+	return spans(out, prefixed(", recorded ", p.recorded(st)))
+}
+
+// junctionLine words the junction of one or more tasks on one line: the
+// ids at <gate>, then its contributor, model and reviewer, and the tasks
+// whose entries supply it.
+func (p *page) junctionLine(tasks []string, j view.Junction) []doc.Inline {
+	return spans(ids(tasks), one(txt(" at ")), p.junctionFields(j))
+}
+
+// junctionFields is junctionLine after `at`: the gate and the fields.
+func (p *page) junctionFields(j view.Junction) []doc.Inline {
+	out := p.gate(j.Gate)
 	var fields [][]doc.Inline
 	if who := p.person(j.Contributor); len(who) > 0 {
 		fields = append(fields, spans(one(txt("contributor ")), who))
@@ -260,7 +272,11 @@ func (p *page) junctionLine(id string, j view.Junction) []doc.Inline {
 		fields = append(fields, one(txt("model "), code(j.Model)))
 	}
 	if who := p.person(j.Reviewer); len(who) > 0 {
-		fields = append(fields, spans(one(txt("reviewer ")), who))
+		r := spans(one(txt("reviewer ")), who)
+		if j.ByDefault {
+			r = append(r, txt(", the assignee"))
+		}
+		fields = append(fields, r)
 	}
 	if j.Subproject != nil {
 		fields = append(fields, spans(one(txt("the subproject "), code(j.Subproject.URL), txt(" ")), task(j.Subproject.Task)))
@@ -292,6 +308,9 @@ func (p *page) authorisationLine(a view.Authorisation) []doc.Inline {
 		return nil
 	}
 	out := p.commitLine(*a.Commit)
+	if a.By == "" {
+		out = append(out, txt(", not by an authority"))
+	}
 	if a.Way != "" {
 		out = spans(out, one(txt(", accepting by ")), acceptsBy(a.Way))
 	}

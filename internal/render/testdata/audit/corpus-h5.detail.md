@@ -8,7 +8,7 @@ Legend: `tabloio gates`.
 
 | Rule | Severity | Task | Gate | File | Message | Action | Resolver |
 |---|---|---|---|---|---|---|---|
-| H5 | warning | `b2c9` Leaf | 📐 design | `status/b2c9.yaml` | The status still states review after olive accepted design in S3 | Record the gate, or the next hand-off, so that the status no longer states review | pat@example.org |
+| H5 | warning | `b2c9` Leaf | 📐 design | `status/b2c9.yaml` | The status still states review after olive accepted design in S3 | Clear the hand-off: record the gate, or the next hand-off | pat@example.org |
 
 **Most to resolve:** pat@example.org, 1 of 1.
 

@@ -8,7 +8,7 @@ Legend: `tabloio gates`.
 
 | Rule | Severity | Task | Gate | File | Message | Action | Resolver |
 |---|---|---|---|---|---|---|---|
-| H2 | warning | `b2c9` Leaf | 📐 design |  | pat is not the reviewer of the design junction; olive is | Have olive@example.org accept the gate with `Reviewed: b2c9 design` | olive@example.org |
+| H2 | warning | `b2c9` Leaf | 📐 design |  | pat is not the reviewer of the design junction; olive is | Review: commit `Reviewed: b2c9 design` | olive@example.org |
 
 **Most to resolve:** olive@example.org, 1 of 1.
 
@@ -16,7 +16,7 @@ Legend: `tabloio gates`.
 
 **Rule.** "A `Reviewed:` commit from anyone other than the junction's reviewer has no effect, and the audit reports it." [README.md, Status](README.md#status)
 
-**Junction.** pat@example.org contributes at 📐 design. olive@example.org reviews it.
+**The junction.** `b2c9` at 📐 design: contributor pat@example.org, reviewer olive@example.org.
 
 | Commit | Date | Author | Committer | Subject | Trailers |
 |---|---|---|---|---|---|

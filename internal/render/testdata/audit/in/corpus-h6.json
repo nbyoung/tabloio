@@ -129,19 +129,12 @@
           "status/b2c9.yaml"
         ],
         "message": "The contributor's commit at the design junction carries no Model: trailer; the junction states claude-fable",
-        "action": "Name the model in the next commit at the junction",
         "resolver": "bot@example.org",
         "sentence": "a commit at the junction by its contributor that carries no trailer, unless the project's `version.yaml` at that commit states a language before 0.2.1",
         "source": {
           "text": "README.md, Junctions",
           "url": "README.md#junctions"
         },
-        "facts": [
-          {
-            "name": "Junction",
-            "value": "`b2c9` takes 📐 design from itself: contributor bot@example.org, model `claude-fable`."
-          }
-        ],
         "commits": [
           {
             "hash": "df6b60cbb2a98df9ff66fa8e4253022b06502979",
@@ -159,6 +152,30 @@
           {
             "text": "git log --format='%h %(trailers:key=Model,valueonly)' -- .tableaux/status/b2c9.yaml",
             "comment": "shows the finding"
+          }
+        ],
+        "key": "H6",
+        "demoted": false,
+        "act": "none",
+        "facts": [
+          {
+            "task": "b2c9",
+            "junction": {
+              "gate": "design",
+              "kind": "plain",
+              "contributor": "bot@example.org",
+              "model": "claude-fable",
+              "reviewer": "",
+              "reviewer_by_default": false,
+              "from": [
+                "b2c9"
+              ]
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
           }
         ]
       }

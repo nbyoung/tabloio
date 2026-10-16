@@ -17,8 +17,7 @@ H5
   Gate: 📐 design
   File: status/b2c9.yaml
   Message: The status still states review after olive accepted design in S3
-  Action: Record the gate, or the next hand-off, so that the status no longer
-    states review
+  Action: Clear the hand-off: record the gate, or the next hand-off
   Resolver: pat@example.org
 ────────────────────────────────────────────────────────────────────────────────
 
@@ -30,8 +29,8 @@ H5, warning: b2c9 at 📐 design
 *Rule.* "it reports a status that still states review after the reviewer's
 Reviewed: commit for that junction" README.md, Status <README.md#status>
 
-*Junction.* pat@example.org contributes at 📐 design. olive@example.org reviews
-it.
+*The junction.* b2c9 at 📐 design: contributor pat@example.org, reviewer
+olive@example.org.
 
 ┌─────────┬────────────┬───────────────────┬───────────┬───────────┬───────────┐
 │ Commit  │ Date       │ Author            │ Committer │ Subject   │ Trailers  │

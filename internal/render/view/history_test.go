@@ -7,8 +7,11 @@ func TestDecodeHistory(t *testing.T) {
 	v, err := Decode("history", []byte(`{"command": "history", "params": {"level": "detail"}, "data": {
 		"extra": 1,
 		"subject": {"id": "e9c6", "title": "Abstract views"},
-		"lines": [{"date": "2026-09-29", "kinds": ["task", "authorised"], "task": {"id": "e9c6"},
-			"pin": {"url": "u", "new": "abc"}, "subproject": {"url": "u", "events": 2, "lines": [{"model": "m"}]}}],
+		"lines": [{"task": {"id": "e9c6"}, "events": [
+			{"date": "2026-09-29", "commit": "abc", "by": "a@b.c", "kind": "task"},
+			{"date": "2026-09-29", "commit": "abc", "by": "a@b.c", "kind": "pin", "pin": {"url": "u", "new": "abc"},
+				"subproject": {"url": "u", "task": "f1a0"}}],
+			"check": {"reading": "agrees", "stated": "m"}, "effect": "authorised_commit"}],
 		"events": 2, "commits": 1, "kinds": [{"kind": "task", "count": 1}],
 		"days": [{"date": "2026-09-29", "events": 2, "commits": 1}]}}`))
 	if err != nil {
@@ -22,7 +25,8 @@ func TestDecodeHistory(t *testing.T) {
 		t.Errorf("decoded %+v", h)
 	}
 	l := h.Lines[0]
-	if len(l.Kinds) != 2 || l.Pin.Old != "" || l.Pin.New != "abc" || l.Sub.Events != 2 || l.Sub.Lines[0].Model != "m" || l.Status != nil || l.Proposal {
+	if len(l.Events) != 2 || l.Events[1].Pin.Old != "" || l.Events[1].Pin.New != "abc" || l.Events[1].Subproject.Task != "f1a0" ||
+		l.Events[0].Recorded != nil || l.Proposal || l.Check.Reading != "agrees" || l.Effect != "authorised_commit" || l.After != nil {
 		t.Errorf("decoded line %+v", l)
 	}
 

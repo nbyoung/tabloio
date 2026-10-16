@@ -32,6 +32,10 @@ var tabloGoldens = []tabloGolden{
 	{"queue", "queue-ada.glance.json", map[string]any{"task": "a1c0", "person": "ada@example.org", "brief": nil}},
 	{"queue", "queue-dan.glance.json", map[string]any{"task": "a1c0", "person": "dan@example.org", "brief": nil}},
 	{"blockage", "blockage.detail.json", map[string]any{"task": "a1c0", "person": nil}},
+	{"history", "history.glance.json", map[string]any{"task": nil, "person": nil}},
+	{"history", "history-4e2b.detail.json", map[string]any{"task": "4e2b", "person": nil}},
+	{"history", "history-c07d.provenance.json", map[string]any{"task": "c07d", "person": nil}},
+	{"audit", "audit.provenance.json", map[string]any{"task": nil, "person": nil, "stale": 7, "now": "2026-09-28"}},
 }
 
 // path is the file's path under testdata.
@@ -82,9 +86,10 @@ func (g tabloGolden) envelope(t testing.TB) (raw, env []byte) {
 
 // TestTabloGoldens decodes each of tablo's golden files and renders it at
 // every level it holds, as Markdown and as text, under the rules every
-// fixture keeps: the levels nest (T6), no rune appears that the data does
-// not hold (T7 and the text T11), two renderings agree (T10), and the text
-// keeps its width and its boxes (the text T10).
+// fixture keeps: the levels nest (T6; the temporal views by their
+// headings), no rune appears that the data does not hold (T7 and the text
+// T11), two renderings agree (T10), and the text keeps its width and its
+// boxes (the text T10).
 func TestTabloGoldens(t *testing.T) {
 	const own = "·…→›—×═─│┌┬┐├┼┤└┴┘┼�"
 	seen := map[string]bool{}
@@ -99,7 +104,19 @@ func TestTabloGoldens(t *testing.T) {
 			if v.Header().Level != g.level(t) {
 				t.Fatalf("the data holds %s", v.Header().Level)
 			}
-			checkLevelsNest(t, v)
+			if g.view == "history" || g.view == "audit" {
+				// The temporal views nest by their headings (TestTemporalFixtures).
+				var prev []string
+				for _, l := range levelsOf(v) {
+					heads := headingsOf(buildFor(t, v, Options{Level: l}))
+					if l > view.Glance && !isSubsequence(prev, heads) {
+						t.Errorf("%s does not hold the headings of %s:\n%v\n%v", l, l-1, heads, prev)
+					}
+					prev = heads
+				}
+			} else {
+				checkLevelsNest(t, v)
+			}
 			for _, l := range levelsOf(v) {
 				for _, o := range []Options{
 					{Level: l, Links: Links{Project: "."}},

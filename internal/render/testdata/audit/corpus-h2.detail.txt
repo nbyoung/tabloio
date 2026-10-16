@@ -16,7 +16,7 @@ H2
   Task: b2c9 Leaf
   Gate: 📐 design
   Message: pat is not the reviewer of the design junction; olive is
-  Action: Have olive@example.org accept the gate with Reviewed: b2c9 design
+  Action: Review: commit Reviewed: b2c9 design
   Resolver: olive@example.org
 ────────────────────────────────────────────────────────────────────────────────
 

@@ -126,19 +126,12 @@
         ],
         "gate": "design",
         "message": "pat is not the reviewer of the design junction; olive is",
-        "action": "Have olive@example.org accept the gate with `Reviewed: b2c9 design`",
         "resolver": "olive@example.org",
         "sentence": "A `Reviewed:` commit from anyone other than the junction's reviewer has no effect, and the audit reports it.",
         "source": {
           "text": "README.md, Status",
           "url": "README.md#status"
         },
-        "facts": [
-          {
-            "name": "Junction",
-            "value": "pat@example.org contributes at 📐 design. olive@example.org reviews it."
-          }
-        ],
         "commits": [
           {
             "hash": "70642890a0993adfaadc9bf56bdb6f4b189858db",
@@ -159,6 +152,28 @@
           {
             "text": "git log --format='%h %ae %(trailers:key=Reviewed)' -E --grep='^Reviewed: b2c9 '",
             "comment": "shows the finding"
+          }
+        ],
+        "key": "H2",
+        "demoted": false,
+        "act": "review",
+        "facts": [
+          {
+            "task": "b2c9",
+            "junction": {
+              "gate": "design",
+              "kind": "plain",
+              "contributor": "pat@example.org",
+              "model": "",
+              "reviewer": "olive@example.org",
+              "reviewer_by_default": false,
+              "from": []
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
           }
         ]
       }

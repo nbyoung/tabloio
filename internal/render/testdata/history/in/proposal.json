@@ -177,26 +177,10 @@
         }
       ]
     },
-    "lines": [
-      {
-        "date": "2026-09-27",
-        "by": "dan@example.org",
-        "kinds": [
-          "task"
-        ],
-        "task": {
-          "id": "3c5d",
-          "title": "Dashboard"
-        },
-        "proposal": true,
-        "after": {
-          "gate": "undefined",
-          "state": "undefined"
-        },
-        "effect": "proposed",
-        "reading": "exempt"
-      }
-    ],
+    "subject": {
+      "id": "a1c0",
+      "title": "Weather station"
+    },
     "events": 1,
     "commits": 1,
     "kinds": [
@@ -236,6 +220,41 @@
             "count": 1
           }
         ]
+      }
+    ],
+    "lines": [
+      {
+        "task": {
+          "id": "3c5d",
+          "title": "Dashboard"
+        },
+        "proposal": true,
+        "events": [
+          {
+            "date": "2026-09-27",
+            "commit": "",
+            "by": "dan@example.org",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": null
+          }
+        ],
+        "after": {
+          "gate": "undefined",
+          "state": "undefined"
+        },
+        "effect": "proposed",
+        "model": "",
+        "check": {
+          "commit": "",
+          "gate": "",
+          "stated": "",
+          "trailer": "",
+          "reading": "exempt"
+        },
+        "committer": ""
       }
     ]
   },

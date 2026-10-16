@@ -172,7 +172,6 @@
         "severity": "error",
         "kind": "A status past a reviewed junction with no review",
         "message": "The status stands at 📏 unit and passes 🧱 implementation, whose reviewer is noreply@anthropic.com; no commit carries the trailer `Reviewed: e3cb implementation`. `fbe3c97` writes that line in its body, not among its trailers",
-        "action": "Review: commit `Reviewed: e3cb implementation`, or return the status to 📐 design, the last reviewed gate",
         "resolver": "noreply@anthropic.com",
         "tasks": [
           {
@@ -189,16 +188,6 @@
           "text": "README.md, Status",
           "url": "README.md#status"
         },
-        "facts": [
-          {
-            "name": "Junction",
-            "value": "`e3cb` at 🧱 implementation takes its contributor noreply@anthropic.com and its model `claude-sonnet` from `437e`. It states no reviewer, so the assignee of `e3cb`, noreply@anthropic.com, reviews."
-          },
-          {
-            "name": "Trailers",
-            "value": "Git reads a trailer only in the last paragraph of a message. In `fbe3c97` the last paragraph holds `Co-Authored-By:` alone, so the reviewer's line counts for nothing."
-          }
-        ],
         "commits": [
           {
             "hash": "0529170",
@@ -259,6 +248,30 @@
             "text": "git commit --allow-empty -m 'Accept the schema files implementation' \\\n    --trailer 'Reviewed: e3cb implementation' --trailer 'Model: <the model that runs>'",
             "comment": "resolves it: noreply@anthropic.com, the reviewer, accepts the gate"
           }
+        ],
+        "key": "S11",
+        "demoted": false,
+        "act": "review",
+        "facts": [
+          {
+            "task": "e3cb",
+            "junction": {
+              "gate": "implementation",
+              "kind": "plain",
+              "contributor": "noreply@anthropic.com",
+              "model": "claude-sonnet",
+              "reviewer": "noreply@anthropic.com",
+              "reviewer_by_default": true,
+              "from": [
+                "437e"
+              ]
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          }
         ]
       },
       {
@@ -266,7 +279,6 @@
         "severity": "warning",
         "kind": "A `Model:` trailer outside the junction's model",
         "message": "`320cf2b` edits both task files under `Model: claude-fable-5-1`; the junction states `claude-haiku`",
-        "action": "Revise the file: state the model that ran at the junction",
         "resolver": "nbyoung@nbyoung.com",
         "tasks": [
           {
@@ -286,16 +298,6 @@
           "text": "README.md, Junctions",
           "url": "README.md#junctions"
         },
-        "facts": [
-          {
-            "name": "Junction",
-            "value": "Each of the two takes 📝 defined from `437e`: contributor noreply@anthropic.com, model `claude-haiku`. The model reads as a prefix; `claude-fable-5-1` lies outside it."
-          },
-          {
-            "name": "Work",
-            "value": "A change to a task file is work at 📝 defined (PLAN.md, decision D8)."
-          }
-        ],
         "commits": [
           {
             "hash": "320cf2b",
@@ -323,6 +325,61 @@
             "text": "git commit .tableaux/tasks/437e.yaml -m 'State the model that defines the project'",
             "comment": "resolves it: nbyoung@nbyoung.com, an authority, states the model that ran"
           }
+        ],
+        "key": "H3",
+        "demoted": false,
+        "act": "revise",
+        "facts": [
+          {
+            "task": "437e",
+            "junction": {
+              "gate": "defined",
+              "kind": "plain",
+              "contributor": "noreply@anthropic.com",
+              "model": "claude-haiku",
+              "reviewer": "",
+              "reviewer_by_default": false,
+              "from": [
+                "437e"
+              ]
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": {
+              "commit": "320cf2b",
+              "gate": "defined",
+              "stated": "claude-haiku",
+              "trailer": "claude-fable-5-1",
+              "reading": "differs"
+            }
+          },
+          {
+            "task": "bc63",
+            "junction": {
+              "gate": "defined",
+              "kind": "plain",
+              "contributor": "noreply@anthropic.com",
+              "model": "claude-haiku",
+              "reviewer": "",
+              "reviewer_by_default": false,
+              "from": [
+                "437e"
+              ]
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": {
+              "commit": "320cf2b",
+              "gate": "defined",
+              "stated": "claude-haiku",
+              "trailer": "claude-fable-5-1",
+              "reading": "differs"
+            }
+          }
         ]
       },
       {
@@ -330,7 +387,6 @@
         "severity": "warning",
         "kind": "A `Model:` trailer outside the junction's model",
         "message": "`018814a` edits the task file under `Model: claude-fable-5-1`; the junction states `claude-haiku`",
-        "action": "Revise the file: state the model that ran at the junction",
         "resolver": "nbyoung@nbyoung.com",
         "tasks": [
           {
@@ -347,16 +403,6 @@
           "text": "README.md, Junctions",
           "url": "README.md#junctions"
         },
-        "facts": [
-          {
-            "name": "Junction",
-            "value": "`ac33` takes 📝 defined from `437e`: contributor noreply@anthropic.com, model `claude-haiku`. The model reads as a prefix; `claude-fable-5-1` lies outside it."
-          },
-          {
-            "name": "Work",
-            "value": "A change to a task file is work at 📝 defined (PLAN.md, decision D8)."
-          }
-        ],
         "commits": [
           {
             "hash": "018814a",
@@ -384,6 +430,36 @@
             "text": "git commit .tableaux/tasks/ac33.yaml -m 'State the model that defines the agent identity task'",
             "comment": "resolves it: nbyoung@nbyoung.com, an authority, states the model that ran"
           }
+        ],
+        "key": "H3",
+        "demoted": false,
+        "act": "revise",
+        "facts": [
+          {
+            "task": "ac33",
+            "junction": {
+              "gate": "defined",
+              "kind": "plain",
+              "contributor": "noreply@anthropic.com",
+              "model": "claude-haiku",
+              "reviewer": "",
+              "reviewer_by_default": false,
+              "from": [
+                "437e"
+              ]
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": {
+              "commit": "018814a",
+              "gate": "defined",
+              "stated": "claude-haiku",
+              "trailer": "claude-fable-5-1",
+              "reading": "differs"
+            }
+          }
         ]
       },
       {
@@ -391,7 +467,6 @@
         "severity": "information",
         "kind": "A hand-off the history implies",
         "message": "The contributor's `5958858` is the newest event and the status states no 👓 review; nbyoung@nbyoung.com may have a mockup to review",
-        "action": "Record the hand-off: the reason 👓 review when the work is done; or work on",
         "resolver": "noreply@anthropic.com",
         "tasks": [
           {
@@ -464,12 +539,6 @@
           "text": "README.md, Status",
           "url": "README.md#status"
         },
-        "facts": [
-          {
-            "name": "Junction",
-            "value": "noreply@anthropic.com contributes at each. nbyoung@nbyoung.com reviews 📌 mockup, as `437e` states."
-          }
-        ],
         "commits": [
           {
             "hash": "5958858",
@@ -494,6 +563,391 @@
             "text": "git commit .tableaux/status/99f0.yaml -m 'Mark the task as awaiting review' \\\n    --trailer 'Model: <the model that runs>'",
             "comment": "resolves it: noreply@anthropic.com, the contributor, hands the finished work off"
           }
+        ],
+        "key": "H4",
+        "demoted": false,
+        "act": "record_handoff",
+        "facts": [
+          {
+            "task": "99f0",
+            "junction": {
+              "gate": "mockup",
+              "kind": "plain",
+              "contributor": "noreply@anthropic.com",
+              "model": "",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": false,
+              "from": [
+                "437e"
+              ]
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          },
+          {
+            "task": "05a9",
+            "junction": {
+              "gate": "mockup",
+              "kind": "plain",
+              "contributor": "noreply@anthropic.com",
+              "model": "",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": false,
+              "from": [
+                "437e"
+              ]
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          },
+          {
+            "task": "a9ce",
+            "junction": {
+              "gate": "mockup",
+              "kind": "plain",
+              "contributor": "noreply@anthropic.com",
+              "model": "",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": false,
+              "from": [
+                "437e"
+              ]
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          },
+          {
+            "task": "bb7c",
+            "junction": {
+              "gate": "mockup",
+              "kind": "plain",
+              "contributor": "noreply@anthropic.com",
+              "model": "",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": false,
+              "from": [
+                "437e"
+              ]
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          },
+          {
+            "task": "c74a",
+            "junction": {
+              "gate": "mockup",
+              "kind": "plain",
+              "contributor": "noreply@anthropic.com",
+              "model": "",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": false,
+              "from": [
+                "437e"
+              ]
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          },
+          {
+            "task": "efff",
+            "junction": {
+              "gate": "mockup",
+              "kind": "plain",
+              "contributor": "noreply@anthropic.com",
+              "model": "",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": false,
+              "from": [
+                "437e"
+              ]
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          },
+          {
+            "task": "ab8e",
+            "junction": {
+              "gate": "mockup",
+              "kind": "plain",
+              "contributor": "noreply@anthropic.com",
+              "model": "",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": false,
+              "from": [
+                "437e"
+              ]
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          },
+          {
+            "task": "c545",
+            "junction": {
+              "gate": "mockup",
+              "kind": "plain",
+              "contributor": "noreply@anthropic.com",
+              "model": "",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": false,
+              "from": [
+                "437e"
+              ]
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          },
+          {
+            "task": "d615",
+            "junction": {
+              "gate": "mockup",
+              "kind": "plain",
+              "contributor": "noreply@anthropic.com",
+              "model": "",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": false,
+              "from": [
+                "437e"
+              ]
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          },
+          {
+            "task": "b14e",
+            "junction": {
+              "gate": "mockup",
+              "kind": "plain",
+              "contributor": "noreply@anthropic.com",
+              "model": "",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": false,
+              "from": [
+                "437e"
+              ]
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          },
+          {
+            "task": "a6f7",
+            "junction": {
+              "gate": "mockup",
+              "kind": "plain",
+              "contributor": "noreply@anthropic.com",
+              "model": "",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": false,
+              "from": [
+                "437e"
+              ]
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          },
+          {
+            "task": "7dff",
+            "junction": {
+              "gate": "mockup",
+              "kind": "plain",
+              "contributor": "noreply@anthropic.com",
+              "model": "",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": false,
+              "from": [
+                "437e"
+              ]
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          },
+          {
+            "task": "b1b7",
+            "junction": {
+              "gate": "mockup",
+              "kind": "plain",
+              "contributor": "noreply@anthropic.com",
+              "model": "",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": false,
+              "from": [
+                "437e"
+              ]
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          },
+          {
+            "task": "ea51",
+            "junction": {
+              "gate": "mockup",
+              "kind": "plain",
+              "contributor": "noreply@anthropic.com",
+              "model": "",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": false,
+              "from": [
+                "437e"
+              ]
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          },
+          {
+            "task": "7783",
+            "junction": {
+              "gate": "mockup",
+              "kind": "plain",
+              "contributor": "noreply@anthropic.com",
+              "model": "",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": false,
+              "from": [
+                "437e"
+              ]
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          },
+          {
+            "task": "5471",
+            "junction": {
+              "gate": "mockup",
+              "kind": "plain",
+              "contributor": "noreply@anthropic.com",
+              "model": "",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": false,
+              "from": [
+                "437e"
+              ]
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          },
+          {
+            "task": "32e7",
+            "junction": {
+              "gate": "mockup",
+              "kind": "plain",
+              "contributor": "noreply@anthropic.com",
+              "model": "",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": false,
+              "from": [
+                "437e"
+              ]
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          },
+          {
+            "task": "69eb",
+            "junction": {
+              "gate": "mockup",
+              "kind": "plain",
+              "contributor": "noreply@anthropic.com",
+              "model": "",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": false,
+              "from": [
+                "437e"
+              ]
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          },
+          {
+            "task": "3194",
+            "junction": {
+              "gate": "mockup",
+              "kind": "plain",
+              "contributor": "noreply@anthropic.com",
+              "model": "",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": false,
+              "from": [
+                "437e"
+              ]
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          },
+          {
+            "task": "a8b4",
+            "junction": {
+              "gate": "mockup",
+              "kind": "plain",
+              "contributor": "noreply@anthropic.com",
+              "model": "",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": false,
+              "from": [
+                "437e"
+              ]
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          }
         ]
       },
       {
@@ -501,7 +955,6 @@
         "severity": "information",
         "kind": "A hand-off the history implies",
         "message": "The contributor's status commit is the newest event (`6762222`, `43d68e4`, `d9396b4`) and the status states no 👓 review; nbyoung@nbyoung.com, the assignee, reviews",
-        "action": "Record the hand-off: the reason 👓 review when the work is done; or work on",
         "resolver": "noreply@anthropic.com",
         "tasks": [
           {
@@ -523,12 +976,6 @@
           "text": "README.md, Status",
           "url": "README.md#status"
         },
-        "facts": [
-          {
-            "name": "Junction",
-            "value": "noreply@anthropic.com contributes at each. nbyoung@nbyoung.com reviews 🧱 implementation as the assignee of each."
-          }
-        ],
         "commits": [
           {
             "hash": "6762222",
@@ -579,6 +1026,62 @@
             "text": "git commit .tableaux/status/ac33.yaml -m 'Mark the task as awaiting review' \\\n    --trailer 'Model: <the model that runs>'",
             "comment": "resolves it: noreply@anthropic.com, the contributor, hands the finished work off"
           }
+        ],
+        "key": "H4",
+        "demoted": false,
+        "act": "record_handoff",
+        "facts": [
+          {
+            "task": "ac33",
+            "junction": {
+              "gate": "implementation",
+              "kind": "plain",
+              "contributor": "noreply@anthropic.com",
+              "model": "",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": true,
+              "from": []
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          },
+          {
+            "task": "9f3f",
+            "junction": {
+              "gate": "implementation",
+              "kind": "plain",
+              "contributor": "noreply@anthropic.com",
+              "model": "",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": true,
+              "from": []
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          },
+          {
+            "task": "7166",
+            "junction": {
+              "gate": "implementation",
+              "kind": "plain",
+              "contributor": "noreply@anthropic.com",
+              "model": "",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": true,
+              "from": []
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          }
         ]
       },
       {
@@ -586,7 +1089,6 @@
         "severity": "information",
         "kind": "A hand-off the history implies",
         "message": "The contributor's `879b447` is the newest event and the status states no 👓 review; the contributor is its own reviewer here",
-        "action": "Record the gate with `Reviewed: e9c6 implementation` on the same commit; or work on",
         "resolver": "noreply@anthropic.com",
         "tasks": [
           {
@@ -603,12 +1105,6 @@
           "text": "README.md, Status",
           "url": "README.md#status"
         },
-        "facts": [
-          {
-            "name": "Junction",
-            "value": "noreply@anthropic.com is the assignee of `e9c6` and so reviews its own work at 🧱 implementation."
-          }
-        ],
         "commits": [
           {
             "hash": "879b447",
@@ -633,6 +1129,28 @@
             "text": "git commit .tableaux/status/e9c6.yaml -m 'Mark the task as awaiting review' \\\n    --trailer 'Model: <the model that runs>'",
             "comment": "resolves it: noreply@anthropic.com, the contributor, hands the finished work off"
           }
+        ],
+        "key": "H4",
+        "demoted": false,
+        "act": "record_handoff",
+        "facts": [
+          {
+            "task": "e9c6",
+            "junction": {
+              "gate": "implementation",
+              "kind": "plain",
+              "contributor": "noreply@anthropic.com",
+              "model": "",
+              "reviewer": "noreply@anthropic.com",
+              "reviewer_by_default": true,
+              "from": []
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          }
         ]
       },
       {
@@ -640,7 +1158,6 @@
         "severity": "information",
         "kind": "A hand-off the history implies",
         "message": "The contributor's `60495c2` is the newest event and the status states no 👓 review; the contributor is its own reviewer here",
-        "action": "Record the gate with `Reviewed: fcec unit` on the same commit; or work on",
         "resolver": "noreply@anthropic.com",
         "tasks": [
           {
@@ -657,12 +1174,6 @@
           "text": "README.md, Status",
           "url": "README.md#status"
         },
-        "facts": [
-          {
-            "name": "Junction",
-            "value": "noreply@anthropic.com is the assignee of `fcec` and so reviews its own work at 📏 unit."
-          }
-        ],
         "commits": [
           {
             "hash": "60495c2",
@@ -687,6 +1198,28 @@
             "text": "git commit .tableaux/status/fcec.yaml -m 'Mark the task as awaiting review' \\\n    --trailer 'Model: <the model that runs>'",
             "comment": "resolves it: noreply@anthropic.com, the contributor, hands the finished work off"
           }
+        ],
+        "key": "H4",
+        "demoted": false,
+        "act": "record_handoff",
+        "facts": [
+          {
+            "task": "fcec",
+            "junction": {
+              "gate": "unit",
+              "kind": "plain",
+              "contributor": "noreply@anthropic.com",
+              "model": "",
+              "reviewer": "noreply@anthropic.com",
+              "reviewer_by_default": true,
+              "from": []
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          }
         ]
       },
       {
@@ -694,7 +1227,6 @@
         "severity": "information",
         "kind": "A hand-off the history implies",
         "message": "The contributor's status commit is the newest event (`3d8ce0e`, `5cbec7c`, `c6f2655`) and the status states no 👓 review; nbyoung@nbyoung.com may have a validation to review",
-        "action": "Record the hand-off: the reason 👓 review when the work is done; or work on",
         "resolver": "noreply@anthropic.com",
         "tasks": [
           {
@@ -716,12 +1248,6 @@
           "text": "README.md, Status",
           "url": "README.md#status"
         },
-        "facts": [
-          {
-            "name": "Junction",
-            "value": "noreply@anthropic.com contributes at each. nbyoung@nbyoung.com reviews 🌍 validate, as `437e` states."
-          }
-        ],
         "commits": [
           {
             "hash": "3d8ce0e",
@@ -771,6 +1297,68 @@
           {
             "text": "git commit .tableaux/status/c2ad.yaml -m 'Mark the task as awaiting review' \\\n    --trailer 'Model: <the model that runs>'",
             "comment": "resolves it: noreply@anthropic.com, the contributor, hands the finished work off"
+          }
+        ],
+        "key": "H4",
+        "demoted": false,
+        "act": "record_handoff",
+        "facts": [
+          {
+            "task": "c2ad",
+            "junction": {
+              "gate": "validate",
+              "kind": "plain",
+              "contributor": "noreply@anthropic.com",
+              "model": "",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": false,
+              "from": [
+                "437e"
+              ]
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          },
+          {
+            "task": "e3cb",
+            "junction": {
+              "gate": "validate",
+              "kind": "plain",
+              "contributor": "noreply@anthropic.com",
+              "model": "",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": false,
+              "from": [
+                "437e"
+              ]
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          },
+          {
+            "task": "7861",
+            "junction": {
+              "gate": "validate",
+              "kind": "plain",
+              "contributor": "noreply@anthropic.com",
+              "model": "",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": false,
+              "from": [
+                "437e"
+              ]
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
           }
         ]
       }

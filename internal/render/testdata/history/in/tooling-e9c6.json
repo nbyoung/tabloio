@@ -170,376 +170,6 @@
       "id": "e9c6",
       "title": "Abstract views"
     },
-    "lines": [
-      {
-        "date": "2026-09-29",
-        "by": "nbyoung@nbyoung.com",
-        "kinds": [
-          "task",
-          "authorised"
-        ],
-        "task": {
-          "id": "e9c6",
-          "title": "Abstract views"
-        },
-        "after": {
-          "gate": "undefined",
-          "state": "undefined"
-        },
-        "effect": "authorised-commit",
-        "reading": "exempt",
-        "commit": {
-          "hash": "6b6c99a2ca35f684674ad886a33916979137f227",
-          "subject": "Plan the Tableaux tooling",
-          "date": "2026-09-29",
-          "author": {
-            "name": "Norman Young",
-            "email": "nbyoung@nbyoung.com"
-          },
-          "committer": {
-            "name": "Norman Young",
-            "email": "nbyoung@nbyoung.com"
-          },
-          "author_time": "2026-09-29T16:38:16-04:00",
-          "trailers": [
-            "Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
-          ],
-          "files": [
-            {
-              "path": ".tableaux/tasks/e9c6.yaml",
-              "change": "added"
-            }
-          ]
-        },
-        "commands": [
-          {
-            "text": "git log --format='%as %h %ae' -- .tableaux/tasks/e9c6.yaml .tableaux/status/e9c6.yaml"
-          }
-        ]
-      },
-      {
-        "date": "2026-09-29",
-        "by": "noreply@anthropic.com",
-        "kinds": [
-          "status"
-        ],
-        "task": {
-          "id": "e9c6",
-          "title": "Abstract views"
-        },
-        "status": {
-          "gate": "defined",
-          "state": "nominal",
-          "note": "Design waits for Roles (c2ad) at design"
-        },
-        "after": {
-          "gate": "defined",
-          "state": "nominal"
-        },
-        "reading": "exempt",
-        "committer": "nbyoung@nbyoung.com",
-        "commit": {
-          "hash": "1a17bfcca843d4436e2eb4c75b5cfa98ec05d658",
-          "subject": "Record the defined gate for the views and mockups",
-          "date": "2026-09-29",
-          "author": {
-            "name": "Claude Fable 5.1",
-            "email": "noreply@anthropic.com"
-          },
-          "committer": {
-            "name": "Norman Young",
-            "email": "nbyoung@nbyoung.com"
-          },
-          "author_time": "2026-09-29T17:46:53-04:00",
-          "trailers": [
-            "Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
-          ],
-          "files": [
-            {
-              "path": ".tableaux/status/e9c6.yaml",
-              "change": "added"
-            }
-          ]
-        },
-        "commands": [
-          {
-            "text": "git log --format='%as %h %ae' -- .tableaux/tasks/e9c6.yaml .tableaux/status/e9c6.yaml"
-          },
-          {
-            "text": "git show 1a17bfc:.tableaux/status/e9c6.yaml"
-          }
-        ]
-      },
-      {
-        "date": "2026-09-29",
-        "by": "noreply@anthropic.com",
-        "kinds": [
-          "reviewed"
-        ],
-        "task": {
-          "id": "e9c6",
-          "title": "Abstract views"
-        },
-        "gate": "defined",
-        "after": {
-          "gate": "defined",
-          "state": "nominal"
-        },
-        "unchanged": true,
-        "effect": "stands",
-        "reading": "exempt",
-        "committer": "nbyoung@nbyoung.com",
-        "commit": {
-          "hash": "5958858ff25a624aea18f26471f95b92616fc7e6",
-          "subject": "Accept the defined gate of the views and mockups",
-          "date": "2026-09-29",
-          "author": {
-            "name": "Claude Fable 5.1",
-            "email": "noreply@anthropic.com"
-          },
-          "committer": {
-            "name": "Norman Young",
-            "email": "nbyoung@nbyoung.com"
-          },
-          "author_time": "2026-09-29T18:01:32-04:00",
-          "trailers": [
-            "Reviewed: e9c6 defined",
-            "Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
-          ]
-        },
-        "commands": [
-          {
-            "text": "git log --format='%as %h %ae' -E --grep='^(Authorised|Reaffirmed): e9c6$' --grep='^Reviewed: e9c6 '"
-          }
-        ]
-      },
-      {
-        "date": "2026-09-30",
-        "by": "noreply@anthropic.com",
-        "kinds": [
-          "status"
-        ],
-        "task": {
-          "id": "e9c6",
-          "title": "Abstract views"
-        },
-        "status": {
-          "gate": "defined",
-          "state": "nominal",
-          "reason": "review",
-          "note": "The VIEWS.md design on branch worktree-agent-a6b84238bbacc4fcd awaits the owner's review at the design gate"
-        },
-        "after": {
-          "gate": "defined",
-          "state": "nominal",
-          "reason": "review"
-        },
-        "effect": "handoff",
-        "model": "claude-fable-5-1",
-        "stated": "claude-fable",
-        "stated_gate": "design",
-        "reading": "agrees",
-        "commit": {
-          "hash": "0fed913a401606e7d6d2bbee72385f2c56204231",
-          "subject": "Mark the abstract views design as awaiting review",
-          "date": "2026-09-30",
-          "author": {
-            "name": "Claude Fable 5.1",
-            "email": "noreply@anthropic.com"
-          },
-          "committer": {
-            "name": "Claude Fable 5.1",
-            "email": "noreply@anthropic.com"
-          },
-          "author_time": "2026-09-30T07:43:32-04:00",
-          "trailers": [
-            "Model: claude-fable-5-1",
-            "Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
-          ],
-          "files": [
-            {
-              "path": ".tableaux/status/e9c6.yaml",
-              "change": "changed"
-            }
-          ]
-        },
-        "commands": [
-          {
-            "text": "git log --format='%as %h %ae' -- .tableaux/tasks/e9c6.yaml .tableaux/status/e9c6.yaml"
-          },
-          {
-            "text": "git show 0fed913:.tableaux/status/e9c6.yaml"
-          }
-        ]
-      },
-      {
-        "date": "2026-09-30",
-        "by": "noreply@anthropic.com",
-        "kinds": [
-          "status"
-        ],
-        "task": {
-          "id": "e9c6",
-          "title": "Abstract views"
-        },
-        "status": {
-          "gate": "defined",
-          "state": "nominal",
-          "reason": "review",
-          "note": "The revised VIEWS.md design on branch worktree-agent-a6b84238bbacc4fcd awaits the owner's acceptance at the design gate"
-        },
-        "after": {
-          "gate": "defined",
-          "state": "nominal",
-          "reason": "review"
-        },
-        "effect": "handoff",
-        "model": "claude-fable-5-1",
-        "stated": "claude-fable",
-        "stated_gate": "design",
-        "reading": "agrees",
-        "commit": {
-          "hash": "26defc75c452b21dcd9c86d4a2bfa71b685e52a3",
-          "subject": "Mark the revised abstract views design as awaiting acceptance",
-          "date": "2026-09-30",
-          "author": {
-            "name": "Claude Fable 5.1",
-            "email": "noreply@anthropic.com"
-          },
-          "committer": {
-            "name": "Claude Fable 5.1",
-            "email": "noreply@anthropic.com"
-          },
-          "author_time": "2026-09-30T15:12:04-04:00",
-          "trailers": [
-            "Model: claude-fable-5-1",
-            "Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
-          ],
-          "files": [
-            {
-              "path": ".tableaux/status/e9c6.yaml",
-              "change": "changed"
-            }
-          ]
-        },
-        "commands": [
-          {
-            "text": "git log --format='%as %h %ae' -- .tableaux/tasks/e9c6.yaml .tableaux/status/e9c6.yaml"
-          },
-          {
-            "text": "git show 26defc7:.tableaux/status/e9c6.yaml"
-          }
-        ]
-      },
-      {
-        "date": "2026-09-30",
-        "by": "nbyoung@nbyoung.com",
-        "kinds": [
-          "reviewed"
-        ],
-        "task": {
-          "id": "e9c6",
-          "title": "Abstract views"
-        },
-        "gate": "design",
-        "after": {
-          "gate": "defined",
-          "state": "nominal",
-          "reason": "review"
-        },
-        "unchanged": true,
-        "effect": "accepts",
-        "model": "claude-opus-5-5",
-        "commit": {
-          "hash": "0704a0912297b3de0218b821384cf1b9956a44bb",
-          "subject": "Accept the abstract views design",
-          "date": "2026-09-30",
-          "author": {
-            "name": "Norman Young",
-            "email": "nbyoung@nbyoung.com"
-          },
-          "committer": {
-            "name": "Norman Young",
-            "email": "nbyoung@nbyoung.com"
-          },
-          "author_time": "2026-09-30T15:16:33-04:00",
-          "trailers": [
-            "Reviewed: e9c6 design",
-            "Model: claude-opus-5-5",
-            "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
-          ]
-        },
-        "commands": [
-          {
-            "text": "git log --format='%as %h %ae' -E --grep='^(Authorised|Reaffirmed): e9c6$' --grep='^Reviewed: e9c6 '"
-          }
-        ]
-      },
-      {
-        "date": "2026-09-30",
-        "by": "noreply@anthropic.com",
-        "kinds": [
-          "status"
-        ],
-        "task": {
-          "id": "e9c6",
-          "title": "Abstract views"
-        },
-        "status": {
-          "gate": "design",
-          "state": "nominal",
-          "note": "VIEWS.md is on the trunk at language 0.3.1; the twenty mockups may start, and implementation puts the text in place"
-        },
-        "after": {
-          "gate": "design",
-          "state": "nominal"
-        },
-        "model": "claude-fable-5-1",
-        "stated": "claude-fable",
-        "stated_gate": "design",
-        "reading": "agrees",
-        "commit": {
-          "hash": "879b447a920aad55e698906812350ea7d3785b4c",
-          "subject": "Advance the abstract views task to its design gate",
-          "date": "2026-09-30",
-          "author": {
-            "name": "Claude Fable 5.1",
-            "email": "noreply@anthropic.com"
-          },
-          "committer": {
-            "name": "Claude Fable 5.1",
-            "email": "noreply@anthropic.com"
-          },
-          "author_time": "2026-09-30T15:17:53-04:00",
-          "trailers": [
-            "Model: claude-fable-5-1",
-            "Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
-          ],
-          "files": [
-            {
-              "path": ".tableaux/status/e9c6.yaml",
-              "change": "changed"
-            }
-          ]
-        },
-        "commands": [
-          {
-            "text": "git log --format='%as %h %ae' -- .tableaux/tasks/e9c6.yaml .tableaux/status/e9c6.yaml"
-          },
-          {
-            "text": "git show 879b447:.tableaux/status/e9c6.yaml"
-          }
-        ]
-      }
-    ],
-    "commands": [
-      {
-        "text": "git log --format='%as %h %ae' -- .tableaux/tasks/e9c6.yaml .tableaux/status/e9c6.yaml"
-      },
-      {
-        "text": "git log --format='%as %h %ae' -E --grep='^(Authorised|Reaffirmed): e9c6$' --grep='^Reviewed: e9c6 '"
-      }
-    ],
     "events": 8,
     "commits": 7,
     "kinds": [
@@ -606,6 +236,431 @@
             "count": 1
           }
         ]
+      }
+    ],
+    "lines": [
+      {
+        "task": {
+          "id": "e9c6",
+          "title": "Abstract views"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "6b6c99a2ca35f684674ad886a33916979137f227",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": null
+          },
+          {
+            "date": "2026-09-29",
+            "commit": "6b6c99a2ca35f684674ad886a33916979137f227",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "authorised",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": null
+          }
+        ],
+        "after": {
+          "gate": "undefined",
+          "state": "undefined"
+        },
+        "effect": "authorised_commit",
+        "model": "",
+        "check": {
+          "commit": "6b6c99a2ca35f684674ad886a33916979137f227",
+          "gate": "",
+          "stated": "",
+          "trailer": "",
+          "reading": "exempt"
+        },
+        "committer": "",
+        "commit": {
+          "hash": "6b6c99a2ca35f684674ad886a33916979137f227",
+          "subject": "Plan the Tableaux tooling",
+          "date": "2026-09-29",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "author_time": "2026-09-29T16:38:16-04:00",
+          "trailers": [
+            "Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/tasks/e9c6.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "e9c6",
+          "title": "Abstract views"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "1a17bfcca843d4436e2eb4c75b5cfa98ec05d658",
+            "by": "noreply@anthropic.com",
+            "kind": "status",
+            "recorded": {
+              "gate": "defined",
+              "state": "nominal",
+              "reason": "",
+              "note": "Design waits for Roles (c2ad) at design"
+            },
+            "gate": "",
+            "pin": null,
+            "subproject": null
+          }
+        ],
+        "after": {
+          "gate": "defined",
+          "state": "nominal"
+        },
+        "effect": "",
+        "model": "",
+        "check": {
+          "commit": "1a17bfcca843d4436e2eb4c75b5cfa98ec05d658",
+          "gate": "",
+          "stated": "",
+          "trailer": "",
+          "reading": "exempt"
+        },
+        "committer": "nbyoung@nbyoung.com",
+        "commit": {
+          "hash": "1a17bfcca843d4436e2eb4c75b5cfa98ec05d658",
+          "subject": "Record the defined gate for the views and mockups",
+          "date": "2026-09-29",
+          "author": {
+            "name": "Claude Fable 5.1",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "author_time": "2026-09-29T17:46:53-04:00",
+          "trailers": [
+            "Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/status/e9c6.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "e9c6",
+          "title": "Abstract views"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "5958858ff25a624aea18f26471f95b92616fc7e6",
+            "by": "noreply@anthropic.com",
+            "kind": "reviewed",
+            "recorded": null,
+            "gate": "defined",
+            "pin": null,
+            "subproject": null
+          }
+        ],
+        "after": {
+          "gate": "defined",
+          "state": "nominal"
+        },
+        "unchanged": true,
+        "effect": "stands",
+        "model": "",
+        "check": {
+          "commit": "5958858ff25a624aea18f26471f95b92616fc7e6",
+          "gate": "",
+          "stated": "",
+          "trailer": "",
+          "reading": "exempt"
+        },
+        "committer": "nbyoung@nbyoung.com",
+        "commit": {
+          "hash": "5958858ff25a624aea18f26471f95b92616fc7e6",
+          "subject": "Accept the defined gate of the views and mockups",
+          "date": "2026-09-29",
+          "author": {
+            "name": "Claude Fable 5.1",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "author_time": "2026-09-29T18:01:32-04:00",
+          "trailers": [
+            "Reviewed: e9c6 defined",
+            "Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "e9c6",
+          "title": "Abstract views"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-30",
+            "commit": "0fed913a401606e7d6d2bbee72385f2c56204231",
+            "by": "noreply@anthropic.com",
+            "kind": "status",
+            "recorded": {
+              "gate": "defined",
+              "state": "nominal",
+              "reason": "review",
+              "note": "The VIEWS.md design on branch worktree-agent-a6b84238bbacc4fcd awaits the owner's review at the design gate"
+            },
+            "gate": "",
+            "pin": null,
+            "subproject": null
+          }
+        ],
+        "after": {
+          "gate": "defined",
+          "state": "nominal",
+          "reason": "review"
+        },
+        "effect": "handoff",
+        "model": "claude-fable-5-1",
+        "check": {
+          "commit": "0fed913a401606e7d6d2bbee72385f2c56204231",
+          "gate": "design",
+          "stated": "claude-fable",
+          "trailer": "claude-fable-5-1",
+          "reading": "agrees"
+        },
+        "committer": "",
+        "commit": {
+          "hash": "0fed913a401606e7d6d2bbee72385f2c56204231",
+          "subject": "Mark the abstract views design as awaiting review",
+          "date": "2026-09-30",
+          "author": {
+            "name": "Claude Fable 5.1",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Claude Fable 5.1",
+            "email": "noreply@anthropic.com"
+          },
+          "author_time": "2026-09-30T07:43:32-04:00",
+          "trailers": [
+            "Model: claude-fable-5-1",
+            "Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/status/e9c6.yaml",
+              "change": "changed"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "e9c6",
+          "title": "Abstract views"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-30",
+            "commit": "26defc75c452b21dcd9c86d4a2bfa71b685e52a3",
+            "by": "noreply@anthropic.com",
+            "kind": "status",
+            "recorded": {
+              "gate": "defined",
+              "state": "nominal",
+              "reason": "review",
+              "note": "The revised VIEWS.md design on branch worktree-agent-a6b84238bbacc4fcd awaits the owner's acceptance at the design gate"
+            },
+            "gate": "",
+            "pin": null,
+            "subproject": null
+          }
+        ],
+        "after": {
+          "gate": "defined",
+          "state": "nominal",
+          "reason": "review"
+        },
+        "effect": "handoff",
+        "model": "claude-fable-5-1",
+        "check": {
+          "commit": "26defc75c452b21dcd9c86d4a2bfa71b685e52a3",
+          "gate": "design",
+          "stated": "claude-fable",
+          "trailer": "claude-fable-5-1",
+          "reading": "agrees"
+        },
+        "committer": "",
+        "commit": {
+          "hash": "26defc75c452b21dcd9c86d4a2bfa71b685e52a3",
+          "subject": "Mark the revised abstract views design as awaiting acceptance",
+          "date": "2026-09-30",
+          "author": {
+            "name": "Claude Fable 5.1",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Claude Fable 5.1",
+            "email": "noreply@anthropic.com"
+          },
+          "author_time": "2026-09-30T15:12:04-04:00",
+          "trailers": [
+            "Model: claude-fable-5-1",
+            "Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/status/e9c6.yaml",
+              "change": "changed"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "e9c6",
+          "title": "Abstract views"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-30",
+            "commit": "0704a0912297b3de0218b821384cf1b9956a44bb",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "reviewed",
+            "recorded": null,
+            "gate": "design",
+            "pin": null,
+            "subproject": null
+          }
+        ],
+        "after": {
+          "gate": "defined",
+          "state": "nominal",
+          "reason": "review"
+        },
+        "unchanged": true,
+        "effect": "accepts",
+        "model": "claude-opus-5-5",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "0704a0912297b3de0218b821384cf1b9956a44bb",
+          "subject": "Accept the abstract views design",
+          "date": "2026-09-30",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "author_time": "2026-09-30T15:16:33-04:00",
+          "trailers": [
+            "Reviewed: e9c6 design",
+            "Model: claude-opus-5-5",
+            "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "e9c6",
+          "title": "Abstract views"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-30",
+            "commit": "879b447a920aad55e698906812350ea7d3785b4c",
+            "by": "noreply@anthropic.com",
+            "kind": "status",
+            "recorded": {
+              "gate": "design",
+              "state": "nominal",
+              "reason": "",
+              "note": "VIEWS.md is on the trunk at language 0.3.1; the twenty mockups may start, and implementation puts the text in place"
+            },
+            "gate": "",
+            "pin": null,
+            "subproject": null
+          }
+        ],
+        "after": {
+          "gate": "design",
+          "state": "nominal"
+        },
+        "effect": "",
+        "model": "claude-fable-5-1",
+        "check": {
+          "commit": "879b447a920aad55e698906812350ea7d3785b4c",
+          "gate": "design",
+          "stated": "claude-fable",
+          "trailer": "claude-fable-5-1",
+          "reading": "agrees"
+        },
+        "committer": "",
+        "commit": {
+          "hash": "879b447a920aad55e698906812350ea7d3785b4c",
+          "subject": "Advance the abstract views task to its design gate",
+          "date": "2026-09-30",
+          "author": {
+            "name": "Claude Fable 5.1",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Claude Fable 5.1",
+            "email": "noreply@anthropic.com"
+          },
+          "author_time": "2026-09-30T15:17:53-04:00",
+          "trailers": [
+            "Model: claude-fable-5-1",
+            "Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/status/e9c6.yaml",
+              "change": "changed"
+            }
+          ]
+        }
+      }
+    ],
+    "commands": [
+      {
+        "text": "git log --format='%as %h %ae' -- .tableaux/tasks/e9c6.yaml .tableaux/status/e9c6.yaml"
+      },
+      {
+        "text": "git log --format='%as %h %ae' -E --grep='^(Authorised|Reaffirmed): e9c6$' --grep='^Reviewed: e9c6 '"
       }
     ]
   },

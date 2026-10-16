@@ -18,10 +18,6 @@ Legend: `tabloio gates`.
   - Committer: Norman Young \<nbyoung@nbyoung.com>
   - Trailers: `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`
   - Files: `.tableaux/tasks/e9c6.yaml` (added)
-  - Reproduce:
-    ```
-    git log --format='%as %h %ae' -- .tableaux/tasks/e9c6.yaml .tableaux/status/e9c6.yaml
-    ```
 - **2026-09-29** · noreply@anthropic.com · status · `e9c6` Abstract views · 📝 defined 🟢 nominal
   - Status after: 📝 defined 🟢 nominal
   - Note: Design waits for Roles (c2ad) at design
@@ -33,11 +29,6 @@ Legend: `tabloio gates`.
   - Committer: Norman Young \<nbyoung@nbyoung.com>
   - Trailers: `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`
   - Files: `.tableaux/status/e9c6.yaml` (added)
-  - Reproduce:
-    ```
-    git log --format='%as %h %ae' -- .tableaux/tasks/e9c6.yaml .tableaux/status/e9c6.yaml
-    git show 1a17bfc:.tableaux/status/e9c6.yaml
-    ```
 - **2026-09-29** · noreply@anthropic.com · reviewed · `e9c6` Abstract views · 📝 defined
   - Status after: 📝 defined 🟢 nominal, unchanged
   - Effect: none; the authorisation stands as the review
@@ -48,10 +39,6 @@ Legend: `tabloio gates`.
   - Author: Claude Fable 5.1 \<noreply@anthropic.com>, 2026-09-29 18:01:32 -0400
   - Committer: Norman Young \<nbyoung@nbyoung.com>
   - Trailers: `Reviewed: e9c6 defined`, `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`
-  - Reproduce:
-    ```
-    git log --format='%as %h %ae' -E --grep='^(Authorised|Reaffirmed): e9c6$' --grep='^Reviewed: e9c6 '
-    ```
 
 ## 2026-09-30 · 4 events in 4 commits: 3 status, 1 reviewed
 
@@ -66,11 +53,6 @@ Legend: `tabloio gates`.
   - Committer: Claude Fable 5.1 \<noreply@anthropic.com>
   - Trailers: `Model: claude-fable-5-1`, `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`
   - Files: `.tableaux/status/e9c6.yaml` (changed)
-  - Reproduce:
-    ```
-    git log --format='%as %h %ae' -- .tableaux/tasks/e9c6.yaml .tableaux/status/e9c6.yaml
-    git show 0fed913:.tableaux/status/e9c6.yaml
-    ```
 - **2026-09-30** · noreply@anthropic.com · status · `e9c6` Abstract views · 📝 defined 🟢 nominal 👓 review
   - Status after: 📝 defined 🟢 nominal 👓 review
   - Note: The revised VIEWS.md design on branch worktree-agent-a6b84238bbacc4fcd awaits the owner's acceptance at the design gate
@@ -82,11 +64,6 @@ Legend: `tabloio gates`.
   - Committer: Claude Fable 5.1 \<noreply@anthropic.com>
   - Trailers: `Model: claude-fable-5-1`, `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`
   - Files: `.tableaux/status/e9c6.yaml` (changed)
-  - Reproduce:
-    ```
-    git log --format='%as %h %ae' -- .tableaux/tasks/e9c6.yaml .tableaux/status/e9c6.yaml
-    git show 26defc7:.tableaux/status/e9c6.yaml
-    ```
 - **2026-09-30** · nbyoung@nbyoung.com · reviewed · `e9c6` Abstract views · 📐 design
   - Status after: 📝 defined 🟢 nominal 👓 review, unchanged
   - Effect: the reviewer accepts the work at the gate
@@ -96,10 +73,6 @@ Legend: `tabloio gates`.
   - Author: Norman Young \<nbyoung@nbyoung.com>, 2026-09-30 15:16:33 -0400
   - Committer: Norman Young \<nbyoung@nbyoung.com>
   - Trailers: `Reviewed: e9c6 design`, `Model: claude-opus-5-5`, `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`
-  - Reproduce:
-    ```
-    git log --format='%as %h %ae' -E --grep='^(Authorised|Reaffirmed): e9c6$' --grep='^Reviewed: e9c6 '
-    ```
 - **2026-09-30** · noreply@anthropic.com · status · `e9c6` Abstract views · 📐 design 🟢 nominal
   - Status after: 📐 design 🟢 nominal
   - Note: VIEWS.md is on the trunk at language 0.3.1; the twenty mockups may start, and implementation puts the text in place
@@ -110,11 +83,6 @@ Legend: `tabloio gates`.
   - Committer: Claude Fable 5.1 \<noreply@anthropic.com>
   - Trailers: `Model: claude-fable-5-1`, `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`
   - Files: `.tableaux/status/e9c6.yaml` (changed)
-  - Reproduce:
-    ```
-    git log --format='%as %h %ae' -- .tableaux/tasks/e9c6.yaml .tableaux/status/e9c6.yaml
-    git show 879b447:.tableaux/status/e9c6.yaml
-    ```
 
 ```
 git log --format='%as %h %ae' -- .tableaux/tasks/e9c6.yaml .tableaux/status/e9c6.yaml
