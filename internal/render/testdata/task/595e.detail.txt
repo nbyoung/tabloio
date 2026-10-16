@@ -58,9 +58,6 @@ Junctions
 ────────────────────────────────────────────────────────────────────────────────
 Gate · Marks · Contributor · Model · Reviewer · Subproject · Stands
 ────────────────────────────────────────────────────────────────────────────────
-❔ undefined
-  Stands: passed
-────────────────────────────────────────────────────────────────────────────────
 📝 defined
   Marks: 🤖👀
   Contributor: noreply@anthropic.com

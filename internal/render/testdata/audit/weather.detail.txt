@@ -16,7 +16,7 @@ Rule · Severity · Task · Gate · File · Message · Action · Resolver
   File: tasks/9f31.yaml
   Message: The task stands proposed: no trailer or owner commit on the trunk
     authorises it
-  Action: Have an authority merge the task or commit the Authorised: trailer
+  Action: Authorise: commit Authorised: 9f31
   Resolver: ada@example.org
 ────────────────────────────────────────────────────────────────────────────────
   Severity: warning
@@ -25,7 +25,7 @@ Rule · Severity · Task · Gate · File · Message · Action · Resolver
   File: status/3c5d.yaml
   Message: The status dates from 2026-09-22, more than 3 days before
     2026-09-28, with no later reaffirmation
-  Action: Reaffirm the status with Reaffirmed: 3c5d, or record the next event
+  Action: Reaffirm: commit Reaffirmed: 3c5d
   Resolver: dan@example.org
 ────────────────────────────────────────────────────────────────────────────────
 

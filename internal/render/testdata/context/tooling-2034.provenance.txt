@@ -51,7 +51,7 @@ Folded columns
 │     🔗…🚀     │ 🚀 release   │     0 │
 └───────────────┴──────────────┴───────┘
 
-Status cells: 2
+Status cells: 1
 ───────────────
 
 ────────────────────────────────────────────────────────────────────────────────
@@ -64,13 +64,6 @@ e9c6
   Deciding commit: 879b447 Advance the abstract views task to its design gate
   Committer: noreply@anthropic.com
   Trailers: Model: claude-fable-5-1
-────────────────────────────────────────────────────────────────────────────────
-99f0
-  Cell: 📝 defined
-  Date: 2026-09-29
-  Recorder: noreply@anthropic.com
-  Deciding commit: 1a17bfc Record the defined gate for the views and mockups
-  Committer: nbyoung@nbyoung.com
 ────────────────────────────────────────────────────────────────────────────────
 
 Roll-ups: 3
@@ -89,28 +82,15 @@ Roll-ups: 3
 │                     │                     │ Html                │            │
 └─────────────────────┴─────────────────────┴─────────────────────┴────────────┘
 
-Marks: 3
+Marks: 2
 ────────
 
 ┌───────────┬────┬─────────────┬────────────────────────┬──────────────────────┐
 │ Gate      │Mark│ Rows        │ Contributor and model  │ Reviewer             │
 ├───────────┼────┼─────────────┼────────────────────────┼──────────────────────┤
-│ 📌 mockup │🤖👀│ 437e bc63   │ noreply@anthropic.com, │ nbyoung@nbyoung.com, │
-│           │    │ 2034 bc86   │ claude-opus, from 437e │ from 437e            │
-│           │    │ 5fe3 99f0   │                        │                      │
-│           │    │ 05a9 a9ce   │                        │                      │
-│           │    │ bb7c c74a   │                        │                      │
-│           │    │ efff ab8e   │                        │                      │
-│           │    │ c545 d615   │                        │                      │
-│           │    │ b14e a6f7   │                        │                      │
-│           │    │ 7dff b1b7   │                        │                      │
-│           │    │ ea51 7783   │                        │                      │
-│           │    │ 5471 32e7   │                        │                      │
-│           │    │ 69eb 3194   │                        │                      │
-│           │    │ a8b4        │                        │                      │
-│ 📐 design │🤖👀│ 437e        │ noreply@anthropic.com, │ nbyoung@nbyoung.com, │
-│           │    │             │ claude-opus, from 437e │ from 437e            │
-│ 📐 design │🤖👀│ bc63 2034   │ noreply@anthropic.com, │ nbyoung@nbyoung.com, │
+│ 📌 mockup │🤖👀│ 2034 bc86   │ noreply@anthropic.com, │ nbyoung@nbyoung.com, │
+│           │    │ 5fe3        │ claude-opus, from 437e │ from 437e            │
+│ 📐 design │🤖👀│ 2034        │ noreply@anthropic.com, │ nbyoung@nbyoung.com, │
 │           │    │             │ claude-fable, from     │ from 437e            │
 │           │    │             │ bc63                   │                      │
 └───────────┴────┴─────────────┴────────────────────────┴──────────────────────┘

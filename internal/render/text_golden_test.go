@@ -188,58 +188,63 @@ func preLines(blocks []doc.Block, into map[string]bool) {
 func TestTextInvariants(t *testing.T) {
 	for _, c := range textCases(t) {
 		t.Run(c.view+"/"+c.name+"."+c.level.String()+c.suffix, func(t *testing.T) {
-			out := renderText(t, c)
-			limit := c.width
-			if limit == 0 {
-				limit = text.DefaultWidth
-			}
-			pre := map[string]bool{}
-			preLines(buildFor(t, c.fixture(t), c.options()).Blocks, pre)
-			if !strings.HasSuffix(out, "\n") || strings.HasSuffix(out, "\n\n") {
-				t.Error("the output does not end in exactly one newline")
-			}
-			for _, r := range out {
-				if r != '\n' && unicode.IsControl(r) {
-					t.Errorf("control character %U", r)
-				}
-			}
-			var box []string
-			lines := strings.Split(strings.TrimSuffix(out, "\n"), "\n")
-			for i, ln := range lines {
-				// The closing command prints on one line, past the limit if need be (decision 8c).
-				isPre := pre[strings.TrimSpace(ln)] && strings.HasPrefix(ln, "    ") ||
-					i == len(lines)-1 && strings.HasPrefix(ln, "Command: ")
-				if strings.HasSuffix(ln, " ") {
-					t.Errorf("line %d ends in a space: %q", i+1, ln)
-				}
-				if cellsOf(ln) > limit && !isPre {
-					t.Errorf("line %d is %d cells, over %d: %q", i+1, cellsOf(ln), limit, ln)
-				}
-				if !isPre {
-					prev := rune(0)
-					for _, r := range ln {
-						if r == '️' && prev != 0 && cellsOf(string(prev)) == 1 {
-							t.Errorf("line %d holds a selector after %U", i+1, prev)
-						}
-						prev = r
-					}
-				}
-				switch {
-				case strings.HasPrefix(ln, "┌"):
-					box = []string{ln}
-				case box != nil:
-					box = append(box, ln)
-					if strings.HasPrefix(ln, "└") {
-						for _, b := range box {
-							if cellsOf(b) != cellsOf(box[0]) {
-								t.Errorf("line %d: a box line of %d cells under a rule of %d: %q", i+1, cellsOf(b), cellsOf(box[0]), b)
-							}
-						}
-						box = nil
-					}
-				}
-			}
+			checkTextInvariants(t, renderText(t, c), c.width, buildFor(t, c.fixture(t), c.options()))
 		})
+	}
+}
+
+// checkTextInvariants checks T10 on one text rendering of the document d at
+// the width limit, 0 for the default.
+func checkTextInvariants(t *testing.T, out string, limit int, d doc.Doc) {
+	t.Helper()
+	if limit == 0 {
+		limit = text.DefaultWidth
+	}
+	pre := map[string]bool{}
+	preLines(d.Blocks, pre)
+	if !strings.HasSuffix(out, "\n") || strings.HasSuffix(out, "\n\n") {
+		t.Error("the output does not end in exactly one newline")
+	}
+	for _, r := range out {
+		if r != '\n' && unicode.IsControl(r) {
+			t.Errorf("control character %U", r)
+		}
+	}
+	var box []string
+	lines := strings.Split(strings.TrimSuffix(out, "\n"), "\n")
+	for i, ln := range lines {
+		// The closing command prints on one line, past the limit if need be (decision 8c).
+		isPre := pre[strings.TrimSpace(ln)] && strings.HasPrefix(ln, "    ") ||
+			i == len(lines)-1 && strings.HasPrefix(ln, "Command: ")
+		if strings.HasSuffix(ln, " ") {
+			t.Errorf("line %d ends in a space: %q", i+1, ln)
+		}
+		if cellsOf(ln) > limit && !isPre {
+			t.Errorf("line %d is %d cells, over %d: %q", i+1, cellsOf(ln), limit, ln)
+		}
+		if !isPre {
+			prev := rune(0)
+			for _, r := range ln {
+				if r == '️' && prev != 0 && cellsOf(string(prev)) == 1 {
+					t.Errorf("line %d holds a selector after %U", i+1, prev)
+				}
+				prev = r
+			}
+		}
+		switch {
+		case strings.HasPrefix(ln, "┌"):
+			box = []string{ln}
+		case box != nil:
+			box = append(box, ln)
+			if strings.HasPrefix(ln, "└") {
+				for _, b := range box {
+					if cellsOf(b) != cellsOf(box[0]) {
+						t.Errorf("line %d: a box line of %d cells under a rule of %d: %q", i+1, cellsOf(b), cellsOf(box[0]), b)
+					}
+				}
+				box = nil
+			}
+		}
 	}
 }
 

@@ -532,11 +532,9 @@ nbyoung@nbyoung.com, provenance
 │ Position  │ Tasks                          │ Stated in                       │
 ├───────────┼────────────────────────────────┼─────────────────────────────────┤
 │ Assignee  │ 10: 437e bc63 2034 ac33 9f3f   │ assignee in                     │
-│           │ 7166 77b2 6103 c6e8 595e       │ .tableaux/tasks/ID.yaml, commit │
-│           │                                │ 6b6c99a                         │
+│           │ 7166 77b2 6103 c6e8 595e       │ .tableaux/tasks/ID.yaml         │
 │ Authority │ 1: 437e                        │ 437e Tableaux tooling, assignee │
-│           │                                │ in .tableaux/tasks/437e.yaml,   │
-│           │                                │ commit 6b6c99a                  │
+│           │                                │ in .tableaux/tasks/437e.yaml    │
 └───────────┴────────────────────────────────┴─────────────────────────────────┘
 
 ┌─────────────┬────────────┬──────────────────────────┬──────────┬─────────────┐
@@ -546,7 +544,7 @@ nbyoung@nbyoung.com, provenance
 │ 🚀 release  │ 8: c2ad    │ 437e Tableaux tooling,   │          │             │
 │             │ e9c6 e3cb  │ junctions.release in     │          │             │
 │             │ fcec ac33  │ .tableaux/tasks/437e.yam │          │             │
-│             │ 9f3f 7861  │ l, commit 6b6c99a        │          │             │
+│             │ 9f3f 7861  │ l                        │          │             │
 │             │ 7166       │                          │          │             │
 └─────────────┴────────────┴──────────────────────────┴──────────┴─────────────┘
 
@@ -555,52 +553,50 @@ Reviews at · Tasks · Reviewer from · Contributor and model from
 ────────────────────────────────────────────────────────────────────────────────
 📝 defined
   Tasks: 7: ac33 9f3f 7166 77b2 6103 c6e8 595e
-  Reviewer from: the plain default, assignee in .tableaux/tasks/ID.yaml,
-    commit 6b6c99a
+  Reviewer from: the plain default, assignee in .tableaux/tasks/ID.yaml
   Contributor and model from: 437e Tableaux tooling, junctions.defined in
-    .tableaux/tasks/437e.yaml, commit 320cf2b
+    .tableaux/tasks/437e.yaml
 ────────────────────────────────────────────────────────────────────────────────
 📌 mockup
   Tasks: 20: 99f0 05a9 a9ce bb7c c74a efff ab8e c545 d615 b14e a6f7 7dff b1b7
     ea51 7783 5471 32e7 69eb 3194 a8b4
   Reviewer from: 437e Tableaux tooling, junctions.mockup in
-    .tableaux/tasks/437e.yaml, commit 320cf2b
+    .tableaux/tasks/437e.yaml
   Contributor and model from: 437e Tableaux tooling, junctions.mockup in
-    .tableaux/tasks/437e.yaml, commit 320cf2b
+    .tableaux/tasks/437e.yaml
 ────────────────────────────────────────────────────────────────────────────────
 📐 design
   Tasks: 8: c2ad e9c6 e3cb fcec ac33 9f3f 7861 7166
   Reviewer from: 437e Tableaux tooling, junctions.design in
-    .tableaux/tasks/437e.yaml, commit 320cf2b
+    .tableaux/tasks/437e.yaml
   Contributor and model from: bc63 Method, junctions.design in
-    .tableaux/tasks/bc63.yaml, commit 320cf2b
+    .tableaux/tasks/bc63.yaml
 ────────────────────────────────────────────────────────────────────────────────
 🧱 implementation
   Tasks: 3: ac33 9f3f 7166
-  Reviewer from: the plain default, assignee in .tableaux/tasks/ID.yaml,
-    commit 6b6c99a
+  Reviewer from: the plain default, assignee in .tableaux/tasks/ID.yaml
   Contributor and model from: 437e Tableaux tooling, junctions.implementation
-    in .tableaux/tasks/437e.yaml, commit 320cf2b
+    in .tableaux/tasks/437e.yaml
 ────────────────────────────────────────────────────────────────────────────────
 🌍 validate
   Tasks: 8: c2ad e9c6 e3cb fcec ac33 9f3f 7861 7166
   Reviewer from: 437e Tableaux tooling, junctions.validate in
-    .tableaux/tasks/437e.yaml, commit 320cf2b
+    .tableaux/tasks/437e.yaml
   Contributor and model from: bc63 Method, junctions.validate in
-    .tableaux/tasks/bc63.yaml, commit 320cf2b
+    .tableaux/tasks/bc63.yaml
 ────────────────────────────────────────────────────────────────────────────────
 
 ┌──────┬───────────────────────────────────────────────────────────┬───────────┐
 │ Task │ Stated in                                                 │ Pinned at │
 ├──────┼───────────────────────────────────────────────────────────┼───────────┤
 │ 77b2 │ junctions.mockup.subproject.url in                        │ 00f8f68   │
-│      │ .tableaux/tasks/77b2.yaml, commit 6b6c99a                 │           │
+│      │ .tableaux/tasks/77b2.yaml                                 │           │
 │ 6103 │ junctions.mockup.subproject.url in                        │ 4593882   │
-│      │ .tableaux/tasks/6103.yaml, commit 6b6c99a                 │           │
+│      │ .tableaux/tasks/6103.yaml                                 │           │
 │ c6e8 │ junctions.mockup.subproject.url in                        │ a2878b5   │
-│      │ .tableaux/tasks/c6e8.yaml, commit 6b6c99a                 │           │
+│      │ .tableaux/tasks/c6e8.yaml                                 │           │
 │ 595e │ junctions.mockup.subproject.url in                        │ e6ec4ec   │
-│      │ .tableaux/tasks/595e.yaml, commit 6b6c99a                 │           │
+│      │ .tableaux/tasks/595e.yaml                                 │           │
 └──────┴───────────────────────────────────────────────────────────┴───────────┘
 
 noreply@anthropic.com, provenance
@@ -610,16 +606,14 @@ noreply@anthropic.com, provenance
 │ Position  │ Tasks                          │ Stated in                       │
 ├───────────┼────────────────────────────────┼─────────────────────────────────┤
 │ Assignee  │ 27: c2ad e9c6 bc86 99f0 05a9   │ assignee in                     │
-│           │ a9ce bb7c c74a efff ab8e c545  │ .tableaux/tasks/ID.yaml, commit │
-│           │ d615 b14e 5fe3 a6f7 7dff b1b7  │ 6b6c99a                         │
+│           │ a9ce bb7c c74a efff ab8e c545  │ .tableaux/tasks/ID.yaml         │
+│           │ d615 b14e 5fe3 a6f7 7dff b1b7  │                                 │
 │           │ ea51 7783 5471 32e7 69eb 3194  │                                 │
 │           │ a8b4 e3cb fcec 7861            │                                 │
 │ Authority │ 1: bc86                        │ bc86 Markdown views, assignee   │
-│           │                                │ in .tableaux/tasks/bc86.yaml,   │
-│           │                                │ commit 6b6c99a                  │
+│           │                                │ in .tableaux/tasks/bc86.yaml    │
 │ Authority │ 1: 5fe3                        │ 5fe3 HTML views, assignee in    │
-│           │                                │ .tableaux/tasks/5fe3.yaml,      │
-│           │                                │ commit 6b6c99a                  │
+│           │                                │ .tableaux/tasks/5fe3.yaml       │
 └───────────┴────────────────────────────────┴─────────────────────────────────┘
 
 ────────────────────────────────────────────────────────────────────────────────
@@ -629,75 +623,69 @@ Contributes at · Tasks · Contributor and model from · Reviewer · Reviewer fr
   Tasks: 25: c2ad e9c6 99f0 05a9 a9ce bb7c c74a efff ab8e c545 d615 b14e a6f7
     7dff b1b7 ea51 7783 5471 32e7 69eb 3194 a8b4 e3cb fcec 7861
   Contributor and model from: 437e Tableaux tooling, junctions.defined in
-    .tableaux/tasks/437e.yaml, commit 320cf2b
+    .tableaux/tasks/437e.yaml
   Reviewer: noreply@anthropic.com
-  Reviewer from: the plain default, assignee in .tableaux/tasks/ID.yaml,
-    commit 6b6c99a
+  Reviewer from: the plain default, assignee in .tableaux/tasks/ID.yaml
 ────────────────────────────────────────────────────────────────────────────────
 📝 defined
   Tasks: 7: ac33 9f3f 7166 77b2 6103 c6e8 595e
   Contributor and model from: 437e Tableaux tooling, junctions.defined in
-    .tableaux/tasks/437e.yaml, commit 320cf2b
+    .tableaux/tasks/437e.yaml
   Reviewer: nbyoung@nbyoung.com
-  Reviewer from: the plain default, assignee in .tableaux/tasks/ID.yaml,
-    commit 6b6c99a
+  Reviewer from: the plain default, assignee in .tableaux/tasks/ID.yaml
 ────────────────────────────────────────────────────────────────────────────────
 📌 mockup
   Tasks: 20: 99f0 05a9 a9ce bb7c c74a efff ab8e c545 d615 b14e a6f7 7dff b1b7
     ea51 7783 5471 32e7 69eb 3194 a8b4
   Contributor and model from: 437e Tableaux tooling, junctions.mockup in
-    .tableaux/tasks/437e.yaml, commit 320cf2b
+    .tableaux/tasks/437e.yaml
   Reviewer: nbyoung@nbyoung.com
   Reviewer from: 437e Tableaux tooling, junctions.mockup in
-    .tableaux/tasks/437e.yaml, commit 320cf2b
+    .tableaux/tasks/437e.yaml
 ────────────────────────────────────────────────────────────────────────────────
 📐 design
   Tasks: 8: c2ad e9c6 e3cb fcec ac33 9f3f 7861 7166
   Contributor and model from: bc63 Method, junctions.design in
-    .tableaux/tasks/bc63.yaml, commit 320cf2b
+    .tableaux/tasks/bc63.yaml
   Reviewer: nbyoung@nbyoung.com
   Reviewer from: 437e Tableaux tooling, junctions.design in
-    .tableaux/tasks/437e.yaml, commit 320cf2b
+    .tableaux/tasks/437e.yaml
 ────────────────────────────────────────────────────────────────────────────────
 🧱 implementation
   Tasks: 5: c2ad e9c6 e3cb fcec 7861
   Contributor and model from: 437e Tableaux tooling, junctions.implementation
-    in .tableaux/tasks/437e.yaml, commit 320cf2b
+    in .tableaux/tasks/437e.yaml
   Reviewer: noreply@anthropic.com
-  Reviewer from: the plain default, assignee in .tableaux/tasks/ID.yaml,
-    commit 6b6c99a
+  Reviewer from: the plain default, assignee in .tableaux/tasks/ID.yaml
 ────────────────────────────────────────────────────────────────────────────────
 🧱 implementation
   Tasks: 3: ac33 9f3f 7166
   Contributor and model from: 437e Tableaux tooling, junctions.implementation
-    in .tableaux/tasks/437e.yaml, commit 320cf2b
+    in .tableaux/tasks/437e.yaml
   Reviewer: nbyoung@nbyoung.com
-  Reviewer from: the plain default, assignee in .tableaux/tasks/ID.yaml,
-    commit 6b6c99a
+  Reviewer from: the plain default, assignee in .tableaux/tasks/ID.yaml
 ────────────────────────────────────────────────────────────────────────────────
 📏 unit
   Tasks: 2: e3cb fcec
   Contributor and model from: 437e Tableaux tooling, junctions.unit in
-    .tableaux/tasks/437e.yaml, commit 320cf2b
+    .tableaux/tasks/437e.yaml
   Reviewer: noreply@anthropic.com
-  Reviewer from: the plain default, assignee in .tableaux/tasks/ID.yaml,
-    commit 6b6c99a
+  Reviewer from: the plain default, assignee in .tableaux/tasks/ID.yaml
 ────────────────────────────────────────────────────────────────────────────────
 🔗 integrate
   Tasks: 1: fcec
   Contributor and model from: 437e Tableaux tooling, junctions.integrate in
-    .tableaux/tasks/437e.yaml, commit 320cf2b
+    .tableaux/tasks/437e.yaml
   Reviewer: noreply@anthropic.com
-  Reviewer from: the plain default, assignee in .tableaux/tasks/ID.yaml,
-    commit 6b6c99a
+  Reviewer from: the plain default, assignee in .tableaux/tasks/ID.yaml
 ────────────────────────────────────────────────────────────────────────────────
 🌍 validate
   Tasks: 8: c2ad e9c6 e3cb fcec ac33 9f3f 7861 7166
   Contributor and model from: bc63 Method, junctions.validate in
-    .tableaux/tasks/bc63.yaml, commit 320cf2b
+    .tableaux/tasks/bc63.yaml
   Reviewer: nbyoung@nbyoung.com
   Reviewer from: 437e Tableaux tooling, junctions.validate in
-    .tableaux/tasks/437e.yaml, commit 320cf2b
+    .tableaux/tasks/437e.yaml
 ────────────────────────────────────────────────────────────────────────────────
 
 ────────────────────────────────────────────────────────────────────────────────
@@ -706,51 +694,27 @@ Reviews at · Tasks · Reviewer from · Contributor and model from
 📝 defined
   Tasks: 25: c2ad e9c6 99f0 05a9 a9ce bb7c c74a efff ab8e c545 d615 b14e a6f7
     7dff b1b7 ea51 7783 5471 32e7 69eb 3194 a8b4 e3cb fcec 7861
-  Reviewer from: the plain default, assignee in .tableaux/tasks/ID.yaml,
-    commit 6b6c99a
+  Reviewer from: the plain default, assignee in .tableaux/tasks/ID.yaml
   Contributor and model from: 437e Tableaux tooling, junctions.defined in
-    .tableaux/tasks/437e.yaml, commit 320cf2b
+    .tableaux/tasks/437e.yaml
 ────────────────────────────────────────────────────────────────────────────────
 🧱 implementation
   Tasks: 5: c2ad e9c6 e3cb fcec 7861
-  Reviewer from: the plain default, assignee in .tableaux/tasks/ID.yaml,
-    commit 6b6c99a
+  Reviewer from: the plain default, assignee in .tableaux/tasks/ID.yaml
   Contributor and model from: 437e Tableaux tooling, junctions.implementation
-    in .tableaux/tasks/437e.yaml, commit 320cf2b
+    in .tableaux/tasks/437e.yaml
 ────────────────────────────────────────────────────────────────────────────────
 📏 unit
   Tasks: 2: e3cb fcec
-  Reviewer from: the plain default, assignee in .tableaux/tasks/ID.yaml,
-    commit 6b6c99a
+  Reviewer from: the plain default, assignee in .tableaux/tasks/ID.yaml
   Contributor and model from: 437e Tableaux tooling, junctions.unit in
-    .tableaux/tasks/437e.yaml, commit 320cf2b
+    .tableaux/tasks/437e.yaml
 ────────────────────────────────────────────────────────────────────────────────
 🔗 integrate
   Tasks: 1: fcec
-  Reviewer from: the plain default, assignee in .tableaux/tasks/ID.yaml,
-    commit 6b6c99a
+  Reviewer from: the plain default, assignee in .tableaux/tasks/ID.yaml
   Contributor and model from: 437e Tableaux tooling, junctions.integrate in
-    .tableaux/tasks/437e.yaml, commit 320cf2b
+    .tableaux/tasks/437e.yaml
 ────────────────────────────────────────────────────────────────────────────────
-
-Commits: 2
-──────────
-
-┌───────────────────┬────────────┬───────────────────────┬─────────────────────┐
-│ Commit            │ Date       │ Author                │ Committer           │
-├───────────────────┼────────────┼───────────────────────┼─────────────────────┤
-│ 320cf2b Name a    │ 2026-09-30 │ noreply@anthropic.com │ nbyoung@nbyoung.com │
-│ model family per  │            │                       │                     │
-│ gate (D7)         │            │                       │                     │
-├───────────────────┼────────────┼───────────────────────┼─────────────────────┤
-│ 6b6c99a Plan the  │ 2026-09-29 │ nbyoung@nbyoung.com   │ nbyoung@nbyoung.com │
-│ Tableaux tooling  │            │                       │                     │
-└───────────────────┴────────────┴───────────────────────┴─────────────────────┘
-
-    git show 3cdae52:.tableaux/tasks/437e.yaml # the defaults every task inherits
-    git show 3cdae52:.tableaux/tasks/bc63.yaml # the Method branch restates design and validate
-    git blame -s 3cdae52 -- .tableaux/tasks/437e.yaml # the commit behind each junction line
-    git grep -n '^assignee:' 3cdae52 -- .tableaux/tasks # every assignee
-    git ls-tree 3cdae52 subprojects/ # the four pins
 
 Command: tabloio assignment --ref 3cdae52 --level provenance --text

@@ -48,8 +48,8 @@ func TestAuditMerge(t *testing.T) {
 	}
 	v := &view.Audit{}
 	v.Level = view.Detail
-	v.Project = view.TaskRef{ID: "437e", Title: "Tableaux tooling"}
-	v.Ref = view.Ref{Name: "main", OnTrunk: true}
+	v.Project = view.Project{Root: "437e", Title: "Tableaux tooling"}
+	v.Source = view.Source{Ref: "main", OnTrunk: true}
 	v.Params.Stale = 7
 	v.Findings = []view.Finding{
 		{Rule: "H3", Severity: "warning", Kind: "First kind", Tasks: ref("aaaa", "bbbb"), Resolver: "x@example.org"},
@@ -95,7 +95,7 @@ func TestAuditMerge(t *testing.T) {
 func TestAuditCounts(t *testing.T) {
 	v := &view.Audit{}
 	v.Level = view.Detail
-	v.Ref = view.Ref{Name: "main", OnTrunk: true}
+	v.Source = view.Source{Ref: "main", OnTrunk: true}
 	v.Params.Stale = 7
 	v.Errors, v.Warnings, v.Information = 1, 1, 1
 	v.Findings = []view.Finding{{Rule: "S11", Severity: "error", Tasks: []view.TaskRef{{ID: "aaaa"}}}}
@@ -119,23 +119,51 @@ func TestAuditCounts(t *testing.T) {
 	}
 }
 
-// TestAuditWordsNothing: the kind, the message, the action, the sentence and
-// the facts print as tablo words them, split at backticks and no further.
-func TestAuditWordsNothing(t *testing.T) {
+// TestAuditWords: the kind, the message and the sentence print as tablo
+// words them, split at backticks and no further; the action and the facts
+// are the builder's words of the act and of the typed facts.
+func TestAuditWords(t *testing.T) {
 	v := readIn(t, "audit", "tooling").(*view.Audit)
 	v.Findings = v.Findings[:1]
 	f := &v.Findings[0]
-	f.Kind, f.Message, f.Action, f.Sentence = "A `kind` of *finding*", "A `message` with a | bar", "Do `this`", "The `sentence`."
-	f.Facts = []view.Fact{{Name: "Odd", Value: "a `b` c"}}
+	f.Kind, f.Message, f.Sentence = "A `kind` of *finding*", "A `message` with a | bar", "The `sentence`."
+	f.Act = "await"
+	f.Facts = []view.FindingFacts{{Task: "e3cb", Requirement: &view.Requirement{
+		Task: view.TaskRef{ID: "e9c6"}, From: "design", To: "mockup", Text: "Views", Due: true}}}
 	out := renderString(t, v, Options{Level: view.Provenance}) + renderString(t, v, Options{Level: view.Glance})
 	for _, want := range []string{
 		"| A `kind` of \\*finding\\* |",
-		"| A `message` with a \\| bar | Do `this` |",
+		"| A `message` with a \\| bar | Await `e9c6` at 📐 design |",
 		"**Rule.** \"The `sentence`.\" [README.md, Status](README.md#status)\n",
-		"**Odd.** a `b` c\n",
+		"**The requirement.** `e3cb`: `e9c6`, design → mockup, Views: unmet.\n",
 	} {
 		if !strings.Contains(out, want) {
 			t.Errorf("the output lacks %q", want)
+		}
+	}
+
+	p := newPage(&v.Head, Options{Level: view.Detail})
+	one := []view.TaskRef{{ID: "e3cb"}}
+	for _, c := range []struct {
+		act   string
+		tasks []view.TaskRef
+		want  string
+	}{
+		{"authorise", one, "Authorise: commit Authorised: e3cb"},
+		{"authorise", []view.TaskRef{{ID: "aaaa"}, {ID: "bbbb"}}, "Authorise: commit Authorised: <id>"},
+		{"review", one, "Review: commit Reviewed: e3cb implementation"},
+		{"reaffirm", one, "Reaffirm: commit Reaffirmed: e3cb"},
+		{"record_handoff", one, "Record the hand-off: the reason 👓 review when the work is done; or work on"},
+		{"clear_handoff", one, "Clear the hand-off: record the gate, or the next hand-off"},
+		{"revise", one, "Revise the file"},
+		{"move_pin", one, "Move the pin or the commit"},
+		{"checkout", one, "Check out the submodule"},
+		{"await", one, "Await the task the requirement names"},
+		{"none", one, ""},
+	} {
+		got := plainInline(p.auditAction(view.Finding{Act: c.act, Tasks: c.tasks, Gate: "implementation"}), map[string]bool{})
+		if got != c.want {
+			t.Errorf("%s: %q, want %q", c.act, got, c.want)
 		}
 	}
 }

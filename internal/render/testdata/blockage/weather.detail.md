@@ -17,7 +17,7 @@ Legend: `tabloio gates`.
    - `9f31` Sensor board at ⚡ performance: the cause holds the task itself.
    - `c07d` Node firmware at 🛠️ implementation: requires `9f31` at 📐 design, Sensor interface.
 2. **`9f31` Sensor board has not passed 📐 design** · 🧑 ada@example.org contributes · holds 1
-   - Action: ada@example.org records `9f31` through design.
+   - Action: ada@example.org takes `9f31` through design.
    - `c07d` Node firmware at 🛠️ implementation: requires `9f31` at 📐 design, Sensor interface.
 3. **`3c5d` Dashboard is proposed** · 🧑 ada@example.org authorises · holds 1
    - Action: ada@example.org commits the trailer `Authorised: 3c5d`.

@@ -20,10 +20,10 @@ func TestBlockageGolden(t *testing.T) { runStatusGoldens(t, blockageGoldens) }
 // T10, the decoding half: an unknown key is ignored and an unknown level is
 // rejected.
 func TestDecodeBlockage(t *testing.T) {
-	if _, err := view.Decode("blockage", []byte(`{"level": "glance", "unknown": 1}`)); err != nil {
+	if _, err := view.Decode("blockage", []byte(`{"command": "blockage", "params": {"level": "glance"}, "data": {"unknown": 1}}`)); err != nil {
 		t.Error(err)
 	}
-	if _, err := view.Decode("blockage", []byte(`{"level": "deep"}`)); err == nil {
+	if _, err := view.Decode("blockage", []byte(`{"command": "blockage", "params": {"level": "deep"}, "data": {}}`)); err == nil {
 		t.Error("an unknown level decodes")
 	}
 }
@@ -75,7 +75,7 @@ func TestBlockageForms(t *testing.T) {
 	}
 }
 
-// T11: the words of each kind of cause, act and held task.
+// T11: the words of each kind of cause, act, action and held task.
 func TestBlockageWords(t *testing.T) {
 	ill := readFixture(t, "blockage", "illustration").(*view.Blockage)
 	p := newPage(&ill.Head, Options{Level: view.Detail})
@@ -87,9 +87,10 @@ func TestBlockageWords(t *testing.T) {
 		want string
 	}{
 		{view.Cause{Kind: "requirement", Task: task, Gate: "design"}, "9f31 Sensor board has not passed 📐 design"},
-		{view.Cause{Kind: "status", Task: task, Status: &view.Status{Gate: "implementation", State: "stalled", Reason: "blocked", Note: "No parts"}},
+		{view.Cause{Kind: "requirement", Task: task, Gate: "design", URL: "subprojects/tablo"}, "9f31 Sensor board in subprojects/tablo has not passed 📐 design"},
+		{view.Cause{Kind: "status", Task: task, Status: view.Status{Gate: "implementation", State: "stalled", Reason: "blocked", Note: "No parts"}},
 			"9f31 Sensor board stands at 🧱 implementation 🔴 stalled ⛔ blocked: No parts"},
-		{view.Cause{Kind: "status", Task: task, Status: &view.Status{Gate: "design", State: "at_risk"}}, "9f31 Sensor board stands at 📐 design 🟡 at_risk"},
+		{view.Cause{Kind: "status", Task: task, Status: view.Status{Gate: "design", State: "at_risk"}}, "9f31 Sensor board stands at 📐 design 🟡 at_risk"},
 		{view.Cause{Kind: "review", Task: task, Gate: "mockup"}, "9f31 Sensor board awaits review at 📌 mockup"},
 		{view.Cause{Kind: "authorisation", Task: task}, "9f31 Sensor board is proposed"},
 		{view.Cause{Kind: "snapshot", Task: task, URL: "subprojects/tablo", Pin: "00f8f68"}, "9f31 Sensor board waits on subprojects/tablo at 00f8f68"},
@@ -113,6 +114,29 @@ func TestBlockageWords(t *testing.T) {
 	for _, c := range who {
 		if got := plain(p.blockageWho(c.c)); got != c.want {
 			t.Errorf("%s: %q, want %q", c.c.Act, got, c.want)
+		}
+	}
+
+	actions := []struct {
+		c    view.Cause
+		want string
+	}{
+		{view.Cause{Act: "contributes", Resolver: "a@b.c", Task: task, Gate: "design"}, "a@b.c takes 9f31 through design."},
+		{view.Cause{Act: "records", Resolver: "a@b.c", Task: task, Status: view.Status{Reason: "blocked"}},
+			"a@b.c clears the blocked reason, or records a new status."},
+		{view.Cause{Act: "records", Resolver: "a@b.c", Task: task}, "a@b.c records a new status."},
+		{view.Cause{Act: "reviews", Resolver: "a@b.c", Task: task, Gate: "mockup"},
+			"a@b.c accepts the mockup with a commit that carries Reviewed: 9f31 mockup."},
+		{view.Cause{Act: "authorises", Resolver: "a@b.c", Task: task}, "a@b.c commits the trailer Authorised: 9f31."},
+		{view.Cause{Act: "advances", Advance: "pin", Resolver: "a@b.c", Task: task, URL: "subprojects/tablo", Tip: "fa834b3abcdef"},
+			"a@b.c advances the pin of subprojects/tablo to the tip of its trunk, fa834b3."},
+		{view.Cause{Act: "advances", Advance: "gate", Resolver: "a@b.c", Task: task, URL: "firmware", Gate: "design"},
+			"a@b.c records 9f31 past design, where firmware already stands."},
+		{view.Cause{Act: "reviews", Task: task, Gate: "mockup"}, ""},
+	}
+	for _, c := range actions {
+		if got := plain(p.blockageAction(c.c)); got != c.want {
+			t.Errorf("%s %s: %q, want %q", c.c.Act, c.c.Advance, got, c.want)
 		}
 	}
 

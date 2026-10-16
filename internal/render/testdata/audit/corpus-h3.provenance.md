@@ -8,7 +8,7 @@ Legend: `tabloio gates`.
 
 | Rule | Severity | Task | Gate | File | Message | Action | Resolver |
 |---|---|---|---|---|---|---|---|
-| H3 | warning | `b2c9` Leaf | 📐 design | `status/b2c9.yaml` | Model claude-sonnet-5 is outside the stated model claude-fable | Revise the file: state the model that ran at the junction | olive@example.org |
+| H3 | warning | `b2c9` Leaf | 📐 design | `status/b2c9.yaml` | Model claude-sonnet-5 is outside the stated model claude-fable | Revise the file | olive@example.org |
 
 **Most to resolve:** olive@example.org, 1 of 1.
 
@@ -16,7 +16,9 @@ Legend: `tabloio gates`.
 
 **Rule.** "the audit reports a commit at the junction whose trailer names a model outside the one stated" [README.md, Junctions](README.md#junctions)
 
-**Junction.** `b2c9` takes 📐 design from itself: contributor bot@example.org, model `claude-fable`. The model reads as a prefix; `claude-sonnet-5` lies outside it.
+**The junction.** `b2c9` at 📐 design: contributor bot@example.org, model `claude-fable`, from `b2c9`.
+
+**The model check.** `b2c9`: `b16817c` at 📐 design, the junction states `claude-fable`, the trailer `Model: claude-sonnet-5`: Differs.
 
 | Commit | Date | Author | Committer | Subject | Trailers |
 |---|---|---|---|---|---|

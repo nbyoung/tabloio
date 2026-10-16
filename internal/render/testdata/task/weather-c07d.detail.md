@@ -39,7 +39,6 @@ Reads the sensors, sleeps between readings and publishes to the gateway.
 
 | Gate | Marks | Contributor | Model | Reviewer | Subproject | Stands |
 |---|:-:|---|---|---|---|---|
-| ❔ undefined |  |  |  |  |  | passed |
 | 📝 defined | 🧑 | **ben@example.org** |  |  |  | passed |
 | 📌 mockup | 🧑 | **ben@example.org** |  | **ben@example.org** |  | passed, reviewed |
 | ⚙️ function | 🧑 | **ben@example.org** |  |  |  | passed |

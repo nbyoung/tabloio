@@ -41,6 +41,34 @@ func lines(d Data) []string {
 	return l
 }
 
+// kinds words the kind of a work item, as the work queue names it.
+var kinds = map[string]string{"ready": "work ready", "waiting": "work waiting"}
+
+// causes words why an item waits, one phrase per kind of cause, as the
+// work queue words them, joined by "; ".
+func causes(d Data) string {
+	var parts []string
+	for _, w := range d.Causes {
+		switch w.Kind {
+		case "requirement":
+			if r := w.Requires; r != nil {
+				parts = append(parts, fmt.Sprintf("waits for %s at %s", strings.TrimSpace(r.Task.ID+" "+r.Task.Title), r.From))
+			}
+		case "reason":
+			p := w.Reason
+			if d.Status.Note != "" {
+				p += ": " + d.Status.Note
+			}
+			parts = append(parts, p)
+		case "authorisation":
+			parts = append(parts, "proposed; waits for its authorisation by "+w.By)
+		case "review":
+			parts = append(parts, "handed off; waits for the review by "+w.By)
+		}
+	}
+	return strings.Join(parts, "; ")
+}
+
 // base returns the name of the ref and whether it names more than the
 // commit: the name HEAD and a prefix of the commit name nothing.
 func base(d Data) (name string, named bool) {
@@ -61,7 +89,7 @@ func title(d Data) []string {
 	}
 	l := []string{fmt.Sprintf("Brief: %s %s at %s", d.Task.ID, d.Task.Title, d.Gate.Key), ""}
 	l = append(l, wrap(fmt.Sprintf("This brief stands alone. It is one item of the work queue of %s %s, %s: %s.",
-		d.Person, at, d.Ref.Date, d.Kind), 0)...)
+		d.Person, at, d.Ref.Date, kinds[d.Kind]), 0)...)
 	return append(l, "")
 }
 

@@ -8,7 +8,7 @@ Legend: `tabloio gates`.
 
 | Rule | Severity | Task | Gate | File | Message | Action | Resolver |
 |---|---|---|---|---|---|---|---|
-| H6 | warning | `b2c9` Leaf | 📐 design | `status/b2c9.yaml` | The contributor's commit at the design junction carries no Model: trailer; the junction states claude-fable | Name the model in the next commit at the junction | bot@example.org |
+| H6 | warning | `b2c9` Leaf | 📐 design | `status/b2c9.yaml` | The contributor's commit at the design junction carries no Model: trailer; the junction states claude-fable |  | bot@example.org |
 
 **Most to resolve:** bot@example.org, 1 of 1.
 

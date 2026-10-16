@@ -1,29 +1,26 @@
 {
   "schema": "tablo/1",
-  "command": "view",
-  "ref": {
-    "name": "main",
-    "commit": "4593882a7b506cd9461fef8f9ccc6a6d653f6390"
+  "command": "queue",
+  "source": {
+    "ref": "main",
+    "commit": "4593882a7b506cd9461fef8f9ccc6a6d653f6390",
+    "date": "2026-10-02"
+  },
+  "project": null,
+  "params": {
+    "task": null,
+    "person": "noreply@anthropic.com",
+    "brief": {
+      "task": "e4c7",
+      "gate": "design"
+    },
+    "level": "provenance"
   },
   "data": {
-    "view": "work-queue",
-    "params": {
-      "person": "noreply@anthropic.com",
-      "level": "provenance",
-      "brief": {
-        "task": "e4c7",
-        "gate": "design"
-      }
-    },
+    "items": [],
     "brief": {
-      "kind": "work ready",
-      "cause": "",
-      "person": "noreply@anthropic.com",
-      "ref": {
-        "name": "main",
-        "commit": "4593882a7b506cd9461fef8f9ccc6a6d653f6390",
-        "date": "2026-10-02"
-      },
+      "kind": "ready",
+      "causes": [],
       "task": {
         "id": "e4c7",
         "title": "Agent briefs",

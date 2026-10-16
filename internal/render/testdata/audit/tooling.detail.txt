@@ -20,8 +20,7 @@ S11
     reviewer is noreply@anthropic.com; no commit carries the trailer Reviewed:
     e3cb implementation. fbe3c97 writes that line in its body, not among its
     trailers
-  Action: Review: commit Reviewed: e3cb implementation, or return the status
-    to 📐 design, the last reviewed gate
+  Action: Review: commit Reviewed: e3cb implementation
   Resolver: noreply@anthropic.com
 ────────────────────────────────────────────────────────────────────────────────
 H3
@@ -31,7 +30,7 @@ H3
   File: tasks/437e.yaml, tasks/bc63.yaml
   Message: 320cf2b edits both task files under Model: claude-fable-5-1; the
     junction states claude-haiku
-  Action: Revise the file: state the model that ran at the junction
+  Action: Revise the file
   Resolver: nbyoung@nbyoung.com
 ────────────────────────────────────────────────────────────────────────────────
 H3
@@ -41,7 +40,7 @@ H3
   File: tasks/ac33.yaml
   Message: 018814a edits the task file under Model: claude-fable-5-1; the
     junction states claude-haiku
-  Action: Revise the file: state the model that ran at the junction
+  Action: Revise the file
   Resolver: nbyoung@nbyoung.com
 ────────────────────────────────────────────────────────────────────────────────
 H4
@@ -75,8 +74,8 @@ H4
   File: status/e9c6.yaml
   Message: The contributor's 879b447 is the newest event and the status states
     no 👓 review; the contributor is its own reviewer here
-  Action: Record the gate with Reviewed: e9c6 implementation on the same
-    commit; or work on
+  Action: Record the hand-off: the reason 👓 review when the work is done; or
+    work on
   Resolver: noreply@anthropic.com
 ────────────────────────────────────────────────────────────────────────────────
 H4
@@ -86,8 +85,8 @@ H4
   File: status/fcec.yaml
   Message: The contributor's 60495c2 is the newest event and the status states
     no 👓 review; the contributor is its own reviewer here
-  Action: Record the gate with Reviewed: fcec unit on the same commit; or work
-    on
+  Action: Record the hand-off: the reason 👓 review when the work is done; or
+    work on
   Resolver: noreply@anthropic.com
 ────────────────────────────────────────────────────────────────────────────────
 H4

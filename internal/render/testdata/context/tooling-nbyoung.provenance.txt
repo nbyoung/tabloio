@@ -140,6 +140,10 @@ Gate · Mark · Rows · Contributor and model · Reviewer
   Contributor and model: noreply@anthropic.com, claude-opus, from 437e
   Reviewer: *nbyoung@nbyoung.com*, from 437e
 ────────────────────────────────────────────────────────────────────────────────
+📐 design
+  Mark: 🪆
+  Rows: 77b2 6103 c6e8 595e
+────────────────────────────────────────────────────────────────────────────────
 🧱 implementation
   Mark: 🤖
   Rows: 437e bc63 2034
@@ -150,10 +154,6 @@ Gate · Mark · Rows · Contributor and model · Reviewer
   Rows: ac33 9f3f 7166
   Contributor and model: noreply@anthropic.com, claude-sonnet, from 437e
   Reviewer: *nbyoung@nbyoung.com*, by default
-────────────────────────────────────────────────────────────────────────────────
-📐 design
-  Mark: 🪆
-  Rows: 77b2 6103 c6e8 595e
 ────────────────────────────────────────────────────────────────────────────────
 🧱 implementation
   Mark: 🪆

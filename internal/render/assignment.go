@@ -16,7 +16,7 @@ var assignmentSeeAlso = []string{"queue", "authority", "task", "tableau", "conte
 // buildAssignment builds the task assignment view: one row per email at
 // glance; at detail a section per email with its tasks, its junctions by
 // gate, its counts and its authority; at provenance the file and the
-// ancestor behind each position, and the commits.
+// ancestor behind each position.
 func buildAssignment(v *view.Assignment, o Options) doc.Doc {
 	p := newPage(&v.Head, o)
 	titles := taskTitles(v)
@@ -31,7 +31,6 @@ func buildAssignment(v *view.Assignment, o Options) doc.Doc {
 		for _, s := range v.Sections {
 			b = append(b, p.personProvenance(s, titles)...)
 		}
-		b = append(b, p.commitsSection(v)...)
 	}
 	return p.frame(frame{
 		Name:     "assignment",
@@ -149,7 +148,7 @@ func (p *page) noContributor(s view.PersonSection) []doc.Block {
 		rows = append(rows, taskRow{ID: r.Task.ID, Task: p.taskCell(r.Task), Rest: []doc.Cell{
 			cell(spans(p.gate(r.Gate), mark)),
 			cell(one(code(r.Subproject.URL))),
-			cell(spans(one(code(r.Subproject.Task.ID), txt(" ")), p.phrase(r.Status))),
+			cell(spans(one(code(r.Subproject.Task.ID)), p.readPhrase(r.Status))),
 		}})
 	}
 	return []doc.Block{
@@ -158,11 +157,20 @@ func (p *page) noContributor(s view.PersonSection) []doc.Block {
 	}
 }
 
+// readPhrase prints a space and the phrase of a status read in a subproject,
+// or nothing where it is not read.
+func (p *page) readPhrase(st *view.Status) []doc.Inline {
+	if st == nil {
+		return nil
+	}
+	return spans(one(txt(" ")), p.phrase(*st))
+}
+
 // nextCount counts the junctions that are next.
 func nextCount(rows []view.JunctionRow) int {
 	n := 0
 	for _, r := range rows {
-		if r.When == "next" {
+		if r.Stands == "next" {
 			n++
 		}
 	}
@@ -188,9 +196,9 @@ func (p *page) junctionSection(name string, rows []view.JunctionRow, reviews boo
 			if r.Model != "" {
 				model = one(code(r.Model))
 			}
-			rest := []doc.Cell{cell(model), cell(p.person(r.Reviewer)), cellText(r.When)}
+			rest := []doc.Cell{cell(model), cell(p.person(r.Reviewer)), cellText(stands(r.Junction))}
 			if reviews {
-				rest = []doc.Cell{cell(p.person(r.Contributor)), cell(model), cellText(r.When)}
+				rest = []doc.Cell{cell(p.person(r.Contributor)), cell(model), cellText(stands(r.Junction))}
 			}
 			trs = append(trs, taskRow{ID: r.Task.ID, Task: p.taskCell(r.Task), Rest: rest})
 		}
@@ -338,7 +346,7 @@ func taskTitles(v *view.Assignment) map[string]string {
 			titles[t.ID] = t.Title
 		}
 	}
-	add(v.Project)
+	add(view.TaskRef{ID: v.Project.Root, Title: v.Project.Title})
 	for _, s := range v.Sections {
 		for _, r := range s.Assigned {
 			add(r.TaskRef)
@@ -359,29 +367,34 @@ func taskTitles(v *view.Assignment) map[string]string {
 	return titles
 }
 
-// stated words where a field stands: the task that states it (R4) or the
-// plain default, the key in a code span with its file, and the commit (R6),
+// stated words where a field stands: the task that states it (R4), or the
+// phrase of statedBy, then the key in a code span with its file and line,
 // joined by commas.
 func stated(s view.Stated, titles map[string]string) []doc.Inline {
 	var parts [][]doc.Inline
-	switch s.By {
-	case "":
-	case "default":
-		parts = append(parts, one(txt("the plain default")))
-	default:
+	if by, ok := statedBy[s.By]; ok {
+		parts = append(parts, one(txt(by)))
+	} else if s.By != "" {
 		parts = append(parts, task(view.TaskRef{ID: s.By, Title: titles[s.By]}))
 	}
 	if s.Key != "" {
 		key := one(code(s.Key))
 		if s.File != "" {
 			key = append(key, txt(" in "), code(s.File))
+			if s.Line > 0 {
+				key = append(key, txt(", line "+strconv.Itoa(s.Line)))
+			}
 		}
 		parts = append(parts, key)
 	}
-	if s.Commit != "" {
-		parts = append(parts, one(txt("commit "), code(short(s.Commit))))
-	}
 	return joined(", ", parts...)
+}
+
+// statedBy words the sources of a Stated that are no task id.
+var statedBy = map[string]string{
+	"default":  "the plain default",
+	"own":      "each task's own file",
+	"assignee": "the assignee",
 }
 
 // tasksCell prints the count of a position's tasks, a colon and every id.
@@ -449,25 +462,6 @@ func (p *page) personProvenance(s view.PersonSection, titles map[string]string) 
 	}
 	if len(rows) > 0 {
 		b = append(b, doc.Table{Head: heads("Task", "Stated in", "Pinned at"), Rows: rows})
-	}
-	return b
-}
-
-// commitsSection is `## Commits: n`, the commits the positions name, and the
-// commands that reproduce them.
-func (p *page) commitsSection(v *view.Assignment) []doc.Block {
-	b := []doc.Block{countHeading(2, "Commits", len(v.Commits))}
-	if len(v.Commits) > 0 {
-		var rows [][]doc.Cell
-		for _, c := range v.Commits {
-			rows = append(rows, []doc.Cell{
-				cell(commitSubject(c)), cellText(c.Date), cell(p.actor(c.Author)), cell(p.actor(c.Committer)),
-			})
-		}
-		b = append(b, doc.Table{Head: heads("Commit", "Date", "Author", "Committer"), Rows: rows})
-	}
-	if pre := commandLines(v.Commands); pre != nil {
-		b = append(b, *pre)
 	}
 	return b
 }

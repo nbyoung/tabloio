@@ -60,7 +60,6 @@ Reads the sensors, sleeps between readings and publishes to the gateway.
 
 | Gate | Marks | Contributor | Model | Reviewer | Subproject | Stands |
 |---|:-:|---|---|---|---|---|
-| ❔ undefined |  |  |  |  |  | passed |
 | 📝 defined | 🧑 | **ben@example.org** |  |  |  | passed |
 | 📌 mockup | 🧑 | **ben@example.org** |  | **ben@example.org** |  | passed, reviewed |
 | ⚙️ function | 🧑 | **ben@example.org** |  |  |  | passed |
@@ -91,10 +90,11 @@ Reads the sensors, sleeps between readings and publishes to the gateway.
 
 | Gate | Name | Value |
 |---|---|---|
-| 🛠️ implementation | url | `firmware`, stated in `.tableaux/tasks/c07d.yaml` |
-|  | Form of the url | A path that is a Git submodule, so the submodule's pin fixes the commit |
+| 🛠️ implementation | `url` | `firmware`, stated in `.tableaux/tasks/c07d.yaml` |
+|  | Form of the `url` | A path that is a Git submodule, so the submodule's pin fixes the commit |
 |  | Pin | `cf5b169`, in full `cf5b16964dba7f8f1c8842a8202878fd572ad835` |
-|  | id | `f1a0`, stated in `.tableaux/tasks/c07d.yaml` |
+|  | `commit` field | Not stated; nothing restates the pin in the task file |
+|  | `id` | `f1a0` |
 
 ## Where each junction field comes from
 

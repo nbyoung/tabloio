@@ -43,7 +43,6 @@ References:
 
 | Gate | Marks | Contributor | Model | Reviewer | Stands |
 |---|:-:|---|---|---|---|
-| ❔ undefined |  |  |  |  | passed |
 | 📝 defined | 🧑 | dan@example.org |  |  | passed; the status stands here |
 | 📌 mockup | 🧑 | dan@example.org |  |  | next |
 | ⚙️ function | 🧑 | dan@example.org |  |  | later |

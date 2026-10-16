@@ -30,12 +30,11 @@ Legend: `tabloio gates`.
 | 🔗…🚀 | 🌍 validate | 0 |
 | 🔗…🚀 | 🚀 release | 0 |
 
-## Status cells: 2
+## Status cells: 1
 
 | Rows | Cell | Date | Recorder | Deciding commit | Committer | Trailers |
 |---|---|---|---|---|---|---|
 | `e9c6` | 📐 design | 2026-09-30 | noreply@anthropic.com | `879b447` Advance the abstract views task to its design gate | noreply@anthropic.com | `Model: claude-fable-5-1` |
-| `99f0` | 📝 defined | 2026-09-29 | noreply@anthropic.com | `1a17bfc` Record the defined gate for the views and mockups | nbyoung@nbyoung.com |  |
 
 ## Roll-ups: 3
 
@@ -45,13 +44,12 @@ Legend: `tabloio gates`.
 | `bc86` Markdown views | 📝 defined 🟢 nominal | `99f0` Gate definition view in Markdown | 2026-09-29 |
 | `5fe3` HTML views | 📝 defined 🟢 nominal | `a6f7` Gate definition view in Html | 2026-09-29 |
 
-## Marks: 3
+## Marks: 2
 
 | Gate | Mark | Rows | Contributor and model | Reviewer |
 |---|:-:|---|---|---|
-| 📌 mockup | 🤖👀 | `437e` `bc63` `2034` `bc86` `5fe3` `99f0` `05a9` `a9ce` `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` | noreply@anthropic.com, `claude-opus`, from `437e` | nbyoung@nbyoung.com, from `437e` |
-| 📐 design | 🤖👀 | `437e` | noreply@anthropic.com, `claude-opus`, from `437e` | nbyoung@nbyoung.com, from `437e` |
-| 📐 design | 🤖👀 | `bc63` `2034` | noreply@anthropic.com, `claude-fable`, from `bc63` | nbyoung@nbyoung.com, from `437e` |
+| 📌 mockup | 🤖👀 | `2034` `bc86` `5fe3` | noreply@anthropic.com, `claude-opus`, from `437e` | nbyoung@nbyoung.com, from `437e` |
+| 📐 design | 🤖👀 | `2034` | noreply@anthropic.com, `claude-fable`, from `bc63` | nbyoung@nbyoung.com, from `437e` |
 
 🤖 an agent contributes · 👀 a reviewer accepts.
 

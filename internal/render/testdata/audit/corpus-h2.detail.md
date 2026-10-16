@@ -8,7 +8,7 @@ Legend: `tabloio gates`.
 
 | Rule | Severity | Task | Gate | File | Message | Action | Resolver |
 |---|---|---|---|---|---|---|---|
-| H2 | warning | `b2c9` Leaf | 📐 design |  | pat is not the reviewer of the design junction; olive is | Have olive@example.org accept the gate with `Reviewed: b2c9 design` | olive@example.org |
+| H2 | warning | `b2c9` Leaf | 📐 design |  | pat is not the reviewer of the design junction; olive is | Review: commit `Reviewed: b2c9 design` | olive@example.org |
 
 **Most to resolve:** olive@example.org, 1 of 1.
 

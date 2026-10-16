@@ -22,20 +22,25 @@ type KindCount struct {
 
 // Cause is one root of the tree.
 type Cause struct {
-	Kind     string    `json:"kind"`
-	Task     TaskRef   `json:"task"`
-	Gate     string    `json:"gate"`     // requirement, review: the gate not passed
-	Status   *Status   `json:"status"`   // status: what the task states
-	URL      string    `json:"url"`      // snapshot
-	Pin      string    `json:"pin"`      // snapshot
-	Resolver string    `json:"resolver"` // the person who acts
-	Mark     string    `json:"mark"`     // the resolver's mark key, or empty
-	Act      string    `json:"act"`      // contributes, reviews, authorises, records, advances
-	Holds    int       `json:"holds"`    // distinct tasks beneath, at every depth
-	Action   string    `json:"action"`   // detail: worded text (R17)
-	Held     []Held    `json:"held"`     // detail
-	Facts    []Fact    `json:"facts"`    // provenance: worded pairs, in order
-	Resolve  []Command `json:"resolve"`  // provenance
+	Kind     string  `json:"kind"`
+	Task     TaskRef `json:"task"`     // the task the cause stands at
+	URL      string  `json:"url"`      // a cross-project requirement: the project of Task; a snapshot: the link
+	Gate     string  `json:"gate"`     // requirement: the gate not passed; review: the gate under review; else the gate the status names
+	Status   Status  `json:"status"`   // of Task
+	Pin      string  `json:"pin"`      // snapshot: the commit the link reads
+	Tip      string  `json:"tip"`      // snapshot: the tip of the subproject's trunk
+	Resolver string  `json:"resolver"` // the person who acts; "" where the files name none
+	Mark     string  `json:"mark"`     // the resolver's mark key, or empty
+	Act      string  `json:"act"`      // contributes, records, reviews, authorises, advances
+	Advance  string  `json:"advance"`  // snapshot: what advances, pin or gate
+	Holds    int     `json:"holds"`    // distinct tasks beneath, at every depth
+	Held     []Held  `json:"held"`     // detail
+
+	StatusCommit  *Commit        `json:"status_commit"` // provenance from here: the deciding commit of Status
+	Junction      *Junction      `json:"junction"`      // the next junction of Task
+	Authorisation *Authorisation `json:"authorisation"` // authorisation: the task's
+	Linkage       *Linkage       `json:"linkage"`       // snapshot: the link
+	Resolve       []Command      `json:"resolve"`       // review, authorisation: the commit that resolves
 }
 
 // Held is a task a cause holds, and what it holds in turn.

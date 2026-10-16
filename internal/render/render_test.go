@@ -145,26 +145,33 @@ func TestLevelsNest(t *testing.T) {
 	for _, f := range fixtures(t) {
 		t.Run(f.String(), func(t *testing.T) {
 			v := readFixture(t, f.view, f.name)
-			var prev []string
-			for _, l := range levelsOf(v) {
-				d := buildFor(t, v, Options{Level: l})
-				var items []string
-				for _, b := range d.Blocks {
-					switch b := b.(type) {
-					case doc.Heading:
-						items = append(items, "heading "+plainInline(b.Text, map[string]bool{}))
-					case doc.Table:
-						for _, c := range b.Head {
-							items = append(items, "column "+plainInline(c.Text, map[string]bool{}))
-						}
-					}
-				}
-				if l > view.Glance && !isSubsequence(prev, items) {
-					t.Errorf("%s does not hold %s:\n%v\n%v", l, l-1, items, prev)
-				}
-				prev = items
-			}
+			checkLevelsNest(t, v)
 		})
+	}
+}
+
+// checkLevelsNest checks T6 on one view: each heading and each table
+// header cell at one level appears at the next, in order.
+func checkLevelsNest(t *testing.T, v view.View) {
+	t.Helper()
+	var prev []string
+	for _, l := range levelsOf(v) {
+		d := buildFor(t, v, Options{Level: l})
+		var items []string
+		for _, b := range d.Blocks {
+			switch b := b.(type) {
+			case doc.Heading:
+				items = append(items, "heading "+plainInline(b.Text, map[string]bool{}))
+			case doc.Table:
+				for _, c := range b.Head {
+					items = append(items, "column "+plainInline(c.Text, map[string]bool{}))
+				}
+			}
+		}
+		if l > view.Glance && !isSubsequence(prev, items) {
+			t.Errorf("%s does not hold %s:\n%v\n%v", l, l-1, items, prev)
+		}
+		prev = items
 	}
 }
 
@@ -246,13 +253,13 @@ func TestRefAndCommit(t *testing.T) {
 			"ref `main` at `3cdae52`, 2026-10-05 · task", "`tabloio task e9c6 " + person + " --ref main --level glance`", ""},
 		{"provenance", nil, Options{Level: view.Provenance},
 			"ref `main` at `3cdae52`, 2026-10-05 · task", "`tabloio task e9c6 " + person + " --ref 3cdae52 --level provenance`", ""},
-		{"HEAD at glance", func(v *view.Task) { v.Ref.Name = "HEAD" }, Options{Level: view.Glance},
+		{"HEAD at glance", func(v *view.Task) { v.Source.Ref = "HEAD" }, Options{Level: view.Glance},
 			"ref `HEAD` · task", "`tabloio task e9c6 " + person + " --level glance`", "--ref"},
-		{"HEAD at provenance", func(v *view.Task) { v.Ref.Name = "HEAD" }, Options{Level: view.Provenance},
+		{"HEAD at provenance", func(v *view.Task) { v.Source.Ref = "HEAD" }, Options{Level: view.Provenance},
 			"ref `HEAD` at `3cdae52`, 2026-10-05 · task", "`tabloio task e9c6 " + person + " --ref 3cdae52 --level provenance`", ""},
-		{"off the trunk", func(v *view.Task) { v.Ref.OnTrunk = false }, Options{Level: view.Glance},
+		{"off the trunk", func(v *view.Task) { v.Source.OnTrunk = false }, Options{Level: view.Glance},
 			"ref `main`, off the trunk · task", "`tabloio task e9c6 " + person + " --ref main --level glance`", ""},
-		{"a range", func(v *view.Task) { v.Ref.From = "v1" }, Options{Level: view.Glance},
+		{"a range", func(v *view.Task) { v.Source.From = &view.SourceFrom{Ref: "v1"} }, Options{Level: view.Glance},
 			"ref `v1..main` · task", "`tabloio task e9c6 " + person + " --ref v1..main --level glance`", ""},
 	}
 	for _, c := range cases {
@@ -278,7 +285,7 @@ func TestRefAndCommit(t *testing.T) {
 // TestCommand covers the flags no fixture of the two views sets.
 func TestCommand(t *testing.T) {
 	two := 2
-	h := &view.Head{Ref: view.Ref{Name: "main", Commit: "0123456789abcdef"}}
+	h := &view.Head{Source: view.Source{Ref: "main", Commit: "0123456789abcdef"}}
 	h.Params = view.Params{Task: "e9c6", Person: "a@b.c", Window: &two, Historical: true, Proposed: true, Stale: 7}
 	got := command("context", "", h, Options{Level: view.Detail})
 	want := "tabloio context --task e9c6 --person a@b.c --ref main --window 2 --historical --proposed --stale 7 --level detail"
@@ -290,7 +297,7 @@ func TestCommand(t *testing.T) {
 		"tabloio tableau --ref 0123456 --columns design,unit --level provenance"; got != want {
 		t.Errorf("got  %s\nwant %s", got, want)
 	}
-	h.Project = view.TaskRef{Title: "Plan"}
+	h.Project = view.Project{Title: "Plan"}
 	h.Params = view.Params{Task: "e9c6", Person: "a@b.c", Window: &two, Historical: true, Proposed: true, Stale: 7}
 	p := newPage(h, Options{Level: view.Glance})
 	got = plainInline(p.paramLine("Q?").Text, map[string]bool{})

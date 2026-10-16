@@ -56,8 +56,8 @@ func (p *page) paramLine(question string) doc.Para {
 	switch {
 	case proj.Title != "":
 		runs = append(runs, one(txt(proj.Title)))
-	case proj.ID != "":
-		runs = append(runs, one(code(proj.ID)))
+	case proj.Root != "":
+		runs = append(runs, one(code(proj.Root)))
 	}
 	runs = append(runs, p.refSpans())
 	runs = append(runs, p.paramSpans()...)

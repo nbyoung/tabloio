@@ -61,12 +61,27 @@ func rawFixture(t testing.TB, viewName, name string) []byte {
 	return data
 }
 
+// asCommand rewrites the command of an envelope.
+func asCommand(t testing.TB, data []byte, name string) []byte {
+	t.Helper()
+	var env map[string]any
+	if err := json.Unmarshal(data, &env); err != nil {
+		t.Fatal(err)
+	}
+	env["command"] = name
+	out, err := json.Marshal(env)
+	if err != nil {
+		t.Fatal(err)
+	}
+	return out
+}
+
 // T1 and T2, the decoding half: both names return one type, and the
 // contextual flag follows the name.
 func TestDecodeTableau(t *testing.T) {
 	data := rawFixture(t, "tableau", "tooling-glance")
 	for name, want := range map[string]bool{"tableau": false, "context": true} {
-		v, err := view.Decode(name, data)
+		v, err := view.Decode(name, asCommand(t, data, name))
 		if err != nil {
 			t.Fatal(err)
 		}
@@ -90,7 +105,7 @@ func TestGridRowCells(t *testing.T) {
 	if err := json.Unmarshal(rawFixture(t, "tableau", "tooling-glance"), &raw); err != nil {
 		t.Fatal(err)
 	}
-	rows := raw["rows"].([]any)
+	rows := raw["data"].(map[string]any)["rows"].([]any)
 	row := rows[2].(map[string]any)
 	cells := row["cells"].([]any)
 	row["cells"] = cells[:len(cells)-1]
@@ -99,7 +114,7 @@ func TestGridRowCells(t *testing.T) {
 		t.Fatal(err)
 	}
 	for _, name := range []string{"tableau", "context"} {
-		_, err := view.Decode(name, bad)
+		_, err := view.Decode(name, asCommand(t, bad, name))
 		if err == nil || !strings.Contains(err.Error(), `"77b2"`) {
 			t.Errorf("Decode(%s): %v, want an error that names 77b2", name, err)
 		}

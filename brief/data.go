@@ -7,13 +7,15 @@ import (
 	"io"
 )
 
-// Data is data.brief of the queue view: one work item with every fact
-// the brief states. Unknown fields are ignored.
+// Data is the brief of one work item: data.brief of tablo's queue view at
+// provenance with the brief parameter, which holds every fact the brief
+// states (886d decision 13), and the person and the commit in view, which
+// the envelope states. Unknown fields are ignored.
 type Data struct {
-	Kind       string    `json:"kind"`  // "work ready" or "work waiting"
-	Cause      string    `json:"cause"` // why a waiting item waits
-	Person     string    `json:"person"`
-	Ref        Ref       `json:"ref"`
+	Kind       string    `json:"kind"`   // "ready" or "waiting"
+	Causes     []Wait    `json:"causes"` // why a waiting item waits, as the item's
+	Person     string    `json:"-"`      // the envelope's params.person
+	Ref        Ref       `json:"-"`      // the envelope's source
 	Task       Task      `json:"task"`
 	Gate       Gate      `json:"gate"`       // the gate the work reaches
 	Junction   Junction  `json:"junction"`   // the junction, resolved
@@ -24,12 +26,30 @@ type Data struct {
 	Status     Status    `json:"status"`
 }
 
-// Ref is the commit in view. Name is the ref as the user gives it, Commit
-// the full hash and Date the commit's date as YYYY-MM-DD.
+// Ref is the commit in view, as the envelope's source states it. Name is the
+// ref as the user gives it, Commit the full hash and Date the commit's date
+// as YYYY-MM-DD.
 type Ref struct {
-	Name   string `json:"name"`
+	Name   string `json:"ref"`
 	Commit string `json:"commit"`
 	Date   string `json:"date"`
+}
+
+// Wait is one reason a work item waits.
+type Wait struct {
+	Kind     string       `json:"kind"`     // requirement, reason, authorisation or review
+	Requires *Requirement `json:"requires"` // requirement: the unmet entry
+	Reason   string       `json:"reason"`   // reason: the status's reason
+	By       string       `json:"by"`       // authorisation: the nearest authority; review: the reviewer
+}
+
+// Requirement is the requires entry a waiting item waits on: the task it
+// requires and the gate that task must pass.
+type Requirement struct {
+	Task Link   `json:"task"`
+	From string `json:"from"`
+	To   string `json:"to"`
+	Text string `json:"text"`
 }
 
 // Task is the task of the item. Path holds its ancestors, root first.
@@ -154,18 +174,26 @@ func (e *WaitingError) Error() string {
 	return fmt.Sprintf("%s at %s waits and no brief starts it: %s", e.Task, e.Gate, e.Cause)
 }
 
-// Decode reads the envelope's data and returns its brief. It returns a
-// *NoWorkError when data holds no brief object, and an error that names the
-// field when task.id, gate.key, junction.contributor.value, status.path or
-// ref.commit is empty.
+// Decode reads tablo's envelope of the queue view with the brief parameter
+// and returns its brief: the brief object of the data, the person of the
+// params and the commit of the source. It returns a *NoWorkError when the
+// data holds no brief object, and an error that names the field when
+// task.id, gate.key, junction.contributor.value, status.path or
+// source.commit is empty.
 func Decode(data []byte, req Request) (Data, error) {
 	var env struct {
-		Brief json.RawMessage `json:"brief"`
+		Source Ref `json:"source"`
+		Params struct {
+			Person string `json:"person"`
+		} `json:"params"`
+		Data struct {
+			Brief json.RawMessage `json:"brief"`
+		} `json:"data"`
 	}
 	if err := json.Unmarshal(data, &env); err != nil {
-		return Data{}, fmt.Errorf("brief: data: %w", err)
+		return Data{}, fmt.Errorf("brief: envelope: %w", err)
 	}
-	raw := bytes.TrimSpace(env.Brief)
+	raw := bytes.TrimSpace(env.Data.Brief)
 	if len(raw) == 0 || bytes.Equal(raw, []byte("null")) || bytes.Equal(raw, []byte("{}")) {
 		return Data{}, &NoWorkError{Person: req.Person, Task: req.Task, Gate: req.Gate}
 	}
@@ -173,12 +201,13 @@ func Decode(data []byte, req Request) (Data, error) {
 	if err := json.Unmarshal(raw, &d); err != nil {
 		return Data{}, fmt.Errorf("brief: data.brief: %w", err)
 	}
+	d.Person, d.Ref = env.Params.Person, env.Source
 	for _, f := range []struct{ name, value string }{
 		{"task.id", d.Task.ID},
 		{"gate.key", d.Gate.Key},
 		{"junction.contributor.value", d.Junction.Contributor.Value},
 		{"status.path", d.Status.Path},
-		{"ref.commit", d.Ref.Commit},
+		{"source.commit", d.Ref.Commit},
 	} {
 		if f.value == "" {
 			return Data{}, fmt.Errorf("brief: %s is missing in tablo's data", f.name)
@@ -188,10 +217,10 @@ func Decode(data []byte, req Request) (Data, error) {
 }
 
 // Render writes the brief of d to w. It returns a *WaitingError and writes
-// nothing unless d.Kind is "work ready". The same d gives the same bytes.
+// nothing unless d.Kind is "ready". The same d gives the same bytes.
 func Render(w io.Writer, d Data) error {
-	if d.Kind != "work ready" {
-		return &WaitingError{Task: d.Task.ID, Gate: d.Gate.Key, Cause: d.Cause}
+	if d.Kind != "ready" {
+		return &WaitingError{Task: d.Task.ID, Gate: d.Gate.Key, Cause: causes(d)}
 	}
 	var b bytes.Buffer
 	for _, l := range lines(d) {

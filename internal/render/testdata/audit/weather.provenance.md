@@ -8,14 +8,14 @@ Legend: `tabloio gates`.
 
 | Rule | Severity | Task | Gate | File | Message | Action | Resolver |
 |---|---|---|---|---|---|---|---|
-|  | warning | `9f31` Sensor board |  | `tasks/9f31.yaml` | The task stands proposed: no trailer or owner commit on the trunk authorises it | Have an authority merge the task or commit the `Authorised:` trailer | ada@example.org |
-|  | warning | `3c5d` Dashboard | 📝 defined | `status/3c5d.yaml` | The status dates from 2026-09-22, more than 3 days before 2026-09-28, with no later reaffirmation | Reaffirm the status with `Reaffirmed: 3c5d`, or record the next event | dan@example.org |
+|  | warning | `9f31` Sensor board |  | `tasks/9f31.yaml` | The task stands proposed: no trailer or owner commit on the trunk authorises it | Authorise: commit `Authorised: 9f31` | ada@example.org |
+|  | warning | `3c5d` Dashboard | 📝 defined | `status/3c5d.yaml` | The status dates from 2026-09-22, more than 3 days before 2026-09-28, with no later reaffirmation | Reaffirm: commit `Reaffirmed: 3c5d` | dan@example.org |
 
 **Most to resolve:** ada@example.org, 1 of 2.
 
 ## A proposed task, warning: `9f31`
 
-**Authorisation.** No `Authorised:` trailer and no commit of an authority on the trunk names `9f31`.
+**The authorisation.** `9f31`: `91aa774`, 2026-09-18, author and committer ada@example.org, not by an authority.
 
 | Commit | Date | Author | Committer | Subject | Trailers |
 |---|---|---|---|---|---|
@@ -28,7 +28,7 @@ git log --format='%as %h %ae' -E --grep='^Authorised: 9f31$'
 
 ## A status older than the days stated, warning: `3c5d` at 📝 defined
 
-**Status.** `3c5d` stands at 📝 defined 🟢 nominal, recorded on 2026-09-22 by `55f57c1`.
+**The status.** `3c5d`: 📝 defined 🟢 nominal, recorded 2026-09-22.
 
 | Commit | Date | Author | Committer | Subject | Trailers |
 |---|---|---|---|---|---|

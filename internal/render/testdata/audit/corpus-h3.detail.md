@@ -8,7 +8,7 @@ Legend: `tabloio gates`.
 
 | Rule | Severity | Task | Gate | File | Message | Action | Resolver |
 |---|---|---|---|---|---|---|---|
-| H3 | warning | `b2c9` Leaf | 📐 design | `status/b2c9.yaml` | Model claude-sonnet-5 is outside the stated model claude-fable | Revise the file: state the model that ran at the junction | olive@example.org |
+| H3 | warning | `b2c9` Leaf | 📐 design | `status/b2c9.yaml` | Model claude-sonnet-5 is outside the stated model claude-fable | Revise the file | olive@example.org |
 
 **Most to resolve:** olive@example.org, 1 of 1.
 

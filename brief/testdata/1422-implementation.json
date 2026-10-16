@@ -1,29 +1,41 @@
 {
   "schema": "tablo/1",
-  "command": "view",
-  "ref": {
-    "name": "main",
-    "commit": "4593882a7b506cd9461fef8f9ccc6a6d653f6390"
+  "command": "queue",
+  "source": {
+    "ref": "main",
+    "commit": "4593882a7b506cd9461fef8f9ccc6a6d653f6390",
+    "date": "2026-10-02"
+  },
+  "project": null,
+  "params": {
+    "task": null,
+    "person": "noreply@anthropic.com",
+    "brief": {
+      "task": "1422",
+      "gate": "implementation"
+    },
+    "level": "provenance"
   },
   "data": {
-    "view": "work-queue",
-    "params": {
-      "person": "noreply@anthropic.com",
-      "level": "provenance",
-      "brief": {
-        "task": "1422",
-        "gate": "implementation"
-      }
-    },
+    "items": [],
     "brief": {
-      "kind": "work waiting",
-      "cause": "waits for 5ca9 Read commands at implementation",
-      "person": "noreply@anthropic.com",
-      "ref": {
-        "name": "main",
-        "commit": "4593882a7b506cd9461fef8f9ccc6a6d653f6390",
-        "date": "2026-10-02"
-      },
+      "kind": "waiting",
+      "causes": [
+        {
+          "kind": "requirement",
+          "requires": {
+            "task": {
+              "id": "5ca9",
+              "title": "Read commands"
+            },
+            "from": "implementation",
+            "to": "implementation",
+            "text": "The commands the workflow runs"
+          },
+          "reason": "",
+          "by": ""
+        }
+      ],
       "task": {
         "id": "1422",
         "title": "Snapshot workflow",

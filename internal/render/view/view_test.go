@@ -19,8 +19,9 @@ func fixture(t *testing.T, view, name string) []byte {
 	return b
 }
 
-// T1: Decode reads each view, ignores an unknown key, rejects an unknown
-// level and an unknown view name.
+// T1: Decode reads each view's envelope, ignores an unknown key, rejects an
+// unknown level, an unknown view name, an envelope of another command and an
+// envelope with no data.
 func TestDecode(t *testing.T) {
 	cases := []struct{ view, name string }{
 		{"gates", "draft"},
@@ -34,7 +35,7 @@ func TestDecode(t *testing.T) {
 				t.Fatal(err)
 			}
 			h := v.Header()
-			if h.Project.ID == "" || h.Ref.Commit == "" || len(h.Legend.Gates) == 0 {
+			if h.Project.Root == "" || h.Source.Commit == "" || len(h.Legend.Gates) == 0 {
 				t.Errorf("head not decoded: %+v", h.Project)
 			}
 
@@ -62,6 +63,15 @@ func TestDecode(t *testing.T) {
 	if _, err := Decode("gates", []byte("[")); err == nil {
 		t.Error("malformed JSON passes")
 	}
+	for _, env := range []string{
+		`{"command": "task", "params": {"level": "glance"}, "data": {}}`,
+		`{"command": "gates", "params": {"level": "glance"}, "data": null}`,
+		`{"command": "gates", "params": {"level": "glance"}}`,
+	} {
+		if _, err := Decode("gates", []byte(env)); err == nil {
+			t.Errorf("%s decodes as gates", env)
+		}
+	}
 }
 
 func TestGatesFields(t *testing.T) {
@@ -70,8 +80,8 @@ func TestGatesFields(t *testing.T) {
 		t.Fatal(err)
 	}
 	g := v.(*Gates)
-	if g.Level != Detail || g.Project.Title != "Tableaux tooling" || g.Ref.Name != "main" || !g.Ref.OnTrunk {
-		t.Errorf("head: %+v %+v", g.Level, g.Ref)
+	if g.Level != Detail || g.Project.Title != "Tableaux tooling" || g.Source.Ref != "main" || !g.Source.OnTrunk {
+		t.Errorf("head: %+v %+v", g.Level, g.Source)
 	}
 	if len(g.Legend.Gates) != 10 || g.Legend.Gates[3].Symbol != "🔧" || g.Legend.Gates[5].Criteria == "" {
 		t.Errorf("gates: %+v", g.Legend.Gates)

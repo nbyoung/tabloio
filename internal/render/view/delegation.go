@@ -6,7 +6,7 @@ func init() { register("authority", func() View { return new(Delegation) }) }
 type Delegation struct {
 	Head
 	Rows     []DelegationRow `json:"rows"`     // every task in view, in display order
-	Parents  []Chain         `json:"parents"`  // detail: every parent in view, in display order
+	Parents  []Chain         `json:"parents"`  // detail: every row that has children, in display order
 	Deciding []Deciding      `json:"deciding"` // provenance: newest first
 	Commands []Command       `json:"commands"` // provenance
 }
@@ -14,7 +14,7 @@ type Delegation struct {
 // DelegationRow is one task of the tree.
 type DelegationRow struct {
 	TaskRef
-	Depth     int    `json:"depth"`
+	Depth     int    `json:"depth"` // 0 for the task the view starts at
 	Assignee  string `json:"assignee"`
 	Parent    bool   `json:"parent"`             // the task has children
 	Delegated bool   `json:"delegated"`          // its assignee differs from its parent's
@@ -28,19 +28,8 @@ type Chain struct {
 	Assignee    string      `json:"assignee"`
 	Authorities []Authority `json:"authorities"` // of its children, nearest first (design e3ed)
 	Children    []string    `json:"children"`
-	Defaults    []Default   `json:"defaults"` // the gates at which this parent states an entry
-}
-
-// Default is a junction entry a parent states, with each field resolved.
-type Default struct {
-	Gate string `json:"gate"`
-	Marked
-	Contributor     string `json:"contributor"`
-	Model           string `json:"model"`
-	Reviewer        string `json:"reviewer"`
-	ContributorFrom string `json:"contributor_from"` // an ancestor's id when it supplies the field
-	ModelFrom       string `json:"model_from"`
-	ReviewerFrom    string `json:"reviewer_from"`
+	Defaults    []Junction  `json:"defaults"` // the gates at which this parent states an entry, resolved
+	Sources     []Supplier  `json:"sources"`  // of those junctions, by gate, then field
 }
 
 // Deciding groups the tasks one commit decides.

@@ -30,8 +30,8 @@ func buildTask(v *view.Task, o Options) doc.Doc {
 		b = append(b, p.description(v)...)
 		b = append(b, heading(2, txt("Place in the tree")), p.placeTable(v))
 	}
-	if prov && v.Authorisation != nil {
-		b = append(b, heading(2, txt("Authorisation commit")), p.commitTable(v.Authorisation.Commit, v.Authorisation))
+	if prov && v.Authorisation != nil && v.Authorisation.Commit != nil {
+		b = append(b, heading(2, txt("Authorisation commit")), p.commitTable(*v.Authorisation.Commit, v.Authorisation))
 	}
 	if detail {
 		b = append(b, p.requires(v)...)
@@ -69,8 +69,8 @@ func (p *page) fieldTable(v *view.Task) doc.Table {
 	parent := one(txt("None"))
 	if v.Parent != nil {
 		parent = task(v.Parent.TaskRef)
-		if v.Parent.Order > 0 {
-			parent = append(parent, txt(", order "+strconv.Itoa(v.Parent.Order)))
+		if v.Parent.Order != nil {
+			parent = append(parent, txt(", order "+strconv.Itoa(*v.Parent.Order)))
 		}
 	}
 	return fieldTable("Field", [][]doc.Cell{
@@ -129,9 +129,9 @@ func (p *page) placeTable(v *view.Task) doc.Table {
 	}
 	order := []doc.Inline(nil)
 	if v.Parent != nil {
-		pos := strconv.Itoa(v.Parent.Order) + " of " + strconv.Itoa(v.Siblings) + " under "
-		if v.Parent.Order == 0 {
-			pos = "no order, among " + strconv.Itoa(v.Siblings) + " under "
+		pos := "no order, among " + strconv.Itoa(v.Siblings) + " under "
+		if v.Parent.Order != nil {
+			pos = strconv.Itoa(*v.Parent.Order) + " of " + strconv.Itoa(v.Siblings) + " under "
 		}
 		order = one(txt(pos), code(v.Parent.ID))
 	}
@@ -322,13 +322,17 @@ func stands(j view.Junction) string {
 }
 
 func (p *page) snapshotTable(s *view.Snapshot) doc.Table {
+	var status, note, recorded []doc.Inline
+	if st := s.Status; st != nil {
+		status, note, recorded = p.status(*st), textRun(st.Note), p.recorded(*st)
+	}
 	return fieldTable("Field", [][]doc.Cell{
 		field("Subproject", one(code(s.URL))),
 		field("Task", task(s.Task)),
 		field("Assignee", p.person(s.Assignee)),
-		field("Status", p.status(s.Status)),
-		field("Note", one(txt(s.Status.Note))),
-		field("Recorded", p.recorded(s.Status)),
+		field("Status", status),
+		field("Note", note),
+		field("Recorded", recorded),
 		field("Children", p.children(s.Children)),
 	})
 }
@@ -385,22 +389,18 @@ func authority(by string) string {
 // from, the reviews, the models, the newest events and the commands.
 func (p *page) provenance(v *view.Task) []doc.Block {
 	var b []doc.Block
-	if len(v.Rollup) > 0 {
-		var rows [][]doc.Cell
-		for _, f := range v.Rollup {
-			rows = append(rows, []doc.Cell{cell(worded(f.Name)), cell(worded(f.Value))})
-		}
-		b = append(b, heading(2, txt("Roll-up")), doc.Table{Head: heads("Name", "Value"), Rows: rows})
+	if len(v.Considered) > 0 {
+		b = append(b, heading(2, txt("Roll-up")), doc.Table{Head: heads("Name", "Value"), Rows: p.rollupRows(v)})
 	}
 	if len(v.Linkages) > 0 {
 		var rows [][]doc.Cell
 		for _, l := range v.Linkages {
-			for i, f := range l.Facts {
+			for i, f := range p.linkageFacts(l) {
 				var gate []doc.Inline
 				if i == 0 {
-					gate = p.gate(l.Gate)
+					gate = p.linkageGates(l.Gates)
 				}
-				rows = append(rows, []doc.Cell{cell(gate), cell(worded(f.Name)), cell(worded(f.Value))})
+				rows = append(rows, []doc.Cell{cell(gate), cell(f[0]), cell(f[1])})
 			}
 		}
 		b = append(b, heading(2, txt("Linkages")), doc.Table{Head: heads("Gate", "Name", "Value"), Rows: rows})
@@ -415,6 +415,132 @@ func (p *page) provenance(v *view.Task) []doc.Block {
 		b = append(b, *pre)
 	}
 	return b
+}
+
+// rollupRows are the rows of a parent's roll-up: the children it
+// considers, then each status of the chain, the parent's own first, to the
+// leaf whose file states it.
+func (p *page) rollupRows(v *view.Task) [][]doc.Cell {
+	rows := [][]doc.Cell{field("Children considered", ids(v.Considered))}
+	for _, st := range v.Chain {
+		name := task(st.Task)
+		if st.URL != "" {
+			name = append(name, txt(" in "), code(st.URL))
+		}
+		rows = append(rows, []doc.Cell{cell(name), cell(spans(p.status(st.Status), prefixed("; ", p.recorded(st.Status))))})
+	}
+	return rows
+}
+
+// linkageGates prints the gates whose junctions read a linkage: the first,
+// and the count of the others.
+func (p *page) linkageGates(gates []string) []doc.Inline {
+	if len(gates) == 0 {
+		return nil
+	}
+	out := p.gate(gates[0])
+	if n := len(gates) - 1; n > 0 {
+		out = append(out, txt(" and "+count(n, "more", "more")))
+	}
+	return out
+}
+
+// The words of a linkage's keys (A9 of design e3ed, which tablo now gives
+// as typed facts): one phrase per form, reason, trunk reading and pin
+// reading.
+var (
+	linkForms = map[string]string{
+		"submodule": "A path that is a Git submodule, so the submodule's pin fixes the commit",
+		"directory": "A directory of the same repository, read at the commit in view",
+		"url":       "A repository URL, so the entry's `commit` field fixes the commit",
+		"none":      "No link",
+	}
+	linkWhy = map[string]string{
+		"no_link": "Not read: no link reaches the subproject",
+		"no_task": "Not read: the subproject has no such task",
+	}
+	linkOnTrunk = map[string]string{
+		"yes":     "the pin is on the trunk",
+		"no":      "the pin is off the trunk",
+		"unknown": "whether the pin is on the trunk is unknown",
+	}
+	linkBehind = map[string]string{
+		"yes": "behind its tip",
+		"no":  "at its tip",
+	}
+)
+
+// linkageFacts words a linkage as Name and Value pairs, in a fixed order,
+// each where the linkage holds it (R9).
+func (p *page) linkageFacts(l view.Linkage) [][2][]doc.Inline {
+	var out [][2][]doc.Inline
+	add := func(name []doc.Inline, value []doc.Inline) {
+		if len(value) > 0 {
+			out = append(out, [2][]doc.Inline{name, value})
+		}
+	}
+	url := one(code(l.URL))
+	if l.File != "" {
+		url = append(url, txt(", stated in "), code(l.File))
+		if l.Line > 0 {
+			url = append(url, txt(", line "+strconv.Itoa(l.Line)))
+		}
+	}
+	add(one(code("url")), url)
+	add(one(txt("Form of the "), code("url")), worded(linkForms[l.Form]))
+	if l.Commit != "" {
+		add(one(txt("Pin")), one(code(short(l.Commit)), txt(", in full "), code(l.Commit)))
+	}
+	if l.Form == "submodule" || l.Form == "url" {
+		field := one(txt("Not stated"))
+		if l.StatedCommit != "" {
+			field = one(code(l.StatedCommit))
+		} else if l.Form == "submodule" {
+			field = one(txt("Not stated; nothing restates the pin in the task file"))
+		}
+		add(one(code("commit"), txt(" field")), field)
+	}
+	if l.Moved {
+		add(one(txt("Checkout")), one(txt("Stands elsewhere than the recorded pin "), code(short(l.Recorded))))
+	}
+	if l.Pinned != nil {
+		add(one(txt("The pinned commit")), p.commitLine(*l.Pinned))
+	}
+	id := one(code(l.ID))
+	if l.ID == "" && l.Task.ID != "" {
+		id = one(txt("Not stated; the junction reads the subproject's root, "), code(l.Task.ID))
+	}
+	add(one(code("id")), id)
+	if l.Why != "" {
+		add(one(txt("Task read")), one(txt(linkWhy[l.Why])))
+	}
+	if l.Trunk != "" {
+		trunk := one(code(l.Trunk))
+		if l.Tip != "" {
+			trunk = append(trunk, txt(", tip "), code(short(l.Tip)))
+		}
+		if w := linkOnTrunk[l.OnTrunk]; w != "" {
+			trunk = append(trunk, txt("; "+w))
+			if b := linkBehind[l.Behind]; b != "" {
+				trunk = append(trunk, txt(", "+b))
+			}
+		}
+		add(one(txt("The subproject's trunk")), trunk)
+	}
+	if l.SetBy != nil {
+		add(one(txt("Pin set by")), p.commitLine(*l.SetBy))
+	}
+	return out
+}
+
+// commitLine words a commit on one line: the short hash, the subject, the
+// date, and the author and committer, as one person when they agree.
+func (p *page) commitLine(c view.Commit) []doc.Inline {
+	out := spans(commitSubject(c), prefixed(", ", textRun(c.Date)))
+	if c.Author == c.Committer {
+		return spans(out, prefixed(", author and committer ", p.actor(c.Author)))
+	}
+	return spans(out, prefixed(", author ", p.actor(c.Author)), prefixed(", committer ", p.actor(c.Committer)))
 }
 
 // sourcesTable lists, for each junction field, the task that supplies it;
@@ -441,8 +567,10 @@ func (p *page) sourcesTable(v *view.Task) doc.Table {
 		default:
 			value = one(txt(s.Value))
 		}
-		by := one(txt("the plain default"))
-		if s.By != "default" {
+		var by []doc.Inline
+		if w, ok := statedBy[s.By]; ok {
+			by = one(txt(w))
+		} else if s.By != "" {
 			t, ok := titles[s.By]
 			if !ok {
 				t = view.TaskRef{ID: s.By}
@@ -465,7 +593,7 @@ func (p *page) reviews(v *view.Task) []doc.Block {
 		switch {
 		case r.Commit != nil:
 			by = spans(commitSubject(*r.Commit), prefixed(", ", textRun(r.Commit.Date)))
-		case v.Authorisation != nil:
+		case v.Authorisation != nil && v.Authorisation.Commit != nil:
 			c := v.Authorisation.Commit
 			by = spans(one(txt("The authorisation, ")), commit(c.Hash), prefixed(", ", textRun(c.Date)))
 		}
@@ -526,6 +654,8 @@ func reading(r string) string {
 		return "No trailer"
 	case "exempt":
 		return "Exempt"
+	case "unstated":
+		return "No model stated"
 	}
 	return r
 }
@@ -546,7 +676,7 @@ func (p *page) events(v *view.Task) []doc.Block {
 	for _, e := range v.Events {
 		rows = append(rows, []doc.Cell{
 			cellText(e.Date), cell(commit(e.Commit)), cell(p.person(e.By)),
-			cellText(joinWords(e.Kinds, ", ")), cell(p.eventRecords(e)),
+			cellText(e.Kind), cell(p.eventRecords(e)),
 		})
 	}
 	if more := v.EventCount - len(v.Events); more > 0 {
@@ -568,27 +698,31 @@ func joinWords(words []string, sep string) string {
 
 // eventRecords prints what an event records: a status phrase with its note
 // after a colon, a gate for a review, or `<url> `<old>` → `<new>“ for a
-// pin. An event of several kinds prints each, joined by `; `.
+// pin; then, for an event taken from a subproject, the subproject and its
+// task.
 func (p *page) eventRecords(e view.Event) []doc.Inline {
-	var parts [][]doc.Inline
-	for _, k := range e.Kinds {
-		switch {
-		case k == "status" && e.Status != nil:
-			x := p.phrase(*e.Status)
-			if e.Status.Note != "" {
-				x = append(x, txt(": "+e.Status.Note))
-			}
-			parts = append(parts, x)
-		case k == "reviewed" && e.Gate != "":
-			parts = append(parts, p.gate(e.Gate))
-		case k == "pin" && e.Pin != nil:
-			x := one(txt(e.Pin.URL + " "))
-			if e.Pin.Old != "" {
-				x = append(x, code(e.Pin.Old), txt(" "))
-			}
-			x = append(x, txt("→ "), code(e.Pin.New))
-			parts = append(parts, x)
+	var x []doc.Inline
+	switch {
+	case e.Kind == "status" && e.Recorded != nil:
+		r := e.Recorded
+		x = p.phrase(view.Status{Gate: r.Gate, State: r.State, Reason: r.Reason})
+		if r.Note != "" {
+			x = append(x, txt(": "+r.Note))
 		}
+	case e.Kind == "reviewed" && e.Gate != "":
+		x = p.gate(e.Gate)
+	case e.Kind == "pin" && e.Pin != nil:
+		x = one(txt(e.Pin.URL + " "))
+		if e.Pin.Old != "" {
+			x = append(x, code(short(e.Pin.Old)), txt(" "))
+		}
+		x = append(x, txt("→ "), code(short(e.Pin.New)))
 	}
-	return joined("; ", parts...)
+	if s := e.Subproject; s != nil {
+		if len(x) > 0 {
+			x = append(x, txt("; "))
+		}
+		x = append(x, txt("in the subproject "), code(s.URL), txt(", task "), code(s.Task))
+	}
+	return x
 }

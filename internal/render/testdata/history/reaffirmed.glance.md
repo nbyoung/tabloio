@@ -8,6 +8,6 @@ Legend: `tabloio gates`.
 
 | Date | By | Event | Task | Gate and state, or pin |
 |---|---|---|---|---|
-| 2026-10-07 | noreply@anthropic.com | reaffirmed | `e9c6` Abstract views | 📐 design 🟢 nominal |
+| 2026-10-07 | noreply@anthropic.com | reaffirmed | `e9c6` Abstract views |  |
 
 Command: `tabloio history --task e9c6 --ref main --level glance`

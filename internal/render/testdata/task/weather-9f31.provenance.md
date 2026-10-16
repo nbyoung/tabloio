@@ -65,7 +65,6 @@ References:
 
 | Gate | Marks | Contributor | Model | Reviewer | Stands |
 |---|:-:|---|---|---|---|
-| ❔ undefined |  |  |  |  | passed |
 | 📝 defined | 🧑 | ada@example.org |  |  | passed |
 | 📌 mockup | 🧑👀 | ada@example.org |  | ben@example.org | passed, reviewed |
 | ⚙️ function | 🧑 | ada@example.org |  |  | passed; the status stands here |

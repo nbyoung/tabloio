@@ -388,10 +388,9 @@ ada@example.org, provenance
 ┌───────────┬───────────────────┬──────────────────────────────────────────────┐
 │ Position  │ Tasks             │ Stated in                                    │
 ├───────────┼───────────────────┼──────────────────────────────────────────────┤
-│ Assignee  │ 3: a1c0 9f31 7b2e │ assignee in .tableaux/tasks/ID.yaml, commit  │
-│           │                   │ 68d9021                                      │
+│ Assignee  │ 3: a1c0 9f31 7b2e │ assignee in .tableaux/tasks/ID.yaml          │
 │ Authority │ 1: a1c0           │ a1c0 Weather station, assignee in            │
-│           │                   │ .tableaux/tasks/a1c0.yaml, commit 68d9021    │
+│           │                   │ .tableaux/tasks/a1c0.yaml                    │
 └───────────┴───────────────────┴──────────────────────────────────────────────┘
 
 ┌────────────────┬──────────────┬───────────────────┬──────────┬───────────────┐
@@ -409,15 +408,5 @@ dan@example.org, provenance
 
 opus@example.org, provenance
 ────────────────────────────
-
-Commits: 1
-──────────
-
-┌─────────────────────────────┬────────────┬─────────────────┬─────────────────┐
-│ Commit                      │ Date       │ Author          │ Committer       │
-├─────────────────────────────┼────────────┼─────────────────┼─────────────────┤
-│ 68d9021 Plan the weather    │ 2026-09-15 │ ada@example.org │ ada@example.org │
-│ station                     │            │                 │                 │
-└─────────────────────────────┴────────────┴─────────────────┴─────────────────┘
 
 Command: tabloio assignment --ref edb30d2 --level provenance --text

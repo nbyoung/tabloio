@@ -216,14 +216,6 @@ Status cells: 10
 ────────────────────────────────────────────────────────────────────────────────
 Rows · Cell · Date · Recorder · Deciding commit · Committer · Trailers
 ────────────────────────────────────────────────────────────────────────────────
-99f0 05a9 a9ce bb7c c74a efff ab8e c545 d615 b14e a6f7 7dff b1b7 ea51 7783 5471
-32e7 69eb 3194 a8b4
-  Cell: 📝 defined
-  Date: 2026-09-29
-  Recorder: noreply@anthropic.com
-  Deciding commit: 1a17bfc Record the defined gate for the views and mockups
-  Committer: nbyoung@nbyoung.com
-────────────────────────────────────────────────────────────────────────────────
 c2ad
   Cell: 🧱 implementation
   Date: 2026-09-30
@@ -239,6 +231,14 @@ e9c6
   Deciding commit: 879b447 Advance the abstract views task to its design gate
   Committer: noreply@anthropic.com
   Trailers: Model: claude-fable-5-1
+────────────────────────────────────────────────────────────────────────────────
+99f0 05a9 a9ce bb7c c74a efff ab8e c545 d615 b14e a6f7 7dff b1b7 ea51 7783 5471
+32e7 69eb 3194 a8b4
+  Cell: 📝 defined
+  Date: 2026-09-29
+  Recorder: noreply@anthropic.com
+  Deciding commit: 1a17bfc Record the defined gate for the views and mockups
+  Committer: nbyoung@nbyoung.com
 ────────────────────────────────────────────────────────────────────────────────
 e3cb
   Cell: 📏 unit
@@ -330,15 +330,33 @@ Gate · Mark · Rows · Contributor and model · Reviewer
 ────────────────────────────────────────────────────────────────────────────────
 📌 mockup
   Mark: 🤖👀
-  Rows: 437e bc63 2034 bc86 5fe3 99f0 05a9 a9ce bb7c c74a efff ab8e c545 d615
-    b14e a6f7 7dff b1b7 ea51 7783 5471 32e7 69eb 3194 a8b4
+  Rows: 437e bc63 2034 bc86 99f0 05a9 a9ce bb7c c74a efff ab8e c545 d615 b14e
+    5fe3 a6f7 7dff b1b7 ea51 7783 5471 32e7 69eb 3194 a8b4
   Contributor and model: noreply@anthropic.com, claude-opus, from 437e
   Reviewer: nbyoung@nbyoung.com, from 437e
+────────────────────────────────────────────────────────────────────────────────
+📌 mockup
+  Mark: 🪆
+  Rows: 77b2 6103 c6e8 595e
 ────────────────────────────────────────────────────────────────────────────────
 🔧 function
   Mark: 🤖
   Rows: 437e bc63 2034
   Contributor and model: noreply@anthropic.com, claude-sonnet, from 437e
+────────────────────────────────────────────────────────────────────────────────
+🔧 function
+  Mark: —
+  Rows: bc86 99f0 05a9 a9ce bb7c c74a efff ab8e c545 d615 b14e
+  Contributor and model: Exempt, from bc86
+────────────────────────────────────────────────────────────────────────────────
+🔧 function
+  Mark: —
+  Rows: 5fe3 a6f7 7dff b1b7 ea51 7783 5471 32e7 69eb 3194 a8b4
+  Contributor and model: Exempt, from 5fe3
+────────────────────────────────────────────────────────────────────────────────
+🔧 function
+  Mark: 🪆
+  Rows: 77b2 6103 c6e8 595e
 ────────────────────────────────────────────────────────────────────────────────
 📐 design
   Mark: 🤖👀
@@ -352,6 +370,20 @@ Gate · Mark · Rows · Contributor and model · Reviewer
   Contributor and model: noreply@anthropic.com, claude-fable, from bc63
   Reviewer: nbyoung@nbyoung.com, from 437e
 ────────────────────────────────────────────────────────────────────────────────
+📐 design
+  Mark: —
+  Rows: bc86 99f0 05a9 a9ce bb7c c74a efff ab8e c545 d615 b14e
+  Contributor and model: Exempt, from bc86
+────────────────────────────────────────────────────────────────────────────────
+📐 design
+  Mark: —
+  Rows: 5fe3 a6f7 7dff b1b7 ea51 7783 5471 32e7 69eb 3194 a8b4
+  Contributor and model: Exempt, from 5fe3
+────────────────────────────────────────────────────────────────────────────────
+📐 design
+  Mark: 🪆
+  Rows: 77b2 6103 c6e8 595e
+────────────────────────────────────────────────────────────────────────────────
 🧱 implementation
   Mark: 🤖
   Rows: 437e bc63 2034
@@ -364,15 +396,39 @@ Gate · Mark · Rows · Contributor and model · Reviewer
   Reviewer: noreply@anthropic.com, by default
 ────────────────────────────────────────────────────────────────────────────────
 🧱 implementation
+  Mark: —
+  Rows: bc86 99f0 05a9 a9ce bb7c c74a efff ab8e c545 d615 b14e
+  Contributor and model: Exempt, from bc86
+────────────────────────────────────────────────────────────────────────────────
+🧱 implementation
+  Mark: —
+  Rows: 5fe3 a6f7 7dff b1b7 ea51 7783 5471 32e7 69eb 3194 a8b4
+  Contributor and model: Exempt, from 5fe3
+────────────────────────────────────────────────────────────────────────────────
+🧱 implementation
   Mark: 🤖👀
   Rows: ac33 9f3f 7166
   Contributor and model: noreply@anthropic.com, claude-sonnet, from 437e
   Reviewer: nbyoung@nbyoung.com, by default
 ────────────────────────────────────────────────────────────────────────────────
+🧱 implementation
+  Mark: 🪆
+  Rows: 77b2 6103 c6e8 595e
+────────────────────────────────────────────────────────────────────────────────
 📏 unit
   Mark: 🤖
   Rows: 437e bc63 2034
   Contributor and model: noreply@anthropic.com, claude-sonnet, from 437e
+────────────────────────────────────────────────────────────────────────────────
+📏 unit
+  Mark: —
+  Rows: bc86 99f0 05a9 a9ce bb7c c74a efff ab8e c545 d615 b14e
+  Contributor and model: Exempt, from bc86
+────────────────────────────────────────────────────────────────────────────────
+📏 unit
+  Mark: —
+  Rows: 5fe3 a6f7 7dff b1b7 ea51 7783 5471 32e7 69eb 3194 a8b4
+  Contributor and model: Exempt, from 5fe3
 ────────────────────────────────────────────────────────────────────────────────
 📏 unit
   Mark: 🤖
@@ -380,16 +436,34 @@ Gate · Mark · Rows · Contributor and model · Reviewer
   Contributor and model: noreply@anthropic.com, claude-sonnet, from 437e
   Reviewer: noreply@anthropic.com, by default
 ────────────────────────────────────────────────────────────────────────────────
+📏 unit
+  Mark: 🪆
+  Rows: 77b2 6103 c6e8 595e
+────────────────────────────────────────────────────────────────────────────────
 🔗 integrate
   Mark: 🤖
   Rows: 437e bc63 2034
   Contributor and model: noreply@anthropic.com, claude-sonnet, from 437e
 ────────────────────────────────────────────────────────────────────────────────
 🔗 integrate
+  Mark: —
+  Rows: bc86 99f0 05a9 a9ce bb7c c74a efff ab8e c545 d615 b14e
+  Contributor and model: Exempt, from bc86
+────────────────────────────────────────────────────────────────────────────────
+🔗 integrate
+  Mark: —
+  Rows: 5fe3 a6f7 7dff b1b7 ea51 7783 5471 32e7 69eb 3194 a8b4
+  Contributor and model: Exempt, from 5fe3
+────────────────────────────────────────────────────────────────────────────────
+🔗 integrate
   Mark: 🤖
   Rows: fcec
   Contributor and model: noreply@anthropic.com, claude-sonnet, from 437e
   Reviewer: noreply@anthropic.com, by default
+────────────────────────────────────────────────────────────────────────────────
+🔗 integrate
+  Mark: 🪆
+  Rows: 77b2 6103 c6e8 595e
 ────────────────────────────────────────────────────────────────────────────────
 🌍 validate
   Mark: 🤖👀
@@ -399,107 +473,29 @@ Gate · Mark · Rows · Contributor and model · Reviewer
 ────────────────────────────────────────────────────────────────────────────────
 🌍 validate
   Mark: 🤖👀
-  Rows: bc63 2034 c2ad e9c6 e3cb fcec ac33 9f3f 7861 7166
+  Rows: bc63 c2ad 2034 e9c6 e3cb fcec ac33 9f3f 7861 7166
   Contributor and model: noreply@anthropic.com, claude-opus, from bc63
   Reviewer: nbyoung@nbyoung.com, from 437e
 ────────────────────────────────────────────────────────────────────────────────
+🌍 validate
+  Mark: —
+  Rows: bc86 99f0 05a9 a9ce bb7c c74a efff ab8e c545 d615 b14e
+  Contributor and model: Exempt, from bc86
+────────────────────────────────────────────────────────────────────────────────
+🌍 validate
+  Mark: —
+  Rows: 5fe3 a6f7 7dff b1b7 ea51 7783 5471 32e7 69eb 3194 a8b4
+  Contributor and model: Exempt, from 5fe3
+────────────────────────────────────────────────────────────────────────────────
+🌍 validate
+  Mark: 🪆
+  Rows: 77b2 6103 c6e8 595e
+────────────────────────────────────────────────────────────────────────────────
 🚀 release
   Mark: 🧑
-  Rows: 437e bc63 2034 c2ad e9c6 e3cb fcec ac33 9f3f 7861 7166
+  Rows: 437e bc63 c2ad 2034 e9c6 e3cb fcec ac33 9f3f 7861 7166
   Contributor and model: nbyoung@nbyoung.com, from 437e
 ────────────────────────────────────────────────────────────────────────────────
-📌 mockup
-  Mark: 🪆
-  Rows: 77b2 6103 c6e8 595e
-────────────────────────────────────────────────────────────────────────────────
-🔧 function
-  Mark: 🪆
-  Rows: 77b2 6103 c6e8 595e
-────────────────────────────────────────────────────────────────────────────────
-📐 design
-  Mark: 🪆
-  Rows: 77b2 6103 c6e8 595e
-────────────────────────────────────────────────────────────────────────────────
-🧱 implementation
-  Mark: 🪆
-  Rows: 77b2 6103 c6e8 595e
-────────────────────────────────────────────────────────────────────────────────
-📏 unit
-  Mark: 🪆
-  Rows: 77b2 6103 c6e8 595e
-────────────────────────────────────────────────────────────────────────────────
-🔗 integrate
-  Mark: 🪆
-  Rows: 77b2 6103 c6e8 595e
-────────────────────────────────────────────────────────────────────────────────
-🌍 validate
-  Mark: 🪆
-  Rows: 77b2 6103 c6e8 595e
-────────────────────────────────────────────────────────────────────────────────
-🚀 release
-  Mark: 🪆
-  Rows: 77b2 6103 c6e8 595e
-────────────────────────────────────────────────────────────────────────────────
-🔧 function
-  Mark: —
-  Rows: bc86 99f0 05a9 a9ce bb7c c74a efff ab8e c545 d615 b14e
-  Contributor and model: Exempt, from bc86
-────────────────────────────────────────────────────────────────────────────────
-🔧 function
-  Mark: —
-  Rows: 5fe3 a6f7 7dff b1b7 ea51 7783 5471 32e7 69eb 3194 a8b4
-  Contributor and model: Exempt, from 5fe3
-────────────────────────────────────────────────────────────────────────────────
-📐 design
-  Mark: —
-  Rows: bc86 99f0 05a9 a9ce bb7c c74a efff ab8e c545 d615 b14e
-  Contributor and model: Exempt, from bc86
-────────────────────────────────────────────────────────────────────────────────
-📐 design
-  Mark: —
-  Rows: 5fe3 a6f7 7dff b1b7 ea51 7783 5471 32e7 69eb 3194 a8b4
-  Contributor and model: Exempt, from 5fe3
-────────────────────────────────────────────────────────────────────────────────
-🧱 implementation
-  Mark: —
-  Rows: bc86 99f0 05a9 a9ce bb7c c74a efff ab8e c545 d615 b14e
-  Contributor and model: Exempt, from bc86
-────────────────────────────────────────────────────────────────────────────────
-🧱 implementation
-  Mark: —
-  Rows: 5fe3 a6f7 7dff b1b7 ea51 7783 5471 32e7 69eb 3194 a8b4
-  Contributor and model: Exempt, from 5fe3
-────────────────────────────────────────────────────────────────────────────────
-📏 unit
-  Mark: —
-  Rows: bc86 99f0 05a9 a9ce bb7c c74a efff ab8e c545 d615 b14e
-  Contributor and model: Exempt, from bc86
-────────────────────────────────────────────────────────────────────────────────
-📏 unit
-  Mark: —
-  Rows: 5fe3 a6f7 7dff b1b7 ea51 7783 5471 32e7 69eb 3194 a8b4
-  Contributor and model: Exempt, from 5fe3
-────────────────────────────────────────────────────────────────────────────────
-🔗 integrate
-  Mark: —
-  Rows: bc86 99f0 05a9 a9ce bb7c c74a efff ab8e c545 d615 b14e
-  Contributor and model: Exempt, from bc86
-────────────────────────────────────────────────────────────────────────────────
-🔗 integrate
-  Mark: —
-  Rows: 5fe3 a6f7 7dff b1b7 ea51 7783 5471 32e7 69eb 3194 a8b4
-  Contributor and model: Exempt, from 5fe3
-────────────────────────────────────────────────────────────────────────────────
-🌍 validate
-  Mark: —
-  Rows: bc86 99f0 05a9 a9ce bb7c c74a efff ab8e c545 d615 b14e
-  Contributor and model: Exempt, from bc86
-────────────────────────────────────────────────────────────────────────────────
-🌍 validate
-  Mark: —
-  Rows: 5fe3 a6f7 7dff b1b7 ea51 7783 5471 32e7 69eb 3194 a8b4
-  Contributor and model: Exempt, from 5fe3
-────────────────────────────────────────────────────────────────────────────────
 🚀 release
   Mark: —
   Rows: bc86 99f0 05a9 a9ce bb7c c74a efff ab8e c545 d615 b14e
@@ -509,6 +505,10 @@ Gate · Mark · Rows · Contributor and model · Reviewer
   Mark: —
   Rows: 5fe3 a6f7 7dff b1b7 ea51 7783 5471 32e7 69eb 3194 a8b4
   Contributor and model: Exempt, from 5fe3
+────────────────────────────────────────────────────────────────────────────────
+🚀 release
+  Mark: 🪆
+  Rows: 77b2 6103 c6e8 595e
 ────────────────────────────────────────────────────────────────────────────────
 
 🧑 a person contributes · 🤖 an agent contributes · 👀 a reviewer accepts · 🪆 a
