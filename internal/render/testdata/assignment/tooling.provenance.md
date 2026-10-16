@@ -357,19 +357,4 @@ Over `5fe3` HTML views and its 10 descendants.
 | 📏 unit | 2: `e3cb` `fcec` | the plain default, `assignee` in `.tableaux/tasks/ID.yaml` | `437e` Tableaux tooling, `junctions.unit` in `.tableaux/tasks/437e.yaml` |
 | 🔗 integrate | 1: `fcec` | the plain default, `assignee` in `.tableaux/tasks/ID.yaml` | `437e` Tableaux tooling, `junctions.integrate` in `.tableaux/tasks/437e.yaml` |
 
-## Commits: 2
-
-| Commit | Date | Author | Committer |
-|---|---|---|---|
-| `320cf2b` Name a model family per gate (D7) | 2026-09-30 | noreply@anthropic.com | nbyoung@nbyoung.com |
-| `6b6c99a` Plan the Tableaux tooling | 2026-09-29 | nbyoung@nbyoung.com | nbyoung@nbyoung.com |
-
-```
-git show 3cdae52:.tableaux/tasks/437e.yaml # the defaults every task inherits
-git show 3cdae52:.tableaux/tasks/bc63.yaml # the Method branch restates design and validate
-git blame -s 3cdae52 -- .tableaux/tasks/437e.yaml # the commit behind each junction line
-git grep -n '^assignee:' 3cdae52 -- .tableaux/tasks # every assignee
-git ls-tree 3cdae52 subprojects/ # the four pins
-```
-
 Command: `tabloio assignment --ref 3cdae52 --level provenance`

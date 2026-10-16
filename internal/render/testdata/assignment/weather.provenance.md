@@ -303,10 +303,4 @@ None.
 
 ## opus@example.org, provenance
 
-## Commits: 1
-
-| Commit | Date | Author | Committer |
-|---|---|---|---|
-| `68d9021` Plan the weather station | 2026-09-15 | ada@example.org | ada@example.org |
-
 Command: `tabloio assignment --ref edb30d2 --level provenance`

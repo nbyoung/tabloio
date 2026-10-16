@@ -281,7 +281,7 @@
             "contributor": "ada@example.org",
             "model": "",
             "reviewer": "",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -292,7 +292,7 @@
             "contributor": "ada@example.org",
             "model": "",
             "reviewer": "",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -303,7 +303,7 @@
             "contributor": "ada@example.org",
             "model": "",
             "reviewer": "ben@example.org",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -314,7 +314,7 @@
             "contributor": "ada@example.org",
             "model": "",
             "reviewer": "",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -325,7 +325,7 @@
             "contributor": "ada@example.org",
             "model": "",
             "reviewer": "",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -336,7 +336,7 @@
             "contributor": "ada@example.org",
             "model": "",
             "reviewer": "",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -347,7 +347,7 @@
             "contributor": "ada@example.org",
             "model": "",
             "reviewer": "",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -358,7 +358,7 @@
             "contributor": "ada@example.org",
             "model": "",
             "reviewer": "",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -369,7 +369,7 @@
             "contributor": "ada@example.org",
             "model": "",
             "reviewer": "",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -380,7 +380,7 @@
             "contributor": "ada@example.org",
             "model": "",
             "reviewer": "",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -391,7 +391,7 @@
             "contributor": "ada@example.org",
             "model": "",
             "reviewer": "",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -402,7 +402,7 @@
             "contributor": "ada@example.org",
             "model": "",
             "reviewer": "",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -413,7 +413,7 @@
             "contributor": "ada@example.org",
             "model": "",
             "reviewer": "",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -424,7 +424,7 @@
             "contributor": "ada@example.org",
             "model": "",
             "reviewer": "",
-            "when": "later"
+            "stands": "later"
           }
         ],
         "reviews": [],
@@ -549,14 +549,12 @@
             "from": {
               "by": "",
               "key": "assignee",
-              "file": ".tableaux/tasks/ID.yaml",
-              "commit": "68d9021"
+              "file": ".tableaux/tasks/ID.yaml"
             },
             "reviewer_from": {
               "by": "",
               "key": "",
-              "file": "",
-              "commit": ""
+              "file": ""
             },
             "url": "",
             "pin": ""
@@ -571,14 +569,12 @@
             "from": {
               "by": "a1c0",
               "key": "assignee",
-              "file": ".tableaux/tasks/a1c0.yaml",
-              "commit": "68d9021"
+              "file": ".tableaux/tasks/a1c0.yaml"
             },
             "reviewer_from": {
               "by": "",
               "key": "",
-              "file": "",
-              "commit": ""
+              "file": ""
             },
             "url": "",
             "pin": ""
@@ -594,14 +590,12 @@
             "from": {
               "by": "default",
               "key": "",
-              "file": ".tableaux/tasks/default.yaml",
-              "commit": ""
+              "file": ".tableaux/tasks/default.yaml"
             },
             "reviewer_from": {
               "by": "",
               "key": "",
-              "file": "",
-              "commit": ""
+              "file": ""
             },
             "url": "",
             "pin": ""
@@ -658,7 +652,7 @@
             "contributor": "ben@example.org",
             "model": "",
             "reviewer": "",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -669,7 +663,7 @@
             "contributor": "ben@example.org",
             "model": "",
             "reviewer": "ben@example.org",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -680,7 +674,7 @@
             "contributor": "ben@example.org",
             "model": "",
             "reviewer": "",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -691,7 +685,7 @@
             "contributor": "ben@example.org",
             "model": "",
             "reviewer": "",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -702,7 +696,7 @@
             "contributor": "ben@example.org",
             "model": "",
             "reviewer": "",
-            "when": "passed"
+            "stands": "passed"
           }
         ],
         "reviews": [
@@ -715,7 +709,7 @@
             "contributor": "ada@example.org",
             "model": "",
             "reviewer": "ben@example.org",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -726,7 +720,7 @@
             "contributor": "ben@example.org",
             "model": "",
             "reviewer": "ben@example.org",
-            "when": "passed"
+            "stands": "passed"
           }
         ],
         "models": [],
@@ -874,7 +868,7 @@
             "contributor": "dan@example.org",
             "model": "",
             "reviewer": "",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -885,7 +879,7 @@
             "contributor": "dan@example.org",
             "model": "",
             "reviewer": "",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -896,7 +890,7 @@
             "contributor": "dan@example.org",
             "model": "",
             "reviewer": "",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -907,7 +901,7 @@
             "contributor": "dan@example.org",
             "model": "",
             "reviewer": "",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -918,7 +912,7 @@
             "contributor": "dan@example.org",
             "model": "",
             "reviewer": "",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -929,7 +923,7 @@
             "contributor": "dan@example.org",
             "model": "",
             "reviewer": "",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -940,7 +934,7 @@
             "contributor": "dan@example.org",
             "model": "",
             "reviewer": "",
-            "when": "later"
+            "stands": "later"
           }
         ],
         "reviews": [],
@@ -1162,21 +1156,7 @@
         "authority": [],
         "positions": []
       }
-    ],
-    "commits": [
-      {
-        "hash": "68d9021",
-        "subject": "Plan the weather station",
-        "date": "2026-09-15",
-        "author": {
-          "email": "ada@example.org"
-        },
-        "committer": {
-          "email": "ada@example.org"
-        }
-      }
-    ],
-    "commands": []
+    ]
   },
   "diagnostics": []
 }

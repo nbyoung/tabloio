@@ -24,6 +24,8 @@ var tabloGoldens = []tabloGolden{
 	{"gates", "gates-9f31.provenance.json", map[string]any{"task": "9f31"}},
 	{"task", "task-3c5d.detail.json", map[string]any{"task": "3c5d", "person": nil}},
 	{"task", "task-c07d.provenance.json", map[string]any{"task": "c07d", "person": "ben@example.org"}},
+	{"authority", "authority.provenance.json", map[string]any{"task": "a1c0", "person": nil, "proposed": false}},
+	{"assignment", "assignment.glance.json", map[string]any{"task": "a1c0", "person": nil}},
 }
 
 // path is the file's path under testdata.

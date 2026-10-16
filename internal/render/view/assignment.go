@@ -8,8 +8,6 @@ type Assignment struct {
 	People    []PersonRow     `json:"people"`    // one per email in view, in order of first appearance in the tree
 	Recursive []string        `json:"recursive"` // tasks whose next junction is recursive
 	Sections  []PersonSection `json:"sections"`  // detail: one per row of People
-	Commits   []Commit        `json:"commits"`   // provenance: every commit a Stated names, newest first
-	Commands  []Command       `json:"commands"`
 }
 
 // PersonRow is the glance of one email.
@@ -31,16 +29,16 @@ type PersonSection struct {
 	Models      []ModelRow     `json:"models"` // an agent: its models by gate
 	Counts      []GateCount    `json:"counts"` // every gate, in order
 	Authority   []Subtree      `json:"authority"`
-	Positions   []Position     `json:"positions"` // provenance
+	Positions   []Position     `json:"positions"` // provenance: one per source of a position
 }
 
 // AssignedRow is a task assigned to an email.
 type AssignedRow struct {
 	TaskRef
-	Under  string  `json:"under"` // the parent's id
-	Status Status  `json:"status"`
-	Next   *Marked `json:"next"` // nil for a parent
-	Gate   string  `json:"next_gate"`
+	Under  string    `json:"under"` // the parent's id
+	Status Status    `json:"status"`
+	Next   *Junction `json:"next"` // nil for a parent and at the last gate
+	Gate   string    `json:"next_gate"`
 }
 
 // RecursiveRow is a task whose next junction a subproject carries.
@@ -48,17 +46,13 @@ type RecursiveRow struct {
 	Task       TaskRef `json:"task"`
 	Gate       string  `json:"gate"`
 	Subproject SubRef  `json:"subproject"`
-	Status     Status  `json:"status"` // of the subproject's task
+	Status     *Status `json:"status"` // of the subproject's task; nil when it is not read
 }
 
 // JunctionRow is one junction where an email contributes or reviews.
 type JunctionRow struct {
-	Task        TaskRef `json:"task"`
-	Gate        string  `json:"gate"`
-	Contributor string  `json:"contributor"`
-	Model       string  `json:"model"`
-	Reviewer    string  `json:"reviewer"`
-	When        string  `json:"when"` // passed, next, later
+	Task TaskRef `json:"task"`
+	Junction
 }
 
 // ModelRow is a model an agent runs at a gate.

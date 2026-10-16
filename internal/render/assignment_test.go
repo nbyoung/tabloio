@@ -30,8 +30,8 @@ func junctions(gate string, n int, when func(i int) string) []view.JunctionRow {
 	var out []view.JunctionRow
 	for i := 0; i < n; i++ {
 		out = append(out, view.JunctionRow{
-			Task: view.TaskRef{ID: fmt.Sprintf("%s%02d", gate[:2], i), Title: fmt.Sprintf("Task %d", i)},
-			Gate: gate, Contributor: "c@x.org", Model: "claude-opus", Reviewer: "r@x.org", When: when(i),
+			Task:     view.TaskRef{ID: fmt.Sprintf("%s%02d", gate[:2], i), Title: fmt.Sprintf("Task %d", i)},
+			Junction: view.Junction{Gate: gate, Contributor: "c@x.org", Model: "claude-opus", Reviewer: "r@x.org", Stands: when(i)},
 		})
 	}
 	return out
@@ -158,7 +158,7 @@ func TestGateGroupsAndFold(t *testing.T) {
 			v.Sections[0].Assigned = append(v.Sections[0].Assigned, view.AssignedRow{
 				TaskRef: view.TaskRef{ID: fmt.Sprintf("t%03d", i), Title: "T"}, Under: "r000",
 				Status: view.Status{Gate: "defined", State: "nominal"},
-				Next:   &view.Marked{Marks: []string{"agent"}}, Gate: "mockup",
+				Next:   &view.Junction{Marked: view.Marked{Marks: []string{"agent"}}}, Gate: "mockup",
 			})
 		}
 		out := renderString(t, v, Options{Level: view.Detail})
@@ -265,8 +265,6 @@ func TestAssignmentShapes(t *testing.T) {
 			"| `77b2` | `junctions.mockup.subproject.url` in `.tableaux/tasks/77b2.yaml` | `00f8f68` |\n",
 			// A Stated reads the task and its title from the rows of the view.
 			"| 🚀 release | 8: `c2ad` `e9c6` `e3cb` `fcec` `ac33` `9f3f` `7861` `7166` | `437e` Tableaux tooling, `junctions.release` in `.tableaux/tasks/437e.yaml` |  |  |\n",
-			"\n## Commits: 2\n\n| Commit | Date | Author | Committer |\n|---|---|---|---|\n| `320cf2b` Name a model family per gate (D7) | 2026-09-30 | noreply@anthropic.com | nbyoung@nbyoung.com |\n",
-			"git ls-tree 3cdae52 subprojects/ # the four pins\n",
 			"Command: `tabloio assignment --ref 3cdae52 --level provenance`\n",
 		} {
 			if !strings.Contains(out, want) {

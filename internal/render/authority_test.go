@@ -288,18 +288,25 @@ func TestProposedOnly(t *testing.T) {
 }
 
 // T10: a Default words its sources: a field from an ancestor, an exempt gate,
-// a field of the parent's own.
+// a field of the parent's own, a field the assignee supplies.
 func TestDefault(t *testing.T) {
 	v := treeOf(kid(0, nil))
 	v.Parents = []view.Chain{{
 		TaskRef: view.TaskRef{ID: "r000", Title: "Root"}, Assignee: "a@x.org",
 		Authorities: []view.Authority{{Email: "a@x.org", By: "r000"}}, Children: []string{"k000"},
-		Defaults: []view.Default{
+		Defaults: []view.Junction{
 			{Gate: "design", Marked: view.Marked{Marks: []string{"agent", "reviewer"}}, Contributor: "ag@x.org", Model: "claude-fable",
-				Reviewer: "a@x.org", ReviewerFrom: "top1", ModelFrom: "top2"},
+				Reviewer: "a@x.org"},
 			{Gate: "unit", Marked: view.Marked{Marks: []string{"exempt"}}},
-			{Gate: "release", Marked: view.Marked{Marks: []string{"person"}}, Contributor: "a@x.org", ContributorFrom: "top3"},
-			{Gate: "implementation", Marked: view.Marked{Marks: []string{"agent"}}, ReviewerFrom: "top1"},
+			{Gate: "release", Marked: view.Marked{Marks: []string{"person"}}, Contributor: "a@x.org"},
+			{Gate: "implementation", Marked: view.Marked{Marks: []string{"agent"}}},
+		},
+		Sources: []view.Supplier{
+			{Gate: "design", Field: "contributor", Value: "ag@x.org", Stated: view.Stated{By: "r000"}},
+			{Gate: "design", Field: "model", Value: "claude-fable", Stated: view.Stated{By: "top2"}},
+			{Gate: "design", Field: "reviewer", Value: "a@x.org", Stated: view.Stated{By: "top1"}},
+			{Gate: "release", Field: "contributor", Value: "a@x.org", Stated: view.Stated{By: "top3"}},
+			{Gate: "implementation", Field: "reviewer", Value: "a@x.org", Stated: view.Stated{By: "assignee"}},
 		},
 	}}
 	v.Legend = readFixture(t, "authority", "tooling").Header().Legend

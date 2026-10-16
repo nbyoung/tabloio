@@ -175,6 +175,17 @@ func (p *page) defaults(c view.Chain) []doc.Block {
 	if len(c.Defaults) == 0 {
 		return []doc.Block{para(code(c.ID), txt(" states no junction defaults."))}
 	}
+	// from is the ancestor that supplies a field of a default: the task
+	// that states it, where that is a task other than the parent.
+	from := func(gate, field string) string {
+		for _, s := range c.Sources {
+			_, word := statedBy[s.By]
+			if s.Gate == gate && s.Field == field && s.By != "" && s.By != c.ID && !word {
+				return s.By
+			}
+		}
+		return ""
+	}
 	shown := map[string]bool{}
 	var rows [][]doc.Cell
 	for _, d := range c.Defaults {
@@ -188,9 +199,9 @@ func (p *page) defaults(c view.Chain) []doc.Block {
 		rows = append(rows, []doc.Cell{
 			cell(p.gate(d.Gate)),
 			cell(p.markSymbols(d.Marks)),
-			cell(fromAncestor(p.person(d.Contributor), d.ContributorFrom)),
-			cell(fromAncestor(model, d.ModelFrom)),
-			cell(fromAncestor(p.person(d.Reviewer), d.ReviewerFrom)),
+			cell(fromAncestor(p.person(d.Contributor), from(d.Gate, "contributor"))),
+			cell(fromAncestor(model, from(d.Gate, "model"))),
+			cell(fromAncestor(p.person(d.Reviewer), from(d.Gate, "reviewer"))),
 		})
 	}
 	b := []doc.Block{doc.Table{

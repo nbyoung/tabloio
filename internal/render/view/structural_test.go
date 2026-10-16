@@ -42,8 +42,11 @@ func TestDecodeStructural(t *testing.T) {
 	if len(v.Rows) != 37 || len(v.Parents) != 5 || len(v.Deciding) != 4 || v.Deciding[0].Merged != "320cf2b" {
 		t.Errorf("authority: %d rows, %d parents, %d deciding", len(v.Rows), len(v.Parents), len(v.Deciding))
 	}
-	if m := v.Parents[1].Defaults[0]; m.Gate != "design" || len(m.Marks) != 2 || m.ReviewerFrom != "437e" {
+	if m := v.Parents[1].Defaults[0]; m.Gate != "design" || len(m.Marks) != 2 {
 		t.Errorf("a default: %+v", m)
+	}
+	if s := v.Parents[1].Sources[0]; s.Gate != "design" || s.Field != "reviewer" || s.By != "437e" {
+		t.Errorf("a source of the defaults: %+v", s)
 	}
 
 	a, err := Decode("assignment", fixture(t, "assignment", "tooling"))

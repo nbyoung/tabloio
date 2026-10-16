@@ -171,28 +171,6 @@
       "c6e8",
       "595e"
     ],
-    "commands": [
-      {
-        "text": "git show 3cdae52:.tableaux/tasks/437e.yaml",
-        "comment": "the defaults every task inherits"
-      },
-      {
-        "text": "git show 3cdae52:.tableaux/tasks/bc63.yaml",
-        "comment": "the Method branch restates design and validate"
-      },
-      {
-        "text": "git blame -s 3cdae52 -- .tableaux/tasks/437e.yaml",
-        "comment": "the commit behind each junction line"
-      },
-      {
-        "text": "git grep -n '^assignee:' 3cdae52 -- .tableaux/tasks",
-        "comment": "every assignee"
-      },
-      {
-        "text": "git ls-tree 3cdae52 subprojects/",
-        "comment": "the four pins"
-      }
-    ],
     "people": [
       {
         "email": "nbyoung@nbyoung.com",
@@ -568,7 +546,7 @@
             "contributor": "nbyoung@nbyoung.com",
             "model": "",
             "reviewer": "",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -579,7 +557,7 @@
             "contributor": "nbyoung@nbyoung.com",
             "model": "",
             "reviewer": "",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -590,7 +568,7 @@
             "contributor": "nbyoung@nbyoung.com",
             "model": "",
             "reviewer": "",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -601,7 +579,7 @@
             "contributor": "nbyoung@nbyoung.com",
             "model": "",
             "reviewer": "",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -612,7 +590,7 @@
             "contributor": "nbyoung@nbyoung.com",
             "model": "",
             "reviewer": "",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -623,7 +601,7 @@
             "contributor": "nbyoung@nbyoung.com",
             "model": "",
             "reviewer": "",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -634,7 +612,7 @@
             "contributor": "nbyoung@nbyoung.com",
             "model": "",
             "reviewer": "",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -645,7 +623,7 @@
             "contributor": "nbyoung@nbyoung.com",
             "model": "",
             "reviewer": "",
-            "when": "later"
+            "stands": "later"
           }
         ],
         "reviews": [
@@ -658,7 +636,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -669,7 +647,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -680,7 +658,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -691,7 +669,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -702,7 +680,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -713,7 +691,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -724,7 +702,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -735,7 +713,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -746,7 +724,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -757,7 +735,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -768,7 +746,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -779,7 +757,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -790,7 +768,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -801,7 +779,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -812,7 +790,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -823,7 +801,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -834,7 +812,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -845,7 +823,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -856,7 +834,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -867,7 +845,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -878,7 +856,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -889,7 +867,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -900,7 +878,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -911,7 +889,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -922,7 +900,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -933,7 +911,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -944,7 +922,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -955,7 +933,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -966,7 +944,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -977,7 +955,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -988,7 +966,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -999,7 +977,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -1010,7 +988,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -1021,7 +999,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -1032,7 +1010,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -1043,7 +1021,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -1054,7 +1032,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -1065,7 +1043,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -1076,7 +1054,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -1087,7 +1065,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -1098,7 +1076,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -1109,7 +1087,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -1120,7 +1098,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -1131,7 +1109,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -1142,7 +1120,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -1153,7 +1131,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "later"
+            "stands": "later"
           }
         ],
         "models": [],
@@ -1268,14 +1246,12 @@
             "from": {
               "by": "",
               "key": "assignee",
-              "file": ".tableaux/tasks/ID.yaml",
-              "commit": "6b6c99a"
+              "file": ".tableaux/tasks/ID.yaml"
             },
             "reviewer_from": {
               "by": "",
               "key": "",
-              "file": "",
-              "commit": ""
+              "file": ""
             },
             "url": "",
             "pin": ""
@@ -1290,14 +1266,12 @@
             "from": {
               "by": "437e",
               "key": "assignee",
-              "file": ".tableaux/tasks/437e.yaml",
-              "commit": "6b6c99a"
+              "file": ".tableaux/tasks/437e.yaml"
             },
             "reviewer_from": {
               "by": "",
               "key": "",
-              "file": "",
-              "commit": ""
+              "file": ""
             },
             "url": "",
             "pin": ""
@@ -1319,14 +1293,12 @@
             "from": {
               "by": "437e",
               "key": "junctions.release",
-              "file": ".tableaux/tasks/437e.yaml",
-              "commit": "6b6c99a"
+              "file": ".tableaux/tasks/437e.yaml"
             },
             "reviewer_from": {
               "by": "",
               "key": "",
-              "file": "",
-              "commit": ""
+              "file": ""
             },
             "url": "",
             "pin": ""
@@ -1347,14 +1319,12 @@
             "from": {
               "by": "437e",
               "key": "junctions.defined",
-              "file": ".tableaux/tasks/437e.yaml",
-              "commit": "320cf2b"
+              "file": ".tableaux/tasks/437e.yaml"
             },
             "reviewer_from": {
               "by": "default",
               "key": "assignee",
-              "file": ".tableaux/tasks/ID.yaml",
-              "commit": "6b6c99a"
+              "file": ".tableaux/tasks/ID.yaml"
             },
             "url": "",
             "pin": ""
@@ -1388,14 +1358,12 @@
             "from": {
               "by": "437e",
               "key": "junctions.mockup",
-              "file": ".tableaux/tasks/437e.yaml",
-              "commit": "320cf2b"
+              "file": ".tableaux/tasks/437e.yaml"
             },
             "reviewer_from": {
               "by": "437e",
               "key": "junctions.mockup",
-              "file": ".tableaux/tasks/437e.yaml",
-              "commit": "320cf2b"
+              "file": ".tableaux/tasks/437e.yaml"
             },
             "url": "",
             "pin": ""
@@ -1417,14 +1385,12 @@
             "from": {
               "by": "bc63",
               "key": "junctions.design",
-              "file": ".tableaux/tasks/bc63.yaml",
-              "commit": "320cf2b"
+              "file": ".tableaux/tasks/bc63.yaml"
             },
             "reviewer_from": {
               "by": "437e",
               "key": "junctions.design",
-              "file": ".tableaux/tasks/437e.yaml",
-              "commit": "320cf2b"
+              "file": ".tableaux/tasks/437e.yaml"
             },
             "url": "",
             "pin": ""
@@ -1441,14 +1407,12 @@
             "from": {
               "by": "437e",
               "key": "junctions.implementation",
-              "file": ".tableaux/tasks/437e.yaml",
-              "commit": "320cf2b"
+              "file": ".tableaux/tasks/437e.yaml"
             },
             "reviewer_from": {
               "by": "default",
               "key": "assignee",
-              "file": ".tableaux/tasks/ID.yaml",
-              "commit": "6b6c99a"
+              "file": ".tableaux/tasks/ID.yaml"
             },
             "url": "",
             "pin": ""
@@ -1470,14 +1434,12 @@
             "from": {
               "by": "bc63",
               "key": "junctions.validate",
-              "file": ".tableaux/tasks/bc63.yaml",
-              "commit": "320cf2b"
+              "file": ".tableaux/tasks/bc63.yaml"
             },
             "reviewer_from": {
               "by": "437e",
               "key": "junctions.validate",
-              "file": ".tableaux/tasks/437e.yaml",
-              "commit": "320cf2b"
+              "file": ".tableaux/tasks/437e.yaml"
             },
             "url": "",
             "pin": ""
@@ -1492,14 +1454,12 @@
             "from": {
               "by": "",
               "key": "junctions.mockup.subproject.url",
-              "file": ".tableaux/tasks/77b2.yaml",
-              "commit": "6b6c99a"
+              "file": ".tableaux/tasks/77b2.yaml"
             },
             "reviewer_from": {
               "by": "",
               "key": "",
-              "file": "",
-              "commit": ""
+              "file": ""
             },
             "url": "subprojects/tablo",
             "pin": "00f8f68"
@@ -1514,14 +1474,12 @@
             "from": {
               "by": "",
               "key": "junctions.mockup.subproject.url",
-              "file": ".tableaux/tasks/6103.yaml",
-              "commit": "6b6c99a"
+              "file": ".tableaux/tasks/6103.yaml"
             },
             "reviewer_from": {
               "by": "",
               "key": "",
-              "file": "",
-              "commit": ""
+              "file": ""
             },
             "url": "subprojects/tabloio",
             "pin": "4593882"
@@ -1536,14 +1494,12 @@
             "from": {
               "by": "",
               "key": "junctions.mockup.subproject.url",
-              "file": ".tableaux/tasks/c6e8.yaml",
-              "commit": "6b6c99a"
+              "file": ".tableaux/tasks/c6e8.yaml"
             },
             "reviewer_from": {
               "by": "",
               "key": "",
-              "file": "",
-              "commit": ""
+              "file": ""
             },
             "url": "subprojects/tablotui",
             "pin": "a2878b5"
@@ -1558,14 +1514,12 @@
             "from": {
               "by": "",
               "key": "junctions.mockup.subproject.url",
-              "file": ".tableaux/tasks/595e.yaml",
-              "commit": "6b6c99a"
+              "file": ".tableaux/tasks/595e.yaml"
             },
             "reviewer_from": {
               "by": "",
               "key": "",
-              "file": "",
-              "commit": ""
+              "file": ""
             },
             "url": "subprojects/tableaud",
             "pin": "e6ec4ec"
@@ -2154,7 +2108,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2165,7 +2119,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2176,7 +2130,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2187,7 +2141,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2198,7 +2152,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2209,7 +2163,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2220,7 +2174,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2231,7 +2185,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2242,7 +2196,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2253,7 +2207,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2264,7 +2218,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2275,7 +2229,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2286,7 +2240,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2297,7 +2251,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2308,7 +2262,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2319,7 +2273,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2330,7 +2284,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2341,7 +2295,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2352,7 +2306,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2363,7 +2317,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2374,7 +2328,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2385,7 +2339,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2396,7 +2350,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2407,7 +2361,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2418,7 +2372,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2429,7 +2383,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2440,7 +2394,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2451,7 +2405,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2462,7 +2416,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2473,7 +2427,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2484,7 +2438,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2495,7 +2449,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2506,7 +2460,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -2517,7 +2471,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -2528,7 +2482,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -2539,7 +2493,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -2550,7 +2504,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -2561,7 +2515,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -2572,7 +2526,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -2583,7 +2537,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -2594,7 +2548,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -2605,7 +2559,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -2616,7 +2570,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -2627,7 +2581,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -2638,7 +2592,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -2649,7 +2603,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -2660,7 +2614,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -2671,7 +2625,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -2682,7 +2636,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -2693,7 +2647,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -2704,7 +2658,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -2715,7 +2669,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -2726,7 +2680,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2737,7 +2691,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2748,7 +2702,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2759,7 +2713,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2770,7 +2724,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2781,7 +2735,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2792,7 +2746,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2803,7 +2757,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2814,7 +2768,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2825,7 +2779,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "noreply@anthropic.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -2836,7 +2790,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2847,7 +2801,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2858,7 +2812,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -2869,7 +2823,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -2880,7 +2834,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2891,7 +2845,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -2902,7 +2856,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -2913,7 +2867,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "noreply@anthropic.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -2924,7 +2878,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "noreply@anthropic.com",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -2935,7 +2889,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -2946,7 +2900,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -2957,7 +2911,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -2968,7 +2922,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -2979,7 +2933,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -2990,7 +2944,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -3001,7 +2955,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -3012,7 +2966,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "later"
+            "stands": "later"
           }
         ],
         "reviews": [
@@ -3025,7 +2979,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -3036,7 +2990,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -3047,7 +3001,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -3058,7 +3012,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -3069,7 +3023,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -3080,7 +3034,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -3091,7 +3045,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -3102,7 +3056,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -3113,7 +3067,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -3124,7 +3078,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -3135,7 +3089,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -3146,7 +3100,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -3157,7 +3111,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -3168,7 +3122,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -3179,7 +3133,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -3190,7 +3144,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -3201,7 +3155,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -3212,7 +3166,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -3223,7 +3177,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -3234,7 +3188,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -3245,7 +3199,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -3256,7 +3210,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -3267,7 +3221,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -3278,7 +3232,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -3289,7 +3243,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -3300,7 +3254,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -3311,7 +3265,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "noreply@anthropic.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -3322,7 +3276,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -3333,7 +3287,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -3344,7 +3298,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -3355,7 +3309,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "noreply@anthropic.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -3366,7 +3320,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "noreply@anthropic.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -3377,7 +3331,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "noreply@anthropic.com",
-            "when": "later"
+            "stands": "later"
           }
         ],
         "models": [
@@ -3573,14 +3527,12 @@
             "from": {
               "by": "",
               "key": "assignee",
-              "file": ".tableaux/tasks/ID.yaml",
-              "commit": "6b6c99a"
+              "file": ".tableaux/tasks/ID.yaml"
             },
             "reviewer_from": {
               "by": "",
               "key": "",
-              "file": "",
-              "commit": ""
+              "file": ""
             },
             "url": "",
             "pin": ""
@@ -3595,14 +3547,12 @@
             "from": {
               "by": "bc86",
               "key": "assignee",
-              "file": ".tableaux/tasks/bc86.yaml",
-              "commit": "6b6c99a"
+              "file": ".tableaux/tasks/bc86.yaml"
             },
             "reviewer_from": {
               "by": "",
               "key": "",
-              "file": "",
-              "commit": ""
+              "file": ""
             },
             "url": "",
             "pin": ""
@@ -3617,14 +3567,12 @@
             "from": {
               "by": "5fe3",
               "key": "assignee",
-              "file": ".tableaux/tasks/5fe3.yaml",
-              "commit": "6b6c99a"
+              "file": ".tableaux/tasks/5fe3.yaml"
             },
             "reviewer_from": {
               "by": "",
               "key": "",
-              "file": "",
-              "commit": ""
+              "file": ""
             },
             "url": "",
             "pin": ""
@@ -3663,14 +3611,12 @@
             "from": {
               "by": "437e",
               "key": "junctions.defined",
-              "file": ".tableaux/tasks/437e.yaml",
-              "commit": "320cf2b"
+              "file": ".tableaux/tasks/437e.yaml"
             },
             "reviewer_from": {
               "by": "default",
               "key": "assignee",
-              "file": ".tableaux/tasks/ID.yaml",
-              "commit": "6b6c99a"
+              "file": ".tableaux/tasks/ID.yaml"
             },
             "url": "",
             "pin": ""
@@ -3691,14 +3637,12 @@
             "from": {
               "by": "437e",
               "key": "junctions.defined",
-              "file": ".tableaux/tasks/437e.yaml",
-              "commit": "320cf2b"
+              "file": ".tableaux/tasks/437e.yaml"
             },
             "reviewer_from": {
               "by": "default",
               "key": "assignee",
-              "file": ".tableaux/tasks/ID.yaml",
-              "commit": "6b6c99a"
+              "file": ".tableaux/tasks/ID.yaml"
             },
             "url": "",
             "pin": ""
@@ -3732,14 +3676,12 @@
             "from": {
               "by": "437e",
               "key": "junctions.mockup",
-              "file": ".tableaux/tasks/437e.yaml",
-              "commit": "320cf2b"
+              "file": ".tableaux/tasks/437e.yaml"
             },
             "reviewer_from": {
               "by": "437e",
               "key": "junctions.mockup",
-              "file": ".tableaux/tasks/437e.yaml",
-              "commit": "320cf2b"
+              "file": ".tableaux/tasks/437e.yaml"
             },
             "url": "",
             "pin": ""
@@ -3761,14 +3703,12 @@
             "from": {
               "by": "bc63",
               "key": "junctions.design",
-              "file": ".tableaux/tasks/bc63.yaml",
-              "commit": "320cf2b"
+              "file": ".tableaux/tasks/bc63.yaml"
             },
             "reviewer_from": {
               "by": "437e",
               "key": "junctions.design",
-              "file": ".tableaux/tasks/437e.yaml",
-              "commit": "320cf2b"
+              "file": ".tableaux/tasks/437e.yaml"
             },
             "url": "",
             "pin": ""
@@ -3787,14 +3727,12 @@
             "from": {
               "by": "437e",
               "key": "junctions.implementation",
-              "file": ".tableaux/tasks/437e.yaml",
-              "commit": "320cf2b"
+              "file": ".tableaux/tasks/437e.yaml"
             },
             "reviewer_from": {
               "by": "default",
               "key": "assignee",
-              "file": ".tableaux/tasks/ID.yaml",
-              "commit": "6b6c99a"
+              "file": ".tableaux/tasks/ID.yaml"
             },
             "url": "",
             "pin": ""
@@ -3811,14 +3749,12 @@
             "from": {
               "by": "437e",
               "key": "junctions.implementation",
-              "file": ".tableaux/tasks/437e.yaml",
-              "commit": "320cf2b"
+              "file": ".tableaux/tasks/437e.yaml"
             },
             "reviewer_from": {
               "by": "default",
               "key": "assignee",
-              "file": ".tableaux/tasks/ID.yaml",
-              "commit": "6b6c99a"
+              "file": ".tableaux/tasks/ID.yaml"
             },
             "url": "",
             "pin": ""
@@ -3834,14 +3770,12 @@
             "from": {
               "by": "437e",
               "key": "junctions.unit",
-              "file": ".tableaux/tasks/437e.yaml",
-              "commit": "320cf2b"
+              "file": ".tableaux/tasks/437e.yaml"
             },
             "reviewer_from": {
               "by": "default",
               "key": "assignee",
-              "file": ".tableaux/tasks/ID.yaml",
-              "commit": "6b6c99a"
+              "file": ".tableaux/tasks/ID.yaml"
             },
             "url": "",
             "pin": ""
@@ -3856,14 +3790,12 @@
             "from": {
               "by": "437e",
               "key": "junctions.integrate",
-              "file": ".tableaux/tasks/437e.yaml",
-              "commit": "320cf2b"
+              "file": ".tableaux/tasks/437e.yaml"
             },
             "reviewer_from": {
               "by": "default",
               "key": "assignee",
-              "file": ".tableaux/tasks/ID.yaml",
-              "commit": "6b6c99a"
+              "file": ".tableaux/tasks/ID.yaml"
             },
             "url": "",
             "pin": ""
@@ -3885,14 +3817,12 @@
             "from": {
               "by": "bc63",
               "key": "junctions.validate",
-              "file": ".tableaux/tasks/bc63.yaml",
-              "commit": "320cf2b"
+              "file": ".tableaux/tasks/bc63.yaml"
             },
             "reviewer_from": {
               "by": "437e",
               "key": "junctions.validate",
-              "file": ".tableaux/tasks/437e.yaml",
-              "commit": "320cf2b"
+              "file": ".tableaux/tasks/437e.yaml"
             },
             "url": "",
             "pin": ""
@@ -3931,14 +3861,12 @@
             "from": {
               "by": "437e",
               "key": "junctions.defined",
-              "file": ".tableaux/tasks/437e.yaml",
-              "commit": "320cf2b"
+              "file": ".tableaux/tasks/437e.yaml"
             },
             "reviewer_from": {
               "by": "default",
               "key": "assignee",
-              "file": ".tableaux/tasks/ID.yaml",
-              "commit": "6b6c99a"
+              "file": ".tableaux/tasks/ID.yaml"
             },
             "url": "",
             "pin": ""
@@ -3957,14 +3885,12 @@
             "from": {
               "by": "437e",
               "key": "junctions.implementation",
-              "file": ".tableaux/tasks/437e.yaml",
-              "commit": "320cf2b"
+              "file": ".tableaux/tasks/437e.yaml"
             },
             "reviewer_from": {
               "by": "default",
               "key": "assignee",
-              "file": ".tableaux/tasks/ID.yaml",
-              "commit": "6b6c99a"
+              "file": ".tableaux/tasks/ID.yaml"
             },
             "url": "",
             "pin": ""
@@ -3980,14 +3906,12 @@
             "from": {
               "by": "437e",
               "key": "junctions.unit",
-              "file": ".tableaux/tasks/437e.yaml",
-              "commit": "320cf2b"
+              "file": ".tableaux/tasks/437e.yaml"
             },
             "reviewer_from": {
               "by": "default",
               "key": "assignee",
-              "file": ".tableaux/tasks/ID.yaml",
-              "commit": "6b6c99a"
+              "file": ".tableaux/tasks/ID.yaml"
             },
             "url": "",
             "pin": ""
@@ -4002,43 +3926,17 @@
             "from": {
               "by": "437e",
               "key": "junctions.integrate",
-              "file": ".tableaux/tasks/437e.yaml",
-              "commit": "320cf2b"
+              "file": ".tableaux/tasks/437e.yaml"
             },
             "reviewer_from": {
               "by": "default",
               "key": "assignee",
-              "file": ".tableaux/tasks/ID.yaml",
-              "commit": "6b6c99a"
+              "file": ".tableaux/tasks/ID.yaml"
             },
             "url": "",
             "pin": ""
           }
         ]
-      }
-    ],
-    "commits": [
-      {
-        "hash": "320cf2b",
-        "subject": "Name a model family per gate (D7)",
-        "date": "2026-09-30",
-        "author": {
-          "email": "noreply@anthropic.com"
-        },
-        "committer": {
-          "email": "nbyoung@nbyoung.com"
-        }
-      },
-      {
-        "hash": "6b6c99a",
-        "subject": "Plan the Tableaux tooling",
-        "date": "2026-09-29",
-        "author": {
-          "email": "nbyoung@nbyoung.com"
-        },
-        "committer": {
-          "email": "nbyoung@nbyoung.com"
-        }
       }
     ]
   },

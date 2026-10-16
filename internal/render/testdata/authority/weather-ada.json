@@ -256,7 +256,8 @@
           "7b2e",
           "3c5d"
         ],
-        "defaults": []
+        "defaults": [],
+        "sources": []
       },
       {
         "id": "4e2b",
@@ -286,11 +287,10 @@
             "contributor": "",
             "model": "",
             "reviewer": "ben@example.org",
-            "contributor_from": "",
-            "model_from": "",
-            "reviewer_from": ""
+            "stands": ""
           }
-        ]
+        ],
+        "sources": []
       }
     ],
     "deciding": [

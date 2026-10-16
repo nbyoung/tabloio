@@ -172,7 +172,6 @@
       "c6e8",
       "595e"
     ],
-    "commands": [],
     "people": [
       {
         "email": "nbyoung@nbyoung.com",
@@ -536,7 +535,7 @@
             "contributor": "nbyoung@nbyoung.com",
             "model": "",
             "reviewer": "",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -547,7 +546,7 @@
             "contributor": "nbyoung@nbyoung.com",
             "model": "",
             "reviewer": "",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -558,7 +557,7 @@
             "contributor": "nbyoung@nbyoung.com",
             "model": "",
             "reviewer": "",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -569,7 +568,7 @@
             "contributor": "nbyoung@nbyoung.com",
             "model": "",
             "reviewer": "",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -580,7 +579,7 @@
             "contributor": "nbyoung@nbyoung.com",
             "model": "",
             "reviewer": "",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -591,7 +590,7 @@
             "contributor": "nbyoung@nbyoung.com",
             "model": "",
             "reviewer": "",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -602,7 +601,7 @@
             "contributor": "nbyoung@nbyoung.com",
             "model": "",
             "reviewer": "",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -613,7 +612,7 @@
             "contributor": "nbyoung@nbyoung.com",
             "model": "",
             "reviewer": "",
-            "when": "later"
+            "stands": "later"
           }
         ],
         "reviews": [
@@ -626,7 +625,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -637,7 +636,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -648,7 +647,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -659,7 +658,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -670,7 +669,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -681,7 +680,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -692,7 +691,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -703,7 +702,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -714,7 +713,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -725,7 +724,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -736,7 +735,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -747,7 +746,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -758,7 +757,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -769,7 +768,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -780,7 +779,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -791,7 +790,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -802,7 +801,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -813,7 +812,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -824,7 +823,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -835,7 +834,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -846,7 +845,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -857,7 +856,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -868,7 +867,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -879,7 +878,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -890,7 +889,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -901,7 +900,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -912,7 +911,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -923,7 +922,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -934,7 +933,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -945,7 +944,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -956,7 +955,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -967,7 +966,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -978,7 +977,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -989,7 +988,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -1000,7 +999,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "passed"
+            "stands": "passed"
           },
           {
             "task": {
@@ -1011,7 +1010,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -1022,7 +1021,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -1033,7 +1032,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -1044,7 +1043,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -1055,7 +1054,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -1066,7 +1065,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -1077,7 +1076,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -1088,7 +1087,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -1099,7 +1098,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "later"
+            "stands": "later"
           },
           {
             "task": {
@@ -1110,7 +1109,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "next"
+            "stands": "next"
           },
           {
             "task": {
@@ -1121,7 +1120,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "when": "later"
+            "stands": "later"
           }
         ],
         "models": [],
@@ -1218,8 +1217,7 @@
         ],
         "positions": []
       }
-    ],
-    "commits": []
+    ]
   },
   "diagnostics": []
 }

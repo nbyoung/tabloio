@@ -565,9 +565,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "",
-            "contributor_from": "",
-            "model_from": "",
-            "reviewer_from": ""
+            "stands": ""
           },
           {
             "gate": "mockup",
@@ -579,9 +577,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "contributor_from": "",
-            "model_from": "",
-            "reviewer_from": ""
+            "stands": ""
           },
           {
             "gate": "function",
@@ -592,9 +588,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "",
-            "contributor_from": "",
-            "model_from": "",
-            "reviewer_from": ""
+            "stands": ""
           },
           {
             "gate": "design",
@@ -606,9 +600,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "contributor_from": "",
-            "model_from": "",
-            "reviewer_from": ""
+            "stands": ""
           },
           {
             "gate": "implementation",
@@ -619,9 +611,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "",
-            "contributor_from": "",
-            "model_from": "",
-            "reviewer_from": ""
+            "stands": ""
           },
           {
             "gate": "unit",
@@ -632,9 +622,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "",
-            "contributor_from": "",
-            "model_from": "",
-            "reviewer_from": ""
+            "stands": ""
           },
           {
             "gate": "integrate",
@@ -645,9 +633,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "",
-            "contributor_from": "",
-            "model_from": "",
-            "reviewer_from": ""
+            "stands": ""
           },
           {
             "gate": "validate",
@@ -659,9 +645,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "nbyoung@nbyoung.com",
-            "contributor_from": "",
-            "model_from": "",
-            "reviewer_from": ""
+            "stands": ""
           },
           {
             "gate": "release",
@@ -672,11 +656,10 @@
             "contributor": "nbyoung@nbyoung.com",
             "model": "",
             "reviewer": "",
-            "contributor_from": "",
-            "model_from": "",
-            "reviewer_from": ""
+            "stands": ""
           }
-        ]
+        ],
+        "sources": []
       },
       {
         "id": "bc63",
@@ -713,9 +696,7 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "contributor_from": "",
-            "model_from": "",
-            "reviewer_from": "437e"
+            "stands": ""
           },
           {
             "gate": "validate",
@@ -727,9 +708,21 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "contributor_from": "",
-            "model_from": "",
-            "reviewer_from": "437e"
+            "stands": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "design",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "validate",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
           }
         ]
       },
@@ -756,7 +749,8 @@
           "bc86",
           "5fe3"
         ],
-        "defaults": []
+        "defaults": [],
+        "sources": []
       },
       {
         "id": "bc86",
@@ -802,9 +796,7 @@
             "contributor": "",
             "model": "",
             "reviewer": "",
-            "contributor_from": "",
-            "model_from": "",
-            "reviewer_from": ""
+            "stands": ""
           },
           {
             "gate": "design",
@@ -815,9 +807,7 @@
             "contributor": "",
             "model": "",
             "reviewer": "",
-            "contributor_from": "",
-            "model_from": "",
-            "reviewer_from": ""
+            "stands": ""
           },
           {
             "gate": "implementation",
@@ -828,9 +818,7 @@
             "contributor": "",
             "model": "",
             "reviewer": "",
-            "contributor_from": "",
-            "model_from": "",
-            "reviewer_from": ""
+            "stands": ""
           },
           {
             "gate": "unit",
@@ -841,9 +829,7 @@
             "contributor": "",
             "model": "",
             "reviewer": "",
-            "contributor_from": "",
-            "model_from": "",
-            "reviewer_from": ""
+            "stands": ""
           },
           {
             "gate": "integrate",
@@ -854,9 +840,7 @@
             "contributor": "",
             "model": "",
             "reviewer": "",
-            "contributor_from": "",
-            "model_from": "",
-            "reviewer_from": ""
+            "stands": ""
           },
           {
             "gate": "validate",
@@ -867,9 +851,7 @@
             "contributor": "",
             "model": "",
             "reviewer": "",
-            "contributor_from": "",
-            "model_from": "",
-            "reviewer_from": ""
+            "stands": ""
           },
           {
             "gate": "release",
@@ -880,11 +862,10 @@
             "contributor": "",
             "model": "",
             "reviewer": "",
-            "contributor_from": "",
-            "model_from": "",
-            "reviewer_from": ""
+            "stands": ""
           }
-        ]
+        ],
+        "sources": []
       },
       {
         "id": "5fe3",
@@ -930,9 +911,7 @@
             "contributor": "",
             "model": "",
             "reviewer": "",
-            "contributor_from": "",
-            "model_from": "",
-            "reviewer_from": ""
+            "stands": ""
           },
           {
             "gate": "design",
@@ -943,9 +922,7 @@
             "contributor": "",
             "model": "",
             "reviewer": "",
-            "contributor_from": "",
-            "model_from": "",
-            "reviewer_from": ""
+            "stands": ""
           },
           {
             "gate": "implementation",
@@ -956,9 +933,7 @@
             "contributor": "",
             "model": "",
             "reviewer": "",
-            "contributor_from": "",
-            "model_from": "",
-            "reviewer_from": ""
+            "stands": ""
           },
           {
             "gate": "unit",
@@ -969,9 +944,7 @@
             "contributor": "",
             "model": "",
             "reviewer": "",
-            "contributor_from": "",
-            "model_from": "",
-            "reviewer_from": ""
+            "stands": ""
           },
           {
             "gate": "integrate",
@@ -982,9 +955,7 @@
             "contributor": "",
             "model": "",
             "reviewer": "",
-            "contributor_from": "",
-            "model_from": "",
-            "reviewer_from": ""
+            "stands": ""
           },
           {
             "gate": "validate",
@@ -995,9 +966,7 @@
             "contributor": "",
             "model": "",
             "reviewer": "",
-            "contributor_from": "",
-            "model_from": "",
-            "reviewer_from": ""
+            "stands": ""
           },
           {
             "gate": "release",
@@ -1008,11 +977,10 @@
             "contributor": "",
             "model": "",
             "reviewer": "",
-            "contributor_from": "",
-            "model_from": "",
-            "reviewer_from": ""
+            "stands": ""
           }
-        ]
+        ],
+        "sources": []
       }
     ],
     "deciding": [
