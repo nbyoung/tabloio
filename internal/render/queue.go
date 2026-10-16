@@ -157,7 +157,7 @@ func (p *page) queueCause(it view.QueueItem) []doc.Inline {
 		switch w.Kind {
 		case "requirement":
 			if r := w.Requires; r != nil {
-				x := one(txt("waits for "), code(r.Task.ID))
+				x := spans(one(txt("waits for ")), task(r.Task))
 				if r.Subproject != "" {
 					x = append(x, txt(" in "), code(r.Subproject))
 				}

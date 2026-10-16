@@ -12,26 +12,20 @@ import (
 	"unicode/utf8"
 )
 
-// envelopeData returns the data member of the envelope in testdata/name.
-func envelopeData(t *testing.T, name string) []byte {
+// envelope returns the envelope in testdata/name.
+func envelope(t *testing.T, name string) []byte {
 	t.Helper()
 	raw, err := os.ReadFile(filepath.Join("testdata", name))
 	if err != nil {
 		t.Fatal(err)
 	}
-	var env struct {
-		Data json.RawMessage `json:"data"`
-	}
-	if err := json.Unmarshal(raw, &env); err != nil {
-		t.Fatal(err)
-	}
-	return env.Data
+	return raw
 }
 
 // load decodes the brief of testdata/name.json.
 func load(t *testing.T, name string) Data {
 	t.Helper()
-	d, err := Decode(envelopeData(t, name+".json"), Request{})
+	d, err := Decode(envelope(t, name+".json"), Request{})
 	if err != nil {
 		t.Fatalf("Decode %s: %v", name, err)
 	}
@@ -152,9 +146,10 @@ func TestT4WaitingItem(t *testing.T) {
 func TestT5NoWork(t *testing.T) {
 	req := Request{Person: "p@example.org", Task: "e4c7", Gate: "design"}
 	for _, data := range []string{
-		`{"view": "work-queue", "params": {}}`,
-		`{"brief": null}`,
-		`{"brief": {}}`,
+		`{"command": "queue", "params": {}, "data": {"items": []}}`,
+		`{"data": {"brief": null}}`,
+		`{"data": {"brief": {}}}`,
+		`{"data": null}`,
 	} {
 		_, err := Decode([]byte(data), req)
 		var nw *NoWorkError
@@ -167,10 +162,6 @@ func TestT5NoWork(t *testing.T) {
 		}
 	}
 
-	var raw map[string]any
-	if err := json.Unmarshal(envelopeData(t, "e4c7-design.json"), &raw); err != nil {
-		t.Fatal(err)
-	}
 	for _, c := range []struct {
 		field string
 		clear func(b map[string]any)
@@ -181,13 +172,17 @@ func TestT5NoWork(t *testing.T) {
 			b["junction"].(map[string]any)["contributor"].(map[string]any)["value"] = ""
 		}},
 		{"status.path", func(b map[string]any) { b["status"].(map[string]any)["path"] = "" }},
-		{"ref.commit", func(b map[string]any) { b["ref"].(map[string]any)["commit"] = "" }},
+		{"source.commit", func(env map[string]any) { env["source"].(map[string]any)["commit"] = nil }},
 	} {
 		var fresh map[string]any
-		if err := json.Unmarshal(envelopeData(t, "e4c7-design.json"), &fresh); err != nil {
+		if err := json.Unmarshal(envelope(t, "e4c7-design.json"), &fresh); err != nil {
 			t.Fatal(err)
 		}
-		c.clear(fresh["brief"].(map[string]any))
+		if c.field == "source.commit" {
+			c.clear(fresh)
+		} else {
+			c.clear(fresh["data"].(map[string]any)["brief"].(map[string]any))
+		}
 		data, err := json.Marshal(fresh)
 		if err != nil {
 			t.Fatal(err)
@@ -198,7 +193,7 @@ func TestT5NoWork(t *testing.T) {
 			t.Errorf("Decode without %s: error = %v, want %q", c.field, err, want)
 		}
 	}
-	if _, err := Decode([]byte(`{"brief": [`), req); err == nil {
+	if _, err := Decode([]byte(`{"data": {"brief": [`), req); err == nil {
 		t.Error("Decode accepted invalid JSON")
 	}
 }
@@ -572,5 +567,22 @@ func TestWay(t *testing.T) {
 		if got := way(c.d); got != c.want {
 			t.Errorf("way(%s, %s, %s) = %q, want %q", c.d.Gate.Key, c.d.Junction.Contributor.Value, c.d.Junction.Reviewer.Value, got, c.want)
 		}
+	}
+}
+
+// TestWaitingCauses: a waiting item names its causes in the work queue's
+// words, one phrase per kind, joined by "; ".
+func TestWaitingCauses(t *testing.T) {
+	d := load(t, "1422-implementation")
+	d.Status.Note = "No parts"
+	d.Causes = append(d.Causes,
+		Wait{Kind: "reason", Reason: "blocked"},
+		Wait{Kind: "authorisation", By: "a@example.org"},
+		Wait{Kind: "review", By: "r@example.org"})
+	err := Render(&bytes.Buffer{}, d)
+	want := "1422 at implementation waits and no brief starts it: waits for 5ca9 Read commands at implementation; " +
+		"blocked: No parts; proposed; waits for its authorisation by a@example.org; handed off; waits for the review by r@example.org"
+	if err == nil || err.Error() != want {
+		t.Errorf("error = %v, want %q", err, want)
 	}
 }

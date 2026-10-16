@@ -1,29 +1,26 @@
 {
   "schema": "tablo/1",
-  "command": "view",
-  "ref": {
-    "name": "main",
-    "commit": "3cdae527d47d37fdff55bc302c76c017cf91c606"
+  "command": "queue",
+  "source": {
+    "ref": "main",
+    "commit": "3cdae527d47d37fdff55bc302c76c017cf91c606",
+    "date": "2026-10-05"
+  },
+  "project": null,
+  "params": {
+    "task": null,
+    "person": "noreply@anthropic.com",
+    "brief": {
+      "task": "e9c6",
+      "gate": "implementation"
+    },
+    "level": "provenance"
   },
   "data": {
-    "view": "work-queue",
-    "params": {
-      "person": "noreply@anthropic.com",
-      "level": "provenance",
-      "brief": {
-        "task": "e9c6",
-        "gate": "implementation"
-      }
-    },
+    "items": [],
     "brief": {
-      "kind": "work ready",
-      "cause": "",
-      "person": "noreply@anthropic.com",
-      "ref": {
-        "name": "main",
-        "commit": "3cdae527d47d37fdff55bc302c76c017cf91c606",
-        "date": "2026-10-05"
-      },
+      "kind": "ready",
+      "causes": [],
       "task": {
         "id": "e9c6",
         "title": "Abstract views",
