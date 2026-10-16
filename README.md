@@ -47,15 +47,18 @@ The module is `github.com/nbyoung/tabloio`. The four subprojects share this shap
 | Path                  | Holds                                                                                   |
 |-----------------------|-----------------------------------------------------------------------------------------|
 | `cmd/tabloio/`        | The command. `main.go` prints the version; the read and write subcommands land in their own tasks |
+| `brief/`              | The brief composer: one work item of the queue as plain text, for an agent's session    |
 | `internal/render/`    | The renderers from tablo's view data: Markdown and Unicode text                         |
 | `.github/workflows/`  | `ci.yml` checks every pull request and push to `main`; `release.yml` publishes a tag    |
 | `.goreleaser.yaml`    | The release build: six static binaries, archives and checksums                          |
 | `.golangci.yml`       | The lint configuration                                                                  |
 | `.tableaux/`          | The plan                                                                                |
 
-Packages under `internal/` stay private to this module. The actions behind the
-write commands are the exception in prospect: `tablotui` reuses them, so the
-Write commands task designs them as an exported package.
+Packages under `internal/` stay private to this module. Two packages stand
+outside it for the other front ends: `brief`, which `tableaud` imports to print
+the same brief text, and in prospect the actions behind the write commands,
+which `tablotui` reuses, so the Write commands task designs them as an exported
+package.
 
 A prototype under `prototype/` is the function gate's demonstration. It goes when its task records `implementation`: the design's account of what it kept from the prototype and `git log -- prototype/<id>` keep what it showed, and the trunk builds what it ships.
 

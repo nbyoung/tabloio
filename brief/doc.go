@@ -7,5 +7,6 @@
 // envelope of the queue view with the brief parameter, whose data holds the
 // brief object (design 886d, decision 13), and Render writes it, byte for
 // byte the same for the same data. The package reads no file and calls no
-// program.
+// program. It stands outside internal/ so that the other front ends print the
+// same text: tableaud imports it.
 package brief
