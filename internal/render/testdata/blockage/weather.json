@@ -216,7 +216,6 @@
         "mark": "person",
         "act": "records",
         "holds": 2,
-        "action": "ada@example.org clears the `blocked` reason, or records a new status.",
         "held": [
           {
             "task": {
@@ -258,7 +257,6 @@
         "mark": "person",
         "act": "contributes",
         "holds": 1,
-        "action": "ada@example.org records `9f31` through design.",
         "held": [
           {
             "task": {
@@ -291,7 +289,6 @@
         "mark": "person",
         "act": "authorises",
         "holds": 1,
-        "action": "ada@example.org commits the trailer `Authorised: 3c5d`.",
         "held": [
           {
             "task": {

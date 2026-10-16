@@ -8,33 +8,41 @@ func init() { register("queue", func() View { return new(Queue) }) }
 type Queue struct {
 	Head
 	Items []QueueItem     `json:"items"` // kind order, then display order; reaffirmations oldest first
-	Brief json.RawMessage `json:"brief"` // set with the brief parameter; task e4c7 decodes it
+	Brief json.RawMessage `json:"brief"` // provenance, with the brief parameter; task e4c7 decodes it
 }
 
 // QueueItem is one thing the person does.
 type QueueItem struct {
-	Kind  string  `json:"kind"` // review, authorisation, ready, reaffirmation, waiting
-	Task  TaskRef `json:"task"`
-	Gate  string  `json:"gate"` // the next gate; a reaffirmation: the gate the status names
-	Model string  `json:"model"`
-	Since string  `json:"since"` // the date of the status
-	Age   int     `json:"age"`   // reaffirmation: days from the status to the ref's commit
-	Cause string  `json:"cause"` // waiting, authorisation: worded text (R17)
+	Kind   string  `json:"kind"` // review, authorisation, ready, reaffirmation, waiting
+	Task   TaskRef `json:"task"`
+	Gate   string  `json:"gate"` // the next gate; an authorisation, a reaffirmation: the gate the status names
+	Model  string  `json:"model"`
+	Since  string  `json:"since"`  // the date of the status
+	Age    int     `json:"age"`    // reaffirmation: days from the status to the ref's commit
+	Causes []Wait  `json:"causes"` // waiting: why, in the order requirement, reason, authorisation, review
 
-	Junction       *Junction     `json:"junction"` // detail from here
-	Sources        []Supplier    `json:"sources"`  // who supplies contributor, model, reviewer
-	TaskReferences []Reference   `json:"task_references"`
-	Requires       []Requirement `json:"requires"`
-	Unblocks       []Requirement `json:"unblocks"`         // dependents this junction's gate meets
-	AlsoRequiredBy []Requirement `json:"also_required_by"` // the other dependents
-	ParentUnblocks []ParentEdge  `json:"parent_unblocks"`
-	Status         *Status       `json:"status"`
-	StatusCommit   *Commit       `json:"status_commit"`
+	Junction       *Junction      `json:"junction"` // detail from here
+	Sources        []Supplier     `json:"sources"`  // who supplies contributor, model, reviewer
+	TaskReferences []Reference    `json:"task_references"`
+	Requires       []Requirement  `json:"requires"`
+	Unblocks       []Requirement  `json:"unblocks"`         // dependents this junction's gate meets
+	AlsoRequiredBy []Requirement  `json:"also_required_by"` // the other dependents
+	ParentUnblocks []ParentEdge   `json:"parent_unblocks"`
+	Status         *Status        `json:"status"`
+	StatusCommit   *Commit        `json:"status_commit"`
+	Authorisation  *Authorisation `json:"authorisation"` // an authorisation: the task's
+}
+
+// Wait is one reason a work item waits.
+type Wait struct {
+	Kind     string       `json:"kind"`     // requirement, reason, authorisation, review
+	Requires *Requirement `json:"requires"` // requirement: the unmet entry
+	Reason   string       `json:"reason"`   // reason: the status's reason, other than review
+	By       string       `json:"by"`       // authorisation: the nearest authority; review: the reviewer
 }
 
 // ParentEdge is a requirement on a parent that a child's work would let pass.
 type ParentEdge struct {
 	Parent   TaskRef     `json:"parent"`
-	Gate     string      `json:"gate"`
-	Requires Requirement `json:"requires"` // Task is the dependent
+	Requires Requirement `json:"requires"` // Task is the dependent; From is the parent's gate
 }

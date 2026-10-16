@@ -17,20 +17,18 @@ Legend: `tabloio gates`.
      - `5fe3` **HTML views** at 📌 mockup: the parent of `5471`.
        - `c6e8` tablotui: terminal user interface at 📐 design: requires `5fe3` at 📌 mockup, The HTML mockups that fix the disclosure levels. Also under cause 2.
        - `595e` tableaud: local daemon and HTML at 📐 design: requires `5fe3` at 📌 mockup, The HTML mockups it reproduces.
-   - **The status.** `.tableaux/status/5471.yaml` reads `gate: defined`, `state: nominal`, `reason: review`.
-   - **The junction.** `5471` at mockup: contributor noreply@anthropic.com, model `claude-opus`, reviewer nbyoung@nbyoung.com, all three from `437e`.
-   - **The review.** No commit carries `Reviewed: 5471 mockup`.
-   - **The deciding commits.** `6b6c99a` Plan the Tableaux tooling, 2026-09-29, author and committer nbyoung@nbyoung.com.
+   - **The status.** 📝 defined 🟢 nominal 👓 review.
+   - **The junction.** `5471` at 📌 mockup: contributor noreply@anthropic.com, model `claude-opus`, reviewer nbyoung@nbyoung.com, from `437e`.
    ```
    tabloio review 5471 mockup
    git commit --allow-empty --trailer 'Reviewed: 5471 mockup' -m 'Accept the work-blockage tree mockup in HTML'
    ```
 2. **`efff` Work-blockage tree view in Markdown has not passed 📌 mockup** · 🤖 noreply@anthropic.com contributes · holds 3
-   - Action: noreply@anthropic.com draws the mockup and hands it off with the reason `review`.
+   - Action: noreply@anthropic.com takes `efff` through mockup.
    - `bc86` **Markdown views** at 📌 mockup: the parent of `efff`.
      - `6103` tabloio: command line, output and input at 📐 design: requires `bc86` at 📌 mockup, The Markdown mockups it reproduces.
      - `c6e8` tablotui: terminal user interface at 📐 design: requires `bc86` at 📌 mockup, The Markdown mockups that fix the textual layout. Also under cause 1.
-   - **The status.** `.tableaux/status/efff.yaml` reads `gate: defined`, `state: nominal`.
+   - **The status.** 📝 defined 🟢 nominal.
    ```
    tabloio queue --person noreply@anthropic.com --brief efff mockup
    ```

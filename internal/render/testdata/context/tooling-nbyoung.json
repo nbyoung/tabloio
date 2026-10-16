@@ -167,7 +167,6 @@
         }
       ]
     },
-    "contextual": true,
     "columns": [
       {
         "gates": [
@@ -231,7 +230,6 @@
         "depth": 0,
         "parent": true,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -293,8 +291,92 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": null,
+        "chain": [
+          {
+            "task": {
+              "id": "437e",
+              "title": "Tableaux tooling"
+            },
+            "url": "",
+            "status": {
+              "gate": "defined",
+              "state": "nominal",
+              "note": "Mockup waits for Abstract views (e9c6) at design",
+              "date": "2026-09-29",
+              "from": {
+                "kind": "rollup",
+                "task": {
+                  "id": "99f0",
+                  "title": "Gate definition view in Markdown"
+                }
+              }
+            }
+          },
+          {
+            "task": {
+              "id": "bc63",
+              "title": "Method"
+            },
+            "url": "",
+            "status": {
+              "gate": "defined",
+              "state": "nominal",
+              "date": "2026-09-29"
+            }
+          }
+        ],
+        "junctions": [
+          {
+            "gate": "design",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "agent"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-sonnet",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "design",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "design",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "implementation",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "bc63",
@@ -302,7 +384,6 @@
         "depth": 1,
         "parent": true,
         "hidden": 4,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -364,8 +445,70 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": null,
+        "chain": [
+          {
+            "task": {
+              "id": "bc63",
+              "title": "Method"
+            },
+            "url": "",
+            "status": {
+              "gate": "defined",
+              "state": "nominal",
+              "note": "Mockup waits for Abstract views (e9c6) at design",
+              "date": "2026-09-29",
+              "from": {
+                "kind": "rollup",
+                "task": {
+                  "id": "99f0",
+                  "title": "Gate definition view in Markdown"
+                }
+              }
+            }
+          },
+          {
+            "task": {
+              "id": "2034",
+              "title": "Views"
+            },
+            "url": "",
+            "status": {
+              "gate": "defined",
+              "state": "nominal",
+              "date": "2026-09-29"
+            }
+          }
+        ],
+        "junctions": [
+          {
+            "gate": "implementation",
+            "marks": [
+              "agent"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-sonnet",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "implementation",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "2034",
@@ -373,7 +516,6 @@
         "depth": 2,
         "parent": true,
         "hidden": 3,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -435,8 +577,70 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": null,
+        "chain": [
+          {
+            "task": {
+              "id": "2034",
+              "title": "Views"
+            },
+            "url": "",
+            "status": {
+              "gate": "defined",
+              "state": "nominal",
+              "note": "Mockup waits for Abstract views (e9c6) at design",
+              "date": "2026-09-29",
+              "from": {
+                "kind": "rollup",
+                "task": {
+                  "id": "99f0",
+                  "title": "Gate definition view in Markdown"
+                }
+              }
+            }
+          },
+          {
+            "task": {
+              "id": "bc86",
+              "title": "Markdown views"
+            },
+            "url": "",
+            "status": {
+              "gate": "defined",
+              "state": "nominal",
+              "date": "2026-09-29"
+            }
+          }
+        ],
+        "junctions": [
+          {
+            "gate": "implementation",
+            "marks": [
+              "agent"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-sonnet",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "implementation",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "ac33",
@@ -444,7 +648,6 @@
         "depth": 2,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "design",
           "state": "nominal",
@@ -484,8 +687,44 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": null,
+        "chain": [],
+        "junctions": [
+          {
+            "gate": "implementation",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-sonnet",
+            "reviewer": "nbyoung@nbyoung.com"
+          }
+        ],
+        "sources": [
+          {
+            "gate": "implementation",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "implementation",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "default"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "9f3f",
@@ -493,7 +732,6 @@
         "depth": 2,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "design",
           "state": "nominal",
@@ -533,8 +771,44 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": null,
+        "chain": [],
+        "junctions": [
+          {
+            "gate": "implementation",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-sonnet",
+            "reviewer": "nbyoung@nbyoung.com"
+          }
+        ],
+        "sources": [
+          {
+            "gate": "implementation",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "implementation",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "default"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "7166",
@@ -542,7 +816,6 @@
         "depth": 2,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "design",
           "state": "nominal",
@@ -582,8 +855,44 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": null,
+        "chain": [],
+        "junctions": [
+          {
+            "gate": "implementation",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-sonnet",
+            "reviewer": "nbyoung@nbyoung.com"
+          }
+        ],
+        "sources": [
+          {
+            "gate": "implementation",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "implementation",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "default"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "77b2",
@@ -591,7 +900,6 @@
         "depth": 1,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -654,6 +962,109 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          }
+        ],
+        "label": "",
+        "status_commit": null,
+        "own_commit": {
+          "hash": "e66abe2a1b2c3d4e5f60718293a4b5c6d7e8f907",
+          "subject": "Record the defined gate for the subproject tasks",
+          "date": "2026-09-30",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "noreply@anthropic.com"
+          },
+          "trailers": []
+        },
+        "chain": [
+          {
+            "task": {
+              "id": "77b2",
+              "title": "tablo: backend library and plumbing"
+            },
+            "url": "",
+            "status": {
+              "gate": "defined",
+              "state": "nominal",
+              "note": "The design is next and no requirement gates it",
+              "date": "2026-09-30",
+              "from": {
+                "kind": "snapshot",
+                "task": {
+                  "id": "b2c1",
+                  "title": "tablo"
+                },
+                "url": "subprojects/tablo",
+                "pin": "00f8f68",
+                "gate": "defined"
+              }
+            }
+          },
+          {
+            "task": {
+              "id": "b2c1",
+              "title": "tablo"
+            },
+            "url": "subprojects/tablo",
+            "status": {
+              "gate": "defined",
+              "state": "nominal",
+              "date": "2026-09-30",
+              "from": {
+                "kind": "rollup",
+                "task": {
+                  "id": "4b4f",
+                  "title": "Conformance"
+                }
+              }
+            }
+          }
+        ],
+        "junctions": [
+          {
+            "gate": "design",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [],
+        "linkages": [
+          {
+            "gates": [],
+            "url": "subprojects/tablo",
+            "task": {
+              "id": "b2c1",
+              "title": "tablo"
+            },
+            "commit": "00f8f68",
+            "set_by": {
+              "hash": "552d38f",
+              "date": "2026-10-02",
+              "author": {
+                "email": "nbyoung@nbyoung.com"
+              }
+            }
           }
         ]
       },
@@ -663,7 +1074,6 @@
         "depth": 1,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -726,6 +1136,109 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          }
+        ],
+        "label": "",
+        "status_commit": null,
+        "own_commit": {
+          "hash": "e66abe2a1b2c3d4e5f60718293a4b5c6d7e8f907",
+          "subject": "Record the defined gate for the subproject tasks",
+          "date": "2026-09-30",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "noreply@anthropic.com"
+          },
+          "trailers": []
+        },
+        "chain": [
+          {
+            "task": {
+              "id": "6103",
+              "title": "tabloio: command line, output and input"
+            },
+            "url": "",
+            "status": {
+              "gate": "defined",
+              "state": "nominal",
+              "note": "prototype/e3ed renders the gate and task definition views as Markdown at three levels from tablo view data",
+              "date": "2026-09-30",
+              "from": {
+                "kind": "snapshot",
+                "task": {
+                  "id": "07e0",
+                  "title": "tabloio"
+                },
+                "url": "subprojects/tabloio",
+                "pin": "4593882",
+                "gate": "function"
+              }
+            }
+          },
+          {
+            "task": {
+              "id": "07e0",
+              "title": "tabloio"
+            },
+            "url": "subprojects/tabloio",
+            "status": {
+              "gate": "function",
+              "state": "nominal",
+              "date": "2026-09-30",
+              "from": {
+                "kind": "rollup",
+                "task": {
+                  "id": "1093",
+                  "title": "Renderers"
+                }
+              }
+            }
+          }
+        ],
+        "junctions": [
+          {
+            "gate": "design",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [],
+        "linkages": [
+          {
+            "gates": [],
+            "url": "subprojects/tabloio",
+            "task": {
+              "id": "07e0",
+              "title": "tabloio"
+            },
+            "commit": "4593882",
+            "set_by": {
+              "hash": "1c0f04d",
+              "date": "2026-10-02",
+              "author": {
+                "email": "nbyoung@nbyoung.com"
+              }
+            }
           }
         ]
       },
@@ -735,7 +1248,6 @@
         "depth": 1,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -798,6 +1310,109 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          }
+        ],
+        "label": "",
+        "status_commit": null,
+        "own_commit": {
+          "hash": "e66abe2a1b2c3d4e5f60718293a4b5c6d7e8f907",
+          "subject": "Record the defined gate for the subproject tasks",
+          "date": "2026-09-30",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "noreply@anthropic.com"
+          },
+          "trailers": []
+        },
+        "chain": [
+          {
+            "task": {
+              "id": "c6e8",
+              "title": "tablotui: terminal user interface"
+            },
+            "url": "",
+            "status": {
+              "gate": "defined",
+              "state": "nominal",
+              "note": "prototype/679b renders the global tableau as a Bubble Tea grid with tree expand and collapse, scrolling, a folded gate window and hidden columns kept in a settings file; emoji lines align where the terminal widens U+FE0F",
+              "date": "2026-09-30",
+              "from": {
+                "kind": "snapshot",
+                "task": {
+                  "id": "40e8",
+                  "title": "tablotui"
+                },
+                "url": "subprojects/tablotui",
+                "pin": "a2878b5",
+                "gate": "function"
+              }
+            }
+          },
+          {
+            "task": {
+              "id": "40e8",
+              "title": "tablotui"
+            },
+            "url": "subprojects/tablotui",
+            "status": {
+              "gate": "function",
+              "state": "nominal",
+              "date": "2026-09-30",
+              "from": {
+                "kind": "rollup",
+                "task": {
+                  "id": "679b",
+                  "title": "Tableau grid"
+                }
+              }
+            }
+          }
+        ],
+        "junctions": [
+          {
+            "gate": "design",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [],
+        "linkages": [
+          {
+            "gates": [],
+            "url": "subprojects/tablotui",
+            "task": {
+              "id": "40e8",
+              "title": "tablotui"
+            },
+            "commit": "a2878b5",
+            "set_by": {
+              "hash": "fa4551e",
+              "date": "2026-10-04",
+              "author": {
+                "email": "nbyoung@nbyoung.com"
+              }
+            }
           }
         ]
       },
@@ -807,7 +1422,6 @@
         "depth": 1,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -870,20 +1484,17 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
           }
-        ]
-      }
-    ],
-    "statuses": [
-      {
-        "tasks": [
-          "77b2",
-          "6103",
-          "c6e8",
-          "595e"
         ],
-        "gate": "defined",
-        "commit": {
+        "label": "",
+        "status_commit": null,
+        "own_commit": {
           "hash": "e66abe2a1b2c3d4e5f60718293a4b5c6d7e8f907",
           "subject": "Record the defined gate for the subproject tasks",
           "date": "2026-09-30",
@@ -894,257 +1505,90 @@
             "email": "noreply@anthropic.com"
           },
           "trailers": []
-        }
-      }
-    ],
-    "rollups": [
-      {
-        "parent": {
-          "id": "437e",
-          "title": "Tableaux tooling"
         },
-        "status": {
-          "gate": "defined",
-          "state": "nominal",
-          "date": "2026-09-29"
-        },
-        "child": {
-          "id": "bc63",
-          "title": "Method"
-        }
-      },
-      {
-        "parent": {
-          "id": "bc63",
-          "title": "Method"
-        },
-        "status": {
-          "gate": "defined",
-          "state": "nominal",
-          "date": "2026-09-29"
-        },
-        "child": {
-          "id": "2034",
-          "title": "Views"
-        }
-      },
-      {
-        "parent": {
-          "id": "2034",
-          "title": "Views"
-        },
-        "status": {
-          "gate": "defined",
-          "state": "nominal",
-          "date": "2026-09-29"
-        },
-        "child": {
-          "id": "bc86",
-          "title": "Markdown views"
-        }
-      }
-    ],
-    "mark_groups": [
-      {
-        "gate": "design",
-        "marks": [
-          "agent",
-          "reviewer"
-        ],
-        "tasks": [
-          "437e"
-        ],
-        "contributor": "noreply@anthropic.com",
-        "model": "claude-opus",
-        "reviewer": "nbyoung@nbyoung.com",
-        "contributor_from": "437e",
-        "reviewer_from": "437e",
-        "exempt_from": ""
-      },
-      {
-        "gate": "implementation",
-        "marks": [
-          "agent"
-        ],
-        "tasks": [
-          "437e",
-          "bc63",
-          "2034"
-        ],
-        "contributor": "noreply@anthropic.com",
-        "model": "claude-sonnet",
-        "reviewer": "",
-        "contributor_from": "437e",
-        "reviewer_from": "",
-        "exempt_from": ""
-      },
-      {
-        "gate": "implementation",
-        "marks": [
-          "agent",
-          "reviewer"
-        ],
-        "tasks": [
-          "ac33",
-          "9f3f",
-          "7166"
-        ],
-        "contributor": "noreply@anthropic.com",
-        "model": "claude-sonnet",
-        "reviewer": "nbyoung@nbyoung.com",
-        "contributor_from": "437e",
-        "reviewer_from": "default",
-        "exempt_from": ""
-      },
-      {
-        "gate": "design",
-        "marks": [
-          "subproject"
-        ],
-        "tasks": [
-          "77b2",
-          "6103",
-          "c6e8",
-          "595e"
-        ],
-        "contributor": "",
-        "model": "",
-        "reviewer": "",
-        "contributor_from": "",
-        "reviewer_from": "",
-        "exempt_from": ""
-      },
-      {
-        "gate": "implementation",
-        "marks": [
-          "subproject"
-        ],
-        "tasks": [
-          "77b2",
-          "6103",
-          "c6e8",
-          "595e"
-        ],
-        "contributor": "",
-        "model": "",
-        "reviewer": "",
-        "contributor_from": "",
-        "reviewer_from": "",
-        "exempt_from": ""
-      }
-    ],
-    "snapshots": [
-      {
-        "task": "77b2",
-        "url": "subprojects/tablo",
-        "root": {
-          "id": "b2c1",
-          "title": "tablo"
-        },
-        "pin": "00f8f68",
-        "set_by": {
-          "hash": "552d38f",
-          "date": "2026-10-02",
-          "author": {
-            "email": "nbyoung@nbyoung.com"
-          }
-        },
-        "status": {
-          "gate": "defined",
-          "state": "nominal",
-          "date": "2026-09-30",
-          "from": {
-            "kind": "rollup",
+        "chain": [
+          {
             "task": {
-              "id": "4b4f",
-              "title": "Conformance"
+              "id": "595e",
+              "title": "tableaud: local daemon and HTML"
+            },
+            "url": "",
+            "status": {
+              "gate": "defined",
+              "state": "nominal",
+              "note": "prototype/49ce serves the ten views with a stdlib HEAD and .tableaux watcher, ETag 304 polling through htmx, a Source interface and a loopback Host check",
+              "date": "2026-09-30",
+              "from": {
+                "kind": "snapshot",
+                "task": {
+                  "id": "8608",
+                  "title": "tableaud"
+                },
+                "url": "subprojects/tableaud",
+                "pin": "e6ec4ec",
+                "gate": "function"
+              }
+            }
+          },
+          {
+            "task": {
+              "id": "8608",
+              "title": "tableaud"
+            },
+            "url": "subprojects/tableaud",
+            "status": {
+              "gate": "function",
+              "state": "nominal",
+              "date": "2026-09-30",
+              "from": {
+                "kind": "rollup",
+                "task": {
+                  "id": "49ce",
+                  "title": "Server"
+                }
+              }
             }
           }
-        }
-      },
-      {
-        "task": "6103",
-        "url": "subprojects/tabloio",
-        "root": {
-          "id": "07e0",
-          "title": "tabloio"
-        },
-        "pin": "4593882",
-        "set_by": {
-          "hash": "1c0f04d",
-          "date": "2026-10-02",
-          "author": {
-            "email": "nbyoung@nbyoung.com"
+        ],
+        "junctions": [
+          {
+            "gate": "design",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
           }
-        },
-        "status": {
-          "gate": "function",
-          "state": "nominal",
-          "date": "2026-09-30",
-          "from": {
-            "kind": "rollup",
+        ],
+        "sources": [],
+        "linkages": [
+          {
+            "gates": [],
+            "url": "subprojects/tableaud",
             "task": {
-              "id": "1093",
-              "title": "Renderers"
+              "id": "8608",
+              "title": "tableaud"
+            },
+            "commit": "e6ec4ec",
+            "set_by": {
+              "hash": "3cdae52",
+              "date": "2026-10-05",
+              "author": {
+                "email": "nbyoung@nbyoung.com"
+              }
             }
           }
-        }
-      },
-      {
-        "task": "c6e8",
-        "url": "subprojects/tablotui",
-        "root": {
-          "id": "40e8",
-          "title": "tablotui"
-        },
-        "pin": "a2878b5",
-        "set_by": {
-          "hash": "fa4551e",
-          "date": "2026-10-04",
-          "author": {
-            "email": "nbyoung@nbyoung.com"
-          }
-        },
-        "status": {
-          "gate": "function",
-          "state": "nominal",
-          "date": "2026-09-30",
-          "from": {
-            "kind": "rollup",
-            "task": {
-              "id": "679b",
-              "title": "Tableau grid"
-            }
-          }
-        }
-      },
-      {
-        "task": "595e",
-        "url": "subprojects/tableaud",
-        "root": {
-          "id": "8608",
-          "title": "tableaud"
-        },
-        "pin": "e6ec4ec",
-        "set_by": {
-          "hash": "3cdae52",
-          "date": "2026-10-05",
-          "author": {
-            "email": "nbyoung@nbyoung.com"
-          }
-        },
-        "status": {
-          "gate": "function",
-          "state": "nominal",
-          "date": "2026-09-30",
-          "from": {
-            "kind": "rollup",
-            "task": {
-              "id": "49ce",
-              "title": "Server"
-            }
-          }
-        }
+        ]
       }
     ],
     "commands": [

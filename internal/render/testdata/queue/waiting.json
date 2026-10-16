@@ -176,7 +176,6 @@
         "gate": "mockup",
         "model": "claude-opus",
         "since": "2026-09-29",
-        "cause": "waits for `e9c6` at design",
         "junction": {
           "gate": "mockup",
           "marks": [
@@ -217,7 +216,6 @@
               "id": "bc86",
               "title": "Markdown views"
             },
-            "gate": "mockup",
             "requires": {
               "task": {
                 "id": "6103",
@@ -235,7 +233,6 @@
               "id": "bc86",
               "title": "Markdown views"
             },
-            "gate": "mockup",
             "requires": {
               "task": {
                 "id": "c6e8",
@@ -258,7 +255,25 @@
         },
         "status_commit": {
           "hash": "1a17bfc3d8a5e2f0b7c1d6e9a4f3b2c1d0e9f8a7"
-        }
+        },
+        "causes": [
+          {
+            "kind": "requirement",
+            "requires": {
+              "task": {
+                "id": "e9c6",
+                "title": ""
+              },
+              "from": "design",
+              "to": "mockup",
+              "text": "",
+              "met": false,
+              "due": true
+            },
+            "reason": "",
+            "by": ""
+          }
+        ]
       }
     ]
   },

@@ -60,9 +60,9 @@ Legend: `tabloio gates`.
 | Gate | Mark | Rows | Contributor and model | Reviewer |
 |---|:-:|---|---|---|
 | 📐 design | 🤖👀 | `437e` | noreply@anthropic.com, `claude-opus`, from `437e` | **nbyoung@nbyoung.com**, from `437e` |
+| 📐 design | 🪆 | `77b2` `6103` `c6e8` `595e` |  |  |
 | 🧱 implementation | 🤖 | `437e` `bc63` `2034` | noreply@anthropic.com, `claude-sonnet`, from `437e` |  |
 | 🧱 implementation | 🤖👀 | `ac33` `9f3f` `7166` | noreply@anthropic.com, `claude-sonnet`, from `437e` | **nbyoung@nbyoung.com**, by default |
-| 📐 design | 🪆 | `77b2` `6103` `c6e8` `595e` |  |  |
 | 🧱 implementation | 🪆 | `77b2` `6103` `c6e8` `595e` |  |  |
 
 🤖 an agent contributes · 👀 a reviewer accepts · 🪆 a subproject does the work.

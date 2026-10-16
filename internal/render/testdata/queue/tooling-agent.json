@@ -232,7 +232,8 @@
         },
         "status_commit": {
           "hash": "3d8ce0e5a1b2c3d4e5f60718293a4b5c6d7e8f90"
-        }
+        },
+        "causes": []
       },
       {
         "kind": "ready",
@@ -305,7 +306,8 @@
         },
         "status_commit": {
           "hash": "879b447a1b2c3d4e5f60718293a4b5c6d7e8f901"
-        }
+        },
+        "causes": []
       },
       {
         "kind": "ready",
@@ -369,7 +371,6 @@
               "id": "bc86",
               "title": "Markdown views"
             },
-            "gate": "mockup",
             "requires": {
               "task": {
                 "id": "6103",
@@ -387,7 +388,6 @@
               "id": "bc86",
               "title": "Markdown views"
             },
-            "gate": "mockup",
             "requires": {
               "task": {
                 "id": "c6e8",
@@ -410,7 +410,8 @@
         },
         "status_commit": {
           "hash": "1a17bfc3d8a5e2f0b7c1d6e9a4f3b2c1d0e9f8a7"
-        }
+        },
+        "causes": []
       },
       {
         "kind": "ready",
@@ -420,7 +421,8 @@
         },
         "gate": "mockup",
         "model": "claude-opus",
-        "since": "2026-09-29"
+        "since": "2026-09-29",
+        "causes": []
       },
       {
         "kind": "ready",
@@ -430,7 +432,8 @@
         },
         "gate": "mockup",
         "model": "claude-opus",
-        "since": "2026-09-29"
+        "since": "2026-09-29",
+        "causes": []
       },
       {
         "kind": "ready",
@@ -440,7 +443,8 @@
         },
         "gate": "mockup",
         "model": "claude-opus",
-        "since": "2026-09-29"
+        "since": "2026-09-29",
+        "causes": []
       },
       {
         "kind": "ready",
@@ -450,7 +454,8 @@
         },
         "gate": "mockup",
         "model": "claude-opus",
-        "since": "2026-09-29"
+        "since": "2026-09-29",
+        "causes": []
       },
       {
         "kind": "ready",
@@ -460,7 +465,8 @@
         },
         "gate": "mockup",
         "model": "claude-opus",
-        "since": "2026-09-29"
+        "since": "2026-09-29",
+        "causes": []
       },
       {
         "kind": "ready",
@@ -470,7 +476,8 @@
         },
         "gate": "mockup",
         "model": "claude-opus",
-        "since": "2026-09-29"
+        "since": "2026-09-29",
+        "causes": []
       },
       {
         "kind": "ready",
@@ -480,7 +487,8 @@
         },
         "gate": "mockup",
         "model": "claude-opus",
-        "since": "2026-09-29"
+        "since": "2026-09-29",
+        "causes": []
       },
       {
         "kind": "ready",
@@ -490,7 +498,8 @@
         },
         "gate": "mockup",
         "model": "claude-opus",
-        "since": "2026-09-29"
+        "since": "2026-09-29",
+        "causes": []
       },
       {
         "kind": "ready",
@@ -500,7 +509,8 @@
         },
         "gate": "mockup",
         "model": "claude-opus",
-        "since": "2026-09-29"
+        "since": "2026-09-29",
+        "causes": []
       },
       {
         "kind": "ready",
@@ -510,7 +520,8 @@
         },
         "gate": "mockup",
         "model": "claude-opus",
-        "since": "2026-09-29"
+        "since": "2026-09-29",
+        "causes": []
       },
       {
         "kind": "ready",
@@ -520,7 +531,8 @@
         },
         "gate": "mockup",
         "model": "claude-opus",
-        "since": "2026-09-29"
+        "since": "2026-09-29",
+        "causes": []
       },
       {
         "kind": "ready",
@@ -530,7 +542,8 @@
         },
         "gate": "mockup",
         "model": "claude-opus",
-        "since": "2026-09-29"
+        "since": "2026-09-29",
+        "causes": []
       },
       {
         "kind": "ready",
@@ -540,7 +553,8 @@
         },
         "gate": "mockup",
         "model": "claude-opus",
-        "since": "2026-09-29"
+        "since": "2026-09-29",
+        "causes": []
       },
       {
         "kind": "ready",
@@ -550,7 +564,8 @@
         },
         "gate": "mockup",
         "model": "claude-opus",
-        "since": "2026-09-29"
+        "since": "2026-09-29",
+        "causes": []
       },
       {
         "kind": "ready",
@@ -560,7 +575,8 @@
         },
         "gate": "mockup",
         "model": "claude-opus",
-        "since": "2026-09-29"
+        "since": "2026-09-29",
+        "causes": []
       },
       {
         "kind": "ready",
@@ -570,7 +586,8 @@
         },
         "gate": "mockup",
         "model": "claude-opus",
-        "since": "2026-09-29"
+        "since": "2026-09-29",
+        "causes": []
       },
       {
         "kind": "ready",
@@ -580,7 +597,8 @@
         },
         "gate": "mockup",
         "model": "claude-opus",
-        "since": "2026-09-29"
+        "since": "2026-09-29",
+        "causes": []
       },
       {
         "kind": "ready",
@@ -590,7 +608,8 @@
         },
         "gate": "mockup",
         "model": "claude-opus",
-        "since": "2026-09-29"
+        "since": "2026-09-29",
+        "causes": []
       },
       {
         "kind": "ready",
@@ -600,7 +619,8 @@
         },
         "gate": "mockup",
         "model": "claude-opus",
-        "since": "2026-09-29"
+        "since": "2026-09-29",
+        "causes": []
       },
       {
         "kind": "ready",
@@ -610,7 +630,8 @@
         },
         "gate": "validate",
         "model": "claude-opus",
-        "since": "2026-09-30"
+        "since": "2026-09-30",
+        "causes": []
       },
       {
         "kind": "ready",
@@ -620,7 +641,8 @@
         },
         "gate": "unit",
         "model": "claude-sonnet",
-        "since": "2026-09-30"
+        "since": "2026-09-30",
+        "causes": []
       },
       {
         "kind": "ready",
@@ -630,7 +652,8 @@
         },
         "gate": "implementation",
         "model": "claude-sonnet",
-        "since": "2026-09-30"
+        "since": "2026-09-30",
+        "causes": []
       },
       {
         "kind": "ready",
@@ -640,7 +663,8 @@
         },
         "gate": "implementation",
         "model": "claude-sonnet",
-        "since": "2026-09-30"
+        "since": "2026-09-30",
+        "causes": []
       },
       {
         "kind": "ready",
@@ -650,7 +674,8 @@
         },
         "gate": "validate",
         "model": "claude-opus",
-        "since": "2026-09-30"
+        "since": "2026-09-30",
+        "causes": []
       },
       {
         "kind": "ready",
@@ -660,7 +685,8 @@
         },
         "gate": "implementation",
         "model": "claude-sonnet",
-        "since": "2026-09-30"
+        "since": "2026-09-30",
+        "causes": []
       },
       {
         "kind": "reaffirmation",
@@ -671,7 +697,8 @@
         "gate": "defined",
         "model": "",
         "since": "2026-09-29",
-        "age": 6
+        "age": 6,
+        "causes": []
       },
       {
         "kind": "reaffirmation",
@@ -682,7 +709,8 @@
         "gate": "defined",
         "model": "",
         "since": "2026-09-29",
-        "age": 6
+        "age": 6,
+        "causes": []
       },
       {
         "kind": "reaffirmation",
@@ -693,7 +721,8 @@
         "gate": "defined",
         "model": "",
         "since": "2026-09-29",
-        "age": 6
+        "age": 6,
+        "causes": []
       },
       {
         "kind": "reaffirmation",
@@ -704,7 +733,8 @@
         "gate": "defined",
         "model": "",
         "since": "2026-09-29",
-        "age": 6
+        "age": 6,
+        "causes": []
       },
       {
         "kind": "reaffirmation",
@@ -715,7 +745,8 @@
         "gate": "defined",
         "model": "",
         "since": "2026-09-29",
-        "age": 6
+        "age": 6,
+        "causes": []
       },
       {
         "kind": "reaffirmation",
@@ -726,7 +757,8 @@
         "gate": "defined",
         "model": "",
         "since": "2026-09-29",
-        "age": 6
+        "age": 6,
+        "causes": []
       },
       {
         "kind": "reaffirmation",
@@ -737,7 +769,8 @@
         "gate": "defined",
         "model": "",
         "since": "2026-09-29",
-        "age": 6
+        "age": 6,
+        "causes": []
       },
       {
         "kind": "reaffirmation",
@@ -748,7 +781,8 @@
         "gate": "defined",
         "model": "",
         "since": "2026-09-29",
-        "age": 6
+        "age": 6,
+        "causes": []
       },
       {
         "kind": "reaffirmation",
@@ -759,7 +793,8 @@
         "gate": "defined",
         "model": "",
         "since": "2026-09-29",
-        "age": 6
+        "age": 6,
+        "causes": []
       },
       {
         "kind": "reaffirmation",
@@ -770,7 +805,8 @@
         "gate": "defined",
         "model": "",
         "since": "2026-09-29",
-        "age": 6
+        "age": 6,
+        "causes": []
       },
       {
         "kind": "reaffirmation",
@@ -781,7 +817,8 @@
         "gate": "defined",
         "model": "",
         "since": "2026-09-29",
-        "age": 6
+        "age": 6,
+        "causes": []
       },
       {
         "kind": "reaffirmation",
@@ -792,7 +829,8 @@
         "gate": "defined",
         "model": "",
         "since": "2026-09-29",
-        "age": 6
+        "age": 6,
+        "causes": []
       },
       {
         "kind": "reaffirmation",
@@ -803,7 +841,8 @@
         "gate": "defined",
         "model": "",
         "since": "2026-09-29",
-        "age": 6
+        "age": 6,
+        "causes": []
       },
       {
         "kind": "reaffirmation",
@@ -814,7 +853,8 @@
         "gate": "defined",
         "model": "",
         "since": "2026-09-29",
-        "age": 6
+        "age": 6,
+        "causes": []
       },
       {
         "kind": "reaffirmation",
@@ -825,7 +865,8 @@
         "gate": "defined",
         "model": "",
         "since": "2026-09-29",
-        "age": 6
+        "age": 6,
+        "causes": []
       },
       {
         "kind": "reaffirmation",
@@ -836,7 +877,8 @@
         "gate": "defined",
         "model": "",
         "since": "2026-09-29",
-        "age": 6
+        "age": 6,
+        "causes": []
       },
       {
         "kind": "reaffirmation",
@@ -847,7 +889,8 @@
         "gate": "defined",
         "model": "",
         "since": "2026-09-29",
-        "age": 6
+        "age": 6,
+        "causes": []
       },
       {
         "kind": "reaffirmation",
@@ -858,7 +901,8 @@
         "gate": "defined",
         "model": "",
         "since": "2026-09-29",
-        "age": 6
+        "age": 6,
+        "causes": []
       },
       {
         "kind": "reaffirmation",
@@ -869,7 +913,8 @@
         "gate": "defined",
         "model": "",
         "since": "2026-09-29",
-        "age": 6
+        "age": 6,
+        "causes": []
       },
       {
         "kind": "reaffirmation",
@@ -880,7 +925,8 @@
         "gate": "defined",
         "model": "",
         "since": "2026-09-29",
-        "age": 6
+        "age": 6,
+        "causes": []
       },
       {
         "kind": "reaffirmation",
@@ -891,7 +937,8 @@
         "gate": "design",
         "model": "",
         "since": "2026-09-30",
-        "age": 5
+        "age": 5,
+        "causes": []
       },
       {
         "kind": "reaffirmation",
@@ -902,7 +949,8 @@
         "gate": "design",
         "model": "",
         "since": "2026-09-30",
-        "age": 5
+        "age": 5,
+        "causes": []
       },
       {
         "kind": "reaffirmation",
@@ -913,7 +961,8 @@
         "gate": "implementation",
         "model": "",
         "since": "2026-09-30",
-        "age": 5
+        "age": 5,
+        "causes": []
       },
       {
         "kind": "reaffirmation",
@@ -924,7 +973,8 @@
         "gate": "unit",
         "model": "",
         "since": "2026-09-30",
-        "age": 5
+        "age": 5,
+        "causes": []
       },
       {
         "kind": "reaffirmation",
@@ -935,7 +985,8 @@
         "gate": "implementation",
         "model": "",
         "since": "2026-09-30",
-        "age": 5
+        "age": 5,
+        "causes": []
       },
       {
         "kind": "reaffirmation",
@@ -946,7 +997,8 @@
         "gate": "implementation",
         "model": "",
         "since": "2026-09-30",
-        "age": 5
+        "age": 5,
+        "causes": []
       },
       {
         "kind": "reaffirmation",
@@ -957,7 +1009,8 @@
         "gate": "design",
         "model": "",
         "since": "2026-09-30",
-        "age": 5
+        "age": 5,
+        "causes": []
       },
       {
         "kind": "reaffirmation",
@@ -968,7 +1021,8 @@
         "gate": "defined",
         "model": "",
         "since": "2026-09-30",
-        "age": 5
+        "age": 5,
+        "causes": []
       },
       {
         "kind": "reaffirmation",
@@ -979,7 +1033,8 @@
         "gate": "defined",
         "model": "",
         "since": "2026-09-30",
-        "age": 5
+        "age": 5,
+        "causes": []
       },
       {
         "kind": "reaffirmation",
@@ -990,7 +1045,8 @@
         "gate": "defined",
         "model": "",
         "since": "2026-09-30",
-        "age": 5
+        "age": 5,
+        "causes": []
       },
       {
         "kind": "reaffirmation",
@@ -1001,7 +1057,8 @@
         "gate": "defined",
         "model": "",
         "since": "2026-09-30",
-        "age": 5
+        "age": 5,
+        "causes": []
       },
       {
         "kind": "reaffirmation",
@@ -1012,7 +1069,8 @@
         "gate": "design",
         "model": "",
         "since": "2026-09-30",
-        "age": 5
+        "age": 5,
+        "causes": []
       }
     ]
   },

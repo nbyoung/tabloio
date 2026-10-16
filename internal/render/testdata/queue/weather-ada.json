@@ -188,7 +188,23 @@
         "gate": "mockup",
         "model": "",
         "since": "2026-09-22",
-        "cause": "proposed; the deciding commit is not by an authority"
+        "causes": [],
+        "authorisation": {
+          "commit": {
+            "hash": "1b8cfb1",
+            "subject": "Revise the dashboard scope",
+            "date": "2026-09-27",
+            "author": {
+              "email": "dan@example.org"
+            },
+            "committer": {
+              "email": "dan@example.org"
+            }
+          },
+          "way": "change",
+          "by": "",
+          "why": ""
+        }
       },
       {
         "kind": "ready",
@@ -207,7 +223,8 @@
         },
         "status_commit": {
           "hash": "W1"
-        }
+        },
+        "causes": []
       },
       {
         "kind": "reaffirmation",
@@ -229,7 +246,8 @@
         },
         "status_commit": {
           "hash": "W13"
-        }
+        },
+        "causes": []
       },
       {
         "kind": "waiting",
@@ -240,7 +258,6 @@
         "gate": "performance",
         "model": "",
         "since": "2026-09-28",
-        "cause": "blocked: Barometer ICs on 14-week backorder",
         "requires": [
           {
             "task": {
@@ -252,6 +269,14 @@
             "text": "Readings API",
             "met": false,
             "due": true
+          }
+        ],
+        "causes": [
+          {
+            "kind": "reason",
+            "requires": null,
+            "reason": "blocked",
+            "by": ""
           }
         ]
       }

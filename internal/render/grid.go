@@ -2,6 +2,7 @@ package render
 
 import (
 	"strconv"
+	"strings"
 
 	"github.com/nbyoung/tabloio/internal/render/doc"
 	"github.com/nbyoung/tabloio/internal/render/view"
@@ -101,12 +102,40 @@ func (p *page) gridTable(v *view.Tableau) doc.Table {
 	var rows [][]doc.Cell
 	for _, r := range v.Rows {
 		row := []doc.Cell{cell(p.fileLink(r.TaskRef, one(code(r.ID)))), p.gridTask(r)}
-		for _, c := range r.Cells {
+		for _, c := range p.shownCells(v, r) {
 			row = append(row, p.gridCell(c))
 		}
 		rows = append(rows, row)
 	}
 	return doc.Table{Align: align, Head: head, Rows: rows}
+}
+
+// shownCells is a row's cell under each column: the cell of the column's
+// gate, and an empty cell under a folded column, which the grid draws empty
+// (886d decision 1).
+func (p *page) shownCells(v *view.Tableau, r view.GridRow) []view.GridCell {
+	out := make([]view.GridCell, len(v.Columns))
+	for i, c := range v.Columns {
+		out[i] = view.GridCell{Kind: "empty"}
+		if c.Folded || len(c.Gates) != 1 {
+			continue
+		}
+		if k, ok := p.gateIndex[c.Gates[0]]; ok && k < len(r.Cells) {
+			out[i] = r.Cells[k]
+		}
+	}
+	return out
+}
+
+// shownGates are the gates a column shows alone, not folded.
+func shownGates(v *view.Tableau) map[string]bool {
+	out := map[string]bool{}
+	for _, c := range v.Columns {
+		if !c.Folded && len(c.Gates) == 1 {
+			out[c.Gates[0]] = true
+		}
+	}
+	return out
 }
 
 // gridTask is the Task cell: the title indented by depth, in bold for a
@@ -119,8 +148,8 @@ func (p *page) gridTask(r view.GridRow) doc.Cell {
 	if r.Hidden > 0 {
 		out = append(out, txt(" ("+strconv.Itoa(r.Hidden)+")"))
 	}
-	if r.Role != "" {
-		out = append(out, txt(" · "+r.Role))
+	if r.Label != "" {
+		out = append(out, txt(" · "+r.Label))
 	}
 	return doc.Cell{Indent: r.Depth, Text: out}
 }
@@ -164,7 +193,7 @@ func (p *page) gridKey(v *view.Tableau) *doc.Para {
 		}
 	}
 	for _, r := range v.Rows {
-		for _, c := range r.Cells {
+		for _, c := range p.shownCells(v, r) {
 			switch c.Kind {
 			case "status":
 				states[c.State] = true
@@ -235,7 +264,7 @@ func (p *page) gridOrigin(o *view.Origin) []doc.Inline {
 	case "rollup":
 		return spans(one(txt("rolled up from ")), task(o.Task))
 	case "snapshot":
-		out := spans(task(o.Task), one(txt(" in "), code(o.URL), txt(" at "), code(o.Pin)))
+		out := spans(task(o.Task), one(txt(" in "), code(o.URL), txt(" at "), code(short(o.Pin))))
 		if o.Gate != "" {
 			out = spans(out, one(txt(", at ")), p.gate(o.Gate))
 		}
@@ -308,17 +337,139 @@ func (p *page) gridFolded(v *view.Tableau) []doc.Block {
 	}
 }
 
+// statusGroup is the rows whose statuses one commit records at one gate.
+type statusGroup struct {
+	ids    []string
+	gate   string
+	commit view.Commit
+}
+
+// statusGroups groups the rows whose own file records their gate by the
+// gate and the deciding commit of that file, in display order of the first
+// row: a recorded status's commit, and a snapshot's own. A roll-up records
+// nothing.
+func statusGroups(v *view.Tableau) []*statusGroup {
+	var out []*statusGroup
+	index := map[string]*statusGroup{}
+	for _, r := range v.Rows {
+		c := r.StatusCommit
+		if r.Status.From != nil {
+			c = nil
+			if r.Status.From.Kind == "snapshot" {
+				c = r.OwnCommit
+			}
+		}
+		if c == nil {
+			continue
+		}
+		key := r.Status.Gate + "\x00" + c.Hash
+		g, ok := index[key]
+		if !ok {
+			g = &statusGroup{gate: r.Status.Gate, commit: *c}
+			index[key] = g
+			out = append(out, g)
+		}
+		g.ids = append(g.ids, r.ID)
+	}
+	return out
+}
+
+// markGroup is the junction that stands behind the marks of some rows at
+// one gate, with the task that supplies each field.
+type markGroup struct {
+	gate, contributor, model, reviewer string
+	marks                              []string
+	ids                                []string
+	contributorFrom, reviewerFrom      string
+	exemptFrom                         string
+}
+
+// suppliedBy is the source of one field of a row's junction at a gate: a
+// task id, or default, own or assignee; "" when the row names none.
+func suppliedBy(r view.GridRow, gate, field string) string {
+	for _, s := range r.Sources {
+		if s.Gate == gate && s.Field == field {
+			return s.By
+		}
+	}
+	return ""
+}
+
+// markGroups groups the cells of marks and the exempt cells that the grid
+// shows by gate, in the legend's order, then by the junction behind them and
+// the tasks that supply its fields, in display order of the first row. A
+// row whose data holds no junction at the gate gives no line.
+func (p *page) markGroups(v *view.Tableau) []*markGroup {
+	shown := shownGates(v)
+	var out []*markGroup
+	for k, g := range p.h.Legend.Gates {
+		if !shown[g.Key] {
+			continue
+		}
+		index := map[string]*markGroup{}
+		for _, r := range v.Rows {
+			if k >= len(r.Cells) {
+				continue
+			}
+			c := r.Cells[k]
+			if c.Kind != "marks" && c.Kind != "exempt" {
+				continue
+			}
+			var j *view.Junction
+			for i := range r.Junctions {
+				if r.Junctions[i].Gate == g.Key {
+					j = &r.Junctions[i]
+				}
+			}
+			if j == nil {
+				continue
+			}
+			m := &markGroup{gate: g.Key, marks: c.Marks}
+			if c.Kind == "exempt" {
+				m.marks = []string{"exempt"}
+				m.exemptFrom = suppliedBy(r, g.Key, "applies")
+			} else {
+				m.contributor, m.model, m.reviewer = j.Contributor, j.Model, j.Reviewer
+				m.contributorFrom = suppliedBy(r, g.Key, "contributor")
+				m.reviewerFrom = suppliedBy(r, g.Key, "reviewer")
+			}
+			key := strings.Join([]string{strings.Join(m.marks, " "), m.contributor, m.model, m.reviewer,
+				m.contributorFrom, m.reviewerFrom, m.exemptFrom}, "\x00")
+			if prev, ok := index[key]; ok {
+				prev.ids = append(prev.ids, r.ID)
+				continue
+			}
+			m.ids = []string{r.ID}
+			index[key] = m
+			out = append(out, m)
+		}
+	}
+	return out
+}
+
+// snapshotOf is the linkage of a row that its snapshot status reads, or nil.
+func snapshotOf(r view.GridRow) *view.Linkage {
+	for i := range r.Linkages {
+		if r.Status.From != nil && r.Linkages[i].URL == r.Status.From.URL {
+			return &r.Linkages[i]
+		}
+	}
+	return nil
+}
+
 // gridProvenance builds the blocks that only provenance adds: the commit
 // behind each status cell, each roll-up, each group of marks and each
-// snapshot, then the commands.
+// snapshot, then the commands. tablo gives each row the task definition's
+// facts; the builder groups them (886d decision 5).
 func (p *page) gridProvenance(v *view.Tableau) []doc.Block {
-	b := []doc.Block{countHeading(2, "Status cells", len(v.Statuses))}
-	if len(v.Statuses) > 0 {
+	statuses := statusGroups(v)
+	b := []doc.Block{countHeading(2, "Status cells", len(statuses))}
+	if len(statuses) > 0 {
 		var rows [][]doc.Cell
-		for _, s := range v.Statuses {
+		for _, s := range statuses {
 			rows = append(rows, []doc.Cell{
-				cell(ids(s.Tasks)), cell(p.gate(s.Gate)), cellText(s.Commit.Date), cell(p.actor(s.Commit.Author)),
-				cell(commitSubject(s.Commit)), cell(p.actor(s.Commit.Committer)), cell(trailers(s.Commit)),
+				cell(ids(s.ids)), cell(p.gate(s.gate)), cellText(s.commit.Date), cell(p.actor(s.commit.Author)),
+				cell(commitSubject(s.commit)), cell(p.actor(s.commit.Committer)), cell(trailers(s.commit)),
 			})
 		}
 		b = append(b, doc.Table{
@@ -326,27 +477,55 @@ func (p *page) gridProvenance(v *view.Tableau) []doc.Block {
 		})
 	}
 
-	b = append(b, countHeading(2, "Roll-ups", len(v.Rollups)))
-	if len(v.Rollups) > 0 {
-		var rows [][]doc.Cell
-		for _, r := range v.Rollups {
-			rows = append(rows, []doc.Cell{
-				cell(task(r.Parent)), cell(p.phrase(r.Status)), cell(task(r.Child)), cellText(r.Status.Date),
+	var rollups, snapshots [][]doc.Cell
+	for _, r := range v.Rows {
+		from := r.Status.From
+		if from == nil {
+			continue
+		}
+		// The second status of the chain is the direct child's, or the
+		// subproject task's that the snapshot reads.
+		next, nextStatus := from.Task, r.Status
+		if len(r.Chain) > 1 {
+			next, nextStatus = r.Chain[1].Task, r.Chain[1].Status
+		}
+		switch from.Kind {
+		case "rollup":
+			rollups = append(rollups, []doc.Cell{
+				cell(task(r.TaskRef)), cell(p.phrase(r.Status)), cell(task(next)), cellText(r.Status.Date),
+			})
+		case "snapshot":
+			var setBy []doc.Inline
+			if l := snapshotOf(r); l != nil && l.SetBy != nil {
+				c := l.SetBy
+				setBy = spans(commit(c.Hash), prefixed(", ", textRun(c.Date)), prefixed(", ", p.person(c.Author.Email)))
+			}
+			var rolls []doc.Inline
+			if nextStatus.From != nil {
+				rolls = task(nextStatus.From.Task)
+			}
+			snapshots = append(snapshots, []doc.Cell{
+				cell(one(code(r.ID))), cell(one(code(from.URL))), cell(commit(from.Pin)), cell(setBy),
+				cell(spans(task(next), prefixed(": ", p.phrase(nextStatus)))), cell(rolls),
 			})
 		}
-		b = append(b, doc.Table{Head: heads("Parent", "Shows", "Rolls up from", "Date"), Rows: rows})
+	}
+	b = append(b, countHeading(2, "Roll-ups", len(rollups)))
+	if len(rollups) > 0 {
+		b = append(b, doc.Table{Head: heads("Parent", "Shows", "Rolls up from", "Date"), Rows: rollups})
 	}
 
-	b = append(b, countHeading(2, "Marks", len(v.MarkGroups)))
-	if len(v.MarkGroups) > 0 {
+	groups := p.markGroups(v)
+	b = append(b, countHeading(2, "Marks", len(groups)))
+	if len(groups) > 0 {
 		shown := map[string]bool{}
 		var rows [][]doc.Cell
-		for _, g := range v.MarkGroups {
-			for _, m := range g.Marks {
+		for _, g := range groups {
+			for _, m := range g.marks {
 				shown[m] = true
 			}
 			rows = append(rows, []doc.Cell{
-				cell(p.gate(g.Gate)), cell(p.markSymbols(g.Marks)), cell(ids(g.Tasks)),
+				cell(p.gate(g.gate)), cell(p.markSymbols(g.marks)), cell(ids(g.ids)),
 				cell(p.markContributor(g)), cell(p.markReviewer(g)),
 			})
 		}
@@ -359,22 +538,10 @@ func (p *page) gridProvenance(v *view.Tableau) []doc.Block {
 		}
 	}
 
-	b = append(b, countHeading(2, "Snapshots", len(v.Snapshots)))
-	if len(v.Snapshots) > 0 {
-		var rows [][]doc.Cell
-		for _, s := range v.Snapshots {
-			setBy := spans(commit(s.SetBy.Hash), prefixed(", ", textRun(s.SetBy.Date)), prefixed(", ", p.person(s.SetBy.Author.Email)))
-			root := spans(task(s.Root), prefixed(": ", p.phrase(s.Status)))
-			var from []doc.Inline
-			if s.Status.From != nil {
-				from = task(s.Status.From.Task)
-			}
-			rows = append(rows, []doc.Cell{
-				cell(one(code(s.Task))), cell(one(code(s.URL))), cell(one(code(s.Pin))), cell(setBy), cell(root), cell(from),
-			})
-		}
+	b = append(b, countHeading(2, "Snapshots", len(snapshots)))
+	if len(snapshots) > 0 {
 		b = append(b, doc.Table{
-			Head: heads("Row", "Subproject", "Pin", "Pin set by", "Root task at the pin", "Rolls up from"), Rows: rows,
+			Head: heads("Row", "Subproject", "Pin", "Pin set by", "Root task at the pin", "Rolls up from"), Rows: snapshots,
 		})
 	}
 	if pre := commandLines(v.Commands); pre != nil {
@@ -393,7 +560,8 @@ func trailers(c view.Commit) []doc.Inline {
 }
 
 // markFrom prints where a field comes from: `, from <id>` after the value,
-// `, by default` for the plain default.
+// `, by default` for the plain default, and the phrase of statedBy for the
+// other sources that are no task.
 func markFrom(src string) []doc.Inline {
 	switch src {
 	case "":
@@ -401,32 +569,35 @@ func markFrom(src string) []doc.Inline {
 	case "default":
 		return one(txt(", by default"))
 	}
+	if w, ok := statedBy[src]; ok {
+		return one(txt(", from " + w))
+	}
 	return one(txt(", from "), code(src))
 }
 
 // markContributor prints the fourth cell of a marks line: the contributor,
 // the model and the source; for an exempt group, `Exempt, from <id>`.
-func (p *page) markContributor(g view.MarkGroup) []doc.Inline {
-	if g.ExemptFrom != "" {
-		return spans(one(txt("Exempt")), markFrom(g.ExemptFrom))
+func (p *page) markContributor(g *markGroup) []doc.Inline {
+	if g.exemptFrom != "" {
+		return spans(one(txt("Exempt")), markFrom(g.exemptFrom))
 	}
-	if g.Contributor == "" && g.Model == "" {
+	if g.contributor == "" && g.model == "" {
 		return nil
 	}
-	out := p.person(g.Contributor)
-	if g.Model != "" {
+	out := p.person(g.contributor)
+	if g.model != "" {
 		if len(out) > 0 {
 			out = append(out, txt(", "))
 		}
-		out = append(out, code(g.Model))
+		out = append(out, code(g.model))
 	}
-	return spans(out, markFrom(g.ContributorFrom))
+	return spans(out, markFrom(g.contributorFrom))
 }
 
 // markReviewer prints the reviewer and the source, or nothing.
-func (p *page) markReviewer(g view.MarkGroup) []doc.Inline {
-	if g.Reviewer == "" {
+func (p *page) markReviewer(g *markGroup) []doc.Inline {
+	if g.reviewer == "" {
 		return nil
 	}
-	return spans(p.person(g.Reviewer), markFrom(g.ReviewerFrom))
+	return spans(p.person(g.reviewer), markFrom(g.reviewerFrom))
 }

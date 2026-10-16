@@ -177,7 +177,6 @@
         "mark": "reviewer",
         "act": "reviews",
         "holds": 4,
-        "action": "nbyoung@nbyoung.com accepts the mockup with a commit that carries `Reviewed: 5471 mockup`.",
         "held": [
           {
             "task": {
@@ -243,24 +242,6 @@
             ]
           }
         ],
-        "facts": [
-          {
-            "name": "The status",
-            "value": "`.tableaux/status/5471.yaml` reads `gate: defined`, `state: nominal`, `reason: review`."
-          },
-          {
-            "name": "The junction",
-            "value": "`5471` at mockup: contributor noreply@anthropic.com, model `claude-opus`, reviewer nbyoung@nbyoung.com, all three from `437e`."
-          },
-          {
-            "name": "The review",
-            "value": "No commit carries `Reviewed: 5471 mockup`."
-          },
-          {
-            "name": "The deciding commits",
-            "value": "`6b6c99a` Plan the Tableaux tooling, 2026-09-29, author and committer nbyoung@nbyoung.com."
-          }
-        ],
         "resolve": [
           {
             "text": "tabloio review 5471 mockup"
@@ -268,7 +249,33 @@
           {
             "text": "git commit --allow-empty --trailer 'Reviewed: 5471 mockup' -m 'Accept the work-blockage tree mockup in HTML'"
           }
-        ]
+        ],
+        "status": {
+          "gate": "defined",
+          "state": "nominal",
+          "reason": "review",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "from": null
+        },
+        "status_commit": null,
+        "junction": {
+          "gate": "mockup",
+          "marks": [
+            "agent",
+            "reviewer"
+          ],
+          "acts": false,
+          "contributor": "noreply@anthropic.com",
+          "model": "claude-opus",
+          "reviewer": "nbyoung@nbyoung.com",
+          "from": [
+            "437e"
+          ]
+        },
+        "authorisation": null,
+        "linkage": null
       },
       {
         "kind": "requirement",
@@ -281,7 +288,6 @@
         "mark": "agent",
         "act": "contributes",
         "holds": 3,
-        "action": "noreply@anthropic.com draws the mockup and hands it off with the reason `review`.",
         "held": [
           {
             "task": {
@@ -337,17 +343,24 @@
             ]
           }
         ],
-        "facts": [
-          {
-            "name": "The status",
-            "value": "`.tableaux/status/efff.yaml` reads `gate: defined`, `state: nominal`."
-          }
-        ],
         "resolve": [
           {
             "text": "tabloio queue --person noreply@anthropic.com --brief efff mockup"
           }
-        ]
+        ],
+        "status": {
+          "gate": "defined",
+          "state": "nominal",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "from": null
+        },
+        "status_commit": null,
+        "junction": null,
+        "authorisation": null,
+        "linkage": null
       }
     ],
     "kinds": [

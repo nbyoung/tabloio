@@ -76,9 +76,9 @@ Legend: `tabloio gates`.
 
 | Rows | Cell | Date | Recorder | Deciding commit | Committer | Trailers |
 |---|---|---|---|---|---|---|
-| `99f0` `05a9` `a9ce` `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` | 📝 defined | 2026-09-29 | noreply@anthropic.com | `1a17bfc` Record the defined gate for the views and mockups | nbyoung@nbyoung.com |  |
 | `c2ad` | 🧱 implementation | 2026-09-30 | noreply@anthropic.com | `3d8ce0e` Record the Roles task at its implementation gate | noreply@anthropic.com | `Model: claude-sonnet-5-5`, `Reviewed: c2ad implementation` |
 | `e9c6` | 📐 design | 2026-09-30 | noreply@anthropic.com | `879b447` Advance the abstract views task to its design gate | noreply@anthropic.com | `Model: claude-fable-5-1` |
+| `99f0` `05a9` `a9ce` `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` | 📝 defined | 2026-09-29 | noreply@anthropic.com | `1a17bfc` Record the defined gate for the views and mockups | nbyoung@nbyoung.com |  |
 | `e3cb` | 📏 unit | 2026-09-30 | noreply@anthropic.com | `5cbec7c` Record e3cb at unit, nominal | noreply@anthropic.com | `Model: claude-sonnet-5-5`, `Reviewed: e3cb unit` |
 | `fcec` | 🧱 implementation | 2026-09-30 | noreply@anthropic.com | `60495c2` Record all three corpus corrections at implementation | noreply@anthropic.com | `Model: claude-sonnet-5-5`, `Reviewed: fcec implementation` |
 | `ac33` | 📐 design | 2026-09-30 | noreply@anthropic.com | `6762222` Advance the agent identity task to its design gate | nbyoung@nbyoung.com | `Model: claude-fable-5-1` |
@@ -101,42 +101,42 @@ Legend: `tabloio gates`.
 
 | Gate | Mark | Rows | Contributor and model | Reviewer |
 |---|:-:|---|---|---|
-| 📌 mockup | 🤖👀 | `437e` `bc63` `2034` `bc86` `5fe3` `99f0` `05a9` `a9ce` `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` | noreply@anthropic.com, `claude-opus`, from `437e` | nbyoung@nbyoung.com, from `437e` |
-| 🔧 function | 🤖 | `437e` `bc63` `2034` | noreply@anthropic.com, `claude-sonnet`, from `437e` |  |
-| 📐 design | 🤖👀 | `437e` | noreply@anthropic.com, `claude-opus`, from `437e` | nbyoung@nbyoung.com, from `437e` |
-| 📐 design | 🤖👀 | `bc63` `2034` | noreply@anthropic.com, `claude-fable`, from `bc63` | nbyoung@nbyoung.com, from `437e` |
-| 🧱 implementation | 🤖 | `437e` `bc63` `2034` | noreply@anthropic.com, `claude-sonnet`, from `437e` |  |
-| 🧱 implementation | 🤖 | `e9c6` | noreply@anthropic.com, `claude-sonnet`, from `437e` | noreply@anthropic.com, by default |
-| 🧱 implementation | 🤖👀 | `ac33` `9f3f` `7166` | noreply@anthropic.com, `claude-sonnet`, from `437e` | nbyoung@nbyoung.com, by default |
-| 📏 unit | 🤖 | `437e` `bc63` `2034` | noreply@anthropic.com, `claude-sonnet`, from `437e` |  |
-| 📏 unit | 🤖 | `fcec` | noreply@anthropic.com, `claude-sonnet`, from `437e` | noreply@anthropic.com, by default |
-| 🔗 integrate | 🤖 | `437e` `bc63` `2034` | noreply@anthropic.com, `claude-sonnet`, from `437e` |  |
-| 🔗 integrate | 🤖 | `fcec` | noreply@anthropic.com, `claude-sonnet`, from `437e` | noreply@anthropic.com, by default |
-| 🌍 validate | 🤖👀 | `437e` | noreply@anthropic.com, `claude-sonnet`, from `437e` | nbyoung@nbyoung.com, from `437e` |
-| 🌍 validate | 🤖👀 | `bc63` `2034` `c2ad` `e9c6` `e3cb` `fcec` `ac33` `9f3f` `7861` `7166` | noreply@anthropic.com, `claude-opus`, from `bc63` | nbyoung@nbyoung.com, from `437e` |
-| 🚀 release | 🧑 | `437e` `bc63` `2034` `c2ad` `e9c6` `e3cb` `fcec` `ac33` `9f3f` `7861` `7166` | nbyoung@nbyoung.com, from `437e` |  |
+| 📌 mockup | 🤖👀 | `437e` `bc63` `2034` `bc86` `99f0` `05a9` `a9ce` `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `5fe3` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` | noreply@anthropic.com, `claude-opus`, from `437e` | nbyoung@nbyoung.com, from `437e` |
 | 📌 mockup | 🪆 | `77b2` `6103` `c6e8` `595e` |  |  |
-| 🔧 function | 🪆 | `77b2` `6103` `c6e8` `595e` |  |  |
-| 📐 design | 🪆 | `77b2` `6103` `c6e8` `595e` |  |  |
-| 🧱 implementation | 🪆 | `77b2` `6103` `c6e8` `595e` |  |  |
-| 📏 unit | 🪆 | `77b2` `6103` `c6e8` `595e` |  |  |
-| 🔗 integrate | 🪆 | `77b2` `6103` `c6e8` `595e` |  |  |
-| 🌍 validate | 🪆 | `77b2` `6103` `c6e8` `595e` |  |  |
-| 🚀 release | 🪆 | `77b2` `6103` `c6e8` `595e` |  |  |
+| 🔧 function | 🤖 | `437e` `bc63` `2034` | noreply@anthropic.com, `claude-sonnet`, from `437e` |  |
 | 🔧 function | — | `bc86` `99f0` `05a9` `a9ce` `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` | Exempt, from `bc86` |  |
 | 🔧 function | — | `5fe3` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` | Exempt, from `5fe3` |  |
+| 🔧 function | 🪆 | `77b2` `6103` `c6e8` `595e` |  |  |
+| 📐 design | 🤖👀 | `437e` | noreply@anthropic.com, `claude-opus`, from `437e` | nbyoung@nbyoung.com, from `437e` |
+| 📐 design | 🤖👀 | `bc63` `2034` | noreply@anthropic.com, `claude-fable`, from `bc63` | nbyoung@nbyoung.com, from `437e` |
 | 📐 design | — | `bc86` `99f0` `05a9` `a9ce` `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` | Exempt, from `bc86` |  |
 | 📐 design | — | `5fe3` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` | Exempt, from `5fe3` |  |
+| 📐 design | 🪆 | `77b2` `6103` `c6e8` `595e` |  |  |
+| 🧱 implementation | 🤖 | `437e` `bc63` `2034` | noreply@anthropic.com, `claude-sonnet`, from `437e` |  |
+| 🧱 implementation | 🤖 | `e9c6` | noreply@anthropic.com, `claude-sonnet`, from `437e` | noreply@anthropic.com, by default |
 | 🧱 implementation | — | `bc86` `99f0` `05a9` `a9ce` `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` | Exempt, from `bc86` |  |
 | 🧱 implementation | — | `5fe3` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` | Exempt, from `5fe3` |  |
+| 🧱 implementation | 🤖👀 | `ac33` `9f3f` `7166` | noreply@anthropic.com, `claude-sonnet`, from `437e` | nbyoung@nbyoung.com, by default |
+| 🧱 implementation | 🪆 | `77b2` `6103` `c6e8` `595e` |  |  |
+| 📏 unit | 🤖 | `437e` `bc63` `2034` | noreply@anthropic.com, `claude-sonnet`, from `437e` |  |
 | 📏 unit | — | `bc86` `99f0` `05a9` `a9ce` `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` | Exempt, from `bc86` |  |
 | 📏 unit | — | `5fe3` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` | Exempt, from `5fe3` |  |
+| 📏 unit | 🤖 | `fcec` | noreply@anthropic.com, `claude-sonnet`, from `437e` | noreply@anthropic.com, by default |
+| 📏 unit | 🪆 | `77b2` `6103` `c6e8` `595e` |  |  |
+| 🔗 integrate | 🤖 | `437e` `bc63` `2034` | noreply@anthropic.com, `claude-sonnet`, from `437e` |  |
 | 🔗 integrate | — | `bc86` `99f0` `05a9` `a9ce` `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` | Exempt, from `bc86` |  |
 | 🔗 integrate | — | `5fe3` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` | Exempt, from `5fe3` |  |
+| 🔗 integrate | 🤖 | `fcec` | noreply@anthropic.com, `claude-sonnet`, from `437e` | noreply@anthropic.com, by default |
+| 🔗 integrate | 🪆 | `77b2` `6103` `c6e8` `595e` |  |  |
+| 🌍 validate | 🤖👀 | `437e` | noreply@anthropic.com, `claude-sonnet`, from `437e` | nbyoung@nbyoung.com, from `437e` |
+| 🌍 validate | 🤖👀 | `bc63` `c2ad` `2034` `e9c6` `e3cb` `fcec` `ac33` `9f3f` `7861` `7166` | noreply@anthropic.com, `claude-opus`, from `bc63` | nbyoung@nbyoung.com, from `437e` |
 | 🌍 validate | — | `bc86` `99f0` `05a9` `a9ce` `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` | Exempt, from `bc86` |  |
 | 🌍 validate | — | `5fe3` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` | Exempt, from `5fe3` |  |
+| 🌍 validate | 🪆 | `77b2` `6103` `c6e8` `595e` |  |  |
+| 🚀 release | 🧑 | `437e` `bc63` `c2ad` `2034` `e9c6` `e3cb` `fcec` `ac33` `9f3f` `7861` `7166` | nbyoung@nbyoung.com, from `437e` |  |
 | 🚀 release | — | `bc86` `99f0` `05a9` `a9ce` `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` | Exempt, from `bc86` |  |
 | 🚀 release | — | `5fe3` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` | Exempt, from `5fe3` |  |
+| 🚀 release | 🪆 | `77b2` `6103` `c6e8` `595e` |  |  |
 
 🧑 a person contributes · 🤖 an agent contributes · 👀 a reviewer accepts · 🪆 a subproject does the work · — the gate does not apply.
 

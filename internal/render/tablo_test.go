@@ -26,6 +26,12 @@ var tabloGoldens = []tabloGolden{
 	{"task", "task-c07d.provenance.json", map[string]any{"task": "c07d", "person": "ben@example.org"}},
 	{"authority", "authority.provenance.json", map[string]any{"task": "a1c0", "person": nil, "proposed": false}},
 	{"assignment", "assignment.glance.json", map[string]any{"task": "a1c0", "person": nil}},
+	{"tableau", "tableau.detail.json", map[string]any{"task": nil, "person": nil, "window": 1, "columns": nil, "historical": false}},
+	{"context", "context-ben.detail.json", map[string]any{"task": nil, "person": "ben@example.org", "window": 1, "columns": nil, "historical": false}},
+	{"context", "context-4e2b.glance.json", map[string]any{"task": "4e2b", "person": nil, "window": 1, "columns": nil, "historical": false}},
+	{"queue", "queue-ada.glance.json", map[string]any{"task": "a1c0", "person": "ada@example.org", "brief": nil}},
+	{"queue", "queue-dan.glance.json", map[string]any{"task": "a1c0", "person": "dan@example.org", "brief": nil}},
+	{"blockage", "blockage.detail.json", map[string]any{"task": "a1c0", "person": nil}},
 }
 
 // path is the file's path under testdata.

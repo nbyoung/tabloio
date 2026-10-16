@@ -87,14 +87,14 @@ func (p *page) blockageCause(c view.Cause) []doc.Inline {
 	t := task(c.Task)
 	switch c.Kind {
 	case "requirement":
+		if c.URL != "" {
+			t = append(t, txt(" in "), code(c.URL))
+		}
 		return spans(t, one(txt(" has not passed ")), p.gate(c.Gate))
 	case "status":
-		out := spans(t, one(txt(" stands at ")))
-		if c.Status != nil {
-			out = spans(out, p.phrase(*c.Status))
-			if c.Status.Note != "" {
-				out = append(out, txt(": "+c.Status.Note))
-			}
+		out := spans(t, one(txt(" stands at ")), p.phrase(c.Status))
+		if c.Status.Note != "" {
+			out = append(out, txt(": "+c.Status.Note))
 		}
 		return out
 	case "review":
@@ -102,7 +102,7 @@ func (p *page) blockageCause(c view.Cause) []doc.Inline {
 	case "authorisation":
 		return spans(t, one(txt(" is proposed")))
 	case "snapshot":
-		return spans(t, one(txt(" waits on "), code(c.URL), txt(" at "), code(c.Pin)))
+		return spans(t, one(txt(" waits on "), code(c.URL), txt(" at "), code(short(c.Pin))))
 	}
 	return t
 }
@@ -152,8 +152,8 @@ func (p *page) blockageTrees(v *view.Blockage) doc.List {
 			one(txt(" · holds "+strconv.Itoa(c.Holds))))
 		item := doc.Item{Text: text}
 		var inner doc.List
-		if c.Action != "" {
-			inner.Items = append(inner.Items, doc.Item{Text: spans(one(txt("Action: ")), worded(c.Action))})
+		if action := p.blockageAction(c); len(action) > 0 {
+			inner.Items = append(inner.Items, doc.Item{Text: spans(one(txt("Action: ")), action)})
 		}
 		for _, h := range c.Held {
 			inner.Items = append(inner.Items, p.blockageHeld(h))
@@ -162,12 +162,7 @@ func (p *page) blockageTrees(v *view.Blockage) doc.List {
 			item.Blocks = append(item.Blocks, inner)
 		}
 		if p.o.Level >= view.Provenance {
-			if len(c.Facts) > 0 {
-				var facts doc.List
-				for _, f := range c.Facts {
-					name := append(worded(f.Name), txt("."))
-					facts.Items = append(facts.Items, doc.Item{Text: spans(one(doc.Strong(name), txt(" ")), worded(f.Value))})
-				}
+			if facts := p.blockageFacts(c); len(facts.Items) > 0 {
 				item.Blocks = append(item.Blocks, facts)
 			}
 			if pre := commandLines(c.Resolve); pre != nil {
@@ -177,6 +172,152 @@ func (p *page) blockageTrees(v *view.Blockage) doc.List {
 		list.Items = append(list.Items, item)
 	}
 	return list
+}
+
+// blockageAction words the one action that resolves a cause, by its act
+// (886d decision 5, a3cc A4): one phrase per act, and for a status the
+// reason it clears, for a snapshot what advances. A cause whose files name
+// no resolver has no action line (R9).
+func (p *page) blockageAction(c view.Cause) []doc.Inline {
+	who := p.person(c.Resolver)
+	if len(who) == 0 {
+		return nil
+	}
+	id := code(c.Task.ID)
+	var rest []doc.Inline
+	switch c.Act {
+	case "contributes":
+		rest = one(txt(" takes "), id, txt(" through "+c.Gate+"."))
+	case "records":
+		rest = one(txt(" records a new status."))
+		if c.Status.Reason != "" {
+			rest = one(txt(" clears the "), code(c.Status.Reason), txt(" reason, or records a new status."))
+		}
+	case "reviews":
+		rest = one(txt(" accepts the "+c.Gate+" with a commit that carries "), code("Reviewed: "+c.Task.ID+" "+c.Gate), txt("."))
+	case "authorises":
+		rest = one(txt(" commits the trailer "), code("Authorised: "+c.Task.ID), txt("."))
+	case "advances":
+		switch c.Advance {
+		case "pin":
+			rest = one(txt(" advances the pin of "), code(c.URL), txt(" to the tip of its trunk"))
+			if c.Tip != "" {
+				rest = append(rest, txt(", "), code(short(c.Tip)))
+			}
+			rest = append(rest, txt("."))
+		case "gate":
+			rest = one(txt(" records "), id, txt(" past "+c.Gate+", where "), code(c.URL), txt(" already stands."))
+		}
+	}
+	if rest == nil {
+		return nil
+	}
+	return spans(who, rest)
+}
+
+// blockageFacts words the typed facts behind a cause at provenance, each as
+// a bold name and its value: the status, the next junction, the
+// authorisation and the linkage, each where the cause holds it (R9).
+func (p *page) blockageFacts(c view.Cause) doc.List {
+	var facts doc.List
+	add := func(name string, value []doc.Inline) {
+		if len(value) > 0 {
+			facts.Items = append(facts.Items, doc.Item{Text: spans(one(doc.Strong{txt(name + ".")}, txt(" ")), value, one(txt(".")))})
+		}
+	}
+	if c.Status.Gate != "" {
+		st := p.status(c.Status)
+		if c.Status.Note != "" {
+			st = append(st, txt(": "+c.Status.Note))
+		}
+		st = spans(st, prefixed(", recorded ", p.recorded(c.Status)))
+		if c.StatusCommit != nil {
+			st = spans(st, one(txt(", by the commit ")), p.commitLine(*c.StatusCommit))
+		}
+		add("The status", st)
+	}
+	if j := c.Junction; j != nil {
+		add("The junction", p.junctionLine(c.Task.ID, *j))
+	}
+	if a := c.Authorisation; a != nil {
+		add("The authorisation", p.authorisationLine(*a))
+	}
+	if l := c.Linkage; l != nil {
+		add("The linkage", p.linkageLine(*l))
+	}
+	return facts
+}
+
+// junctionLine words a junction on one line: `<id>` at <gate>, then its
+// contributor, model and reviewer, and the tasks whose entries supply it.
+func (p *page) junctionLine(id string, j view.Junction) []doc.Inline {
+	out := spans(one(code(id), txt(" at ")), p.gate(j.Gate))
+	var fields [][]doc.Inline
+	if who := p.person(j.Contributor); len(who) > 0 {
+		fields = append(fields, spans(one(txt("contributor ")), who))
+	}
+	if j.Model != "" {
+		fields = append(fields, one(txt("model "), code(j.Model)))
+	}
+	if who := p.person(j.Reviewer); len(who) > 0 {
+		fields = append(fields, spans(one(txt("reviewer ")), who))
+	}
+	if j.Subproject != nil {
+		fields = append(fields, spans(one(txt("the subproject "), code(j.Subproject.URL), txt(" ")), task(j.Subproject.Task)))
+	}
+	if len(fields) > 0 {
+		out = spans(out, one(txt(": ")), joined(", ", fields...))
+	}
+	if len(j.From) > 0 {
+		out = spans(out, one(txt(", from ")), ids(j.From))
+	}
+	return out
+}
+
+// authorisationWhy words why no commit decides a proposed task.
+var authorisationWhy = map[string]string{
+	"no_history": "no commit decides it: the source has no history",
+	"no_trunk":   "no commit decides it: the trunk is undetermined",
+	"off_trunk":  "no commit decides it: the ref stands off the trunk",
+	"no_commit":  "no commit on the trunk decides it",
+}
+
+// authorisationLine words an authorisation on one line: its deciding
+// commit and how it accepts, or why none decides.
+func (p *page) authorisationLine(a view.Authorisation) []doc.Inline {
+	if a.Commit == nil {
+		if w, ok := authorisationWhy[a.Why]; ok {
+			return one(txt(w))
+		}
+		return nil
+	}
+	out := p.commitLine(*a.Commit)
+	if a.Way != "" {
+		out = spans(out, one(txt(", accepting by ")), acceptsBy(a.Way))
+	}
+	if a.By != "" {
+		out = append(out, txt(", the authority being "+authority(a.By)))
+	}
+	return out
+}
+
+// linkageLine words a linkage on one line: the task read, the link and the
+// commit it reads, and its trunk.
+func (p *page) linkageLine(l view.Linkage) []doc.Inline {
+	out := spans(task(l.Task), one(txt(" in "), code(l.URL)))
+	if l.Commit != "" {
+		out = append(out, txt(" at "), code(short(l.Commit)))
+	}
+	if l.Trunk != "" {
+		out = append(out, txt(", on the trunk "), code(l.Trunk))
+		if l.Tip != "" {
+			out = append(out, txt(" whose tip is "), code(short(l.Tip)))
+		}
+		if b := linkBehind[l.Behind]; b != "" {
+			out = append(out, txt(", "+b))
+		}
+	}
+	return out
 }
 
 // blockageHeld words a held task and, nested beneath it, what it holds in

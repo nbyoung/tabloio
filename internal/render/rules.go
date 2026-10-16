@@ -22,24 +22,28 @@ const (
 // page holds what every builder reads: the view's head, the options, and
 // the legend's symbols by key. A builder makes one with newPage.
 type page struct {
-	h       *view.Head
-	o       Options
-	gates   map[string]string
-	states  map[string]string
-	reasons map[string]string
-	marks   map[string]view.Mark
+	h         *view.Head
+	o         Options
+	gateIndex map[string]int // a gate's place in the legend
+	gates     map[string]string
+	states    map[string]string
+	reasons   map[string]string
+	marks     map[string]view.Mark
+	statuses  map[string]*view.Status // the queue: a task's status, by id
 }
 
 func newPage(h *view.Head, o Options) *page {
 	p := &page{
 		h: h, o: o,
-		gates:   map[string]string{},
-		states:  map[string]string{},
-		reasons: map[string]string{},
-		marks:   map[string]view.Mark{},
+		gateIndex: map[string]int{},
+		gates:     map[string]string{},
+		states:    map[string]string{},
+		reasons:   map[string]string{},
+		marks:     map[string]view.Mark{},
 	}
-	for _, g := range h.Legend.Gates {
+	for i, g := range h.Legend.Gates {
 		p.gates[g.Key] = g.Symbol
+		p.gateIndex[g.Key] = i
 	}
 	for _, s := range h.Legend.States {
 		p.states[s.Key] = s.Symbol

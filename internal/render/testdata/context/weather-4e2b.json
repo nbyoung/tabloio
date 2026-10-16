@@ -179,7 +179,6 @@
         }
       ]
     },
-    "contextual": true,
     "subject": {
       "id": "4e2b",
       "title": "Sensor node"
@@ -251,7 +250,6 @@
         "depth": 1,
         "parent": true,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "function",
           "state": "stalled",
@@ -271,6 +269,12 @@
             "kind": "empty"
           },
           {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
             "kind": "status",
             "state": "stalled",
             "reason": "blocked"
@@ -307,8 +311,15 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
           }
-        ]
+        ],
+        "label": ""
       },
       {
         "id": "9f31",
@@ -316,7 +327,6 @@
         "depth": 2,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "function",
           "state": "stalled",
@@ -330,6 +340,12 @@
             "kind": "empty"
           },
           {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
             "kind": "status",
             "state": "stalled",
             "reason": "blocked"
@@ -366,8 +382,15 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
           }
-        ]
+        ],
+        "label": ""
       },
       {
         "id": "c07d",
@@ -375,7 +398,6 @@
         "depth": 2,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "design",
           "state": "nominal",
@@ -393,6 +415,12 @@
           }
         },
         "cells": [
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
           {
             "kind": "empty"
           },
@@ -430,8 +458,15 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
           }
-        ]
+        ],
+        "label": ""
       }
     ]
   },

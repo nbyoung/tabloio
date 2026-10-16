@@ -167,7 +167,6 @@
         }
       ]
     },
-    "contextual": true,
     "subject": {
       "id": "2034",
       "title": "Views"
@@ -235,7 +234,6 @@
         "depth": 0,
         "parent": true,
         "hidden": 0,
-        "role": "spine",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -297,8 +295,15 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
           }
-        ]
+        ],
+        "label": "spine"
       },
       {
         "id": "bc63",
@@ -306,7 +311,6 @@
         "depth": 1,
         "parent": true,
         "hidden": 0,
-        "role": "spine",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -368,8 +372,15 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
           }
-        ]
+        ],
+        "label": "spine"
       },
       {
         "id": "c2ad",
@@ -377,7 +388,6 @@
         "depth": 2,
         "parent": false,
         "hidden": 0,
-        "role": "sibling",
         "status": {
           "gate": "implementation",
           "state": "nominal",
@@ -412,8 +422,15 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
           }
-        ]
+        ],
+        "label": "sibling"
       },
       {
         "id": "2034",
@@ -421,7 +438,6 @@
         "depth": 2,
         "parent": true,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -483,8 +499,15 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
           }
-        ]
+        ],
+        "label": ""
       },
       {
         "id": "e9c6",
@@ -492,7 +515,6 @@
         "depth": 3,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "design",
           "state": "nominal",
@@ -531,8 +553,15 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
           }
-        ]
+        ],
+        "label": ""
       },
       {
         "id": "bc86",
@@ -540,7 +569,6 @@
         "depth": 3,
         "parent": true,
         "hidden": 10,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -589,8 +617,15 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
           }
-        ]
+        ],
+        "label": ""
       },
       {
         "id": "5fe3",
@@ -598,7 +633,6 @@
         "depth": 3,
         "parent": true,
         "hidden": 10,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -647,8 +681,15 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
           }
-        ]
+        ],
+        "label": ""
       },
       {
         "id": "e3cb",
@@ -656,7 +697,6 @@
         "depth": 2,
         "parent": false,
         "hidden": 0,
-        "role": "sibling",
         "status": {
           "gate": "unit",
           "state": "nominal",
@@ -690,8 +730,15 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
           }
-        ]
+        ],
+        "label": "sibling"
       },
       {
         "id": "fcec",
@@ -699,7 +746,6 @@
         "depth": 2,
         "parent": false,
         "hidden": 0,
-        "role": "sibling",
         "status": {
           "gate": "implementation",
           "state": "nominal",
@@ -737,8 +783,15 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
           }
-        ]
+        ],
+        "label": "sibling"
       },
       {
         "id": "ac33",
@@ -746,7 +799,6 @@
         "depth": 2,
         "parent": false,
         "hidden": 0,
-        "role": "sibling",
         "status": {
           "gate": "design",
           "state": "nominal",
@@ -786,8 +838,15 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
           }
-        ]
+        ],
+        "label": "sibling"
       },
       {
         "id": "9f3f",
@@ -795,7 +854,6 @@
         "depth": 2,
         "parent": false,
         "hidden": 0,
-        "role": "sibling",
         "status": {
           "gate": "design",
           "state": "nominal",
@@ -835,8 +893,15 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
           }
-        ]
+        ],
+        "label": "sibling"
       },
       {
         "id": "7861",
@@ -844,7 +909,6 @@
         "depth": 2,
         "parent": false,
         "hidden": 0,
-        "role": "sibling",
         "status": {
           "gate": "implementation",
           "state": "nominal",
@@ -879,8 +943,15 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
           }
-        ]
+        ],
+        "label": "sibling"
       },
       {
         "id": "7166",
@@ -888,7 +959,6 @@
         "depth": 2,
         "parent": false,
         "hidden": 0,
-        "role": "sibling",
         "status": {
           "gate": "design",
           "state": "nominal",
@@ -928,8 +998,15 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
           }
-        ]
+        ],
+        "label": "sibling"
       }
     ]
   },

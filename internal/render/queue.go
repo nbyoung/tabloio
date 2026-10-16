@@ -44,6 +44,12 @@ func buildQueue(v *view.Queue, o Options) (doc.Doc, error) {
 		return buildBrief(v, o)
 	}
 	p := newPage(&v.Head, o)
+	p.statuses = map[string]*view.Status{}
+	for _, it := range v.Items {
+		if _, ok := p.statuses[it.Task.ID]; !ok && it.Status != nil {
+			p.statuses[it.Task.ID] = it.Status
+		}
+	}
 
 	b := []doc.Block{p.queueCounts(v)}
 	if len(v.Items) == 0 {
@@ -105,8 +111,71 @@ func queueSince(it view.QueueItem) string {
 // that a run of them folds (R10). An item with a cause never folds: the
 // cause belongs to its task.
 func queueAlike(a, b view.QueueItem) bool {
-	return a.Cause == "" && b.Cause == "" && a.Kind == b.Kind && a.Gate == b.Gate &&
+	return !queueHasCause(a) && !queueHasCause(b) && a.Kind == b.Kind && a.Gate == b.Gate &&
 		a.Model == b.Model && a.Since == b.Since && a.Age == b.Age
+}
+
+// queueHasCause reports whether an item carries a cause to word.
+func queueHasCause(it view.QueueItem) bool {
+	return len(it.Causes) > 0 || it.Kind == "authorisation" && it.Authorisation != nil
+}
+
+// authorisationOwed words why an authorisation is owed, by the reason no
+// commit decides the task; "" for a deciding commit by no authority
+// (886d decisions 5 and 7, a3cc A5). queueCause words a waiting item's
+// causes, one phrase per kind.
+var authorisationOwed = map[string]string{
+	"":           "proposed; the deciding commit is not by an authority",
+	"no_history": "proposed; the source has no history",
+	"no_trunk":   "proposed; the trunk is undetermined",
+	"off_trunk":  "proposed; the ref stands off the trunk",
+	"no_commit":  "proposed; no commit on the trunk decides it",
+}
+
+// taskStatus is the status of an item's task: the item's own, else the one
+// another item of the queue holds for the same task. Every item of a task
+// reads one status at one commit, and the data holds it at detail.
+func (p *page) taskStatus(it view.QueueItem) *view.Status {
+	if it.Status != nil {
+		return it.Status
+	}
+	return p.statuses[it.Task.ID]
+}
+
+// queueCause words why an item waits, or why an authorisation is owed:
+// each cause of a waiting item, joined by "; "; for an authorisation, why
+// its task stands proposed. It returns nothing for an item with neither.
+func (p *page) queueCause(it view.QueueItem) []doc.Inline {
+	if it.Kind == "authorisation" {
+		if a := it.Authorisation; a != nil {
+			return one(txt(authorisationOwed[a.Why]))
+		}
+		return nil
+	}
+	var runs [][]doc.Inline
+	for _, w := range it.Causes {
+		switch w.Kind {
+		case "requirement":
+			if r := w.Requires; r != nil {
+				x := one(txt("waits for "), code(r.Task.ID))
+				if r.Subproject != "" {
+					x = append(x, txt(" in "), code(r.Subproject))
+				}
+				runs = append(runs, append(x, txt(" at "+r.From)))
+			}
+		case "reason":
+			x := one(txt(w.Reason))
+			if st := p.taskStatus(it); st != nil && st.Note != "" {
+				x = append(x, txt(": "+st.Note))
+			}
+			runs = append(runs, x)
+		case "authorisation":
+			runs = append(runs, spans(one(txt("proposed; waits for its authorisation by ")), p.person(w.By)))
+		case "review":
+			runs = append(runs, spans(one(txt("handed off; waits for the review by ")), p.person(w.By)))
+		}
+	}
+	return joined("; ", runs...)
 }
 
 // queueRuns splits the items into runs of consecutive alike items, as
@@ -133,8 +202,8 @@ func (p *page) queueTable(v *view.Queue) doc.Table {
 		var tr []taskRow
 		for _, it := range v.Items[run[0]:run[1]] {
 			t := p.fileLink(it.Task, task(it.Task))
-			if it.Cause != "" {
-				t = spans(t, one(txt("; ")), worded(it.Cause))
+			if c := p.queueCause(it); len(c) > 0 {
+				t = spans(t, one(txt("; ")), c)
 			}
 			var model []doc.Inline
 			if it.Model != "" {
@@ -234,12 +303,12 @@ func (p *page) queueItem(it view.QueueItem) []doc.Block {
 	if len(refs) > 0 {
 		add(queueLine("References:", joined(", ", refs...)))
 	}
-	if it.Kind == "authorisation" && it.Cause != "" {
-		add(queueLine("Cause:", worded(it.Cause)))
+	if c := p.queueCause(it); it.Kind == "authorisation" && len(c) > 0 {
+		add(queueLine("Cause:", c))
 	}
 	p.queueEntries("Requires:", it.Requires, add)
-	if it.Kind == "waiting" && it.Cause != "" {
-		add(queueLine("Waits for:", worded(it.Cause)))
+	if c := p.queueCause(it); it.Kind == "waiting" && len(c) > 0 {
+		add(queueLine("Waits for:", c))
 	}
 	p.queueEntries("Unblocks:", it.Unblocks, add)
 	p.queueEntries("Also required by:", it.AlsoRequiredBy, add)
@@ -377,10 +446,11 @@ func queueAlikeEntry(a, b view.Requirement) bool {
 }
 
 // queueParents adds the line of what the item's parent unblocks, each entry
-// as “<parent> at <gate> is required by <entry>“.
+// as “<parent> at <gate> is required by <entry>“, the gate being the one the
+// requirement asks of the parent.
 func (p *page) queueParents(es []view.ParentEdge, add func(doc.Item)) {
 	entry := func(e view.ParentEdge) []doc.Inline {
-		return spans(task(e.Parent), one(txt(" at ")), p.gate(e.Gate), one(txt(" is required by ")), p.queueEntry(e.Requires))
+		return spans(task(e.Parent), one(txt(" at ")), p.gate(e.Requires.From), one(txt(" is required by ")), p.queueEntry(e.Requires))
 	}
 	switch len(es) {
 	case 0:

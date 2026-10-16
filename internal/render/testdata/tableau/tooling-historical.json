@@ -167,7 +167,6 @@
         }
       ]
     },
-    "contextual": false,
     "columns": [
       {
         "gates": [
@@ -232,7 +231,6 @@
         "depth": 2,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "implementation",
           "state": "nominal",
@@ -295,7 +293,8 @@
             ],
             "acts": false
           }
-        ]
+        ],
+        "label": ""
       },
       {
         "id": "2034",
@@ -303,7 +302,6 @@
         "depth": 2,
         "parent": true,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -385,7 +383,8 @@
             ],
             "acts": false
           }
-        ]
+        ],
+        "label": ""
       },
       {
         "id": "e3cb",
@@ -393,7 +392,6 @@
         "depth": 2,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "unit",
           "state": "nominal",
@@ -459,7 +457,8 @@
             ],
             "acts": false
           }
-        ]
+        ],
+        "label": ""
       },
       {
         "id": "fcec",
@@ -467,7 +466,6 @@
         "depth": 2,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "implementation",
           "state": "nominal",
@@ -536,7 +534,8 @@
             ],
             "acts": false
           }
-        ]
+        ],
+        "label": ""
       },
       {
         "id": "ac33",
@@ -544,7 +543,6 @@
         "depth": 2,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "design",
           "state": "nominal",
@@ -608,7 +606,8 @@
             ],
             "acts": false
           }
-        ]
+        ],
+        "label": ""
       },
       {
         "id": "9f3f",
@@ -616,7 +615,6 @@
         "depth": 2,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "design",
           "state": "nominal",
@@ -680,7 +678,8 @@
             ],
             "acts": false
           }
-        ]
+        ],
+        "label": ""
       },
       {
         "id": "7861",
@@ -688,7 +687,6 @@
         "depth": 2,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "implementation",
           "state": "nominal",
@@ -751,7 +749,8 @@
             ],
             "acts": false
           }
-        ]
+        ],
+        "label": ""
       },
       {
         "id": "7166",
@@ -759,7 +758,6 @@
         "depth": 2,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "design",
           "state": "nominal",
@@ -823,7 +821,8 @@
             ],
             "acts": false
           }
-        ]
+        ],
+        "label": ""
       }
     ]
   },

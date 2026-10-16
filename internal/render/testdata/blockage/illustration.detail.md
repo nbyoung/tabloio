@@ -18,7 +18,7 @@ Legend: `tabloio gates`.
        - `c6e8` tablotui: terminal user interface at 📐 design: requires `5fe3` at 📌 mockup, The HTML mockups that fix the disclosure levels. Also under cause 2.
        - `595e` tableaud: local daemon and HTML at 📐 design: requires `5fe3` at 📌 mockup, The HTML mockups it reproduces.
 2. **`efff` Work-blockage tree view in Markdown has not passed 📌 mockup** · 🤖 noreply@anthropic.com contributes · holds 3
-   - Action: noreply@anthropic.com draws the mockup and hands it off with the reason `review`.
+   - Action: noreply@anthropic.com takes `efff` through mockup.
    - `bc86` **Markdown views** at 📌 mockup: the parent of `efff`.
      - `6103` tabloio: command line, output and input at 📐 design: requires `bc86` at 📌 mockup, The Markdown mockups it reproduces.
      - `c6e8` tablotui: terminal user interface at 📐 design: requires `bc86` at 📌 mockup, The Markdown mockups that fix the textual layout. Also under cause 1.

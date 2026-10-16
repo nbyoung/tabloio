@@ -167,7 +167,6 @@
         }
       ]
     },
-    "contextual": true,
     "subject": {
       "id": "2034",
       "title": "Views"
@@ -235,7 +234,6 @@
         "depth": 0,
         "parent": true,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -297,8 +295,99 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": null,
+        "chain": [
+          {
+            "task": {
+              "id": "2034",
+              "title": "Views"
+            },
+            "url": "",
+            "status": {
+              "gate": "defined",
+              "state": "nominal",
+              "note": "Mockup waits for Abstract views (e9c6) at design",
+              "date": "2026-09-29",
+              "from": {
+                "kind": "rollup",
+                "task": {
+                  "id": "99f0",
+                  "title": "Gate definition view in Markdown"
+                }
+              }
+            }
+          },
+          {
+            "task": {
+              "id": "bc86",
+              "title": "Markdown views"
+            },
+            "url": "",
+            "status": {
+              "gate": "defined",
+              "state": "nominal",
+              "date": "2026-09-29"
+            }
+          }
+        ],
+        "junctions": [
+          {
+            "gate": "mockup",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "design",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-fable",
+            "reviewer": "nbyoung@nbyoung.com"
+          }
+        ],
+        "sources": [
+          {
+            "gate": "mockup",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "mockup",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "design",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "bc63"
+          },
+          {
+            "gate": "design",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "e9c6",
@@ -306,7 +395,6 @@
         "depth": 1,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "design",
           "state": "nominal",
@@ -345,8 +433,33 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": {
+          "hash": "879b447a1b2c3d4e5f60718293a4b5c6d7e8f901",
+          "subject": "Advance the abstract views task to its design gate",
+          "date": "2026-09-30",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "noreply@anthropic.com"
+          },
+          "trailers": [
+            "Model: claude-fable-5-1"
+          ]
+        },
+        "chain": [],
+        "junctions": [],
+        "sources": [],
+        "linkages": []
       },
       {
         "id": "bc86",
@@ -354,7 +467,6 @@
         "depth": 1,
         "parent": true,
         "hidden": 10,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -403,8 +515,77 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": null,
+        "chain": [
+          {
+            "task": {
+              "id": "bc86",
+              "title": "Markdown views"
+            },
+            "url": "",
+            "status": {
+              "gate": "defined",
+              "state": "nominal",
+              "note": "Mockup waits for Abstract views (e9c6) at design",
+              "date": "2026-09-29",
+              "from": {
+                "kind": "rollup",
+                "task": {
+                  "id": "99f0",
+                  "title": "Gate definition view in Markdown"
+                }
+              }
+            }
+          },
+          {
+            "task": {
+              "id": "99f0",
+              "title": "Gate definition view in Markdown"
+            },
+            "url": "",
+            "status": {
+              "gate": "defined",
+              "state": "nominal",
+              "date": "2026-09-29"
+            }
+          }
+        ],
+        "junctions": [
+          {
+            "gate": "mockup",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          }
+        ],
+        "sources": [
+          {
+            "gate": "mockup",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "mockup",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "5fe3",
@@ -412,7 +593,6 @@
         "depth": 1,
         "parent": true,
         "hidden": 10,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -461,173 +641,79 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": null,
+        "chain": [
+          {
+            "task": {
+              "id": "5fe3",
+              "title": "HTML views"
+            },
+            "url": "",
+            "status": {
+              "gate": "defined",
+              "state": "nominal",
+              "note": "Mockup waits for Abstract views (e9c6) at design",
+              "date": "2026-09-29",
+              "from": {
+                "kind": "rollup",
+                "task": {
+                  "id": "a6f7",
+                  "title": "Gate definition view in Html"
+                }
+              }
+            }
+          },
+          {
+            "task": {
+              "id": "a6f7",
+              "title": "Gate definition view in Html"
+            },
+            "url": "",
+            "status": {
+              "gate": "defined",
+              "state": "nominal",
+              "date": "2026-09-29"
+            }
+          }
+        ],
+        "junctions": [
+          {
+            "gate": "mockup",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          }
+        ],
+        "sources": [
+          {
+            "gate": "mockup",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "mockup",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          }
+        ],
+        "linkages": []
       }
     ],
-    "statuses": [
-      {
-        "tasks": [
-          "e9c6"
-        ],
-        "gate": "design",
-        "commit": {
-          "hash": "879b447a1b2c3d4e5f60718293a4b5c6d7e8f901",
-          "subject": "Advance the abstract views task to its design gate",
-          "date": "2026-09-30",
-          "author": {
-            "email": "noreply@anthropic.com"
-          },
-          "committer": {
-            "email": "noreply@anthropic.com"
-          },
-          "trailers": [
-            "Model: claude-fable-5-1"
-          ]
-        }
-      },
-      {
-        "tasks": [
-          "99f0"
-        ],
-        "gate": "defined",
-        "commit": {
-          "hash": "1a17bfc3d8a5e2f0b7c1d6e9a4f3b2c1d0e9f8a7",
-          "subject": "Record the defined gate for the views and mockups",
-          "date": "2026-09-29",
-          "author": {
-            "email": "noreply@anthropic.com"
-          },
-          "committer": {
-            "email": "nbyoung@nbyoung.com"
-          },
-          "trailers": []
-        }
-      }
-    ],
-    "rollups": [
-      {
-        "parent": {
-          "id": "2034",
-          "title": "Views"
-        },
-        "status": {
-          "gate": "defined",
-          "state": "nominal",
-          "date": "2026-09-29"
-        },
-        "child": {
-          "id": "bc86",
-          "title": "Markdown views"
-        }
-      },
-      {
-        "parent": {
-          "id": "bc86",
-          "title": "Markdown views"
-        },
-        "status": {
-          "gate": "defined",
-          "state": "nominal",
-          "date": "2026-09-29"
-        },
-        "child": {
-          "id": "99f0",
-          "title": "Gate definition view in Markdown"
-        }
-      },
-      {
-        "parent": {
-          "id": "5fe3",
-          "title": "HTML views"
-        },
-        "status": {
-          "gate": "defined",
-          "state": "nominal",
-          "date": "2026-09-29"
-        },
-        "child": {
-          "id": "a6f7",
-          "title": "Gate definition view in Html"
-        }
-      }
-    ],
-    "mark_groups": [
-      {
-        "gate": "mockup",
-        "marks": [
-          "agent",
-          "reviewer"
-        ],
-        "tasks": [
-          "437e",
-          "bc63",
-          "2034",
-          "bc86",
-          "5fe3",
-          "99f0",
-          "05a9",
-          "a9ce",
-          "bb7c",
-          "c74a",
-          "efff",
-          "ab8e",
-          "c545",
-          "d615",
-          "b14e",
-          "a6f7",
-          "7dff",
-          "b1b7",
-          "ea51",
-          "7783",
-          "5471",
-          "32e7",
-          "69eb",
-          "3194",
-          "a8b4"
-        ],
-        "contributor": "noreply@anthropic.com",
-        "model": "claude-opus",
-        "reviewer": "nbyoung@nbyoung.com",
-        "contributor_from": "437e",
-        "reviewer_from": "437e",
-        "exempt_from": ""
-      },
-      {
-        "gate": "design",
-        "marks": [
-          "agent",
-          "reviewer"
-        ],
-        "tasks": [
-          "437e"
-        ],
-        "contributor": "noreply@anthropic.com",
-        "model": "claude-opus",
-        "reviewer": "nbyoung@nbyoung.com",
-        "contributor_from": "437e",
-        "reviewer_from": "437e",
-        "exempt_from": ""
-      },
-      {
-        "gate": "design",
-        "marks": [
-          "agent",
-          "reviewer"
-        ],
-        "tasks": [
-          "bc63",
-          "2034"
-        ],
-        "contributor": "noreply@anthropic.com",
-        "model": "claude-fable",
-        "reviewer": "nbyoung@nbyoung.com",
-        "contributor_from": "bc63",
-        "reviewer_from": "437e",
-        "exempt_from": ""
-      }
-    ],
-    "snapshots": [],
     "commands": [
       {
         "text": "git log -1 --format='%as %ae %h' -- .tableaux/status/e9c6.yaml",

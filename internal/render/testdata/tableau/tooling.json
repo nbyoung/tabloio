@@ -166,7 +166,6 @@
         }
       ]
     },
-    "contextual": false,
     "columns": [
       {
         "gates": [
@@ -231,7 +230,6 @@
         "depth": 0,
         "parent": true,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -313,7 +311,189 @@
             ],
             "acts": false
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": null,
+        "chain": [
+          {
+            "task": {
+              "id": "437e",
+              "title": "Tableaux tooling"
+            },
+            "url": "",
+            "status": {
+              "gate": "defined",
+              "state": "nominal",
+              "note": "Mockup waits for Abstract views (e9c6) at design",
+              "date": "2026-09-29",
+              "from": {
+                "kind": "rollup",
+                "task": {
+                  "id": "99f0",
+                  "title": "Gate definition view in Markdown"
+                }
+              }
+            }
+          },
+          {
+            "task": {
+              "id": "bc63",
+              "title": "Method"
+            },
+            "url": "",
+            "status": {
+              "gate": "defined",
+              "state": "nominal",
+              "date": "2026-09-29"
+            }
+          }
+        ],
+        "junctions": [
+          {
+            "gate": "mockup",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "function",
+            "marks": [
+              "agent"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-sonnet",
+            "reviewer": ""
+          },
+          {
+            "gate": "design",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "agent"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-sonnet",
+            "reviewer": ""
+          },
+          {
+            "gate": "unit",
+            "marks": [
+              "agent"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-sonnet",
+            "reviewer": ""
+          },
+          {
+            "gate": "integrate",
+            "marks": [
+              "agent"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-sonnet",
+            "reviewer": ""
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-sonnet",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "person"
+            ],
+            "contributor": "nbyoung@nbyoung.com",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "mockup",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "mockup",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "function",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "design",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "design",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "implementation",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "unit",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "integrate",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "validate",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "validate",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "release",
+            "field": "contributor",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "bc63",
@@ -321,7 +501,6 @@
         "depth": 1,
         "parent": true,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -403,7 +582,189 @@
             ],
             "acts": false
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": null,
+        "chain": [
+          {
+            "task": {
+              "id": "bc63",
+              "title": "Method"
+            },
+            "url": "",
+            "status": {
+              "gate": "defined",
+              "state": "nominal",
+              "note": "Mockup waits for Abstract views (e9c6) at design",
+              "date": "2026-09-29",
+              "from": {
+                "kind": "rollup",
+                "task": {
+                  "id": "99f0",
+                  "title": "Gate definition view in Markdown"
+                }
+              }
+            }
+          },
+          {
+            "task": {
+              "id": "2034",
+              "title": "Views"
+            },
+            "url": "",
+            "status": {
+              "gate": "defined",
+              "state": "nominal",
+              "date": "2026-09-29"
+            }
+          }
+        ],
+        "junctions": [
+          {
+            "gate": "mockup",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "function",
+            "marks": [
+              "agent"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-sonnet",
+            "reviewer": ""
+          },
+          {
+            "gate": "design",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-fable",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "agent"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-sonnet",
+            "reviewer": ""
+          },
+          {
+            "gate": "unit",
+            "marks": [
+              "agent"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-sonnet",
+            "reviewer": ""
+          },
+          {
+            "gate": "integrate",
+            "marks": [
+              "agent"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-sonnet",
+            "reviewer": ""
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "person"
+            ],
+            "contributor": "nbyoung@nbyoung.com",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "mockup",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "mockup",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "function",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "design",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "bc63"
+          },
+          {
+            "gate": "design",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "implementation",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "unit",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "integrate",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "validate",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "bc63"
+          },
+          {
+            "gate": "validate",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "release",
+            "field": "contributor",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "c2ad",
@@ -411,7 +772,6 @@
         "depth": 2,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "implementation",
           "state": "nominal",
@@ -463,7 +823,66 @@
             ],
             "acts": false
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": {
+          "hash": "3d8ce0e5a1b2c3d4e5f60718293a4b5c6d7e8f90",
+          "subject": "Record the Roles task at its implementation gate",
+          "date": "2026-09-30",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "noreply@anthropic.com"
+          },
+          "trailers": [
+            "Model: claude-sonnet-5-5",
+            "Reviewed: c2ad implementation"
+          ]
+        },
+        "chain": [],
+        "junctions": [
+          {
+            "gate": "validate",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "person"
+            ],
+            "contributor": "nbyoung@nbyoung.com",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "validate",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "bc63"
+          },
+          {
+            "gate": "validate",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "release",
+            "field": "contributor",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "2034",
@@ -471,7 +890,6 @@
         "depth": 2,
         "parent": true,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -553,7 +971,189 @@
             ],
             "acts": false
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": null,
+        "chain": [
+          {
+            "task": {
+              "id": "2034",
+              "title": "Views"
+            },
+            "url": "",
+            "status": {
+              "gate": "defined",
+              "state": "nominal",
+              "note": "Mockup waits for Abstract views (e9c6) at design",
+              "date": "2026-09-29",
+              "from": {
+                "kind": "rollup",
+                "task": {
+                  "id": "99f0",
+                  "title": "Gate definition view in Markdown"
+                }
+              }
+            }
+          },
+          {
+            "task": {
+              "id": "bc86",
+              "title": "Markdown views"
+            },
+            "url": "",
+            "status": {
+              "gate": "defined",
+              "state": "nominal",
+              "date": "2026-09-29"
+            }
+          }
+        ],
+        "junctions": [
+          {
+            "gate": "mockup",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "function",
+            "marks": [
+              "agent"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-sonnet",
+            "reviewer": ""
+          },
+          {
+            "gate": "design",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-fable",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "agent"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-sonnet",
+            "reviewer": ""
+          },
+          {
+            "gate": "unit",
+            "marks": [
+              "agent"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-sonnet",
+            "reviewer": ""
+          },
+          {
+            "gate": "integrate",
+            "marks": [
+              "agent"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-sonnet",
+            "reviewer": ""
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "person"
+            ],
+            "contributor": "nbyoung@nbyoung.com",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "mockup",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "mockup",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "function",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "design",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "bc63"
+          },
+          {
+            "gate": "design",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "implementation",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "unit",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "integrate",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "validate",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "bc63"
+          },
+          {
+            "gate": "validate",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "release",
+            "field": "contributor",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "e9c6",
@@ -561,7 +1161,6 @@
         "depth": 3,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "design",
           "state": "nominal",
@@ -617,7 +1216,86 @@
             ],
             "acts": false
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": {
+          "hash": "879b447a1b2c3d4e5f60718293a4b5c6d7e8f901",
+          "subject": "Advance the abstract views task to its design gate",
+          "date": "2026-09-30",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "noreply@anthropic.com"
+          },
+          "trailers": [
+            "Model: claude-fable-5-1"
+          ]
+        },
+        "chain": [],
+        "junctions": [
+          {
+            "gate": "implementation",
+            "marks": [
+              "agent"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-sonnet",
+            "reviewer": "noreply@anthropic.com"
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "person"
+            ],
+            "contributor": "nbyoung@nbyoung.com",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "implementation",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "implementation",
+            "field": "reviewer",
+            "value": "noreply@anthropic.com",
+            "by": "default"
+          },
+          {
+            "gate": "validate",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "bc63"
+          },
+          {
+            "gate": "validate",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "release",
+            "field": "contributor",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "bc86",
@@ -625,7 +1303,6 @@
         "depth": 3,
         "parent": true,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -684,7 +1361,177 @@
             "kind": "exempt",
             "acts": false
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": null,
+        "chain": [
+          {
+            "task": {
+              "id": "bc86",
+              "title": "Markdown views"
+            },
+            "url": "",
+            "status": {
+              "gate": "defined",
+              "state": "nominal",
+              "note": "Mockup waits for Abstract views (e9c6) at design",
+              "date": "2026-09-29",
+              "from": {
+                "kind": "rollup",
+                "task": {
+                  "id": "99f0",
+                  "title": "Gate definition view in Markdown"
+                }
+              }
+            }
+          },
+          {
+            "task": {
+              "id": "99f0",
+              "title": "Gate definition view in Markdown"
+            },
+            "url": "",
+            "status": {
+              "gate": "defined",
+              "state": "nominal",
+              "note": "Mockup waits for Abstract views (e9c6) at design",
+              "date": "2026-09-29",
+              "recorder": "noreply@anthropic.com"
+            }
+          }
+        ],
+        "junctions": [
+          {
+            "gate": "mockup",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "function",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "design",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "unit",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "integrate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "mockup",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "mockup",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "function",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "design",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "implementation",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "unit",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "integrate",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "validate",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "release",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "99f0",
@@ -692,7 +1539,6 @@
         "depth": 4,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -745,7 +1591,153 @@
             "kind": "exempt",
             "acts": false
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": {
+          "hash": "1a17bfc3d8a5e2f0b7c1d6e9a4f3b2c1d0e9f8a7",
+          "subject": "Record the defined gate for the views and mockups",
+          "date": "2026-09-29",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "nbyoung@nbyoung.com"
+          },
+          "trailers": []
+        },
+        "chain": [],
+        "junctions": [
+          {
+            "gate": "mockup",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "function",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "design",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "unit",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "integrate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "mockup",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "mockup",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "function",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "design",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "implementation",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "unit",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "integrate",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "validate",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "release",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "05a9",
@@ -753,7 +1745,6 @@
         "depth": 4,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -806,7 +1797,153 @@
             "kind": "exempt",
             "acts": false
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": {
+          "hash": "1a17bfc3d8a5e2f0b7c1d6e9a4f3b2c1d0e9f8a7",
+          "subject": "Record the defined gate for the views and mockups",
+          "date": "2026-09-29",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "nbyoung@nbyoung.com"
+          },
+          "trailers": []
+        },
+        "chain": [],
+        "junctions": [
+          {
+            "gate": "mockup",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "function",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "design",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "unit",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "integrate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "mockup",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "mockup",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "function",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "design",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "implementation",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "unit",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "integrate",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "validate",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "release",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "a9ce",
@@ -814,7 +1951,6 @@
         "depth": 4,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -867,7 +2003,153 @@
             "kind": "exempt",
             "acts": false
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": {
+          "hash": "1a17bfc3d8a5e2f0b7c1d6e9a4f3b2c1d0e9f8a7",
+          "subject": "Record the defined gate for the views and mockups",
+          "date": "2026-09-29",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "nbyoung@nbyoung.com"
+          },
+          "trailers": []
+        },
+        "chain": [],
+        "junctions": [
+          {
+            "gate": "mockup",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "function",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "design",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "unit",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "integrate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "mockup",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "mockup",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "function",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "design",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "implementation",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "unit",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "integrate",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "validate",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "release",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "bb7c",
@@ -875,7 +2157,6 @@
         "depth": 4,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -928,7 +2209,153 @@
             "kind": "exempt",
             "acts": false
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": {
+          "hash": "1a17bfc3d8a5e2f0b7c1d6e9a4f3b2c1d0e9f8a7",
+          "subject": "Record the defined gate for the views and mockups",
+          "date": "2026-09-29",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "nbyoung@nbyoung.com"
+          },
+          "trailers": []
+        },
+        "chain": [],
+        "junctions": [
+          {
+            "gate": "mockup",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "function",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "design",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "unit",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "integrate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "mockup",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "mockup",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "function",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "design",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "implementation",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "unit",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "integrate",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "validate",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "release",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "c74a",
@@ -936,7 +2363,6 @@
         "depth": 4,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -989,7 +2415,153 @@
             "kind": "exempt",
             "acts": false
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": {
+          "hash": "1a17bfc3d8a5e2f0b7c1d6e9a4f3b2c1d0e9f8a7",
+          "subject": "Record the defined gate for the views and mockups",
+          "date": "2026-09-29",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "nbyoung@nbyoung.com"
+          },
+          "trailers": []
+        },
+        "chain": [],
+        "junctions": [
+          {
+            "gate": "mockup",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "function",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "design",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "unit",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "integrate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "mockup",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "mockup",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "function",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "design",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "implementation",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "unit",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "integrate",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "validate",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "release",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "efff",
@@ -997,7 +2569,6 @@
         "depth": 4,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -1050,7 +2621,153 @@
             "kind": "exempt",
             "acts": false
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": {
+          "hash": "1a17bfc3d8a5e2f0b7c1d6e9a4f3b2c1d0e9f8a7",
+          "subject": "Record the defined gate for the views and mockups",
+          "date": "2026-09-29",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "nbyoung@nbyoung.com"
+          },
+          "trailers": []
+        },
+        "chain": [],
+        "junctions": [
+          {
+            "gate": "mockup",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "function",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "design",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "unit",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "integrate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "mockup",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "mockup",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "function",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "design",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "implementation",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "unit",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "integrate",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "validate",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "release",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "ab8e",
@@ -1058,7 +2775,6 @@
         "depth": 4,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -1111,7 +2827,153 @@
             "kind": "exempt",
             "acts": false
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": {
+          "hash": "1a17bfc3d8a5e2f0b7c1d6e9a4f3b2c1d0e9f8a7",
+          "subject": "Record the defined gate for the views and mockups",
+          "date": "2026-09-29",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "nbyoung@nbyoung.com"
+          },
+          "trailers": []
+        },
+        "chain": [],
+        "junctions": [
+          {
+            "gate": "mockup",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "function",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "design",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "unit",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "integrate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "mockup",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "mockup",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "function",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "design",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "implementation",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "unit",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "integrate",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "validate",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "release",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "c545",
@@ -1119,7 +2981,6 @@
         "depth": 4,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -1172,7 +3033,153 @@
             "kind": "exempt",
             "acts": false
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": {
+          "hash": "1a17bfc3d8a5e2f0b7c1d6e9a4f3b2c1d0e9f8a7",
+          "subject": "Record the defined gate for the views and mockups",
+          "date": "2026-09-29",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "nbyoung@nbyoung.com"
+          },
+          "trailers": []
+        },
+        "chain": [],
+        "junctions": [
+          {
+            "gate": "mockup",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "function",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "design",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "unit",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "integrate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "mockup",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "mockup",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "function",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "design",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "implementation",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "unit",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "integrate",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "validate",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "release",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "d615",
@@ -1180,7 +3187,6 @@
         "depth": 4,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -1233,7 +3239,153 @@
             "kind": "exempt",
             "acts": false
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": {
+          "hash": "1a17bfc3d8a5e2f0b7c1d6e9a4f3b2c1d0e9f8a7",
+          "subject": "Record the defined gate for the views and mockups",
+          "date": "2026-09-29",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "nbyoung@nbyoung.com"
+          },
+          "trailers": []
+        },
+        "chain": [],
+        "junctions": [
+          {
+            "gate": "mockup",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "function",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "design",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "unit",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "integrate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "mockup",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "mockup",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "function",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "design",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "implementation",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "unit",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "integrate",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "validate",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "release",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "b14e",
@@ -1241,7 +3393,6 @@
         "depth": 4,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -1294,7 +3445,153 @@
             "kind": "exempt",
             "acts": false
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": {
+          "hash": "1a17bfc3d8a5e2f0b7c1d6e9a4f3b2c1d0e9f8a7",
+          "subject": "Record the defined gate for the views and mockups",
+          "date": "2026-09-29",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "nbyoung@nbyoung.com"
+          },
+          "trailers": []
+        },
+        "chain": [],
+        "junctions": [
+          {
+            "gate": "mockup",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "function",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "design",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "unit",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "integrate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "mockup",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "mockup",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "function",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "design",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "implementation",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "unit",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "integrate",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "validate",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          },
+          {
+            "gate": "release",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "5fe3",
@@ -1302,7 +3599,6 @@
         "depth": 3,
         "parent": true,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -1361,7 +3657,177 @@
             "kind": "exempt",
             "acts": false
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": null,
+        "chain": [
+          {
+            "task": {
+              "id": "5fe3",
+              "title": "HTML views"
+            },
+            "url": "",
+            "status": {
+              "gate": "defined",
+              "state": "nominal",
+              "note": "Mockup waits for Abstract views (e9c6) at design",
+              "date": "2026-09-29",
+              "from": {
+                "kind": "rollup",
+                "task": {
+                  "id": "a6f7",
+                  "title": "Gate definition view in Html"
+                }
+              }
+            }
+          },
+          {
+            "task": {
+              "id": "a6f7",
+              "title": "Gate definition view in Html"
+            },
+            "url": "",
+            "status": {
+              "gate": "defined",
+              "state": "nominal",
+              "note": "Mockup waits for Abstract views (e9c6) at design",
+              "date": "2026-09-29",
+              "recorder": "noreply@anthropic.com"
+            }
+          }
+        ],
+        "junctions": [
+          {
+            "gate": "mockup",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "function",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "design",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "unit",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "integrate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "mockup",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "mockup",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "function",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "design",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "implementation",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "unit",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "integrate",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "validate",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "release",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "a6f7",
@@ -1369,7 +3835,6 @@
         "depth": 4,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -1422,7 +3887,153 @@
             "kind": "exempt",
             "acts": false
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": {
+          "hash": "1a17bfc3d8a5e2f0b7c1d6e9a4f3b2c1d0e9f8a7",
+          "subject": "Record the defined gate for the views and mockups",
+          "date": "2026-09-29",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "nbyoung@nbyoung.com"
+          },
+          "trailers": []
+        },
+        "chain": [],
+        "junctions": [
+          {
+            "gate": "mockup",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "function",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "design",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "unit",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "integrate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "mockup",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "mockup",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "function",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "design",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "implementation",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "unit",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "integrate",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "validate",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "release",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "7dff",
@@ -1430,7 +4041,6 @@
         "depth": 4,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -1483,7 +4093,153 @@
             "kind": "exempt",
             "acts": false
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": {
+          "hash": "1a17bfc3d8a5e2f0b7c1d6e9a4f3b2c1d0e9f8a7",
+          "subject": "Record the defined gate for the views and mockups",
+          "date": "2026-09-29",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "nbyoung@nbyoung.com"
+          },
+          "trailers": []
+        },
+        "chain": [],
+        "junctions": [
+          {
+            "gate": "mockup",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "function",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "design",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "unit",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "integrate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "mockup",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "mockup",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "function",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "design",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "implementation",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "unit",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "integrate",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "validate",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "release",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "b1b7",
@@ -1491,7 +4247,6 @@
         "depth": 4,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -1544,7 +4299,153 @@
             "kind": "exempt",
             "acts": false
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": {
+          "hash": "1a17bfc3d8a5e2f0b7c1d6e9a4f3b2c1d0e9f8a7",
+          "subject": "Record the defined gate for the views and mockups",
+          "date": "2026-09-29",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "nbyoung@nbyoung.com"
+          },
+          "trailers": []
+        },
+        "chain": [],
+        "junctions": [
+          {
+            "gate": "mockup",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "function",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "design",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "unit",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "integrate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "mockup",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "mockup",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "function",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "design",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "implementation",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "unit",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "integrate",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "validate",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "release",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "ea51",
@@ -1552,7 +4453,6 @@
         "depth": 4,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -1605,7 +4505,153 @@
             "kind": "exempt",
             "acts": false
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": {
+          "hash": "1a17bfc3d8a5e2f0b7c1d6e9a4f3b2c1d0e9f8a7",
+          "subject": "Record the defined gate for the views and mockups",
+          "date": "2026-09-29",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "nbyoung@nbyoung.com"
+          },
+          "trailers": []
+        },
+        "chain": [],
+        "junctions": [
+          {
+            "gate": "mockup",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "function",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "design",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "unit",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "integrate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "mockup",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "mockup",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "function",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "design",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "implementation",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "unit",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "integrate",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "validate",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "release",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "7783",
@@ -1613,7 +4659,6 @@
         "depth": 4,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -1666,7 +4711,153 @@
             "kind": "exempt",
             "acts": false
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": {
+          "hash": "1a17bfc3d8a5e2f0b7c1d6e9a4f3b2c1d0e9f8a7",
+          "subject": "Record the defined gate for the views and mockups",
+          "date": "2026-09-29",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "nbyoung@nbyoung.com"
+          },
+          "trailers": []
+        },
+        "chain": [],
+        "junctions": [
+          {
+            "gate": "mockup",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "function",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "design",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "unit",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "integrate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "mockup",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "mockup",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "function",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "design",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "implementation",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "unit",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "integrate",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "validate",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "release",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "5471",
@@ -1674,7 +4865,6 @@
         "depth": 4,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -1727,7 +4917,153 @@
             "kind": "exempt",
             "acts": false
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": {
+          "hash": "1a17bfc3d8a5e2f0b7c1d6e9a4f3b2c1d0e9f8a7",
+          "subject": "Record the defined gate for the views and mockups",
+          "date": "2026-09-29",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "nbyoung@nbyoung.com"
+          },
+          "trailers": []
+        },
+        "chain": [],
+        "junctions": [
+          {
+            "gate": "mockup",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "function",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "design",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "unit",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "integrate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "mockup",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "mockup",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "function",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "design",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "implementation",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "unit",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "integrate",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "validate",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "release",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "32e7",
@@ -1735,7 +5071,6 @@
         "depth": 4,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -1788,7 +5123,153 @@
             "kind": "exempt",
             "acts": false
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": {
+          "hash": "1a17bfc3d8a5e2f0b7c1d6e9a4f3b2c1d0e9f8a7",
+          "subject": "Record the defined gate for the views and mockups",
+          "date": "2026-09-29",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "nbyoung@nbyoung.com"
+          },
+          "trailers": []
+        },
+        "chain": [],
+        "junctions": [
+          {
+            "gate": "mockup",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "function",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "design",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "unit",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "integrate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "mockup",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "mockup",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "function",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "design",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "implementation",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "unit",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "integrate",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "validate",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "release",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "69eb",
@@ -1796,7 +5277,6 @@
         "depth": 4,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -1849,7 +5329,153 @@
             "kind": "exempt",
             "acts": false
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": {
+          "hash": "1a17bfc3d8a5e2f0b7c1d6e9a4f3b2c1d0e9f8a7",
+          "subject": "Record the defined gate for the views and mockups",
+          "date": "2026-09-29",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "nbyoung@nbyoung.com"
+          },
+          "trailers": []
+        },
+        "chain": [],
+        "junctions": [
+          {
+            "gate": "mockup",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "function",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "design",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "unit",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "integrate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "mockup",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "mockup",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "function",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "design",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "implementation",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "unit",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "integrate",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "validate",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "release",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "3194",
@@ -1857,7 +5483,6 @@
         "depth": 4,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -1910,7 +5535,153 @@
             "kind": "exempt",
             "acts": false
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": {
+          "hash": "1a17bfc3d8a5e2f0b7c1d6e9a4f3b2c1d0e9f8a7",
+          "subject": "Record the defined gate for the views and mockups",
+          "date": "2026-09-29",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "nbyoung@nbyoung.com"
+          },
+          "trailers": []
+        },
+        "chain": [],
+        "junctions": [
+          {
+            "gate": "mockup",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "function",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "design",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "unit",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "integrate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "mockup",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "mockup",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "function",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "design",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "implementation",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "unit",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "integrate",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "validate",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "release",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "a8b4",
@@ -1918,7 +5689,6 @@
         "depth": 4,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -1971,7 +5741,153 @@
             "kind": "exempt",
             "acts": false
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": {
+          "hash": "1a17bfc3d8a5e2f0b7c1d6e9a4f3b2c1d0e9f8a7",
+          "subject": "Record the defined gate for the views and mockups",
+          "date": "2026-09-29",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "nbyoung@nbyoung.com"
+          },
+          "trailers": []
+        },
+        "chain": [],
+        "junctions": [
+          {
+            "gate": "mockup",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "function",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "design",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "unit",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "integrate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "exempt"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "mockup",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "mockup",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "function",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "design",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "implementation",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "unit",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "integrate",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "validate",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          },
+          {
+            "gate": "release",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "e3cb",
@@ -1979,7 +5895,6 @@
         "depth": 2,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "unit",
           "state": "nominal",
@@ -2030,7 +5945,66 @@
             ],
             "acts": false
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": {
+          "hash": "5cbec7c1a2b3c4d5e6f708192a3b4c5d6e7f8091",
+          "subject": "Record e3cb at unit, nominal",
+          "date": "2026-09-30",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "noreply@anthropic.com"
+          },
+          "trailers": [
+            "Model: claude-sonnet-5-5",
+            "Reviewed: e3cb unit"
+          ]
+        },
+        "chain": [],
+        "junctions": [
+          {
+            "gate": "validate",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "person"
+            ],
+            "contributor": "nbyoung@nbyoung.com",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "validate",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "bc63"
+          },
+          {
+            "gate": "validate",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "release",
+            "field": "contributor",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "fcec",
@@ -2038,7 +6012,6 @@
         "depth": 2,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "implementation",
           "state": "nominal",
@@ -2096,7 +6069,108 @@
             ],
             "acts": false
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": {
+          "hash": "60495c2a1b2c3d4e5f60718293a4b5c6d7e8f902",
+          "subject": "Record all three corpus corrections at implementation",
+          "date": "2026-09-30",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "noreply@anthropic.com"
+          },
+          "trailers": [
+            "Model: claude-sonnet-5-5",
+            "Reviewed: fcec implementation"
+          ]
+        },
+        "chain": [],
+        "junctions": [
+          {
+            "gate": "unit",
+            "marks": [
+              "agent"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-sonnet",
+            "reviewer": "noreply@anthropic.com"
+          },
+          {
+            "gate": "integrate",
+            "marks": [
+              "agent"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-sonnet",
+            "reviewer": "noreply@anthropic.com"
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "person"
+            ],
+            "contributor": "nbyoung@nbyoung.com",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "unit",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "unit",
+            "field": "reviewer",
+            "value": "noreply@anthropic.com",
+            "by": "default"
+          },
+          {
+            "gate": "integrate",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "integrate",
+            "field": "reviewer",
+            "value": "noreply@anthropic.com",
+            "by": "default"
+          },
+          {
+            "gate": "validate",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "bc63"
+          },
+          {
+            "gate": "validate",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "release",
+            "field": "contributor",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "ac33",
@@ -2104,7 +6178,6 @@
         "depth": 2,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "design",
           "state": "nominal",
@@ -2161,7 +6234,87 @@
             ],
             "acts": false
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": {
+          "hash": "6762222a1b2c3d4e5f60718293a4b5c6d7e8f903",
+          "subject": "Advance the agent identity task to its design gate",
+          "date": "2026-09-30",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "nbyoung@nbyoung.com"
+          },
+          "trailers": [
+            "Model: claude-fable-5-1"
+          ]
+        },
+        "chain": [],
+        "junctions": [
+          {
+            "gate": "implementation",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-sonnet",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "person"
+            ],
+            "contributor": "nbyoung@nbyoung.com",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "implementation",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "implementation",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "default"
+          },
+          {
+            "gate": "validate",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "bc63"
+          },
+          {
+            "gate": "validate",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "release",
+            "field": "contributor",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "9f3f",
@@ -2169,7 +6322,6 @@
         "depth": 2,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "design",
           "state": "nominal",
@@ -2226,7 +6378,87 @@
             ],
             "acts": false
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": {
+          "hash": "43d68e4a1b2c3d4e5f60718293a4b5c6d7e8f904",
+          "subject": "Advance the subproject linkage task to its design gate",
+          "date": "2026-09-30",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "noreply@anthropic.com"
+          },
+          "trailers": [
+            "Model: claude-fable-5-1"
+          ]
+        },
+        "chain": [],
+        "junctions": [
+          {
+            "gate": "implementation",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-sonnet",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "person"
+            ],
+            "contributor": "nbyoung@nbyoung.com",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "implementation",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "implementation",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "default"
+          },
+          {
+            "gate": "validate",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "bc63"
+          },
+          {
+            "gate": "validate",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "release",
+            "field": "contributor",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "7861",
@@ -2234,7 +6466,6 @@
         "depth": 2,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "implementation",
           "state": "nominal",
@@ -2286,7 +6517,66 @@
             ],
             "acts": false
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": {
+          "hash": "c6f2655a1b2c3d4e5f60718293a4b5c6d7e8f905",
+          "subject": "Complete the productivity evidence report",
+          "date": "2026-09-30",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "noreply@anthropic.com"
+          },
+          "trailers": [
+            "Model: claude-sonnet-5-5",
+            "Reviewed: 7861 implementation"
+          ]
+        },
+        "chain": [],
+        "junctions": [
+          {
+            "gate": "validate",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "person"
+            ],
+            "contributor": "nbyoung@nbyoung.com",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "validate",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "bc63"
+          },
+          {
+            "gate": "validate",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "release",
+            "field": "contributor",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "7166",
@@ -2294,7 +6584,6 @@
         "depth": 2,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "design",
           "state": "nominal",
@@ -2351,7 +6640,85 @@
             ],
             "acts": false
           }
-        ]
+        ],
+        "label": "",
+        "status_commit": {
+          "hash": "d9396b4a1b2c3d4e5f60718293a4b5c6d7e8f906",
+          "subject": "Advance the language clarifications to their design gate",
+          "date": "2026-09-30",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "nbyoung@nbyoung.com"
+          },
+          "trailers": []
+        },
+        "chain": [],
+        "junctions": [
+          {
+            "gate": "implementation",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-sonnet",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "contributor": "noreply@anthropic.com",
+            "model": "claude-opus",
+            "reviewer": "nbyoung@nbyoung.com"
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "person"
+            ],
+            "contributor": "nbyoung@nbyoung.com",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [
+          {
+            "gate": "implementation",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e"
+          },
+          {
+            "gate": "implementation",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "default"
+          },
+          {
+            "gate": "validate",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "bc63"
+          },
+          {
+            "gate": "validate",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          },
+          {
+            "gate": "release",
+            "field": "contributor",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e"
+          }
+        ],
+        "linkages": []
       },
       {
         "id": "77b2",
@@ -2359,7 +6726,6 @@
         "depth": 1,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -2441,6 +6807,157 @@
             ],
             "acts": false
           }
+        ],
+        "label": "",
+        "status_commit": null,
+        "own_commit": {
+          "hash": "e66abe2a1b2c3d4e5f60718293a4b5c6d7e8f907",
+          "subject": "Record the defined gate for the subproject tasks",
+          "date": "2026-09-30",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "noreply@anthropic.com"
+          },
+          "trailers": []
+        },
+        "chain": [
+          {
+            "task": {
+              "id": "77b2",
+              "title": "tablo: backend library and plumbing"
+            },
+            "url": "",
+            "status": {
+              "gate": "defined",
+              "state": "nominal",
+              "note": "The design is next and no requirement gates it",
+              "date": "2026-09-30",
+              "from": {
+                "kind": "snapshot",
+                "task": {
+                  "id": "b2c1",
+                  "title": "tablo"
+                },
+                "url": "subprojects/tablo",
+                "pin": "00f8f68",
+                "gate": "defined"
+              }
+            }
+          },
+          {
+            "task": {
+              "id": "b2c1",
+              "title": "tablo"
+            },
+            "url": "subprojects/tablo",
+            "status": {
+              "gate": "defined",
+              "state": "nominal",
+              "date": "2026-09-30",
+              "from": {
+                "kind": "rollup",
+                "task": {
+                  "id": "4b4f",
+                  "title": "Conformance"
+                }
+              }
+            }
+          }
+        ],
+        "junctions": [
+          {
+            "gate": "mockup",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "function",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "design",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "unit",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "integrate",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [],
+        "linkages": [
+          {
+            "gates": [],
+            "url": "subprojects/tablo",
+            "task": {
+              "id": "b2c1",
+              "title": "tablo"
+            },
+            "commit": "00f8f68",
+            "set_by": {
+              "hash": "552d38f",
+              "date": "2026-10-02",
+              "author": {
+                "email": "nbyoung@nbyoung.com"
+              }
+            }
+          }
         ]
       },
       {
@@ -2449,7 +6966,6 @@
         "depth": 1,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -2531,6 +7047,157 @@
             ],
             "acts": false
           }
+        ],
+        "label": "",
+        "status_commit": null,
+        "own_commit": {
+          "hash": "e66abe2a1b2c3d4e5f60718293a4b5c6d7e8f907",
+          "subject": "Record the defined gate for the subproject tasks",
+          "date": "2026-09-30",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "noreply@anthropic.com"
+          },
+          "trailers": []
+        },
+        "chain": [
+          {
+            "task": {
+              "id": "6103",
+              "title": "tabloio: command line, output and input"
+            },
+            "url": "",
+            "status": {
+              "gate": "defined",
+              "state": "nominal",
+              "note": "prototype/e3ed renders the gate and task definition views as Markdown at three levels from tablo view data",
+              "date": "2026-09-30",
+              "from": {
+                "kind": "snapshot",
+                "task": {
+                  "id": "07e0",
+                  "title": "tabloio"
+                },
+                "url": "subprojects/tabloio",
+                "pin": "4593882",
+                "gate": "function"
+              }
+            }
+          },
+          {
+            "task": {
+              "id": "07e0",
+              "title": "tabloio"
+            },
+            "url": "subprojects/tabloio",
+            "status": {
+              "gate": "function",
+              "state": "nominal",
+              "date": "2026-09-30",
+              "from": {
+                "kind": "rollup",
+                "task": {
+                  "id": "1093",
+                  "title": "Renderers"
+                }
+              }
+            }
+          }
+        ],
+        "junctions": [
+          {
+            "gate": "mockup",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "function",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "design",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "unit",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "integrate",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [],
+        "linkages": [
+          {
+            "gates": [],
+            "url": "subprojects/tabloio",
+            "task": {
+              "id": "07e0",
+              "title": "tabloio"
+            },
+            "commit": "4593882",
+            "set_by": {
+              "hash": "1c0f04d",
+              "date": "2026-10-02",
+              "author": {
+                "email": "nbyoung@nbyoung.com"
+              }
+            }
+          }
         ]
       },
       {
@@ -2539,7 +7206,6 @@
         "depth": 1,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -2621,6 +7287,157 @@
             ],
             "acts": false
           }
+        ],
+        "label": "",
+        "status_commit": null,
+        "own_commit": {
+          "hash": "e66abe2a1b2c3d4e5f60718293a4b5c6d7e8f907",
+          "subject": "Record the defined gate for the subproject tasks",
+          "date": "2026-09-30",
+          "author": {
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "email": "noreply@anthropic.com"
+          },
+          "trailers": []
+        },
+        "chain": [
+          {
+            "task": {
+              "id": "c6e8",
+              "title": "tablotui: terminal user interface"
+            },
+            "url": "",
+            "status": {
+              "gate": "defined",
+              "state": "nominal",
+              "note": "prototype/679b renders the global tableau as a Bubble Tea grid with tree expand and collapse, scrolling, a folded gate window and hidden columns kept in a settings file; emoji lines align where the terminal widens U+FE0F",
+              "date": "2026-09-30",
+              "from": {
+                "kind": "snapshot",
+                "task": {
+                  "id": "40e8",
+                  "title": "tablotui"
+                },
+                "url": "subprojects/tablotui",
+                "pin": "a2878b5",
+                "gate": "function"
+              }
+            }
+          },
+          {
+            "task": {
+              "id": "40e8",
+              "title": "tablotui"
+            },
+            "url": "subprojects/tablotui",
+            "status": {
+              "gate": "function",
+              "state": "nominal",
+              "date": "2026-09-30",
+              "from": {
+                "kind": "rollup",
+                "task": {
+                  "id": "679b",
+                  "title": "Tableau grid"
+                }
+              }
+            }
+          }
+        ],
+        "junctions": [
+          {
+            "gate": "mockup",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "function",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "design",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "unit",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "integrate",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          }
+        ],
+        "sources": [],
+        "linkages": [
+          {
+            "gates": [],
+            "url": "subprojects/tablotui",
+            "task": {
+              "id": "40e8",
+              "title": "tablotui"
+            },
+            "commit": "a2878b5",
+            "set_by": {
+              "hash": "fa4551e",
+              "date": "2026-10-04",
+              "author": {
+                "email": "nbyoung@nbyoung.com"
+              }
+            }
+          }
         ]
       },
       {
@@ -2629,7 +7446,6 @@
         "depth": 1,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -2711,218 +7527,10 @@
             ],
             "acts": false
           }
-        ]
-      }
-    ],
-    "statuses": [
-      {
-        "tasks": [
-          "99f0",
-          "05a9",
-          "a9ce",
-          "bb7c",
-          "c74a",
-          "efff",
-          "ab8e",
-          "c545",
-          "d615",
-          "b14e",
-          "a6f7",
-          "7dff",
-          "b1b7",
-          "ea51",
-          "7783",
-          "5471",
-          "32e7",
-          "69eb",
-          "3194",
-          "a8b4"
         ],
-        "gate": "defined",
-        "commit": {
-          "hash": "1a17bfc3d8a5e2f0b7c1d6e9a4f3b2c1d0e9f8a7",
-          "subject": "Record the defined gate for the views and mockups",
-          "date": "2026-09-29",
-          "author": {
-            "email": "noreply@anthropic.com"
-          },
-          "committer": {
-            "email": "nbyoung@nbyoung.com"
-          },
-          "trailers": []
-        }
-      },
-      {
-        "tasks": [
-          "c2ad"
-        ],
-        "gate": "implementation",
-        "commit": {
-          "hash": "3d8ce0e5a1b2c3d4e5f60718293a4b5c6d7e8f90",
-          "subject": "Record the Roles task at its implementation gate",
-          "date": "2026-09-30",
-          "author": {
-            "email": "noreply@anthropic.com"
-          },
-          "committer": {
-            "email": "noreply@anthropic.com"
-          },
-          "trailers": [
-            "Model: claude-sonnet-5-5",
-            "Reviewed: c2ad implementation"
-          ]
-        }
-      },
-      {
-        "tasks": [
-          "e9c6"
-        ],
-        "gate": "design",
-        "commit": {
-          "hash": "879b447a1b2c3d4e5f60718293a4b5c6d7e8f901",
-          "subject": "Advance the abstract views task to its design gate",
-          "date": "2026-09-30",
-          "author": {
-            "email": "noreply@anthropic.com"
-          },
-          "committer": {
-            "email": "noreply@anthropic.com"
-          },
-          "trailers": [
-            "Model: claude-fable-5-1"
-          ]
-        }
-      },
-      {
-        "tasks": [
-          "e3cb"
-        ],
-        "gate": "unit",
-        "commit": {
-          "hash": "5cbec7c1a2b3c4d5e6f708192a3b4c5d6e7f8091",
-          "subject": "Record e3cb at unit, nominal",
-          "date": "2026-09-30",
-          "author": {
-            "email": "noreply@anthropic.com"
-          },
-          "committer": {
-            "email": "noreply@anthropic.com"
-          },
-          "trailers": [
-            "Model: claude-sonnet-5-5",
-            "Reviewed: e3cb unit"
-          ]
-        }
-      },
-      {
-        "tasks": [
-          "fcec"
-        ],
-        "gate": "implementation",
-        "commit": {
-          "hash": "60495c2a1b2c3d4e5f60718293a4b5c6d7e8f902",
-          "subject": "Record all three corpus corrections at implementation",
-          "date": "2026-09-30",
-          "author": {
-            "email": "noreply@anthropic.com"
-          },
-          "committer": {
-            "email": "noreply@anthropic.com"
-          },
-          "trailers": [
-            "Model: claude-sonnet-5-5",
-            "Reviewed: fcec implementation"
-          ]
-        }
-      },
-      {
-        "tasks": [
-          "ac33"
-        ],
-        "gate": "design",
-        "commit": {
-          "hash": "6762222a1b2c3d4e5f60718293a4b5c6d7e8f903",
-          "subject": "Advance the agent identity task to its design gate",
-          "date": "2026-09-30",
-          "author": {
-            "email": "noreply@anthropic.com"
-          },
-          "committer": {
-            "email": "nbyoung@nbyoung.com"
-          },
-          "trailers": [
-            "Model: claude-fable-5-1"
-          ]
-        }
-      },
-      {
-        "tasks": [
-          "9f3f"
-        ],
-        "gate": "design",
-        "commit": {
-          "hash": "43d68e4a1b2c3d4e5f60718293a4b5c6d7e8f904",
-          "subject": "Advance the subproject linkage task to its design gate",
-          "date": "2026-09-30",
-          "author": {
-            "email": "noreply@anthropic.com"
-          },
-          "committer": {
-            "email": "noreply@anthropic.com"
-          },
-          "trailers": [
-            "Model: claude-fable-5-1"
-          ]
-        }
-      },
-      {
-        "tasks": [
-          "7861"
-        ],
-        "gate": "implementation",
-        "commit": {
-          "hash": "c6f2655a1b2c3d4e5f60718293a4b5c6d7e8f905",
-          "subject": "Complete the productivity evidence report",
-          "date": "2026-09-30",
-          "author": {
-            "email": "noreply@anthropic.com"
-          },
-          "committer": {
-            "email": "noreply@anthropic.com"
-          },
-          "trailers": [
-            "Model: claude-sonnet-5-5",
-            "Reviewed: 7861 implementation"
-          ]
-        }
-      },
-      {
-        "tasks": [
-          "7166"
-        ],
-        "gate": "design",
-        "commit": {
-          "hash": "d9396b4a1b2c3d4e5f60718293a4b5c6d7e8f906",
-          "subject": "Advance the language clarifications to their design gate",
-          "date": "2026-09-30",
-          "author": {
-            "email": "noreply@anthropic.com"
-          },
-          "committer": {
-            "email": "nbyoung@nbyoung.com"
-          },
-          "trailers": []
-        }
-      },
-      {
-        "tasks": [
-          "77b2",
-          "6103",
-          "c6e8",
-          "595e"
-        ],
-        "gate": "defined",
-        "commit": {
+        "label": "",
+        "status_commit": null,
+        "own_commit": {
           "hash": "e66abe2a1b2c3d4e5f60718293a4b5c6d7e8f907",
           "subject": "Record the defined gate for the subproject tasks",
           "date": "2026-09-30",
@@ -2933,964 +7541,144 @@
             "email": "noreply@anthropic.com"
           },
           "trailers": []
-        }
-      }
-    ],
-    "rollups": [
-      {
-        "parent": {
-          "id": "437e",
-          "title": "Tableaux tooling"
         },
-        "status": {
-          "gate": "defined",
-          "state": "nominal",
-          "date": "2026-09-29"
-        },
-        "child": {
-          "id": "bc63",
-          "title": "Method"
-        }
-      },
-      {
-        "parent": {
-          "id": "bc63",
-          "title": "Method"
-        },
-        "status": {
-          "gate": "defined",
-          "state": "nominal",
-          "date": "2026-09-29"
-        },
-        "child": {
-          "id": "2034",
-          "title": "Views"
-        }
-      },
-      {
-        "parent": {
-          "id": "2034",
-          "title": "Views"
-        },
-        "status": {
-          "gate": "defined",
-          "state": "nominal",
-          "date": "2026-09-29"
-        },
-        "child": {
-          "id": "bc86",
-          "title": "Markdown views"
-        }
-      },
-      {
-        "parent": {
-          "id": "bc86",
-          "title": "Markdown views"
-        },
-        "status": {
-          "gate": "defined",
-          "state": "nominal",
-          "date": "2026-09-29"
-        },
-        "child": {
-          "id": "99f0",
-          "title": "Gate definition view in Markdown"
-        }
-      },
-      {
-        "parent": {
-          "id": "5fe3",
-          "title": "HTML views"
-        },
-        "status": {
-          "gate": "defined",
-          "state": "nominal",
-          "date": "2026-09-29"
-        },
-        "child": {
-          "id": "a6f7",
-          "title": "Gate definition view in Html"
-        }
-      }
-    ],
-    "mark_groups": [
-      {
-        "gate": "mockup",
-        "marks": [
-          "agent",
-          "reviewer"
-        ],
-        "tasks": [
-          "437e",
-          "bc63",
-          "2034",
-          "bc86",
-          "5fe3",
-          "99f0",
-          "05a9",
-          "a9ce",
-          "bb7c",
-          "c74a",
-          "efff",
-          "ab8e",
-          "c545",
-          "d615",
-          "b14e",
-          "a6f7",
-          "7dff",
-          "b1b7",
-          "ea51",
-          "7783",
-          "5471",
-          "32e7",
-          "69eb",
-          "3194",
-          "a8b4"
-        ],
-        "contributor": "noreply@anthropic.com",
-        "model": "claude-opus",
-        "reviewer": "nbyoung@nbyoung.com",
-        "contributor_from": "437e",
-        "reviewer_from": "437e",
-        "exempt_from": ""
-      },
-      {
-        "gate": "function",
-        "marks": [
-          "agent"
-        ],
-        "tasks": [
-          "437e",
-          "bc63",
-          "2034"
-        ],
-        "contributor": "noreply@anthropic.com",
-        "model": "claude-sonnet",
-        "reviewer": "",
-        "contributor_from": "437e",
-        "reviewer_from": "",
-        "exempt_from": ""
-      },
-      {
-        "gate": "design",
-        "marks": [
-          "agent",
-          "reviewer"
-        ],
-        "tasks": [
-          "437e"
-        ],
-        "contributor": "noreply@anthropic.com",
-        "model": "claude-opus",
-        "reviewer": "nbyoung@nbyoung.com",
-        "contributor_from": "437e",
-        "reviewer_from": "437e",
-        "exempt_from": ""
-      },
-      {
-        "gate": "design",
-        "marks": [
-          "agent",
-          "reviewer"
-        ],
-        "tasks": [
-          "bc63",
-          "2034"
-        ],
-        "contributor": "noreply@anthropic.com",
-        "model": "claude-fable",
-        "reviewer": "nbyoung@nbyoung.com",
-        "contributor_from": "bc63",
-        "reviewer_from": "437e",
-        "exempt_from": ""
-      },
-      {
-        "gate": "implementation",
-        "marks": [
-          "agent"
-        ],
-        "tasks": [
-          "437e",
-          "bc63",
-          "2034"
-        ],
-        "contributor": "noreply@anthropic.com",
-        "model": "claude-sonnet",
-        "reviewer": "",
-        "contributor_from": "437e",
-        "reviewer_from": "",
-        "exempt_from": ""
-      },
-      {
-        "gate": "implementation",
-        "marks": [
-          "agent"
-        ],
-        "tasks": [
-          "e9c6"
-        ],
-        "contributor": "noreply@anthropic.com",
-        "model": "claude-sonnet",
-        "reviewer": "noreply@anthropic.com",
-        "contributor_from": "437e",
-        "reviewer_from": "default",
-        "exempt_from": ""
-      },
-      {
-        "gate": "implementation",
-        "marks": [
-          "agent",
-          "reviewer"
-        ],
-        "tasks": [
-          "ac33",
-          "9f3f",
-          "7166"
-        ],
-        "contributor": "noreply@anthropic.com",
-        "model": "claude-sonnet",
-        "reviewer": "nbyoung@nbyoung.com",
-        "contributor_from": "437e",
-        "reviewer_from": "default",
-        "exempt_from": ""
-      },
-      {
-        "gate": "unit",
-        "marks": [
-          "agent"
-        ],
-        "tasks": [
-          "437e",
-          "bc63",
-          "2034"
-        ],
-        "contributor": "noreply@anthropic.com",
-        "model": "claude-sonnet",
-        "reviewer": "",
-        "contributor_from": "437e",
-        "reviewer_from": "",
-        "exempt_from": ""
-      },
-      {
-        "gate": "unit",
-        "marks": [
-          "agent"
-        ],
-        "tasks": [
-          "fcec"
-        ],
-        "contributor": "noreply@anthropic.com",
-        "model": "claude-sonnet",
-        "reviewer": "noreply@anthropic.com",
-        "contributor_from": "437e",
-        "reviewer_from": "default",
-        "exempt_from": ""
-      },
-      {
-        "gate": "integrate",
-        "marks": [
-          "agent"
-        ],
-        "tasks": [
-          "437e",
-          "bc63",
-          "2034"
-        ],
-        "contributor": "noreply@anthropic.com",
-        "model": "claude-sonnet",
-        "reviewer": "",
-        "contributor_from": "437e",
-        "reviewer_from": "",
-        "exempt_from": ""
-      },
-      {
-        "gate": "integrate",
-        "marks": [
-          "agent"
-        ],
-        "tasks": [
-          "fcec"
-        ],
-        "contributor": "noreply@anthropic.com",
-        "model": "claude-sonnet",
-        "reviewer": "noreply@anthropic.com",
-        "contributor_from": "437e",
-        "reviewer_from": "default",
-        "exempt_from": ""
-      },
-      {
-        "gate": "validate",
-        "marks": [
-          "agent",
-          "reviewer"
-        ],
-        "tasks": [
-          "437e"
-        ],
-        "contributor": "noreply@anthropic.com",
-        "model": "claude-sonnet",
-        "reviewer": "nbyoung@nbyoung.com",
-        "contributor_from": "437e",
-        "reviewer_from": "437e",
-        "exempt_from": ""
-      },
-      {
-        "gate": "validate",
-        "marks": [
-          "agent",
-          "reviewer"
-        ],
-        "tasks": [
-          "bc63",
-          "2034",
-          "c2ad",
-          "e9c6",
-          "e3cb",
-          "fcec",
-          "ac33",
-          "9f3f",
-          "7861",
-          "7166"
-        ],
-        "contributor": "noreply@anthropic.com",
-        "model": "claude-opus",
-        "reviewer": "nbyoung@nbyoung.com",
-        "contributor_from": "bc63",
-        "reviewer_from": "437e",
-        "exempt_from": ""
-      },
-      {
-        "gate": "release",
-        "marks": [
-          "person"
-        ],
-        "tasks": [
-          "437e",
-          "bc63",
-          "2034",
-          "c2ad",
-          "e9c6",
-          "e3cb",
-          "fcec",
-          "ac33",
-          "9f3f",
-          "7861",
-          "7166"
-        ],
-        "contributor": "nbyoung@nbyoung.com",
-        "model": "",
-        "reviewer": "",
-        "contributor_from": "437e",
-        "reviewer_from": "",
-        "exempt_from": ""
-      },
-      {
-        "gate": "mockup",
-        "marks": [
-          "subproject"
-        ],
-        "tasks": [
-          "77b2",
-          "6103",
-          "c6e8",
-          "595e"
-        ],
-        "contributor": "",
-        "model": "",
-        "reviewer": "",
-        "contributor_from": "",
-        "reviewer_from": "",
-        "exempt_from": ""
-      },
-      {
-        "gate": "function",
-        "marks": [
-          "subproject"
-        ],
-        "tasks": [
-          "77b2",
-          "6103",
-          "c6e8",
-          "595e"
-        ],
-        "contributor": "",
-        "model": "",
-        "reviewer": "",
-        "contributor_from": "",
-        "reviewer_from": "",
-        "exempt_from": ""
-      },
-      {
-        "gate": "design",
-        "marks": [
-          "subproject"
-        ],
-        "tasks": [
-          "77b2",
-          "6103",
-          "c6e8",
-          "595e"
-        ],
-        "contributor": "",
-        "model": "",
-        "reviewer": "",
-        "contributor_from": "",
-        "reviewer_from": "",
-        "exempt_from": ""
-      },
-      {
-        "gate": "implementation",
-        "marks": [
-          "subproject"
-        ],
-        "tasks": [
-          "77b2",
-          "6103",
-          "c6e8",
-          "595e"
-        ],
-        "contributor": "",
-        "model": "",
-        "reviewer": "",
-        "contributor_from": "",
-        "reviewer_from": "",
-        "exempt_from": ""
-      },
-      {
-        "gate": "unit",
-        "marks": [
-          "subproject"
-        ],
-        "tasks": [
-          "77b2",
-          "6103",
-          "c6e8",
-          "595e"
-        ],
-        "contributor": "",
-        "model": "",
-        "reviewer": "",
-        "contributor_from": "",
-        "reviewer_from": "",
-        "exempt_from": ""
-      },
-      {
-        "gate": "integrate",
-        "marks": [
-          "subproject"
-        ],
-        "tasks": [
-          "77b2",
-          "6103",
-          "c6e8",
-          "595e"
-        ],
-        "contributor": "",
-        "model": "",
-        "reviewer": "",
-        "contributor_from": "",
-        "reviewer_from": "",
-        "exempt_from": ""
-      },
-      {
-        "gate": "validate",
-        "marks": [
-          "subproject"
-        ],
-        "tasks": [
-          "77b2",
-          "6103",
-          "c6e8",
-          "595e"
-        ],
-        "contributor": "",
-        "model": "",
-        "reviewer": "",
-        "contributor_from": "",
-        "reviewer_from": "",
-        "exempt_from": ""
-      },
-      {
-        "gate": "release",
-        "marks": [
-          "subproject"
-        ],
-        "tasks": [
-          "77b2",
-          "6103",
-          "c6e8",
-          "595e"
-        ],
-        "contributor": "",
-        "model": "",
-        "reviewer": "",
-        "contributor_from": "",
-        "reviewer_from": "",
-        "exempt_from": ""
-      },
-      {
-        "gate": "function",
-        "marks": [
-          "exempt"
-        ],
-        "tasks": [
-          "bc86",
-          "99f0",
-          "05a9",
-          "a9ce",
-          "bb7c",
-          "c74a",
-          "efff",
-          "ab8e",
-          "c545",
-          "d615",
-          "b14e"
-        ],
-        "contributor": "",
-        "model": "",
-        "reviewer": "",
-        "contributor_from": "",
-        "reviewer_from": "",
-        "exempt_from": "bc86"
-      },
-      {
-        "gate": "function",
-        "marks": [
-          "exempt"
-        ],
-        "tasks": [
-          "5fe3",
-          "a6f7",
-          "7dff",
-          "b1b7",
-          "ea51",
-          "7783",
-          "5471",
-          "32e7",
-          "69eb",
-          "3194",
-          "a8b4"
-        ],
-        "contributor": "",
-        "model": "",
-        "reviewer": "",
-        "contributor_from": "",
-        "reviewer_from": "",
-        "exempt_from": "5fe3"
-      },
-      {
-        "gate": "design",
-        "marks": [
-          "exempt"
-        ],
-        "tasks": [
-          "bc86",
-          "99f0",
-          "05a9",
-          "a9ce",
-          "bb7c",
-          "c74a",
-          "efff",
-          "ab8e",
-          "c545",
-          "d615",
-          "b14e"
-        ],
-        "contributor": "",
-        "model": "",
-        "reviewer": "",
-        "contributor_from": "",
-        "reviewer_from": "",
-        "exempt_from": "bc86"
-      },
-      {
-        "gate": "design",
-        "marks": [
-          "exempt"
-        ],
-        "tasks": [
-          "5fe3",
-          "a6f7",
-          "7dff",
-          "b1b7",
-          "ea51",
-          "7783",
-          "5471",
-          "32e7",
-          "69eb",
-          "3194",
-          "a8b4"
-        ],
-        "contributor": "",
-        "model": "",
-        "reviewer": "",
-        "contributor_from": "",
-        "reviewer_from": "",
-        "exempt_from": "5fe3"
-      },
-      {
-        "gate": "implementation",
-        "marks": [
-          "exempt"
-        ],
-        "tasks": [
-          "bc86",
-          "99f0",
-          "05a9",
-          "a9ce",
-          "bb7c",
-          "c74a",
-          "efff",
-          "ab8e",
-          "c545",
-          "d615",
-          "b14e"
-        ],
-        "contributor": "",
-        "model": "",
-        "reviewer": "",
-        "contributor_from": "",
-        "reviewer_from": "",
-        "exempt_from": "bc86"
-      },
-      {
-        "gate": "implementation",
-        "marks": [
-          "exempt"
-        ],
-        "tasks": [
-          "5fe3",
-          "a6f7",
-          "7dff",
-          "b1b7",
-          "ea51",
-          "7783",
-          "5471",
-          "32e7",
-          "69eb",
-          "3194",
-          "a8b4"
-        ],
-        "contributor": "",
-        "model": "",
-        "reviewer": "",
-        "contributor_from": "",
-        "reviewer_from": "",
-        "exempt_from": "5fe3"
-      },
-      {
-        "gate": "unit",
-        "marks": [
-          "exempt"
-        ],
-        "tasks": [
-          "bc86",
-          "99f0",
-          "05a9",
-          "a9ce",
-          "bb7c",
-          "c74a",
-          "efff",
-          "ab8e",
-          "c545",
-          "d615",
-          "b14e"
-        ],
-        "contributor": "",
-        "model": "",
-        "reviewer": "",
-        "contributor_from": "",
-        "reviewer_from": "",
-        "exempt_from": "bc86"
-      },
-      {
-        "gate": "unit",
-        "marks": [
-          "exempt"
-        ],
-        "tasks": [
-          "5fe3",
-          "a6f7",
-          "7dff",
-          "b1b7",
-          "ea51",
-          "7783",
-          "5471",
-          "32e7",
-          "69eb",
-          "3194",
-          "a8b4"
-        ],
-        "contributor": "",
-        "model": "",
-        "reviewer": "",
-        "contributor_from": "",
-        "reviewer_from": "",
-        "exempt_from": "5fe3"
-      },
-      {
-        "gate": "integrate",
-        "marks": [
-          "exempt"
-        ],
-        "tasks": [
-          "bc86",
-          "99f0",
-          "05a9",
-          "a9ce",
-          "bb7c",
-          "c74a",
-          "efff",
-          "ab8e",
-          "c545",
-          "d615",
-          "b14e"
-        ],
-        "contributor": "",
-        "model": "",
-        "reviewer": "",
-        "contributor_from": "",
-        "reviewer_from": "",
-        "exempt_from": "bc86"
-      },
-      {
-        "gate": "integrate",
-        "marks": [
-          "exempt"
-        ],
-        "tasks": [
-          "5fe3",
-          "a6f7",
-          "7dff",
-          "b1b7",
-          "ea51",
-          "7783",
-          "5471",
-          "32e7",
-          "69eb",
-          "3194",
-          "a8b4"
-        ],
-        "contributor": "",
-        "model": "",
-        "reviewer": "",
-        "contributor_from": "",
-        "reviewer_from": "",
-        "exempt_from": "5fe3"
-      },
-      {
-        "gate": "validate",
-        "marks": [
-          "exempt"
-        ],
-        "tasks": [
-          "bc86",
-          "99f0",
-          "05a9",
-          "a9ce",
-          "bb7c",
-          "c74a",
-          "efff",
-          "ab8e",
-          "c545",
-          "d615",
-          "b14e"
-        ],
-        "contributor": "",
-        "model": "",
-        "reviewer": "",
-        "contributor_from": "",
-        "reviewer_from": "",
-        "exempt_from": "bc86"
-      },
-      {
-        "gate": "validate",
-        "marks": [
-          "exempt"
-        ],
-        "tasks": [
-          "5fe3",
-          "a6f7",
-          "7dff",
-          "b1b7",
-          "ea51",
-          "7783",
-          "5471",
-          "32e7",
-          "69eb",
-          "3194",
-          "a8b4"
-        ],
-        "contributor": "",
-        "model": "",
-        "reviewer": "",
-        "contributor_from": "",
-        "reviewer_from": "",
-        "exempt_from": "5fe3"
-      },
-      {
-        "gate": "release",
-        "marks": [
-          "exempt"
-        ],
-        "tasks": [
-          "bc86",
-          "99f0",
-          "05a9",
-          "a9ce",
-          "bb7c",
-          "c74a",
-          "efff",
-          "ab8e",
-          "c545",
-          "d615",
-          "b14e"
-        ],
-        "contributor": "",
-        "model": "",
-        "reviewer": "",
-        "contributor_from": "",
-        "reviewer_from": "",
-        "exempt_from": "bc86"
-      },
-      {
-        "gate": "release",
-        "marks": [
-          "exempt"
-        ],
-        "tasks": [
-          "5fe3",
-          "a6f7",
-          "7dff",
-          "b1b7",
-          "ea51",
-          "7783",
-          "5471",
-          "32e7",
-          "69eb",
-          "3194",
-          "a8b4"
-        ],
-        "contributor": "",
-        "model": "",
-        "reviewer": "",
-        "contributor_from": "",
-        "reviewer_from": "",
-        "exempt_from": "5fe3"
-      }
-    ],
-    "snapshots": [
-      {
-        "task": "77b2",
-        "url": "subprojects/tablo",
-        "root": {
-          "id": "b2c1",
-          "title": "tablo"
-        },
-        "pin": "00f8f68",
-        "set_by": {
-          "hash": "552d38f",
-          "date": "2026-10-02",
-          "author": {
-            "email": "nbyoung@nbyoung.com"
-          }
-        },
-        "status": {
-          "gate": "defined",
-          "state": "nominal",
-          "date": "2026-09-30",
-          "from": {
-            "kind": "rollup",
+        "chain": [
+          {
             "task": {
-              "id": "4b4f",
-              "title": "Conformance"
+              "id": "595e",
+              "title": "tableaud: local daemon and HTML"
+            },
+            "url": "",
+            "status": {
+              "gate": "defined",
+              "state": "nominal",
+              "note": "prototype/49ce serves the ten views with a stdlib HEAD and .tableaux watcher, ETag 304 polling through htmx, a Source interface and a loopback Host check",
+              "date": "2026-09-30",
+              "from": {
+                "kind": "snapshot",
+                "task": {
+                  "id": "8608",
+                  "title": "tableaud"
+                },
+                "url": "subprojects/tableaud",
+                "pin": "e6ec4ec",
+                "gate": "function"
+              }
+            }
+          },
+          {
+            "task": {
+              "id": "8608",
+              "title": "tableaud"
+            },
+            "url": "subprojects/tableaud",
+            "status": {
+              "gate": "function",
+              "state": "nominal",
+              "date": "2026-09-30",
+              "from": {
+                "kind": "rollup",
+                "task": {
+                  "id": "49ce",
+                  "title": "Server"
+                }
+              }
             }
           }
-        }
-      },
-      {
-        "task": "6103",
-        "url": "subprojects/tabloio",
-        "root": {
-          "id": "07e0",
-          "title": "tabloio"
-        },
-        "pin": "4593882",
-        "set_by": {
-          "hash": "1c0f04d",
-          "date": "2026-10-02",
-          "author": {
-            "email": "nbyoung@nbyoung.com"
+        ],
+        "junctions": [
+          {
+            "gate": "mockup",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "function",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "design",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "implementation",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "unit",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "integrate",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "validate",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
+          },
+          {
+            "gate": "release",
+            "marks": [
+              "subproject"
+            ],
+            "contributor": "",
+            "model": "",
+            "reviewer": ""
           }
-        },
-        "status": {
-          "gate": "function",
-          "state": "nominal",
-          "date": "2026-09-30",
-          "from": {
-            "kind": "rollup",
+        ],
+        "sources": [],
+        "linkages": [
+          {
+            "gates": [],
+            "url": "subprojects/tableaud",
             "task": {
-              "id": "1093",
-              "title": "Renderers"
+              "id": "8608",
+              "title": "tableaud"
+            },
+            "commit": "e6ec4ec",
+            "set_by": {
+              "hash": "3cdae52",
+              "date": "2026-10-05",
+              "author": {
+                "email": "nbyoung@nbyoung.com"
+              }
             }
           }
-        }
-      },
-      {
-        "task": "c6e8",
-        "url": "subprojects/tablotui",
-        "root": {
-          "id": "40e8",
-          "title": "tablotui"
-        },
-        "pin": "a2878b5",
-        "set_by": {
-          "hash": "fa4551e",
-          "date": "2026-10-04",
-          "author": {
-            "email": "nbyoung@nbyoung.com"
-          }
-        },
-        "status": {
-          "gate": "function",
-          "state": "nominal",
-          "date": "2026-09-30",
-          "from": {
-            "kind": "rollup",
-            "task": {
-              "id": "679b",
-              "title": "Tableau grid"
-            }
-          }
-        }
-      },
-      {
-        "task": "595e",
-        "url": "subprojects/tableaud",
-        "root": {
-          "id": "8608",
-          "title": "tableaud"
-        },
-        "pin": "e6ec4ec",
-        "set_by": {
-          "hash": "3cdae52",
-          "date": "2026-10-05",
-          "author": {
-            "email": "nbyoung@nbyoung.com"
-          }
-        },
-        "status": {
-          "gate": "function",
-          "state": "nominal",
-          "date": "2026-09-30",
-          "from": {
-            "kind": "rollup",
-            "task": {
-              "id": "49ce",
-              "title": "Server"
-            }
-          }
-        }
+        ]
       }
     ],
     "commands": [

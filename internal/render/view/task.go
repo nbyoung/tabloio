@@ -76,6 +76,7 @@ type Junction struct {
 	References  []Reference `json:"references"`
 	Stands      string      `json:"stands"` // passed, here, next, later, exempt; "" on a parent
 	Reviewed    bool        `json:"reviewed"`
+	From        []string    `json:"from"` // where the view shows suppliers: the tasks whose entries supply it, nearest first
 }
 
 // SubRef names the task of a subproject that a recursive junction reads.
@@ -101,6 +102,7 @@ type Authorisation struct {
 	Commit *Commit `json:"commit"` // nil when no commit decides
 	Way    string  `json:"way"`    // change, merge, trailer
 	By     string  `json:"by"`     // author, committer, both, or empty for a proposed task
+	Why    string  `json:"why"`    // proposed with no deciding commit: no_history, no_trunk, off_trunk, no_commit
 }
 
 // Step is one status of a chain: the task's own first, to the leaf whose

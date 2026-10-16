@@ -8,6 +8,7 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/nbyoung/tabloio/internal/render/doc"
 	"github.com/nbyoung/tabloio/internal/render/view"
 )
 
@@ -74,7 +75,8 @@ func TestQueueFold(t *testing.T) {
 	// An item with a cause never folds: the cause belongs to its task.
 	q := mk(12)
 	for i := range q.Items {
-		q.Items[i].Kind, q.Items[i].Cause = "waiting", "waits for `x001` at design"
+		q.Items[i].Kind = "waiting"
+		q.Items[i].Causes = []view.Wait{{Kind: "requirement", Requires: &view.Requirement{Task: view.TaskRef{ID: "x001"}, From: "design"}}}
 	}
 	out := renderString(t, q, Options{Level: view.Detail})
 	if strings.Contains(out, "more") || strings.Count(out, "; waits for `x001` at design |") != 12 {
@@ -160,5 +162,36 @@ func TestQueueProvenance(t *testing.T) {
 	}
 	if !strings.Contains(prov, "level provenance") || !strings.Contains(prov, "--level provenance") {
 		t.Errorf("the frame lacks the level:\n%s", prov)
+	}
+}
+
+// T8: the words of each cause of a waiting item, and of an owed
+// authorisation, by its typed facts.
+func TestQueueCauses(t *testing.T) {
+	v := readFixture(t, "queue", "weather-ada").(*view.Queue)
+	p := newPage(&v.Head, Options{Level: view.Detail})
+	plain := func(xs []doc.Inline) string { return plainInline(xs, map[string]bool{}) }
+	req := &view.Requirement{Task: view.TaskRef{ID: "e9c6"}, From: "design"}
+	for _, c := range []struct {
+		it   view.QueueItem
+		want string
+	}{
+		{view.QueueItem{Kind: "waiting", Causes: []view.Wait{{Kind: "requirement", Requires: req}}}, "waits for e9c6 at design"},
+		{view.QueueItem{Kind: "waiting", Causes: []view.Wait{{Kind: "reason", Reason: "blocked"}}}, "blocked"},
+		{view.QueueItem{Kind: "waiting", Causes: []view.Wait{{Kind: "reason", Reason: "blocked"}}, Status: &view.Status{Note: "No parts"}},
+			"blocked: No parts"},
+		{view.QueueItem{Kind: "waiting", Causes: []view.Wait{{Kind: "authorisation", By: "a@b.c"}}}, "proposed; waits for its authorisation by a@b.c"},
+		{view.QueueItem{Kind: "waiting", Causes: []view.Wait{{Kind: "review", By: "r@b.c"}}}, "handed off; waits for the review by r@b.c"},
+		{view.QueueItem{Kind: "waiting", Causes: []view.Wait{{Kind: "requirement", Requires: req}, {Kind: "review", By: "r@b.c"}}},
+			"waits for e9c6 at design; handed off; waits for the review by r@b.c"},
+		{view.QueueItem{Kind: "authorisation", Authorisation: &view.Authorisation{Commit: &view.Commit{Hash: "1b8cfb1"}}},
+			"proposed; the deciding commit is not by an authority"},
+		{view.QueueItem{Kind: "authorisation", Authorisation: &view.Authorisation{Why: "no_trunk"}}, "proposed; the trunk is undetermined"},
+		{view.QueueItem{Kind: "authorisation"}, ""},
+		{view.QueueItem{Kind: "ready"}, ""},
+	} {
+		if got := plain(p.queueCause(c.it)); got != c.want {
+			t.Errorf("%s %+v: %q, want %q", c.it.Kind, c.it.Causes, got, c.want)
+		}
 	}
 }

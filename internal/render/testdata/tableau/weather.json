@@ -178,7 +178,6 @@
         }
       ]
     },
-    "contextual": false,
     "columns": [
       {
         "gates": [
@@ -247,7 +246,6 @@
         "depth": 0,
         "parent": true,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -312,8 +310,15 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
           }
-        ]
+        ],
+        "label": ""
       },
       {
         "id": "4e2b",
@@ -321,7 +326,6 @@
         "depth": 1,
         "parent": true,
         "hidden": 2,
-        "role": "",
         "status": {
           "gate": "function",
           "state": "stalled",
@@ -389,8 +393,15 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
           }
-        ]
+        ],
+        "label": ""
       },
       {
         "id": "9f31",
@@ -398,7 +409,6 @@
         "depth": 2,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "function",
           "state": "stalled",
@@ -461,8 +471,15 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
           }
-        ]
+        ],
+        "label": ""
       },
       {
         "id": "c07d",
@@ -470,7 +487,6 @@
         "depth": 2,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "design",
           "state": "nominal",
@@ -537,8 +553,15 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
           }
-        ]
+        ],
+        "label": ""
       },
       {
         "id": "7b2e",
@@ -546,7 +569,6 @@
         "depth": 1,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "undefined",
           "state": "undefined",
@@ -608,8 +630,15 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
           }
-        ]
+        ],
+        "label": ""
       },
       {
         "id": "3c5d",
@@ -617,7 +646,6 @@
         "depth": 1,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -676,8 +704,15 @@
           },
           {
             "kind": "empty"
+          },
+          {
+            "kind": "empty"
+          },
+          {
+            "kind": "empty"
           }
-        ]
+        ],
+        "label": ""
       }
     ]
   },

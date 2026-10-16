@@ -166,7 +166,6 @@
         }
       ]
     },
-    "contextual": false,
     "columns": [
       {
         "gates": [
@@ -231,7 +230,6 @@
         "depth": 4,
         "parent": false,
         "hidden": 0,
-        "role": "",
         "status": {
           "gate": "defined",
           "state": "nominal",
@@ -283,7 +281,8 @@
             "kind": "exempt",
             "acts": false
           }
-        ]
+        ],
+        "label": ""
       }
     ]
   },
