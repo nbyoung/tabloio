@@ -1,13 +1,16 @@
 // Command tabloio is the Tableaux command-line front end.
 //
-// It prints its version until the subcommands land: the read commands render
-// a view as Markdown or Unicode text, and the write commands operate the
-// method through Git commits.
+// The read commands render a view as Markdown or Unicode text; the write
+// commands operate the method through Git commits.
 package main
 
 import (
-	"fmt"
+	"context"
+	"os"
+	"os/signal"
 	"runtime/debug"
+
+	"github.com/nbyoung/tabloio/internal/cli"
 )
 
 // version is the release version. GoReleaser sets it through -ldflags at
@@ -15,7 +18,16 @@ import (
 var version = "dev"
 
 func main() {
-	fmt.Println("tabloio", versionString(version))
+	// An interrupt cancels the context, so that a read in progress stops.
+	ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt)
+	code := cli.Run(ctx, os.Args[1:], &cli.Env{
+		Stdout:  os.Stdout,
+		Stderr:  os.Stderr,
+		Version: versionString(version),
+		Source:  cli.NewSource(),
+	})
+	stop()
+	os.Exit(code)
 }
 
 // versionString returns v, or the module version that go install recorded
