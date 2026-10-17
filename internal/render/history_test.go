@@ -330,13 +330,19 @@ func TestHistoryCells(t *testing.T) {
 // TestHistoryTaken: the subject titles the history, the root by default
 // (8ed1 decision 5); a line taken from a subproject nests beneath the pin of
 // that subproject that follows it, which counts its events, and stands in
-// its place with no such pin (8ed1 decision 2).
+// its place with no such pin (8ed1 decision 2). A taken line names its task
+// by id and title, and by id alone where the title is empty (R4, 8ed1
+// decision 8).
 func TestHistoryTaken(t *testing.T) {
 	v := historyOf(1, 1)
-	from := &view.SubEvent{URL: "firmware", Task: "f1a0"}
+	titled := &view.SubEvent{URL: "firmware", Task: "f1a0", Title: "Weather node image"}
+	untitled := &view.SubEvent{URL: "firmware", Task: "f1a0"}
 	took := func(commit string) view.Event {
 		e := statusEvent("2026-09-01", "b@example.org")
-		e.Commit, e.Subproject = commit, from
+		e.Commit, e.Subproject = commit, titled
+		if commit == "c2" {
+			e.Subproject = untitled
+		}
 		return e
 	}
 	pin := view.Event{Date: "2026-09-02", By: "b@example.org", Kind: "pin", Pin: &view.PinMove{URL: "firmware", New: "0123456789"}}
@@ -351,9 +357,9 @@ func TestHistoryTaken(t *testing.T) {
 		"# History: `437e` Tableaux tooling\n",
 		"- **2026-09-02** · b@example.org · pin · `c07d` · `firmware` new `0123456`\n" +
 			"  - Subproject events: 3 events in 2 commits of `firmware`\n" +
-			"    - 2026-09-01 · b@example.org · status, status · `f1a0` · 📝 defined 🟢 nominal\n" +
+			"    - 2026-09-01 · b@example.org · status, status · `f1a0` Weather node image · 📝 defined 🟢 nominal\n" +
 			"    - 2026-09-01 · b@example.org · status · `f1a0` · 📝 defined 🟢 nominal\n",
-		"- **2026-09-01** · b@example.org · status · `c07d`, taken from `firmware` `f1a0` · 📝 defined 🟢 nominal\n",
+		"- **2026-09-01** · b@example.org · status · `c07d`, taken from `firmware` `f1a0` Weather node image · 📝 defined 🟢 nominal\n",
 	} {
 		if !strings.Contains(out, want) {
 			t.Errorf("the output lacks %q:\n%s", want, out)

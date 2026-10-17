@@ -528,7 +528,8 @@
         }
       ]
     },
-    "status_commit": {
+    "status_commit": null,
+    "own_commit": {
       "hash": "e66abe2",
       "subject": "Record the defined gate for the subproject tasks",
       "date": "2026-09-30",

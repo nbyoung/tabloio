@@ -148,3 +148,78 @@ func TestTabloGoldens(t *testing.T) {
 		}
 	}
 }
+
+// tabloView decodes one of tablo's golden files by its name.
+func tabloView(t *testing.T, file string) view.View {
+	t.Helper()
+	for _, g := range tabloGoldens {
+		if g.file == file {
+			_, env := g.envelope(t)
+			v, err := view.Decode(g.view, env)
+			if err != nil {
+				t.Fatal(err)
+			}
+			return v
+		}
+	}
+	t.Fatalf("no golden file %s", file)
+	return nil
+}
+
+// A subproject event's title, as tablo gives it (8ed1 decision 8): the task
+// view's events and the history's taken lines name the task by id and title
+// (R4).
+func TestTabloSubEventTitle(t *testing.T) {
+	for _, c := range []struct {
+		file string
+		want string
+		n    int
+	}{
+		{"task-c07d.provenance.json", "in the subproject `firmware`, task `f1a0` Weather node image", 1},
+		{"history-4e2b.detail.json", "`f1a0` Weather node image", 2},
+		{"history-c07d.provenance.json", "`f1a0` Weather node image", 2},
+	} {
+		v := tabloView(t, c.file)
+		out := renderString(t, v, Options{Level: v.Header().Level})
+		if n := strings.Count(out, c.want); n != c.n {
+			t.Errorf("%s: %d of %q, want %d:\n%s", c.file, n, c.want, c.n, out)
+		}
+	}
+}
+
+// The queue's causes at glance, as tablo gives them (886d decision 15): a
+// reason with its note, an authorisation with its why, each from the item's
+// own facts.
+func TestTabloQueueCauses(t *testing.T) {
+	v := tabloView(t, "queue-ada.glance.json")
+	out := renderString(t, v, Options{Level: view.Glance})
+	for _, want := range []string{
+		"`9f31` Sensor board; blocked: Barometer ICs on 14-week backorder |",
+		"`3c5d` Dashboard; proposed; the deciding commit is not by an authority |",
+	} {
+		if !strings.Contains(out, want) {
+			t.Errorf("the glance lacks %q:\n%s", want, out)
+		}
+	}
+}
+
+// A snapshot's own commit (e3ed): the task view's provenance draws, in the
+// section "Status commit", the status commit and then the commit that
+// decides the task's own file under "Deciding commit". A task with no own
+// commit draws the status commit alone.
+func TestTabloOwnCommit(t *testing.T) {
+	v := tabloView(t, "task-c07d.provenance.json")
+	out := renderString(t, v, Options{Level: view.Provenance})
+	want := "## Status commit\n\n| Field | Value |\n|---|---|\n" +
+		"| Commit | `cf5b169` Record the node image design |\n"
+	own := "| Field | Value |\n|---|---|\n" +
+		"| Deciding commit | `97e4231` Pin the firmware at its design |\n" +
+		"| Date | 2026-09-26 |\n"
+	i, j := strings.Index(out, want), strings.Index(out, own)
+	if i < 0 || j < i || strings.Contains(out[i:j], "\n## ") {
+		t.Errorf("the section lacks the status commit, then the own commit:\n%s", out)
+	}
+	if out := renderString(t, readFixture(t, "task", "e9c6"), Options{Level: view.Provenance}); strings.Contains(out, "Deciding commit") {
+		t.Errorf("a task with no own commit draws one:\n%s", out)
+	}
+}

@@ -1156,7 +1156,8 @@
         "authority": [],
         "positions": []
       }
-    ]
+    ],
+    "commands": []
   },
   "diagnostics": []
 }

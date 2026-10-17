@@ -17,7 +17,15 @@ Legend: `tabloio gates`.
 
 | Field | Value |
 |---|---|
-| Commit | `97e4231` Pin the firmware at its design |
+| Commit | `cf5b169` Record the node image design |
+| Date | 2026-09-17 |
+| Author | Ben Okafor, **ben@example.org** |
+| Committer | Ben Okafor, **ben@example.org** |
+| Trailers |  |
+
+| Field | Value |
+|---|---|
+| Deciding commit | `97e4231` Pin the firmware at its design |
 | Date | 2026-09-26 |
 | Author | **ben@example.org** |
 | Committer | **ben@example.org** |

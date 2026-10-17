@@ -189,6 +189,7 @@
         "model": "",
         "since": "2026-09-22",
         "causes": [],
+        "why": "",
         "authorisation": {
           "commit": {
             "hash": "1b8cfb1",
@@ -224,7 +225,8 @@
         "status_commit": {
           "hash": "W1"
         },
-        "causes": []
+        "causes": [],
+        "why": ""
       },
       {
         "kind": "reaffirmation",
@@ -247,7 +249,8 @@
         "status_commit": {
           "hash": "W13"
         },
-        "causes": []
+        "causes": [],
+        "why": ""
       },
       {
         "kind": "waiting",
@@ -276,9 +279,11 @@
             "kind": "reason",
             "requires": null,
             "reason": "blocked",
+            "note": "Barometer ICs on 14-week backorder",
             "by": ""
           }
-        ]
+        ],
+        "why": ""
       }
     ]
   },

@@ -20,6 +20,7 @@ type QueueItem struct {
 	Since  string  `json:"since"`  // the date of the status
 	Age    int     `json:"age"`    // reaffirmation: days from the status to the ref's commit
 	Causes []Wait  `json:"causes"` // waiting: why, in the order requirement, reason, authorisation, review
+	Why    string  `json:"why"`    // authorisation: the task's Authorisation.Why, "" where a commit decides but not by an authority; else ""
 
 	Junction       *Junction      `json:"junction"` // detail from here
 	Sources        []Supplier     `json:"sources"`  // who supplies contributor, model, reviewer
@@ -38,6 +39,7 @@ type Wait struct {
 	Kind     string       `json:"kind"`     // requirement, reason, authorisation, review
 	Requires *Requirement `json:"requires"` // requirement: the unmet entry
 	Reason   string       `json:"reason"`   // reason: the status's reason, other than review
+	Note     string       `json:"note"`     // reason: the status's note; else ""
 	By       string       `json:"by"`       // authorisation: the nearest authority; review: the reviewer
 }
 

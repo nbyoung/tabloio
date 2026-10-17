@@ -3938,7 +3938,8 @@
           }
         ]
       }
-    ]
+    ],
+    "commands": []
   },
   "diagnostics": []
 }

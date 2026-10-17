@@ -327,3 +327,27 @@ func TestStated(t *testing.T) {
 		})
 	}
 }
+
+// The assignment's commands close its provenance in a Pre, as every other
+// view's do (R12); below provenance, and with none, the view draws no block.
+func TestAssignmentCommands(t *testing.T) {
+	v := readFixture(t, "assignment", "weather").(*view.Assignment)
+	v.Commands = []view.Command{
+		{Text: "git show edb30d2baa5ea3c7e3fb8eef8ac6cce6e145221a:.tableaux/tasks/a1c0.yaml"},
+		{Text: "git grep -n '^assignee:' edb30d2baa5ea3c7e3fb8eef8ac6cce6e145221a -- .tableaux/tasks", Comment: "the assignees"},
+	}
+	want := "## opus@example.org, provenance\n\n```\n" +
+		"git show edb30d2baa5ea3c7e3fb8eef8ac6cce6e145221a:.tableaux/tasks/a1c0.yaml\n" +
+		"git grep -n '^assignee:' edb30d2baa5ea3c7e3fb8eef8ac6cce6e145221a -- .tableaux/tasks # the assignees\n" +
+		"```\n\nCommand: "
+	if out := renderString(t, v, Options{Level: view.Provenance}); !strings.Contains(out, want) {
+		t.Errorf("the provenance does not close with the commands:\n%s", out)
+	}
+	if out := renderString(t, v, Options{Level: view.Detail}); strings.Contains(out, "git show") {
+		t.Errorf("detail draws the commands:\n%s", out)
+	}
+	v.Commands = []view.Command{}
+	if out := renderString(t, v, Options{Level: view.Provenance}); strings.Contains(out, "```") {
+		t.Errorf("an empty list draws a block:\n%s", out)
+	}
+}

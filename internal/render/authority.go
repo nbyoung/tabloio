@@ -29,6 +29,9 @@ func buildDelegation(v *view.Delegation, o Options) doc.Doc {
 	b := p.treeBlocks(v)
 	b = append(b, p.countLine(v))
 	if detail {
+		if a := p.topAuthorities(v); a != nil {
+			b = append(b, *a)
+		}
 		b = append(b, p.chains(v)...)
 	}
 	if o.Level >= view.Provenance {
@@ -152,6 +155,19 @@ func (p *page) countLine(v *view.Delegation) doc.Block {
 	n := strconv.Itoa
 	return para(txt(n(len(v.Rows)) + " tasks, " + n(delegations) + " delegations, " +
 		n(len(v.Rows)-proposed) + " authorised, " + n(proposed) + " proposed."))
+}
+
+// topAuthorities is the line of the authorities above the top row, the
+// task the view starts at, in the terms of a parent's line:
+// `Authorities of <task>, nearest first: <authorities>.` At the root, where
+// the data holds none, it is nil and the view draws nothing (R9).
+func (p *page) topAuthorities(v *view.Delegation) *doc.Para {
+	if len(v.Authorities) == 0 || len(v.Rows) == 0 {
+		return nil
+	}
+	l := para(spans(one(txt("Authorities of ")), task(v.Rows[0].TaskRef),
+		one(txt(", nearest first: ")), p.authorities(v.Authorities), one(txt(".")))...)
+	return &l
 }
 
 // chains builds the section of the parents: each one's authorities, its

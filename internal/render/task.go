@@ -23,15 +23,15 @@ func buildTask(v *view.Task, o Options) doc.Doc {
 	prov := o.Level >= view.Provenance
 
 	b := []doc.Block{p.fieldTable(v)}
-	if prov && v.StatusCommit != nil {
-		b = append(b, heading(2, txt("Status commit")), p.commitTable(*v.StatusCommit, nil))
+	if prov {
+		b = append(b, p.statusCommits(v)...)
 	}
 	if detail {
 		b = append(b, p.description(v)...)
 		b = append(b, heading(2, txt("Place in the tree")), p.placeTable(v))
 	}
 	if prov && v.Authorisation != nil && v.Authorisation.Commit != nil {
-		b = append(b, heading(2, txt("Authorisation commit")), p.commitTable(*v.Authorisation.Commit, v.Authorisation))
+		b = append(b, heading(2, txt("Authorisation commit")), p.commitTable("Commit", *v.Authorisation.Commit, v.Authorisation))
 	}
 	if detail {
 		b = append(b, p.requires(v)...)
@@ -337,15 +337,34 @@ func (p *page) snapshotTable(s *view.Snapshot) doc.Table {
 	})
 }
 
-// commitTable is a field table of a commit; a with the authorisation adds
-// how the commit authorises and whose authority it is.
-func (p *page) commitTable(c view.Commit, a *view.Authorisation) doc.Table {
+// statusCommits is the section "Status commit": the deciding commit of the
+// last status of the chain, then, for a snapshot, the commit that decides
+// the task's own file, whose first row reads "Deciding commit" as the
+// grid's status cell does. A task with neither has no section.
+func (p *page) statusCommits(v *view.Task) []doc.Block {
+	if v.StatusCommit == nil && v.OwnCommit == nil {
+		return nil
+	}
+	b := []doc.Block{heading(2, txt("Status commit"))}
+	if v.StatusCommit != nil {
+		b = append(b, p.commitTable("Commit", *v.StatusCommit, nil))
+	}
+	if v.OwnCommit != nil {
+		b = append(b, p.commitTable("Deciding commit", *v.OwnCommit, nil))
+	}
+	return b
+}
+
+// commitTable is a field table of a commit, its first row under the label;
+// a with the authorisation adds how the commit authorises and whose
+// authority it is.
+func (p *page) commitTable(label string, c view.Commit, a *view.Authorisation) doc.Table {
 	var trailers [][]doc.Inline
 	for _, t := range c.Trailers {
 		trailers = append(trailers, one(code(t)))
 	}
 	rows := [][]doc.Cell{
-		field("Commit", commitSubject(c)),
+		field(label, commitSubject(c)),
 		field("Date", one(txt(c.Date))),
 		field("Author", p.actor(c.Author)),
 		field("Committer", p.actor(c.Committer)),
@@ -722,7 +741,8 @@ func (p *page) eventRecords(e view.Event) []doc.Inline {
 		if len(x) > 0 {
 			x = append(x, txt("; "))
 		}
-		x = append(x, txt("in the subproject "), code(s.URL), txt(", task "), code(s.Task))
+		x = append(x, txt("in the subproject "), code(s.URL), txt(", task "))
+		x = append(x, subTask(*s)...)
 	}
 	return x
 }

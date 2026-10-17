@@ -428,6 +428,30 @@
       "children": []
     },
     "status_commit": {
+      "hash": "cf5b16964dba7f8f1c8842a8202878fd572ad835",
+      "subject": "Record the node image design",
+      "date": "2026-09-17",
+      "author_time": "2026-09-17T12:00:00Z",
+      "author": {
+        "name": "Ben Okafor",
+        "email": "ben@example.org"
+      },
+      "committer": {
+        "name": "Ben Okafor",
+        "email": "ben@example.org"
+      },
+      "parents": [
+        "79e0237eea866c2951968e2e401552dde5b6f9b8"
+      ],
+      "trailers": [],
+      "files": [
+        {
+          "path": ".tableaux/status/f1a0.yaml",
+          "change": "changed"
+        }
+      ]
+    },
+    "own_commit": {
       "hash": "97e423122790a250e4e067d7d33bbf88622b00d5",
       "subject": "Pin the firmware at its design",
       "date": "2026-09-26",
