@@ -23,16 +23,6 @@ Legend: tabloio gates.
 Status commit
 ─────────────
 
-┌───────────┬──────────────────────────────────────────────────────────┐
-│ Field     │ Value                                                    │
-├───────────┼──────────────────────────────────────────────────────────┤
-│ Commit    │ e66abe2 Record the defined gate for the subproject tasks │
-│ Date      │ 2026-09-30                                               │
-│ Author    │ Claude Haiku 4.5, noreply@anthropic.com                  │
-│ Committer │ Claude Haiku 4.5, noreply@anthropic.com                  │
-│ Trailers  │ Model: claude-haiku-4-5-20251001                         │
-└───────────┴──────────────────────────────────────────────────────────┘
-
 ┌─────────────────┬──────────────────────────────────────────────────────────┐
 │ Field           │ Value                                                    │
 ├─────────────────┼──────────────────────────────────────────────────────────┤
