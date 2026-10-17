@@ -66,6 +66,80 @@ commands, which `tablotui` imports to make the same commits.
 
 A prototype under `prototype/` is the function gate's demonstration. It goes when its task records `implementation`: the design's account of what it kept from the prototype and `git log -- prototype/<id>` keep what it showed, and the trunk builds what it ships.
 
+## Snapshot workflow
+
+A project that keeps its plan in `.tableaux` validates it on every push and
+regenerates `STATUS.md` on its trunk with the composite action in
+[`snapshot/`](snapshot/), and validates the staged plan before each commit
+with the hook in [`hooks/`](hooks/). Both run the released `tablo` and
+`tabloio` binaries and need no Go.
+
+**The workflow.** The project adds `.github/workflows/tableaux.yml`, as
+[`snapshot/consumer.yml`](snapshot/consumer.yml) gives it:
+
+```yaml
+name: Tableaux
+on:
+  push:
+  pull_request:
+permissions:
+  contents: write
+concurrency:
+  group: tableaux-${{ github.ref }}
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0          # history: authorisation, reviews, dates
+          submodules: recursive   # pins: recursive junctions read subprojects
+      - uses: nbyoung/tabloio/snapshot@v0.2.0
+```
+
+Every push and pull request runs `tablo validate` and annotates each
+diagnostic at its file and line; an error fails the job. A push to the trunk
+then renders `tabloio tableau --level glance` into `STATUS.md` and commits it
+as `github-actions[bot]` when it changed. The inputs `project`, `output`,
+`view`, `trunk`, `tabloio-version` and `tablo-version` change the defaults;
+[`snapshot/action.yml`](snapshot/action.yml) describes each.
+
+**A protected trunk.** A trunk that requires pull requests rejects a push
+made with `GITHUB_TOKEN`. The project then gives the checkout step a
+credential that the trunk's ruleset lets bypass, and the action stays as it
+is, since it pushes with whatever credential the checkout leaves. A
+repository admin stores the credential once as a secret and adds its actor to
+the ruleset's bypass list once. Either of two serves:
+
+```yaml
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          submodules: recursive
+          token: ${{ steps.app.outputs.token }}       # a GitHub App installation token, or
+          # ssh-key: ${{ secrets.TABLEAUX_DEPLOY_KEY }} # a deploy key with write access
+```
+
+A GitHub App serves many repositories of one organisation, and an earlier
+step, such as `actions/create-github-app-token`, mints its token; a deploy
+key serves one repository and needs no app. A ruleset's bypass list takes
+both: GitHub Apps as its documentation of rulesets lists them, and deploy
+keys as the actor type `DeployKey` of its REST API for rulesets.
+
+**The hook.** `hooks/pre-commit` validates the project in the staged tree, so
+an unstaged edit neither passes nor fails a commit, and a commit that stages
+nothing under `.tableaux` skips it. It needs `tablo` on the path. Each
+contributor copies it once per clone; each release archive holds it too:
+
+```
+curl -fsSL -o .git/hooks/pre-commit https://raw.githubusercontent.com/nbyoung/tabloio/v0.2.0/hooks/pre-commit
+chmod +x .git/hooks/pre-commit
+git config tableaux.project sub/dir   # only when .tableaux is not at the root
+```
+
+`git commit --no-verify` bypasses it once. `snapshot/test.sh` tests the
+action's steps and the hook on stubs; CI runs it beside `go test`.
+
 ## Build and test
 
 Development needs Go at the version `go.mod` names, or newer; the toolchain

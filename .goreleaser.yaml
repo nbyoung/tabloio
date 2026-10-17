@@ -15,6 +15,12 @@ archives:
     format_overrides:
       - goos: windows
         formats: [zip]
+    # GoReleaser's defaults, and the pre-commit hook of design 1422.
+    files:
+      - LICENSE*
+      - README*
+      - CHANGELOG*
+      - hooks/pre-commit
 
 checksum:
   name_template: checksums.txt

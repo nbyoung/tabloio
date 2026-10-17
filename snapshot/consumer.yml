@@ -1,0 +1,19 @@
+# The consumer workflow of the Tableaux snapshot action (design 1422), as the
+# README gives it: a project copies it to .github/workflows/tableaux.yml.
+name: Tableaux
+on:
+  push:
+  pull_request:
+permissions:
+  contents: write
+concurrency:
+  group: tableaux-${{ github.ref }}
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0          # history: authorisation, reviews, dates
+          submodules: recursive   # pins: recursive junctions read subprojects
+      - uses: nbyoung/tabloio/snapshot@v0.2.0
