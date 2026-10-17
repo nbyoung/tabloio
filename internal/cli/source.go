@@ -4,7 +4,6 @@ import (
 	"context"
 	"errors"
 	"os"
-	"os/exec"
 	"strings"
 	"time"
 
@@ -167,30 +166,11 @@ func fault(err error) error {
 	return err
 }
 
-// Viewer reads GIT_AUTHOR_EMAIL when it is set and not empty, else
-// `git -C dir config --get user.email`, else "": the rule tablo's own
-// command applies. A value that is no email address counts as none. It is
-// the one git command tabloio runs itself, and it reads.
+// Viewer applies tablo's rule, tablo.DefaultViewer, to GIT_AUTHOR_EMAIL:
+// that value when it is set and not empty, else the user.email of Git's
+// configuration in dir, else "". A value that is no email address counts
+// as none, with no fall back to user.email. It never fails; the error
+// serves the Source interface.
 func (tabloSource) Viewer(ctx context.Context, dir string) (string, error) {
-	email := os.Getenv("GIT_AUTHOR_EMAIL")
-	if email == "" {
-		if dir == "" {
-			dir = "."
-		}
-		out, err := exec.CommandContext(ctx, "git", "-C", dir, "config", "--get", "user.email").Output()
-		var exit *exec.ExitError
-		switch {
-		case errors.As(err, &exit):
-			// Git exits 1 for an unset key; any other status means no
-			// repository or no usable configuration, which is no viewer.
-			return "", nil
-		case err != nil:
-			return "", err
-		}
-		email = strings.TrimSpace(string(out))
-	}
-	if (tablo.Params{Viewer: email}).Check(tablo.Gates) != nil {
-		return "", nil
-	}
-	return email, nil
+	return tablo.DefaultViewer(ctx, dir, os.Getenv("GIT_AUTHOR_EMAIL")), nil
 }
