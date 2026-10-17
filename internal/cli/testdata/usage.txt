@@ -13,6 +13,14 @@ Read commands write one view and change nothing in the project.
   history       What happened, when, and who did it?
   audit         Where do files and history disagree?
 
+Write commands plan one commit, show it, and make it.
+
+  propose                Propose a task under a parent
+  record <id>            Record a task's status, or move its pin
+  review <id>... <gate>  Accept the work of tasks at a gate
+  reaffirm <id>...       Confirm that the statuses of tasks stand
+  authorise <id>...      Accept proposed tasks
+
 Other commands.
 
   version       Print the version

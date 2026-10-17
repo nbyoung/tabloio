@@ -28,7 +28,10 @@ tabloio tableau > STATUS.md                    # the global tableau in Markdown
 tabloio tableau --text                         # the same drawn in Unicode
 tabloio context --person ben@example.org        # a contributor's neighbourhood
 tabloio queue --person opus@example.org --ref 4f2a9c1 --brief 9f31 design  # a brief for an agent session
+tabloio propose --parent 07e0 --title 'Rain gauge' --description '…'  # add a task file
+tabloio record 9f31 --gate design --state nominal --model claude-opus-5-5 --yes  # record a status
 tabloio review 9f31 design                     # commit 'Reviewed: 9f31 design'
+tabloio reaffirm 9f31                          # commit 'Reaffirmed: 9f31'
 tabloio authorise 9f31 c07d                    # accept two proposals at once
 ```
 
@@ -47,7 +50,8 @@ The module is `github.com/nbyoung/tabloio`. The four subprojects share this shap
 | Path                  | Holds                                                                                   |
 |-----------------------|-----------------------------------------------------------------------------------------|
 | `cmd/tabloio/`        | The command. `main.go` builds the environment, with tablo's library as the source of view data, and calls `internal/cli`; it holds the version |
-| `internal/cli/`       | The command line: the parser, the command table, `help` and `version`, and the read commands, one per view |
+| `internal/cli/`       | The command line: the parser, the command table, `help` and `version`, the read commands, one per view, and the five write commands |
+| `action/`             | The write actions: each plans one commit as data, shows it, and makes it; the facts come from tablo's library and the bytes from Git |
 | `brief/`              | The brief composer: one work item of the queue as plain text, for an agent's session    |
 | `internal/render/`    | The renderers from tablo's view data: Markdown and Unicode text                         |
 | `.github/workflows/`  | `ci.yml` checks every pull request and push to `main`; `release.yml` publishes a tag    |
@@ -57,9 +61,8 @@ The module is `github.com/nbyoung/tabloio`. The four subprojects share this shap
 
 Packages under `internal/` stay private to this module. Two packages stand
 outside it for the other front ends: `brief`, which `tableaud` imports to print
-the same brief text, and in prospect the actions behind the write commands,
-which `tablotui` reuses, so the Write commands task designs them as an exported
-package.
+the same brief text, and `action`, the plans and commits behind the write
+commands, which `tablotui` imports to make the same commits.
 
 A prototype under `prototype/` is the function gate's demonstration. It goes when its task records `implementation`: the design's account of what it kept from the prototype and `git log -- prototype/<id>` keep what it showed, and the trunk builds what it ships.
 

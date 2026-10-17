@@ -106,9 +106,19 @@ var ownOptions = map[string][]string{
 	"context":    {"--task <id>", "--person <email>", "--window <n>", "--columns <gates>", "--historical"},
 	"history":    {"--task <id>", "--person <email>"},
 	"audit":      {"--task <id>", "--person <email>", "--stale <days>"},
-	"version":    {"--json"},
-	"help":       nil,
+	"propose": append(append([]string(nil), writeCommon...),
+		"--title <text>", "--description <text>", "--parent <id>", "--assignee <email>", "--order <n>", "--reference <ref>", "--id <id>"),
+	"record": append(append([]string(nil), writeCommon...),
+		"--gate <gate>", "--state <state>", "--reason <reason>", "--no-reason", "--note <text>", "--no-note", "--pin"),
+	"review":    writeCommon,
+	"reaffirm":  writeCommon,
+	"authorise": writeCommon,
+	"version":   {"--json"},
+	"help":      nil,
 }
+
+// writeCommon are the options every write command takes.
+var writeCommon = []string{"-n, --dry-run", "-y, --yes", "-m, --message <text>", "--body <text>", "--model <id>", "--co-author <who>"}
 
 var commonOptions = []string{"--ref <ref>", "--level <level>", "--markdown", "--text", "--width <n>", "-o, --output <file>"}
 
