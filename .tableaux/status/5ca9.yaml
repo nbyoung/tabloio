@@ -1,3 +1,3 @@
-gate: implementation
+gate: unit
 state: nominal
-note: internal/cli holds the parser, the command table, the help, version and version --json, the read-command flow, the output guard, both renderer tables and tabloSource over tablo's library, with T1 to T17 written (T16 and T17 need TABLEAUX_CORPUS); the unit gate runs go test with that variable; T18 waits for the integrate gate and the corpus entry tableaux-tooling, and the brief entry waits for e4c7
+note: T1 to T17 pass under go test, T16 and T17 on a copy of the corpus entry weather-station with TABLEAUX_CORPUS set, T17 against the 139 keys of testdata/t17-skipped-keys.txt, and T5 over tablo.DefaultViewer; T18 waits for the integrate gate, which brings the corpus entry tableaux-tooling, as its row of the Tests table and decision 14 (d) state; integrate needs that entry in the built corpus
