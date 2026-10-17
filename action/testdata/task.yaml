@@ -1,0 +1,9 @@
+title: "Rain gauge: tipping bucket"
+description: >
+  A tipping-bucket gauge on the mast that counts 0.2 mm tips, debounces them in
+  firmware and reports the hourly total to the gateway.
+assignee: ada@example.org
+references:
+  - { url: docs/rain-gauge.md }
+  - { url: https://example.org/datasheets/rg11.pdf, text: "Gauge datasheet, revision 2" }
+parent: { id: "07e0", order: 3 }

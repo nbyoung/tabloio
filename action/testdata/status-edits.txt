@@ -1,0 +1,120 @@
+=== advance keeps comments and spacing
+--- before
+# kept verbatim
+gate: defined
+
+state:   nominal
+note: The prototype is next
+--- set
+gate=function
+note=Write commands shown
+--- after
+# kept verbatim
+gate: function
+
+state:   nominal
+note: Write commands shown
+=== hand-off inserts reason in canonical order
+--- before
+gate: function
+state: nominal
+note: old
+--- set
+reason=review
+note=design/b618.md awaits the owner's review
+--- after
+gate: function
+state: nominal
+reason: review
+note: design/b618.md awaits the owner's review
+=== note with a colon and a space is quoted
+--- before
+gate: function
+state: nominal
+--- set
+note=prototype/171b/ shows live refresh: git-polling watcher for HEAD
+--- after
+gate: function
+state: nominal
+note: "prototype/171b/ shows live refresh: git-polling watcher for HEAD"
+=== folded note is replaced whole
+--- before
+gate: defined
+state: nominal
+note: >
+  The prototype is
+
+  next
+--- set
+note=Done
+--- after
+gate: defined
+state: nominal
+note: Done
+=== recursive next junction leaves the gate alone
+--- before
+gate: function
+state: stalled
+reason: blocked
+note: Barometer ICs on 14-week backorder
+--- set
+gate=design
+state-
+reason-
+note-
+--- after
+gate: design
+=== no file yet
+--- before
+--- set
+gate=defined
+state=nominal
+--- after
+gate: defined
+state: nominal
+=== gate-only file gains a state
+--- before
+gate: implementation
+--- set
+gate=unit
+state=nominal
+note=Tests pass
+--- after
+gate: unit
+state: nominal
+note: Tests pass
+=== state before a late gate line
+--- before
+# odd order
+state: nominal
+gate: defined
+--- set
+reason=blocked
+--- after
+# odd order
+state: nominal
+reason: blocked
+gate: defined
+=== a key that YAML reads as a boolean is quoted
+--- before
+gate: defined
+state: nominal
+--- set
+state=on
+--- after
+gate: defined
+state: "on"
+=== last gate completes and drops the reason
+--- before
+gate: validate
+state: nominal
+reason: review
+note: Release notes await review
+--- set
+gate=release
+state=complete
+reason-
+note-
+--- after
+gate: release
+state: complete
