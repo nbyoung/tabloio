@@ -47,7 +47,9 @@ func statusCases(t *testing.T) []statusCase {
 }
 
 // TestRecordChangesLinesOnly is T2: each case of status-edits.txt gives its
-// after; a CRLF file and a file with no final newline keep their endings.
+// after; a CRLF file and a file with no final newline keep their endings,
+// and through Record git diff --numstat counts no line beyond the changed
+// fields.
 func TestRecordChangesLinesOnly(t *testing.T) {
 	for _, c := range statusCases(t) {
 		got, err := editStatus(c.before, c.edits)
@@ -71,6 +73,7 @@ func TestRecordChangesLinesOnly(t *testing.T) {
 			t.Errorf("replace: got %q, %v; want %q", got, err, want)
 		}
 	})
+	t.Run("through Record", testRecordLines)
 	t.Run("status-form", func(t *testing.T) {
 		for _, bad := range []string{"{ gate: design }\n", "gate: a\ngate: b\n", "---\ngate: a\n", "gate: a\nextra: 1\n"} {
 			var form *statusFormError

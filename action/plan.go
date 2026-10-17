@@ -76,7 +76,7 @@ func (p *Plan) Message() string {
 	return b.String()
 }
 
-// String returns the shown form (design/b618/plan.txt): the line "<Command>
+// String returns the shown form (design/b618/plan.txt): the line "<command>
 // <ids> on <branch> at <base>", the author and committer, the message
 // indented by four spaces between blank lines, the diff, then one line per
 // warning.
@@ -86,7 +86,7 @@ func (p *Plan) String() string {
 	if p.Branch == "" {
 		on = "on a detached HEAD"
 	}
-	b.WriteString(capital(p.Command) + " " + strings.Join(p.Tasks, " ") + " " + on + " at " + short(p.Base) + "\n")
+	b.WriteString(p.Command + " " + strings.Join(p.Tasks, " ") + " " + on + " at " + short(p.Base) + "\n")
 	b.WriteString("author    " + p.Author.String() + "\n")
 	b.WriteString("committer " + p.Committer.String() + "\n\n")
 	for _, l := range strings.Split(strings.TrimSuffix(p.Message(), "\n"), "\n") {
@@ -115,15 +115,6 @@ func short(hash string) string {
 		return hash[:7]
 	}
 	return hash
-}
-
-// capital returns s with its first letter in upper case.
-func capital(s string) string {
-	if s == "" {
-		return s
-	}
-	r, n := utf8.DecodeRuneInString(s)
-	return string(unicode.ToUpper(r)) + s[n:]
 }
 
 // lowerTitle returns a title as a subject names it: its first letter in

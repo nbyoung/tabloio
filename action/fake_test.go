@@ -242,6 +242,15 @@ func (tr *testRepo) write(path, content string) {
 	}
 }
 
+// read returns a file of the checkout, or "<absent>".
+func (tr *testRepo) read(path string) string {
+	b, err := os.ReadFile(filepath.Join(tr.dir, filepath.FromSlash(path)))
+	if err != nil {
+		return "<absent>"
+	}
+	return string(b)
+}
+
 // hook installs an executable hook script.
 func (tr *testRepo) hook(name, script string) {
 	tr.t.Helper()

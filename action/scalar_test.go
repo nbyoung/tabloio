@@ -18,6 +18,7 @@ func TestNoteWithColonAndSpace(t *testing.T) {
 			t.Errorf("got %q, %v; want %q", got, err, want)
 		}
 	})
+	t.Run("through Record", testRecordNote)
 	t.Run("scalars.tsv", func(t *testing.T) {
 		b, err := os.ReadFile("testdata/scalars.tsv")
 		if err != nil {
