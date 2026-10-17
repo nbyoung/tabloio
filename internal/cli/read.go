@@ -145,6 +145,9 @@ func readInvocation(c *Command, a *Args) (*invocation, error) {
 		if err != nil {
 			return nil, err
 		}
+		if n < 1 {
+			return nil, fmt.Errorf("--stale takes a whole number, one or more, not %q", v)
+		}
 		q.Stale = &n
 	}
 	if v, ok := a.Values["brief"]; ok {

@@ -52,7 +52,7 @@ var vocabulary = []Option{
 	{Name: "proposed",
 		Help: "Show proposed tasks only"},
 	{Name: "stale", Arity: 1, Values: "<days>",
-		Help: "Take a status older than <days> as stale"},
+		Help: "Take a status older than <days> (one or more) as stale"},
 	{Name: "brief", Arity: 2, Values: "<id> <gate>",
 		Help: "Write one item as a brief"},
 	{Name: "json",
