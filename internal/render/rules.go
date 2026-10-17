@@ -29,7 +29,6 @@ type page struct {
 	states    map[string]string
 	reasons   map[string]string
 	marks     map[string]view.Mark
-	statuses  map[string]*view.Status // the queue: a task's status, by id
 }
 
 func newPage(h *view.Head, o Options) *page {

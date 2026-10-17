@@ -44,12 +44,6 @@ func buildQueue(v *view.Queue, o Options) (doc.Doc, error) {
 		return buildBrief(v, o)
 	}
 	p := newPage(&v.Head, o)
-	p.statuses = map[string]*view.Status{}
-	for _, it := range v.Items {
-		if _, ok := p.statuses[it.Task.ID]; !ok && it.Status != nil {
-			p.statuses[it.Task.ID] = it.Status
-		}
-	}
 
 	b := []doc.Block{p.queueCounts(v)}
 	if len(v.Items) == 0 {
@@ -115,9 +109,10 @@ func queueAlike(a, b view.QueueItem) bool {
 		a.Model == b.Model && a.Since == b.Since && a.Age == b.Age
 }
 
-// queueHasCause reports whether an item carries a cause to word.
+// queueHasCause reports whether an item carries a cause to word: a waiting
+// item its causes, an authorisation always its why.
 func queueHasCause(it view.QueueItem) bool {
-	return len(it.Causes) > 0 || it.Kind == "authorisation" && it.Authorisation != nil
+	return len(it.Causes) > 0 || it.Kind == "authorisation"
 }
 
 // authorisationOwed words why an authorisation is owed, by the reason no
@@ -132,25 +127,14 @@ var authorisationOwed = map[string]string{
 	"no_commit":  "proposed; no commit on the trunk decides it",
 }
 
-// taskStatus is the status of an item's task: the item's own, else the one
-// another item of the queue holds for the same task. Every item of a task
-// reads one status at one commit, and the data holds it at detail.
-func (p *page) taskStatus(it view.QueueItem) *view.Status {
-	if it.Status != nil {
-		return it.Status
-	}
-	return p.statuses[it.Task.ID]
-}
-
-// queueCause words why an item waits, or why an authorisation is owed:
-// each cause of a waiting item, joined by "; "; for an authorisation, why
-// its task stands proposed. It returns nothing for an item with neither.
+// queueCause words why an item waits, or why an authorisation is owed,
+// from the item's own facts at every level (886d decision 15): each cause of
+// a waiting item, joined by "; ", a reason with its note; for an
+// authorisation, why its task stands proposed. It returns nothing for an
+// item with neither.
 func (p *page) queueCause(it view.QueueItem) []doc.Inline {
 	if it.Kind == "authorisation" {
-		if a := it.Authorisation; a != nil {
-			return one(txt(authorisationOwed[a.Why]))
-		}
-		return nil
+		return one(txt(authorisationOwed[it.Why]))
 	}
 	var runs [][]doc.Inline
 	for _, w := range it.Causes {
@@ -165,8 +149,8 @@ func (p *page) queueCause(it view.QueueItem) []doc.Inline {
 			}
 		case "reason":
 			x := one(txt(w.Reason))
-			if st := p.taskStatus(it); st != nil && st.Note != "" {
-				x = append(x, txt(": "+st.Note))
+			if w.Note != "" {
+				x = append(x, txt(": "+w.Note))
 			}
 			runs = append(runs, x)
 		case "authorisation":

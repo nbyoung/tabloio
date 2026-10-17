@@ -186,3 +186,19 @@ func TestTabloSubEventTitle(t *testing.T) {
 		}
 	}
 }
+
+// The queue's causes at glance, as tablo gives them (886d decision 15): a
+// reason with its note, an authorisation with its why, each from the item's
+// own facts.
+func TestTabloQueueCauses(t *testing.T) {
+	v := tabloView(t, "queue-ada.glance.json")
+	out := renderString(t, v, Options{Level: view.Glance})
+	for _, want := range []string{
+		"`9f31` Sensor board; blocked: Barometer ICs on 14-week backorder |",
+		"`3c5d` Dashboard; proposed; the deciding commit is not by an authority |",
+	} {
+		if !strings.Contains(out, want) {
+			t.Errorf("the glance lacks %q:\n%s", want, out)
+		}
+	}
+}

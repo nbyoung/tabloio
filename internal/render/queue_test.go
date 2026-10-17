@@ -166,7 +166,9 @@ func TestQueueProvenance(t *testing.T) {
 }
 
 // T8: the words of each cause of a waiting item, and of an owed
-// authorisation, by its typed facts.
+// authorisation, by its typed facts. A cause reads the item's own facts at
+// every level, a reason's note and an authorisation's why (886d decision
+// 15): a status elsewhere in the item gives no note.
 func TestQueueCauses(t *testing.T) {
 	v := readFixture(t, "queue", "weather-ada").(*view.Queue)
 	p := newPage(&v.Head, Options{Level: view.Detail})
@@ -178,16 +180,17 @@ func TestQueueCauses(t *testing.T) {
 	}{
 		{view.QueueItem{Kind: "waiting", Causes: []view.Wait{{Kind: "requirement", Requires: req}}}, "waits for e9c6 at design"},
 		{view.QueueItem{Kind: "waiting", Causes: []view.Wait{{Kind: "reason", Reason: "blocked"}}}, "blocked"},
-		{view.QueueItem{Kind: "waiting", Causes: []view.Wait{{Kind: "reason", Reason: "blocked"}}, Status: &view.Status{Note: "No parts"}},
+		{view.QueueItem{Kind: "waiting", Causes: []view.Wait{{Kind: "reason", Reason: "blocked", Note: "No parts"}}},
 			"blocked: No parts"},
+		{view.QueueItem{Kind: "waiting", Causes: []view.Wait{{Kind: "reason", Reason: "blocked"}}, Status: &view.Status{Note: "No parts"}},
+			"blocked"},
 		{view.QueueItem{Kind: "waiting", Causes: []view.Wait{{Kind: "authorisation", By: "a@b.c"}}}, "proposed; waits for its authorisation by a@b.c"},
 		{view.QueueItem{Kind: "waiting", Causes: []view.Wait{{Kind: "review", By: "r@b.c"}}}, "handed off; waits for the review by r@b.c"},
 		{view.QueueItem{Kind: "waiting", Causes: []view.Wait{{Kind: "requirement", Requires: req}, {Kind: "review", By: "r@b.c"}}},
 			"waits for e9c6 at design; handed off; waits for the review by r@b.c"},
-		{view.QueueItem{Kind: "authorisation", Authorisation: &view.Authorisation{Commit: &view.Commit{Hash: "1b8cfb1"}}},
-			"proposed; the deciding commit is not by an authority"},
-		{view.QueueItem{Kind: "authorisation", Authorisation: &view.Authorisation{Why: "no_trunk"}}, "proposed; the trunk is undetermined"},
-		{view.QueueItem{Kind: "authorisation"}, ""},
+		{view.QueueItem{Kind: "authorisation"}, "proposed; the deciding commit is not by an authority"},
+		{view.QueueItem{Kind: "authorisation", Why: "no_trunk"}, "proposed; the trunk is undetermined"},
+		{view.QueueItem{Kind: "authorisation", Authorisation: &view.Authorisation{Why: "no_trunk"}}, "proposed; the deciding commit is not by an authority"},
 		{view.QueueItem{Kind: "ready"}, ""},
 	} {
 		if got := plain(p.queueCause(c.it)); got != c.want {
