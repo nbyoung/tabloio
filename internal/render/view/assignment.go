@@ -8,6 +8,7 @@ type Assignment struct {
 	People    []PersonRow     `json:"people"`    // one per email in view, in order of first appearance in the tree
 	Recursive []string        `json:"recursive"` // tasks whose next junction is recursive
 	Sections  []PersonSection `json:"sections"`  // detail: one per row of People
+	Commands  []Command       `json:"commands"`  // provenance
 }
 
 // PersonRow is the glance of one email.

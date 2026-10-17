@@ -16,7 +16,7 @@ var assignmentSeeAlso = []string{"queue", "authority", "task", "tableau", "conte
 // buildAssignment builds the task assignment view: one row per email at
 // glance; at detail a section per email with its tasks, its junctions by
 // gate, its counts and its authority; at provenance the file and the
-// ancestor behind each position.
+// ancestor behind each position, then the commands that show them (R12).
 func buildAssignment(v *view.Assignment, o Options) doc.Doc {
 	p := newPage(&v.Head, o)
 	titles := taskTitles(v)
@@ -30,6 +30,9 @@ func buildAssignment(v *view.Assignment, o Options) doc.Doc {
 	if o.Level >= view.Provenance {
 		for _, s := range v.Sections {
 			b = append(b, p.personProvenance(s, titles)...)
+		}
+		if pre := commandLines(v.Commands); pre != nil {
+			b = append(b, *pre)
 		}
 	}
 	return p.frame(frame{
