@@ -55,6 +55,8 @@ var vocabulary = []Option{
 		Help: "Take a status older than <days> as stale"},
 	{Name: "brief", Arity: 2, Values: "<id> <gate>",
 		Help: "Write one item as a brief"},
+	{Name: "json",
+		Help: "Write the versions as one line of JSON"},
 	{Name: "help", Short: 'h',
 		Help: "Print this text"},
 }

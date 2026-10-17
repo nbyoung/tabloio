@@ -252,6 +252,10 @@ func runRead(ctx context.Context, env *Env, a *Args) int {
 
 	res, err := env.Source.View(ctx, *q)
 	if err != nil {
+		var uf *UsageFault
+		if errors.As(err, &uf) {
+			return usageError(env, c, uf)
+		}
 		return failure(env, c, err)
 	}
 	if res.Data == nil {

@@ -106,7 +106,7 @@ var ownOptions = map[string][]string{
 	"context":    {"--task <id>", "--person <email>", "--window <n>", "--columns <gates>", "--historical"},
 	"history":    {"--task <id>", "--person <email>"},
 	"audit":      {"--task <id>", "--person <email>", "--stale <days>"},
-	"version":    nil,
+	"version":    {"--json"},
 	"help":       nil,
 }
 
@@ -172,8 +172,9 @@ func TestHelp(t *testing.T) {
 			}
 			want := []string{"-C <dir>"}
 			if c.Group == "read" {
-				want = append(append(want, commonOptions...), ownOptions[c.Name]...)
+				want = append(want, commonOptions...)
 			}
+			want = append(want, ownOptions[c.Name]...)
 			want = append(want, "-h, --help")
 			var got []string
 			for _, l := range strings.Split(out, "\n") {

@@ -64,7 +64,7 @@ func init() {
 		read("context", "", "How does my corner stand?", "task", "person", "window", "columns", "historical"),
 		read("history", "", "What happened, when, and who did it?", "task", "person"),
 		read("audit", "", "Where do files and history disagree?", "task", "person", "stale"),
-		{Name: "version", Group: "other", Summary: "Print the version", Run: runVersion},
+		{Name: "version", Group: "other", Summary: "Print the version", Options: []string{"json"}, Run: runVersion},
 		{Name: "help", Group: "other", Summary: "Print this text, or the options of one command", Run: runHelp},
 	}
 }
