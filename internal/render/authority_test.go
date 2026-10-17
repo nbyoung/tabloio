@@ -323,3 +323,25 @@ func TestDefault(t *testing.T) {
 		}
 	}
 }
+
+// The authorities above the top row: detail and provenance word them in a
+// parent's terms, nearest first; glance and the root, with none, draw nothing.
+func TestTopAuthorities(t *testing.T) {
+	v := treeOf(kid(0, nil))
+	v.Authorities = []view.Authority{{Email: "b@x.org", By: "t001"}, {Email: "b@x.org", By: "t002"}, {Email: "a@x.org", By: "t003"}}
+	want := "Authorities of `r000` Root, nearest first: b@x.org (`t001`, `t002`); then a@x.org (`t003`).\n"
+	for _, level := range []view.Level{view.Detail, view.Provenance} {
+		if out := renderString(t, v, Options{Level: level}); !strings.Contains(out, "\n\n"+want+"\n## Chains and defaults") {
+			t.Errorf("%s lacks %q after the count line:\n%s", level, want, out)
+		}
+	}
+	if out := renderString(t, v, Options{Level: view.Glance}); strings.Contains(out, "Authorities of") {
+		t.Errorf("glance draws the authorities:\n%s", out)
+	}
+	for _, name := range []string{"weather", "tooling"} {
+		out := renderString(t, readFixture(t, "authority", name), Options{Level: view.Provenance})
+		if strings.Contains(out, "Authorities of `") {
+			t.Errorf("%s, at the root, draws authorities above the top row:\n%s", name, out)
+		}
+	}
+}

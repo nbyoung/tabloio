@@ -5,10 +5,11 @@ func init() { register("authority", func() View { return new(Delegation) }) }
 // Delegation is the authority delegation view.
 type Delegation struct {
 	Head
-	Rows     []DelegationRow `json:"rows"`     // every task in view, in display order
-	Parents  []Chain         `json:"parents"`  // detail: every row that has children, in display order
-	Deciding []Deciding      `json:"deciding"` // provenance: newest first
-	Commands []Command       `json:"commands"` // provenance
+	Rows        []DelegationRow `json:"rows"`        // every task in view, in display order
+	Authorities []Authority     `json:"authorities"` // detail: of the task the view starts at, nearest first; [] at the root
+	Parents     []Chain         `json:"parents"`     // detail: every row that has children, in display order
+	Deciding    []Deciding      `json:"deciding"`    // provenance: newest first
+	Commands    []Command       `json:"commands"`    // provenance
 }
 
 // DelegationRow is one task of the tree.
