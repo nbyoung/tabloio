@@ -221,7 +221,7 @@ func historyEvent(l view.Line) []doc.Inline {
 func historyTask(l view.Line) []doc.Inline {
 	out := task(l.Task)
 	if s := taken(l); s != nil {
-		out = append(out, txt(", taken from "), code(s.URL), txt(" "), code(s.Task))
+		out = spans(out, one(txt(", taken from "), code(s.URL), txt(" ")), subTask(*s))
 	}
 	return out
 }
@@ -487,7 +487,7 @@ func (p *page) historySub(lines []view.Line) doc.Item {
 			one(txt(e.Date)),
 			p.person(e.By),
 			historyEvent(l),
-			one(code(e.Subproject.Task)),
+			subTask(*e.Subproject),
 			p.historyLast(l),
 		}
 		if l.Model != "" {

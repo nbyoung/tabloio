@@ -148,3 +148,41 @@ func TestTabloGoldens(t *testing.T) {
 		}
 	}
 }
+
+// tabloView decodes one of tablo's golden files by its name.
+func tabloView(t *testing.T, file string) view.View {
+	t.Helper()
+	for _, g := range tabloGoldens {
+		if g.file == file {
+			_, env := g.envelope(t)
+			v, err := view.Decode(g.view, env)
+			if err != nil {
+				t.Fatal(err)
+			}
+			return v
+		}
+	}
+	t.Fatalf("no golden file %s", file)
+	return nil
+}
+
+// A subproject event's title, as tablo gives it (8ed1 decision 8): the task
+// view's events and the history's taken lines name the task by id and title
+// (R4).
+func TestTabloSubEventTitle(t *testing.T) {
+	for _, c := range []struct {
+		file string
+		want string
+		n    int
+	}{
+		{"task-c07d.provenance.json", "in the subproject `firmware`, task `f1a0` Weather node image", 1},
+		{"history-4e2b.detail.json", "`f1a0` Weather node image", 2},
+		{"history-c07d.provenance.json", "`f1a0` Weather node image", 2},
+	} {
+		v := tabloView(t, c.file)
+		out := renderString(t, v, Options{Level: v.Header().Level})
+		if n := strings.Count(out, c.want); n != c.n {
+			t.Errorf("%s: %d of %q, want %d:\n%s", c.file, n, c.want, c.n, out)
+		}
+	}
+}

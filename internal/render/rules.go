@@ -227,6 +227,12 @@ func task(t view.TaskRef) []doc.Inline {
 	return one(code(t.ID), txt(" "+t.Title))
 }
 
+// subTask prints the subproject task an event comes from as a task: its id,
+// and its title where the subproject's files state one.
+func subTask(s view.SubEvent) []doc.Inline {
+	return task(view.TaskRef{ID: s.Task, Title: s.Title})
+}
+
 // ids prints task ids alone, separated by spaces.
 func ids(list []string) []doc.Inline {
 	var out []doc.Inline

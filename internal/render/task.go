@@ -722,7 +722,8 @@ func (p *page) eventRecords(e view.Event) []doc.Inline {
 		if len(x) > 0 {
 			x = append(x, txt("; "))
 		}
-		x = append(x, txt("in the subproject "), code(s.URL), txt(", task "), code(s.Task))
+		x = append(x, txt("in the subproject "), code(s.URL), txt(", task "))
+		x = append(x, subTask(*s)...)
 	}
 	return x
 }

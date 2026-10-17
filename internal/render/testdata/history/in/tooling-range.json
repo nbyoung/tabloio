@@ -340,7 +340,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tabloio",
-              "task": "a3cc"
+              "task": "a3cc",
+              "title": ""
             }
           },
           {
@@ -353,7 +354,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tabloio",
-              "task": "a3cc"
+              "task": "a3cc",
+              "title": ""
             }
           }
         ],
@@ -383,7 +385,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tabloio",
-              "task": "c48a"
+              "task": "c48a",
+              "title": ""
             }
           },
           {
@@ -396,7 +399,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tabloio",
-              "task": "c48a"
+              "task": "c48a",
+              "title": ""
             }
           }
         ],
@@ -426,7 +430,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tabloio",
-              "task": "9167"
+              "task": "9167",
+              "title": ""
             }
           },
           {
@@ -439,7 +444,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tabloio",
-              "task": "9167"
+              "task": "9167",
+              "title": ""
             }
           }
         ],
@@ -469,7 +475,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tabloio",
-              "task": "e0f7"
+              "task": "e0f7",
+              "title": ""
             }
           },
           {
@@ -482,7 +489,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tabloio",
-              "task": "e0f7"
+              "task": "e0f7",
+              "title": ""
             }
           }
         ],
@@ -512,7 +520,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tabloio",
-              "task": "b618"
+              "task": "b618",
+              "title": ""
             }
           },
           {
@@ -525,7 +534,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tabloio",
-              "task": "b618"
+              "task": "b618",
+              "title": ""
             }
           }
         ],
@@ -555,7 +565,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tabloio",
-              "task": "e3ed"
+              "task": "e3ed",
+              "title": ""
             }
           },
           {
@@ -568,7 +579,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tabloio",
-              "task": "e3ed"
+              "task": "e3ed",
+              "title": ""
             }
           }
         ],
@@ -598,7 +610,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tabloio",
-              "task": "e4c7"
+              "task": "e4c7",
+              "title": ""
             }
           },
           {
@@ -611,7 +624,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tabloio",
-              "task": "e4c7"
+              "task": "e4c7",
+              "title": ""
             }
           }
         ],
@@ -641,7 +655,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tabloio",
-              "task": "5ca9"
+              "task": "5ca9",
+              "title": ""
             }
           },
           {
@@ -654,7 +669,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tabloio",
-              "task": "5ca9"
+              "task": "5ca9",
+              "title": ""
             }
           }
         ],
@@ -1346,7 +1362,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tabloio",
-              "task": "1422"
+              "task": "1422",
+              "title": ""
             }
           }
         ],
@@ -1371,7 +1388,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tabloio",
-              "task": "1422"
+              "task": "1422",
+              "title": ""
             }
           }
         ],
@@ -1401,7 +1419,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tabloio",
-              "task": "1422"
+              "task": "1422",
+              "title": ""
             }
           }
         ],
@@ -1493,7 +1512,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tablotui",
-              "task": "518e"
+              "task": "518e",
+              "title": ""
             }
           },
           {
@@ -1506,7 +1526,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tablotui",
-              "task": "518e"
+              "task": "518e",
+              "title": ""
             }
           }
         ],
@@ -1536,7 +1557,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tablotui",
-              "task": "f394"
+              "task": "f394",
+              "title": ""
             }
           },
           {
@@ -1549,7 +1571,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tablotui",
-              "task": "f394"
+              "task": "f394",
+              "title": ""
             }
           }
         ],
@@ -1579,7 +1602,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tablotui",
-              "task": "679b"
+              "task": "679b",
+              "title": ""
             }
           },
           {
@@ -1592,7 +1616,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tablotui",
-              "task": "679b"
+              "task": "679b",
+              "title": ""
             }
           }
         ],
@@ -1622,7 +1647,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tablotui",
-              "task": "171b"
+              "task": "171b",
+              "title": ""
             }
           },
           {
@@ -1635,7 +1661,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tablotui",
-              "task": "171b"
+              "task": "171b",
+              "title": ""
             }
           }
         ],
@@ -1665,7 +1692,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tablotui",
-              "task": "0afa"
+              "task": "0afa",
+              "title": ""
             }
           },
           {
@@ -1678,7 +1706,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tablotui",
-              "task": "0afa"
+              "task": "0afa",
+              "title": ""
             }
           }
         ],
@@ -1770,7 +1799,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tableaud",
-              "task": "9a9c"
+              "task": "9a9c",
+              "title": ""
             }
           },
           {
@@ -1783,7 +1813,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tableaud",
-              "task": "9a9c"
+              "task": "9a9c",
+              "title": ""
             }
           }
         ],
@@ -1813,7 +1844,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tableaud",
-              "task": "44bf"
+              "task": "44bf",
+              "title": ""
             }
           },
           {
@@ -1826,7 +1858,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tableaud",
-              "task": "44bf"
+              "task": "44bf",
+              "title": ""
             }
           }
         ],
@@ -1851,7 +1884,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tableaud",
-              "task": "438a"
+              "task": "438a",
+              "title": ""
             }
           }
         ],
@@ -1881,7 +1915,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tableaud",
-              "task": "438a"
+              "task": "438a",
+              "title": ""
             }
           },
           {
@@ -1894,7 +1929,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tableaud",
-              "task": "438a"
+              "task": "438a",
+              "title": ""
             }
           }
         ],
@@ -1919,7 +1955,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tableaud",
-              "task": "e2b6"
+              "task": "e2b6",
+              "title": ""
             }
           }
         ],
@@ -1949,7 +1986,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tableaud",
-              "task": "e2b6"
+              "task": "e2b6",
+              "title": ""
             }
           },
           {
@@ -1962,7 +2000,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tableaud",
-              "task": "e2b6"
+              "task": "e2b6",
+              "title": ""
             }
           }
         ],
@@ -1987,7 +2026,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tableaud",
-              "task": "49ce"
+              "task": "49ce",
+              "title": ""
             }
           }
         ],
@@ -2017,7 +2057,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tableaud",
-              "task": "49ce"
+              "task": "49ce",
+              "title": ""
             }
           },
           {
@@ -2030,7 +2071,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tableaud",
-              "task": "49ce"
+              "task": "49ce",
+              "title": ""
             }
           }
         ],
@@ -2055,7 +2097,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tableaud",
-              "task": "db74"
+              "task": "db74",
+              "title": ""
             }
           }
         ],
@@ -2085,7 +2128,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tableaud",
-              "task": "db74"
+              "task": "db74",
+              "title": ""
             }
           },
           {
@@ -2098,7 +2142,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tableaud",
-              "task": "db74"
+              "task": "db74",
+              "title": ""
             }
           }
         ],
@@ -2123,50 +2168,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tableaud",
-              "task": "5a2f"
-            }
-          }
-        ],
-        "effect": "",
-        "model": "claude-sonnet-5-5",
-        "check": null,
-        "committer": ""
-      },
-      {
-        "task": {
-          "id": "595e"
-        },
-        "proposal": false,
-        "events": [
-          {
-            "date": "2026-10-05",
-            "commit": "",
-            "by": "noreply@anthropic.com",
-            "kind": "status",
-            "recorded": {
-              "gate": "function",
-              "state": "nominal",
-              "reason": "",
-              "note": ""
-            },
-            "gate": "",
-            "pin": null,
-            "subproject": {
-              "url": "subprojects/tableaud",
-              "task": "5a2f"
-            }
-          },
-          {
-            "date": "2026-10-05",
-            "commit": "",
-            "by": "noreply@anthropic.com",
-            "kind": "reviewed",
-            "recorded": null,
-            "gate": "function",
-            "pin": null,
-            "subproject": {
-              "url": "subprojects/tableaud",
-              "task": "5a2f"
+              "task": "5a2f",
+              "title": ""
             }
           }
         ],
@@ -2196,7 +2199,8 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tableaud",
-              "task": "6160"
+              "task": "5a2f",
+              "title": ""
             }
           },
           {
@@ -2209,7 +2213,53 @@
             "pin": null,
             "subproject": {
               "url": "subprojects/tableaud",
-              "task": "6160"
+              "task": "5a2f",
+              "title": ""
+            }
+          }
+        ],
+        "effect": "",
+        "model": "claude-sonnet-5-5",
+        "check": null,
+        "committer": ""
+      },
+      {
+        "task": {
+          "id": "595e"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-10-05",
+            "commit": "",
+            "by": "noreply@anthropic.com",
+            "kind": "status",
+            "recorded": {
+              "gate": "function",
+              "state": "nominal",
+              "reason": "",
+              "note": ""
+            },
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tableaud",
+              "task": "6160",
+              "title": ""
+            }
+          },
+          {
+            "date": "2026-10-05",
+            "commit": "",
+            "by": "noreply@anthropic.com",
+            "kind": "reviewed",
+            "recorded": null,
+            "gate": "function",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tableaud",
+              "task": "6160",
+              "title": ""
             }
           }
         ],
