@@ -330,9 +330,9 @@ func TestApplyCommitsOnlyThePlan(t *testing.T) {
 	}
 }
 
-// TestApplyRestoresOnFailure is T22 for a record: a failing pre-commit hook,
-// and an empty identity under user.useConfigOnly, leave HEAD and the status
-// file as they were.
+// TestApplyRestoresOnFailure is T22: a failing pre-commit hook, and an empty
+// identity under user.useConfigOnly, leave HEAD and the status file as they
+// were, and a proposed file gone and unstaged.
 func TestApplyRestoresOnFailure(t *testing.T) {
 	cases := map[string]func(tr *testRepo) *Repo{
 		"a failing hook": func(tr *testRepo) *Repo {
@@ -344,6 +344,7 @@ func TestApplyRestoresOnFailure(t *testing.T) {
 			return &Repo{Dir: tr.dir, Source: tr.src}
 		},
 	}
+	t.Run("a proposal", testProposeRestored)
 	for name, setup := range cases {
 		t.Run(name, func(t *testing.T) {
 			tr := newRepo(t)
