@@ -8,13 +8,11 @@ import (
 // buildFailure is the panic value of a builder that returns an error.
 //
 // The registry of render.go holds builders that cannot fail, and the status
-// renderers have two errors to report: a grid row with the wrong number of
-// cells, and a queue whose brief the hook of A6 cannot yet write. The change
-// that lets a builder return its error belongs to render.go, which this task
-// does not edit; until then registerStatus adapts a builder that returns an
-// error to the registry by panicking with this value. View data that came
-// through view.Decode never reaches the first error, and no command sets a
-// queue's brief before the Agent briefs task wires the hook.
+// renderers have one error to report: a grid row with the wrong number of
+// cells. The change that lets a builder return its error belongs to
+// render.go, which this task does not edit; until then registerStatus adapts
+// a builder that returns an error to the registry by panicking with this
+// value. View data that came through view.Decode never reaches the error.
 type buildFailure struct{ err error }
 
 func (f buildFailure) Error() string { return f.err.Error() }

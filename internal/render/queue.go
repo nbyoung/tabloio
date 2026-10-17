@@ -7,7 +7,7 @@ import (
 	"github.com/nbyoung/tabloio/internal/render/view"
 )
 
-func init() { registerStatus(buildQueue) }
+func init() { register(buildQueue) }
 
 // queueSeeAlso lists the views related to the work queue, in the order of
 // the See also line.
@@ -23,26 +23,15 @@ var queueKinds = []struct{ key, label, section, one, many string }{
 	{"waiting", "Work waiting", "Work waiting", "work waiting", "work waiting"},
 }
 
-// buildBrief is the hook of A6, a stub. The Agent briefs task (e4c7) replaces
-// it with internal/render/brief.go, which decodes Queue.Brief and writes the
-// brief; until then a queue with a brief at provenance is a format this
-// package has not built.
-func buildBrief(*view.Queue, Options) (doc.Doc, error) {
-	return doc.Doc{}, ErrFormat
-}
-
 // buildQueue builds the contributor work queue: the count line and one line
-// per item at glance; each item expanded in five sections at detail; and at
-// provenance the brief where the data holds one, else the detail, since the
-// queue's provenance is the brief and nothing else (decision 4). It returns
-// the error of the brief hook.
+// per item at glance; each item expanded in five sections at detail; and the
+// detail at provenance. The queue's provenance for one item is its brief
+// (decision 4), which package brief writes from tablo's envelope: the read
+// commands send a brief there, never here.
 //
 // R1 asks a deeper level to keep the table of the level above, so detail
 // draws the table of glance before the sections.
-func buildQueue(v *view.Queue, o Options) (doc.Doc, error) {
-	if o.Level >= view.Provenance && len(v.Brief) > 0 && string(v.Brief) != "null" {
-		return buildBrief(v, o)
-	}
+func buildQueue(v *view.Queue, o Options) doc.Doc {
 	p := newPage(&v.Head, o)
 
 	b := []doc.Block{p.queueCounts(v)}
@@ -63,7 +52,7 @@ func buildQueue(v *view.Queue, o Options) (doc.Doc, error) {
 		Legend:   true,
 		SeeAlso:  queueSeeAlso,
 		Body:     b,
-	}), nil
+	})
 }
 
 // queueCounts is the count line: the items, then each kind, zeros included.
