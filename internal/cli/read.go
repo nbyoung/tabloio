@@ -9,6 +9,7 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/nbyoung/tabloio/brief"
 	rtext "github.com/nbyoung/tabloio/internal/render/text"
 )
 
@@ -276,6 +277,10 @@ func runRead(ctx context.Context, env *Env, a *Args) int {
 		b, err = render(res.Data, q.Level, base)
 	}
 	if err != nil {
+		if refusesBrief(err) {
+			_, _ = fmt.Fprintf(env.Stderr, "tabloio %s: %v\n", c.Name, err)
+			return ExitInvalid
+		}
 		return failure(env, c, err)
 	}
 
@@ -288,6 +293,15 @@ func runRead(ctx context.Context, env *Env, a *Args) int {
 		return failure(env, c, err)
 	}
 	return ExitOK
+}
+
+// refusesBrief reports whether err is a brief's refusal of its item: no
+// work for the person there, or work that waits. Either exits 1, where any
+// other error of the brief's data fails with 3.
+func refusesBrief(err error) bool {
+	var none *brief.NoWorkError
+	var waits *brief.WaitingError
+	return errors.As(err, &none) || errors.As(err, &waits)
 }
 
 // failure prints a failed read, rendering or write and returns ExitFailure.

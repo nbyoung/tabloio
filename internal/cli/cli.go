@@ -11,7 +11,7 @@ import (
 // plumbing command gives them (prototype 4ed9).
 const (
 	ExitOK      = 0 // the command wrote what it was asked for
-	ExitInvalid = 1 // an error diagnostic prevents the view; nothing is written
+	ExitInvalid = 1 // an error diagnostic prevents the view, or a brief's item is no work ready; nothing is written
 	ExitUsage   = 2 // the command line is wrong; nothing is read
 	ExitFailure = 3 // a read, a rendering or a write fails
 )

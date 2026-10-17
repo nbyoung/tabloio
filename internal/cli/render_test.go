@@ -7,6 +7,7 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/nbyoung/tabloio/brief"
 	rtext "github.com/nbyoung/tabloio/internal/render/text"
 	"github.com/nbyoung/tabloio/internal/render/view"
 )
@@ -39,9 +40,8 @@ func decode(t *testing.T, name, file string) view.View {
 	return v
 }
 
-// TestMarkdownTableIsComplete is T15: the markdown table holds the ten views.
-// The brief entry waits for the task that owns it, and its case skips with
-// that reason until the entry stands.
+// TestMarkdownTableIsComplete is T15: the markdown table holds the ten views
+// and the brief.
 func TestMarkdownTableIsComplete(t *testing.T) {
 	for _, v := range views {
 		t.Run(v.name, func(t *testing.T) {
@@ -71,8 +71,16 @@ func TestMarkdownTableIsComplete(t *testing.T) {
 		}
 	})
 	t.Run("brief", func(t *testing.T) {
-		if markdown["brief"] == nil {
-			t.Skip("the brief entry waits for the Agent briefs task, e4c7")
+		render, ok := markdown["brief"]
+		if !ok {
+			t.Fatal("the markdown table has no entry for the brief")
+		}
+		out, err := render(briefData(t, "e4c7-design.json"), "provenance", "")
+		if err != nil {
+			t.Fatal(err)
+		}
+		if want := briefData(t, "e4c7-design.txt"); string(out) != string(want) {
+			t.Errorf("the brief differs from e4c7-design.txt:\n%s", out)
 		}
 	})
 	t.Run("text", func(t *testing.T) {
@@ -98,6 +106,34 @@ func TestMarkdownTableIsComplete(t *testing.T) {
 			t.Errorf("the text table holds %d entries, want %d", len(text), len(views))
 		}
 	})
+}
+
+// briefData reads a file of package brief's testdata: an envelope or the
+// golden brief it gives.
+func briefData(t *testing.T, name string) []byte {
+	t.Helper()
+	b, err := os.ReadFile(filepath.Join("..", "..", "brief", "testdata", name))
+	if err != nil {
+		t.Fatal(err)
+	}
+	return b
+}
+
+// TestBriefEntryChecksItsData: the brief entry takes the envelope's bytes
+// and nothing else, and returns the composer's errors as they stand.
+func TestBriefEntryChecksItsData(t *testing.T) {
+	for _, data := range []any{decode(t, "queue", "queue/tooling-owner.json"), "not bytes", nil} {
+		if _, err := markdown["brief"](data, "provenance", ""); err == nil || !strings.Contains(err.Error(), "the brief cannot render") {
+			t.Errorf("given %T: error %v", data, err)
+		}
+	}
+	if _, err := markdown["brief"]([]byte("{"), "provenance", ""); err == nil || !strings.HasPrefix(err.Error(), "brief: envelope:") {
+		t.Errorf("a broken envelope: error %v", err)
+	}
+	var waits *brief.WaitingError
+	if _, err := markdown["brief"](briefData(t, "1422-implementation.json"), "provenance", ""); !errors.As(err, &waits) {
+		t.Errorf("a waiting item: error %v", err)
+	}
 }
 
 func TestMarkdownEntryChecksItsData(t *testing.T) {
