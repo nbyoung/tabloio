@@ -176,8 +176,15 @@ func readOutput(argv []string) string {
 	return ""
 }
 
+// skippedKeysFile lists the keys of tablo's data that T17 skips, one
+// "<view> <path>" per line, sorted: the keys the view types do not carry,
+// which the owner reviews (5ca9 decision 14 (d)).
+const skippedKeysFile = "testdata/t17-skipped-keys.txt"
+
 // TestRealMatchesTablo is T17: the JSON of each view's Result.Data equals
-// the data of `tablo <view> --json` run with the same options.
+// the data of `tablo <view> --json` run with the same options, as a
+// projection of it. Each key the projection skips stands in
+// skippedKeysFile, and each key there is one a view skips.
 func TestRealMatchesTablo(t *testing.T) {
 	dir := corpusCopy(t)
 	goBin, err := exec.LookPath("go")
@@ -213,7 +220,7 @@ func TestRealMatchesTablo(t *testing.T) {
 		}
 	}
 	src := tabloSource{}
-	unread := map[string]bool{}
+	skipped := map[string]bool{}
 	for _, l := range cases {
 		argv := append([]string{"-C", dir}, l...)
 		inv, err := invocationOf(argv)
@@ -256,16 +263,48 @@ func TestRealMatchesTablo(t *testing.T) {
 			continue
 		}
 		want := normalise(t, env.Data)
+		unread := map[string]bool{}
 		if err := agree(got, want, "", unread); err != "" {
 			t.Errorf("%v: Result.Data and tablo's data differ at %s\n tabloio %s\n tablo   %s", l, err, abbreviate(got), abbreviate(want))
 		}
+		for k := range unread {
+			skipped[inv.Query.View+" "+k] = true
+		}
 	}
-	var keys []string
-	for k := range unread {
-		keys = append(keys, k)
+	checkSkippedKeys(t, skipped)
+}
+
+// checkSkippedKeys compares the keys T17 skips with skippedKeysFile: a
+// skipped key the file does not list fails, and so does a listed key that
+// no view skips, or a file that is not sorted.
+func checkSkippedKeys(t *testing.T, skipped map[string]bool) {
+	t.Helper()
+	raw, err := os.ReadFile(skippedKeysFile)
+	if err != nil {
+		t.Fatal(err)
 	}
-	sort.Strings(keys)
-	t.Logf("keys of tablo's data that the view types do not carry: %s", strings.Join(keys, " "))
+	listed := strings.Split(strings.TrimSuffix(string(raw), "\n"), "\n")
+	if !sort.StringsAreSorted(listed) {
+		t.Errorf("%s is not sorted", skippedKeysFile)
+	}
+	inFile := map[string]bool{}
+	for _, k := range listed {
+		inFile[k] = true
+		if !skipped[k] {
+			t.Errorf("%s lists %q, which no view skips", skippedKeysFile, k)
+		}
+	}
+	var unlisted []string
+	for k := range skipped {
+		if !inFile[k] {
+			unlisted = append(unlisted, k)
+		}
+	}
+	sort.Strings(unlisted)
+	for _, k := range unlisted {
+		t.Errorf("T17 skips %q, which %s does not list", k, skippedKeysFile)
+	}
+	t.Logf("T17 skips %d keys of tablo's data that the view types do not carry", len(skipped))
 }
 
 // agree compares tabloio's view with tablo's data, both decoded generically,
