@@ -202,3 +202,24 @@ func TestTabloQueueCauses(t *testing.T) {
 		}
 	}
 }
+
+// A snapshot's own commit (e3ed): the task view's provenance draws, in the
+// section "Status commit", the status commit and then the commit that
+// decides the task's own file under "Deciding commit". A task with no own
+// commit draws the status commit alone.
+func TestTabloOwnCommit(t *testing.T) {
+	v := tabloView(t, "task-c07d.provenance.json")
+	out := renderString(t, v, Options{Level: view.Provenance})
+	want := "## Status commit\n\n| Field | Value |\n|---|---|\n" +
+		"| Commit | `cf5b169` Record the node image design |\n"
+	own := "| Field | Value |\n|---|---|\n" +
+		"| Deciding commit | `97e4231` Pin the firmware at its design |\n" +
+		"| Date | 2026-09-26 |\n"
+	i, j := strings.Index(out, want), strings.Index(out, own)
+	if i < 0 || j < i || strings.Contains(out[i:j], "\n## ") {
+		t.Errorf("the section lacks the status commit, then the own commit:\n%s", out)
+	}
+	if out := renderString(t, readFixture(t, "task", "e9c6"), Options{Level: view.Provenance}); strings.Contains(out, "Deciding commit") {
+		t.Errorf("a task with no own commit draws one:\n%s", out)
+	}
+}

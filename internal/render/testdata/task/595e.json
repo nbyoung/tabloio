@@ -544,6 +544,22 @@
         "Model: claude-haiku-4-5-20251001"
       ]
     },
+    "own_commit": {
+      "hash": "e66abe2",
+      "subject": "Record the defined gate for the subproject tasks",
+      "date": "2026-09-30",
+      "author": {
+        "name": "Claude Haiku 4.5",
+        "email": "noreply@anthropic.com"
+      },
+      "committer": {
+        "name": "Claude Haiku 4.5",
+        "email": "noreply@anthropic.com"
+      },
+      "trailers": [
+        "Model: claude-haiku-4-5-20251001"
+      ]
+    },
     "authorisation": {
       "commit": {
         "hash": "6b6c99a",

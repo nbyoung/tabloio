@@ -618,6 +618,7 @@
         "Model: claude-fable-5-1"
       ]
     },
+    "own_commit": null,
     "authorisation": {
       "commit": {
         "hash": "6b6c99a",

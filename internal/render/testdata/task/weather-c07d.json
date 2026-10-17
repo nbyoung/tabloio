@@ -443,6 +443,22 @@
         "Reviewed: c07d mockup"
       ]
     },
+    "own_commit": {
+      "hash": "97e423122790a250e4e067d7d33bbf88622b00d5",
+      "subject": "Pin the firmware at its design",
+      "date": "2026-09-26",
+      "author": {
+        "name": "",
+        "email": "ben@example.org"
+      },
+      "committer": {
+        "name": "",
+        "email": "ben@example.org"
+      },
+      "trailers": [
+        "Reviewed: c07d mockup"
+      ]
+    },
     "authorisation": {
       "commit": {
         "hash": "22a758bec2a079fd908bba970db5eb51ecccd0c6",

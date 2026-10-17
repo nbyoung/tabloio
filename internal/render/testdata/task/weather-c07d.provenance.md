@@ -23,6 +23,14 @@ Legend: `tabloio gates`.
 | Committer | **ben@example.org** |
 | Trailers | `Reviewed: c07d mockup` |
 
+| Field | Value |
+|---|---|
+| Deciding commit | `97e4231` Pin the firmware at its design |
+| Date | 2026-09-26 |
+| Author | **ben@example.org** |
+| Committer | **ben@example.org** |
+| Trailers | `Reviewed: c07d mockup` |
+
 ## Description
 
 Reads the sensors, sleeps between readings and publishes to the gateway.

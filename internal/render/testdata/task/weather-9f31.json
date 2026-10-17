@@ -411,6 +411,7 @@
         "Reaffirmed: 9f31"
       ]
     },
+    "own_commit": null,
     "authorisation": {
       "commit": {
         "hash": "f9e8746736beb13aeab99f2cd2ff7e315596e616",
