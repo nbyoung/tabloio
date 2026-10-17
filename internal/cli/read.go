@@ -145,6 +145,9 @@ func readInvocation(c *Command, a *Args) (*invocation, error) {
 		if err != nil {
 			return nil, err
 		}
+		if n < 1 {
+			return nil, fmt.Errorf("--stale takes a whole number, one or more, not %q", v)
+		}
 		q.Stale = &n
 	}
 	if v, ok := a.Values["brief"]; ok {
@@ -252,6 +255,10 @@ func runRead(ctx context.Context, env *Env, a *Args) int {
 
 	res, err := env.Source.View(ctx, *q)
 	if err != nil {
+		var uf *UsageFault
+		if errors.As(err, &uf) {
+			return usageError(env, c, uf)
+		}
 		return failure(env, c, err)
 	}
 	if res.Data == nil {

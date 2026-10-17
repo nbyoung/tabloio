@@ -78,8 +78,8 @@ func TestCases(t *testing.T) {
 			t.Errorf("%s: error %v, want one with %q", name, err, c.Error)
 		}
 	}
-	if accepted != 27 || refused != 54 {
-		t.Errorf("cases.json holds %d accepted and %d refused lines, want 27 and 54", accepted, refused)
+	if accepted != 26 || refused != 55 {
+		t.Errorf("cases.json holds %d accepted and %d refused lines, want 26 and 55", accepted, refused)
 	}
 }
 
@@ -249,8 +249,8 @@ func TestQueryReachesTheSource(t *testing.T) {
 			Query{View: "context", Task: "2034", Window: ptr(0), Level: "glance"}},
 		{[]string{"history", "--ref", "0704a09..main", "--person", "a@b.c"},
 			Query{View: "history", Ref: "0704a09..main", Person: "a@b.c", Level: "glance"}},
-		{[]string{"audit", "--stale", "0", "--task", "e9c6"},
-			Query{View: "audit", Task: "e9c6", Stale: ptr(0), Level: "glance"}},
+		{[]string{"audit", "--stale", "1", "--task", "e9c6"},
+			Query{View: "audit", Task: "e9c6", Stale: ptr(1), Level: "glance"}},
 	} {
 		src := newSource()
 		if code, _, errs := run(t, src, c.argv...); code != ExitOK {

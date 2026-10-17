@@ -20,14 +20,14 @@ never reads a task file itself.
 
 ## What it does
 
-- **Output** any view in one of two textual formats. `--markdown`, the default, reads in a plain renderer: a `STATUS.md` that CI regenerates, an attachment to email or chat, a brief pasted into an agent's session. `--text` draws the view with Unicode box characters for a terminal or a log with no Markdown viewer. Scripts that want the view data call `tablo view` for JSON or YAML.
+- **Output** any view in one of two textual formats. `--markdown`, the default, reads in a plain renderer: a `STATUS.md` that CI regenerates, an attachment to email or chat, a brief pasted into an agent's session. `--text` draws the view with Unicode box characters for a terminal or a log with no Markdown viewer. Scripts that want the view data call `tablo <view>` for JSON or YAML.
 - **Input** to the method: `propose`, `record`, `review`, `reaffirm` and `authorise` write the right file or compose the commit with the right trailers, and show the commit before making it.
 
 ```
 tabloio tableau > STATUS.md                    # the global tableau in Markdown
 tabloio tableau --text                         # the same drawn in Unicode
 tabloio context --person ben@example.org        # a contributor's neighbourhood
-tabloio queue --person opus@example.org --brief  # a brief for an agent session
+tabloio queue --person opus@example.org --brief 9f31 design  # a brief for an agent session
 tabloio review 9f31 design                     # commit 'Reviewed: 9f31 design'
 tabloio authorise 9f31 c07d                    # accept two proposals at once
 ```
@@ -46,7 +46,8 @@ The module is `github.com/nbyoung/tabloio`. The four subprojects share this shap
 
 | Path                  | Holds                                                                                   |
 |-----------------------|-----------------------------------------------------------------------------------------|
-| `cmd/tabloio/`        | The command. `main.go` prints the version; the read and write subcommands land in their own tasks |
+| `cmd/tabloio/`        | The command. `main.go` builds the environment, with tablo's library as the source of view data, and calls `internal/cli`; it holds the version |
+| `internal/cli/`       | The command line: the parser, the command table, `help` and `version`, and the read commands, one per view |
 | `brief/`              | The brief composer: one work item of the queue as plain text, for an agent's session    |
 | `internal/render/`    | The renderers from tablo's view data: Markdown and Unicode text                         |
 | `.github/workflows/`  | `ci.yml` checks every pull request and push to `main`; `release.yml` publishes a tag    |
@@ -109,11 +110,12 @@ The dependency follows one policy:
   version. While `tablo` is at `v0`, a minor version may break compatibility,
   so the range is one minor series, `v0.N.x`, and a bump of `N` is a deliberate
   commit that names what changed. From `v1` the range is the major version.
-- **When the line enters `go.mod`.** `tablo` has no release yet, and a
-  `require` on an untagged module resolves nowhere, so this bootstrap adds none.
-  The first task that imports `tablo`, Renderers, adds the line with
-  `go get github.com/nbyoung/tablo@v0.N.M` against tablo's first tag, and
-  `go.sum` pins the hash from then on.
+- **When the line enters `go.mod`.** `tablo` has no tag yet, so the line
+  names a pseudo-version of tablo's `main`, added with
+  `go get github.com/nbyoung/tablo@<commit>`; `go.sum` pins the hash. The
+  line moves to `v0.N.M`, with `go get github.com/nbyoung/tablo@v0.N.M`,
+  when tablo tags its first release. The Read commands task adds it, since
+  `internal/cli` is the first package here to import `tablo`.
 - **Day-to-day development.** The family builds against local checkouts through
   a personal `go.work` in the directory above the `tableaux` clone, created
   with `go work init ./tablo ./tabloio ./tablotui ./tableaud` and never
