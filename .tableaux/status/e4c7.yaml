@@ -1,4 +1,3 @@
-gate: design
+gate: implementation
 state: nominal
-reason: blocked
-note: internal/brief stands with T1 to T14; the --brief wiring in cmd/tabloio and T15 wait for the queue command (5ca9), which waits for the renderers (1093); the standing text per gate waits on the owner's plan change (decision 5)
+note: package brief stands with T1 to T14, and internal/cli writes the brief of queue --brief through it, with T15 on the fake source; the unit gate runs T1 to T15 with go test; at integrate a brief from tablo's library on a ready item of this repository confirms A1 to A7, and the standing text per gate waits on the owner's plan change (decision 5), since docs/gates/ holds design.md, implementation.md and unit.md, six gates lack a file, and no root junction names one yet

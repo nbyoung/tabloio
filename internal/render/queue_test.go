@@ -1,9 +1,7 @@
 package render
 
 import (
-	"bytes"
 	"encoding/json"
-	"errors"
 	"fmt"
 	"strings"
 	"testing"
@@ -125,32 +123,20 @@ func TestQueueSections(t *testing.T) {
 	}
 }
 
-// T9: the queue's provenance. With a brief the builder calls the hook, and
-// the stub returns ErrFormat; without one, provenance is the detail but for
-// the frame's level and ref.
+// T9: the queue's provenance is the detail but for the frame's level and
+// ref. The brief of one item is package brief's, and a brief in the data
+// changes nothing here.
 func TestQueueProvenance(t *testing.T) {
 	v := readFixture(t, "queue", "weather-ada").(*view.Queue)
 	cp := *v
 	cp.Level = view.Provenance
-	cp.Brief = json.RawMessage(`{"task": "9f31", "gate": "performance"}`)
 	o := Options{Level: view.Provenance}
-	if _, err := buildQueue(&cp, o); !errors.Is(err, ErrFormat) {
-		t.Errorf("a brief at provenance: %v, want ErrFormat", err)
-	}
-	if err := recoverFailure(func() { _ = Render(&bytes.Buffer{}, &cp, o) }); !errors.Is(err, ErrFormat) {
-		t.Errorf("Render of a brief at provenance: %v, want ErrFormat", err)
-	}
-	// A brief below provenance is no brief.
-	if _, err := buildQueue(&cp, Options{Level: view.Detail}); err != nil {
-		t.Errorf("a brief at detail: %v", err)
-	}
-	// A null brief is none.
-	cp.Brief = json.RawMessage(`null`)
-	if _, err := buildQueue(&cp, o); err != nil {
-		t.Errorf("a null brief: %v", err)
+	withBrief := cp
+	withBrief.Brief = json.RawMessage(`{"task": "9f31", "gate": "performance"}`)
+	if a, b := renderString(t, &withBrief, o), renderString(t, &cp, o); a != b {
+		t.Errorf("a brief in the data changes the queue:\n%s\n---\n%s", a, b)
 	}
 
-	cp.Brief = nil
 	detail := renderString(t, &cp, Options{Level: view.Detail})
 	prov := renderString(t, &cp, o)
 	body := func(s string) string {

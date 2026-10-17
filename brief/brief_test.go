@@ -472,6 +472,31 @@ func TestPersonRecordedWithNote(t *testing.T) {
 	has(t, out, "\n4. The status\n\n  🔧 function 🟢 nominal 🔎 review, 2026-09-30, noreply@anthropic.com, baab0e5\n\n")
 }
 
+// TestStatusLeavesOutEmptyFields: the head line of part 4 leaves out an
+// empty recorder, and an empty commit beside it.
+func TestStatusLeavesOutEmptyFields(t *testing.T) {
+	base := load(t, "e4c7-design")
+	for _, c := range []struct {
+		name string
+		edit func(d *Data)
+		want string
+	}{
+		{"no recorder", func(d *Data) { d.Status.Recorder = "" },
+			"\n4. The status\n\n  🔧 function 🟢 nominal, 2026-09-30, baab0e5\n\n"},
+		{"no recorder and no commit", func(d *Data) { d.Status.Recorder, d.Status.Commit = "", "" },
+			"\n4. The status\n\n  🔧 function 🟢 nominal, 2026-09-30\n\n"},
+	} {
+		t.Run(c.name, func(t *testing.T) {
+			out := render(t, variant(base, func(d *Data) {
+				d.Status.Note = ""
+				c.edit(d)
+			}))
+			has(t, out, c.want)
+			lacks(t, out, ", ,", ", \n")
+		})
+	}
+}
+
 // outputs returns every brief the tests above render.
 func outputs(t *testing.T) map[string]string {
 	t.Helper()

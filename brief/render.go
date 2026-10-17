@@ -253,14 +253,20 @@ func partRequirements(d Data) []string {
 	return append(l, "")
 }
 
-// partStatus returns part 4, the status.
+// partStatus returns part 4, the status. The head line leaves out an empty
+// recorder and an empty commit.
 func partStatus(d Data) []string {
 	st := d.Status
 	head := fmt.Sprintf("%s %s %s %s", st.GateSymbol, st.Gate, st.StateSymbol, st.State)
 	if st.Reason != "" {
 		head += fmt.Sprintf(" %s %s", st.ReasonSymbol, st.Reason)
 	}
-	head += fmt.Sprintf(", %s, %s, %s", st.Date, st.Recorder, short(st.Commit))
+	head += ", " + st.Date
+	for _, f := range []string{st.Recorder, short(st.Commit)} {
+		if f != "" {
+			head += ", " + f
+		}
+	}
 	l := []string{"4. The status", ""}
 	if st.Note != "" {
 		l = append(l, wrap(head+":", 2)...)

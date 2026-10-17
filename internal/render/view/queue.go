@@ -8,7 +8,7 @@ func init() { register("queue", func() View { return new(Queue) }) }
 type Queue struct {
 	Head
 	Items []QueueItem     `json:"items"` // kind order, then display order; reaffirmations oldest first
-	Brief json.RawMessage `json:"brief"` // provenance, with the brief parameter; task e4c7 decodes it
+	Brief json.RawMessage `json:"brief"` // provenance, with the brief parameter; package brief decodes it from the envelope, and no renderer reads it
 }
 
 // QueueItem is one thing the person does.

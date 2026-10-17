@@ -44,7 +44,10 @@ type Query struct {
 type Brief struct{ Task, Gate string }
 
 // Result is what tablo returns: the view's data in tabloio's view types
-// (package render/view), and the diagnostics of the project.
+// (package render/view), and the diagnostics of the project. For a brief,
+// Data holds tablo's whole envelope as JSON bytes, which package brief
+// decodes, since a brief reads the envelope's source and params beside its
+// data.
 type Result struct {
 	Data        any
 	Diagnostics []Diagnostic
@@ -77,14 +80,53 @@ type tabloSource struct{}
 func NewSource() Source { return tabloSource{} }
 
 // View opens the repository at q.Dir, loads q.Ref and derives the view. It
-// decodes tablo's whole envelope with view.Decode, and mirrors the
-// envelope's diagnostics. An envelope with no data gives a Result without
-// Data.
+// decodes tablo's whole envelope with view.Decode, or, for a brief, hands
+// the envelope's bytes on as they stand, and mirrors the envelope's
+// diagnostics. An envelope with no data gives a Result without Data.
 func (tabloSource) View(ctx context.Context, q Query) (Result, error) {
 	dir := q.Dir
 	if dir == "" {
 		dir = "."
 	}
+	p, ref := tabloParams(q)
+
+	repo, err := tablo.Open(ctx, dir, tablo.Options{})
+	if err != nil {
+		return Result{}, fault(err)
+	}
+	snap, err := repo.Load(ctx, ref)
+	if err != nil {
+		return Result{}, fault(err)
+	}
+	env, err := snap.View(ctx, tablo.View(q.View), p)
+	if err != nil {
+		return Result{}, fault(err)
+	}
+	res := Result{}
+	for _, d := range env.Diagnostics {
+		res.Diagnostics = append(res.Diagnostics, Diagnostic{
+			Severity: d.Severity, Code: d.Code, Path: d.Path,
+			Line: d.Line, Col: d.Col, Message: d.Message,
+		})
+	}
+	if env.Data == nil {
+		return res, nil
+	}
+	if q.Brief != nil {
+		res.Data = env.JSON()
+		return res, nil
+	}
+	v, err := view.Decode(q.View, env.JSON())
+	if err != nil {
+		return Result{}, err
+	}
+	res.Data = v
+	return res, nil
+}
+
+// tabloParams maps a query to tablo's parameters and the ref to load: a
+// history range gives its from side to Params.From and loads its to side.
+func tabloParams(q Query) (tablo.Params, string) {
 	p := tablo.Params{
 		Task:       q.Task,
 		Person:     q.Person,
@@ -112,35 +154,7 @@ func (tabloSource) View(ctx context.Context, q Query) (Result, error) {
 	if q.View == string(tablo.Audit) {
 		p.Now = today()
 	}
-
-	repo, err := tablo.Open(ctx, dir, tablo.Options{})
-	if err != nil {
-		return Result{}, fault(err)
-	}
-	snap, err := repo.Load(ctx, ref)
-	if err != nil {
-		return Result{}, fault(err)
-	}
-	env, err := snap.View(ctx, tablo.View(q.View), p)
-	if err != nil {
-		return Result{}, fault(err)
-	}
-	res := Result{}
-	for _, d := range env.Diagnostics {
-		res.Diagnostics = append(res.Diagnostics, Diagnostic{
-			Severity: d.Severity, Code: d.Code, Path: d.Path,
-			Line: d.Line, Col: d.Col, Message: d.Message,
-		})
-	}
-	if env.Data == nil {
-		return res, nil
-	}
-	v, err := view.Decode(q.View, env.JSON())
-	if err != nil {
-		return Result{}, err
-	}
-	res.Data = v
-	return res, nil
+	return p, ref
 }
 
 // fault turns a *tablo.UsageError into a *UsageFault and leaves any other

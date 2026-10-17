@@ -2,9 +2,11 @@ package cli
 
 import (
 	"bytes"
+	"encoding/json"
 	"fmt"
 	"runtime"
 
+	"github.com/nbyoung/tabloio/brief"
 	"github.com/nbyoung/tabloio/internal/render"
 	rtext "github.com/nbyoung/tabloio/internal/render/text"
 	"github.com/nbyoung/tabloio/internal/render/view"
@@ -19,11 +21,12 @@ type renderFunc func(data any, level string, linkBase string) ([]byte, error)
 // is as renderFunc has it.
 type textFunc func(data any, level string, linkBase string, o rtext.Options) ([]byte, error)
 
-// markdown and text map a view to its renderer. The key "brief" is for the
-// renderer of the Agent briefs task (e4c7), which fills it in the markdown
-// table alone: the brief is the same bytes under both formats, so a text
-// rendering of it reads the markdown entry.
+// markdown and text map a view to its renderer. The key "brief", in the
+// markdown table alone, holds the renderer of the Agent briefs task (e4c7):
+// the brief is the same bytes under both formats, so --text --brief reads
+// the markdown entry too.
 var markdown = map[string]renderFunc{
+	"brief":      viaBrief,
 	"gates":      viaRender[*view.Gates]("gates", nil),
 	"task":       viaRender[*view.Task]("task", nil),
 	"authority":  viaRender[*view.Delegation]("authority", nil),
@@ -47,6 +50,42 @@ var text = map[string]textFunc{
 	"context":    viaText("context", func(t *view.Tableau) bool { return t.Contextual }),
 	"history":    viaText[*view.History]("history", nil),
 	"audit":      viaText[*view.Audit]("audit", nil),
+}
+
+// viaBrief renders a brief: data is tablo's whole envelope of the queue view
+// with the brief parameter, as JSON bytes (Result), which brief.Decode reads.
+// The request comes from the envelope's params, which state the person and
+// the item asked for. The level and the link base change nothing: a brief is
+// the provenance of one item and holds no file link. A *brief.NoWorkError
+// and a *brief.WaitingError come back as they stand, for the flow to report.
+func viaBrief(data any, _, _ string) ([]byte, error) {
+	b, ok := data.([]byte)
+	if !ok {
+		return nil, fmt.Errorf("the brief cannot render %T", data)
+	}
+	var env struct {
+		Params struct {
+			Person string `json:"person"`
+			Brief  struct {
+				Task string `json:"task"`
+				Gate string `json:"gate"`
+			} `json:"brief"`
+		} `json:"params"`
+	}
+	if err := json.Unmarshal(b, &env); err != nil {
+		return nil, fmt.Errorf("brief: envelope: %w", err)
+	}
+	d, err := brief.Decode(b, brief.Request{
+		Person: env.Params.Person, Task: env.Params.Brief.Task, Gate: env.Params.Brief.Gate,
+	})
+	if err != nil {
+		return nil, err
+	}
+	var buf bytes.Buffer
+	if err := brief.Render(&buf, d); err != nil {
+		return nil, err
+	}
+	return buf.Bytes(), nil
 }
 
 // viaRender returns the Markdown renderer of one view. Package render
