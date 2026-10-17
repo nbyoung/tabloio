@@ -1,3 +1,3 @@
-gate: design
+gate: implementation
 state: nominal
-note: internal/cli holds the parser, the vocabulary, the command table, the help, the version line, the read-command flow, the output guard and the Markdown renderer table, with T1 to T13 and T15 passing against fakes; tabloSource, main.go, version --json and T14 wait for tablo's release with its views; the brief entry waits for e4c7 and the text table for e0f7
+note: internal/cli holds the parser, the command table, the help, version and version --json, the read-command flow, the output guard, both renderer tables and tabloSource over tablo's library, with T1 to T17 written (T16 and T17 need TABLEAUX_CORPUS); the unit gate runs go test with that variable; T18 waits for the integrate gate and the corpus entry tableaux-tooling, and the brief entry waits for e4c7
