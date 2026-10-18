@@ -1,3 +1,3 @@
-gate: implementation
+gate: unit
 state: nominal
-note: snapshot/action.yml, snapshot.sh and hooks/pre-commit stand, and the unit gate runs T1 to T13 of snapshot/test.sh; T14 waits on releases of tablo and tabloio, and the trunk-only and protected-trunk checks wait on GitHub at validate
+note: T1 to T13 of snapshot/test.sh pass with no skip, T3 and T4 under gojq 0.12.17 as jq since this host lacks jq, and T8 through a pre-receive hook that refuses the push (decision 9); actionlint passes on the consumer example and the action; T14 waits on releases of tablo and tabloio, and the trunk-only and protected-trunk checks wait on GitHub at validate
