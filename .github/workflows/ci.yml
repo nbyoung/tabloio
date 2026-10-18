@@ -25,3 +25,11 @@ jobs:
           version: latest
       - name: go test
         run: go test ./...
+      - name: snapshot harness
+        run: snapshot/test.sh
+      - name: actionlint
+        # The consumer example as published, then the same workflow at
+        # ./snapshot, through which actionlint reads snapshot/action.yml.
+        run: |
+          sed 's|nbyoung/tabloio/snapshot@v[0-9.]*|./snapshot|' snapshot/consumer.yml >snapshot/consumer.local.yml
+          go run github.com/rhysd/actionlint/cmd/actionlint@v1.7.7 snapshot/consumer.yml snapshot/consumer.local.yml

@@ -22,24 +22,30 @@ type Env struct {
 	Stdout, Stderr io.Writer
 	Version        string // main.version, as GoReleaser sets it
 	Source         Source
+
+	// What the write commands read of the process; a nil field reads the
+	// process itself.
+	Stdin    io.Reader           // the prompt's answer; nil is os.Stdin
+	Terminal func() bool         // whether Stdin is a terminal; nil asks os.Stdin
+	Getenv   func(string) string // TABLOIO_MODEL and TABLOIO_CO_AUTHOR; nil is os.Getenv
 }
 
-// Command is one subcommand. The read commands fill ten; the Write commands
-// task adds its own to the same table.
+// Command is one subcommand. The read commands fill ten, the write commands
+// five (write.go).
 type Command struct {
 	Name     string
 	Group    string   // "read", "write" or "other": the section of the usage text
-	Operands string   // "<id>" for task, "" otherwise
+	Operands string   // "<id>" for task and record, "<id>..." for the empty commits, "" otherwise
 	Summary  string   // the view's question, verbatim from VIEWS.md
 	Options  []string // the option names it takes beyond -C and --help
 	Run      func(ctx context.Context, env *Env, a *Args) int
 }
 
 // groups lists the sections of the usage text in order, each with its
-// heading. A group with no command leaves its section out. The Write
-// commands task adds its own entry.
+// heading. A group with no command leaves its section out.
 var groups = []struct{ name, heading string }{
 	{"read", "Read commands write one view and change nothing in the project."},
+	{"write", "Write commands plan one commit, show it, and make it."},
 	{"other", "Other commands."},
 }
 
@@ -64,9 +70,12 @@ func init() {
 		read("context", "", "How does my corner stand?", "task", "person", "window", "columns", "historical"),
 		read("history", "", "What happened, when, and who did it?", "task", "person"),
 		read("audit", "", "Where do files and history disagree?", "task", "person", "stale"),
+	}
+	commands = append(commands, writeCommands()...)
+	commands = append(commands, []Command{
 		{Name: "version", Group: "other", Summary: "Print the version", Options: []string{"json"}, Run: runVersion},
 		{Name: "help", Group: "other", Summary: "Print this text, or the options of one command", Run: runHelp},
-	}
+	}...)
 }
 
 // lookup returns the command of that name, or nil.
@@ -147,8 +156,9 @@ func takes(c *Command, name string) bool {
 	return false
 }
 
-// usagePad is the width of the name column of the usage text; helpPad the
-// width of the spelling column of a command's help.
+// usagePad is the least width of the name column of the usage text, which a
+// group widens to fit its longest name and operands; helpPad the width of
+// the spelling column of a command's help.
 const (
 	usagePad = 14
 	helpPad  = 23
@@ -160,7 +170,8 @@ func printUsage(w io.Writer) {
 	var b strings.Builder
 	b.WriteString("usage: tabloio [-C <dir>] <command> [<options>]\n")
 	for _, g := range groups {
-		var rows []string
+		var names, rows []string
+		width := usagePad
 		for _, c := range commands {
 			if c.Group != g.name {
 				continue
@@ -169,7 +180,15 @@ func printUsage(w io.Writer) {
 			if c.Operands != "" {
 				name += " " + c.Operands
 			}
-			rows = append(rows, "  "+pad(name, usagePad)+c.Summary+"\n")
+			names = append(names, name)
+			width = max(width, len(name)+2)
+		}
+		i := 0
+		for _, c := range commands {
+			if c.Group == g.name {
+				rows = append(rows, "  "+pad(names[i], width)+c.Summary+"\n")
+				i++
+			}
 		}
 		if len(rows) == 0 {
 			continue

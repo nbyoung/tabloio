@@ -28,7 +28,10 @@ tabloio tableau > STATUS.md                    # the global tableau in Markdown
 tabloio tableau --text                         # the same drawn in Unicode
 tabloio context --person ben@example.org        # a contributor's neighbourhood
 tabloio queue --person opus@example.org --ref 4f2a9c1 --brief 9f31 design  # a brief for an agent session
+tabloio propose --parent 07e0 --title 'Rain gauge' --description '…'  # add a task file
+tabloio record 9f31 --gate design --state nominal --model claude-opus-5-5 --yes  # record a status
 tabloio review 9f31 design                     # commit 'Reviewed: 9f31 design'
+tabloio reaffirm 9f31                          # commit 'Reaffirmed: 9f31'
 tabloio authorise 9f31 c07d                    # accept two proposals at once
 ```
 
@@ -47,7 +50,8 @@ The module is `github.com/nbyoung/tabloio`. The four subprojects share this shap
 | Path                  | Holds                                                                                   |
 |-----------------------|-----------------------------------------------------------------------------------------|
 | `cmd/tabloio/`        | The command. `main.go` builds the environment, with tablo's library as the source of view data, and calls `internal/cli`; it holds the version |
-| `internal/cli/`       | The command line: the parser, the command table, `help` and `version`, and the read commands, one per view |
+| `internal/cli/`       | The command line: the parser, the command table, `help` and `version`, the read commands, one per view, and the five write commands |
+| `action/`             | The write actions: each plans one commit as data, shows it, and makes it; the facts come from tablo's library and the bytes from Git |
 | `brief/`              | The brief composer: one work item of the queue as plain text, for an agent's session    |
 | `internal/render/`    | The renderers from tablo's view data: Markdown and Unicode text                         |
 | `.github/workflows/`  | `ci.yml` checks every pull request and push to `main`; `release.yml` publishes a tag    |
@@ -57,11 +61,84 @@ The module is `github.com/nbyoung/tabloio`. The four subprojects share this shap
 
 Packages under `internal/` stay private to this module. Two packages stand
 outside it for the other front ends: `brief`, which `tableaud` imports to print
-the same brief text, and in prospect the actions behind the write commands,
-which `tablotui` reuses, so the Write commands task designs them as an exported
-package.
+the same brief text, and `action`, the plans and commits behind the write
+commands, which `tablotui` imports to make the same commits.
 
 A prototype under `prototype/` is the function gate's demonstration. It goes when its task records `implementation`: the design's account of what it kept from the prototype and `git log -- prototype/<id>` keep what it showed, and the trunk builds what it ships.
+
+## Snapshot workflow
+
+A project that keeps its plan in `.tableaux` validates it on every push and
+regenerates `STATUS.md` on its trunk with the composite action in
+[`snapshot/`](snapshot/), and validates the staged plan before each commit
+with the hook in [`hooks/`](hooks/). Both run the released `tablo` and
+`tabloio` binaries and need no Go.
+
+**The workflow.** The project adds `.github/workflows/tableaux.yml`, as
+[`snapshot/consumer.yml`](snapshot/consumer.yml) gives it:
+
+```yaml
+name: Tableaux
+on:
+  push:
+  pull_request:
+permissions:
+  contents: write
+concurrency:
+  group: tableaux-${{ github.ref }}
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0          # history: authorisation, reviews, dates
+          submodules: recursive   # pins: recursive junctions read subprojects
+      - uses: nbyoung/tabloio/snapshot@v0.2.0
+```
+
+Every push and pull request runs `tablo validate` and annotates each
+diagnostic at its file and line; an error fails the job. A push to the trunk
+then renders `tabloio tableau --level glance` into `STATUS.md` and commits it
+as `github-actions[bot]` when it changed. The inputs `project`, `output`,
+`view`, `trunk`, `tabloio-version` and `tablo-version` change the defaults;
+[`snapshot/action.yml`](snapshot/action.yml) describes each.
+
+**A protected trunk.** A trunk that requires pull requests rejects a push
+made with `GITHUB_TOKEN`. The project then gives the checkout step a
+credential that the trunk's ruleset lets bypass, and the action stays as it
+is, since it pushes with whatever credential the checkout leaves. A
+repository admin stores the credential once as a secret and adds its actor to
+the ruleset's bypass list once. Either of two serves:
+
+```yaml
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          submodules: recursive
+          token: ${{ steps.app.outputs.token }}       # a GitHub App installation token, or
+          # ssh-key: ${{ secrets.TABLEAUX_DEPLOY_KEY }} # a deploy key with write access
+```
+
+A GitHub App serves many repositories of one organisation, and an earlier
+step, such as `actions/create-github-app-token`, mints its token; a deploy
+key serves one repository and needs no app. A ruleset's bypass list takes
+both: GitHub Apps as its documentation of rulesets lists them, and deploy
+keys as the actor type `DeployKey` of its REST API for rulesets.
+
+**The hook.** `hooks/pre-commit` validates the project in the staged tree, so
+an unstaged edit neither passes nor fails a commit, and a commit that stages
+nothing under `.tableaux` skips it. It needs `tablo` on the path. Each
+contributor copies it once per clone; each release archive holds it too:
+
+```
+curl -fsSL -o .git/hooks/pre-commit https://raw.githubusercontent.com/nbyoung/tabloio/v0.2.0/hooks/pre-commit
+chmod +x .git/hooks/pre-commit
+git config tableaux.project sub/dir   # only when .tableaux is not at the root
+```
+
+`git commit --no-verify` bypasses it once. `snapshot/test.sh` tests the
+action's steps and the hook on stubs; CI runs it beside `go test`.
 
 ## Build and test
 
@@ -77,9 +154,11 @@ go vet ./...          # vet
 golangci-lint run     # lint, with the configuration in .golangci.yml
 ```
 
-`ci.yml` runs the same four checks, gofmt, vet, lint and test, on every pull
-request and every push to `main`, with the Go version from `go.mod` and
-golangci-lint from its official action.
+`ci.yml` runs the same four checks, gofmt, vet, lint and test, then the
+snapshot harness `snapshot/test.sh` and actionlint over the snapshot action
+and its consumer example, on every pull request and every push to `main`,
+with the Go version from `go.mod` and golangci-lint from its official
+action.
 
 ## Release
 
