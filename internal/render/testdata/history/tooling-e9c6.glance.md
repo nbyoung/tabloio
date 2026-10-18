@@ -1,19 +1,26 @@
 # History: `e9c6` Abstract views
 
-**What happened, when, and who did it?** Tableaux tooling · ref `main` · task `e9c6` · level glance
+**What happened, when, and who did it?** Tableaux tooling · ref `corpus/tooling` · task `e9c6` · level glance
 
 Legend: `tabloio gates`.
 
-8 events in 7 commits, 2026-09-29 to 2026-09-30: 1 task, 1 authorised, 4 status, 0 reaffirmed, 2 reviewed, 0 pin.
+9 events in 8 commits, 2026-09-29 to 2026-10-05: 1 task, 0 authorised, 5 status, 0 reaffirmed, 3 reviewed, 0 pin.
+
+| Day | Events | Commits | Kinds |
+|---|--:|--:|---|
+| 2026-09-29 | 3 | 3 | 1 task, 1 status, 1 reviewed |
+| 2026-09-30 | 4 | 4 | 3 status, 1 reviewed |
+| 2026-10-05 | 2 | 1 | 1 status, 1 reviewed |
 
 | Date | By | Event | Task | Gate and state, or pin |
 |---|---|---|---|---|
-| 2026-09-29 | nbyoung@nbyoung.com | task, authorised | `e9c6` Abstract views | the task file appears |
+| 2026-09-29 | nbyoung@nbyoung.com | task | `e9c6` Abstract views | the task file appears |
 | 2026-09-29 | noreply@anthropic.com | status | `e9c6` Abstract views | 📝 defined 🟢 nominal |
 | 2026-09-29 | noreply@anthropic.com | reviewed | `e9c6` Abstract views | 📝 defined |
 | 2026-09-30 | noreply@anthropic.com | status | `e9c6` Abstract views | 📝 defined 🟢 nominal 👓 review |
 | 2026-09-30 | noreply@anthropic.com | status | `e9c6` Abstract views | 📝 defined 🟢 nominal 👓 review |
 | 2026-09-30 | nbyoung@nbyoung.com | reviewed | `e9c6` Abstract views | 📐 design |
 | 2026-09-30 | noreply@anthropic.com | status | `e9c6` Abstract views | 📐 design 🟢 nominal |
+| 2026-10-05 | noreply@anthropic.com | status, reviewed | `e9c6` Abstract views | 🧱 implementation 🟢 nominal |
 
-Command: `tabloio history --task e9c6 --ref main --level glance`
+Command: `tabloio history --task e9c6 --ref corpus/tooling --level glance`

@@ -3,20 +3,36 @@
   "command": "audit",
   "source": {
     "ref": "main",
+    "dir": ".",
+    "worktree": true,
     "commit": "f20514edbdbfca64bc7af4ae385fef45b7a1609f",
     "date": "2026-09-04",
     "from": null,
     "trunk": {
-      "name": null
+      "name": "main",
+      "resolved": "stated"
     },
     "on_trunk": true
   },
   "project": {
+    "tableaux": "0.3.1",
     "root": "e4a1",
-    "title": "Base"
+    "title": "Base",
+    "owner": "olive@example.org"
+  },
+  "viewer": {
+    "email": "nbyoung@nbyoung.com",
+    "roles": [
+      "observer"
+    ]
   },
   "params": {
+    "task": "e4a1",
+    "person": null,
     "stale": 7,
+    "now": "2026-09-04",
+    "minimum": "warning",
+    "role": null,
     "level": "provenance"
   },
   "data": {
@@ -77,7 +93,8 @@
         {
           "key": "blocked",
           "symbol": "⛔",
-          "synopsis": "An external resource is unavailable"
+          "synopsis": "An external resource is unavailable",
+          "reserved": false
         }
       ],
       "marks": [
@@ -85,39 +102,45 @@
           "key": "person",
           "symbol": "🧑",
           "meaning": "A person contributes",
-          "junction": "Plain; the contributor is a person"
+          "junction": "plain"
         },
         {
           "key": "agent",
           "symbol": "🤖",
           "meaning": "An agent contributes",
-          "junction": "Plain; the junction states a `model`"
+          "junction": "plain"
         },
         {
           "key": "reviewer",
           "symbol": "👀",
           "meaning": "A reviewer accepts",
-          "junction": "Plain; the reviewer accepts the work at the gate"
+          "junction": "plain"
         },
         {
           "key": "subproject",
           "symbol": "🪆",
           "meaning": "A subproject does the work",
-          "junction": "Recursive; another Tableaux project does the work"
+          "junction": "recursive"
         },
         {
           "key": "exempt",
           "symbol": "—",
           "meaning": "The gate does not apply",
-          "junction": "Not applicable; the entry exempts the task from the gate"
+          "junction": "not_applicable"
         }
       ]
     },
+    "errors": 0,
+    "warnings": 1,
+    "information": 1,
+    "most": null,
     "findings": [
       {
+        "key": "H3",
         "rule": "H3",
         "severity": "warning",
-        "kind": "A `Model:` trailer outside the junction's model",
+        "demoted": false,
+        "kind": "A model outside the one stated",
         "tasks": [
           {
             "id": "b2c9",
@@ -125,51 +148,34 @@
           }
         ],
         "gate": "design",
-        "files": [
-          "status/b2c9.yaml"
-        ],
+        "act": "none",
+        "resolver": "bot@example.org",
+        "files": [],
         "message": "Model claude-sonnet-5 is outside the stated model claude-fable",
-        "resolver": "olive@example.org",
         "sentence": "the audit reports a commit at the junction whose trailer names a model outside the one stated",
         "source": {
           "text": "README.md, Junctions",
-          "url": "README.md#junctions"
+          "url": "https://github.com/nbyoung/tableaux/blob/main/README.md#junctions"
         },
-        "commits": [
-          {
-            "hash": "b16817cda3528588ee33642676fbb623a598baed",
-            "subject": "Record the leaf at design",
-            "date": "2026-09-02",
-            "author": {
-              "email": "bot@example.org"
-            },
-            "committer": {
-              "email": "bot@example.org"
-            },
-            "trailers": [
-              "Model: claude-sonnet-5"
-            ]
-          }
-        ],
-        "commands": [
-          {
-            "text": "git log --format='%h %(trailers:key=Model,valueonly)' -- .tableaux/status/b2c9.yaml",
-            "comment": "shows the finding"
-          }
-        ],
-        "key": "H3",
-        "demoted": false,
-        "act": "revise",
         "facts": [
           {
             "task": "b2c9",
             "junction": {
               "gate": "design",
               "kind": "plain",
+              "marks": [
+                "agent",
+                "reviewer"
+              ],
+              "acts": false,
               "contributor": "bot@example.org",
               "model": "claude-fable",
-              "reviewer": "",
-              "reviewer_by_default": false,
+              "reviewer": "pat@example.org",
+              "reviewer_by_default": true,
+              "subproject": null,
+              "references": [],
+              "stands": "here",
+              "reviewed": true,
               "from": [
                 "b2c9"
               ]
@@ -179,23 +185,151 @@
             "authorisation": null,
             "linkage": null,
             "model": {
-              "commit": "b16817c",
+              "commit": "b16817cda3528588ee33642676fbb623a598baed",
               "gate": "design",
               "stated": "claude-fable",
               "trailer": "claude-sonnet-5",
               "reading": "differs"
             }
           }
+        ],
+        "commits": [
+          {
+            "hash": "b16817cda3528588ee33642676fbb623a598baed",
+            "subject": "Record the leaf at design",
+            "date": "2026-09-02",
+            "author_time": "2026-09-02T12:00:00Z",
+            "author": {
+              "name": "Corpus Agent",
+              "email": "bot@example.org"
+            },
+            "committer": {
+              "name": "Corpus Agent",
+              "email": "bot@example.org"
+            },
+            "parents": [
+              "7b153ea4ad537389641c99ba775224eb0ce42a3a"
+            ],
+            "trailers": [
+              "Model: claude-sonnet-5"
+            ],
+            "files": [
+              {
+                "path": ".tableaux/status/b2c9.yaml",
+                "change": "changed"
+              }
+            ]
+          }
+        ],
+        "commands": [
+          {
+            "text": "git show --no-patch --format='%as %H %ae %ce%n%(trailers)' b16817cda3528588ee33642676fbb623a598baed",
+            "comment": "shows the finding"
+          }
         ]
       }
     ],
-    "errors": 0,
-    "warnings": 1,
-    "information": 0,
-    "most": {
-      "email": "olive@example.org",
-      "count": 1
-    }
+    "silent": [
+      {
+        "key": "P5",
+        "rule": "P5",
+        "kind": "An undetermined trunk"
+      },
+      {
+        "key": "R9",
+        "rule": "R9",
+        "kind": "An unmet requirement"
+      },
+      {
+        "key": "R12",
+        "rule": "R12",
+        "kind": "A requirement on what a junction reads"
+      },
+      {
+        "key": "R13",
+        "rule": "R13",
+        "kind": "A requirement its commit alone leaves unmet"
+      },
+      {
+        "key": "J8",
+        "rule": "J8",
+        "kind": "A subproject the tool cannot read"
+      },
+      {
+        "key": "J9",
+        "rule": "J9",
+        "kind": "A subproject task that does not exist"
+      },
+      {
+        "key": "J13",
+        "rule": "J13",
+        "kind": "A commit off the subproject's trunk"
+      },
+      {
+        "key": "J14",
+        "rule": "J14",
+        "kind": "A malformed commit"
+      },
+      {
+        "key": "J15",
+        "rule": "J15",
+        "kind": "An absolute URL without a commit"
+      },
+      {
+        "key": "J16",
+        "rule": "J16",
+        "kind": "A commit on a same-repository path"
+      },
+      {
+        "key": "J17",
+        "rule": "J17",
+        "kind": "A commit off the submodule's pin"
+      },
+      {
+        "key": "H1",
+        "rule": "H1",
+        "kind": "A trailer that names nothing"
+      },
+      {
+        "key": "H2",
+        "rule": "H2",
+        "kind": "A review from the wrong hand"
+      },
+      {
+        "key": "H4",
+        "rule": "H4",
+        "kind": "A hand-off the history implies"
+      },
+      {
+        "key": "H5",
+        "rule": "H5",
+        "kind": "A stale hand-off"
+      },
+      {
+        "key": "H6",
+        "rule": "H6",
+        "kind": "No model trailer"
+      },
+      {
+        "key": "proposed",
+        "rule": "",
+        "kind": "A proposed task"
+      },
+      {
+        "key": "stale",
+        "rule": "",
+        "kind": "A stale status"
+      }
+    ]
   },
-  "diagnostics": []
+  "diagnostics": [
+    {
+      "severity": "warning",
+      "code": "H3",
+      "task": "b2c9",
+      "gate": "design",
+      "commit": "b16817cda3528588ee33642676fbb623a598baed",
+      "message": "Model claude-sonnet-5 is outside the stated model claude-fable"
+    }
+  ]
 }

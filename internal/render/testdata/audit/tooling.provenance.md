@@ -1,188 +1,155 @@
 # Audit
 
-**Where do files and history disagree?** Tableaux tooling · ref `main` at `3cdae52`, 2026-10-05 · stale 7 days · level provenance
+**Where do files and history disagree?** Tableaux tooling · ref `corpus/tooling` at `50a373b`, 2026-10-17 · stale 7 days · level provenance
 
 Legend: `tabloio gates`.
 
-**1 error, 3 warnings, 28 items of information**: 32 findings in 8 rows.
+**0 errors, 13 warnings, 23 items of information**: 36 findings in 7 rows.
 
 | Rule | Severity | Task | Gate | File | Message | Action | Resolver |
 |---|---|---|---|---|---|---|---|
-| S11 | error | `e3cb` Schema files | 🧱 implementation | `status/e3cb.yaml` | The status stands at 📏 unit and passes 🧱 implementation, whose reviewer is noreply@anthropic.com; no commit carries the trailer `Reviewed: e3cb implementation`. `fbe3c97` writes that line in its body, not among its trailers | Review: commit `Reviewed: e3cb implementation` | noreply@anthropic.com |
-| H3 | warning | `437e` `bc63` | 📝 defined | `tasks/437e.yaml`, `tasks/bc63.yaml` | `320cf2b` edits both task files under `Model: claude-fable-5-1`; the junction states `claude-haiku` | Revise the file | nbyoung@nbyoung.com |
-| H3 | warning | `ac33` Agent identity | 📝 defined | `tasks/ac33.yaml` | `018814a` edits the task file under `Model: claude-fable-5-1`; the junction states `claude-haiku` | Revise the file | nbyoung@nbyoung.com |
-| H4 | information | `99f0` `05a9` `a9ce` `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` | 📌 mockup | `status/<id>.yaml` | The contributor's `5958858` is the newest event and the status states no 👓 review; nbyoung@nbyoung.com may have a mockup to review | Record the hand-off: the reason 👓 review when the work is done; or work on | noreply@anthropic.com |
-| H4 | information | `ac33` `9f3f` `7166` | 🧱 implementation | `status/<id>.yaml` | The contributor's status commit is the newest event (`6762222`, `43d68e4`, `d9396b4`) and the status states no 👓 review; nbyoung@nbyoung.com, the assignee, reviews | Record the hand-off: the reason 👓 review when the work is done; or work on | noreply@anthropic.com |
-| H4 | information | `e9c6` Abstract views | 🧱 implementation | `status/e9c6.yaml` | The contributor's `879b447` is the newest event and the status states no 👓 review; the contributor is its own reviewer here | Record the hand-off: the reason 👓 review when the work is done; or work on | noreply@anthropic.com |
-| H4 | information | `fcec` Conformance corpus | 📏 unit | `status/fcec.yaml` | The contributor's `60495c2` is the newest event and the status states no 👓 review; the contributor is its own reviewer here | Record the hand-off: the reason 👓 review when the work is done; or work on | noreply@anthropic.com |
-| H4 | information | `c2ad` `e3cb` `7861` | 🌍 validate | `status/<id>.yaml` | The contributor's status commit is the newest event (`3d8ce0e`, `5cbec7c`, `c6f2655`) and the status states no 👓 review; nbyoung@nbyoung.com may have a validation to review | Record the hand-off: the reason 👓 review when the work is done; or work on | noreply@anthropic.com |
+| R9 | warning | `6103` `c6e8` `595e` |  | `.tableaux/tasks/6103.yaml`, `.tableaux/tasks/c6e8.yaml`, `.tableaux/tasks/595e.yaml` | the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function | Await `77b2` at 🧱 implementation | nbyoung@nbyoung.com |
+| H3 | warning | `e9c6` `7166` | 🧱 implementation |  | Model claude-opus-5-5 is outside the stated model claude-sonnet |  | noreply@anthropic.com |
+|  | warning | `ac33` `9f3f` | 📐 design | `.tableaux/status/ac33.yaml`, `.tableaux/status/9f3f.yaml` | The status dates from 2026-09-30, more than 7 days before 2026-10-17 | Reaffirm: commit `Reaffirmed: <id>` | noreply@anthropic.com |
+|  | warning | `7166` Language clarifications | 📐 design | `.tableaux/status/7166.yaml` | The status dates from 2026-10-07, more than 7 days before 2026-10-17 | Reaffirm: commit `Reaffirmed: 7166` | noreply@anthropic.com |
+|  | warning | `c2ad` `fcec` `7861` | 🧱 implementation | `.tableaux/status/c2ad.yaml`, `.tableaux/status/fcec.yaml`, `.tableaux/status/7861.yaml` | The status dates from 2026-09-30, more than 7 days before 2026-10-17 | Reaffirm: commit `Reaffirmed: <id>` | noreply@anthropic.com |
+|  | warning | `e9c6` Abstract views | 🧱 implementation | `.tableaux/status/e9c6.yaml` | The status dates from 2026-10-05, more than 7 days before 2026-10-17 | Reaffirm: commit `Reaffirmed: e9c6` | noreply@anthropic.com |
+|  | warning | `e3cb` Schema files | 📏 unit | `.tableaux/status/e3cb.yaml` | The status dates from 2026-09-30, more than 7 days before 2026-10-17 | Reaffirm: commit `Reaffirmed: e3cb` | noreply@anthropic.com |
 
-**Most to resolve:** noreply@anthropic.com, 29 of 32.
+**Most to resolve:** noreply@anthropic.com, 16 of 36.
 
-## S11, error: `e3cb` at 🧱 implementation
+## R9, warning: `6103` `c6e8` `595e`
 
-**Rule.** "A validator rejects a status whose gate passes a reviewed junction that has no such commit." [README.md, Status](README.md#status)
+**Rule.** "A validator warns of an unmet requirement" [README.md, Tasks](https://github.com/nbyoung/tableaux/blob/main/README.md#tasks)
 
-**The junction.** `e3cb` at 🧱 implementation: contributor noreply@anthropic.com, model `claude-sonnet`, reviewer noreply@anthropic.com, the assignee, from `437e`.
+**The requirement.** `6103`: `77b2` tablo: backend library and plumbing, implementation → implementation, The library and plumbing it calls: unmet.
+
+**The requirement.** `c6e8` `595e`: `77b2` tablo: backend library and plumbing, implementation → implementation, The library it embeds: unmet.
+
+```
+# shows the finding
+git log -1 --format='%as %H %ae' -- .tableaux/tasks/6103.yaml
+```
+
+## H3, warning: `e9c6` `7166` at 🧱 implementation
+
+**Rule.** "the audit reports a commit at the junction whose trailer names a model outside the one stated" [README.md, Junctions](https://github.com/nbyoung/tableaux/blob/main/README.md#junctions)
+
+**The junction.** `e9c6` at 🧱 implementation: contributor noreply@anthropic.com, model `claude-sonnet`, reviewer noreply@anthropic.com, the assignee, from `437e`.
+
+**The junction.** `7166` at 🧱 implementation: contributor noreply@anthropic.com, model `claude-sonnet`, reviewer nbyoung@nbyoung.com, the assignee, from `437e`.
+
+**The model check.** `e9c6`: `ccb3947` at 🧱 implementation, the junction states `claude-sonnet`, the trailer `Model: claude-opus-5-5`: Differs.
+
+**The model check.** `7166`: `56103af` at 🧱 implementation, the junction states `claude-sonnet`, the trailer `Model: claude-opus-5-5`: Differs.
 
 | Commit | Date | Author | Committer | Subject | Trailers |
 |---|---|---|---|---|---|
-| `0529170` | 2026-09-29 | Norman Young, nbyoung@nbyoung.com |  | Accept the schema files design | `Reviewed: e3cb design` |
-| `fbe3c97` | 2026-09-29 | Claude Fable 5.1, noreply@anthropic.com | Norman Young, nbyoung@nbyoung.com | Advance Roles, schema files and evidence past their design reviews | `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>` |
-| `5cbec7c` | 2026-09-30 | Claude Fable 5.1, noreply@anthropic.com |  | Record e3cb at unit, nominal | `Reviewed: e3cb unit`, `Model: claude-sonnet-5-5` |
+| `ccb3947` | 2026-10-05 | Claude Opus 5.5, noreply@anthropic.com |  | Record the abstract views task at its implementation gate | `Reviewed: e9c6 implementation`, `Model: claude-opus-5-5`, `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>` |
+| `56103af` | 2026-10-07 | Claude Opus 5.5, noreply@anthropic.com |  | Note that F7 is resolved in the language clarifications' status | `Model: claude-opus-5-5`, `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>` |
 
 ```
-# shows the finding: three trailers, none for implementation
-git log --format='%h %(trailers:key=Reviewed)' -E --grep='^Reviewed: e3cb '
-
-# resolves it: noreply@anthropic.com, the reviewer, accepts the gate
-git commit --allow-empty -m 'Accept the schema files implementation' \
-    --trailer 'Reviewed: e3cb implementation' --trailer 'Model: <the model that runs>'
+# shows the finding
+git show --no-patch --format='%as %H %ae %ce%n%(trailers)' ccb3947e3deb2f476a8c9c886266b2b4da66c6f6
 ```
 
-## H3, warning: `437e` `bc63` at 📝 defined
+## A stale status, warning: `ac33` `9f3f` at 📐 design
 
-**Rule.** "the audit reports a commit at the junction whose trailer names a model outside the one stated" [README.md, Junctions](README.md#junctions)
+**Rule.** "A review that finds no change reaffirms with an empty commit, so a status is never older than its last confirmation." [README.md, Status](https://github.com/nbyoung/tableaux/blob/main/README.md#status)
 
-**The junction.** `437e` `bc63` at 📝 defined: contributor noreply@anthropic.com, model `claude-haiku`, from `437e`.
+**The status.** `ac33`: 📐 design 🟢 nominal: The model plan-and-record rule (F20) is on the trunk; F1, F2 and F10 remain for design, recorded 2026-09-30 by noreply@anthropic.com.
 
-**The model check.** `437e` `bc63`: `320cf2b` at 📝 defined, the junction states `claude-haiku`, the trailer `Model: claude-fable-5-1`: Differs.
+**The status.** `9f3f`: 📐 design 🟢 nominal: The subproject linkage rule (F3, F5, F12) is on the trunk at language 0.3.0; tablo and the subprojects follow, recorded 2026-09-30 by noreply@anthropic.com.
 
 | Commit | Date | Author | Committer | Subject | Trailers |
 |---|---|---|---|---|---|
-| `320cf2b` | 2026-09-30 | Claude Fable 5.1, noreply@anthropic.com | Norman Young, nbyoung@nbyoung.com | Name a model family per gate (D7) | `Model: claude-fable-5-1` |
+| `6762222` | 2026-09-30 | Claude Fable 5.1, noreply@anthropic.com | Norman Young, nbyoung@nbyoung.com | Advance the agent identity task to its design gate | `Model: claude-fable-5-1`, `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>` |
+| `43d68e4` | 2026-09-30 | Claude Fable 5.1, noreply@anthropic.com |  | Advance the subproject linkage task to its design gate | `Model: claude-fable-5-1`, `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>` |
 
 ```
-# shows the finding: the model on each commit that changes the task files
-git log --format='%h %(trailers:key=Model,valueonly)' -- \
-    .tableaux/tasks/437e.yaml .tableaux/tasks/bc63.yaml
+# shows the finding
+git show --no-patch --format='%as %H %ae %ce%n%(trailers)' 6762222ddffef76008daad27ebe26069ac67cc5d
 
-# resolves it: nbyoung@nbyoung.com, an authority, states the model that ran
-git commit .tableaux/tasks/437e.yaml -m 'State the model that defines the project'
+# resolves it
+git commit --allow-empty --trailer 'Reaffirmed: ac33'
 ```
 
-## H3, warning: `ac33` at 📝 defined
+## A stale status, warning: `7166` at 📐 design
 
-**Rule.** "the audit reports a commit at the junction whose trailer names a model outside the one stated" [README.md, Junctions](README.md#junctions)
+**Rule.** "A review that finds no change reaffirms with an empty commit, so a status is never older than its last confirmation." [README.md, Status](https://github.com/nbyoung/tableaux/blob/main/README.md#status)
 
-**The junction.** `ac33` at 📝 defined: contributor noreply@anthropic.com, model `claude-haiku`, from `437e`.
-
-**The model check.** `ac33`: `018814a` at 📝 defined, the junction states `claude-haiku`, the trailer `Model: claude-fable-5-1`: Differs.
+**The status.** `7166`: 📐 design 🟢 nominal: The trunk clarification (F19), with the order for a linked repository, and the exemption rule (F7) are on the trunk; F9 remains for design, recorded 2026-10-07 by noreply@anthropic.com.
 
 | Commit | Date | Author | Committer | Subject | Trailers |
 |---|---|---|---|---|---|
-| `018814a` | 2026-09-30 | Claude Fable 5.1, noreply@anthropic.com | Norman Young, nbyoung@nbyoung.com | Record the model an agent runs (F20) | `Model: claude-fable-5-1` |
+| `56103af` | 2026-10-07 | Claude Opus 5.5, noreply@anthropic.com |  | Note that F7 is resolved in the language clarifications' status | `Model: claude-opus-5-5`, `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>` |
 
 ```
-# shows the finding: the model on each commit that changes the task file
-git log --format='%h %(trailers:key=Model,valueonly)' -- .tableaux/tasks/ac33.yaml
+# shows the finding
+git show --no-patch --format='%as %H %ae %ce%n%(trailers)' 56103af8cbaf561a90f9fa67fea02053372a4214
 
-# resolves it: nbyoung@nbyoung.com, an authority, states the model that ran
-git commit .tableaux/tasks/ac33.yaml -m 'State the model that defines the agent identity task'
+# resolves it
+git commit --allow-empty --trailer 'Reaffirmed: 7166'
 ```
 
-## H4, information: `99f0` `05a9` `a9ce` `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` at 📌 mockup
+## A stale status, warning: `c2ad` `fcec` `7861` at 🧱 implementation
 
-**Rule.** "it reports, as information, a task whose next junction has a reviewer, whose newest event is the contributor's and whose status states no `review`, since the work may be done or in progress" [README.md, Status](README.md#status)
+**Rule.** "A review that finds no change reaffirms with an empty commit, so a status is never older than its last confirmation." [README.md, Status](https://github.com/nbyoung/tableaux/blob/main/README.md#status)
 
-**The junction.** `99f0` `05a9` `a9ce` `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` at 📌 mockup: contributor noreply@anthropic.com, reviewer nbyoung@nbyoung.com, from `437e`.
+**The status.** `c2ad`: 🧱 implementation 🟢 nominal: The Roles text is on the trunk and covers all seven roles; the validate gate awaits the owner, recorded 2026-09-30 by noreply@anthropic.com.
+
+**The status.** `fcec`: 🧱 implementation 🟢 nominal: The corpus builds and checks clean, with 85 entries on the trunk; all three corrections from the tablo prototypes are in; the unit gate runs the tablo conformance test against it, recorded 2026-09-30 by noreply@anthropic.com.
+
+**The status.** `7861`: 🧱 implementation 🟢 nominal: The full report, its 23 tests and an example over five repositories are on the trunk, recorded 2026-09-30 by noreply@anthropic.com.
 
 | Commit | Date | Author | Committer | Subject | Trailers |
 |---|---|---|---|---|---|
-| `5958858` | 2026-09-29 | Claude Fable 5.1, noreply@anthropic.com | Norman Young, nbyoung@nbyoung.com | Accept the defined gate of the views and mockups |  |
+| `3d8ce0e` | 2026-09-30 | Claude Sonnet 5.5, noreply@anthropic.com |  | Record the Roles task at its implementation gate | `Reviewed: c2ad implementation`, `Model: claude-sonnet-5-5`, `Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>` |
+| `c6f2655` | 2026-09-30 | Claude Sonnet 5.5, noreply@anthropic.com |  | Complete the productivity evidence report | `Reviewed: 7861 implementation`, `Model: claude-sonnet-5-5`, `Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>` |
+| `60495c2` | 2026-09-30 | Claude Sonnet 5.5, noreply@anthropic.com |  | Record all three corpus corrections at implementation | `Reviewed: fcec implementation`, `Model: claude-sonnet-5-5`, `Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>` |
 
 ```
-# shows the finding for one task: its newest event and who made it
-git log -1 --format='%as %h %ae' -- .tableaux/tasks/99f0.yaml .tableaux/status/99f0.yaml
-git log -1 --format='%as %h %ae' -E --grep='^(Authorised|Reaffirmed): 99f0$' --grep='^Reviewed: 99f0 '
+# shows the finding
+git show --no-patch --format='%as %H %ae %ce%n%(trailers)' 3d8ce0eee1e869c75453abba91cae03dec6587ce
 
-# resolves it: noreply@anthropic.com, the contributor, hands the finished work off
-git commit .tableaux/status/99f0.yaml -m 'Mark the task as awaiting review' \
-    --trailer 'Model: <the model that runs>'
+# resolves it
+git commit --allow-empty --trailer 'Reaffirmed: c2ad'
 ```
 
-## H4, information: `ac33` `9f3f` `7166` at 🧱 implementation
+## A stale status, warning: `e9c6` at 🧱 implementation
 
-**Rule.** "it reports, as information, a task whose next junction has a reviewer, whose newest event is the contributor's and whose status states no `review`, since the work may be done or in progress" [README.md, Status](README.md#status)
+**Rule.** "A review that finds no change reaffirms with an empty commit, so a status is never older than its last confirmation." [README.md, Status](https://github.com/nbyoung/tableaux/blob/main/README.md#status)
 
-**The junction.** `ac33` `9f3f` `7166` at 🧱 implementation: contributor noreply@anthropic.com, reviewer nbyoung@nbyoung.com, the assignee.
+**The status.** `e9c6`: 🧱 implementation 🟢 nominal: VIEWS.md defines the ten views on the trunk and agrees with the twenty approved mockups on the gate window; validation checks that tablo and the front ends follow the text, recorded 2026-10-05 by noreply@anthropic.com.
 
 | Commit | Date | Author | Committer | Subject | Trailers |
 |---|---|---|---|---|---|
-| `6762222` | 2026-09-30 | Claude Fable 5.1, noreply@anthropic.com | Norman Young, nbyoung@nbyoung.com | Advance the agent identity task to its design gate |  |
-| `43d68e4` | 2026-09-30 | Claude Fable 5.1, noreply@anthropic.com |  | Advance the subproject linkage task to its design gate |  |
-| `d9396b4` | 2026-09-30 | Claude Fable 5.1, noreply@anthropic.com | Norman Young, nbyoung@nbyoung.com | Advance the language clarifications to their design gate |  |
+| `ccb3947` | 2026-10-05 | Claude Opus 5.5, noreply@anthropic.com |  | Record the abstract views task at its implementation gate | `Reviewed: e9c6 implementation`, `Model: claude-opus-5-5`, `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>` |
 
 ```
-# shows the finding for one task: its newest event and who made it
-git log -1 --format='%as %h %ae' -- .tableaux/tasks/ac33.yaml .tableaux/status/ac33.yaml
-git log -1 --format='%as %h %ae' -E --grep='^(Authorised|Reaffirmed): ac33$' --grep='^Reviewed: ac33 '
+# shows the finding
+git show --no-patch --format='%as %H %ae %ce%n%(trailers)' ccb3947e3deb2f476a8c9c886266b2b4da66c6f6
 
-# resolves it: noreply@anthropic.com, the contributor, hands the finished work off
-git commit .tableaux/status/ac33.yaml -m 'Mark the task as awaiting review' \
-    --trailer 'Model: <the model that runs>'
+# resolves it
+git commit --allow-empty --trailer 'Reaffirmed: e9c6'
 ```
 
-## H4, information: `e9c6` at 🧱 implementation
+## A stale status, warning: `e3cb` at 📏 unit
 
-**Rule.** "it reports, as information, a task whose next junction has a reviewer, whose newest event is the contributor's and whose status states no `review`, since the work may be done or in progress" [README.md, Status](README.md#status)
+**Rule.** "A review that finds no change reaffirms with an empty commit, so a status is never older than its last confirmation." [README.md, Status](https://github.com/nbyoung/tableaux/blob/main/README.md#status)
 
-**The junction.** `e9c6` at 🧱 implementation: contributor noreply@anthropic.com, reviewer noreply@anthropic.com, the assignee.
+**The status.** `e3cb`: 📏 unit 🟢 nominal: schemas/check.sh (files agree with SYNTAX.md, version 0.2.1) and schemas/load.py (files load as JSON Schema 2020-12) pass; every .tableaux file validates, recorded 2026-09-30 by noreply@anthropic.com.
 
 | Commit | Date | Author | Committer | Subject | Trailers |
 |---|---|---|---|---|---|
-| `879b447` | 2026-09-30 | Claude Fable 5.1, noreply@anthropic.com |  | Advance the abstract views task to its design gate |  |
+| `5cbec7c` | 2026-09-30 | Claude Sonnet 5.5, noreply@anthropic.com |  | Record e3cb at unit, nominal | `Reviewed: e3cb unit`, `Model: claude-sonnet-5-5`, `Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>` |
 
 ```
-# shows the finding for one task: its newest event and who made it
-git log -1 --format='%as %h %ae' -- .tableaux/tasks/e9c6.yaml .tableaux/status/e9c6.yaml
-git log -1 --format='%as %h %ae' -E --grep='^(Authorised|Reaffirmed): e9c6$' --grep='^Reviewed: e9c6 '
+# shows the finding
+git show --no-patch --format='%as %H %ae %ce%n%(trailers)' 5cbec7cce7c3cb3bf99f2145713d13ccb0b23d0f
 
-# resolves it: noreply@anthropic.com, the contributor, hands the finished work off
-git commit .tableaux/status/e9c6.yaml -m 'Mark the task as awaiting review' \
-    --trailer 'Model: <the model that runs>'
+# resolves it
+git commit --allow-empty --trailer 'Reaffirmed: e3cb'
 ```
 
-## H4, information: `fcec` at 📏 unit
-
-**Rule.** "it reports, as information, a task whose next junction has a reviewer, whose newest event is the contributor's and whose status states no `review`, since the work may be done or in progress" [README.md, Status](README.md#status)
-
-**The junction.** `fcec` at 📏 unit: contributor noreply@anthropic.com, reviewer noreply@anthropic.com, the assignee.
-
-| Commit | Date | Author | Committer | Subject | Trailers |
-|---|---|---|---|---|---|
-| `60495c2` | 2026-09-30 | Claude Fable 5.1, noreply@anthropic.com |  | Record all three corpus corrections at implementation |  |
-
-```
-# shows the finding for one task: its newest event and who made it
-git log -1 --format='%as %h %ae' -- .tableaux/tasks/fcec.yaml .tableaux/status/fcec.yaml
-git log -1 --format='%as %h %ae' -E --grep='^(Authorised|Reaffirmed): fcec$' --grep='^Reviewed: fcec '
-
-# resolves it: noreply@anthropic.com, the contributor, hands the finished work off
-git commit .tableaux/status/fcec.yaml -m 'Mark the task as awaiting review' \
-    --trailer 'Model: <the model that runs>'
-```
-
-## H4, information: `c2ad` `e3cb` `7861` at 🌍 validate
-
-**Rule.** "it reports, as information, a task whose next junction has a reviewer, whose newest event is the contributor's and whose status states no `review`, since the work may be done or in progress" [README.md, Status](README.md#status)
-
-**The junction.** `c2ad` `e3cb` `7861` at 🌍 validate: contributor noreply@anthropic.com, reviewer nbyoung@nbyoung.com, from `437e`.
-
-| Commit | Date | Author | Committer | Subject | Trailers |
-|---|---|---|---|---|---|
-| `3d8ce0e` | 2026-09-30 | Claude Fable 5.1, noreply@anthropic.com |  | Record the Roles task at its implementation gate |  |
-| `5cbec7c` | 2026-09-30 | Claude Fable 5.1, noreply@anthropic.com |  | Record e3cb at unit, nominal |  |
-| `c6f2655` | 2026-09-30 | Claude Fable 5.1, noreply@anthropic.com |  | Complete the productivity evidence report |  |
-
-```
-# shows the finding for one task: its newest event and who made it
-git log -1 --format='%as %h %ae' -- .tableaux/tasks/c2ad.yaml .tableaux/status/c2ad.yaml
-git log -1 --format='%as %h %ae' -E --grep='^(Authorised|Reaffirmed): c2ad$' --grep='^Reviewed: c2ad '
-
-# resolves it: noreply@anthropic.com, the contributor, hands the finished work off
-git commit .tableaux/status/c2ad.yaml -m 'Mark the task as awaiting review' \
-    --trailer 'Model: <the model that runs>'
-```
-
-Command: `tabloio audit --ref 3cdae52 --stale 7 --level provenance`
+Command: `tabloio audit --ref 50a373b --stale 7 --level provenance`

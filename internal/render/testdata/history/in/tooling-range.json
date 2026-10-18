@@ -2,22 +2,41 @@
   "schema": "tablo/1",
   "command": "history",
   "source": {
-    "ref": "main",
+    "ref": "3cdae52",
+    "dir": ".",
+    "worktree": false,
     "commit": "3cdae527d47d37fdff55bc302c76c017cf91c606",
     "date": "2026-10-05",
     "from": {
-      "ref": "0704a09"
+      "ref": "0704a09",
+      "commit": "0704a0912297b3de0218b821384cf1b9956a44bb"
     },
     "trunk": {
-      "name": null
+      "name": "main",
+      "resolved": "stated"
     },
     "on_trunk": true
   },
   "project": {
+    "tableaux": "0.3.1",
     "root": "437e",
-    "title": "Tableaux tooling"
+    "title": "Tableaux tooling",
+    "owner": "nbyoung@nbyoung.com"
+  },
+  "viewer": {
+    "email": "nbyoung@nbyoung.com",
+    "roles": [
+      "owner",
+      "authority",
+      "assignee",
+      "contributor",
+      "reviewer"
+    ]
   },
   "params": {
+    "task": "437e",
+    "person": null,
+    "role": null,
     "level": "provenance"
   },
   "data": {
@@ -120,12 +139,14 @@
         {
           "key": "overloaded",
           "symbol": "🪫",
-          "synopsis": "The assigned resource is overloaded"
+          "synopsis": "The assigned resource is overloaded",
+          "reserved": false
         },
         {
           "key": "blocked",
           "symbol": "⛔",
-          "synopsis": "An external resource is unavailable"
+          "synopsis": "An external resource is unavailable",
+          "reserved": false
         },
         {
           "key": "review",
@@ -139,31 +160,31 @@
           "key": "person",
           "symbol": "🧑",
           "meaning": "A person contributes",
-          "junction": "Plain; the contributor is a person"
+          "junction": "plain"
         },
         {
           "key": "agent",
           "symbol": "🤖",
           "meaning": "An agent contributes",
-          "junction": "Plain; the junction states a `model`"
+          "junction": "plain"
         },
         {
           "key": "reviewer",
           "symbol": "👀",
           "meaning": "A reviewer accepts",
-          "junction": "Plain; the reviewer accepts the work at the gate"
+          "junction": "plain"
         },
         {
           "key": "subproject",
           "symbol": "🪆",
           "meaning": "A subproject does the work",
-          "junction": "Recursive; another Tableaux project does the work"
+          "junction": "recursive"
         },
         {
           "key": "exempt",
           "symbol": "—",
           "meaning": "The gate does not apply",
-          "junction": "Not applicable; the entry exempts the task from the gate"
+          "junction": "not_applicable"
         }
       ]
     },
@@ -270,18 +291,39 @@
           }
         ],
         "after": {
+          "kind": "recorded",
           "gate": "design",
-          "state": "nominal"
+          "state": "nominal",
+          "reason": "",
+          "note": "VIEWS.md is on the trunk at language 0.3.1; the twenty mockups may start, and implementation puts the text in place",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
         },
+        "unchanged": false,
         "subject_after": {
+          "kind": "rollup",
           "gate": "defined",
           "state": "nominal",
+          "reason": "",
+          "note": "Mockup waits for Abstract views (e9c6) at design",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
           "from": {
             "kind": "rollup",
             "task": {
-              "id": "99f0",
-              "title": "Gate definition view in Markdown"
-            }
+              "id": "bc63",
+              "title": "Method"
+            },
+            "url": "",
+            "pin": "",
+            "gate": ""
           }
         },
         "effect": "",
@@ -298,6 +340,7 @@
           "hash": "879b447a920aad55e698906812350ea7d3785b4c",
           "subject": "Advance the abstract views task to its design gate",
           "date": "2026-09-30",
+          "author_time": "2026-09-30T15:17:53-04:00",
           "author": {
             "name": "Claude Fable 5.1",
             "email": "noreply@anthropic.com"
@@ -306,7 +349,9 @@
             "name": "Claude Fable 5.1",
             "email": "noreply@anthropic.com"
           },
-          "author_time": "2026-09-30T15:17:53-04:00",
+          "parents": [
+            "0704a0912297b3de0218b821384cf1b9956a44bb"
+          ],
           "trailers": [
             "Model: claude-fable-5-1",
             "Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
@@ -321,32 +366,33 @@
       },
       {
         "task": {
-          "id": "6103"
+          "id": "6103",
+          "title": "tabloio: command line, output and input"
         },
         "proposal": false,
         "events": [
           {
             "date": "2026-09-30",
-            "commit": "",
+            "commit": "f3b354977675bfee44ed62ead6a991769b1f7992",
             "by": "noreply@anthropic.com",
             "kind": "status",
             "recorded": {
               "gate": "function",
               "state": "nominal",
               "reason": "",
-              "note": ""
+              "note": "prototype/a3cc renders the four status views as Markdown from tablo's 886d view data, with tests on the weather-station copies"
             },
             "gate": "",
             "pin": null,
             "subproject": {
               "url": "subprojects/tabloio",
               "task": "a3cc",
-              "title": ""
+              "title": "Status renderers"
             }
           },
           {
             "date": "2026-09-30",
-            "commit": "",
+            "commit": "f3b354977675bfee44ed62ead6a991769b1f7992",
             "by": "noreply@anthropic.com",
             "kind": "reviewed",
             "recorded": null,
@@ -355,43 +401,93 @@
             "subproject": {
               "url": "subprojects/tabloio",
               "task": "a3cc",
-              "title": ""
+              "title": "Status renderers"
             }
           }
         ],
-        "effect": "",
+        "after": {
+          "kind": "recorded",
+          "gate": "function",
+          "state": "nominal",
+          "reason": "",
+          "note": "prototype/a3cc renders the four status views as Markdown from tablo's 886d view data, with tests on the weather-station copies",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "accepts",
         "model": "claude-sonnet-5-5",
-        "check": null,
-        "committer": ""
+        "check": {
+          "commit": "f3b354977675bfee44ed62ead6a991769b1f7992",
+          "gate": "function",
+          "stated": "claude-sonnet",
+          "trailer": "claude-sonnet-5-5",
+          "reading": "agrees"
+        },
+        "committer": "",
+        "commit": {
+          "hash": "f3b354977675bfee44ed62ead6a991769b1f7992",
+          "subject": "Record the status renderers prototype at function",
+          "date": "2026-09-30",
+          "author_time": "2026-09-30T15:39:07-04:00",
+          "author": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "parents": [
+            "9f6c7bb0c20f3226432c1105ffe6a848add4ce28"
+          ],
+          "trailers": [
+            "Reviewed: a3cc function",
+            "Model: claude-sonnet-5-5",
+            "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/status/a3cc.yaml",
+              "change": "changed"
+            }
+          ]
+        }
       },
       {
         "task": {
-          "id": "6103"
+          "id": "6103",
+          "title": "tabloio: command line, output and input"
         },
         "proposal": false,
         "events": [
           {
             "date": "2026-09-30",
-            "commit": "",
+            "commit": "7e3ea9aaa493f8ba29f1cce0e437de56a868f4fa",
             "by": "noreply@anthropic.com",
             "kind": "status",
             "recorded": {
               "gate": "function",
               "state": "nominal",
               "reason": "",
-              "note": ""
+              "note": "prototype/c48a renders the authority delegation and task assignment views as Markdown at three levels from tablo prototype 493e data."
             },
             "gate": "",
             "pin": null,
             "subproject": {
               "url": "subprojects/tabloio",
               "task": "c48a",
-              "title": ""
+              "title": "Structural renderers"
             }
           },
           {
             "date": "2026-09-30",
-            "commit": "",
+            "commit": "7e3ea9aaa493f8ba29f1cce0e437de56a868f4fa",
             "by": "noreply@anthropic.com",
             "kind": "reviewed",
             "recorded": null,
@@ -400,43 +496,93 @@
             "subproject": {
               "url": "subprojects/tabloio",
               "task": "c48a",
-              "title": ""
+              "title": "Structural renderers"
             }
           }
         ],
-        "effect": "",
+        "after": {
+          "kind": "recorded",
+          "gate": "function",
+          "state": "nominal",
+          "reason": "",
+          "note": "prototype/c48a renders the authority delegation and task assignment views as Markdown at three levels from tablo prototype 493e data.",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "accepts",
         "model": "claude-sonnet-5-5",
-        "check": null,
-        "committer": ""
+        "check": {
+          "commit": "7e3ea9aaa493f8ba29f1cce0e437de56a868f4fa",
+          "gate": "function",
+          "stated": "claude-sonnet",
+          "trailer": "claude-sonnet-5-5",
+          "reading": "agrees"
+        },
+        "committer": "",
+        "commit": {
+          "hash": "7e3ea9aaa493f8ba29f1cce0e437de56a868f4fa",
+          "subject": "Record the function gate for c48a",
+          "date": "2026-09-30",
+          "author_time": "2026-09-30T15:39:09-04:00",
+          "author": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "parents": [
+            "beb42b735ce0a85154ca5c842be5af5fac20e1dd"
+          ],
+          "trailers": [
+            "Reviewed: c48a function",
+            "Model: claude-sonnet-5-5",
+            "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/status/c48a.yaml",
+              "change": "changed"
+            }
+          ]
+        }
       },
       {
         "task": {
-          "id": "6103"
+          "id": "6103",
+          "title": "tabloio: command line, output and input"
         },
         "proposal": false,
         "events": [
           {
             "date": "2026-09-30",
-            "commit": "",
+            "commit": "3ee2131abfb073e0cf17aaed3b754102574cf2e1",
             "by": "noreply@anthropic.com",
             "kind": "status",
             "recorded": {
               "gate": "function",
               "state": "nominal",
               "reason": "",
-              "note": ""
+              "note": "prototype/9167 renders the history and audit views as Markdown at three levels from tablo 8ed1 view data"
             },
             "gate": "",
             "pin": null,
             "subproject": {
               "url": "subprojects/tabloio",
               "task": "9167",
-              "title": ""
+              "title": "Temporal renderers"
             }
           },
           {
             "date": "2026-09-30",
-            "commit": "",
+            "commit": "3ee2131abfb073e0cf17aaed3b754102574cf2e1",
             "by": "noreply@anthropic.com",
             "kind": "reviewed",
             "recorded": null,
@@ -445,43 +591,93 @@
             "subproject": {
               "url": "subprojects/tabloio",
               "task": "9167",
-              "title": ""
+              "title": "Temporal renderers"
             }
           }
         ],
-        "effect": "",
+        "after": {
+          "kind": "recorded",
+          "gate": "function",
+          "state": "nominal",
+          "reason": "",
+          "note": "prototype/9167 renders the history and audit views as Markdown at three levels from tablo 8ed1 view data",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "accepts",
         "model": "claude-sonnet-5-5",
-        "check": null,
-        "committer": ""
+        "check": {
+          "commit": "3ee2131abfb073e0cf17aaed3b754102574cf2e1",
+          "gate": "function",
+          "stated": "claude-sonnet",
+          "trailer": "claude-sonnet-5-5",
+          "reading": "agrees"
+        },
+        "committer": "",
+        "commit": {
+          "hash": "3ee2131abfb073e0cf17aaed3b754102574cf2e1",
+          "subject": "Record the function gate for 9167",
+          "date": "2026-09-30",
+          "author_time": "2026-09-30T15:39:09-04:00",
+          "author": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "parents": [
+            "8c0ab1a9801b28424b41edf5163d383f571ee56b"
+          ],
+          "trailers": [
+            "Reviewed: 9167 function",
+            "Model: claude-sonnet-5-5",
+            "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/status/9167.yaml",
+              "change": "changed"
+            }
+          ]
+        }
       },
       {
         "task": {
-          "id": "6103"
+          "id": "6103",
+          "title": "tabloio: command line, output and input"
         },
         "proposal": false,
         "events": [
           {
             "date": "2026-09-30",
-            "commit": "",
+            "commit": "00a8dec59fc02ac0bf5ff657a40f011c2152caee",
             "by": "noreply@anthropic.com",
             "kind": "status",
             "recorded": {
               "gate": "function",
               "state": "nominal",
               "reason": "",
-              "note": ""
+              "note": "prototype/e0f7 draws the global tableau in Unicode boxes at a terminal width and keeps columns aligned under three models of emoji and variation-selector width"
             },
             "gate": "",
             "pin": null,
             "subproject": {
               "url": "subprojects/tabloio",
               "task": "e0f7",
-              "title": ""
+              "title": "Text renderers"
             }
           },
           {
             "date": "2026-09-30",
-            "commit": "",
+            "commit": "00a8dec59fc02ac0bf5ff657a40f011c2152caee",
             "by": "noreply@anthropic.com",
             "kind": "reviewed",
             "recorded": null,
@@ -490,43 +686,93 @@
             "subproject": {
               "url": "subprojects/tabloio",
               "task": "e0f7",
-              "title": ""
+              "title": "Text renderers"
             }
           }
         ],
-        "effect": "",
+        "after": {
+          "kind": "recorded",
+          "gate": "function",
+          "state": "nominal",
+          "reason": "",
+          "note": "prototype/e0f7 draws the global tableau in Unicode boxes at a terminal width and keeps columns aligned under three models of emoji and variation-selector width",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "accepts",
         "model": "claude-sonnet-5-5",
-        "check": null,
-        "committer": ""
+        "check": {
+          "commit": "00a8dec59fc02ac0bf5ff657a40f011c2152caee",
+          "gate": "function",
+          "stated": "claude-sonnet",
+          "trailer": "claude-sonnet-5-5",
+          "reading": "agrees"
+        },
+        "committer": "",
+        "commit": {
+          "hash": "00a8dec59fc02ac0bf5ff657a40f011c2152caee",
+          "subject": "Record the function gate for e0f7",
+          "date": "2026-09-30",
+          "author_time": "2026-09-30T15:39:22-04:00",
+          "author": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "parents": [
+            "0737035a6643f739a11fd3a88b9bf0d03b7a501c"
+          ],
+          "trailers": [
+            "Reviewed: e0f7 function",
+            "Model: claude-sonnet-5-5",
+            "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/status/e0f7.yaml",
+              "change": "changed"
+            }
+          ]
+        }
       },
       {
         "task": {
-          "id": "6103"
+          "id": "6103",
+          "title": "tabloio: command line, output and input"
         },
         "proposal": false,
         "events": [
           {
             "date": "2026-09-30",
-            "commit": "",
+            "commit": "c5e669564b7f79233c0187a5373feffe37a61b83",
             "by": "noreply@anthropic.com",
             "kind": "status",
             "recorded": {
               "gate": "function",
               "state": "nominal",
               "reason": "",
-              "note": ""
+              "note": "prototype/b618 composes write-command commits with trailers in a temporary repository and edits status and task files as text"
             },
             "gate": "",
             "pin": null,
             "subproject": {
               "url": "subprojects/tabloio",
               "task": "b618",
-              "title": ""
+              "title": "Write commands"
             }
           },
           {
             "date": "2026-09-30",
-            "commit": "",
+            "commit": "c5e669564b7f79233c0187a5373feffe37a61b83",
             "by": "noreply@anthropic.com",
             "kind": "reviewed",
             "recorded": null,
@@ -535,43 +781,93 @@
             "subproject": {
               "url": "subprojects/tabloio",
               "task": "b618",
-              "title": ""
+              "title": "Write commands"
             }
           }
         ],
-        "effect": "",
+        "after": {
+          "kind": "recorded",
+          "gate": "function",
+          "state": "nominal",
+          "reason": "",
+          "note": "prototype/b618 composes write-command commits with trailers in a temporary repository and edits status and task files as text",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "accepts",
         "model": "claude-sonnet-5-5",
-        "check": null,
-        "committer": ""
+        "check": {
+          "commit": "c5e669564b7f79233c0187a5373feffe37a61b83",
+          "gate": "function",
+          "stated": "claude-sonnet",
+          "trailer": "claude-sonnet-5-5",
+          "reading": "agrees"
+        },
+        "committer": "",
+        "commit": {
+          "hash": "c5e669564b7f79233c0187a5373feffe37a61b83",
+          "subject": "Record the function gate for the write commands",
+          "date": "2026-09-30",
+          "author_time": "2026-09-30T15:39:33-04:00",
+          "author": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "parents": [
+            "f502ddd4bc7a77ac6d975a0d087758d2c0411aec"
+          ],
+          "trailers": [
+            "Reviewed: b618 function",
+            "Model: claude-sonnet-5-5",
+            "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/status/b618.yaml",
+              "change": "changed"
+            }
+          ]
+        }
       },
       {
         "task": {
-          "id": "6103"
+          "id": "6103",
+          "title": "tabloio: command line, output and input"
         },
         "proposal": false,
         "events": [
           {
             "date": "2026-09-30",
-            "commit": "",
+            "commit": "90e66fc4f1f975f48c089027cf5099046e250240",
             "by": "noreply@anthropic.com",
             "kind": "status",
             "recorded": {
               "gate": "function",
               "state": "nominal",
               "reason": "",
-              "note": ""
+              "note": "prototype/e3ed renders the gate and task definition views as Markdown at three levels from tablo view data"
             },
             "gate": "",
             "pin": null,
             "subproject": {
               "url": "subprojects/tabloio",
               "task": "e3ed",
-              "title": ""
+              "title": "Legend and task renderers"
             }
           },
           {
             "date": "2026-09-30",
-            "commit": "",
+            "commit": "90e66fc4f1f975f48c089027cf5099046e250240",
             "by": "noreply@anthropic.com",
             "kind": "reviewed",
             "recorded": null,
@@ -580,43 +876,93 @@
             "subproject": {
               "url": "subprojects/tabloio",
               "task": "e3ed",
-              "title": ""
+              "title": "Legend and task renderers"
             }
           }
         ],
-        "effect": "",
+        "after": {
+          "kind": "recorded",
+          "gate": "function",
+          "state": "nominal",
+          "reason": "",
+          "note": "prototype/e3ed renders the gate and task definition views as Markdown at three levels from tablo view data",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "accepts",
         "model": "claude-sonnet-5-5",
-        "check": null,
-        "committer": ""
+        "check": {
+          "commit": "90e66fc4f1f975f48c089027cf5099046e250240",
+          "gate": "function",
+          "stated": "claude-sonnet",
+          "trailer": "claude-sonnet-5-5",
+          "reading": "agrees"
+        },
+        "committer": "",
+        "commit": {
+          "hash": "90e66fc4f1f975f48c089027cf5099046e250240",
+          "subject": "Record the function gate for e3ed",
+          "date": "2026-09-30",
+          "author_time": "2026-09-30T15:39:39-04:00",
+          "author": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "parents": [
+            "dd5fc67aec0d571c0a4e1d1ae9baac569fb926ef"
+          ],
+          "trailers": [
+            "Reviewed: e3ed function",
+            "Model: claude-sonnet-5-5",
+            "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/status/e3ed.yaml",
+              "change": "changed"
+            }
+          ]
+        }
       },
       {
         "task": {
-          "id": "6103"
+          "id": "6103",
+          "title": "tabloio: command line, output and input"
         },
         "proposal": false,
         "events": [
           {
             "date": "2026-09-30",
-            "commit": "",
+            "commit": "baab0e56e65e136dfdf012fc8654149342b85d2c",
             "by": "noreply@anthropic.com",
             "kind": "status",
             "recorded": {
               "gate": "function",
               "state": "nominal",
               "reason": "",
-              "note": ""
+              "note": "prototype/e4c7 writes the Markdown brief of one queue item from the queue, task and gate views, with the junction model and the commit"
             },
             "gate": "",
             "pin": null,
             "subproject": {
               "url": "subprojects/tabloio",
               "task": "e4c7",
-              "title": ""
+              "title": "Agent briefs"
             }
           },
           {
             "date": "2026-09-30",
-            "commit": "",
+            "commit": "baab0e56e65e136dfdf012fc8654149342b85d2c",
             "by": "noreply@anthropic.com",
             "kind": "reviewed",
             "recorded": null,
@@ -625,43 +971,93 @@
             "subproject": {
               "url": "subprojects/tabloio",
               "task": "e4c7",
-              "title": ""
+              "title": "Agent briefs"
             }
           }
         ],
-        "effect": "",
+        "after": {
+          "kind": "recorded",
+          "gate": "function",
+          "state": "nominal",
+          "reason": "",
+          "note": "prototype/e4c7 writes the Markdown brief of one queue item from the queue, task and gate views, with the junction model and the commit",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "accepts",
         "model": "claude-sonnet-5-5",
-        "check": null,
-        "committer": ""
+        "check": {
+          "commit": "baab0e56e65e136dfdf012fc8654149342b85d2c",
+          "gate": "function",
+          "stated": "claude-sonnet",
+          "trailer": "claude-sonnet-5-5",
+          "reading": "agrees"
+        },
+        "committer": "",
+        "commit": {
+          "hash": "baab0e56e65e136dfdf012fc8654149342b85d2c",
+          "subject": "Record the agent briefs at their functional prototype",
+          "date": "2026-09-30",
+          "author_time": "2026-09-30T15:40:07-04:00",
+          "author": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "parents": [
+            "aff22a635aecb15d3df04dd5e3fc6090a9ec096b"
+          ],
+          "trailers": [
+            "Reviewed: e4c7 function",
+            "Model: claude-sonnet-5-5",
+            "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/status/e4c7.yaml",
+              "change": "changed"
+            }
+          ]
+        }
       },
       {
         "task": {
-          "id": "6103"
+          "id": "6103",
+          "title": "tabloio: command line, output and input"
         },
         "proposal": false,
         "events": [
           {
             "date": "2026-09-30",
-            "commit": "",
+            "commit": "92200e035a6af4750f45d92a716c3bf9ed0976e0",
             "by": "noreply@anthropic.com",
             "kind": "status",
             "recorded": {
               "gate": "function",
               "state": "nominal",
               "reason": "",
-              "note": ""
+              "note": "prototype/5ca9 maps each view's focusing flags to `tablo view` arguments and renders Markdown or text to stdout or a file, against a testdata stand-in for tablo"
             },
             "gate": "",
             "pin": null,
             "subproject": {
               "url": "subprojects/tabloio",
               "task": "5ca9",
-              "title": ""
+              "title": "Read commands"
             }
           },
           {
             "date": "2026-09-30",
-            "commit": "",
+            "commit": "92200e035a6af4750f45d92a716c3bf9ed0976e0",
             "by": "noreply@anthropic.com",
             "kind": "reviewed",
             "recorded": null,
@@ -670,18 +1066,148 @@
             "subproject": {
               "url": "subprojects/tabloio",
               "task": "5ca9",
-              "title": ""
+              "title": "Read commands"
             }
           }
         ],
-        "effect": "",
+        "after": {
+          "kind": "recorded",
+          "gate": "function",
+          "state": "nominal",
+          "reason": "",
+          "note": "prototype/5ca9 maps each view's focusing flags to `tablo view` arguments and renders Markdown or text to stdout or a file, against a testdata stand-in for tablo",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "accepts",
         "model": "claude-sonnet-5-5",
-        "check": null,
-        "committer": ""
+        "check": {
+          "commit": "92200e035a6af4750f45d92a716c3bf9ed0976e0",
+          "gate": "function",
+          "stated": "claude-sonnet",
+          "trailer": "claude-sonnet-5-5",
+          "reading": "agrees"
+        },
+        "committer": "",
+        "commit": {
+          "hash": "92200e035a6af4750f45d92a716c3bf9ed0976e0",
+          "subject": "Record the read commands at function",
+          "date": "2026-09-30",
+          "author_time": "2026-09-30T15:40:34-04:00",
+          "author": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "parents": [
+            "b5d3c5b635381fa9fc52d7e89c1b0fdd4038512a"
+          ],
+          "trailers": [
+            "Reviewed: 5ca9 function",
+            "Model: claude-sonnet-5-5",
+            "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/status/5ca9.yaml",
+              "change": "changed"
+            }
+          ]
+        }
       },
       {
         "task": {
-          "id": "6103"
+          "id": "6103",
+          "title": "tabloio: command line, output and input"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-30",
+            "commit": "c2ba78eb2e1ee68435eb363bcfaab587e4544158",
+            "by": "noreply@anthropic.com",
+            "kind": "status",
+            "recorded": {
+              "gate": "defined",
+              "state": "nominal",
+              "reason": "review",
+              "note": "The snapshot workflow design on branch wave/1422 awaits the owner's review at the design gate"
+            },
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tabloio",
+              "task": "1422",
+              "title": "Snapshot workflow"
+            }
+          }
+        ],
+        "after": {
+          "kind": "recorded",
+          "gate": "defined",
+          "state": "nominal",
+          "reason": "review",
+          "note": "The snapshot workflow design on branch wave/1422 awaits the owner's review at the design gate",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "handoff",
+        "model": "claude-opus-5-5",
+        "check": {
+          "commit": "c2ba78eb2e1ee68435eb363bcfaab587e4544158",
+          "gate": "design",
+          "stated": "claude-opus",
+          "trailer": "claude-opus-5-5",
+          "reading": "agrees"
+        },
+        "committer": "",
+        "commit": {
+          "hash": "c2ba78eb2e1ee68435eb363bcfaab587e4544158",
+          "subject": "Record the snapshot workflow design awaiting review",
+          "date": "2026-09-30",
+          "author_time": "2026-09-30T15:41:25-04:00",
+          "author": {
+            "name": "Claude Opus 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Claude Opus 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "parents": [
+            "a75dc0a15c7c659f784491f0f69979f6bbf36b94"
+          ],
+          "trailers": [
+            "Model: claude-opus-5-5",
+            "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/status/1422.yaml",
+              "change": "changed"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "6103",
+          "title": "tabloio: command line, output and input"
         },
         "proposal": false,
         "events": [
@@ -694,22 +1220,55 @@
             "gate": "",
             "pin": {
               "url": "subprojects/tabloio",
-              "old": "62261d4",
-              "new": "7eba1e5"
+              "old": "62261d44cebc01a25d9d524aa400ed3d645ee714",
+              "new": "7eba1e55736fa8e7719b4833b4c8874bfb898d84"
             },
             "subproject": null
           }
         ],
         "after": {
+          "kind": "snapshot",
           "gate": "defined",
           "state": "nominal",
+          "reason": "",
+          "note": "The design is next and no requirement gates it",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
           "from": {
             "kind": "snapshot",
             "task": {
-              "id": "07e0"
+              "id": "07e0",
+              "title": "tabloio"
             },
             "url": "subprojects/tabloio",
-            "pin": "7eba1e5"
+            "pin": "4593882a7b506cd9461fef8f9ccc6a6d653f6390",
+            "gate": "defined"
+          }
+        },
+        "unchanged": false,
+        "subject_after": {
+          "kind": "rollup",
+          "gate": "defined",
+          "state": "nominal",
+          "reason": "",
+          "note": "Mockup waits for Abstract views (e9c6) at design",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
+          "from": {
+            "kind": "rollup",
+            "task": {
+              "id": "bc63",
+              "title": "Method"
+            },
+            "url": "",
+            "pin": "",
+            "gate": ""
           }
         },
         "effect": "",
@@ -720,15 +1279,18 @@
           "hash": "55e32e32d65e9cc04da707b215f4b9009a4806e6",
           "subject": "Advance tabloio to its function prototypes",
           "date": "2026-10-02",
-          "author": {
-            "name": "Norman Young",
-            "email": "nbyoung@nbyoung.com"
-          },
-          "committer": {
-            "name": "Norman Young",
-            "email": "nbyoung@nbyoung.com"
-          },
           "author_time": "2026-10-02T07:07:09-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [
+            "57462c1ccb59013acbae62b5f28f4783050e7189"
+          ],
           "trailers": [
             "Model: claude-opus-5-5",
             "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
@@ -743,7 +1305,8 @@
       },
       {
         "task": {
-          "id": "77b2"
+          "id": "77b2",
+          "title": "tablo: backend library and plumbing"
         },
         "proposal": false,
         "events": [
@@ -756,25 +1319,57 @@
             "gate": "",
             "pin": {
               "url": "subprojects/tablo",
-              "old": "7e94d58",
-              "new": "816f2a0"
+              "old": "7e94d584e14dc45ca312382eacba36ae56870b23",
+              "new": "816f2a032ed21f7d74595ccba2da6f2b763eefb3"
             },
             "subproject": null
           }
         ],
         "after": {
+          "kind": "snapshot",
           "gate": "defined",
           "state": "nominal",
+          "reason": "",
+          "note": "The design is next and no requirement gates it",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
           "from": {
             "kind": "snapshot",
             "task": {
-              "id": "b2c1"
+              "id": "b2c1",
+              "title": "tablo"
             },
             "url": "subprojects/tablo",
-            "pin": "816f2a0"
+            "pin": "00f8f68e9a25b0d9df783f573d50c403813e285a",
+            "gate": "defined"
           }
         },
         "unchanged": true,
+        "subject_after": {
+          "kind": "rollup",
+          "gate": "defined",
+          "state": "nominal",
+          "reason": "",
+          "note": "Mockup waits for Abstract views (e9c6) at design",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
+          "from": {
+            "kind": "rollup",
+            "task": {
+              "id": "bc63",
+              "title": "Method"
+            },
+            "url": "",
+            "pin": "",
+            "gate": ""
+          }
+        },
         "effect": "",
         "model": "claude-opus-5-5",
         "check": null,
@@ -783,6 +1378,7 @@
           "hash": "fb8c0b2b527789760956b0a238c5f07b97c7f277",
           "subject": "Advance the subprojects to the eyeglasses review symbol",
           "date": "2026-10-02",
+          "author_time": "2026-10-02T07:12:40-04:00",
           "author": {
             "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
@@ -791,12 +1387,18 @@
             "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
           },
-          "author_time": "2026-10-02T07:12:40-04:00",
+          "parents": [
+            "55e32e32d65e9cc04da707b215f4b9009a4806e6"
+          ],
           "trailers": [
             "Model: claude-opus-5-5",
             "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
           ],
           "files": [
+            {
+              "path": "subprojects/tableaud",
+              "change": "pin"
+            },
             {
               "path": "subprojects/tablo",
               "change": "pin"
@@ -808,17 +1410,14 @@
             {
               "path": "subprojects/tablotui",
               "change": "pin"
-            },
-            {
-              "path": "subprojects/tableaud",
-              "change": "pin"
             }
           ]
         }
       },
       {
         "task": {
-          "id": "6103"
+          "id": "6103",
+          "title": "tabloio: command line, output and input"
         },
         "proposal": false,
         "events": [
@@ -831,25 +1430,57 @@
             "gate": "",
             "pin": {
               "url": "subprojects/tabloio",
-              "old": "7eba1e5",
-              "new": "581ae98"
+              "old": "7eba1e55736fa8e7719b4833b4c8874bfb898d84",
+              "new": "581ae98ea2fc8fed90956237c5ac959cb3a25b59"
             },
             "subproject": null
           }
         ],
         "after": {
+          "kind": "snapshot",
           "gate": "defined",
           "state": "nominal",
+          "reason": "",
+          "note": "The design is next and no requirement gates it",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
           "from": {
             "kind": "snapshot",
             "task": {
-              "id": "07e0"
+              "id": "07e0",
+              "title": "tabloio"
             },
             "url": "subprojects/tabloio",
-            "pin": "581ae98"
+            "pin": "4593882a7b506cd9461fef8f9ccc6a6d653f6390",
+            "gate": "defined"
           }
         },
         "unchanged": true,
+        "subject_after": {
+          "kind": "rollup",
+          "gate": "defined",
+          "state": "nominal",
+          "reason": "",
+          "note": "Mockup waits for Abstract views (e9c6) at design",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
+          "from": {
+            "kind": "rollup",
+            "task": {
+              "id": "bc63",
+              "title": "Method"
+            },
+            "url": "",
+            "pin": "",
+            "gate": ""
+          }
+        },
         "effect": "",
         "model": "claude-opus-5-5",
         "check": null,
@@ -858,6 +1489,7 @@
           "hash": "fb8c0b2b527789760956b0a238c5f07b97c7f277",
           "subject": "Advance the subprojects to the eyeglasses review symbol",
           "date": "2026-10-02",
+          "author_time": "2026-10-02T07:12:40-04:00",
           "author": {
             "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
@@ -866,12 +1498,18 @@
             "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
           },
-          "author_time": "2026-10-02T07:12:40-04:00",
+          "parents": [
+            "55e32e32d65e9cc04da707b215f4b9009a4806e6"
+          ],
           "trailers": [
             "Model: claude-opus-5-5",
             "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
           ],
           "files": [
+            {
+              "path": "subprojects/tableaud",
+              "change": "pin"
+            },
             {
               "path": "subprojects/tablo",
               "change": "pin"
@@ -883,17 +1521,14 @@
             {
               "path": "subprojects/tablotui",
               "change": "pin"
-            },
-            {
-              "path": "subprojects/tableaud",
-              "change": "pin"
             }
           ]
         }
       },
       {
         "task": {
-          "id": "c6e8"
+          "id": "c6e8",
+          "title": "tablotui: terminal user interface"
         },
         "proposal": false,
         "events": [
@@ -906,25 +1541,57 @@
             "gate": "",
             "pin": {
               "url": "subprojects/tablotui",
-              "old": "159fdab",
-              "new": "dbfb8e3"
+              "old": "159fdab1af6dd0c7eda1e629714d1d00d36477c9",
+              "new": "dbfb8e37729f615015908c58638e3090125c62e7"
             },
             "subproject": null
           }
         ],
         "after": {
+          "kind": "snapshot",
           "gate": "defined",
           "state": "nominal",
+          "reason": "",
+          "note": "The functional prototype is next and no requirement gates it",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
           "from": {
             "kind": "snapshot",
             "task": {
-              "id": "40e8"
+              "id": "40e8",
+              "title": "tablotui"
             },
             "url": "subprojects/tablotui",
-            "pin": "dbfb8e3"
+            "pin": "a2878b56d03e59ee658dded60603f54d19779ba4",
+            "gate": "defined"
           }
         },
         "unchanged": true,
+        "subject_after": {
+          "kind": "rollup",
+          "gate": "defined",
+          "state": "nominal",
+          "reason": "",
+          "note": "Mockup waits for Abstract views (e9c6) at design",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
+          "from": {
+            "kind": "rollup",
+            "task": {
+              "id": "bc63",
+              "title": "Method"
+            },
+            "url": "",
+            "pin": "",
+            "gate": ""
+          }
+        },
         "effect": "",
         "model": "claude-opus-5-5",
         "check": null,
@@ -933,6 +1600,7 @@
           "hash": "fb8c0b2b527789760956b0a238c5f07b97c7f277",
           "subject": "Advance the subprojects to the eyeglasses review symbol",
           "date": "2026-10-02",
+          "author_time": "2026-10-02T07:12:40-04:00",
           "author": {
             "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
@@ -941,12 +1609,18 @@
             "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
           },
-          "author_time": "2026-10-02T07:12:40-04:00",
+          "parents": [
+            "55e32e32d65e9cc04da707b215f4b9009a4806e6"
+          ],
           "trailers": [
             "Model: claude-opus-5-5",
             "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
           ],
           "files": [
+            {
+              "path": "subprojects/tableaud",
+              "change": "pin"
+            },
             {
               "path": "subprojects/tablo",
               "change": "pin"
@@ -958,17 +1632,14 @@
             {
               "path": "subprojects/tablotui",
               "change": "pin"
-            },
-            {
-              "path": "subprojects/tableaud",
-              "change": "pin"
             }
           ]
         }
       },
       {
         "task": {
-          "id": "595e"
+          "id": "595e",
+          "title": "tableaud: local daemon and HTML"
         },
         "proposal": false,
         "events": [
@@ -981,25 +1652,57 @@
             "gate": "",
             "pin": {
               "url": "subprojects/tableaud",
-              "old": "2061a7f",
-              "new": "b06cad0"
+              "old": "2061a7fdec9259a8bbbc697e3254e56b7893296d",
+              "new": "b06cad000031d9b8bff0a1e115cf2d60ce4b6a4d"
             },
             "subproject": null
           }
         ],
         "after": {
+          "kind": "snapshot",
           "gate": "defined",
           "state": "nominal",
+          "reason": "",
+          "note": "The functional prototype is next and no requirement gates it",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
           "from": {
             "kind": "snapshot",
             "task": {
-              "id": "8608"
+              "id": "8608",
+              "title": "tableaud"
             },
             "url": "subprojects/tableaud",
-            "pin": "b06cad0"
+            "pin": "e6ec4ecc8c30fbaf85a392f186cc0b9caa8e4c8e",
+            "gate": "defined"
           }
         },
         "unchanged": true,
+        "subject_after": {
+          "kind": "rollup",
+          "gate": "defined",
+          "state": "nominal",
+          "reason": "",
+          "note": "Mockup waits for Abstract views (e9c6) at design",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
+          "from": {
+            "kind": "rollup",
+            "task": {
+              "id": "bc63",
+              "title": "Method"
+            },
+            "url": "",
+            "pin": "",
+            "gate": ""
+          }
+        },
         "effect": "",
         "model": "claude-opus-5-5",
         "check": null,
@@ -1008,6 +1711,7 @@
           "hash": "fb8c0b2b527789760956b0a238c5f07b97c7f277",
           "subject": "Advance the subprojects to the eyeglasses review symbol",
           "date": "2026-10-02",
+          "author_time": "2026-10-02T07:12:40-04:00",
           "author": {
             "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
@@ -1016,12 +1720,18 @@
             "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
           },
-          "author_time": "2026-10-02T07:12:40-04:00",
+          "parents": [
+            "55e32e32d65e9cc04da707b215f4b9009a4806e6"
+          ],
           "trailers": [
             "Model: claude-opus-5-5",
             "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
           ],
           "files": [
+            {
+              "path": "subprojects/tableaud",
+              "change": "pin"
+            },
             {
               "path": "subprojects/tablo",
               "change": "pin"
@@ -1033,17 +1743,14 @@
             {
               "path": "subprojects/tablotui",
               "change": "pin"
-            },
-            {
-              "path": "subprojects/tableaud",
-              "change": "pin"
             }
           ]
         }
       },
       {
         "task": {
-          "id": "77b2"
+          "id": "77b2",
+          "title": "tablo: backend library and plumbing"
         },
         "proposal": false,
         "events": [
@@ -1056,25 +1763,57 @@
             "gate": "",
             "pin": {
               "url": "subprojects/tablo",
-              "old": "816f2a0",
-              "new": "00f8f68"
+              "old": "816f2a032ed21f7d74595ccba2da6f2b763eefb3",
+              "new": "00f8f68e9a25b0d9df783f573d50c403813e285a"
             },
             "subproject": null
           }
         ],
         "after": {
+          "kind": "snapshot",
           "gate": "defined",
           "state": "nominal",
+          "reason": "",
+          "note": "The design is next and no requirement gates it",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
           "from": {
             "kind": "snapshot",
             "task": {
-              "id": "b2c1"
+              "id": "b2c1",
+              "title": "tablo"
             },
             "url": "subprojects/tablo",
-            "pin": "00f8f68"
+            "pin": "00f8f68e9a25b0d9df783f573d50c403813e285a",
+            "gate": "defined"
           }
         },
         "unchanged": true,
+        "subject_after": {
+          "kind": "rollup",
+          "gate": "defined",
+          "state": "nominal",
+          "reason": "",
+          "note": "Mockup waits for Abstract views (e9c6) at design",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
+          "from": {
+            "kind": "rollup",
+            "task": {
+              "id": "bc63",
+              "title": "Method"
+            },
+            "url": "",
+            "pin": "",
+            "gate": ""
+          }
+        },
         "effect": "",
         "model": "claude-opus-5-5",
         "check": null,
@@ -1083,6 +1822,7 @@
           "hash": "552d38fd8adf40e41b39f65d5904e6fc6a88b265",
           "subject": "Advance the subprojects to the wrench, brick, ruler and link gate symbols",
           "date": "2026-10-02",
+          "author_time": "2026-10-02T07:34:57-04:00",
           "author": {
             "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
@@ -1091,12 +1831,18 @@
             "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
           },
-          "author_time": "2026-10-02T07:34:57-04:00",
+          "parents": [
+            "767792c82344077611a902cd5e92778ca93895e7"
+          ],
           "trailers": [
             "Model: claude-opus-5-5",
             "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
           ],
           "files": [
+            {
+              "path": "subprojects/tableaud",
+              "change": "pin"
+            },
             {
               "path": "subprojects/tablo",
               "change": "pin"
@@ -1108,17 +1854,14 @@
             {
               "path": "subprojects/tablotui",
               "change": "pin"
-            },
-            {
-              "path": "subprojects/tableaud",
-              "change": "pin"
             }
           ]
         }
       },
       {
         "task": {
-          "id": "6103"
+          "id": "6103",
+          "title": "tabloio: command line, output and input"
         },
         "proposal": false,
         "events": [
@@ -1131,25 +1874,57 @@
             "gate": "",
             "pin": {
               "url": "subprojects/tabloio",
-              "old": "581ae98",
-              "new": "cb9ff8f"
+              "old": "581ae98ea2fc8fed90956237c5ac959cb3a25b59",
+              "new": "cb9ff8fd3220d8bd328ddbb98fb0ed9f318f1379"
             },
             "subproject": null
           }
         ],
         "after": {
+          "kind": "snapshot",
           "gate": "defined",
           "state": "nominal",
+          "reason": "",
+          "note": "The design is next and no requirement gates it",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
           "from": {
             "kind": "snapshot",
             "task": {
-              "id": "07e0"
+              "id": "07e0",
+              "title": "tabloio"
             },
             "url": "subprojects/tabloio",
-            "pin": "cb9ff8f"
+            "pin": "4593882a7b506cd9461fef8f9ccc6a6d653f6390",
+            "gate": "defined"
           }
         },
         "unchanged": true,
+        "subject_after": {
+          "kind": "rollup",
+          "gate": "defined",
+          "state": "nominal",
+          "reason": "",
+          "note": "Mockup waits for Abstract views (e9c6) at design",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
+          "from": {
+            "kind": "rollup",
+            "task": {
+              "id": "bc63",
+              "title": "Method"
+            },
+            "url": "",
+            "pin": "",
+            "gate": ""
+          }
+        },
         "effect": "",
         "model": "claude-opus-5-5",
         "check": null,
@@ -1158,6 +1933,7 @@
           "hash": "552d38fd8adf40e41b39f65d5904e6fc6a88b265",
           "subject": "Advance the subprojects to the wrench, brick, ruler and link gate symbols",
           "date": "2026-10-02",
+          "author_time": "2026-10-02T07:34:57-04:00",
           "author": {
             "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
@@ -1166,12 +1942,18 @@
             "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
           },
-          "author_time": "2026-10-02T07:34:57-04:00",
+          "parents": [
+            "767792c82344077611a902cd5e92778ca93895e7"
+          ],
           "trailers": [
             "Model: claude-opus-5-5",
             "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
           ],
           "files": [
+            {
+              "path": "subprojects/tableaud",
+              "change": "pin"
+            },
             {
               "path": "subprojects/tablo",
               "change": "pin"
@@ -1183,17 +1965,14 @@
             {
               "path": "subprojects/tablotui",
               "change": "pin"
-            },
-            {
-              "path": "subprojects/tableaud",
-              "change": "pin"
             }
           ]
         }
       },
       {
         "task": {
-          "id": "c6e8"
+          "id": "c6e8",
+          "title": "tablotui: terminal user interface"
         },
         "proposal": false,
         "events": [
@@ -1206,25 +1985,57 @@
             "gate": "",
             "pin": {
               "url": "subprojects/tablotui",
-              "old": "dbfb8e3",
-              "new": "334df71"
+              "old": "dbfb8e37729f615015908c58638e3090125c62e7",
+              "new": "334df71e592de6545270557bdbc38d52c43238dc"
             },
             "subproject": null
           }
         ],
         "after": {
+          "kind": "snapshot",
           "gate": "defined",
           "state": "nominal",
+          "reason": "",
+          "note": "The functional prototype is next and no requirement gates it",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
           "from": {
             "kind": "snapshot",
             "task": {
-              "id": "40e8"
+              "id": "40e8",
+              "title": "tablotui"
             },
             "url": "subprojects/tablotui",
-            "pin": "334df71"
+            "pin": "a2878b56d03e59ee658dded60603f54d19779ba4",
+            "gate": "defined"
           }
         },
         "unchanged": true,
+        "subject_after": {
+          "kind": "rollup",
+          "gate": "defined",
+          "state": "nominal",
+          "reason": "",
+          "note": "Mockup waits for Abstract views (e9c6) at design",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
+          "from": {
+            "kind": "rollup",
+            "task": {
+              "id": "bc63",
+              "title": "Method"
+            },
+            "url": "",
+            "pin": "",
+            "gate": ""
+          }
+        },
         "effect": "",
         "model": "claude-opus-5-5",
         "check": null,
@@ -1233,6 +2044,7 @@
           "hash": "552d38fd8adf40e41b39f65d5904e6fc6a88b265",
           "subject": "Advance the subprojects to the wrench, brick, ruler and link gate symbols",
           "date": "2026-10-02",
+          "author_time": "2026-10-02T07:34:57-04:00",
           "author": {
             "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
@@ -1241,12 +2053,18 @@
             "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
           },
-          "author_time": "2026-10-02T07:34:57-04:00",
+          "parents": [
+            "767792c82344077611a902cd5e92778ca93895e7"
+          ],
           "trailers": [
             "Model: claude-opus-5-5",
             "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
           ],
           "files": [
+            {
+              "path": "subprojects/tableaud",
+              "change": "pin"
+            },
             {
               "path": "subprojects/tablo",
               "change": "pin"
@@ -1258,17 +2076,14 @@
             {
               "path": "subprojects/tablotui",
               "change": "pin"
-            },
-            {
-              "path": "subprojects/tableaud",
-              "change": "pin"
             }
           ]
         }
       },
       {
         "task": {
-          "id": "595e"
+          "id": "595e",
+          "title": "tableaud: local daemon and HTML"
         },
         "proposal": false,
         "events": [
@@ -1281,25 +2096,57 @@
             "gate": "",
             "pin": {
               "url": "subprojects/tableaud",
-              "old": "b06cad0",
-              "new": "cffbfa6"
+              "old": "b06cad000031d9b8bff0a1e115cf2d60ce4b6a4d",
+              "new": "cffbfa66a5eada8a8262c105353ba158f55a9129"
             },
             "subproject": null
           }
         ],
         "after": {
+          "kind": "snapshot",
           "gate": "defined",
           "state": "nominal",
+          "reason": "",
+          "note": "The functional prototype is next and no requirement gates it",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
           "from": {
             "kind": "snapshot",
             "task": {
-              "id": "8608"
+              "id": "8608",
+              "title": "tableaud"
             },
             "url": "subprojects/tableaud",
-            "pin": "cffbfa6"
+            "pin": "e6ec4ecc8c30fbaf85a392f186cc0b9caa8e4c8e",
+            "gate": "defined"
           }
         },
         "unchanged": true,
+        "subject_after": {
+          "kind": "rollup",
+          "gate": "defined",
+          "state": "nominal",
+          "reason": "",
+          "note": "Mockup waits for Abstract views (e9c6) at design",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
+          "from": {
+            "kind": "rollup",
+            "task": {
+              "id": "bc63",
+              "title": "Method"
+            },
+            "url": "",
+            "pin": "",
+            "gate": ""
+          }
+        },
         "effect": "",
         "model": "claude-opus-5-5",
         "check": null,
@@ -1308,6 +2155,7 @@
           "hash": "552d38fd8adf40e41b39f65d5904e6fc6a88b265",
           "subject": "Advance the subprojects to the wrench, brick, ruler and link gate symbols",
           "date": "2026-10-02",
+          "author_time": "2026-10-02T07:34:57-04:00",
           "author": {
             "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
@@ -1316,12 +2164,18 @@
             "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
           },
-          "author_time": "2026-10-02T07:34:57-04:00",
+          "parents": [
+            "767792c82344077611a902cd5e92778ca93895e7"
+          ],
           "trailers": [
             "Model: claude-opus-5-5",
             "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
           ],
           "files": [
+            {
+              "path": "subprojects/tableaud",
+              "change": "pin"
+            },
             {
               "path": "subprojects/tablo",
               "change": "pin"
@@ -1333,54 +2187,20 @@
             {
               "path": "subprojects/tablotui",
               "change": "pin"
-            },
-            {
-              "path": "subprojects/tableaud",
-              "change": "pin"
             }
           ]
         }
       },
       {
         "task": {
-          "id": "6103"
-        },
-        "proposal": false,
-        "events": [
-          {
-            "date": "2026-09-30",
-            "commit": "",
-            "by": "noreply@anthropic.com",
-            "kind": "status",
-            "recorded": {
-              "gate": "defined",
-              "state": "nominal",
-              "reason": "review",
-              "note": ""
-            },
-            "gate": "",
-            "pin": null,
-            "subproject": {
-              "url": "subprojects/tabloio",
-              "task": "1422",
-              "title": ""
-            }
-          }
-        ],
-        "effect": "",
-        "model": "claude-opus-5-5",
-        "check": null,
-        "committer": ""
-      },
-      {
-        "task": {
-          "id": "6103"
+          "id": "6103",
+          "title": "tabloio: command line, output and input"
         },
         "proposal": false,
         "events": [
           {
             "date": "2026-10-02",
-            "commit": "",
+            "commit": "2b58033993a06140eebd075d21a04b90ef28a7d1",
             "by": "nbyoung@nbyoung.com",
             "kind": "reviewed",
             "recorded": null,
@@ -1389,49 +2209,143 @@
             "subproject": {
               "url": "subprojects/tabloio",
               "task": "1422",
-              "title": ""
+              "title": "Snapshot workflow"
             }
           }
         ],
-        "effect": "",
+        "after": {
+          "kind": "recorded",
+          "gate": "defined",
+          "state": "nominal",
+          "reason": "review",
+          "note": "The snapshot workflow design on branch wave/1422 awaits the owner's review at the design gate",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": true,
+        "subject_after": null,
+        "effect": "accepts",
         "model": "claude-opus-5-5",
         "check": null,
-        "committer": ""
+        "committer": "",
+        "commit": {
+          "hash": "2b58033993a06140eebd075d21a04b90ef28a7d1",
+          "subject": "Accept the snapshot workflow design",
+          "date": "2026-10-02",
+          "author_time": "2026-10-02T13:46:43-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [
+            "cb9ff8fd3220d8bd328ddbb98fb0ed9f318f1379",
+            "c2c2d98e7fa2c65a58a439ad26930f8b28cacd0a"
+          ],
+          "trailers": [
+            "Reviewed: 1422 design",
+            "Model: claude-opus-5-5",
+            "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/status/1422.yaml",
+              "change": "changed"
+            }
+          ]
+        }
       },
       {
         "task": {
-          "id": "6103"
+          "id": "6103",
+          "title": "tabloio: command line, output and input"
         },
         "proposal": false,
         "events": [
           {
             "date": "2026-10-02",
-            "commit": "",
+            "commit": "2b911fd5b13a3528973453963a44f9443ddc0c5b",
             "by": "noreply@anthropic.com",
             "kind": "status",
             "recorded": {
               "gate": "design",
               "state": "nominal",
               "reason": "",
-              "note": ""
+              "note": "design/1422.md is on the trunk with the owner's seven decisions; implementation waits for the Read commands (5ca9) at implementation"
             },
             "gate": "",
             "pin": null,
             "subproject": {
               "url": "subprojects/tabloio",
               "task": "1422",
-              "title": ""
+              "title": "Snapshot workflow"
             }
           }
         ],
+        "after": {
+          "kind": "recorded",
+          "gate": "design",
+          "state": "nominal",
+          "reason": "",
+          "note": "design/1422.md is on the trunk with the owner's seven decisions; implementation waits for the Read commands (5ca9) at implementation",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
         "effect": "",
         "model": "claude-opus-5-5",
-        "check": null,
-        "committer": ""
+        "check": {
+          "commit": "2b911fd5b13a3528973453963a44f9443ddc0c5b",
+          "gate": "design",
+          "stated": "claude-opus",
+          "trailer": "claude-opus-5-5",
+          "reading": "agrees"
+        },
+        "committer": "",
+        "commit": {
+          "hash": "2b911fd5b13a3528973453963a44f9443ddc0c5b",
+          "subject": "Advance the snapshot workflow to its design gate",
+          "date": "2026-10-02",
+          "author_time": "2026-10-02T13:46:53-04:00",
+          "author": {
+            "name": "Claude Opus 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Claude Opus 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "parents": [
+            "2b58033993a06140eebd075d21a04b90ef28a7d1"
+          ],
+          "trailers": [
+            "Model: claude-opus-5-5",
+            "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/status/1422.yaml",
+              "change": "changed"
+            }
+          ]
+        }
       },
       {
         "task": {
-          "id": "6103"
+          "id": "6103",
+          "title": "tabloio: command line, output and input"
         },
         "proposal": false,
         "events": [
@@ -1444,22 +2358,55 @@
             "gate": "",
             "pin": {
               "url": "subprojects/tabloio",
-              "old": "cb9ff8f",
-              "new": "4593882"
+              "old": "cb9ff8fd3220d8bd328ddbb98fb0ed9f318f1379",
+              "new": "4593882a7b506cd9461fef8f9ccc6a6d653f6390"
             },
             "subproject": null
           }
         ],
         "after": {
+          "kind": "snapshot",
           "gate": "defined",
           "state": "nominal",
+          "reason": "",
+          "note": "prototype/e3ed renders the gate and task definition views as Markdown at three levels from tablo view data",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
           "from": {
             "kind": "snapshot",
             "task": {
-              "id": "07e0"
+              "id": "07e0",
+              "title": "tabloio"
             },
             "url": "subprojects/tabloio",
-            "pin": "4593882"
+            "pin": "4593882a7b506cd9461fef8f9ccc6a6d653f6390",
+            "gate": "function"
+          }
+        },
+        "unchanged": false,
+        "subject_after": {
+          "kind": "rollup",
+          "gate": "defined",
+          "state": "nominal",
+          "reason": "",
+          "note": "Mockup waits for Abstract views (e9c6) at design",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
+          "from": {
+            "kind": "rollup",
+            "task": {
+              "id": "bc63",
+              "title": "Method"
+            },
+            "url": "",
+            "pin": "",
+            "gate": ""
           }
         },
         "effect": "",
@@ -1470,6 +2417,7 @@
           "hash": "1c0f04daa18af8b4140e8eab2948466981b65010",
           "subject": "Advance tabloio to its snapshot workflow design",
           "date": "2026-10-02",
+          "author_time": "2026-10-02T13:48:21-04:00",
           "author": {
             "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
@@ -1478,7 +2426,9 @@
             "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
           },
-          "author_time": "2026-10-02T13:48:21-04:00",
+          "parents": [
+            "552d38fd8adf40e41b39f65d5904e6fc6a88b265"
+          ],
           "trailers": [
             "Model: claude-opus-5-5",
             "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
@@ -1493,32 +2443,33 @@
       },
       {
         "task": {
-          "id": "c6e8"
+          "id": "c6e8",
+          "title": "tablotui: terminal user interface"
         },
         "proposal": false,
         "events": [
           {
             "date": "2026-10-02",
-            "commit": "",
+            "commit": "ff14d4e0aa30b8e27d99cfdfab26e11c924a527d",
             "by": "noreply@anthropic.com",
             "kind": "status",
             "recorded": {
               "gate": "function",
               "state": "nominal",
               "reason": "",
-              "note": ""
+              "note": "prototype/518e shows the record, review, reaffirm and authorise actions through Update with a shown commit, confirmation and failure restore; write.go is a verbatim copy of tabloio b618"
             },
             "gate": "",
             "pin": null,
             "subproject": {
               "url": "subprojects/tablotui",
               "task": "518e",
-              "title": ""
+              "title": "Actions"
             }
           },
           {
             "date": "2026-10-02",
-            "commit": "",
+            "commit": "ff14d4e0aa30b8e27d99cfdfab26e11c924a527d",
             "by": "noreply@anthropic.com",
             "kind": "reviewed",
             "recorded": null,
@@ -1527,43 +2478,93 @@
             "subproject": {
               "url": "subprojects/tablotui",
               "task": "518e",
-              "title": ""
+              "title": "Actions"
             }
           }
         ],
-        "effect": "",
+        "after": {
+          "kind": "recorded",
+          "gate": "function",
+          "state": "nominal",
+          "reason": "",
+          "note": "prototype/518e shows the record, review, reaffirm and authorise actions through Update with a shown commit, confirmation and failure restore; write.go is a verbatim copy of tabloio b618",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "accepts",
         "model": "claude-sonnet-5-5",
-        "check": null,
-        "committer": ""
+        "check": {
+          "commit": "ff14d4e0aa30b8e27d99cfdfab26e11c924a527d",
+          "gate": "function",
+          "stated": "claude-sonnet",
+          "trailer": "claude-sonnet-5-5",
+          "reading": "agrees"
+        },
+        "committer": "",
+        "commit": {
+          "hash": "ff14d4e0aa30b8e27d99cfdfab26e11c924a527d",
+          "subject": "Record task 518e at the function gate",
+          "date": "2026-10-02",
+          "author_time": "2026-10-02T14:01:54-04:00",
+          "author": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "parents": [
+            "2702c1632007d75d575a34ce3944651e3b9bd071"
+          ],
+          "trailers": [
+            "Reviewed: 518e function",
+            "Model: claude-sonnet-5-5",
+            "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/status/518e.yaml",
+              "change": "changed"
+            }
+          ]
+        }
       },
       {
         "task": {
-          "id": "c6e8"
+          "id": "c6e8",
+          "title": "tablotui: terminal user interface"
         },
         "proposal": false,
         "events": [
           {
             "date": "2026-10-02",
-            "commit": "",
+            "commit": "358c6e304052bc2d4697fb3085040751a12b7827",
             "by": "noreply@anthropic.com",
             "kind": "status",
             "recorded": {
               "gate": "function",
               "state": "nominal",
               "reason": "",
-              "note": ""
+              "note": "prototype/f394 derives the owner and contributor starting states from view data, with --as, the Git default and a role key that keeps hidden columns."
             },
             "gate": "",
             "pin": null,
             "subproject": {
               "url": "subprojects/tablotui",
               "task": "f394",
-              "title": ""
+              "title": "Role and context"
             }
           },
           {
             "date": "2026-10-02",
-            "commit": "",
+            "commit": "358c6e304052bc2d4697fb3085040751a12b7827",
             "by": "noreply@anthropic.com",
             "kind": "reviewed",
             "recorded": null,
@@ -1572,43 +2573,93 @@
             "subproject": {
               "url": "subprojects/tablotui",
               "task": "f394",
-              "title": ""
+              "title": "Role and context"
             }
           }
         ],
-        "effect": "",
+        "after": {
+          "kind": "recorded",
+          "gate": "function",
+          "state": "nominal",
+          "reason": "",
+          "note": "prototype/f394 derives the owner and contributor starting states from view data, with --as, the Git default and a role key that keeps hidden columns.",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "accepts",
         "model": "claude-sonnet-5-5",
-        "check": null,
-        "committer": ""
+        "check": {
+          "commit": "358c6e304052bc2d4697fb3085040751a12b7827",
+          "gate": "function",
+          "stated": "claude-sonnet",
+          "trailer": "claude-sonnet-5-5",
+          "reading": "agrees"
+        },
+        "committer": "",
+        "commit": {
+          "hash": "358c6e304052bc2d4697fb3085040751a12b7827",
+          "subject": "Record f394 at function",
+          "date": "2026-10-02",
+          "author_time": "2026-10-02T14:02:33-04:00",
+          "author": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "parents": [
+            "3d5a6d1e70b4b6c7780368ac67cfe8933996a2d2"
+          ],
+          "trailers": [
+            "Reviewed: f394 function",
+            "Model: claude-sonnet-5-5",
+            "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/status/f394.yaml",
+              "change": "changed"
+            }
+          ]
+        }
       },
       {
         "task": {
-          "id": "c6e8"
+          "id": "c6e8",
+          "title": "tablotui: terminal user interface"
         },
         "proposal": false,
         "events": [
           {
             "date": "2026-10-02",
-            "commit": "",
+            "commit": "66c04126c5d1e654ca8dbb2067fbbf97e68f9c8e",
             "by": "noreply@anthropic.com",
             "kind": "status",
             "recorded": {
               "gate": "function",
               "state": "nominal",
               "reason": "",
-              "note": ""
+              "note": "prototype/679b renders the global tableau as a Bubble Tea grid with tree expand and collapse, scrolling, a folded gate window and hidden columns kept in a settings file; emoji lines align where the terminal widens U+FE0F"
             },
             "gate": "",
             "pin": null,
             "subproject": {
               "url": "subprojects/tablotui",
               "task": "679b",
-              "title": ""
+              "title": "Tableau grid"
             }
           },
           {
             "date": "2026-10-02",
-            "commit": "",
+            "commit": "66c04126c5d1e654ca8dbb2067fbbf97e68f9c8e",
             "by": "noreply@anthropic.com",
             "kind": "reviewed",
             "recorded": null,
@@ -1617,29 +2668,79 @@
             "subproject": {
               "url": "subprojects/tablotui",
               "task": "679b",
-              "title": ""
+              "title": "Tableau grid"
             }
           }
         ],
-        "effect": "",
+        "after": {
+          "kind": "recorded",
+          "gate": "function",
+          "state": "nominal",
+          "reason": "",
+          "note": "prototype/679b renders the global tableau as a Bubble Tea grid with tree expand and collapse, scrolling, a folded gate window and hidden columns kept in a settings file; emoji lines align where the terminal widens U+FE0F",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "accepts",
         "model": "claude-sonnet-5-5",
-        "check": null,
-        "committer": ""
+        "check": {
+          "commit": "66c04126c5d1e654ca8dbb2067fbbf97e68f9c8e",
+          "gate": "function",
+          "stated": "claude-sonnet",
+          "trailer": "claude-sonnet-5-5",
+          "reading": "agrees"
+        },
+        "committer": "",
+        "commit": {
+          "hash": "66c04126c5d1e654ca8dbb2067fbbf97e68f9c8e",
+          "subject": "Record the function demonstration of the tableau grid",
+          "date": "2026-10-02",
+          "author_time": "2026-10-02T14:03:03-04:00",
+          "author": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "parents": [
+            "4a3e5bd9f12b858c137496c3777f565724c464c0"
+          ],
+          "trailers": [
+            "Reviewed: 679b function",
+            "Model: claude-sonnet-5-5",
+            "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/status/679b.yaml",
+              "change": "changed"
+            }
+          ]
+        }
       },
       {
         "task": {
-          "id": "c6e8"
+          "id": "c6e8",
+          "title": "tablotui: terminal user interface"
         },
         "proposal": false,
         "events": [
           {
             "date": "2026-10-02",
-            "commit": "",
+            "commit": "8fe12c3a63ddc7fb374063deaf4027c312f6e186",
             "by": "noreply@anthropic.com",
             "kind": "status",
             "recorded": {
-              "gate": "function",
-              "state": "nominal",
+              "gate": "",
+              "state": "",
               "reason": "",
               "note": ""
             },
@@ -1648,12 +2749,12 @@
             "subproject": {
               "url": "subprojects/tablotui",
               "task": "171b",
-              "title": ""
+              "title": "Live refresh"
             }
           },
           {
             "date": "2026-10-02",
-            "commit": "",
+            "commit": "8fe12c3a63ddc7fb374063deaf4027c312f6e186",
             "by": "noreply@anthropic.com",
             "kind": "reviewed",
             "recorded": null,
@@ -1662,43 +2763,93 @@
             "subproject": {
               "url": "subprojects/tablotui",
               "task": "171b",
-              "title": ""
+              "title": "Live refresh"
             }
           }
         ],
-        "effect": "",
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "accepts",
         "model": "claude-sonnet-5-5",
-        "check": null,
-        "committer": ""
+        "check": {
+          "commit": "8fe12c3a63ddc7fb374063deaf4027c312f6e186",
+          "gate": "",
+          "stated": "",
+          "trailer": "claude-sonnet-5-5",
+          "reading": "unstated"
+        },
+        "committer": "",
+        "commit": {
+          "hash": "8fe12c3a63ddc7fb374063deaf4027c312f6e186",
+          "subject": "Record the function gate for live refresh",
+          "date": "2026-10-02",
+          "author_time": "2026-10-02T14:03:10-04:00",
+          "author": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "parents": [
+            "d5dec1f8bc2c7b9a0d5c1fb149b7b2ac4b7a6c9e"
+          ],
+          "trailers": [
+            "Reviewed: 171b function",
+            "Model: claude-sonnet-5-5",
+            "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/status/171b.yaml",
+              "change": "changed"
+            }
+          ]
+        }
       },
       {
         "task": {
-          "id": "c6e8"
+          "id": "c6e8",
+          "title": "tablotui: terminal user interface"
         },
         "proposal": false,
         "events": [
           {
             "date": "2026-10-02",
-            "commit": "",
+            "commit": "97991e8da6593e6ee8ad3466b6ecfb6d29f8f45d",
             "by": "noreply@anthropic.com",
             "kind": "status",
             "recorded": {
               "gate": "function",
               "state": "nominal",
               "reason": "",
-              "note": ""
+              "note": "prototype/0afa shows panes that follow a list selection, with exact-size split layouts at three terminal sizes"
             },
             "gate": "",
             "pin": null,
             "subproject": {
               "url": "subprojects/tablotui",
               "task": "0afa",
-              "title": ""
+              "title": "Detail panes"
             }
           },
           {
             "date": "2026-10-02",
-            "commit": "",
+            "commit": "97991e8da6593e6ee8ad3466b6ecfb6d29f8f45d",
             "by": "noreply@anthropic.com",
             "kind": "reviewed",
             "recorded": null,
@@ -1707,18 +2858,68 @@
             "subproject": {
               "url": "subprojects/tablotui",
               "task": "0afa",
-              "title": ""
+              "title": "Detail panes"
             }
           }
         ],
-        "effect": "",
+        "after": {
+          "kind": "recorded",
+          "gate": "function",
+          "state": "nominal",
+          "reason": "",
+          "note": "prototype/0afa shows panes that follow a list selection, with exact-size split layouts at three terminal sizes",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "accepts",
         "model": "claude-sonnet-5-5",
-        "check": null,
-        "committer": ""
+        "check": {
+          "commit": "97991e8da6593e6ee8ad3466b6ecfb6d29f8f45d",
+          "gate": "function",
+          "stated": "claude-sonnet",
+          "trailer": "claude-sonnet-5-5",
+          "reading": "agrees"
+        },
+        "committer": "",
+        "commit": {
+          "hash": "97991e8da6593e6ee8ad3466b6ecfb6d29f8f45d",
+          "subject": "Record the detail panes at function",
+          "date": "2026-10-02",
+          "author_time": "2026-10-02T14:03:24-04:00",
+          "author": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "parents": [
+            "5a97b5a903b3e6ec1b787213e69a43df9c592497"
+          ],
+          "trailers": [
+            "Reviewed: 0afa function",
+            "Model: claude-sonnet-5-5",
+            "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/status/0afa.yaml",
+              "change": "changed"
+            }
+          ]
+        }
       },
       {
         "task": {
-          "id": "c6e8"
+          "id": "c6e8",
+          "title": "tablotui: terminal user interface"
         },
         "proposal": false,
         "events": [
@@ -1731,22 +2932,55 @@
             "gate": "",
             "pin": {
               "url": "subprojects/tablotui",
-              "old": "334df71",
-              "new": "a2878b5"
+              "old": "334df71e592de6545270557bdbc38d52c43238dc",
+              "new": "a2878b56d03e59ee658dded60603f54d19779ba4"
             },
             "subproject": null
           }
         ],
         "after": {
+          "kind": "snapshot",
           "gate": "defined",
           "state": "nominal",
+          "reason": "",
+          "note": "prototype/679b renders the global tableau as a Bubble Tea grid with tree expand and collapse, scrolling, a folded gate window and hidden columns kept in a settings file; emoji lines align where the terminal widens U+FE0F",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
           "from": {
             "kind": "snapshot",
             "task": {
-              "id": "40e8"
+              "id": "40e8",
+              "title": "tablotui"
             },
             "url": "subprojects/tablotui",
-            "pin": "a2878b5"
+            "pin": "a2878b56d03e59ee658dded60603f54d19779ba4",
+            "gate": "function"
+          }
+        },
+        "unchanged": false,
+        "subject_after": {
+          "kind": "rollup",
+          "gate": "defined",
+          "state": "nominal",
+          "reason": "",
+          "note": "Mockup waits for Abstract views (e9c6) at design",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
+          "from": {
+            "kind": "rollup",
+            "task": {
+              "id": "bc63",
+              "title": "Method"
+            },
+            "url": "",
+            "pin": "",
+            "gate": ""
           }
         },
         "effect": "",
@@ -1757,6 +2991,7 @@
           "hash": "fa4551ecdc8d106722ac41b25a9213abc453fab0",
           "subject": "Advance tablotui to its five function prototypes",
           "date": "2026-10-04",
+          "author_time": "2026-10-04T16:38:02-04:00",
           "author": {
             "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
@@ -1765,7 +3000,9 @@
             "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
           },
-          "author_time": "2026-10-04T16:38:02-04:00",
+          "parents": [
+            "1c0f04daa18af8b4140e8eab2948466981b65010"
+          ],
           "trailers": [
             "Model: claude-opus-5-5",
             "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
@@ -1780,32 +3017,33 @@
       },
       {
         "task": {
-          "id": "595e"
+          "id": "595e",
+          "title": "tableaud: local daemon and HTML"
         },
         "proposal": false,
         "events": [
           {
             "date": "2026-10-05",
-            "commit": "",
+            "commit": "1a3f5a2bcce6c320b1cd25f179e743e2956a41c6",
             "by": "noreply@anthropic.com",
             "kind": "status",
             "recorded": {
               "gate": "function",
               "state": "nominal",
               "reason": "",
-              "note": ""
+              "note": "prototype/9a9c shows the history timeline with replayed status and HTMX paging and the audit grouped by resolving action"
             },
             "gate": "",
             "pin": null,
             "subproject": {
               "url": "subprojects/tableaud",
               "task": "9a9c",
-              "title": ""
+              "title": "Temporal templates"
             }
           },
           {
             "date": "2026-10-05",
-            "commit": "",
+            "commit": "1a3f5a2bcce6c320b1cd25f179e743e2956a41c6",
             "by": "noreply@anthropic.com",
             "kind": "reviewed",
             "recorded": null,
@@ -1814,43 +3052,93 @@
             "subproject": {
               "url": "subprojects/tableaud",
               "task": "9a9c",
-              "title": ""
+              "title": "Temporal templates"
             }
           }
         ],
-        "effect": "",
+        "after": {
+          "kind": "recorded",
+          "gate": "function",
+          "state": "nominal",
+          "reason": "",
+          "note": "prototype/9a9c shows the history timeline with replayed status and HTMX paging and the audit grouped by resolving action",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "accepts",
         "model": "claude-sonnet-5-5",
-        "check": null,
-        "committer": ""
+        "check": {
+          "commit": "1a3f5a2bcce6c320b1cd25f179e743e2956a41c6",
+          "gate": "function",
+          "stated": "claude-sonnet",
+          "trailer": "claude-sonnet-5-5",
+          "reading": "agrees"
+        },
+        "committer": "",
+        "commit": {
+          "hash": "1a3f5a2bcce6c320b1cd25f179e743e2956a41c6",
+          "subject": "Record task 9a9c at the function gate",
+          "date": "2026-10-05",
+          "author_time": "2026-10-05T11:26:26-04:00",
+          "author": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "parents": [
+            "9193b3c9b2f2a9bfd97a7dba516925da99eb1241"
+          ],
+          "trailers": [
+            "Reviewed: 9a9c function",
+            "Model: claude-sonnet-5-5",
+            "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/status/9a9c.yaml",
+              "change": "changed"
+            }
+          ]
+        }
       },
       {
         "task": {
-          "id": "595e"
+          "id": "595e",
+          "title": "tableaud: local daemon and HTML"
         },
         "proposal": false,
         "events": [
           {
             "date": "2026-10-05",
-            "commit": "",
+            "commit": "4320f45fa44bf2b7e248cdef95bfde789412a50b",
             "by": "noreply@anthropic.com",
             "kind": "status",
             "recorded": {
               "gate": "function",
               "state": "nominal",
               "reason": "",
-              "note": ""
+              "note": "prototype/44bf renders the four status views from tablo 886d data with HTMX row fragments and link fallbacks"
             },
             "gate": "",
             "pin": null,
             "subproject": {
               "url": "subprojects/tableaud",
               "task": "44bf",
-              "title": ""
+              "title": "Status templates"
             }
           },
           {
             "date": "2026-10-05",
-            "commit": "",
+            "commit": "4320f45fa44bf2b7e248cdef95bfde789412a50b",
             "by": "noreply@anthropic.com",
             "kind": "reviewed",
             "recorded": null,
@@ -1859,24 +3147,74 @@
             "subproject": {
               "url": "subprojects/tableaud",
               "task": "44bf",
-              "title": ""
+              "title": "Status templates"
             }
           }
         ],
-        "effect": "",
+        "after": {
+          "kind": "recorded",
+          "gate": "function",
+          "state": "nominal",
+          "reason": "",
+          "note": "prototype/44bf renders the four status views from tablo 886d data with HTMX row fragments and link fallbacks",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "accepts",
         "model": "claude-sonnet-5-5",
-        "check": null,
-        "committer": ""
+        "check": {
+          "commit": "4320f45fa44bf2b7e248cdef95bfde789412a50b",
+          "gate": "function",
+          "stated": "claude-sonnet",
+          "trailer": "claude-sonnet-5-5",
+          "reading": "agrees"
+        },
+        "committer": "",
+        "commit": {
+          "hash": "4320f45fa44bf2b7e248cdef95bfde789412a50b",
+          "subject": "Record task 44bf at the function gate",
+          "date": "2026-10-05",
+          "author_time": "2026-10-05T11:26:47-04:00",
+          "author": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "parents": [
+            "29f90f5fe43b167f5ff86602c65cdbf13a2c60f0"
+          ],
+          "trailers": [
+            "Reviewed: 44bf function",
+            "Model: claude-sonnet-5-5",
+            "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/status/44bf.yaml",
+              "change": "changed"
+            }
+          ]
+        }
       },
       {
         "task": {
-          "id": "595e"
+          "id": "595e",
+          "title": "tableaud: local daemon and HTML"
         },
         "proposal": false,
         "events": [
           {
             "date": "2026-10-05",
-            "commit": "",
+            "commit": "af1ec7782bbf4d633f0c82ebc98197538e142b19",
             "by": "noreply@anthropic.com",
             "kind": "reviewed",
             "recorded": null,
@@ -1885,43 +3223,82 @@
             "subproject": {
               "url": "subprojects/tableaud",
               "task": "438a",
-              "title": ""
+              "title": "Legend and task templates"
             }
           }
         ],
-        "effect": "",
+        "after": {
+          "kind": "recorded",
+          "gate": "defined",
+          "state": "nominal",
+          "reason": "",
+          "note": "The functional prototype is next and no requirement gates it",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": true,
+        "subject_after": null,
+        "effect": "accepts",
         "model": "claude-sonnet-5-5",
         "check": null,
-        "committer": ""
+        "committer": "",
+        "commit": {
+          "hash": "af1ec7782bbf4d633f0c82ebc98197538e142b19",
+          "subject": "Add the legend and task template prototype 438a",
+          "date": "2026-10-05",
+          "author_time": "2026-10-05T11:26:59-04:00",
+          "author": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "parents": [
+            "cffbfa66a5eada8a8262c105353ba158f55a9129"
+          ],
+          "trailers": [
+            "Reviewed: 438a function",
+            "Model: claude-sonnet-5-5",
+            "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
+          ],
+          "files": []
+        }
       },
       {
         "task": {
-          "id": "595e"
+          "id": "595e",
+          "title": "tableaud: local daemon and HTML"
         },
         "proposal": false,
         "events": [
           {
             "date": "2026-10-05",
-            "commit": "",
+            "commit": "11ab533590594cf66b55a3029ac265bbe98d3e94",
             "by": "noreply@anthropic.com",
             "kind": "status",
             "recorded": {
               "gate": "function",
               "state": "nominal",
               "reason": "",
-              "note": ""
+              "note": "prototype/438a renders the legend and task pages from 493e data with inline and HTMX-fetched folds, no-script fallbacks and resolved links"
             },
             "gate": "",
             "pin": null,
             "subproject": {
               "url": "subprojects/tableaud",
               "task": "438a",
-              "title": ""
+              "title": "Legend and task templates"
             }
           },
           {
             "date": "2026-10-05",
-            "commit": "",
+            "commit": "11ab533590594cf66b55a3029ac265bbe98d3e94",
             "by": "noreply@anthropic.com",
             "kind": "reviewed",
             "recorded": null,
@@ -1930,24 +3307,74 @@
             "subproject": {
               "url": "subprojects/tableaud",
               "task": "438a",
-              "title": ""
+              "title": "Legend and task templates"
             }
           }
         ],
-        "effect": "",
+        "after": {
+          "kind": "recorded",
+          "gate": "function",
+          "state": "nominal",
+          "reason": "",
+          "note": "prototype/438a renders the legend and task pages from 493e data with inline and HTMX-fetched folds, no-script fallbacks and resolved links",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "none",
         "model": "claude-sonnet-5-5",
-        "check": null,
-        "committer": ""
+        "check": {
+          "commit": "11ab533590594cf66b55a3029ac265bbe98d3e94",
+          "gate": "function",
+          "stated": "claude-sonnet",
+          "trailer": "claude-sonnet-5-5",
+          "reading": "agrees"
+        },
+        "committer": "",
+        "commit": {
+          "hash": "11ab533590594cf66b55a3029ac265bbe98d3e94",
+          "subject": "Record task 438a at the function gate",
+          "date": "2026-10-05",
+          "author_time": "2026-10-05T11:26:59-04:00",
+          "author": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "parents": [
+            "af1ec7782bbf4d633f0c82ebc98197538e142b19"
+          ],
+          "trailers": [
+            "Reviewed: 438a function",
+            "Model: claude-sonnet-5-5",
+            "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/status/438a.yaml",
+              "change": "changed"
+            }
+          ]
+        }
       },
       {
         "task": {
-          "id": "595e"
+          "id": "595e",
+          "title": "tableaud: local daemon and HTML"
         },
         "proposal": false,
         "events": [
           {
             "date": "2026-10-05",
-            "commit": "",
+            "commit": "7c98883a0b5d02ffa0d667672ecf39177957d6b3",
             "by": "noreply@anthropic.com",
             "kind": "reviewed",
             "recorded": null,
@@ -1956,43 +3383,82 @@
             "subproject": {
               "url": "subprojects/tableaud",
               "task": "e2b6",
-              "title": ""
+              "title": "Structural templates"
             }
           }
         ],
-        "effect": "",
+        "after": {
+          "kind": "recorded",
+          "gate": "defined",
+          "state": "nominal",
+          "reason": "",
+          "note": "The functional prototype is next and no requirement gates it",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": true,
+        "subject_after": null,
+        "effect": "accepts",
         "model": "claude-sonnet-5-5",
         "check": null,
-        "committer": ""
+        "committer": "",
+        "commit": {
+          "hash": "7c98883a0b5d02ffa0d667672ecf39177957d6b3",
+          "subject": "Add the structural templates prototype e2b6",
+          "date": "2026-10-05",
+          "author_time": "2026-10-05T11:27:00-04:00",
+          "author": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "parents": [
+            "cffbfa66a5eada8a8262c105353ba158f55a9129"
+          ],
+          "trailers": [
+            "Reviewed: e2b6 function",
+            "Model: claude-sonnet-5-5",
+            "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
+          ],
+          "files": []
+        }
       },
       {
         "task": {
-          "id": "595e"
+          "id": "595e",
+          "title": "tableaud: local daemon and HTML"
         },
         "proposal": false,
         "events": [
           {
             "date": "2026-10-05",
-            "commit": "",
+            "commit": "2f2304c6d075b2859d5cdc7b03b0d3561bb0f5a2",
             "by": "noreply@anthropic.com",
             "kind": "status",
             "recorded": {
               "gate": "function",
               "state": "nominal",
               "reason": "",
-              "note": ""
+              "note": "prototype/e2b6 renders the authority and assignment views from tablo data with HTMX fragment expansion, a path-keeping proposed filter and per-email pages"
             },
             "gate": "",
             "pin": null,
             "subproject": {
               "url": "subprojects/tableaud",
               "task": "e2b6",
-              "title": ""
+              "title": "Structural templates"
             }
           },
           {
             "date": "2026-10-05",
-            "commit": "",
+            "commit": "2f2304c6d075b2859d5cdc7b03b0d3561bb0f5a2",
             "by": "noreply@anthropic.com",
             "kind": "reviewed",
             "recorded": null,
@@ -2001,24 +3467,74 @@
             "subproject": {
               "url": "subprojects/tableaud",
               "task": "e2b6",
-              "title": ""
+              "title": "Structural templates"
             }
           }
         ],
-        "effect": "",
+        "after": {
+          "kind": "recorded",
+          "gate": "function",
+          "state": "nominal",
+          "reason": "",
+          "note": "prototype/e2b6 renders the authority and assignment views from tablo data with HTMX fragment expansion, a path-keeping proposed filter and per-email pages",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "none",
         "model": "claude-sonnet-5-5",
-        "check": null,
-        "committer": ""
+        "check": {
+          "commit": "2f2304c6d075b2859d5cdc7b03b0d3561bb0f5a2",
+          "gate": "function",
+          "stated": "claude-sonnet",
+          "trailer": "claude-sonnet-5-5",
+          "reading": "agrees"
+        },
+        "committer": "",
+        "commit": {
+          "hash": "2f2304c6d075b2859d5cdc7b03b0d3561bb0f5a2",
+          "subject": "Record task e2b6 at the function gate",
+          "date": "2026-10-05",
+          "author_time": "2026-10-05T11:27:00-04:00",
+          "author": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "parents": [
+            "7c98883a0b5d02ffa0d667672ecf39177957d6b3"
+          ],
+          "trailers": [
+            "Reviewed: e2b6 function",
+            "Model: claude-sonnet-5-5",
+            "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/status/e2b6.yaml",
+              "change": "changed"
+            }
+          ]
+        }
       },
       {
         "task": {
-          "id": "595e"
+          "id": "595e",
+          "title": "tableaud: local daemon and HTML"
         },
         "proposal": false,
         "events": [
           {
             "date": "2026-10-05",
-            "commit": "",
+            "commit": "7d3306034435e3d642d85e54a575bef931116845",
             "by": "noreply@anthropic.com",
             "kind": "reviewed",
             "recorded": null,
@@ -2027,43 +3543,82 @@
             "subproject": {
               "url": "subprojects/tableaud",
               "task": "49ce",
-              "title": ""
+              "title": "Server"
             }
           }
         ],
-        "effect": "",
+        "after": {
+          "kind": "recorded",
+          "gate": "defined",
+          "state": "nominal",
+          "reason": "",
+          "note": "The functional prototype is next and no requirement gates it",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": true,
+        "subject_after": null,
+        "effect": "accepts",
         "model": "claude-sonnet-5-5",
         "check": null,
-        "committer": ""
+        "committer": "",
+        "commit": {
+          "hash": "7d3306034435e3d642d85e54a575bef931116845",
+          "subject": "Add the server prototype 49ce",
+          "date": "2026-10-05",
+          "author_time": "2026-10-05T11:27:18-04:00",
+          "author": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "parents": [
+            "cffbfa66a5eada8a8262c105353ba158f55a9129"
+          ],
+          "trailers": [
+            "Reviewed: 49ce function",
+            "Model: claude-sonnet-5-5",
+            "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
+          ],
+          "files": []
+        }
       },
       {
         "task": {
-          "id": "595e"
+          "id": "595e",
+          "title": "tableaud: local daemon and HTML"
         },
         "proposal": false,
         "events": [
           {
             "date": "2026-10-05",
-            "commit": "",
+            "commit": "967df1fb2f8918bfd7713eee996c1ae235390f22",
             "by": "noreply@anthropic.com",
             "kind": "status",
             "recorded": {
               "gate": "function",
               "state": "nominal",
               "reason": "",
-              "note": ""
+              "note": "prototype/49ce serves the ten views with a stdlib HEAD and .tableaux watcher, ETag 304 polling through htmx, a Source interface and a loopback Host check"
             },
             "gate": "",
             "pin": null,
             "subproject": {
               "url": "subprojects/tableaud",
               "task": "49ce",
-              "title": ""
+              "title": "Server"
             }
           },
           {
             "date": "2026-10-05",
-            "commit": "",
+            "commit": "967df1fb2f8918bfd7713eee996c1ae235390f22",
             "by": "noreply@anthropic.com",
             "kind": "reviewed",
             "recorded": null,
@@ -2072,24 +3627,74 @@
             "subproject": {
               "url": "subprojects/tableaud",
               "task": "49ce",
-              "title": ""
+              "title": "Server"
             }
           }
         ],
-        "effect": "",
+        "after": {
+          "kind": "recorded",
+          "gate": "function",
+          "state": "nominal",
+          "reason": "",
+          "note": "prototype/49ce serves the ten views with a stdlib HEAD and .tableaux watcher, ETag 304 polling through htmx, a Source interface and a loopback Host check",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "none",
         "model": "claude-sonnet-5-5",
-        "check": null,
-        "committer": ""
+        "check": {
+          "commit": "967df1fb2f8918bfd7713eee996c1ae235390f22",
+          "gate": "function",
+          "stated": "claude-sonnet",
+          "trailer": "claude-sonnet-5-5",
+          "reading": "agrees"
+        },
+        "committer": "",
+        "commit": {
+          "hash": "967df1fb2f8918bfd7713eee996c1ae235390f22",
+          "subject": "Record task 49ce at the function gate",
+          "date": "2026-10-05",
+          "author_time": "2026-10-05T11:27:18-04:00",
+          "author": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "parents": [
+            "7d3306034435e3d642d85e54a575bef931116845"
+          ],
+          "trailers": [
+            "Reviewed: 49ce function",
+            "Model: claude-sonnet-5-5",
+            "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/status/49ce.yaml",
+              "change": "changed"
+            }
+          ]
+        }
       },
       {
         "task": {
-          "id": "595e"
+          "id": "595e",
+          "title": "tableaud: local daemon and HTML"
         },
         "proposal": false,
         "events": [
           {
             "date": "2026-10-05",
-            "commit": "",
+            "commit": "d3fa0f8c9fcfe749a302f55f0b09653a3290c4d4",
             "by": "noreply@anthropic.com",
             "kind": "reviewed",
             "recorded": null,
@@ -2098,43 +3703,82 @@
             "subproject": {
               "url": "subprojects/tableaud",
               "task": "db74",
-              "title": ""
+              "title": "Progressive disclosure"
             }
           }
         ],
-        "effect": "",
+        "after": {
+          "kind": "recorded",
+          "gate": "defined",
+          "state": "nominal",
+          "reason": "",
+          "note": "The functional prototype is next and no requirement gates it",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": true,
+        "subject_after": null,
+        "effect": "accepts",
         "model": "claude-sonnet-5-5",
         "check": null,
-        "committer": ""
+        "committer": "",
+        "commit": {
+          "hash": "d3fa0f8c9fcfe749a302f55f0b09653a3290c4d4",
+          "subject": "Add the progressive disclosure prototype db74",
+          "date": "2026-10-05",
+          "author_time": "2026-10-05T11:28:05-04:00",
+          "author": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "parents": [
+            "cffbfa66a5eada8a8262c105353ba158f55a9129"
+          ],
+          "trailers": [
+            "Reviewed: db74 function",
+            "Model: claude-sonnet-5-5",
+            "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
+          ],
+          "files": []
+        }
       },
       {
         "task": {
-          "id": "595e"
+          "id": "595e",
+          "title": "tableaud: local daemon and HTML"
         },
         "proposal": false,
         "events": [
           {
             "date": "2026-10-05",
-            "commit": "",
+            "commit": "0a2a0b6954a30a018480f817fd8f87469a53cf2d",
             "by": "noreply@anthropic.com",
             "kind": "status",
             "recorded": {
               "gate": "function",
               "state": "nominal",
               "reason": "",
-              "note": ""
+              "note": "One URL carries person, open rows and a column difference from the default gate window; role entry points, hidden markers and a stored choice script"
             },
             "gate": "",
             "pin": null,
             "subproject": {
               "url": "subprojects/tableaud",
               "task": "db74",
-              "title": ""
+              "title": "Progressive disclosure"
             }
           },
           {
             "date": "2026-10-05",
-            "commit": "",
+            "commit": "0a2a0b6954a30a018480f817fd8f87469a53cf2d",
             "by": "noreply@anthropic.com",
             "kind": "reviewed",
             "recorded": null,
@@ -2143,24 +3787,74 @@
             "subproject": {
               "url": "subprojects/tableaud",
               "task": "db74",
-              "title": ""
+              "title": "Progressive disclosure"
             }
           }
         ],
-        "effect": "",
+        "after": {
+          "kind": "recorded",
+          "gate": "function",
+          "state": "nominal",
+          "reason": "",
+          "note": "One URL carries person, open rows and a column difference from the default gate window; role entry points, hidden markers and a stored choice script",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "none",
         "model": "claude-sonnet-5-5",
-        "check": null,
-        "committer": ""
+        "check": {
+          "commit": "0a2a0b6954a30a018480f817fd8f87469a53cf2d",
+          "gate": "function",
+          "stated": "claude-sonnet",
+          "trailer": "claude-sonnet-5-5",
+          "reading": "agrees"
+        },
+        "committer": "",
+        "commit": {
+          "hash": "0a2a0b6954a30a018480f817fd8f87469a53cf2d",
+          "subject": "Record task db74 at the function gate",
+          "date": "2026-10-05",
+          "author_time": "2026-10-05T11:28:05-04:00",
+          "author": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "parents": [
+            "d3fa0f8c9fcfe749a302f55f0b09653a3290c4d4"
+          ],
+          "trailers": [
+            "Reviewed: db74 function",
+            "Model: claude-sonnet-5-5",
+            "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/status/db74.yaml",
+              "change": "changed"
+            }
+          ]
+        }
       },
       {
         "task": {
-          "id": "595e"
+          "id": "595e",
+          "title": "tableaud: local daemon and HTML"
         },
         "proposal": false,
         "events": [
           {
             "date": "2026-10-05",
-            "commit": "",
+            "commit": "9e0855198970fd7362c3b5196ceb1b8c44a0cc4b",
             "by": "noreply@anthropic.com",
             "kind": "reviewed",
             "recorded": null,
@@ -2169,43 +3863,82 @@
             "subproject": {
               "url": "subprojects/tableaud",
               "task": "5a2f",
-              "title": ""
+              "title": "Accessibility and theming"
             }
           }
         ],
-        "effect": "",
+        "after": {
+          "kind": "recorded",
+          "gate": "defined",
+          "state": "nominal",
+          "reason": "",
+          "note": "The functional prototype is next and no requirement gates it",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": true,
+        "subject_after": null,
+        "effect": "accepts",
         "model": "claude-sonnet-5-5",
         "check": null,
-        "committer": ""
+        "committer": "",
+        "commit": {
+          "hash": "9e0855198970fd7362c3b5196ceb1b8c44a0cc4b",
+          "subject": "Add the accessibility and theming prototype 5a2f",
+          "date": "2026-10-05",
+          "author_time": "2026-10-05T11:28:17-04:00",
+          "author": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "parents": [
+            "cffbfa66a5eada8a8262c105353ba158f55a9129"
+          ],
+          "trailers": [
+            "Reviewed: 5a2f function",
+            "Model: claude-sonnet-5-5",
+            "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
+          ],
+          "files": []
+        }
       },
       {
         "task": {
-          "id": "595e"
+          "id": "595e",
+          "title": "tableaud: local daemon and HTML"
         },
         "proposal": false,
         "events": [
           {
             "date": "2026-10-05",
-            "commit": "",
+            "commit": "0c38023efa2ec8082969462a461366fbc4774bd7",
             "by": "noreply@anthropic.com",
             "kind": "status",
             "recorded": {
               "gate": "function",
               "state": "nominal",
               "reason": "",
-              "note": ""
+              "note": "prototype/5a2f shows symbol text alternatives, plain table against treegrid keyboard use, CSS-only light and dark themes with contrast tests, and scrolling against stacked phone layouts"
             },
             "gate": "",
             "pin": null,
             "subproject": {
               "url": "subprojects/tableaud",
               "task": "5a2f",
-              "title": ""
+              "title": "Accessibility and theming"
             }
           },
           {
             "date": "2026-10-05",
-            "commit": "",
+            "commit": "0c38023efa2ec8082969462a461366fbc4774bd7",
             "by": "noreply@anthropic.com",
             "kind": "reviewed",
             "recorded": null,
@@ -2214,43 +3947,93 @@
             "subproject": {
               "url": "subprojects/tableaud",
               "task": "5a2f",
-              "title": ""
+              "title": "Accessibility and theming"
             }
           }
         ],
-        "effect": "",
+        "after": {
+          "kind": "recorded",
+          "gate": "function",
+          "state": "nominal",
+          "reason": "",
+          "note": "prototype/5a2f shows symbol text alternatives, plain table against treegrid keyboard use, CSS-only light and dark themes with contrast tests, and scrolling against stacked phone layouts",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "none",
         "model": "claude-sonnet-5-5",
-        "check": null,
-        "committer": ""
+        "check": {
+          "commit": "0c38023efa2ec8082969462a461366fbc4774bd7",
+          "gate": "function",
+          "stated": "claude-sonnet",
+          "trailer": "claude-sonnet-5-5",
+          "reading": "agrees"
+        },
+        "committer": "",
+        "commit": {
+          "hash": "0c38023efa2ec8082969462a461366fbc4774bd7",
+          "subject": "Record task 5a2f at the function gate",
+          "date": "2026-10-05",
+          "author_time": "2026-10-05T11:28:21-04:00",
+          "author": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "parents": [
+            "9e0855198970fd7362c3b5196ceb1b8c44a0cc4b"
+          ],
+          "trailers": [
+            "Reviewed: 5a2f function",
+            "Model: claude-sonnet-5-5",
+            "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/status/5a2f.yaml",
+              "change": "changed"
+            }
+          ]
+        }
       },
       {
         "task": {
-          "id": "595e"
+          "id": "595e",
+          "title": "tableaud: local daemon and HTML"
         },
         "proposal": false,
         "events": [
           {
             "date": "2026-10-05",
-            "commit": "",
+            "commit": "218d8f35bb43a6c118d0ea4e892e5905ec526910",
             "by": "noreply@anthropic.com",
             "kind": "status",
             "recorded": {
               "gate": "function",
               "state": "nominal",
               "reason": "",
-              "note": ""
+              "note": "prototype/6160 exports every view as a relative-link bundle in three disclosure modes and recommends native details over HTMX fragments or one page per state"
             },
             "gate": "",
             "pin": null,
             "subproject": {
               "url": "subprojects/tableaud",
               "task": "6160",
-              "title": ""
+              "title": "Static export"
             }
           },
           {
             "date": "2026-10-05",
-            "commit": "",
+            "commit": "218d8f35bb43a6c118d0ea4e892e5905ec526910",
             "by": "noreply@anthropic.com",
             "kind": "reviewed",
             "recorded": null,
@@ -2259,18 +4042,68 @@
             "subproject": {
               "url": "subprojects/tableaud",
               "task": "6160",
-              "title": ""
+              "title": "Static export"
             }
           }
         ],
-        "effect": "",
+        "after": {
+          "kind": "recorded",
+          "gate": "function",
+          "state": "nominal",
+          "reason": "",
+          "note": "prototype/6160 exports every view as a relative-link bundle in three disclosure modes and recommends native details over HTMX fragments or one page per state",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "accepts",
         "model": "claude-sonnet-5-5",
-        "check": null,
-        "committer": ""
+        "check": {
+          "commit": "218d8f35bb43a6c118d0ea4e892e5905ec526910",
+          "gate": "function",
+          "stated": "claude-sonnet",
+          "trailer": "claude-sonnet-5-5",
+          "reading": "agrees"
+        },
+        "committer": "",
+        "commit": {
+          "hash": "218d8f35bb43a6c118d0ea4e892e5905ec526910",
+          "subject": "Record task 6160 at the function gate",
+          "date": "2026-10-05",
+          "author_time": "2026-10-05T11:30:28-04:00",
+          "author": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "parents": [
+            "7972eb0e8a0db342afa45f4e8fc4b87b021cd4b8"
+          ],
+          "trailers": [
+            "Reviewed: 6160 function",
+            "Model: claude-sonnet-5-5",
+            "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/status/6160.yaml",
+              "change": "changed"
+            }
+          ]
+        }
       },
       {
         "task": {
-          "id": "595e"
+          "id": "595e",
+          "title": "tableaud: local daemon and HTML"
         },
         "proposal": false,
         "events": [
@@ -2283,22 +4116,55 @@
             "gate": "",
             "pin": {
               "url": "subprojects/tableaud",
-              "old": "cffbfa6",
-              "new": "e6ec4ec"
+              "old": "cffbfa66a5eada8a8262c105353ba158f55a9129",
+              "new": "e6ec4ecc8c30fbaf85a392f186cc0b9caa8e4c8e"
             },
             "subproject": null
           }
         ],
         "after": {
+          "kind": "snapshot",
           "gate": "defined",
           "state": "nominal",
+          "reason": "",
+          "note": "prototype/49ce serves the ten views with a stdlib HEAD and .tableaux watcher, ETag 304 polling through htmx, a Source interface and a loopback Host check",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
           "from": {
             "kind": "snapshot",
             "task": {
-              "id": "8608"
+              "id": "8608",
+              "title": "tableaud"
             },
             "url": "subprojects/tableaud",
-            "pin": "e6ec4ec"
+            "pin": "e6ec4ecc8c30fbaf85a392f186cc0b9caa8e4c8e",
+            "gate": "function"
+          }
+        },
+        "unchanged": false,
+        "subject_after": {
+          "kind": "rollup",
+          "gate": "defined",
+          "state": "nominal",
+          "reason": "",
+          "note": "Mockup waits for Abstract views (e9c6) at design",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
+          "from": {
+            "kind": "rollup",
+            "task": {
+              "id": "bc63",
+              "title": "Method"
+            },
+            "url": "",
+            "pin": "",
+            "gate": ""
           }
         },
         "effect": "",
@@ -2309,6 +4175,7 @@
           "hash": "3cdae527d47d37fdff55bc302c76c017cf91c606",
           "subject": "Advance tableaud to the eight function prototypes",
           "date": "2026-10-05",
+          "author_time": "2026-10-05T12:59:45-04:00",
           "author": {
             "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
@@ -2317,7 +4184,9 @@
             "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
           },
-          "author_time": "2026-10-05T12:59:45-04:00",
+          "parents": [
+            "fa4551ecdc8d106722ac41b25a9213abc453fab0"
+          ],
           "trailers": [
             "Model: claude-opus-5-5",
             "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
@@ -2333,12 +4202,277 @@
     ],
     "commands": [
       {
-        "text": "git log --format='%as %h %ae' 0704a09..main -- .tableaux/tasks .tableaux/status subprojects/tablo subprojects/tabloio subprojects/tablotui subprojects/tableaud"
+        "text": "git log --format='%H %as %ae %s' 0704a0912297b3de0218b821384cf1b9956a44bb..3cdae527d47d37fdff55bc302c76c017cf91c606 -- .tableaux/tasks .tableaux/status subprojects/tablo subprojects/tabloio subprojects/tablotui subprojects/tableaud",
+        "comment": ""
       },
       {
-        "text": "git log --format='%as %h %ae' 0704a09..main -E --grep='^(Authorised|Reaffirmed): [0-9a-f]{4}$' --grep='^Reviewed: [0-9a-f]{4} '"
+        "text": "git log --format='%H %as %ae %s' -E --grep='^(Authorised|Reaffirmed): ([0-9a-f]{4})$' --grep='^Reviewed: ([0-9a-f]{4}) ' 0704a0912297b3de0218b821384cf1b9956a44bb..3cdae527d47d37fdff55bc302c76c017cf91c606",
+        "comment": ""
       }
     ]
   },
-  "diagnostics": []
+  "diagnostics": [
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/05a9.yaml",
+      "task": "05a9",
+      "gate": "mockup",
+      "commit": "5958858ff25a624aea18f26471f95b92616fc7e6",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have mockup to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/3194.yaml",
+      "task": "3194",
+      "gate": "mockup",
+      "commit": "5958858ff25a624aea18f26471f95b92616fc7e6",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have mockup to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/32e7.yaml",
+      "task": "32e7",
+      "gate": "mockup",
+      "commit": "5958858ff25a624aea18f26471f95b92616fc7e6",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have mockup to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/5471.yaml",
+      "task": "5471",
+      "gate": "mockup",
+      "commit": "5958858ff25a624aea18f26471f95b92616fc7e6",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have mockup to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/69eb.yaml",
+      "task": "69eb",
+      "gate": "mockup",
+      "commit": "5958858ff25a624aea18f26471f95b92616fc7e6",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have mockup to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/7166.yaml",
+      "task": "7166",
+      "gate": "implementation",
+      "commit": "d9396b4bb05123ca8027cd5e73950c67cfb12cdc",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/7783.yaml",
+      "task": "7783",
+      "gate": "mockup",
+      "commit": "5958858ff25a624aea18f26471f95b92616fc7e6",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have mockup to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/7861.yaml",
+      "task": "7861",
+      "gate": "validate",
+      "commit": "c6f2655f1bda4469a6171b77cc21e326f0c99f87",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/7dff.yaml",
+      "task": "7dff",
+      "gate": "mockup",
+      "commit": "5958858ff25a624aea18f26471f95b92616fc7e6",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have mockup to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/99f0.yaml",
+      "task": "99f0",
+      "gate": "mockup",
+      "commit": "5958858ff25a624aea18f26471f95b92616fc7e6",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have mockup to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/9f3f.yaml",
+      "task": "9f3f",
+      "gate": "implementation",
+      "commit": "43d68e4f7d2b856c4d581983f34355d5b5f4f3b4",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/a6f7.yaml",
+      "task": "a6f7",
+      "gate": "mockup",
+      "commit": "5958858ff25a624aea18f26471f95b92616fc7e6",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have mockup to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/a8b4.yaml",
+      "task": "a8b4",
+      "gate": "mockup",
+      "commit": "5958858ff25a624aea18f26471f95b92616fc7e6",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have mockup to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/a9ce.yaml",
+      "task": "a9ce",
+      "gate": "mockup",
+      "commit": "5958858ff25a624aea18f26471f95b92616fc7e6",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have mockup to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/ab8e.yaml",
+      "task": "ab8e",
+      "gate": "mockup",
+      "commit": "5958858ff25a624aea18f26471f95b92616fc7e6",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have mockup to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/ac33.yaml",
+      "task": "ac33",
+      "gate": "implementation",
+      "commit": "6762222ddffef76008daad27ebe26069ac67cc5d",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/b14e.yaml",
+      "task": "b14e",
+      "gate": "mockup",
+      "commit": "5958858ff25a624aea18f26471f95b92616fc7e6",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have mockup to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/b1b7.yaml",
+      "task": "b1b7",
+      "gate": "mockup",
+      "commit": "5958858ff25a624aea18f26471f95b92616fc7e6",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have mockup to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/bb7c.yaml",
+      "task": "bb7c",
+      "gate": "mockup",
+      "commit": "5958858ff25a624aea18f26471f95b92616fc7e6",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have mockup to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/c2ad.yaml",
+      "task": "c2ad",
+      "gate": "validate",
+      "commit": "3d8ce0eee1e869c75453abba91cae03dec6587ce",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/c545.yaml",
+      "task": "c545",
+      "gate": "mockup",
+      "commit": "5958858ff25a624aea18f26471f95b92616fc7e6",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have mockup to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/c74a.yaml",
+      "task": "c74a",
+      "gate": "mockup",
+      "commit": "5958858ff25a624aea18f26471f95b92616fc7e6",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have mockup to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/d615.yaml",
+      "task": "d615",
+      "gate": "mockup",
+      "commit": "5958858ff25a624aea18f26471f95b92616fc7e6",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have mockup to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/e3cb.yaml",
+      "task": "e3cb",
+      "gate": "validate",
+      "commit": "5cbec7cce7c3cb3bf99f2145713d13ccb0b23d0f",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "error",
+      "code": "S11",
+      "path": ".tableaux/status/e3cb.yaml",
+      "line": 1,
+      "col": 7,
+      "task": "e3cb",
+      "gate": "implementation",
+      "message": "the status passes implementation, whose reviewer is noreply@anthropic.com, and no commit by the reviewer carries Reviewed: e3cb implementation"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/e9c6.yaml",
+      "task": "e9c6",
+      "gate": "implementation",
+      "commit": "879b447a920aad55e698906812350ea7d3785b4c",
+      "message": "the newest event is the contributor's and the status states no review; noreply@anthropic.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/ea51.yaml",
+      "task": "ea51",
+      "gate": "mockup",
+      "commit": "5958858ff25a624aea18f26471f95b92616fc7e6",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have mockup to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/efff.yaml",
+      "task": "efff",
+      "gate": "mockup",
+      "commit": "5958858ff25a624aea18f26471f95b92616fc7e6",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have mockup to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/fcec.yaml",
+      "task": "fcec",
+      "gate": "unit",
+      "commit": "60495c26d886016b40069041386a811b24469312",
+      "message": "the newest event is the contributor's and the status states no review; noreply@anthropic.com may have unit to review"
+    }
+  ]
 }

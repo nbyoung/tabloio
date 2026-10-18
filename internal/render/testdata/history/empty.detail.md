@@ -1,6 +1,6 @@
 # History: `e9c6` Abstract views
 
-**What happened, when, and who did it?** Tableaux tooling · ref `main` · task `e9c6` · level detail
+**What happened, when, and who did it?** Tableaux tooling · ref `corpus/tooling..corpus/tooling` · task `e9c6` · level detail
 
 Legend: `tabloio gates`.
 
@@ -8,4 +8,4 @@ Legend: `tabloio gates`.
 
 **No event in view.**
 
-Command: `tabloio history --task e9c6 --ref main --level detail`
+Command: `tabloio history --task e9c6 --ref corpus/tooling..corpus/tooling --level detail`

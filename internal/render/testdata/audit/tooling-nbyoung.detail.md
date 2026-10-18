@@ -1,16 +1,15 @@
 # Audit
 
-**Where do files and history disagree?** Tableaux tooling · ref `main` · person nbyoung@nbyoung.com · stale 7 days · level detail
+**Where do files and history disagree?** Tableaux tooling · ref `corpus/tooling` · person nbyoung@nbyoung.com · stale 7 days · level detail
 
 Legend: `tabloio gates`.
 
-**0 errors, 3 warnings, 0 items of information**: 3 findings in 2 rows.
+**0 errors, 3 warnings, 15 items of information**: 18 findings in 1 row.
 
 | Rule | Severity | Task | Gate | File | Message | Action | Resolver |
 |---|---|---|---|---|---|---|---|
-| H3 | warning | `437e` `bc63` | 📝 defined | `tasks/437e.yaml`, `tasks/bc63.yaml` | `320cf2b` edits both task files under `Model: claude-fable-5-1`; the junction states `claude-haiku` | Revise the file | **nbyoung@nbyoung.com** |
-| H3 | warning | `ac33` Agent identity | 📝 defined | `tasks/ac33.yaml` | `018814a` edits the task file under `Model: claude-fable-5-1`; the junction states `claude-haiku` | Revise the file | **nbyoung@nbyoung.com** |
+| R9 | warning | `6103` `c6e8` `595e` |  | `.tableaux/tasks/6103.yaml`, `.tableaux/tasks/c6e8.yaml`, `.tableaux/tasks/595e.yaml` | the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function | Await the task the requirement names | **nbyoung@nbyoung.com** |
 
-**Most to resolve:** **nbyoung@nbyoung.com**, 3 of 3.
+**Most to resolve:** **nbyoung@nbyoung.com**, 3 of 18.
 
-Command: `tabloio audit --person nbyoung@nbyoung.com --ref main --stale 7 --level detail`
+Command: `tabloio audit --person nbyoung@nbyoung.com --ref corpus/tooling --stale 7 --level detail`

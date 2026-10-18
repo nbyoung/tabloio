@@ -3,20 +3,36 @@
   "command": "audit",
   "source": {
     "ref": "main",
+    "dir": ".",
+    "worktree": true,
     "commit": "edb30d2baa5ea3c7e3fb8eef8ac6cce6e145221a",
     "date": "2026-09-28",
     "from": null,
     "trunk": {
-      "name": null
+      "name": "main",
+      "resolved": "stated"
     },
     "on_trunk": true
   },
   "project": {
+    "tableaux": "0.3.1",
     "root": "a1c0",
-    "title": "Weather station"
+    "title": "Weather station",
+    "owner": "ada@example.org"
+  },
+  "viewer": {
+    "email": "nbyoung@nbyoung.com",
+    "roles": [
+      "observer"
+    ]
   },
   "params": {
+    "task": "a1c0",
+    "person": null,
     "stale": 3,
+    "now": "2026-09-28",
+    "minimum": "warning",
+    "role": null,
     "level": "provenance"
   },
   "data": {
@@ -131,18 +147,14 @@
         {
           "key": "overloaded",
           "symbol": "🪫",
-          "synopsis": "The assigned resource is overloaded"
+          "synopsis": "The assigned resource is overloaded",
+          "reserved": false
         },
         {
           "key": "blocked",
           "symbol": "⛔",
-          "synopsis": "An external resource is unavailable"
-        },
-        {
-          "key": "review",
-          "symbol": "👓",
-          "synopsis": "The work waits for its reviewer",
-          "reserved": true
+          "synopsis": "An external resource is unavailable",
+          "reserved": false
         }
       ],
       "marks": [
@@ -150,100 +162,225 @@
           "key": "person",
           "symbol": "🧑",
           "meaning": "A person contributes",
-          "junction": "Plain; the contributor is a person"
+          "junction": "plain"
         },
         {
           "key": "agent",
           "symbol": "🤖",
           "meaning": "An agent contributes",
-          "junction": "Plain; the junction states a `model`"
+          "junction": "plain"
         },
         {
           "key": "reviewer",
           "symbol": "👀",
           "meaning": "A reviewer accepts",
-          "junction": "Plain; the reviewer accepts the work at the gate"
+          "junction": "plain"
         },
         {
           "key": "subproject",
           "symbol": "🪆",
           "meaning": "A subproject does the work",
-          "junction": "Recursive; another Tableaux project does the work"
+          "junction": "recursive"
         },
         {
           "key": "exempt",
           "symbol": "—",
           "meaning": "The gate does not apply",
-          "junction": "Not applicable; the entry exempts the task from the gate"
+          "junction": "not_applicable"
         }
       ]
     },
+    "errors": 0,
+    "warnings": 3,
+    "information": 32,
+    "most": {
+      "email": "ada@example.org",
+      "count": 2
+    },
     "findings": [
       {
+        "key": "R9",
+        "rule": "R9",
         "severity": "warning",
+        "demoted": false,
+        "kind": "An unmet requirement",
+        "tasks": [
+          {
+            "id": "c07d",
+            "title": "Node firmware"
+          }
+        ],
+        "gate": "",
+        "act": "await",
+        "resolver": "ada@example.org",
+        "files": [
+          ".tableaux/tasks/c07d.yaml"
+        ],
+        "message": "the requirement on 9f31 from design is due at implementation and unmet: 9f31 stands at function",
+        "sentence": "A validator warns of an unmet requirement",
+        "source": {
+          "text": "README.md, Tasks",
+          "url": "https://github.com/nbyoung/tableaux/blob/main/README.md#tasks"
+        },
+        "facts": [
+          {
+            "task": "c07d",
+            "junction": null,
+            "status": null,
+            "requirement": {
+              "task": {
+                "id": "9f31",
+                "title": "Sensor board"
+              },
+              "from": "design",
+              "to": "implementation",
+              "text": "Pin map and sensor bus",
+              "met": false,
+              "due": true,
+              "condition": "unmet",
+              "why": "",
+              "status": {
+                "kind": "recorded",
+                "gate": "function",
+                "state": "stalled",
+                "reason": "blocked",
+                "note": "Barometer ICs on 14-week backorder",
+                "date": "2026-09-28",
+                "recorder": "ada@example.org",
+                "derived": false,
+                "why": "",
+                "uncommitted": false,
+                "from": null
+              },
+              "subproject": "",
+              "commit": "",
+              "at_trunk": "unknown"
+            },
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          }
+        ],
+        "commits": [],
+        "commands": [
+          {
+            "text": "git log -1 --format='%as %H %ae' -- .tableaux/tasks/c07d.yaml",
+            "comment": "shows the finding"
+          }
+        ]
+      },
+      {
+        "key": "proposed",
+        "rule": "",
+        "severity": "warning",
+        "demoted": false,
         "kind": "A proposed task",
         "tasks": [
           {
-            "id": "9f31",
-            "title": "Sensor board"
+            "id": "3c5d",
+            "title": "Dashboard"
           }
         ],
-        "files": [
-          "tasks/9f31.yaml"
-        ],
-        "message": "The task stands proposed: no trailer or owner commit on the trunk authorises it",
-        "resolver": "ada@example.org",
-        "commits": [
-          {
-            "hash": "91aa774",
-            "date": "2026-09-18",
-            "author": {
-              "email": "ada@example.org"
-            },
-            "committer": {
-              "email": "ada@example.org"
-            }
-          }
-        ],
-        "commands": [
-          {
-            "text": "git log --format='%as %h %ae' -E --grep='^Authorised: 9f31$'",
-            "comment": "shows the finding"
-          }
-        ],
-        "rule": "",
-        "key": "proposed",
-        "demoted": false,
+        "gate": "",
         "act": "authorise",
+        "resolver": "ada@example.org",
+        "files": [
+          ".tableaux/tasks/3c5d.yaml"
+        ],
+        "message": "The task stands proposed: dan@example.org, the author of its deciding commit, is none of its authorities",
+        "sentence": "The task is authorised when the deciding commit's author or committer is one of its authorities, and proposed otherwise.",
+        "source": {
+          "text": "README.md, Proposed and authorised tasks",
+          "url": "https://github.com/nbyoung/tableaux/blob/main/README.md#proposed-and-authorised-tasks"
+        },
         "facts": [
           {
-            "task": "9f31",
+            "task": "3c5d",
             "junction": null,
             "status": null,
             "requirement": null,
             "authorisation": {
               "commit": {
-                "hash": "91aa774",
-                "date": "2026-09-18",
+                "hash": "1b8cfb16a248f50eeefb76e0994234693ff4f4a6",
+                "subject": "Revise the dashboard scope",
+                "date": "2026-09-27",
+                "author_time": "2026-09-27T12:00:00Z",
                 "author": {
-                  "email": "ada@example.org"
+                  "name": "Dan Reyes",
+                  "email": "dan@example.org"
                 },
                 "committer": {
-                  "email": "ada@example.org"
-                }
+                  "name": "Dan Reyes",
+                  "email": "dan@example.org"
+                },
+                "parents": [
+                  "97e423122790a250e4e067d7d33bbf88622b00d5"
+                ],
+                "trailers": [],
+                "files": [
+                  {
+                    "path": ".tableaux/tasks/3c5d.yaml",
+                    "change": "changed"
+                  }
+                ]
               },
-              "way": "",
+              "way": "change",
               "by": "",
-              "why": ""
+              "email": "dan@example.org",
+              "judges": [
+                "ada@example.org"
+              ],
+              "why": "",
+              "differs_from_trunk": false,
+              "uncommitted": false
             },
             "linkage": null,
             "model": null
           }
+        ],
+        "commits": [
+          {
+            "hash": "1b8cfb16a248f50eeefb76e0994234693ff4f4a6",
+            "subject": "Revise the dashboard scope",
+            "date": "2026-09-27",
+            "author_time": "2026-09-27T12:00:00Z",
+            "author": {
+              "name": "Dan Reyes",
+              "email": "dan@example.org"
+            },
+            "committer": {
+              "name": "Dan Reyes",
+              "email": "dan@example.org"
+            },
+            "parents": [
+              "97e423122790a250e4e067d7d33bbf88622b00d5"
+            ],
+            "trailers": [],
+            "files": [
+              {
+                "path": ".tableaux/tasks/3c5d.yaml",
+                "change": "changed"
+              }
+            ]
+          }
+        ],
+        "commands": [
+          {
+            "text": "git show --no-patch --format='%as %H %ae %ce%n%(trailers)' 1b8cfb16a248f50eeefb76e0994234693ff4f4a6",
+            "comment": "shows the finding"
+          },
+          {
+            "text": "git commit --allow-empty --trailer 'Authorised: 3c5d'",
+            "comment": "resolves it"
+          }
         ]
       },
       {
+        "key": "stale",
+        "rule": "",
         "severity": "warning",
-        "kind": "A status older than the days stated",
+        "demoted": false,
+        "kind": "A stale status",
         "tasks": [
           {
             "id": "3c5d",
@@ -251,60 +388,170 @@
           }
         ],
         "gate": "defined",
-        "files": [
-          "status/3c5d.yaml"
-        ],
-        "message": "The status dates from 2026-09-22, more than 3 days before 2026-09-28, with no later reaffirmation",
-        "resolver": "dan@example.org",
-        "commits": [
-          {
-            "hash": "55f57c1",
-            "date": "2026-09-22",
-            "author": {
-              "email": "dan@example.org"
-            },
-            "committer": {
-              "email": "dan@example.org"
-            }
-          }
-        ],
-        "commands": [
-          {
-            "text": "git log -1 --format='%as %h %ae' -- .tableaux/status/3c5d.yaml",
-            "comment": "shows the finding"
-          }
-        ],
-        "rule": "",
-        "key": "stale",
-        "demoted": false,
         "act": "reaffirm",
+        "resolver": "dan@example.org",
+        "files": [
+          ".tableaux/status/3c5d.yaml"
+        ],
+        "message": "The status dates from 2026-09-22, more than 3 days before 2026-09-28",
+        "sentence": "A review that finds no change reaffirms with an empty commit, so a status is never older than its last confirmation.",
+        "source": {
+          "text": "README.md, Status",
+          "url": "https://github.com/nbyoung/tableaux/blob/main/README.md#status"
+        },
         "facts": [
           {
             "task": "3c5d",
             "junction": null,
             "status": {
+              "kind": "recorded",
               "gate": "defined",
               "state": "nominal",
               "reason": "",
               "note": "",
               "date": "2026-09-22",
-              "recorder": ""
+              "recorder": "dan@example.org",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
             "requirement": null,
             "authorisation": null,
             "linkage": null,
             "model": null
           }
+        ],
+        "commits": [
+          {
+            "hash": "55f57c1ea69a0e16894408dfbd32a50d3dbdb0a9",
+            "subject": "Record the dashboard definition",
+            "date": "2026-09-22",
+            "author_time": "2026-09-22T12:00:00Z",
+            "author": {
+              "name": "Dan Reyes",
+              "email": "dan@example.org"
+            },
+            "committer": {
+              "name": "Dan Reyes",
+              "email": "dan@example.org"
+            },
+            "parents": [
+              "63a1f88f84354726d5e1b431df5e11a518854cdb"
+            ],
+            "trailers": [],
+            "files": [
+              {
+                "path": ".tableaux/status/3c5d.yaml",
+                "change": "added"
+              }
+            ]
+          }
+        ],
+        "commands": [
+          {
+            "text": "git show --no-patch --format='%as %H %ae %ce%n%(trailers)' 55f57c1ea69a0e16894408dfbd32a50d3dbdb0a9",
+            "comment": "shows the finding"
+          },
+          {
+            "text": "git commit --allow-empty --trailer 'Reaffirmed: 3c5d'",
+            "comment": "resolves it"
+          }
         ]
       }
     ],
-    "errors": 0,
-    "warnings": 2,
-    "information": 0,
-    "most": {
-      "email": "ada@example.org",
-      "count": 1
-    }
+    "silent": [
+      {
+        "key": "P5",
+        "rule": "P5",
+        "kind": "An undetermined trunk"
+      },
+      {
+        "key": "R12",
+        "rule": "R12",
+        "kind": "A requirement on what a junction reads"
+      },
+      {
+        "key": "R13",
+        "rule": "R13",
+        "kind": "A requirement its commit alone leaves unmet"
+      },
+      {
+        "key": "J8",
+        "rule": "J8",
+        "kind": "A subproject the tool cannot read"
+      },
+      {
+        "key": "J9",
+        "rule": "J9",
+        "kind": "A subproject task that does not exist"
+      },
+      {
+        "key": "J13",
+        "rule": "J13",
+        "kind": "A commit off the subproject's trunk"
+      },
+      {
+        "key": "J14",
+        "rule": "J14",
+        "kind": "A malformed commit"
+      },
+      {
+        "key": "J15",
+        "rule": "J15",
+        "kind": "An absolute URL without a commit"
+      },
+      {
+        "key": "J16",
+        "rule": "J16",
+        "kind": "A commit on a same-repository path"
+      },
+      {
+        "key": "J17",
+        "rule": "J17",
+        "kind": "A commit off the submodule's pin"
+      },
+      {
+        "key": "H1",
+        "rule": "H1",
+        "kind": "A trailer that names nothing"
+      },
+      {
+        "key": "H2",
+        "rule": "H2",
+        "kind": "A review from the wrong hand"
+      },
+      {
+        "key": "H3",
+        "rule": "H3",
+        "kind": "A model outside the one stated"
+      },
+      {
+        "key": "H4",
+        "rule": "H4",
+        "kind": "A hand-off the history implies"
+      },
+      {
+        "key": "H5",
+        "rule": "H5",
+        "kind": "A stale hand-off"
+      },
+      {
+        "key": "H6",
+        "rule": "H6",
+        "kind": "No model trailer"
+      }
+    ]
   },
-  "diagnostics": []
+  "diagnostics": [
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/c07d.yaml",
+      "line": 6,
+      "col": 5,
+      "task": "c07d",
+      "message": "the requirement on 9f31 from design is due at implementation and unmet: 9f31 stands at function"
+    }
+  ]
 }

@@ -9,17 +9,32 @@ Legend: tabloio gates.
 4 events in 1 commit, 2026-09-29: 0 task, 0 authorised, 0 status, 0 reaffirmed,
 0 reviewed, 4 pin.
 
-┌────────────┬─────────────────────┬───────┬──────┬────────────────────────────┐
-│ Date       │ By                  │ Event │ Task │ Gate and state, or pin     │
-├────────────┼─────────────────────┼───────┼──────┼────────────────────────────┤
-│ 2026-09-29 │ nbyoung@nbyoung.com │ pin   │ 77b2 │ subprojects/tablo new      │
-│            │                     │       │      │ dc669dd                    │
-│ 2026-09-29 │ nbyoung@nbyoung.com │ pin   │ 6103 │ subprojects/tabloio new    │
-│            │                     │       │      │ 46521bc                    │
-│ 2026-09-29 │ nbyoung@nbyoung.com │ pin   │ c6e8 │ subprojects/tablotui new   │
-│            │                     │       │      │ 4544042                    │
-│ 2026-09-29 │ nbyoung@nbyoung.com │ pin   │ 595e │ subprojects/tableaud new   │
-│            │                     │       │      │ 59783a9                    │
-└────────────┴─────────────────────┴───────┴──────┴────────────────────────────┘
+┌────────────┬─────────────────────┬───────┬────────────┬──────────────────────┐
+│ Date       │ By                  │ Event │ Task       │ Gate and state, or   │
+│            │                     │       │            │ pin                  │
+├────────────┼─────────────────────┼───────┼────────────┼──────────────────────┤
+│ 2026-09-29 │ nbyoung@nbyoung.com │ pin   │ 77b2       │ subprojects/tablo    │
+│            │                     │       │ tablo:     │ new dc669dd          │
+│            │                     │       │ backend    │                      │
+│            │                     │       │ library    │                      │
+│            │                     │       │ and        │                      │
+│            │                     │       │ plumbing   │                      │
+│ 2026-09-29 │ nbyoung@nbyoung.com │ pin   │ 6103       │ subprojects/tabloio  │
+│            │                     │       │ tabloio:   │ new 46521bc          │
+│            │                     │       │ command    │                      │
+│            │                     │       │ line,      │                      │
+│            │                     │       │ output and │                      │
+│            │                     │       │ input      │                      │
+│ 2026-09-29 │ nbyoung@nbyoung.com │ pin   │ c6e8       │ subprojects/tablotui │
+│            │                     │       │ tablotui:  │ new 4544042          │
+│            │                     │       │ terminal   │                      │
+│            │                     │       │ user       │                      │
+│            │                     │       │ interface  │                      │
+│ 2026-09-29 │ nbyoung@nbyoung.com │ pin   │ 595e       │ subprojects/tableaud │
+│            │                     │       │ tableaud:  │ new 59783a9          │
+│            │                     │       │ local      │                      │
+│            │                     │       │ daemon and │                      │
+│            │                     │       │ HTML       │                      │
+└────────────┴─────────────────────┴───────┴────────────┴──────────────────────┘
 
 Command: tabloio history --ref a7932ae..37a08e9 --level glance --text

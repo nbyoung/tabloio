@@ -3,20 +3,36 @@
   "command": "audit",
   "source": {
     "ref": "main",
+    "dir": ".",
+    "worktree": true,
     "commit": "3844b6012d7387e48ad82532956456fd9ef1d42e",
     "date": "2026-09-03",
     "from": null,
     "trunk": {
-      "name": null
+      "name": "main",
+      "resolved": "stated"
     },
     "on_trunk": true
   },
   "project": {
+    "tableaux": "0.3.1",
     "root": "e4a1",
-    "title": "Base"
+    "title": "Base",
+    "owner": "olive@example.org"
+  },
+  "viewer": {
+    "email": "nbyoung@nbyoung.com",
+    "roles": [
+      "observer"
+    ]
   },
   "params": {
+    "task": "e4a1",
+    "person": null,
     "stale": 7,
+    "now": "2026-09-03",
+    "minimum": "warning",
+    "role": null,
     "level": "provenance"
   },
   "data": {
@@ -77,7 +93,8 @@
         {
           "key": "blocked",
           "symbol": "⛔",
-          "synopsis": "An external resource is unavailable"
+          "synopsis": "An external resource is unavailable",
+          "reserved": false
         },
         {
           "key": "review",
@@ -91,39 +108,48 @@
           "key": "person",
           "symbol": "🧑",
           "meaning": "A person contributes",
-          "junction": "Plain; the contributor is a person"
+          "junction": "plain"
         },
         {
           "key": "agent",
           "symbol": "🤖",
           "meaning": "An agent contributes",
-          "junction": "Plain; the junction states a `model`"
+          "junction": "plain"
         },
         {
           "key": "reviewer",
           "symbol": "👀",
           "meaning": "A reviewer accepts",
-          "junction": "Plain; the reviewer accepts the work at the gate"
+          "junction": "plain"
         },
         {
           "key": "subproject",
           "symbol": "🪆",
           "meaning": "A subproject does the work",
-          "junction": "Recursive; another Tableaux project does the work"
+          "junction": "recursive"
         },
         {
           "key": "exempt",
           "symbol": "—",
           "meaning": "The gate does not apply",
-          "junction": "Not applicable; the entry exempts the task from the gate"
+          "junction": "not_applicable"
         }
       ]
     },
+    "errors": 0,
+    "warnings": 1,
+    "information": 1,
+    "most": {
+      "email": "pat@example.org",
+      "count": 1
+    },
     "findings": [
       {
+        "key": "H5",
         "rule": "H5",
         "severity": "warning",
-        "kind": "A hand-off that the review has answered",
+        "demoted": false,
+        "kind": "A stale hand-off",
         "tasks": [
           {
             "id": "b2c9",
@@ -131,80 +157,218 @@
           }
         ],
         "gate": "design",
-        "files": [
-          "status/b2c9.yaml"
-        ],
-        "message": "The status still states review after olive accepted design in S3",
+        "act": "clear_handoff",
         "resolver": "pat@example.org",
+        "files": [
+          ".tableaux/status/b2c9.yaml"
+        ],
+        "message": "the status still states review after olive@example.org accepted design",
         "sentence": "it reports a status that still states `review` after the reviewer's `Reviewed:` commit for that junction",
         "source": {
           "text": "README.md, Status",
-          "url": "README.md#status"
+          "url": "https://github.com/nbyoung/tableaux/blob/main/README.md#status"
         },
-        "commits": [
-          {
-            "hash": "1ff946dcb4b7118fbd68dba5aca89b67759efdfa",
-            "subject": "Hand the design to its reviewer",
-            "date": "2026-09-02",
-            "author": {
-              "email": "pat@example.org"
-            },
-            "committer": {
-              "email": "pat@example.org"
-            }
-          },
-          {
-            "hash": "3844b6012d7387e48ad82532956456fd9ef1d42e",
-            "subject": "Accept the design",
-            "date": "2026-09-03",
-            "author": {
-              "email": "olive@example.org"
-            },
-            "committer": {
-              "email": "olive@example.org"
-            },
-            "trailers": [
-              "Reviewed: b2c9 design"
-            ]
-          }
-        ],
-        "commands": [
-          {
-            "text": "git log --format='%h %(trailers:key=Reviewed)' -E --grep='^Reviewed: b2c9 '",
-            "comment": "shows the finding"
-          }
-        ],
-        "key": "H5",
-        "demoted": false,
-        "act": "clear_handoff",
         "facts": [
           {
             "task": "b2c9",
             "junction": {
               "gate": "design",
               "kind": "plain",
+              "marks": [
+                "person",
+                "reviewer"
+              ],
+              "acts": false,
               "contributor": "pat@example.org",
               "model": "",
               "reviewer": "olive@example.org",
               "reviewer_by_default": false,
-              "from": []
+              "subproject": null,
+              "references": [],
+              "stands": "next",
+              "reviewed": true,
+              "from": [
+                "b2c9"
+              ]
             },
-            "status": null,
+            "status": {
+              "kind": "recorded",
+              "gate": "defined",
+              "state": "nominal",
+              "reason": "review",
+              "note": "The design awaits olive's review",
+              "date": "2026-09-02",
+              "recorder": "pat@example.org",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
+            },
             "requirement": null,
             "authorisation": null,
             "linkage": null,
             "model": null
           }
+        ],
+        "commits": [
+          {
+            "hash": "1ff946dcb4b7118fbd68dba5aca89b67759efdfa",
+            "subject": "Hand the design to its reviewer",
+            "date": "2026-09-02",
+            "author_time": "2026-09-02T12:00:00Z",
+            "author": {
+              "name": "Pat Singh",
+              "email": "pat@example.org"
+            },
+            "committer": {
+              "name": "Pat Singh",
+              "email": "pat@example.org"
+            },
+            "parents": [
+              "bb7b7a329a950c45c0ce5ee5833e47295222090b"
+            ],
+            "trailers": [],
+            "files": [
+              {
+                "path": ".tableaux/status/b2c9.yaml",
+                "change": "changed"
+              }
+            ]
+          },
+          {
+            "hash": "3844b6012d7387e48ad82532956456fd9ef1d42e",
+            "subject": "Accept the design",
+            "date": "2026-09-03",
+            "author_time": "2026-09-03T12:00:00Z",
+            "author": {
+              "name": "Olive Marsh",
+              "email": "olive@example.org"
+            },
+            "committer": {
+              "name": "Olive Marsh",
+              "email": "olive@example.org"
+            },
+            "parents": [
+              "1ff946dcb4b7118fbd68dba5aca89b67759efdfa"
+            ],
+            "trailers": [
+              "Reviewed: b2c9 design"
+            ],
+            "files": []
+          }
+        ],
+        "commands": [
+          {
+            "text": "git show --no-patch --format='%as %H %ae %ce%n%(trailers)' 3844b6012d7387e48ad82532956456fd9ef1d42e",
+            "comment": "shows the finding"
+          }
         ]
       }
     ],
-    "errors": 0,
-    "warnings": 1,
-    "information": 0,
-    "most": {
-      "email": "pat@example.org",
-      "count": 1
-    }
+    "silent": [
+      {
+        "key": "P5",
+        "rule": "P5",
+        "kind": "An undetermined trunk"
+      },
+      {
+        "key": "R9",
+        "rule": "R9",
+        "kind": "An unmet requirement"
+      },
+      {
+        "key": "R12",
+        "rule": "R12",
+        "kind": "A requirement on what a junction reads"
+      },
+      {
+        "key": "R13",
+        "rule": "R13",
+        "kind": "A requirement its commit alone leaves unmet"
+      },
+      {
+        "key": "J8",
+        "rule": "J8",
+        "kind": "A subproject the tool cannot read"
+      },
+      {
+        "key": "J9",
+        "rule": "J9",
+        "kind": "A subproject task that does not exist"
+      },
+      {
+        "key": "J13",
+        "rule": "J13",
+        "kind": "A commit off the subproject's trunk"
+      },
+      {
+        "key": "J14",
+        "rule": "J14",
+        "kind": "A malformed commit"
+      },
+      {
+        "key": "J15",
+        "rule": "J15",
+        "kind": "An absolute URL without a commit"
+      },
+      {
+        "key": "J16",
+        "rule": "J16",
+        "kind": "A commit on a same-repository path"
+      },
+      {
+        "key": "J17",
+        "rule": "J17",
+        "kind": "A commit off the submodule's pin"
+      },
+      {
+        "key": "H1",
+        "rule": "H1",
+        "kind": "A trailer that names nothing"
+      },
+      {
+        "key": "H2",
+        "rule": "H2",
+        "kind": "A review from the wrong hand"
+      },
+      {
+        "key": "H3",
+        "rule": "H3",
+        "kind": "A model outside the one stated"
+      },
+      {
+        "key": "H4",
+        "rule": "H4",
+        "kind": "A hand-off the history implies"
+      },
+      {
+        "key": "H6",
+        "rule": "H6",
+        "kind": "No model trailer"
+      },
+      {
+        "key": "proposed",
+        "rule": "",
+        "kind": "A proposed task"
+      },
+      {
+        "key": "stale",
+        "rule": "",
+        "kind": "A stale status"
+      }
+    ]
   },
-  "diagnostics": []
+  "diagnostics": [
+    {
+      "severity": "warning",
+      "code": "H5",
+      "path": ".tableaux/status/b2c9.yaml",
+      "line": 3,
+      "col": 9,
+      "task": "b2c9",
+      "gate": "design",
+      "commit": "3844b6012d7387e48ad82532956456fd9ef1d42e",
+      "message": "the status still states review after olive@example.org accepted design"
+    }
+  ]
 }

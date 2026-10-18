@@ -1,23 +1,22 @@
 # History: `e9c6` Abstract views
 
-**What happened, when, and who did it?** Tableaux tooling · ref `main` at `3cdae52`, 2026-10-05 · task `e9c6` · level provenance
+**What happened, when, and who did it?** Tableaux tooling · ref `corpus/tooling` at `50a373b`, 2026-10-17 · task `e9c6` · level provenance
 
 Legend: `tabloio gates`.
 
-8 events in 7 commits, 2026-09-29 to 2026-09-30: 1 task, 1 authorised, 4 status, 0 reaffirmed, 2 reviewed, 0 pin.
+9 events in 8 commits, 2026-09-29 to 2026-10-05: 1 task, 0 authorised, 5 status, 0 reaffirmed, 3 reviewed, 0 pin.
 
-## 2026-09-29 · 4 events in 3 commits: 1 task, 1 authorised, 1 status, 1 reviewed
+## 2026-09-29 · 3 events in 3 commits: 1 task, 1 status, 1 reviewed
 
-- **2026-09-29** · nbyoung@nbyoung.com · task, authorised · `e9c6` Abstract views · the task file appears
+- **2026-09-29** · nbyoung@nbyoung.com · task · `e9c6` Abstract views · the task file appears
   - Status after: ❔ undefined ⚪ undefined
   - Effect: an authority commits the task file on the trunk, so the task is authorised
-  - Model: none recorded; exempt
   - Commit: `6b6c99a2ca35f684674ad886a33916979137f227`
   - Subject: Plan the Tableaux tooling
   - Author: Norman Young \<nbyoung@nbyoung.com>, 2026-09-29 16:38:16 -0400
   - Committer: Norman Young \<nbyoung@nbyoung.com>
   - Trailers: `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`
-  - Files: `.tableaux/tasks/e9c6.yaml` (added)
+  - Files: `.tableaux/gates.yaml` (added), `.tableaux/tasks/05a9.yaml` (added), `.tableaux/tasks/2034.yaml` (added), `.tableaux/tasks/3194.yaml` (added), `.tableaux/tasks/32e7.yaml` (added), `.tableaux/tasks/437e.yaml` (added), `.tableaux/tasks/5471.yaml` (added), `.tableaux/tasks/595e.yaml` (added), `.tableaux/tasks/5fe3.yaml` (added), `.tableaux/tasks/6103.yaml` (added), `.tableaux/tasks/69eb.yaml` (added), `.tableaux/tasks/7166.yaml` (added), `.tableaux/tasks/7783.yaml` (added), `.tableaux/tasks/77b2.yaml` (added), `.tableaux/tasks/7861.yaml` (added), `.tableaux/tasks/7dff.yaml` (added), `.tableaux/tasks/99f0.yaml` (added), `.tableaux/tasks/9f3f.yaml` (added), `.tableaux/tasks/a6f7.yaml` (added), `.tableaux/tasks/a8b4.yaml` (added), `.tableaux/tasks/a9ce.yaml` (added), `.tableaux/tasks/ab8e.yaml` (added), `.tableaux/tasks/ac33.yaml` (added), `.tableaux/tasks/b14e.yaml` (added), `.tableaux/tasks/b1b7.yaml` (added), `.tableaux/tasks/bb7c.yaml` (added), `.tableaux/tasks/bc63.yaml` (added), `.tableaux/tasks/bc86.yaml` (added), `.tableaux/tasks/c2ad.yaml` (added), `.tableaux/tasks/c545.yaml` (added), `.tableaux/tasks/c6e8.yaml` (added), `.tableaux/tasks/c74a.yaml` (added), `.tableaux/tasks/d615.yaml` (added), `.tableaux/tasks/e3cb.yaml` (added), `.tableaux/tasks/e9c6.yaml` (added), `.tableaux/tasks/ea51.yaml` (added), `.tableaux/tasks/efff.yaml` (added), `.tableaux/tasks/fcec.yaml` (added), `.tableaux/version.yaml` (added)
 - **2026-09-29** · noreply@anthropic.com · status · `e9c6` Abstract views · 📝 defined 🟢 nominal
   - Status after: 📝 defined 🟢 nominal
   - Note: Design waits for Roles (c2ad) at design
@@ -28,17 +27,16 @@ Legend: `tabloio gates`.
   - Author: Claude Fable 5.1 \<noreply@anthropic.com>, 2026-09-29 17:46:53 -0400
   - Committer: Norman Young \<nbyoung@nbyoung.com>
   - Trailers: `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`
-  - Files: `.tableaux/status/e9c6.yaml` (added)
+  - Files: `.tableaux/status/05a9.yaml` (added), `.tableaux/status/3194.yaml` (added), `.tableaux/status/32e7.yaml` (added), `.tableaux/status/5471.yaml` (added), `.tableaux/status/69eb.yaml` (added), `.tableaux/status/7783.yaml` (added), `.tableaux/status/7dff.yaml` (added), `.tableaux/status/99f0.yaml` (added), `.tableaux/status/a6f7.yaml` (added), `.tableaux/status/a8b4.yaml` (added), `.tableaux/status/a9ce.yaml` (added), `.tableaux/status/ab8e.yaml` (added), `.tableaux/status/b14e.yaml` (added), `.tableaux/status/b1b7.yaml` (added), `.tableaux/status/bb7c.yaml` (added), `.tableaux/status/c545.yaml` (added), `.tableaux/status/c74a.yaml` (added), `.tableaux/status/d615.yaml` (added), `.tableaux/status/e9c6.yaml` (added), `.tableaux/status/ea51.yaml` (added), `.tableaux/status/efff.yaml` (added)
 - **2026-09-29** · noreply@anthropic.com · reviewed · `e9c6` Abstract views · 📝 defined
   - Status after: 📝 defined 🟢 nominal, unchanged
   - Effect: none; the authorisation stands as the review
-  - Model: none recorded; exempt
   - Committer: nbyoung@nbyoung.com
   - Commit: `5958858ff25a624aea18f26471f95b92616fc7e6`
   - Subject: Accept the defined gate of the views and mockups
   - Author: Claude Fable 5.1 \<noreply@anthropic.com>, 2026-09-29 18:01:32 -0400
   - Committer: Norman Young \<nbyoung@nbyoung.com>
-  - Trailers: `Reviewed: e9c6 defined`, `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`
+  - Trailers: `Reviewed: e9c6 defined`, `Reviewed: 99f0 defined`, `Reviewed: 05a9 defined`, `Reviewed: a9ce defined`, `Reviewed: bb7c defined`, `Reviewed: c74a defined`, `Reviewed: efff defined`, `Reviewed: ab8e defined`, `Reviewed: c545 defined`, `Reviewed: d615 defined`, `Reviewed: b14e defined`, `Reviewed: a6f7 defined`, `Reviewed: 7dff defined`, `Reviewed: b1b7 defined`, `Reviewed: ea51 defined`, `Reviewed: 7783 defined`, `Reviewed: 5471 defined`, `Reviewed: 32e7 defined`, `Reviewed: 69eb defined`, `Reviewed: 3194 defined`, `Reviewed: a8b4 defined`, `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`
 
 ## 2026-09-30 · 4 events in 4 commits: 3 status, 1 reviewed
 
@@ -73,6 +71,7 @@ Legend: `tabloio gates`.
   - Author: Norman Young \<nbyoung@nbyoung.com>, 2026-09-30 15:16:33 -0400
   - Committer: Norman Young \<nbyoung@nbyoung.com>
   - Trailers: `Reviewed: e9c6 design`, `Model: claude-opus-5-5`, `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`
+  - Files: `.tableaux/gates.yaml` (changed), `.tableaux/status/e9c6.yaml` (changed), `.tableaux/version.yaml` (changed)
 - **2026-09-30** · noreply@anthropic.com · status · `e9c6` Abstract views · 📐 design 🟢 nominal
   - Status after: 📐 design 🟢 nominal
   - Note: VIEWS.md is on the trunk at language 0.3.1; the twenty mockups may start, and implementation puts the text in place
@@ -84,9 +83,23 @@ Legend: `tabloio gates`.
   - Trailers: `Model: claude-fable-5-1`, `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`
   - Files: `.tableaux/status/e9c6.yaml` (changed)
 
+## 2026-10-05 · 2 events in 1 commit: 1 status, 1 reviewed
+
+- **2026-10-05** · noreply@anthropic.com · status, reviewed · `e9c6` Abstract views · 🧱 implementation 🟢 nominal
+  - Status after: 🧱 implementation 🟢 nominal
+  - Note: VIEWS.md defines the ten views on the trunk and agrees with the twenty approved mockups on the gate window; validation checks that tablo and the front ends follow the text
+  - Effect: the reviewer accepts the work at the gate
+  - Model: `claude-opus-5-5`; the 🧱 implementation junction states `claude-sonnet`, which differs
+  - Commit: `ccb3947e3deb2f476a8c9c886266b2b4da66c6f6`
+  - Subject: Record the abstract views task at its implementation gate
+  - Author: Claude Opus 5.5 \<noreply@anthropic.com>, 2026-10-05 18:46:07 -0400
+  - Committer: Claude Opus 5.5 \<noreply@anthropic.com>
+  - Trailers: `Reviewed: e9c6 implementation`, `Model: claude-opus-5-5`, `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`
+  - Files: `.tableaux/status/e9c6.yaml` (changed)
+
 ```
-git log --format='%as %h %ae' -- .tableaux/tasks/e9c6.yaml .tableaux/status/e9c6.yaml
-git log --format='%as %h %ae' -E --grep='^(Authorised|Reaffirmed): e9c6$' --grep='^Reviewed: e9c6 '
+git log --format='%H %as %ae %s' 50a373b2857a36e4ef1a754605433943d6bfe324 -- .tableaux/tasks/e9c6.yaml .tableaux/status/e9c6.yaml
+git log --format='%H %as %ae %s' -E --grep='^(Authorised|Reaffirmed): (e9c6)$' --grep='^Reviewed: (e9c6) ' 50a373b2857a36e4ef1a754605433943d6bfe324
 ```
 
-Command: `tabloio history --task e9c6 --ref 3cdae52 --level provenance`
+Command: `tabloio history --task e9c6 --ref 50a373b --level provenance`

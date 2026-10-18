@@ -134,7 +134,7 @@ func TestAuditWords(t *testing.T) {
 	for _, want := range []string{
 		"| A `kind` of \\*finding\\* |",
 		"| A `message` with a \\| bar | Await `e9c6` at 📐 design |",
-		"**Rule.** \"The `sentence`.\" [README.md, Status](README.md#status)\n",
+		"**Rule.** \"The `sentence`.\" [README.md, Tasks](https://github.com/nbyoung/tableaux/blob/main/README.md#tasks)\n",
 		"**The requirement.** `e3cb`: `e9c6`, design → mockup, Views: unmet.\n",
 	} {
 		if !strings.Contains(out, want) {

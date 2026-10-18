@@ -1,6 +1,6 @@
 # Audit
 
-**Where do files and history disagree?** Tableaux tooling · ref `main` at `3cdae52`, 2026-10-05 · stale 7 days · level provenance
+**Where do files and history disagree?** Tableaux tooling · ref `corpus/tooling` at `50a373b`, 2026-10-17 · task `99f0` · stale 7 days · level provenance
 
 Legend: `tabloio gates`.
 
@@ -8,4 +8,4 @@ Legend: `tabloio gates`.
 
 **No finding.**
 
-Command: `tabloio audit --ref 3cdae52 --stale 7 --level provenance`
+Command: `tabloio audit --task 99f0 --ref 50a373b --stale 7 --level provenance`

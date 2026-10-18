@@ -29,12 +29,12 @@ status, 1 reaffirmed, 2 reviewed, 1 pin.
 │ Date       │ By              │ Event         │ Task          │ Gate and      │
 │            │                 │               │               │ state, or pin │
 ├────────────┼─────────────────┼───────────────┼───────────────┼───────────────┤
+│ 2026-09-15 │ ada@example.org │ task          │ a1c0 Weather  │ the task file │
+│            │                 │               │ station       │ appears       │
 │ 2026-09-15 │ ada@example.org │ task          │ 4e2b Sensor   │ the task file │
 │            │                 │               │ node          │ appears       │
 │ 2026-09-15 │ ada@example.org │ task          │ 7b2e Gateway  │ the task file │
 │            │                 │               │               │ appears       │
-│ 2026-09-15 │ ada@example.org │ task          │ a1c0 Weather  │ the task file │
-│            │                 │               │ station       │ appears       │
 │ 2026-09-16 │ ben@example.org │ task          │ c07d Node     │ the task file │
 │            │                 │               │ firmware      │ appears       │
 │ 2026-09-18 │ ada@example.org │ task          │ 9f31 Sensor   │ the task file │

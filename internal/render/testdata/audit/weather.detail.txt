@@ -6,29 +6,38 @@ Audit
 
 Legend: tabloio gates.
 
-*0 errors, 2 warnings, 0 items of information*: 2 findings in 2 rows.
+*0 errors, 3 warnings, 32 items of information*: 35 findings in 3 rows.
 
 ────────────────────────────────────────────────────────────────────────────────
 Rule · Severity · Task · Gate · File · Message · Action · Resolver
 ────────────────────────────────────────────────────────────────────────────────
+R9
   Severity: warning
-  Task: 9f31 Sensor board
-  File: tasks/9f31.yaml
-  Message: The task stands proposed: no trailer or owner commit on the trunk
-    authorises it
-  Action: Authorise: commit Authorised: 9f31
+  Task: c07d Node firmware
+  File: .tableaux/tasks/c07d.yaml
+  Message: the requirement on 9f31 from design is due at implementation and
+    unmet: 9f31 stands at function
+  Action: Await 9f31 at 📐 design
+  Resolver: ada@example.org
+────────────────────────────────────────────────────────────────────────────────
+  Severity: warning
+  Task: 3c5d Dashboard
+  File: .tableaux/tasks/3c5d.yaml
+  Message: The task stands proposed: dan@example.org, the author of its
+    deciding commit, is none of its authorities
+  Action: Authorise: commit Authorised: 3c5d
   Resolver: ada@example.org
 ────────────────────────────────────────────────────────────────────────────────
   Severity: warning
   Task: 3c5d Dashboard
   Gate: 📝 defined
-  File: status/3c5d.yaml
+  File: .tableaux/status/3c5d.yaml
   Message: The status dates from 2026-09-22, more than 3 days before
-    2026-09-28, with no later reaffirmation
+    2026-09-28
   Action: Reaffirm: commit Reaffirmed: 3c5d
   Resolver: dan@example.org
 ────────────────────────────────────────────────────────────────────────────────
 
-*Most to resolve:* ada@example.org, 1 of 2.
+*Most to resolve:* ada@example.org, 2 of 35.
 
 Command: tabloio audit --ref main --stale 3 --level detail --text

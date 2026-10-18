@@ -1,6 +1,6 @@
 # Audit
 
-**Where do files and history disagree?** Tableaux tooling · ref `main` · stale 7 days · level detail
+**Where do files and history disagree?** Tableaux tooling · ref `corpus/tooling` · task `99f0` · stale 7 days · level detail
 
 Legend: `tabloio gates`.
 
@@ -8,4 +8,4 @@ Legend: `tabloio gates`.
 
 **No finding.**
 
-Command: `tabloio audit --ref main --stale 7 --level detail`
+Command: `tabloio audit --task 99f0 --ref corpus/tooling --stale 7 --level detail`

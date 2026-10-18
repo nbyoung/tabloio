@@ -6,19 +6,19 @@ Audit
 
 Legend: tabloio gates.
 
-*0 errors, 2 warnings, 0 items of information*: 2 findings.
+*0 errors, 3 warnings, 32 items of information*: 35 findings.
 
 ┌──────────┬──────┬───────────────┬──────────┬───────────────┬─────────────────┐
 │ Severity │ Rule │ Kind          │ Findings │ Tasks         │ Resolver        │
 ├──────────┼──────┼───────────────┼──────────┼───────────────┼─────────────────┤
-│ warning  │      │ A proposed    │        1 │ 9f31 Sensor   │ ada@example.org │
-│          │      │ task          │          │ board         │                 │
-│ warning  │      │ A status      │        1 │ 3c5d          │ dan@example.org │
-│          │      │ older than    │          │ Dashboard     │                 │
-│          │      │ the days      │          │               │                 │
-│          │      │ stated        │          │               │                 │
+│ warning  │ R9   │ An unmet      │        1 │ c07d Node     │ ada@example.org │
+│          │      │ requirement   │          │ firmware      │                 │
+│ warning  │      │ A proposed    │        1 │ 3c5d          │ ada@example.org │
+│          │      │ task          │          │ Dashboard     │                 │
+│ warning  │      │ A stale       │        1 │ 3c5d          │ dan@example.org │
+│          │      │ status        │          │ Dashboard     │                 │
 └──────────┴──────┴───────────────┴──────────┴───────────────┴─────────────────┘
 
-*Most to resolve:* ada@example.org, 1 of 2.
+*Most to resolve:* ada@example.org, 2 of 35.
 
 Command: tabloio audit --ref main --stale 3 --level glance --text
