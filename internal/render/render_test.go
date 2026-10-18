@@ -306,10 +306,28 @@ func TestCommand(t *testing.T) {
 	h.Project = view.Project{Title: "Plan"}
 	h.Params = view.Params{Task: "e9c6", Person: "a@b.c", Window: &two, Historical: true, Proposed: true, Stale: 7}
 	p := newPage(h, Options{Level: view.Glance})
-	got = plainInline(p.paramLine("Q?").Text, map[string]bool{})
+	got = plainInline(p.paramLine("context", "Q?").Text, map[string]bool{})
 	want = "Q? Plan · ref main, off the trunk · task e9c6 · person a@b.c · window 2 · historical junctions on · proposed only · stale 7 days · level glance"
 	if got != want {
 		t.Errorf("got  %s\nwant %s", got, want)
+	}
+
+	// tablo echoes the root as the task of a view whose task defaults to
+	// it; there the root focuses nothing, and elsewhere it does.
+	h = &view.Head{Source: view.Source{Ref: "main", OnTrunk: true}, Project: view.Project{Root: "a1c0", Title: "Plan"}}
+	h.Params = view.Params{Task: "a1c0", Person: "a@b.c"}
+	for name, want := range map[string]string{
+		"queue": "tabloio queue --person a@b.c --ref main --level detail",
+		"audit": "tabloio audit --person a@b.c --ref main --level detail",
+		"gates": "tabloio gates --task a1c0 --person a@b.c --ref main --level detail",
+	} {
+		if got := command(name, "", h, Options{Level: view.Detail}); got != want {
+			t.Errorf("%s: got  %s\nwant %s", name, got, want)
+		}
+		line := plainInline(newPage(h, Options{Level: view.Detail}).paramLine(name, "Q?").Text, map[string]bool{})
+		if strings.Contains(line, "task a1c0") != (name == "gates") {
+			t.Errorf("%s: %s", name, line)
+		}
 	}
 }
 

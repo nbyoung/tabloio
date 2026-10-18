@@ -56,8 +56,8 @@ func command(name, positional string, h *view.Head, o Options) string {
 		parts = append(parts, positional)
 	}
 	par := h.Params
-	if par.Task != "" && positional == "" {
-		parts = append(parts, flagTask, par.Task)
+	if task := taskInForce(name, h); task != "" && positional == "" {
+		parts = append(parts, flagTask, task)
 	}
 	if par.Person != "" {
 		parts = append(parts, flagPerson, par.Person)
@@ -98,6 +98,24 @@ func command(name, positional string, h *view.Head, o Options) string {
 	return strings.Join(parts, " ")
 }
 
+// rootByDefault holds the views whose task defaults to the project's root:
+// tablo echoes the root in params when no task is given, so the root there
+// focuses nothing.
+var rootByDefault = map[string]bool{
+	"authority": true, "assignment": true, "queue": true,
+	"blockage": true, "history": true, "audit": true,
+}
+
+// taskInForce returns the task parameter of a view, or "" where it is the
+// project's root and the view's default.
+func taskInForce(name string, h *view.Head) string {
+	task := h.Params.Task
+	if rootByDefault[name] && task != "" && task == h.Project.Root {
+		return ""
+	}
+	return task
+}
+
 // refSpans prints the ref of the parameter line: ref `<name>`, with the
 // commit and date at provenance or with Options.Stamp, and `, off the
 // trunk` for a ref off the trunk.
@@ -119,11 +137,11 @@ func (p *page) refSpans() []doc.Inline {
 // paramSpans prints the parameters in force in the order of VIEWS.md's
 // table: task, person, window or columns, historical junctions, proposed,
 // stale.
-func (p *page) paramSpans() [][]doc.Inline {
+func (p *page) paramSpans(name string) [][]doc.Inline {
 	var out [][]doc.Inline
 	par := p.h.Params
-	if par.Task != "" {
-		out = append(out, one(txt("task "), code(par.Task)))
+	if task := taskInForce(name, p.h); task != "" {
+		out = append(out, one(txt("task "), code(task)))
 	}
 	if par.Person != "" {
 		out = append(out, one(txt("person "+par.Person)))
