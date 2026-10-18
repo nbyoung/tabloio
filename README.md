@@ -158,7 +158,10 @@ golangci-lint run     # lint, with the configuration in .golangci.yml
 snapshot harness `snapshot/test.sh` and actionlint over the snapshot action
 and its consumer example, on every pull request and every push to `main`,
 with the Go version from `go.mod` and golangci-lint from its official
-action.
+action. Its job `corpus` builds the tableaux corpus at the umbrella commit
+that `.github/corpus.lock.yaml` names, through `.github/corpus.sh fetch`, and
+runs `go test ./...` against it, so the tests that read the corpus run in CI
+too.
 
 ## Release
 

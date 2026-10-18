@@ -33,3 +33,41 @@ jobs:
         run: |
           sed 's|nbyoung/tabloio/snapshot@v[0-9.]*|./snapshot|' snapshot/consumer.yml >snapshot/consumer.local.yml
           go run github.com/rhysd/actionlint/cmd/actionlint@v1.7.7 snapshot/consumer.yml snapshot/consumer.local.yml
+
+  corpus:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: Fetch the tableaux repository at the locked commit and build its corpus
+        run: sh .github/corpus.sh fetch "$RUNNER_TEMP/tableaux"
+      - name: go test against the corpus
+        env:
+          TABLEAUX_CORPUS: ${{ runner.temp }}/tableaux/corpus/build
+          TABLEAUX_DIR: ${{ runner.temp }}/tableaux
+          TABLO_CORPUS: ${{ runner.temp }}/tableaux/corpus
+        shell: bash
+        run: |
+          go test -count=1 -json ./... | tee "$RUNNER_TEMP/tests.json" |
+            jq -rj 'select(.Action == "output") | .Output'
+      - name: List the tests that skip
+        # Each test that skips, with its reason, goes to the summary; a skip
+        # fails nothing.
+        if: always()
+        run: |
+          [ -f "$RUNNER_TEMP/tests.json" ] || exit 0
+          jq -rs '
+            (map(select(.Action == "output" and .Test != null))
+              | group_by([.Package, .Test])
+              | map({key: "\(.[0].Package) \(.[0].Test)", value: [.[].Output]})
+              | from_entries) as $out
+            | map(select(.Action == "skip" and .Test != null)) as $skips
+            | "## Tests that skip against the corpus\n",
+              if ($skips | length) == 0 then "None." else
+                "| Test | Package | Reason |", "|---|---|---|",
+                ($skips[] | "| `\(.Test)` | `\(.Package)` | \(($out["\(.Package) \(.Test)"] // [])
+                  | map(select(test("^\\s+\\S+\\.go:\\d+: ")) | sub("^\\s+\\S+\\.go:\\d+: "; "") | rtrimstr("\n") | gsub("\\|"; "\\|"))
+                  | join(" ")) |")
+              end' "$RUNNER_TEMP/tests.json" >> "$GITHUB_STEP_SUMMARY"
