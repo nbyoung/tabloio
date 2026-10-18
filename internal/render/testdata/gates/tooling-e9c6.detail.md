@@ -41,10 +41,10 @@ The method reserves `review`: the contributor has handed the next junction's wor
 
 | Mark | Meaning | Junction |
 |:-:|---|---|
-| 🧑 | A person contributes | plain |
-| 🤖 | An agent contributes | plain |
-| 👀 | A reviewer accepts | plain |
-| 🪆 | A subproject does the work | recursive |
-| — | The gate does not apply | not\_applicable |
+| 🧑 | A person contributes | Plain |
+| 🤖 | An agent contributes | Plain |
+| 👀 | A reviewer accepts | Plain |
+| 🪆 | A subproject does the work | Recursive |
+| — | The gate does not apply | Not applicable |
 
 Command: `tabloio gates --task e9c6 --ref corpus/tooling --level detail`

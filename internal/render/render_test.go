@@ -627,6 +627,28 @@ func TestStandsAndConditions(t *testing.T) {
 	}
 }
 
+// TestJunctionKind: the marks table words tablo's junction kinds, and a
+// value that is no kind, as a draft gives it, prints as worded text.
+func TestJunctionKind(t *testing.T) {
+	for in, want := range map[string]string{
+		"plain": "Plain", "recursive": "Recursive", "not_applicable": "Not applicable",
+		"Plain; the junction states a `model`": "Plain; the junction states a model", "": "",
+	} {
+		var got strings.Builder
+		for _, x := range junctionKind(in) {
+			switch s := x.(type) {
+			case doc.Text:
+				got.WriteString(string(s))
+			case doc.Code:
+				got.WriteString(string(s))
+			}
+		}
+		if got.String() != want {
+			t.Errorf("%q: %q, want %q", in, got.String(), want)
+		}
+	}
+}
+
 // TestDescriptionLineEnd: a description from a folded block of YAML ends in
 // a line break, as tablo gives it, and renders as the same text without it.
 func TestDescriptionLineEnd(t *testing.T) {

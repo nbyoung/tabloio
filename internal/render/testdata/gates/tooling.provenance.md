@@ -47,11 +47,11 @@ Source: `reasons` in `.tableaux/gates.yaml`; the reserved meaning of `review` in
 
 | Mark | Meaning | Junction |
 |:-:|---|---|
-| 🧑 | A person contributes | plain |
-| 🤖 | An agent contributes | plain |
-| 👀 | A reviewer accepts | plain |
-| 🪆 | A subproject does the work | recursive |
-| — | The gate does not apply | not\_applicable |
+| 🧑 | A person contributes | Plain |
+| 🤖 | An agent contributes | Plain |
+| 👀 | A reviewer accepts | Plain |
+| 🪆 | A subproject does the work | Recursive |
+| — | The gate does not apply | Not applicable |
 
 Source: `README.md`, Junctions, at language 0.3.2.
 
