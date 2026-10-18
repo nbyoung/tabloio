@@ -127,7 +127,9 @@ func writeRequest(c *Command, a *Args, getenv func(string) string) (planFunc, er
 			p.Order = n
 		}
 		for _, ref := range a.Values["reference"] {
-			url, text, _ := strings.Cut(ref, "=")
+			// A URL holds no raw space (RFC 3986), so the first space ends it
+			// and an "=" of a query stays in it.
+			url, text, _ := strings.Cut(ref, " ")
 			p.References = append(p.References, action.Reference{URL: url, Text: text})
 		}
 		return func(ctx context.Context, r *action.Repo) (*action.Plan, error) { return r.Propose(ctx, p, o) }, nil

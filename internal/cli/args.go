@@ -82,7 +82,7 @@ var vocabulary = []Option{
 	{Name: "order", Arity: 1, Values: "<n>",
 		Help: "The new task's place among its siblings; one above the largest by default"},
 	{Name: "reference", Arity: 1, Repeat: true, Values: "<ref>",
-		Help: "Add a reference, <url> or <url>=<text>; repeat it for several"},
+		Help: "Add a reference, <url> or \"<url> <text>\" in one value; repeat it for several"},
 	{Name: "id", Arity: 1, Values: "<id>",
 		Help: "Take <id> for the new task in place of a fresh one"},
 	{Name: "gate", Arity: 1, Values: "<gate>",

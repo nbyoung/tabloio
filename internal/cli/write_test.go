@@ -185,14 +185,14 @@ func TestWriteUsage(t *testing.T) {
 	})
 	t.Run("a commit with --yes, a subject and a body", func(t *testing.T) {
 		code, out, errs := writeRun(false, "", none, "-C", dir, "propose", "--title", "Third leaf", "--description", "One more.",
-			"--parent", "e4a1", "--id", "d00d", "--reference", "README.md=The charter", "-m", "Add a leaf", "--body", "One.", "--body", "Two.", "-y")
+			"--parent", "e4a1", "--id", "d00d", "--reference", "README.md The charter", "--reference", "https://example.org/search?q=gate", "-m", "Add a leaf", "--body", "One.", "--body", "Two.", "-y")
 		if code != ExitOK || errs != "" || !strings.HasSuffix(out, "committed "+head()[:7]+" Add a leaf\n") {
 			t.Fatalf("exit %d, stdout %q, stderr %q", code, out, errs)
 		}
 		if got := gitIn(t, dir, "log", "-1", "--format=%B"); got != "Add a leaf\n\nOne.\n\nTwo." {
 			t.Errorf("message %q", got)
 		}
-		if got := gitIn(t, dir, "show", "HEAD:.tableaux/tasks/d00d.yaml"); !strings.Contains(got, "  - { url: README.md, text: The charter }\nparent: { id: \"e4a1\", order: 2 }") {
+		if got := gitIn(t, dir, "show", "HEAD:.tableaux/tasks/d00d.yaml"); !strings.Contains(got, "  - { url: README.md, text: The charter }\n  - { url: \"https://example.org/search?q=gate\" }\nparent: { id: \"e4a1\", order: 2 }") {
 			t.Errorf("task file\n%s", got)
 		}
 	})
