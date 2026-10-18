@@ -154,9 +154,11 @@ go vet ./...          # vet
 golangci-lint run     # lint, with the configuration in .golangci.yml
 ```
 
-`ci.yml` runs the same four checks, gofmt, vet, lint and test, on every pull
-request and every push to `main`, with the Go version from `go.mod` and
-golangci-lint from its official action.
+`ci.yml` runs the same four checks, gofmt, vet, lint and test, then the
+snapshot harness `snapshot/test.sh` and actionlint over the snapshot action
+and its consumer example, on every pull request and every push to `main`,
+with the Go version from `go.mod` and golangci-lint from its official
+action.
 
 ## Release
 
