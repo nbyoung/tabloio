@@ -1,8 +1,8 @@
 Task definition: 5fe3 HTML views
 ════════════════════════════════
 
-*What is this task and where does it stand?* Tableaux tooling · ref main · task
-5fe3 · person nbyoung@nbyoung.com · level detail
+*What is this task and where does it stand?* Tableaux tooling · ref
+corpus/tooling · task 5fe3 · person nbyoung@nbyoung.com · level detail
 
 Legend: tabloio gates.
 
@@ -12,11 +12,27 @@ Legend: tabloio gates.
 │ Task     │ 5fe3 HTML views                                                   │
 │ Assignee │ noreply@anthropic.com                                             │
 │ Parent   │ 2034 Views, order 3                                               │
-│ Status   │ 📝 defined 🟢 nominal, rolled up from a6f7 Gate definition view   │
+│ Status   │ 📌 mockup ✅ complete, rolled up from a6f7 Gate definition view   │
 │          │ in Html                                                           │
-│ Note     │ Mockup waits for Abstract views (e9c6) at design                  │
-│ Recorded │ 2026-09-29, the oldest among its children                         │
+│ Note     │ The owner accepts docs/mockups/gates.html at the mockup gate, the │
+│          │ last gate that applies to this task                               │
+│ Recorded │ 2026-10-05, the oldest among its children                         │
 └──────────┴───────────────────────────────────────────────────────────────────┘
+
+Description
+───────────
+
+Hand-made HTML mockups of every view, one self-contained file each under
+docs/mockups/, depicting this project. HTML is the interactive medium: a page
+that a local daemon serves from the checked-out repository, with progressive
+disclosure per role. A mockup shows its disclosure levels, for example with
+details elements, and needs no server. The defined gate agrees what the view
+shows in HTML; the mockup gate delivers the file; later gates belong to the
+tableaud subproject.
+
+References:
+
+- The mockups <docs/mockups>
 
 Place in the tree
 ─────────────────
@@ -28,7 +44,7 @@ Place in the tree
 │             │ views                                                          │
 │ Order       │ 3 of 3 under 2034                                              │
 │ Children    │ a6f7 7dff b1b7 ea51 7783 5471 32e7 69eb 3194 a8b4, each at     │
-│             │ 📝 defined 🟢 nominal                                          │
+│             │ 📌 mockup ✅ complete                                          │
 │ Authorities │ *nbyoung@nbyoung.com* (2034, bc63, 437e)                       │
 │ Authorised  │ Yes                                                            │
 └─────────────┴────────────────────────────────────────────────────────────────┘
@@ -39,17 +55,16 @@ Requires: none
 Dependents: 2
 ─────────────
 
-┌───────────────────┬─────────────────┬───────────────────┬────────────────────┐
-│ Task              │ Edge            │ What passes       │ Condition          │
-├───────────────────┼─────────────────┼───────────────────┼────────────────────┤
-│ c6e8 tablotui:    │ mockup → design │ The HTML mockups  │ unmet, not yet due │
-│ terminal user     │                 │ that fix the      │                    │
-│ interface         │                 │ disclosure levels │                    │
-├───────────────────┼─────────────────┼───────────────────┼────────────────────┤
-│ 595e tableaud:    │ mockup → design │ The HTML mockups  │ unmet, not yet due │
-│ local daemon and  │                 │ it reproduces     │                    │
-│ HTML              │                 │                   │                    │
-└───────────────────┴─────────────────┴───────────────────┴────────────────────┘
+┌───────────────────────┬─────────────────┬────────────────────────┬───────────┐
+│ Task                  │ Edge            │ What passes            │ Condition │
+├───────────────────────┼─────────────────┼────────────────────────┼───────────┤
+│ c6e8 tablotui:        │ mockup → design │ The HTML mockups that  │ met       │
+│ terminal user         │                 │ fix the disclosure     │           │
+│ interface             │                 │ levels                 │           │
+├───────────────────────┼─────────────────┼────────────────────────┼───────────┤
+│ 595e tableaud: local  │ mockup → design │ The HTML mockups it    │ met       │
+│ daemon and HTML       │                 │ reproduces             │           │
+└───────────────────────┴─────────────────┴────────────────────────┴───────────┘
 
 Junctions
 ─────────
@@ -62,44 +77,35 @@ Gate · Marks · Contributor · Model · Reviewer · Stands
   Contributor: noreply@anthropic.com
   Model: claude-haiku
   Reviewer: the assignee, noreply@anthropic.com
-  Stands: passed; the status stands here
 ────────────────────────────────────────────────────────────────────────────────
 📌 mockup
   Marks: 🤖👀
   Contributor: noreply@anthropic.com
   Model: claude-opus
   Reviewer: *nbyoung@nbyoung.com*
-  Stands: next
 ────────────────────────────────────────────────────────────────────────────────
 🔧 function
   Marks: —
-  Stands: does not apply
 ────────────────────────────────────────────────────────────────────────────────
 📐 design
   Marks: —
-  Stands: does not apply
 ────────────────────────────────────────────────────────────────────────────────
 🧱 implementation
   Marks: —
-  Stands: does not apply
 ────────────────────────────────────────────────────────────────────────────────
 📏 unit
   Marks: —
-  Stands: does not apply
 ────────────────────────────────────────────────────────────────────────────────
 🔗 integrate
   Marks: —
-  Stands: does not apply
 ────────────────────────────────────────────────────────────────────────────────
 🌍 validate
   Marks: —
-  Stands: does not apply
 ────────────────────────────────────────────────────────────────────────────────
 🚀 release
   Marks: —
-  Stands: does not apply
 ────────────────────────────────────────────────────────────────────────────────
 
 🤖 an agent contributes · 👀 a reviewer accepts · — the gate does not apply.
 
-Command: tabloio task 5fe3 --person nbyoung@nbyoung.com --ref main --level detail --text
+Command: tabloio task 5fe3 --person nbyoung@nbyoung.com --ref corpus/tooling --level detail --text

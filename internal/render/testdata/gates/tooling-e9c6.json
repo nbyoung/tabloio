@@ -2,21 +2,37 @@
   "schema": "tablo/1",
   "command": "gates",
   "source": {
-    "ref": "main",
-    "commit": "3cdae527d47d37fdff55bc302c76c017cf91c606",
-    "date": "2026-10-05",
+    "ref": "corpus/tooling",
+    "dir": ".",
+    "worktree": false,
+    "commit": "50a373b2857a36e4ef1a754605433943d6bfe324",
+    "date": "2026-10-17",
     "from": null,
     "trunk": {
-      "name": null
+      "name": "main",
+      "resolved": "stated"
     },
     "on_trunk": true
   },
   "project": {
+    "tableaux": "0.3.2",
     "root": "437e",
-    "title": "Tableaux tooling"
+    "title": "Tableaux tooling",
+    "owner": "nbyoung@nbyoung.com"
+  },
+  "viewer": {
+    "email": "nbyoung@nbyoung.com",
+    "roles": [
+      "owner",
+      "authority",
+      "assignee",
+      "contributor",
+      "reviewer"
+    ]
   },
   "params": {
     "task": "e9c6",
+    "role": null,
     "level": "detail"
   },
   "data": {
@@ -119,12 +135,14 @@
         {
           "key": "overloaded",
           "symbol": "🪫",
-          "synopsis": "The assigned resource is overloaded"
+          "synopsis": "The assigned resource is overloaded",
+          "reserved": false
         },
         {
           "key": "blocked",
           "symbol": "⛔",
-          "synopsis": "An external resource is unavailable"
+          "synopsis": "An external resource is unavailable",
+          "reserved": false
         },
         {
           "key": "review",
@@ -138,31 +156,31 @@
           "key": "person",
           "symbol": "🧑",
           "meaning": "A person contributes",
-          "junction": "Plain; the contributor is a person"
+          "junction": "plain"
         },
         {
           "key": "agent",
           "symbol": "🤖",
           "meaning": "An agent contributes",
-          "junction": "Plain; the junction states a `model`"
+          "junction": "plain"
         },
         {
           "key": "reviewer",
           "symbol": "👀",
           "meaning": "A reviewer accepts",
-          "junction": "Plain; the reviewer accepts the work at the gate"
+          "junction": "plain"
         },
         {
           "key": "subproject",
           "symbol": "🪆",
           "meaning": "A subproject does the work",
-          "junction": "Recursive; another Tableaux project does the work"
+          "junction": "recursive"
         },
         {
           "key": "exempt",
           "symbol": "—",
           "meaning": "The gate does not apply",
-          "junction": "Not applicable; the entry exempts the task from the gate"
+          "junction": "not_applicable"
         }
       ]
     },
@@ -233,5 +251,121 @@
       }
     ]
   },
-  "diagnostics": []
+  "diagnostics": [
+    {
+      "severity": "warning",
+      "code": "H3",
+      "task": "7166",
+      "gate": "implementation",
+      "commit": "56103af8cbaf561a90f9fa67fea02053372a4214",
+      "message": "Model claude-opus-5-5 is outside the stated model claude-sonnet"
+    },
+    {
+      "severity": "warning",
+      "code": "H3",
+      "task": "e9c6",
+      "gate": "implementation",
+      "commit": "ccb3947e3deb2f476a8c9c886266b2b4da66c6f6",
+      "message": "Model claude-opus-5-5 is outside the stated model claude-sonnet"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/7166.yaml",
+      "task": "7166",
+      "gate": "implementation",
+      "commit": "56103af8cbaf561a90f9fa67fea02053372a4214",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/7861.yaml",
+      "task": "7861",
+      "gate": "validate",
+      "commit": "c6f2655f1bda4469a6171b77cc21e326f0c99f87",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/9f3f.yaml",
+      "task": "9f3f",
+      "gate": "implementation",
+      "commit": "43d68e4f7d2b856c4d581983f34355d5b5f4f3b4",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/ac33.yaml",
+      "task": "ac33",
+      "gate": "implementation",
+      "commit": "6762222ddffef76008daad27ebe26069ac67cc5d",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/c2ad.yaml",
+      "task": "c2ad",
+      "gate": "validate",
+      "commit": "3d8ce0eee1e869c75453abba91cae03dec6587ce",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/e3cb.yaml",
+      "task": "e3cb",
+      "gate": "validate",
+      "commit": "c39ccac764b580ddb67789014c5f7f2c1bae9c6e",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/e9c6.yaml",
+      "task": "e9c6",
+      "gate": "validate",
+      "commit": "ccb3947e3deb2f476a8c9c886266b2b4da66c6f6",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/fcec.yaml",
+      "task": "fcec",
+      "gate": "unit",
+      "commit": "60495c26d886016b40069041386a811b24469312",
+      "message": "the newest event is the contributor's and the status states no review; noreply@anthropic.com may have unit to review"
+    },
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/595e.yaml",
+      "line": 13,
+      "col": 5,
+      "task": "595e",
+      "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    },
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/6103.yaml",
+      "line": 13,
+      "col": 5,
+      "task": "6103",
+      "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    },
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/c6e8.yaml",
+      "line": 13,
+      "col": 5,
+      "task": "c6e8",
+      "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    }
+  ]
 }

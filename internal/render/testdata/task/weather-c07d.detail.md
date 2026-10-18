@@ -62,7 +62,7 @@ Reads the sensors, sleeps between readings and publishes to the gateway.
 | Assignee | **ben@example.org** |
 | Status | 📐 design 🟢 nominal |
 | Note | Sleep scheduler in progress |
-| Recorded | 2026-09-17 |
+| Recorded | 2026-09-17 by **ben@example.org** |
 | Children | None |
 
 Command: `tabloio task c07d --person ben@example.org --ref main --level detail`

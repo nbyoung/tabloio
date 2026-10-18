@@ -27,8 +27,8 @@ Legend: `tabloio gates`.
 |---|---|
 | Deciding commit | `97e4231` Pin the firmware at its design |
 | Date | 2026-09-26 |
-| Author | **ben@example.org** |
-| Committer | **ben@example.org** |
+| Author | Ben Okafor, **ben@example.org** |
+| Committer | Ben Okafor, **ben@example.org** |
 | Trailers | `Reviewed: c07d mockup` |
 
 ## Description
@@ -51,8 +51,8 @@ Reads the sensors, sleeps between readings and publishes to the gateway.
 |---|---|
 | Commit | `22a758b` Define the node firmware task |
 | Date | 2026-09-16 |
-| Author | **ben@example.org** |
-| Committer | **ben@example.org** |
+| Author | Ben Okafor, **ben@example.org** |
+| Committer | Ben Okafor, **ben@example.org** |
 | Accepts by | a change on the trunk |
 | The authority is | the author and the committer |
 
@@ -91,18 +91,21 @@ Reads the sensors, sleeps between readings and publishes to the gateway.
 | Assignee | **ben@example.org** |
 | Status | 📐 design 🟢 nominal |
 | Note | Sleep scheduler in progress |
-| Recorded | 2026-09-17 |
+| Recorded | 2026-09-17 by **ben@example.org** |
 | Children | None |
 
 ## Linkages
 
 | Gate | Name | Value |
 |---|---|---|
-| 🛠️ implementation | `url` | `firmware`, stated in `.tableaux/tasks/c07d.yaml` |
+| 🛠️ implementation | `url` | `firmware`, stated in `.tableaux/tasks/c07d.yaml`, line 9 |
 |  | Form of the `url` | A path that is a Git submodule, so the submodule's pin fixes the commit |
 |  | Pin | `cf5b169`, in full `cf5b16964dba7f8f1c8842a8202878fd572ad835` |
 |  | `commit` field | Not stated; nothing restates the pin in the task file |
+|  | The pinned commit | `cf5b169` Record the node image design, 2026-09-17, author and committer Ben Okafor, **ben@example.org** |
 |  | `id` | `f1a0` |
+|  | The subproject's trunk | `main`, tip `fa834b3`; the pin is on the trunk, behind its tip |
+|  | Pin set by | `97e4231` Pin the firmware at its design, 2026-09-26, author and committer Ben Okafor, **ben@example.org** |
 
 ## Where each junction field comes from
 
@@ -113,7 +116,7 @@ Reads the sensors, sleeps between readings and publishes to the gateway.
 | 🛠️ implementation | subproject | firmware | `c07d` Node firmware |
 | 🧩 unit | contributor | opus@example.org | `c07d` Node firmware |
 |  | model | `claude-opus-5-5` | `c07d` Node firmware |
-|  | reviewer | **ben@example.org** | the plain default |
+|  | reviewer | **ben@example.org** | the assignee |
 
 ## Reviews: 1
 
@@ -132,12 +135,12 @@ Reads the sensors, sleeps between readings and publishes to the gateway.
 | 2026-09-26 | `97e4231` | **ben@example.org** | pin | firmware → `cf5b169` |
 | 2026-09-26 | `97e4231` | **ben@example.org** | reviewed | 📌 mockup |
 | 2026-09-26 | `97e4231` | **ben@example.org** | status | 📐 design |
-| 2026-09-17 | `cf5b169` | **ben@example.org** | status | 📐 design 🟢 nominal: Sleep scheduler in progress |
+| 2026-09-17 | `cf5b169` | **ben@example.org** | status | 📐 design 🟢 nominal: Sleep scheduler in progress; in the subproject `firmware`, task `f1a0` Weather node image |
 | 2026-09-16 | `22a758b` | **ben@example.org** | task |  |
 | … and 2 earlier |  |  |  |  |
 
 ```
-git log --format='%as %h %ae' main -- .tableaux/tasks/c07d.yaml .tableaux/status/c07d.yaml firmware
+git log --format='%H %as %ae %s' edb30d2baa5ea3c7e3fb8eef8ac6cce6e145221a -- .tableaux/tasks/c07d.yaml .tableaux/status/c07d.yaml firmware
 ```
 
 Command: `tabloio task c07d --person ben@example.org --ref edb30d2 --level provenance`

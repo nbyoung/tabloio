@@ -248,25 +248,25 @@ func TestRefAndCommit(t *testing.T) {
 		absent string // in neither
 	}{
 		{"glance", nil, Options{Level: view.Glance},
-			"Tableaux tooling · ref `main` · task", "`tabloio task e9c6 " + person + " --ref main --level glance`", "3cdae52"},
+			"Tableaux tooling · ref `corpus/tooling` · task", "`tabloio task e9c6 " + person + " --ref corpus/tooling --level glance`", "50a373b"},
 		{"glance with a stamp", nil, Options{Level: view.Glance, Stamp: true},
-			"ref `main` at `3cdae52`, 2026-10-05 · task", "`tabloio task e9c6 " + person + " --ref main --level glance`", ""},
+			"ref `corpus/tooling` at `50a373b`, 2026-10-17 · task", "`tabloio task e9c6 " + person + " --ref corpus/tooling --level glance`", ""},
 		{"provenance", nil, Options{Level: view.Provenance},
-			"ref `main` at `3cdae52`, 2026-10-05 · task", "`tabloio task e9c6 " + person + " --ref 3cdae52 --level provenance`", ""},
+			"ref `corpus/tooling` at `50a373b`, 2026-10-17 · task", "`tabloio task e9c6 " + person + " --ref 50a373b --level provenance`", ""},
 		{"HEAD at glance", func(v *view.Task) { v.Source.Ref = "HEAD" }, Options{Level: view.Glance},
 			"ref `HEAD` · task", "`tabloio task e9c6 " + person + " --level glance`", "--ref"},
 		{"HEAD at provenance", func(v *view.Task) { v.Source.Ref = "HEAD" }, Options{Level: view.Provenance},
-			"ref `HEAD` at `3cdae52`, 2026-10-05 · task", "`tabloio task e9c6 " + person + " --ref 3cdae52 --level provenance`", ""},
+			"ref `HEAD` at `50a373b`, 2026-10-17 · task", "`tabloio task e9c6 " + person + " --ref 50a373b --level provenance`", ""},
 		{"off the trunk", func(v *view.Task) { v.Source.OnTrunk = false }, Options{Level: view.Glance},
-			"ref `main`, off the trunk · task", "`tabloio task e9c6 " + person + " --ref main --level glance`", ""},
+			"ref `corpus/tooling`, off the trunk · task", "`tabloio task e9c6 " + person + " --ref corpus/tooling --level glance`", ""},
 		{"a range", func(v *view.Task) { v.Source.From = &view.SourceFrom{Ref: "v1"} }, Options{Level: view.Glance},
-			"ref `v1..main` · task", "`tabloio task e9c6 " + person + " --ref v1..main --level glance`", ""},
+			"ref `v1..corpus/tooling` · task", "`tabloio task e9c6 " + person + " --ref v1..corpus/tooling --level glance`", ""},
 		{"a range at provenance", func(v *view.Task) {
 			v.Source.From = &view.SourceFrom{Ref: "v1", Commit: "0704a09f00000000000000000000000000000000"}
 		}, Options{Level: view.Provenance},
-			"ref `v1..main` at `3cdae52`, 2026-10-05 · task", "`tabloio task e9c6 " + person + " --ref 0704a09..3cdae52 --level provenance`", ""},
+			"ref `v1..corpus/tooling` at `50a373b`, 2026-10-17 · task", "`tabloio task e9c6 " + person + " --ref 0704a09..50a373b --level provenance`", ""},
 		{"a range of a ref alone at provenance", func(v *view.Task) { v.Source.From = &view.SourceFrom{Ref: "v1"} }, Options{Level: view.Provenance},
-			"ref `v1..main` at `3cdae52`, 2026-10-05 · task", "`tabloio task e9c6 " + person + " --ref v1..3cdae52 --level provenance`", ""},
+			"ref `v1..corpus/tooling` at `50a373b`, 2026-10-17 · task", "`tabloio task e9c6 " + person + " --ref v1..50a373b --level provenance`", ""},
 	}
 	for _, c := range cases {
 		t.Run(c.name, func(t *testing.T) {
@@ -652,7 +652,7 @@ func TestLegendKeys(t *testing.T) {
 	v.Legend.States = []view.State{{Key: "nominal"}} // no symbol
 	v.Legend.Gates = nil
 	out := renderString(t, &v, Options{Level: view.Glance})
-	if !strings.Contains(out, "| Status | design nominal |") {
+	if !strings.Contains(out, "| Status | implementation nominal |") {
 		t.Errorf("a key with no symbol:\n%s", out)
 	}
 }

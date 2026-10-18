@@ -1,8 +1,8 @@
 Task definition: e9c6 Abstract views
 ════════════════════════════════════
 
-*What is this task and where does it stand?* Tableaux tooling · ref main · task
-e9c6 · person nbyoung@nbyoung.com · level detail
+*What is this task and where does it stand?* Tableaux tooling · ref
+corpus/tooling · task e9c6 · person nbyoung@nbyoung.com · level detail
 
 Legend: tabloio gates.
 
@@ -12,10 +12,11 @@ Legend: tabloio gates.
 │ Task     │ e9c6 Abstract views                                               │
 │ Assignee │ noreply@anthropic.com                                             │
 │ Parent   │ 2034 Views, order 1                                               │
-│ Status   │ 📐 design 🟢 nominal                                              │
-│ Note     │ VIEWS.md is on the trunk at language 0.3.1; the twenty mockups    │
-│          │ may start, and implementation puts the text in place              │
-│ Recorded │ 2026-09-30 by noreply@anthropic.com                               │
+│ Status   │ 🧱 implementation 🟢 nominal                                      │
+│ Note     │ VIEWS.md defines the ten views on the trunk and agrees with the   │
+│          │ twenty approved mockups on the gate window; validation checks     │
+│          │ that tablo and the front ends follow the text                     │
+│ Recorded │ 2026-10-05 by noreply@anthropic.com                               │
 └──────────┴───────────────────────────────────────────────────────────────────┘
 
 Description
@@ -61,33 +62,31 @@ Requires: 1
 Dependents: 21
 ──────────────
 
-┌──────────────────┬───────────────────┬───────────────────┬───────────────────┐
-│ Task             │ Edge              │ What passes       │ Condition         │
-├──────────────────┼───────────────────┼───────────────────┼───────────────────┤
-│ 99f0 Gate        │ design → mockup   │ The abstract      │ met               │
-│ definition view  │                   │ definition of the │                   │
-│ in Markdown      │                   │ view              │                   │
-├──────────────────┼───────────────────┼───────────────────┼───────────────────┤
-│ 05a9 Task        │ design → mockup   │ The abstract      │ met               │
-│ definition view  │                   │ definition of the │                   │
-│ in Markdown      │                   │ view              │                   │
-├──────────────────┼───────────────────┼───────────────────┼───────────────────┤
-│ a9ce Authority   │ design → mockup   │ The abstract      │ met               │
-│ delegation view  │                   │ definition of the │                   │
-│ in Markdown      │                   │ view              │                   │
-├──────────────────┼───────────────────┼───────────────────┼───────────────────┤
-│ … and 17 more:   │ design → mockup   │ The abstract      │ met               │
-│ bb7c c74a efff   │                   │ definition of the │                   │
-│ ab8e c545 d615   │                   │ view              │                   │
-│ b14e a6f7 7dff   │                   │                   │                   │
-│ b1b7 ea51 7783   │                   │                   │                   │
-│ 5471 32e7 69eb   │                   │                   │                   │
-│ 3194 a8b4        │                   │                   │                   │
-├──────────────────┼───────────────────┼───────────────────┼───────────────────┤
-│ 77b2 tablo:      │ implementation →  │ The abstract      │ unmet, not yet    │
-│ backend library  │ design            │ views it derives  │ due               │
-│ and plumbing     │                   │                   │                   │
-└──────────────────┴───────────────────┴───────────────────┴───────────────────┘
+┌─────────────────────┬─────────────────────┬──────────────────────┬───────────┐
+│ Task                │ Edge                │ What passes          │ Condition │
+├─────────────────────┼─────────────────────┼──────────────────────┼───────────┤
+│ 99f0 Gate           │ design → mockup     │ The abstract         │ met       │
+│ definition view in  │                     │ definition of the    │           │
+│ Markdown            │                     │ view                 │           │
+├─────────────────────┼─────────────────────┼──────────────────────┼───────────┤
+│ 05a9 Task           │ design → mockup     │ The abstract         │ met       │
+│ definition view in  │                     │ definition of the    │           │
+│ Markdown            │                     │ view                 │           │
+├─────────────────────┼─────────────────────┼──────────────────────┼───────────┤
+│ a9ce Authority      │ design → mockup     │ The abstract         │ met       │
+│ delegation view in  │                     │ definition of the    │           │
+│ Markdown            │                     │ view                 │           │
+├─────────────────────┼─────────────────────┼──────────────────────┼───────────┤
+│ … and 17 more: bb7c │ design → mockup     │ The abstract         │ met       │
+│ c74a efff ab8e c545 │                     │ definition of the    │           │
+│ d615 b14e a6f7 7dff │                     │ view                 │           │
+│ b1b7 ea51 7783 5471 │                     │                      │           │
+│ 32e7 69eb 3194 a8b4 │                     │                      │           │
+├─────────────────────┼─────────────────────┼──────────────────────┼───────────┤
+│ 77b2 tablo: backend │ implementation →    │ The abstract views   │ met       │
+│ library and         │ design              │ it derives           │           │
+│ plumbing            │                     │                      │           │
+└─────────────────────┴─────────────────────┴──────────────────────┴───────────┘
 
 Junctions
 ─────────
@@ -100,7 +99,7 @@ Gate · Marks · Contributor · Model · Reviewer · Stands
   Contributor: noreply@anthropic.com
   Model: claude-haiku
   Reviewer: the assignee, noreply@anthropic.com
-  Stands: passed
+  Stands: passed, reviewed
 ────────────────────────────────────────────────────────────────────────────────
 📌 mockup
   Marks: —
@@ -115,14 +114,14 @@ Gate · Marks · Contributor · Model · Reviewer · Stands
   Contributor: noreply@anthropic.com
   Model: claude-fable
   Reviewer: *nbyoung@nbyoung.com*
-  Stands: passed, reviewed; the status stands here
+  Stands: passed, reviewed
 ────────────────────────────────────────────────────────────────────────────────
 🧱 implementation
   Marks: 🤖
   Contributor: noreply@anthropic.com
   Model: claude-sonnet
   Reviewer: the assignee, noreply@anthropic.com
-  Stands: next
+  Stands: passed, reviewed; the status stands here
 ────────────────────────────────────────────────────────────────────────────────
 📏 unit
   Marks: —
@@ -137,7 +136,7 @@ Gate · Marks · Contributor · Model · Reviewer · Stands
   Contributor: noreply@anthropic.com
   Model: claude-opus
   Reviewer: *nbyoung@nbyoung.com*
-  Stands: later
+  Stands: next
 ────────────────────────────────────────────────────────────────────────────────
 🚀 release
   Marks: 🧑
@@ -148,4 +147,4 @@ Gate · Marks · Contributor · Model · Reviewer · Stands
 🧑 a person contributes · 🤖 an agent contributes · 👀 a reviewer accepts ·
 — the gate does not apply.
 
-Command: tabloio task e9c6 --person nbyoung@nbyoung.com --ref main --level detail --text
+Command: tabloio task e9c6 --person nbyoung@nbyoung.com --ref corpus/tooling --level detail --text

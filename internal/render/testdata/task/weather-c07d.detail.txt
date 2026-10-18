@@ -119,16 +119,16 @@ subproject does the work · — the gate does not apply.
 Subproject snapshot
 ───────────────────
 
-┌────────────┬─────────────────────────────┐
-│ Field      │ Value                       │
-├────────────┼─────────────────────────────┤
-│ Subproject │ firmware                    │
-│ Task       │ f1a0 Weather node image     │
-│ Assignee   │ *ben@example.org*           │
-│ Status     │ 📐 design 🟢 nominal        │
-│ Note       │ Sleep scheduler in progress │
-│ Recorded   │ 2026-09-17                  │
-│ Children   │ None                        │
-└────────────┴─────────────────────────────┘
+┌────────────┬─────────────────────────────────┐
+│ Field      │ Value                           │
+├────────────┼─────────────────────────────────┤
+│ Subproject │ firmware                        │
+│ Task       │ f1a0 Weather node image         │
+│ Assignee   │ *ben@example.org*               │
+│ Status     │ 📐 design 🟢 nominal            │
+│ Note       │ Sleep scheduler in progress     │
+│ Recorded   │ 2026-09-17 by *ben@example.org* │
+│ Children   │ None                            │
+└────────────┴─────────────────────────────────┘
 
 Command: tabloio task c07d --person ben@example.org --ref main --level detail --text

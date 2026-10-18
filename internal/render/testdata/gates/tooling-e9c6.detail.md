@@ -1,6 +1,6 @@
 # Gate definition for `e9c6` Abstract views
 
-**What do the columns and symbols mean?** Tableaux tooling · ref `main` · task `e9c6` · level detail
+**What do the columns and symbols mean?** Tableaux tooling · ref `corpus/tooling` · task `e9c6` · level detail
 
 ## Gates
 
@@ -41,10 +41,10 @@ The method reserves `review`: the contributor has handed the next junction's wor
 
 | Mark | Meaning | Junction |
 |:-:|---|---|
-| 🧑 | A person contributes | Plain; the contributor is a person |
-| 🤖 | An agent contributes | Plain; the junction states a `model` |
-| 👀 | A reviewer accepts | Plain; the reviewer accepts the work at the gate |
-| 🪆 | A subproject does the work | Recursive; another Tableaux project does the work |
-| — | The gate does not apply | Not applicable; the entry exempts the task from the gate |
+| 🧑 | A person contributes | plain |
+| 🤖 | An agent contributes | plain |
+| 👀 | A reviewer accepts | plain |
+| 🪆 | A subproject does the work | recursive |
+| — | The gate does not apply | not\_applicable |
 
-Command: `tabloio gates --task e9c6 --ref main --level detail`
+Command: `tabloio gates --task e9c6 --ref corpus/tooling --level detail`

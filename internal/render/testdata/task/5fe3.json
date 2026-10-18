@@ -2,22 +2,38 @@
   "schema": "tablo/1",
   "command": "task",
   "source": {
-    "ref": "main",
-    "commit": "3cdae527d47d37fdff55bc302c76c017cf91c606",
-    "date": "2026-10-05",
+    "ref": "corpus/tooling",
+    "dir": ".",
+    "worktree": false,
+    "commit": "50a373b2857a36e4ef1a754605433943d6bfe324",
+    "date": "2026-10-17",
     "from": null,
     "trunk": {
-      "name": null
+      "name": "main",
+      "resolved": "stated"
     },
     "on_trunk": true
   },
   "project": {
+    "tableaux": "0.3.2",
     "root": "437e",
-    "title": "Tableaux tooling"
+    "title": "Tableaux tooling",
+    "owner": "nbyoung@nbyoung.com"
+  },
+  "viewer": {
+    "email": "nbyoung@nbyoung.com",
+    "roles": [
+      "owner",
+      "authority",
+      "assignee",
+      "contributor",
+      "reviewer"
+    ]
   },
   "params": {
     "task": "5fe3",
     "person": "nbyoung@nbyoung.com",
+    "role": null,
     "level": "provenance"
   },
   "data": {
@@ -120,12 +136,14 @@
         {
           "key": "overloaded",
           "symbol": "🪫",
-          "synopsis": "The assigned resource is overloaded"
+          "synopsis": "The assigned resource is overloaded",
+          "reserved": false
         },
         {
           "key": "blocked",
           "symbol": "⛔",
-          "synopsis": "An external resource is unavailable"
+          "synopsis": "An external resource is unavailable",
+          "reserved": false
         },
         {
           "key": "review",
@@ -139,31 +157,31 @@
           "key": "person",
           "symbol": "🧑",
           "meaning": "A person contributes",
-          "junction": "Plain; the contributor is a person"
+          "junction": "plain"
         },
         {
           "key": "agent",
           "symbol": "🤖",
           "meaning": "An agent contributes",
-          "junction": "Plain; the junction states a `model`"
+          "junction": "plain"
         },
         {
           "key": "reviewer",
           "symbol": "👀",
           "meaning": "A reviewer accepts",
-          "junction": "Plain; the reviewer accepts the work at the gate"
+          "junction": "plain"
         },
         {
           "key": "subproject",
           "symbol": "🪆",
           "meaning": "A subproject does the work",
-          "junction": "Recursive; another Tableaux project does the work"
+          "junction": "recursive"
         },
         {
           "key": "exempt",
           "symbol": "—",
           "meaning": "The gate does not apply",
-          "junction": "Not applicable; the entry exempts the task from the gate"
+          "junction": "not_applicable"
         }
       ]
     },
@@ -178,20 +196,35 @@
       "order": 3
     },
     "status": {
-      "gate": "defined",
-      "state": "nominal",
+      "kind": "rollup",
+      "gate": "mockup",
+      "state": "complete",
       "reason": "",
-      "note": "Mockup waits for Abstract views (e9c6) at design",
-      "date": "2026-09-29",
+      "note": "The owner accepts docs/mockups/gates.html at the mockup gate, the last gate that applies to this task",
+      "date": "2026-10-05",
       "recorder": "",
+      "derived": true,
+      "why": "",
+      "uncommitted": false,
       "from": {
         "kind": "rollup",
         "task": {
           "id": "a6f7",
           "title": "Gate definition view in Html"
-        }
+        },
+        "url": "",
+        "pin": "",
+        "gate": ""
       }
     },
+    "authorised": true,
+    "description": "Hand-made HTML mockups of every view, one self-contained file each under docs/mockups/, depicting this project. HTML is the interactive medium: a page that a local daemon serves from the checked-out repository, with progressive disclosure per role. A mockup shows its disclosure levels, for example with details elements, and needs no server. The defined gate agrees what the view shows in HTML; the mockup gate delivers the file; later gates belong to the tableaud subproject.\n",
+    "references": [
+      {
+        "text": "The mockups",
+        "url": "docs/mockups/"
+      }
+    ],
     "path": [
       {
         "id": "437e",
@@ -215,121 +248,181 @@
       {
         "id": "a6f7",
         "title": "Gate definition view in Html",
+        "order": 1,
         "status": {
-          "gate": "defined",
-          "state": "nominal",
+          "kind": "recorded",
+          "gate": "mockup",
+          "state": "complete",
           "reason": "",
-          "note": "",
-          "date": "",
-          "recorder": ""
+          "note": "The owner accepts docs/mockups/gates.html at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
         }
       },
       {
         "id": "7dff",
-        "title": "",
+        "title": "Task definition view in Html",
+        "order": 2,
         "status": {
-          "gate": "defined",
-          "state": "nominal",
+          "kind": "recorded",
+          "gate": "mockup",
+          "state": "complete",
           "reason": "",
-          "note": "",
-          "date": "",
-          "recorder": ""
+          "note": "The owner accepts docs/mockups/task.html at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
         }
       },
       {
         "id": "b1b7",
-        "title": "",
+        "title": "Authority delegation view in Html",
+        "order": 3,
         "status": {
-          "gate": "defined",
-          "state": "nominal",
+          "kind": "recorded",
+          "gate": "mockup",
+          "state": "complete",
           "reason": "",
-          "note": "",
-          "date": "",
-          "recorder": ""
+          "note": "The owner accepts docs/mockups/authority.html at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
         }
       },
       {
         "id": "ea51",
-        "title": "",
+        "title": "Task assignment view in Html",
+        "order": 4,
         "status": {
-          "gate": "defined",
-          "state": "nominal",
+          "kind": "recorded",
+          "gate": "mockup",
+          "state": "complete",
           "reason": "",
-          "note": "",
-          "date": "",
-          "recorder": ""
+          "note": "The owner accepts docs/mockups/assignment.html at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
         }
       },
       {
         "id": "7783",
-        "title": "",
+        "title": "Contributor work queue view in Html",
+        "order": 5,
         "status": {
-          "gate": "defined",
-          "state": "nominal",
+          "kind": "recorded",
+          "gate": "mockup",
+          "state": "complete",
           "reason": "",
-          "note": "",
-          "date": "",
-          "recorder": ""
+          "note": "The owner accepts docs/mockups/queue.html at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
         }
       },
       {
         "id": "5471",
-        "title": "",
+        "title": "Work-blockage tree view in Html",
+        "order": 6,
         "status": {
-          "gate": "defined",
-          "state": "nominal",
+          "kind": "recorded",
+          "gate": "mockup",
+          "state": "complete",
           "reason": "",
-          "note": "",
-          "date": "",
-          "recorder": ""
+          "note": "The owner accepts docs/mockups/blockage.html at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
         }
       },
       {
         "id": "32e7",
-        "title": "",
+        "title": "Global tableau view in Html",
+        "order": 7,
         "status": {
-          "gate": "defined",
-          "state": "nominal",
+          "kind": "recorded",
+          "gate": "mockup",
+          "state": "complete",
           "reason": "",
-          "note": "",
-          "date": "",
-          "recorder": ""
+          "note": "The owner accepts docs/mockups/tableau.html at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
         }
       },
       {
         "id": "69eb",
-        "title": "",
+        "title": "Contextual tableau view in Html",
+        "order": 8,
         "status": {
-          "gate": "defined",
-          "state": "nominal",
+          "kind": "recorded",
+          "gate": "mockup",
+          "state": "complete",
           "reason": "",
-          "note": "",
-          "date": "",
-          "recorder": ""
+          "note": "The owner accepts docs/mockups/context.html at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
         }
       },
       {
         "id": "3194",
-        "title": "",
+        "title": "History view in Html",
+        "order": 9,
         "status": {
-          "gate": "defined",
-          "state": "nominal",
+          "kind": "recorded",
+          "gate": "mockup",
+          "state": "complete",
           "reason": "",
-          "note": "",
-          "date": "",
-          "recorder": ""
+          "note": "The owner accepts docs/mockups/history.html at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
         }
       },
       {
         "id": "a8b4",
-        "title": "",
+        "title": "Audit view in Html",
+        "order": 10,
         "status": {
-          "gate": "defined",
-          "state": "nominal",
+          "kind": "recorded",
+          "gate": "mockup",
+          "state": "complete",
           "reason": "",
-          "note": "",
-          "date": "",
-          "recorder": ""
+          "note": "The owner accepts docs/mockups/audit.html at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
         }
       }
     ],
@@ -347,7 +440,6 @@
         "by": "437e"
       }
     ],
-    "authorised": true,
     "requires": [],
     "dependents": [
       {
@@ -358,8 +450,14 @@
         "from": "mockup",
         "to": "design",
         "text": "The HTML mockups that fix the disclosure levels",
-        "met": false,
-        "due": false
+        "met": true,
+        "due": true,
+        "condition": "met",
+        "why": "",
+        "status": null,
+        "subproject": "",
+        "commit": "",
+        "at_trunk": "unknown"
       },
       {
         "task": {
@@ -369,13 +467,20 @@
         "from": "mockup",
         "to": "design",
         "text": "The HTML mockups it reproduces",
-        "met": false,
-        "due": false
+        "met": true,
+        "due": true,
+        "condition": "met",
+        "why": "",
+        "status": null,
+        "subproject": "",
+        "commit": "",
+        "at_trunk": "unknown"
       }
     ],
     "junctions": [
       {
         "gate": "defined",
+        "kind": "plain",
         "marks": [
           "agent"
         ],
@@ -384,11 +489,17 @@
         "model": "claude-haiku",
         "reviewer": "noreply@anthropic.com",
         "reviewer_by_default": true,
-        "stands": "here",
-        "reviewed": false
+        "subproject": null,
+        "references": [],
+        "stands": "",
+        "reviewed": true,
+        "from": [
+          "437e"
+        ]
       },
       {
         "gate": "mockup",
+        "kind": "plain",
         "marks": [
           "agent",
           "reviewer"
@@ -398,11 +509,17 @@
         "model": "claude-opus",
         "reviewer": "nbyoung@nbyoung.com",
         "reviewer_by_default": false,
-        "stands": "next",
-        "reviewed": false
+        "subproject": null,
+        "references": [],
+        "stands": "",
+        "reviewed": false,
+        "from": [
+          "437e"
+        ]
       },
       {
         "gate": "function",
+        "kind": "not_applicable",
         "marks": [
           "exempt"
         ],
@@ -411,11 +528,17 @@
         "model": "",
         "reviewer": "",
         "reviewer_by_default": false,
-        "stands": "exempt",
-        "reviewed": false
+        "subproject": null,
+        "references": [],
+        "stands": "",
+        "reviewed": false,
+        "from": [
+          "5fe3"
+        ]
       },
       {
         "gate": "design",
+        "kind": "not_applicable",
         "marks": [
           "exempt"
         ],
@@ -424,11 +547,17 @@
         "model": "",
         "reviewer": "",
         "reviewer_by_default": false,
-        "stands": "exempt",
-        "reviewed": false
+        "subproject": null,
+        "references": [],
+        "stands": "",
+        "reviewed": false,
+        "from": [
+          "5fe3"
+        ]
       },
       {
         "gate": "implementation",
+        "kind": "not_applicable",
         "marks": [
           "exempt"
         ],
@@ -437,11 +566,17 @@
         "model": "",
         "reviewer": "",
         "reviewer_by_default": false,
-        "stands": "exempt",
-        "reviewed": false
+        "subproject": null,
+        "references": [],
+        "stands": "",
+        "reviewed": false,
+        "from": [
+          "5fe3"
+        ]
       },
       {
         "gate": "unit",
+        "kind": "not_applicable",
         "marks": [
           "exempt"
         ],
@@ -450,11 +585,17 @@
         "model": "",
         "reviewer": "",
         "reviewer_by_default": false,
-        "stands": "exempt",
-        "reviewed": false
+        "subproject": null,
+        "references": [],
+        "stands": "",
+        "reviewed": false,
+        "from": [
+          "5fe3"
+        ]
       },
       {
         "gate": "integrate",
+        "kind": "not_applicable",
         "marks": [
           "exempt"
         ],
@@ -463,11 +604,17 @@
         "model": "",
         "reviewer": "",
         "reviewer_by_default": false,
-        "stands": "exempt",
-        "reviewed": false
+        "subproject": null,
+        "references": [],
+        "stands": "",
+        "reviewed": false,
+        "from": [
+          "5fe3"
+        ]
       },
       {
         "gate": "validate",
+        "kind": "not_applicable",
         "marks": [
           "exempt"
         ],
@@ -476,11 +623,17 @@
         "model": "",
         "reviewer": "",
         "reviewer_by_default": false,
-        "stands": "exempt",
-        "reviewed": false
+        "subproject": null,
+        "references": [],
+        "stands": "",
+        "reviewed": false,
+        "from": [
+          "5fe3"
+        ]
       },
       {
         "gate": "release",
+        "kind": "not_applicable",
         "marks": [
           "exempt"
         ],
@@ -489,16 +642,126 @@
         "model": "",
         "reviewer": "",
         "reviewer_by_default": false,
-        "stands": "exempt",
-        "reviewed": false
+        "subproject": null,
+        "references": [],
+        "stands": "",
+        "reviewed": false,
+        "from": [
+          "5fe3"
+        ]
       }
     ],
+    "snapshot": null,
+    "status_commit": {
+      "hash": "266cb8bf7597e2481c67f866c172ac7d2c5837f7",
+      "subject": "Advance the twenty mockup tasks to their mockup gate",
+      "date": "2026-10-05",
+      "author_time": "2026-10-05T18:30:49-04:00",
+      "author": {
+        "name": "Claude Opus 5.5",
+        "email": "noreply@anthropic.com"
+      },
+      "committer": {
+        "name": "Claude Opus 5.5",
+        "email": "noreply@anthropic.com"
+      },
+      "parents": [
+        "8d20d646ced59cc6d4514c2e01031f05da1f6ddd"
+      ],
+      "trailers": [
+        "Model: claude-opus-5-5",
+        "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+      ],
+      "files": [
+        {
+          "path": ".tableaux/status/05a9.yaml",
+          "change": "changed"
+        },
+        {
+          "path": ".tableaux/status/3194.yaml",
+          "change": "changed"
+        },
+        {
+          "path": ".tableaux/status/32e7.yaml",
+          "change": "changed"
+        },
+        {
+          "path": ".tableaux/status/5471.yaml",
+          "change": "changed"
+        },
+        {
+          "path": ".tableaux/status/69eb.yaml",
+          "change": "changed"
+        },
+        {
+          "path": ".tableaux/status/7783.yaml",
+          "change": "changed"
+        },
+        {
+          "path": ".tableaux/status/7dff.yaml",
+          "change": "changed"
+        },
+        {
+          "path": ".tableaux/status/99f0.yaml",
+          "change": "changed"
+        },
+        {
+          "path": ".tableaux/status/a6f7.yaml",
+          "change": "changed"
+        },
+        {
+          "path": ".tableaux/status/a8b4.yaml",
+          "change": "changed"
+        },
+        {
+          "path": ".tableaux/status/a9ce.yaml",
+          "change": "changed"
+        },
+        {
+          "path": ".tableaux/status/ab8e.yaml",
+          "change": "changed"
+        },
+        {
+          "path": ".tableaux/status/b14e.yaml",
+          "change": "changed"
+        },
+        {
+          "path": ".tableaux/status/b1b7.yaml",
+          "change": "changed"
+        },
+        {
+          "path": ".tableaux/status/bb7c.yaml",
+          "change": "changed"
+        },
+        {
+          "path": ".tableaux/status/c545.yaml",
+          "change": "changed"
+        },
+        {
+          "path": ".tableaux/status/c74a.yaml",
+          "change": "changed"
+        },
+        {
+          "path": ".tableaux/status/d615.yaml",
+          "change": "changed"
+        },
+        {
+          "path": ".tableaux/status/ea51.yaml",
+          "change": "changed"
+        },
+        {
+          "path": ".tableaux/status/efff.yaml",
+          "change": "changed"
+        }
+      ]
+    },
     "own_commit": null,
     "authorisation": {
       "commit": {
-        "hash": "6b6c99a",
+        "hash": "6b6c99a2ca35f684674ad886a33916979137f227",
         "subject": "Plan the Tableaux tooling",
         "date": "2026-09-29",
+        "author_time": "2026-09-29T16:38:16-04:00",
         "author": {
           "name": "Norman Young",
           "email": "nbyoung@nbyoung.com"
@@ -507,134 +770,181 @@
           "name": "Norman Young",
           "email": "nbyoung@nbyoung.com"
         },
-        "trailers": []
+        "parents": [
+          "0a0dcd584a43253286c778593d18ddbf610d0969"
+        ],
+        "trailers": [
+          "Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
+        ],
+        "files": [
+          {
+            "path": ".tableaux/gates.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/05a9.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/2034.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/3194.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/32e7.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/437e.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/5471.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/595e.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/5fe3.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/6103.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/69eb.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/7166.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/7783.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/77b2.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/7861.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/7dff.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/99f0.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/9f3f.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/a6f7.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/a8b4.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/a9ce.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/ab8e.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/ac33.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/b14e.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/b1b7.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/bb7c.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/bc63.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/bc86.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/c2ad.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/c545.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/c6e8.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/c74a.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/d615.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/e3cb.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/e9c6.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/ea51.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/efff.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/fcec.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/version.yaml",
+            "change": "added"
+          }
+        ]
       },
       "way": "change",
-      "by": "both"
+      "by": "both",
+      "email": "nbyoung@nbyoung.com",
+      "judges": [
+        "nbyoung@nbyoung.com"
+      ],
+      "why": "",
+      "differs_from_trunk": false,
+      "uncommitted": false
     },
-    "sources": [
-      {
-        "gate": "defined",
-        "field": "contributor",
-        "value": "noreply@anthropic.com",
-        "by": "437e",
-        "key": "",
-        "file": "",
-        "line": 0
-      },
-      {
-        "gate": "defined",
-        "field": "model",
-        "value": "claude-haiku",
-        "by": "437e",
-        "key": "",
-        "file": "",
-        "line": 0
-      },
-      {
-        "gate": "defined",
-        "field": "reviewer",
-        "value": "noreply@anthropic.com",
-        "by": "default",
-        "key": "",
-        "file": "",
-        "line": 0
-      },
-      {
-        "gate": "mockup",
-        "field": "contributor",
-        "value": "noreply@anthropic.com",
-        "by": "437e",
-        "key": "",
-        "file": "",
-        "line": 0
-      },
-      {
-        "gate": "mockup",
-        "field": "model",
-        "value": "claude-opus",
-        "by": "437e",
-        "key": "",
-        "file": "",
-        "line": 0
-      },
-      {
-        "gate": "mockup",
-        "field": "reviewer",
-        "value": "nbyoung@nbyoung.com",
-        "by": "437e",
-        "key": "",
-        "file": "",
-        "line": 0
-      },
-      {
-        "gate": "function",
-        "field": "applies",
-        "value": "false",
-        "by": "5fe3",
-        "key": "",
-        "file": "",
-        "line": 0
-      },
-      {
-        "gate": "design",
-        "field": "applies",
-        "value": "false",
-        "by": "5fe3",
-        "key": "",
-        "file": "",
-        "line": 0
-      },
-      {
-        "gate": "implementation",
-        "field": "applies",
-        "value": "false",
-        "by": "5fe3",
-        "key": "",
-        "file": "",
-        "line": 0
-      },
-      {
-        "gate": "unit",
-        "field": "applies",
-        "value": "false",
-        "by": "5fe3",
-        "key": "",
-        "file": "",
-        "line": 0
-      },
-      {
-        "gate": "integrate",
-        "field": "applies",
-        "value": "false",
-        "by": "5fe3",
-        "key": "",
-        "file": "",
-        "line": 0
-      },
-      {
-        "gate": "validate",
-        "field": "applies",
-        "value": "false",
-        "by": "5fe3",
-        "key": "",
-        "file": "",
-        "line": 0
-      },
-      {
-        "gate": "release",
-        "field": "applies",
-        "value": "false",
-        "by": "5fe3",
-        "key": "",
-        "file": "",
-        "line": 0
-      }
-    ],
-    "reviews": [],
-    "models": [],
-    "events": [],
-    "event_count": 0,
     "considered": [
       "a6f7",
       "7dff",
@@ -655,18 +965,25 @@
         },
         "url": "",
         "status": {
-          "gate": "defined",
-          "state": "nominal",
+          "kind": "rollup",
+          "gate": "mockup",
+          "state": "complete",
           "reason": "",
-          "note": "Mockup waits for Abstract views (e9c6) at design",
-          "date": "2026-09-29",
+          "note": "The owner accepts docs/mockups/gates.html at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
           "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
           "from": {
             "kind": "rollup",
             "task": {
               "id": "a6f7",
               "title": "Gate definition view in Html"
-            }
+            },
+            "url": "",
+            "pin": "",
+            "gate": ""
           }
         }
       },
@@ -677,16 +994,290 @@
         },
         "url": "",
         "status": {
-          "gate": "defined",
-          "state": "nominal",
+          "kind": "recorded",
+          "gate": "mockup",
+          "state": "complete",
           "reason": "",
-          "note": "Mockup waits for Abstract views (e9c6) at design",
-          "date": "2026-09-29",
+          "note": "The owner accepts docs/mockups/gates.html at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
           "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
           "from": null
         }
       }
+    ],
+    "linkages": [],
+    "sources": [
+      {
+        "gate": "defined",
+        "field": "contributor",
+        "value": "noreply@anthropic.com",
+        "by": "437e",
+        "key": "junctions.defined.contributor",
+        "file": ".tableaux/tasks/437e.yaml",
+        "line": 17,
+        "col": 34
+      },
+      {
+        "gate": "defined",
+        "field": "model",
+        "value": "claude-haiku",
+        "by": "437e",
+        "key": "junctions.defined.model",
+        "file": ".tableaux/tasks/437e.yaml",
+        "line": 17,
+        "col": 64
+      },
+      {
+        "gate": "defined",
+        "field": "reviewer",
+        "value": "noreply@anthropic.com",
+        "by": "assignee",
+        "key": "assignee",
+        "file": "",
+        "line": 0,
+        "col": 0
+      },
+      {
+        "gate": "mockup",
+        "field": "contributor",
+        "value": "noreply@anthropic.com",
+        "by": "437e",
+        "key": "junctions.mockup.contributor",
+        "file": ".tableaux/tasks/437e.yaml",
+        "line": 18,
+        "col": 34
+      },
+      {
+        "gate": "mockup",
+        "field": "model",
+        "value": "claude-opus",
+        "by": "437e",
+        "key": "junctions.mockup.model",
+        "file": ".tableaux/tasks/437e.yaml",
+        "line": 18,
+        "col": 64
+      },
+      {
+        "gate": "mockup",
+        "field": "reviewer",
+        "value": "nbyoung@nbyoung.com",
+        "by": "437e",
+        "key": "junctions.mockup.reviewer",
+        "file": ".tableaux/tasks/437e.yaml",
+        "line": 18,
+        "col": 87
+      },
+      {
+        "gate": "function",
+        "field": "applies",
+        "value": "false",
+        "by": "5fe3",
+        "key": "junctions.function.applies",
+        "file": ".tableaux/tasks/5fe3.yaml",
+        "line": 8,
+        "col": 3
+      },
+      {
+        "gate": "design",
+        "field": "applies",
+        "value": "false",
+        "by": "5fe3",
+        "key": "junctions.design.applies",
+        "file": ".tableaux/tasks/5fe3.yaml",
+        "line": 9,
+        "col": 3
+      },
+      {
+        "gate": "implementation",
+        "field": "applies",
+        "value": "false",
+        "by": "5fe3",
+        "key": "junctions.implementation.applies",
+        "file": ".tableaux/tasks/5fe3.yaml",
+        "line": 10,
+        "col": 3
+      },
+      {
+        "gate": "unit",
+        "field": "applies",
+        "value": "false",
+        "by": "5fe3",
+        "key": "junctions.unit.applies",
+        "file": ".tableaux/tasks/5fe3.yaml",
+        "line": 11,
+        "col": 3
+      },
+      {
+        "gate": "integrate",
+        "field": "applies",
+        "value": "false",
+        "by": "5fe3",
+        "key": "junctions.integrate.applies",
+        "file": ".tableaux/tasks/5fe3.yaml",
+        "line": 12,
+        "col": 3
+      },
+      {
+        "gate": "validate",
+        "field": "applies",
+        "value": "false",
+        "by": "5fe3",
+        "key": "junctions.validate.applies",
+        "file": ".tableaux/tasks/5fe3.yaml",
+        "line": 13,
+        "col": 3
+      },
+      {
+        "gate": "release",
+        "field": "applies",
+        "value": "false",
+        "by": "5fe3",
+        "key": "junctions.release.applies",
+        "file": ".tableaux/tasks/5fe3.yaml",
+        "line": 14,
+        "col": 3
+      }
+    ],
+    "reviews": [],
+    "models": [],
+    "events": [
+      {
+        "date": "2026-09-29",
+        "commit": "6b6c99a2ca35f684674ad886a33916979137f227",
+        "by": "nbyoung@nbyoung.com",
+        "kind": "task",
+        "recorded": null,
+        "gate": "",
+        "pin": null,
+        "subproject": null
+      }
+    ],
+    "event_count": 1,
+    "commands": [
+      {
+        "text": "git log --format='%H %as %ae %s' 50a373b2857a36e4ef1a754605433943d6bfe324 -- .tableaux/tasks/5fe3.yaml .tableaux/status/5fe3.yaml",
+        "comment": ""
+      }
     ]
   },
-  "diagnostics": []
+  "diagnostics": [
+    {
+      "severity": "warning",
+      "code": "H3",
+      "task": "7166",
+      "gate": "implementation",
+      "commit": "56103af8cbaf561a90f9fa67fea02053372a4214",
+      "message": "Model claude-opus-5-5 is outside the stated model claude-sonnet"
+    },
+    {
+      "severity": "warning",
+      "code": "H3",
+      "task": "e9c6",
+      "gate": "implementation",
+      "commit": "ccb3947e3deb2f476a8c9c886266b2b4da66c6f6",
+      "message": "Model claude-opus-5-5 is outside the stated model claude-sonnet"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/7166.yaml",
+      "task": "7166",
+      "gate": "implementation",
+      "commit": "56103af8cbaf561a90f9fa67fea02053372a4214",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/7861.yaml",
+      "task": "7861",
+      "gate": "validate",
+      "commit": "c6f2655f1bda4469a6171b77cc21e326f0c99f87",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/9f3f.yaml",
+      "task": "9f3f",
+      "gate": "implementation",
+      "commit": "43d68e4f7d2b856c4d581983f34355d5b5f4f3b4",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/ac33.yaml",
+      "task": "ac33",
+      "gate": "implementation",
+      "commit": "6762222ddffef76008daad27ebe26069ac67cc5d",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/c2ad.yaml",
+      "task": "c2ad",
+      "gate": "validate",
+      "commit": "3d8ce0eee1e869c75453abba91cae03dec6587ce",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/e3cb.yaml",
+      "task": "e3cb",
+      "gate": "validate",
+      "commit": "c39ccac764b580ddb67789014c5f7f2c1bae9c6e",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/e9c6.yaml",
+      "task": "e9c6",
+      "gate": "validate",
+      "commit": "ccb3947e3deb2f476a8c9c886266b2b4da66c6f6",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/fcec.yaml",
+      "task": "fcec",
+      "gate": "unit",
+      "commit": "60495c26d886016b40069041386a811b24469312",
+      "message": "the newest event is the contributor's and the status states no review; noreply@anthropic.com may have unit to review"
+    },
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/595e.yaml",
+      "line": 13,
+      "col": 5,
+      "task": "595e",
+      "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    },
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/6103.yaml",
+      "line": 13,
+      "col": 5,
+      "task": "6103",
+      "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    },
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/c6e8.yaml",
+      "line": 13,
+      "col": 5,
+      "task": "c6e8",
+      "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    }
+  ]
 }
