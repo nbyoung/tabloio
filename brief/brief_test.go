@@ -212,19 +212,25 @@ func TestT6WaysOfTheCommit(t *testing.T) {
 		"    Co-Authored-By: <your model's display name> <noreply@anthropic.com>"
 
 	defined := render(t, variant(base, func(d *Data) { d.Gate.Key = "defined" }))
-	has(t, defined, trailers, "    gate: defined\n")
+	has(t, defined, trailers, "    gate: defined\n", "\n    tabloio record e9c6 --gate defined --state nominal \\\n")
 	hasFlat(t, defined, "Authorisation stands as the review of defined", "carries no Reviewed: trailer")
 	lacks(t, defined, "\n    Reviewed:", "hand the work off", "You are the reviewer", "A person contributes")
 
 	handoff := render(t, variant(base, func(d *Data) { d.Junction.Reviewer.Value = "nbyoung@nbyoung.com" }))
 	has(t, handoff, trailers,
-		"    gate: design\n    state: nominal\n    reason: review\n    note: <one line that says what waits on the branch>\n")
+		"    gate: design\n    state: nominal\n    reason: review\n    note: <one line that says what waits on the branch>\n",
+		"\n    tabloio record e9c6 --state nominal --reason review \\\n"+
+			"      --note \"<one line that says what waits on the branch>\" \\\n"+
+			"      --model \"<the identifier your harness reports, matching claude-sonnet>\" \\\n"+
+			"      --co-author \"<your model's display name> <noreply@anthropic.com>\" --yes\n")
 	hasFlat(t, handoff, "The reviewer nbyoung@nbyoung.com accepts this gate, so hand the work off",
-		"passes the gate with a commit that carries the trailer Reviewed: e9c6 implementation")
+		"accepts the gate with tabloio review e9c6 implementation, whose commit carries the trailer Reviewed: e9c6 implementation")
 	lacks(t, handoff, "\n    Reviewed:", "Authorisation stands", "You are the reviewer", "Whoever dispatches")
 
 	self := render(t, base)
-	has(t, self, "\n    Reviewed: e9c6 implementation"+trailers, "Whoever dispatches you merges the branch.")
+	has(t, self, "\n    Reviewed: e9c6 implementation"+trailers, "Whoever dispatches you merges the branch.",
+		"\n    tabloio record e9c6 --gate implementation --state nominal \\\n")
+	hasFlat(t, self, "tabloio record composes those of the commit that records the status from --model and --co-author, and adds the first")
 	hasFlat(t, self, "You are the reviewer of this gate as well as its contributor")
 	lacks(t, self, "Authorisation stands", "hand the work off", "A person contributes")
 
@@ -232,32 +238,34 @@ func TestT6WaysOfTheCommit(t *testing.T) {
 		d.Junction.Model = Field{}
 		d.Junction.Reviewer = Field{}
 	}))
-	has(t, none, "A person contributes here, so the commit carries no trailer.", "  Reviewer     none\n")
+	has(t, none, "A person contributes here, so the commit carries no trailer.", "  Reviewer     none\n",
+		"\n    tabloio record e9c6 --gate implementation --state nominal \\\n      --note \"<one line that says what the gate now holds>\" --yes\n")
 	hasFlat(t, none, "No one reviews this gate, so the commit that records the status passes it.")
-	lacks(t, none, "Reviewed:", "Model:", "Co-Authored-By:", "hand the work off", "You are the reviewer")
+	lacks(t, none, "Reviewed:", "Model:", "Co-Authored-By:", "--model", "--co-author", "hand the work off", "You are the reviewer")
 }
 
 func TestT7CompleteAndRecursive(t *testing.T) {
 	base := load(t, "e9c6-implementation")
 
 	last := render(t, variant(base, func(d *Data) { d.Gate.Follows = "" }))
-	has(t, last, "    gate: implementation\n    state: complete\n    note: <one line that says what the gate now holds>\n")
+	has(t, last, "    gate: implementation\n    state: complete\n    note: <one line that says what the gate now holds>\n",
+		"\n    tabloio record e9c6 --gate implementation --state complete \\\n")
 	lacks(t, last, "state: nominal")
 
 	plain := render(t, base)
 	has(t, plain, "    gate: implementation\n    state: nominal\n    note: ")
 
 	rec := render(t, variant(base, func(d *Data) { d.Gate.Follows = "recursive" }))
-	has(t, rec, "\n    gate: implementation\n\n  The next junction is recursive, so the file holds the gate alone. Edit it\n"+
-		"  by hand, and change no other file under .tableaux.\n")
-	lacks(t, rec, "    state:", "    note:", "so that it reads as above")
+	has(t, rec, "\n    gate: implementation\n\n    tabloio record e9c6 --gate implementation \\\n")
+	hasFlat(t, rec, "The next junction is recursive, so the file holds the gate alone. tabloio record writes it so")
+	lacks(t, rec, "    state:", "    note:", "--note", "with the note on one line")
 
 	// A hand-off keeps its own file, whatever follows.
 	hand := render(t, variant(base, func(d *Data) {
 		d.Gate.Follows = "recursive"
 		d.Junction.Reviewer.Value = "nbyoung@nbyoung.com"
 	}))
-	has(t, hand, "    reason: review\n", "so that it reads as above")
+	has(t, hand, "    reason: review\n", "with the note on one line")
 	lacks(t, hand, "The next junction is recursive")
 }
 
@@ -275,8 +283,9 @@ func TestT8Person(t *testing.T) {
 		d.Junction.Model = Field{}
 		d.Junction.Reviewer.Value = d.Junction.Contributor.Value
 	}))
-	has(t, self, "paragraph of one trailer:\n\n    Reviewed: e4c7 design\n")
-	lacks(t, self, "Model:", "export ", "Co-Authored-By")
+	has(t, self, "\n\n    Reviewed: e4c7 design\n")
+	hasFlat(t, self, "tabloio record ends the message of the commit that records the status with one final paragraph of one trailer, since you review this gate:")
+	lacks(t, self, "Model:", "export ", "Co-Authored-By", "--model", "--co-author")
 }
 
 func TestT9Wrap(t *testing.T) {
@@ -412,10 +421,10 @@ func TestT12RefForms(t *testing.T) {
 	for _, c := range []struct {
 		name, lead, branch string
 	}{
-		{"main", "of tabloio@example.org on main at " + hash, "on a branch off main."},
-		{"HEAD", "of tabloio@example.org at " + hash, "on a branch off " + hash + "."},
-		{"4593882", "of tabloio@example.org at " + hash, "on a branch off " + hash + "."},
-		{"4593882a7b506cd9461fef8f9ccc6a6d653f6390", "of tabloio@example.org at " + hash, "on a branch off " + hash + "."},
+		{"main", "of tabloio@example.org on main at " + hash, "on a branch off main,"},
+		{"HEAD", "of tabloio@example.org at " + hash, "on a branch off " + hash + ","},
+		{"4593882", "of tabloio@example.org at " + hash, "on a branch off " + hash + ","},
+		{"4593882a7b506cd9461fef8f9ccc6a6d653f6390", "of tabloio@example.org at " + hash, "on a branch off " + hash + ","},
 	} {
 		out := flat(render(t, variant(base, func(d *Data) {
 			d.Ref.Name = c.name
@@ -523,12 +532,12 @@ func outputs(t *testing.T) map[string]string {
 
 // literal reports whether a line is one the text never wraps and so may run
 // past the width: a part 1 row, a reference line, a literal block line or a
-// command.
+// command, a continued one of part 5 included.
 func literal(l string) bool {
 	for _, p := range []string{
 		"  Task ", "  Gate ", "  Contributor ", "  Model ", "  Reviewer ", "  Reference: ", "  Junction reference: ",
 		"    export ", "    git log ", "    Reviewed: ", "    Model: ", "    Co-Authored-By: ",
-		"    gate: ", "    state: ", "    reason: ", "    note: ", "  tabloio ",
+		"    gate: ", "    state: ", "    reason: ", "    note: ", "  tabloio ", "    tabloio record ", "      --",
 	} {
 		if strings.HasPrefix(l, p) {
 			return true
