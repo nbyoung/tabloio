@@ -231,9 +231,8 @@ Linkages
 │                      │                        │ reads the subproject's root, │
 │                      │                        │ 8608                         │
 ├──────────────────────┼────────────────────────┼──────────────────────────────┤
-│                      │ The subproject's trunk │ main, tip ca03219; the pin   │
-│                      │                        │ is on the trunk, behind its  │
-│                      │                        │ tip                          │
+│                      │ The subproject's trunk │ main, tip 0da180c; the pin   │
+│                      │                        │ is on the trunk, at its tip  │
 ├──────────────────────┼────────────────────────┼──────────────────────────────┤
 │                      │ Pin set by             │ 5fec596 Advance the four     │
 │                      │                        │ subprojects to their designs │
