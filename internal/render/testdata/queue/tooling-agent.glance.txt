@@ -1,12 +1,12 @@
 Contributor work queue
 ══════════════════════
 
-*What do I do next?* Tableaux tooling · ref main · person noreply@anthropic.com
-· level glance
+*What do I do next?* Tableaux tooling · ref corpus/tooling · person
+noreply@anthropic.com · level glance
 
 Legend: tabloio gates.
 
-60 items: 0 reviews owed, 0 authorisations owed, 28 work ready, 32
+36 items: 0 reviews owed, 0 authorisations owed, 8 work ready, 28
 reaffirmations, 0 work waiting.
 
 ────────────────────────────────────────────────────────────────────────────────
@@ -20,34 +20,9 @@ Work ready
 ────────────────────────────────────────────────────────────────────────────────
 Work ready
   Task: e9c6 Abstract views
-  Gate: 🧱 implementation
-  Model: claude-sonnet
-  Since: 2026-09-30
-────────────────────────────────────────────────────────────────────────────────
-Work ready
-  Task: 99f0 Gate definition view in Markdown
-  Gate: 📌 mockup
+  Gate: 🌍 validate
   Model: claude-opus
-  Since: 2026-09-29
-────────────────────────────────────────────────────────────────────────────────
-Work ready
-  Task: 05a9 Task definition view in Markdown
-  Gate: 📌 mockup
-  Model: claude-opus
-  Since: 2026-09-29
-────────────────────────────────────────────────────────────────────────────────
-Work ready
-  Task: a9ce Authority delegation view in Markdown
-  Gate: 📌 mockup
-  Model: claude-opus
-  Since: 2026-09-29
-────────────────────────────────────────────────────────────────────────────────
-Work ready
-  Task: … and 17 more: bb7c c74a efff ab8e c545 d615 b14e a6f7 7dff b1b7 ea51
-    7783 5471 32e7 69eb 3194 a8b4
-  Gate: 📌 mockup
-  Model: claude-opus
-  Since: 2026-09-29
+  Since: 2026-10-05
 ────────────────────────────────────────────────────────────────────────────────
 Work ready
   Task: e3cb Schema files
@@ -83,88 +58,68 @@ Work ready
   Task: 7166 Language clarifications
   Gate: 🧱 implementation
   Model: claude-sonnet
-  Since: 2026-09-30
-────────────────────────────────────────────────────────────────────────────────
-Reaffirmation
-  Task: 99f0 Gate definition view in Markdown
-  Gate: 📝 defined
-  Since: 2026-09-29, 6 days
-────────────────────────────────────────────────────────────────────────────────
-Reaffirmation
-  Task: 05a9 Task definition view in Markdown
-  Gate: 📝 defined
-  Since: 2026-09-29, 6 days
-────────────────────────────────────────────────────────────────────────────────
-Reaffirmation
-  Task: a9ce Authority delegation view in Markdown
-  Gate: 📝 defined
-  Since: 2026-09-29, 6 days
-────────────────────────────────────────────────────────────────────────────────
-Reaffirmation
-  Task: … and 17 more: bb7c c74a efff ab8e c545 d615 b14e a6f7 7dff b1b7 ea51
-    7783 5471 32e7 69eb 3194 a8b4
-  Gate: 📝 defined
-  Since: 2026-09-29, 6 days
-────────────────────────────────────────────────────────────────────────────────
-Reaffirmation
-  Task: 7166 Language clarifications
-  Gate: 📐 design
-  Since: 2026-09-30, 5 days
+  Since: 2026-10-07
 ────────────────────────────────────────────────────────────────────────────────
 Reaffirmation
   Task: ac33 Agent identity
   Gate: 📐 design
-  Since: 2026-09-30, 5 days
+  Since: 2026-09-30, 17 days
 ────────────────────────────────────────────────────────────────────────────────
 Reaffirmation
   Task: c2ad Roles
   Gate: 🧱 implementation
-  Since: 2026-09-30, 5 days
+  Since: 2026-09-30, 17 days
 ────────────────────────────────────────────────────────────────────────────────
 Reaffirmation
   Task: e3cb Schema files
   Gate: 📏 unit
-  Since: 2026-09-30, 5 days
+  Since: 2026-09-30, 17 days
 ────────────────────────────────────────────────────────────────────────────────
 Reaffirmation
   Task: 7861 Productivity evidence
   Gate: 🧱 implementation
-  Since: 2026-09-30, 5 days
+  Since: 2026-09-30, 17 days
 ────────────────────────────────────────────────────────────────────────────────
 Reaffirmation
   Task: fcec Conformance corpus
   Gate: 🧱 implementation
-  Since: 2026-09-30, 5 days
+  Since: 2026-09-30, 17 days
 ────────────────────────────────────────────────────────────────────────────────
 Reaffirmation
   Task: 9f3f Subproject linkage
   Gate: 📐 design
-  Since: 2026-09-30, 5 days
+  Since: 2026-09-30, 17 days
 ────────────────────────────────────────────────────────────────────────────────
 Reaffirmation
-  Task: 77b2 tablo: backend library and plumbing
-  Gate: 📝 defined
-  Since: 2026-09-30, 5 days
+  Task: 99f0 Gate definition view in Markdown
+  Gate: 📌 mockup
+  Since: 2026-10-05, 12 days
 ────────────────────────────────────────────────────────────────────────────────
 Reaffirmation
-  Task: 6103 tabloio: command line, output and input
-  Gate: 📝 defined
-  Since: 2026-09-30, 5 days
+  Task: 05a9 Task definition view in Markdown
+  Gate: 📌 mockup
+  Since: 2026-10-05, 12 days
 ────────────────────────────────────────────────────────────────────────────────
 Reaffirmation
-  Task: c6e8 tablotui: terminal user interface
-  Gate: 📝 defined
-  Since: 2026-09-30, 5 days
+  Task: a9ce Authority delegation view in Markdown
+  Gate: 📌 mockup
+  Since: 2026-10-05, 12 days
 ────────────────────────────────────────────────────────────────────────────────
 Reaffirmation
-  Task: 595e tableaud: local daemon and HTML
-  Gate: 📝 defined
-  Since: 2026-09-30, 5 days
+  Task: … and 17 more: bb7c c74a efff ab8e c545 d615 b14e a6f7 7dff b1b7 ea51
+    7783 5471 32e7 69eb 3194 a8b4
+  Gate: 📌 mockup
+  Since: 2026-10-05, 12 days
 ────────────────────────────────────────────────────────────────────────────────
 Reaffirmation
   Task: e9c6 Abstract views
+  Gate: 🧱 implementation
+  Since: 2026-10-05, 12 days
+────────────────────────────────────────────────────────────────────────────────
+Reaffirmation
+  Task: 7166 Language clarifications
   Gate: 📐 design
-  Since: 2026-09-30, 5 days
+  Since: 2026-10-07, 10 days
 ────────────────────────────────────────────────────────────────────────────────
 
-Command: tabloio queue --person noreply@anthropic.com --ref main --level glance --text
+Command: tabloio queue --person noreply@anthropic.com --ref corpus/tooling --level glance --text

@@ -3,20 +3,34 @@
   "command": "queue",
   "source": {
     "ref": "main",
+    "dir": ".",
+    "worktree": true,
     "commit": "edb30d2baa5ea3c7e3fb8eef8ac6cce6e145221a",
     "date": "2026-09-28",
     "from": null,
     "trunk": {
-      "name": null
+      "name": "main",
+      "resolved": "stated"
     },
     "on_trunk": true
   },
   "project": {
+    "tableaux": "0.3.1",
     "root": "a1c0",
-    "title": "Weather station"
+    "title": "Weather station",
+    "owner": "ada@example.org"
+  },
+  "viewer": {
+    "email": "nbyoung@nbyoung.com",
+    "roles": [
+      "observer"
+    ]
   },
   "params": {
+    "task": "a1c0",
     "person": "ada@example.org",
+    "brief": null,
+    "role": null,
     "level": "detail"
   },
   "data": {
@@ -131,18 +145,14 @@
         {
           "key": "overloaded",
           "symbol": "🪫",
-          "synopsis": "The assigned resource is overloaded"
+          "synopsis": "The assigned resource is overloaded",
+          "reserved": false
         },
         {
           "key": "blocked",
           "symbol": "⛔",
-          "synopsis": "An external resource is unavailable"
-        },
-        {
-          "key": "review",
-          "symbol": "👓",
-          "synopsis": "The work waits for its reviewer",
-          "reserved": true
+          "synopsis": "An external resource is unavailable",
+          "reserved": false
         }
       ],
       "marks": [
@@ -150,31 +160,31 @@
           "key": "person",
           "symbol": "🧑",
           "meaning": "A person contributes",
-          "junction": "Plain; the contributor is a person"
+          "junction": "plain"
         },
         {
           "key": "agent",
           "symbol": "🤖",
           "meaning": "An agent contributes",
-          "junction": "Plain; the junction states a `model`"
+          "junction": "plain"
         },
         {
           "key": "reviewer",
           "symbol": "👀",
           "meaning": "A reviewer accepts",
-          "junction": "Plain; the reviewer accepts the work at the gate"
+          "junction": "plain"
         },
         {
           "key": "subproject",
           "symbol": "🪆",
           "meaning": "A subproject does the work",
-          "junction": "Recursive; another Tableaux project does the work"
+          "junction": "recursive"
         },
         {
           "key": "exempt",
           "symbol": "—",
           "meaning": "The gate does not apply",
-          "junction": "Not applicable; the entry exempts the task from the gate"
+          "junction": "not_applicable"
         }
       ]
     },
@@ -185,26 +195,141 @@
           "id": "3c5d",
           "title": "Dashboard"
         },
-        "gate": "mockup",
+        "gate": "defined",
         "model": "",
         "since": "2026-09-22",
+        "age": 0,
         "causes": [],
         "why": "",
+        "junction": {
+          "gate": "mockup",
+          "kind": "plain",
+          "marks": [
+            "person"
+          ],
+          "acts": false,
+          "contributor": "dan@example.org",
+          "model": "",
+          "reviewer": "",
+          "reviewer_by_default": false,
+          "subproject": null,
+          "references": [],
+          "stands": "next",
+          "reviewed": false,
+          "from": []
+        },
+        "sources": [],
+        "task_references": [
+          {
+            "text": "Dashboard overview",
+            "url": "docs/overview.md#dashboard"
+          }
+        ],
+        "requires": [
+          {
+            "task": {
+              "id": "7b2e",
+              "title": "Gateway"
+            },
+            "from": "function",
+            "to": "integrate",
+            "text": "Readings API",
+            "met": false,
+            "due": false,
+            "condition": "pending",
+            "why": "",
+            "status": {
+              "kind": "absent",
+              "gate": "undefined",
+              "state": "undefined",
+              "reason": "",
+              "note": "",
+              "date": "2026-09-15",
+              "recorder": "",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
+            },
+            "subproject": "",
+            "commit": "",
+            "at_trunk": "unknown"
+          }
+        ],
+        "unblocks": [],
+        "also_required_by": [],
+        "parent_unblocks": [],
+        "status": {
+          "kind": "recorded",
+          "gate": "defined",
+          "state": "nominal",
+          "reason": "",
+          "note": "",
+          "date": "2026-09-22",
+          "recorder": "dan@example.org",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "status_commit": {
+          "hash": "55f57c1ea69a0e16894408dfbd32a50d3dbdb0a9",
+          "subject": "Record the dashboard definition",
+          "date": "2026-09-22",
+          "author_time": "2026-09-22T12:00:00Z",
+          "author": {
+            "name": "Dan Reyes",
+            "email": "dan@example.org"
+          },
+          "committer": {
+            "name": "Dan Reyes",
+            "email": "dan@example.org"
+          },
+          "parents": [
+            "63a1f88f84354726d5e1b431df5e11a518854cdb"
+          ],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/status/3c5d.yaml",
+              "change": "added"
+            }
+          ]
+        },
         "authorisation": {
           "commit": {
-            "hash": "1b8cfb1",
+            "hash": "1b8cfb16a248f50eeefb76e0994234693ff4f4a6",
             "subject": "Revise the dashboard scope",
             "date": "2026-09-27",
+            "author_time": "2026-09-27T12:00:00Z",
             "author": {
+              "name": "Dan Reyes",
               "email": "dan@example.org"
             },
             "committer": {
+              "name": "Dan Reyes",
               "email": "dan@example.org"
-            }
+            },
+            "parents": [
+              "97e423122790a250e4e067d7d33bbf88622b00d5"
+            ],
+            "trailers": [],
+            "files": [
+              {
+                "path": ".tableaux/tasks/3c5d.yaml",
+                "change": "changed"
+              }
+            ]
           },
           "way": "change",
           "by": "",
-          "why": ""
+          "email": "dan@example.org",
+          "judges": [
+            "ada@example.org"
+          ],
+          "why": "",
+          "differs_from_trunk": false,
+          "uncommitted": false
         }
       },
       {
@@ -216,17 +341,107 @@
         "gate": "defined",
         "model": "",
         "since": "2026-09-15",
+        "age": 0,
+        "causes": [],
+        "why": "",
+        "junction": {
+          "gate": "defined",
+          "kind": "plain",
+          "marks": [
+            "person"
+          ],
+          "acts": true,
+          "contributor": "ada@example.org",
+          "model": "",
+          "reviewer": "",
+          "reviewer_by_default": false,
+          "subproject": null,
+          "references": [],
+          "stands": "next",
+          "reviewed": false,
+          "from": []
+        },
+        "sources": [],
+        "task_references": [
+          {
+            "text": "Gateway overview",
+            "url": "docs/overview.md#gateway"
+          }
+        ],
+        "requires": [],
+        "unblocks": [],
+        "also_required_by": [
+          {
+            "task": {
+              "id": "3c5d",
+              "title": "Dashboard"
+            },
+            "from": "function",
+            "to": "integrate",
+            "text": "Readings API",
+            "met": false,
+            "due": false,
+            "condition": "pending",
+            "why": "",
+            "status": null,
+            "subproject": "",
+            "commit": "",
+            "at_trunk": "unknown"
+          }
+        ],
+        "parent_unblocks": [],
         "status": {
+          "kind": "absent",
           "gate": "undefined",
           "state": "undefined",
+          "reason": "",
+          "note": "",
           "date": "2026-09-15",
-          "recorder": "ada@example.org"
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
         },
         "status_commit": {
-          "hash": "W1"
+          "hash": "68d9021206ec627755e2ead99b6be3f2c06ae815",
+          "subject": "Plan the weather station",
+          "date": "2026-09-15",
+          "author_time": "2026-09-15T12:00:00Z",
+          "author": {
+            "name": "Ada Byron",
+            "email": "ada@example.org"
+          },
+          "committer": {
+            "name": "Ada Byron",
+            "email": "ada@example.org"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4e2b.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/7b2e.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/a1c0.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
         },
-        "causes": [],
-        "why": ""
+        "authorisation": null
       },
       {
         "kind": "reaffirmation",
@@ -237,20 +452,112 @@
         "gate": "function",
         "model": "",
         "since": "2026-09-28",
-        "age": 3,
+        "age": 0,
+        "causes": [],
+        "why": "",
+        "junction": {
+          "gate": "performance",
+          "kind": "plain",
+          "marks": [
+            "person"
+          ],
+          "acts": true,
+          "contributor": "ada@example.org",
+          "model": "",
+          "reviewer": "",
+          "reviewer_by_default": false,
+          "subproject": null,
+          "references": [
+            {
+              "text": "Power budget",
+              "url": "docs/sensor-board.md#power-budget"
+            }
+          ],
+          "stands": "next",
+          "reviewed": false,
+          "from": [
+            "9f31"
+          ]
+        },
+        "sources": [
+          {
+            "gate": "performance",
+            "field": "references",
+            "value": "1",
+            "by": "9f31",
+            "key": "junctions.performance.references",
+            "file": ".tableaux/tasks/9f31.yaml",
+            "line": 11,
+            "col": 3
+          }
+        ],
+        "task_references": [
+          {
+            "text": "",
+            "url": "docs/sensor-board.md"
+          },
+          {
+            "text": "Barometer datasheet",
+            "url": "https://example.org/datasheets/bmp390.pdf"
+          }
+        ],
+        "requires": [],
+        "unblocks": [],
+        "also_required_by": [
+          {
+            "task": {
+              "id": "c07d",
+              "title": "Node firmware"
+            },
+            "from": "design",
+            "to": "implementation",
+            "text": "Pin map and sensor bus",
+            "met": false,
+            "due": true,
+            "condition": "unmet",
+            "why": "",
+            "status": null,
+            "subproject": "",
+            "commit": "",
+            "at_trunk": "unknown"
+          }
+        ],
+        "parent_unblocks": [],
         "status": {
+          "kind": "recorded",
           "gate": "function",
           "state": "stalled",
           "reason": "blocked",
           "note": "Barometer ICs on 14-week backorder",
           "date": "2026-09-28",
-          "recorder": "ada@example.org"
+          "recorder": "ada@example.org",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
         },
         "status_commit": {
-          "hash": "W13"
+          "hash": "edb30d2baa5ea3c7e3fb8eef8ac6cce6e145221a",
+          "subject": "Weekly review: no change",
+          "date": "2026-09-28",
+          "author_time": "2026-09-28T12:00:00Z",
+          "author": {
+            "name": "Ada Byron",
+            "email": "ada@example.org"
+          },
+          "committer": {
+            "name": "Ada Byron",
+            "email": "ada@example.org"
+          },
+          "parents": [
+            "1b8cfb16a248f50eeefb76e0994234693ff4f4a6"
+          ],
+          "trailers": [
+            "Reaffirmed: 9f31"
+          ],
+          "files": []
         },
-        "causes": [],
-        "why": ""
+        "authorisation": null
       },
       {
         "kind": "waiting",
@@ -261,19 +568,7 @@
         "gate": "performance",
         "model": "",
         "since": "2026-09-28",
-        "requires": [
-          {
-            "task": {
-              "id": "7b2e",
-              "title": "Gateway"
-            },
-            "from": "undefined",
-            "to": "performance",
-            "text": "Readings API",
-            "met": false,
-            "due": true
-          }
-        ],
+        "age": 0,
         "causes": [
           {
             "kind": "reason",
@@ -283,9 +578,122 @@
             "by": ""
           }
         ],
-        "why": ""
+        "why": "",
+        "junction": {
+          "gate": "performance",
+          "kind": "plain",
+          "marks": [
+            "person"
+          ],
+          "acts": true,
+          "contributor": "ada@example.org",
+          "model": "",
+          "reviewer": "",
+          "reviewer_by_default": false,
+          "subproject": null,
+          "references": [
+            {
+              "text": "Power budget",
+              "url": "docs/sensor-board.md#power-budget"
+            }
+          ],
+          "stands": "next",
+          "reviewed": false,
+          "from": [
+            "9f31"
+          ]
+        },
+        "sources": [
+          {
+            "gate": "performance",
+            "field": "references",
+            "value": "1",
+            "by": "9f31",
+            "key": "junctions.performance.references",
+            "file": ".tableaux/tasks/9f31.yaml",
+            "line": 11,
+            "col": 3
+          }
+        ],
+        "task_references": [
+          {
+            "text": "",
+            "url": "docs/sensor-board.md"
+          },
+          {
+            "text": "Barometer datasheet",
+            "url": "https://example.org/datasheets/bmp390.pdf"
+          }
+        ],
+        "requires": [],
+        "unblocks": [],
+        "also_required_by": [
+          {
+            "task": {
+              "id": "c07d",
+              "title": "Node firmware"
+            },
+            "from": "design",
+            "to": "implementation",
+            "text": "Pin map and sensor bus",
+            "met": false,
+            "due": true,
+            "condition": "unmet",
+            "why": "",
+            "status": null,
+            "subproject": "",
+            "commit": "",
+            "at_trunk": "unknown"
+          }
+        ],
+        "parent_unblocks": [],
+        "status": {
+          "kind": "recorded",
+          "gate": "function",
+          "state": "stalled",
+          "reason": "blocked",
+          "note": "Barometer ICs on 14-week backorder",
+          "date": "2026-09-28",
+          "recorder": "ada@example.org",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "status_commit": {
+          "hash": "edb30d2baa5ea3c7e3fb8eef8ac6cce6e145221a",
+          "subject": "Weekly review: no change",
+          "date": "2026-09-28",
+          "author_time": "2026-09-28T12:00:00Z",
+          "author": {
+            "name": "Ada Byron",
+            "email": "ada@example.org"
+          },
+          "committer": {
+            "name": "Ada Byron",
+            "email": "ada@example.org"
+          },
+          "parents": [
+            "1b8cfb16a248f50eeefb76e0994234693ff4f4a6"
+          ],
+          "trailers": [
+            "Reaffirmed: 9f31"
+          ],
+          "files": []
+        },
+        "authorisation": null
       }
     ]
   },
-  "diagnostics": []
+  "diagnostics": [
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/c07d.yaml",
+      "line": 6,
+      "col": 5,
+      "task": "c07d",
+      "message": "the requirement on 9f31 from design is due at implementation and unmet: 9f31 stands at function"
+    }
+  ]
 }

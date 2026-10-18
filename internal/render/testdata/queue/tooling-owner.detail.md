@@ -1,6 +1,6 @@
 # Contributor work queue
 
-**What do I do next?** Tableaux tooling · ref `main` · person nbyoung@nbyoung.com · level detail
+**What do I do next?** Tableaux tooling · ref `corpus/tooling` · person nbyoung@nbyoung.com · level detail
 
 Legend: `tabloio gates`.
 
@@ -18,4 +18,4 @@ Legend: `tabloio gates`.
 
 ## 5. Work waiting: none
 
-Command: `tabloio queue --person nbyoung@nbyoung.com --ref main --level detail`
+Command: `tabloio queue --person nbyoung@nbyoung.com --ref corpus/tooling --level detail`

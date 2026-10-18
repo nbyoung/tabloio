@@ -3,20 +3,35 @@
   "command": "tableau",
   "source": {
     "ref": "main",
+    "dir": ".",
+    "worktree": true,
     "commit": "edb30d2baa5ea3c7e3fb8eef8ac6cce6e145221a",
     "date": "2026-09-28",
     "from": null,
     "trunk": {
-      "name": null
+      "name": "main",
+      "resolved": "stated"
     },
     "on_trunk": true
   },
   "project": {
+    "tableaux": "0.3.1",
     "root": "a1c0",
-    "title": "Weather station"
+    "title": "Weather station",
+    "owner": "ada@example.org"
+  },
+  "viewer": {
+    "email": "nbyoung@nbyoung.com",
+    "roles": [
+      "observer"
+    ]
   },
   "params": {
+    "person": null,
     "window": 0,
+    "columns": null,
+    "historical": false,
+    "role": null,
     "level": "detail"
   },
   "data": {
@@ -131,18 +146,14 @@
         {
           "key": "overloaded",
           "symbol": "🪫",
-          "synopsis": "The assigned resource is overloaded"
+          "synopsis": "The assigned resource is overloaded",
+          "reserved": false
         },
         {
           "key": "blocked",
           "symbol": "⛔",
-          "synopsis": "An external resource is unavailable"
-        },
-        {
-          "key": "review",
-          "symbol": "👓",
-          "synopsis": "The work waits for its reviewer",
-          "reserved": true
+          "synopsis": "An external resource is unavailable",
+          "reserved": false
         }
       ],
       "marks": [
@@ -150,34 +161,35 @@
           "key": "person",
           "symbol": "🧑",
           "meaning": "A person contributes",
-          "junction": "Plain; the contributor is a person"
+          "junction": "plain"
         },
         {
           "key": "agent",
           "symbol": "🤖",
           "meaning": "An agent contributes",
-          "junction": "Plain; the junction states a `model`"
+          "junction": "plain"
         },
         {
           "key": "reviewer",
           "symbol": "👀",
           "meaning": "A reviewer accepts",
-          "junction": "Plain; the reviewer accepts the work at the gate"
+          "junction": "plain"
         },
         {
           "key": "subproject",
           "symbol": "🪆",
           "meaning": "A subproject does the work",
-          "junction": "Recursive; another Tableaux project does the work"
+          "junction": "recursive"
         },
         {
           "key": "exempt",
           "symbol": "—",
           "meaning": "The gate does not apply",
-          "junction": "Not applicable; the entry exempts the task from the gate"
+          "junction": "not_applicable"
         }
       ]
     },
+    "subject": null,
     "columns": [
       {
         "gates": [
@@ -192,36 +204,71 @@
       {
         "gates": [
           "defined"
+        ],
+        "folded": false,
+        "count": 2,
+        "by_gate": [
+          2
         ]
       },
       {
         "gates": [
           "mockup"
+        ],
+        "folded": false,
+        "count": 0,
+        "by_gate": [
+          0
         ]
       },
       {
         "gates": [
           "function"
+        ],
+        "folded": false,
+        "count": 2,
+        "by_gate": [
+          2
         ]
       },
       {
         "gates": [
           "performance"
+        ],
+        "folded": false,
+        "count": 0,
+        "by_gate": [
+          0
         ]
       },
       {
         "gates": [
           "reliability"
+        ],
+        "folded": false,
+        "count": 0,
+        "by_gate": [
+          0
         ]
       },
       {
         "gates": [
           "design"
+        ],
+        "folded": false,
+        "count": 1,
+        "by_gate": [
+          1
         ]
       },
       {
         "gates": [
           "implementation"
+        ],
+        "folded": false,
+        "count": 0,
+        "by_gate": [
+          0
         ]
       },
       {
@@ -245,246 +292,468 @@
       {
         "id": "a1c0",
         "title": "Weather station",
+        "under": "",
         "depth": 0,
         "parent": true,
         "hidden": 0,
+        "label": "",
         "status": {
+          "kind": "rollup",
           "gate": "defined",
           "state": "nominal",
+          "reason": "",
+          "note": "",
           "date": "2026-09-17",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
           "from": {
             "kind": "rollup",
             "task": {
               "id": "3c5d",
               "title": "Dashboard"
-            }
+            },
+            "url": "",
+            "pin": "",
+            "gate": ""
           }
+        },
+        "leaf": {
+          "task": {
+            "id": "3c5d",
+            "title": "Dashboard"
+          },
+          "url": ""
         },
         "cells": [
           {
-            "kind": "empty"
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
           },
           {
             "kind": "status",
-            "state": "nominal"
+            "historical": false,
+            "state": "nominal",
+            "reason": "",
+            "marks": [],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
-            ]
+            ],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
-            ]
+            ],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
-            ]
+            ],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
-            ]
+            ],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
-            ]
+            ],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
-            ]
+            ],
+            "acts": false
           },
           {
-            "kind": "empty"
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "person"
+            ],
+            "acts": false
           },
           {
-            "kind": "empty"
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "person"
+            ],
+            "acts": false
           },
           {
-            "kind": "empty"
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "person"
+            ],
+            "acts": false
           },
           {
-            "kind": "empty"
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "person"
+            ],
+            "acts": false
           }
-        ],
-        "label": ""
+        ]
       },
       {
         "id": "4e2b",
         "title": "Sensor node",
+        "under": "a1c0",
         "depth": 1,
         "parent": true,
         "hidden": 0,
+        "label": "",
         "status": {
+          "kind": "rollup",
           "gate": "function",
           "state": "stalled",
           "reason": "blocked",
           "note": "Barometer ICs on 14-week backorder",
           "date": "2026-09-17",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
           "from": {
             "kind": "rollup",
             "task": {
               "id": "9f31",
               "title": "Sensor board"
-            }
+            },
+            "url": "",
+            "pin": "",
+            "gate": ""
           }
+        },
+        "leaf": {
+          "task": {
+            "id": "9f31",
+            "title": "Sensor board"
+          },
+          "url": ""
         },
         "cells": [
           {
-            "kind": "empty"
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
           },
           {
-            "kind": "marks",
-            "marks": [
-              "person"
-            ]
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
           },
           {
-            "kind": "marks",
-            "marks": [
-              "person"
-            ]
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
           },
           {
             "kind": "status",
+            "historical": false,
             "state": "stalled",
-            "reason": "blocked"
+            "reason": "blocked",
+            "marks": [],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
-            ]
+            ],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
-            ]
+            ],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
-            ]
+            ],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
-            ]
+            ],
+            "acts": false
           },
           {
-            "kind": "empty"
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "person"
+            ],
+            "acts": false
           },
           {
-            "kind": "empty"
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "person"
+            ],
+            "acts": false
           },
           {
-            "kind": "empty"
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "person"
+            ],
+            "acts": false
           },
           {
-            "kind": "empty"
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "person"
+            ],
+            "acts": false
           }
-        ],
-        "label": ""
+        ]
       },
       {
         "id": "9f31",
         "title": "Sensor board",
+        "under": "4e2b",
         "depth": 2,
         "parent": false,
         "hidden": 0,
+        "label": "",
         "status": {
+          "kind": "recorded",
           "gate": "function",
           "state": "stalled",
           "reason": "blocked",
           "note": "Barometer ICs on 14-week backorder",
           "date": "2026-09-28",
-          "recorder": "ada@example.org"
+          "recorder": "ada@example.org",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
         },
+        "leaf": null,
         "cells": [
           {
-            "kind": "empty"
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
           },
           {
-            "kind": "marks",
-            "marks": [
-              "person"
-            ]
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
           },
           {
-            "kind": "marks",
-            "marks": [
-              "person",
-              "reviewer"
-            ]
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
           },
           {
             "kind": "status",
+            "historical": false,
             "state": "stalled",
-            "reason": "blocked"
+            "reason": "blocked",
+            "marks": [],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
-            ]
+            ],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
-            ]
+            ],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
-            ]
+            ],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
-            ]
+            ],
+            "acts": false
           },
           {
-            "kind": "empty"
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "person"
+            ],
+            "acts": false
           },
           {
-            "kind": "empty"
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "person"
+            ],
+            "acts": false
           },
           {
-            "kind": "empty"
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "person",
+              "reviewer"
+            ],
+            "acts": false
           },
           {
-            "kind": "empty"
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "person"
+            ],
+            "acts": false
           }
-        ],
-        "label": ""
+        ]
       },
       {
         "id": "c07d",
         "title": "Node firmware",
+        "under": "4e2b",
         "depth": 2,
         "parent": false,
         "hidden": 0,
+        "label": "",
         "status": {
+          "kind": "snapshot",
           "gate": "design",
           "state": "nominal",
+          "reason": "",
           "note": "Sleep scheduler in progress",
           "date": "2026-09-17",
+          "recorder": "ben@example.org",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
           "from": {
             "kind": "snapshot",
             "task": {
@@ -492,211 +761,422 @@
               "title": "Weather node image"
             },
             "url": "firmware",
-            "pin": "F2",
+            "pin": "cf5b16964dba7f8f1c8842a8202878fd572ad835",
             "gate": "design"
           }
         },
+        "leaf": {
+          "task": {
+            "id": "f1a0",
+            "title": "Weather node image"
+          },
+          "url": "firmware"
+        },
         "cells": [
           {
-            "kind": "empty"
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
           },
           {
-            "kind": "marks",
-            "marks": [
-              "person"
-            ]
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
           },
           {
-            "kind": "marks",
-            "marks": [
-              "person"
-            ]
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
           },
           {
-            "kind": "marks",
-            "marks": [
-              "person"
-            ]
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
           },
           {
-            "kind": "marks",
-            "marks": [
-              "person"
-            ]
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
           },
           {
-            "kind": "exempt"
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
           },
           {
             "kind": "status",
-            "state": "nominal"
+            "historical": false,
+            "state": "nominal",
+            "reason": "",
+            "marks": [],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "subproject"
-            ]
+            ],
+            "acts": false
           },
           {
-            "kind": "empty"
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false
           },
           {
-            "kind": "empty"
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "person"
+            ],
+            "acts": false
           },
           {
-            "kind": "empty"
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "person"
+            ],
+            "acts": false
           },
           {
-            "kind": "empty"
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "person"
+            ],
+            "acts": false
           }
-        ],
-        "label": ""
+        ]
       },
       {
         "id": "7b2e",
         "title": "Gateway",
+        "under": "a1c0",
         "depth": 1,
         "parent": false,
         "hidden": 0,
+        "label": "",
         "status": {
+          "kind": "absent",
           "gate": "undefined",
           "state": "undefined",
+          "reason": "",
+          "note": "",
           "date": "2026-09-15",
-          "recorder": "ada@example.org"
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
         },
+        "leaf": null,
         "cells": [
           {
-            "kind": "empty"
+            "kind": "status",
+            "historical": false,
+            "state": "undefined",
+            "reason": "",
+            "marks": [],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
-            ]
+            ],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
-            ]
+            ],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
-            ]
+            ],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
-            ]
+            ],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
-            ]
+            ],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
-            ]
+            ],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
-            ]
+            ],
+            "acts": false
           },
           {
-            "kind": "empty"
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "person"
+            ],
+            "acts": false
           },
           {
-            "kind": "empty"
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "person"
+            ],
+            "acts": false
           },
           {
-            "kind": "empty"
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "person"
+            ],
+            "acts": false
           },
           {
-            "kind": "empty"
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "person"
+            ],
+            "acts": false
           }
-        ],
-        "label": ""
+        ]
       },
       {
         "id": "3c5d",
         "title": "Dashboard",
+        "under": "a1c0",
         "depth": 1,
         "parent": false,
         "hidden": 0,
+        "label": "",
         "status": {
+          "kind": "recorded",
           "gate": "defined",
           "state": "nominal",
+          "reason": "",
+          "note": "",
           "date": "2026-09-22",
-          "recorder": "dan@example.org"
+          "recorder": "dan@example.org",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
         },
+        "leaf": null,
         "cells": [
           {
-            "kind": "empty"
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
           },
           {
             "kind": "status",
-            "state": "nominal"
+            "historical": false,
+            "state": "nominal",
+            "reason": "",
+            "marks": [],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
-            ]
+            ],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
-            ]
+            ],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
-            ]
+            ],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
-            ]
+            ],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
-            ]
+            ],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
-            ]
+            ],
+            "acts": false
           },
           {
-            "kind": "empty"
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "person"
+            ],
+            "acts": false
           },
           {
-            "kind": "empty"
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "person"
+            ],
+            "acts": false
           },
           {
-            "kind": "empty"
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "person"
+            ],
+            "acts": false
           },
           {
-            "kind": "empty"
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "person"
+            ],
+            "acts": false
           }
-        ],
-        "label": ""
+        ]
       }
     ]
   },
-  "diagnostics": []
+  "diagnostics": [
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/c07d.yaml",
+      "line": 6,
+      "col": 5,
+      "task": "c07d",
+      "message": "the requirement on 9f31 from design is due at implementation and unmet: 9f31 stands at function"
+    }
+  ]
 }

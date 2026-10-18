@@ -1,13 +1,15 @@
 # Work-blockage tree
 
-**What waits on what?** Tableaux tooling · ref `main` · level glance
+**What waits on what?** Tableaux tooling · ref `corpus/tooling` · level glance
 
 Legend: `tabloio gates`.
 
-0 causes: 0 unmet requirements, 0 statuses off nominal, 0 reviews outstanding, 0 authorisations outstanding, 0 snapshots not advanced.
+1 cause: 1 unmet requirement, 0 statuses off nominal, 0 reviews outstanding, 0 authorisations outstanding, 0 snapshots not advanced.
 
-**No cause holds any task.**
+| Cause | Who acts | Holds |
+|---|---|--:|
+| `77b2` tablo: backend library and plumbing has not passed 📐 design | 🪆 contributes | 4 |
 
-Next: 10 requirements are not yet due, 8 of them unmet.
+Next: 2 requirements are not yet due, 0 of them unmet.
 
-Command: `tabloio blockage --ref main --level glance`
+Command: `tabloio blockage --ref corpus/tooling --level glance`

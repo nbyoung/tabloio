@@ -5,36 +5,39 @@ Work-blockage tree
 
 Legend: tabloio gates.
 
-3 causes: 1 unmet requirement, 1 status off nominal, 0 reviews outstanding, 1
-authorisation outstanding, 0 snapshots not advanced.
+3 causes: 0 unmet requirements, 1 status off nominal, 0 reviews outstanding, 1
+authorisation outstanding, 1 snapshot not advanced.
 
-┌─────────────────────────────────────┬────────────────────────────────┬───────┐
-│ Cause                               │ Who acts                       │ Holds │
-├─────────────────────────────────────┼────────────────────────────────┼───────┤
-│ 9f31 Sensor board stands at         │ 🧑 ada@example.org records     │     2 │
-│ ⚙ function 🔴 stalled ⛔ blocked:   │                                │       │
-│ Barometer ICs on 14-week backorder  │                                │       │
-├─────────────────────────────────────┼────────────────────────────────┼───────┤
-│ 9f31 Sensor board has not passed    │ 🧑 ada@example.org contributes │     1 │
-│ 📐 design                           │                                │       │
-├─────────────────────────────────────┼────────────────────────────────┼───────┤
-│ 3c5d Dashboard is proposed          │ 🧑 ada@example.org authorises  │     1 │
-└─────────────────────────────────────┴────────────────────────────────┴───────┘
+┌────────────────────────────────────────┬─────────────────────────────┬───────┐
+│ Cause                                  │ Who acts                    │ Holds │
+├────────────────────────────────────────┼─────────────────────────────┼───────┤
+│ 9f31 Sensor board stands at ⚙ function │ 🧑 ada@example.org records  │     3 │
+│ 🔴 stalled ⛔ blocked: Barometer ICs   │                             │       │
+│ on 14-week backorder                   │                             │       │
+├────────────────────────────────────────┼─────────────────────────────┼───────┤
+│ 3c5d Dashboard is proposed             │ ada@example.org authorises  │     2 │
+├────────────────────────────────────────┼─────────────────────────────┼───────┤
+│ c07d Node firmware waits on firmware   │ 🪆 ben@example.org advances │     1 │
+│ at cf5b169                             │                             │       │
+└────────────────────────────────────────┴─────────────────────────────┴───────┘
 
 1. *9f31 Sensor board stands at ⚙ function 🔴 stalled ⛔ blocked: Barometer ICs
-   on 14-week backorder* · 🧑 ada@example.org records · holds 2
+   on 14-week backorder* · 🧑 ada@example.org records · holds 3
    - Action: ada@example.org clears the blocked reason, or records a new status.
    - 9f31 Sensor board at ⚡ performance: the cause holds the task itself.
-   - c07d Node firmware at 🛠 implementation: requires 9f31 at 📐 design, Sensor
-     interface.
-2. *9f31 Sensor board has not passed 📐 design* · 🧑 ada@example.org contributes
-   · holds 1
-   - Action: ada@example.org takes 9f31 through design.
-   - c07d Node firmware at 🛠 implementation: requires 9f31 at 📐 design, Sensor
-     interface.
-3. *3c5d Dashboard is proposed* · 🧑 ada@example.org authorises · holds 1
+     - 4e2b *Sensor node* at ⚡ performance: the parent of 9f31.
+     - c07d Node firmware at 🛠 implementation: requires 9f31 at 📐 design, Pin
+       map and sensor bus. Also under cause 3.
+2. *3c5d Dashboard is proposed* · ada@example.org authorises · holds 2
    - Action: ada@example.org commits the trailer Authorised: 3c5d.
    - 3c5d Dashboard at 📌 mockup: the cause holds the task itself.
+     - a1c0 *Weather station* at 📌 mockup: the parent of 3c5d.
+3. *c07d Node firmware waits on firmware at cf5b169* · 🪆 ben@example.org
+   advances · holds 1
+   - Action: ben@example.org advances the pin of firmware to the tip of its
+     trunk, fa834b3.
+   - c07d Node firmware at 🛠 implementation: the cause holds the task itself.
+     Also under cause 1.
 
 Next: 1 requirement not yet due
 ───────────────────────────────

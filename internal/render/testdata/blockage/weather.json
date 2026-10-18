@@ -3,19 +3,33 @@
   "command": "blockage",
   "source": {
     "ref": "main",
+    "dir": ".",
+    "worktree": true,
     "commit": "edb30d2baa5ea3c7e3fb8eef8ac6cce6e145221a",
     "date": "2026-09-28",
     "from": null,
     "trunk": {
-      "name": null
+      "name": "main",
+      "resolved": "stated"
     },
     "on_trunk": true
   },
   "project": {
+    "tableaux": "0.3.1",
     "root": "a1c0",
-    "title": "Weather station"
+    "title": "Weather station",
+    "owner": "ada@example.org"
+  },
+  "viewer": {
+    "email": "nbyoung@nbyoung.com",
+    "roles": [
+      "observer"
+    ]
   },
   "params": {
+    "task": "a1c0",
+    "person": null,
+    "role": null,
     "level": "detail"
   },
   "data": {
@@ -130,18 +144,14 @@
         {
           "key": "overloaded",
           "symbol": "🪫",
-          "synopsis": "The assigned resource is overloaded"
+          "synopsis": "The assigned resource is overloaded",
+          "reserved": false
         },
         {
           "key": "blocked",
           "symbol": "⛔",
-          "synopsis": "An external resource is unavailable"
-        },
-        {
-          "key": "review",
-          "symbol": "👓",
-          "synopsis": "The work waits for its reviewer",
-          "reserved": true
+          "synopsis": "An external resource is unavailable",
+          "reserved": false
         }
       ],
       "marks": [
@@ -149,38 +159,260 @@
           "key": "person",
           "symbol": "🧑",
           "meaning": "A person contributes",
-          "junction": "Plain; the contributor is a person"
+          "junction": "plain"
         },
         {
           "key": "agent",
           "symbol": "🤖",
           "meaning": "An agent contributes",
-          "junction": "Plain; the junction states a `model`"
+          "junction": "plain"
         },
         {
           "key": "reviewer",
           "symbol": "👀",
           "meaning": "A reviewer accepts",
-          "junction": "Plain; the reviewer accepts the work at the gate"
+          "junction": "plain"
         },
         {
           "key": "subproject",
           "symbol": "🪆",
           "meaning": "A subproject does the work",
-          "junction": "Recursive; another Tableaux project does the work"
+          "junction": "recursive"
         },
         {
           "key": "exempt",
           "symbol": "—",
           "meaning": "The gate does not apply",
-          "junction": "Not applicable; the entry exempts the task from the gate"
+          "junction": "not_applicable"
         }
       ]
     },
+    "causes": [
+      {
+        "kind": "status",
+        "task": {
+          "id": "9f31",
+          "title": "Sensor board"
+        },
+        "url": "",
+        "gate": "function",
+        "status": {
+          "kind": "recorded",
+          "gate": "function",
+          "state": "stalled",
+          "reason": "blocked",
+          "note": "Barometer ICs on 14-week backorder",
+          "date": "2026-09-28",
+          "recorder": "ada@example.org",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "pin": "",
+        "tip": "",
+        "resolver": "ada@example.org",
+        "mark": "person",
+        "act": "records",
+        "advance": "",
+        "holds": 3,
+        "held": [
+          {
+            "task": {
+              "id": "9f31",
+              "title": "Sensor board"
+            },
+            "gate": "performance",
+            "parent": false,
+            "via": "self",
+            "child": "",
+            "requires": null,
+            "contributor": "ada@example.org",
+            "also": [],
+            "held": [
+              {
+                "task": {
+                  "id": "4e2b",
+                  "title": "Sensor node"
+                },
+                "gate": "performance",
+                "parent": true,
+                "via": "parent",
+                "child": "9f31",
+                "requires": null,
+                "contributor": "",
+                "also": [],
+                "held": []
+              },
+              {
+                "task": {
+                  "id": "c07d",
+                  "title": "Node firmware"
+                },
+                "gate": "implementation",
+                "parent": false,
+                "via": "requirement",
+                "child": "",
+                "requires": {
+                  "task": {
+                    "id": "9f31",
+                    "title": "Sensor board"
+                  },
+                  "from": "design",
+                  "to": "implementation",
+                  "text": "Pin map and sensor bus",
+                  "met": false,
+                  "due": true,
+                  "condition": "unmet",
+                  "why": "",
+                  "status": {
+                    "kind": "recorded",
+                    "gate": "function",
+                    "state": "stalled",
+                    "reason": "blocked",
+                    "note": "Barometer ICs on 14-week backorder",
+                    "date": "2026-09-28",
+                    "recorder": "ada@example.org",
+                    "derived": false,
+                    "why": "",
+                    "uncommitted": false,
+                    "from": null
+                  },
+                  "subproject": "",
+                  "commit": "",
+                  "at_trunk": "unknown"
+                },
+                "contributor": "",
+                "also": [
+                  3
+                ],
+                "held": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "authorisation",
+        "task": {
+          "id": "3c5d",
+          "title": "Dashboard"
+        },
+        "url": "",
+        "gate": "defined",
+        "status": {
+          "kind": "recorded",
+          "gate": "defined",
+          "state": "nominal",
+          "reason": "",
+          "note": "",
+          "date": "2026-09-22",
+          "recorder": "dan@example.org",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "pin": "",
+        "tip": "",
+        "resolver": "ada@example.org",
+        "mark": "",
+        "act": "authorises",
+        "advance": "",
+        "holds": 2,
+        "held": [
+          {
+            "task": {
+              "id": "3c5d",
+              "title": "Dashboard"
+            },
+            "gate": "mockup",
+            "parent": false,
+            "via": "self",
+            "child": "",
+            "requires": null,
+            "contributor": "dan@example.org",
+            "also": [],
+            "held": [
+              {
+                "task": {
+                  "id": "a1c0",
+                  "title": "Weather station"
+                },
+                "gate": "mockup",
+                "parent": true,
+                "via": "parent",
+                "child": "3c5d",
+                "requires": null,
+                "contributor": "",
+                "also": [],
+                "held": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "snapshot",
+        "task": {
+          "id": "c07d",
+          "title": "Node firmware"
+        },
+        "url": "firmware",
+        "gate": "design",
+        "status": {
+          "kind": "snapshot",
+          "gate": "design",
+          "state": "nominal",
+          "reason": "",
+          "note": "Sleep scheduler in progress",
+          "date": "2026-09-17",
+          "recorder": "ben@example.org",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": {
+            "kind": "snapshot",
+            "task": {
+              "id": "f1a0",
+              "title": "Weather node image"
+            },
+            "url": "firmware",
+            "pin": "cf5b16964dba7f8f1c8842a8202878fd572ad835",
+            "gate": "design"
+          }
+        },
+        "pin": "cf5b16964dba7f8f1c8842a8202878fd572ad835",
+        "tip": "fa834b3a6ebb21647295b9a293297aa8eaa9db39",
+        "resolver": "ben@example.org",
+        "mark": "subproject",
+        "act": "advances",
+        "advance": "pin",
+        "holds": 1,
+        "held": [
+          {
+            "task": {
+              "id": "c07d",
+              "title": "Node firmware"
+            },
+            "gate": "implementation",
+            "parent": false,
+            "via": "self",
+            "child": "",
+            "requires": null,
+            "contributor": "",
+            "also": [
+              1
+            ],
+            "held": []
+          }
+        ]
+      }
+    ],
     "kinds": [
       {
         "kind": "requirement",
-        "count": 1
+        "count": 0
       },
       {
         "kind": "status",
@@ -196,109 +428,7 @@
       },
       {
         "kind": "snapshot",
-        "count": 0
-      }
-    ],
-    "causes": [
-      {
-        "kind": "status",
-        "task": {
-          "id": "9f31",
-          "title": "Sensor board"
-        },
-        "status": {
-          "gate": "function",
-          "state": "stalled",
-          "reason": "blocked",
-          "note": "Barometer ICs on 14-week backorder"
-        },
-        "resolver": "ada@example.org",
-        "mark": "person",
-        "act": "records",
-        "holds": 2,
-        "held": [
-          {
-            "task": {
-              "id": "9f31",
-              "title": "Sensor board"
-            },
-            "gate": "performance",
-            "via": "self"
-          },
-          {
-            "task": {
-              "id": "c07d",
-              "title": "Node firmware"
-            },
-            "gate": "implementation",
-            "via": "requirement",
-            "requires": {
-              "task": {
-                "id": "9f31",
-                "title": "Sensor board"
-              },
-              "from": "design",
-              "to": "implementation",
-              "text": "Sensor interface",
-              "met": false,
-              "due": true
-            }
-          }
-        ]
-      },
-      {
-        "kind": "requirement",
-        "task": {
-          "id": "9f31",
-          "title": "Sensor board"
-        },
-        "gate": "design",
-        "resolver": "ada@example.org",
-        "mark": "person",
-        "act": "contributes",
-        "holds": 1,
-        "held": [
-          {
-            "task": {
-              "id": "c07d",
-              "title": "Node firmware"
-            },
-            "gate": "implementation",
-            "via": "requirement",
-            "requires": {
-              "task": {
-                "id": "9f31",
-                "title": "Sensor board"
-              },
-              "from": "design",
-              "to": "implementation",
-              "text": "Sensor interface",
-              "met": false,
-              "due": true
-            }
-          }
-        ]
-      },
-      {
-        "kind": "authorisation",
-        "task": {
-          "id": "3c5d",
-          "title": "Dashboard"
-        },
-        "resolver": "ada@example.org",
-        "mark": "person",
-        "act": "authorises",
-        "holds": 1,
-        "held": [
-          {
-            "task": {
-              "id": "3c5d",
-              "title": "Dashboard"
-            },
-            "gate": "mockup",
-            "via": "self"
-          }
-        ]
+        "count": 1
       }
     ],
     "not_due_count": 1,
@@ -310,8 +440,17 @@
           "title": "Dashboard"
         },
         "status": {
+          "kind": "recorded",
           "gate": "defined",
-          "state": "nominal"
+          "state": "nominal",
+          "reason": "",
+          "note": "",
+          "date": "2026-09-22",
+          "recorder": "dan@example.org",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
         },
         "next": "mockup",
         "requires": [
@@ -324,11 +463,39 @@
             "to": "integrate",
             "text": "Readings API",
             "met": false,
-            "due": false
+            "due": false,
+            "condition": "pending",
+            "why": "",
+            "status": {
+              "kind": "absent",
+              "gate": "undefined",
+              "state": "undefined",
+              "reason": "",
+              "note": "",
+              "date": "2026-09-15",
+              "recorder": "",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
+            },
+            "subproject": "",
+            "commit": "",
+            "at_trunk": "unknown"
           }
         ]
       }
     ]
   },
-  "diagnostics": []
+  "diagnostics": [
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/c07d.yaml",
+      "line": 6,
+      "col": 5,
+      "task": "c07d",
+      "message": "the requirement on 9f31 from design is due at implementation and unmet: 9f31 stands at function"
+    }
+  ]
 }

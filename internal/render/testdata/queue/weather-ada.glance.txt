@@ -12,7 +12,7 @@ work waiting.
 ┌─────────────────┬─────────────────┬────────────────┬───────┬─────────────────┐
 │ Kind            │ Task            │ Gate           │ Model │ Since           │
 ├─────────────────┼─────────────────┼────────────────┼───────┼─────────────────┤
-│ Authorisation   │ 3c5d Dashboard; │ 📌 mockup      │       │ 2026-09-22      │
+│ Authorisation   │ 3c5d Dashboard; │ 📝 defined     │       │ 2026-09-22      │
 │ owed            │ proposed; the   │                │       │                 │
 │                 │ deciding commit │                │       │                 │
 │                 │ is not by an    │                │       │                 │
@@ -20,7 +20,7 @@ work waiting.
 ├─────────────────┼─────────────────┼────────────────┼───────┼─────────────────┤
 │ Work ready      │ 7b2e Gateway    │ 📝 defined     │       │ 2026-09-15      │
 ├─────────────────┼─────────────────┼────────────────┼───────┼─────────────────┤
-│ Reaffirmation   │ 9f31 Sensor     │ ⚙ function     │       │ 2026-09-28, 3   │
+│ Reaffirmation   │ 9f31 Sensor     │ ⚙ function     │       │ 2026-09-28, 0   │
 │                 │ board           │                │       │ days            │
 ├─────────────────┼─────────────────┼────────────────┼───────┼─────────────────┤
 │ Work waiting    │ 9f31 Sensor     │ ⚡ performance │       │ 2026-09-28      │
