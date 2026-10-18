@@ -424,12 +424,6 @@ func abbreviate(v any) string {
 	return string(b)
 }
 
-// TestRealMockups is T18, which the integrate gate runs: it needs the corpus
-// entry tableaux-tooling, which the built corpus does not hold.
-func TestRealMockups(t *testing.T) {
-	t.Skip("T18 needs the corpus entry tableaux-tooling, which the built corpus lacks; the integrate gate runs it")
-}
-
 // TestRealNotFound: a ref or a task the project lacks is a not-found error
 // of tablo, which the command reports as a failed read with exit 3.
 func TestRealNotFound(t *testing.T) {
