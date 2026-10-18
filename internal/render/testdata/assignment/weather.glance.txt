@@ -15,6 +15,6 @@ Legend: tabloio gates.
 │ opus@example.org │        0 │             0 │            0 │ claude-opus-5-5 │
 └──────────────────┴──────────┴───────────────┴──────────────┴─────────────────┘
 
-🪆 1 tasks hand their next junction to a subproject: c07d.
+🪆 1 task hands its next junction to a subproject: c07d.
 
 Command: tabloio assignment --ref main --level glance --text

@@ -292,7 +292,7 @@ func TestProposedOnly(t *testing.T) {
 	}
 	w := renderString(t, readFixture(t, "authority", "weather-proposed"), Options{Level: view.Detail})
 	if !strings.Contains(w, "  3c5d Dashboard        dan@example.org  proposed\n") ||
-		!strings.Contains(w, "2 tasks, 1 delegations, 1 authorised, 1 proposed.") {
+		!strings.Contains(w, "2 tasks, 1 delegation, 1 authorised, 1 proposed.") {
 		t.Errorf("weather-proposed:\n%s", w)
 	}
 }

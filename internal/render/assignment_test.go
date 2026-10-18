@@ -82,15 +82,15 @@ func TestGateGroupsAndFold(t *testing.T) {
 		out := renderString(t, v, Options{Level: view.Detail})
 		var groups []string
 		for _, ln := range strings.Split(out, "\n") {
-			if strings.HasPrefix(ln, "**") && strings.Contains(ln, " junctions · ") {
+			if strings.HasPrefix(ln, "**") && (strings.Contains(ln, " junctions · ") || strings.Contains(ln, " junction · ")) {
 				groups = append(groups, ln)
 			}
 		}
 		want := []string{
-			"**📝 defined** · 1 junctions · 1 next",
+			"**📝 defined** · 1 junction · 1 next",
 			"**📐 design** · 2 junctions · 2 next",
 			"**🌍 validate** · 2 junctions · 2 next",
-			"**🚀 release** · 1 junctions · 1 next",
+			"**🚀 release** · 1 junction · 1 next",
 		}
 		if !slices.Equal(groups, want) {
 			t.Errorf("groups\n%s\nwant\n%s", strings.Join(groups, "\n"), strings.Join(want, "\n"))
@@ -234,6 +234,10 @@ func TestAssignmentShapes(t *testing.T) {
 		}
 		if strings.Contains(out, "## ") {
 			t.Errorf("a section stands at glance")
+		}
+		// One task takes the singular.
+		if out := renderString(t, readFixture(t, "assignment", "weather"), Options{Level: view.Glance}); !strings.Contains(out, "\n🪆 1 task hands its next junction to a subproject: `c07d`.\n") {
+			t.Errorf("one recursive task:\n%s", out)
 		}
 		// Without a task that hands its junction over, the line is absent.
 		v := *tooling.(*view.Assignment)

@@ -11,7 +11,7 @@ Legend: `tabloio gates`.
 | dan@example.org | 1 | 1 | 0 |  |
 | opus@example.org | 0 | 0 | 0 | `claude-opus-5-5` |
 
-🪆 1 tasks hand their next junction to a subproject: `c07d`.
+🪆 1 task hands its next junction to a subproject: `c07d`.
 
 ## ada@example.org
 
@@ -147,49 +147,49 @@ Over `a1c0` Weather station and its 5 descendants.
 
 ### Contributes: 8 junctions, 0 next
 
-**📝 defined** · 1 junctions · 0 next
+**📝 defined** · 1 junction · 0 next
 
 | Task | Model | Reviewer | When |
 |---|---|---|---|
 | `c07d` Node firmware |  |  | passed |
 
-**📌 mockup** · 1 junctions · 0 next
+**📌 mockup** · 1 junction · 0 next
 
 | Task | Model | Reviewer | When |
 |---|---|---|---|
 | `c07d` Node firmware |  | ben@example.org | passed, reviewed |
 
-**⚙️ function** · 1 junctions · 0 next
+**⚙️ function** · 1 junction · 0 next
 
 | Task | Model | Reviewer | When |
 |---|---|---|---|
 | `c07d` Node firmware |  |  | passed |
 
-**⚡ performance** · 1 junctions · 0 next
+**⚡ performance** · 1 junction · 0 next
 
 | Task | Model | Reviewer | When |
 |---|---|---|---|
 | `c07d` Node firmware |  |  | passed |
 
-**📐 design** · 1 junctions · 0 next
+**📐 design** · 1 junction · 0 next
 
 | Task | Model | Reviewer | When |
 |---|---|---|---|
 | `c07d` Node firmware |  |  | passed; the status stands here |
 
-**🖼️ integrate** · 1 junctions · 0 next
+**🖼️ integrate** · 1 junction · 0 next
 
 | Task | Model | Reviewer | When |
 |---|---|---|---|
 | `c07d` Node firmware |  |  | later |
 
-**🌍 validate** · 1 junctions · 0 next
+**🌍 validate** · 1 junction · 0 next
 
 | Task | Model | Reviewer | When |
 |---|---|---|---|
 | `c07d` Node firmware |  |  | later |
 
-**🚀 release** · 1 junctions · 0 next
+**🚀 release** · 1 junction · 0 next
 
 | Task | Model | Reviewer | When |
 |---|---|---|---|
@@ -204,13 +204,13 @@ Over `a1c0` Weather station and its 5 descendants.
 | `9f31` Sensor board | ada@example.org |  | passed, reviewed |
 | `c07d` Node firmware | ben@example.org |  | passed, reviewed |
 
-**🧩 unit** · 1 junctions · 0 next
+**🧩 unit** · 1 junction · 0 next
 
 | Task | Contributor | Model | When |
 |---|---|---|---|
 | `c07d` Node firmware | opus@example.org | `claude-opus-5-5` | later |
 
-**🌍 validate** · 1 junctions · 0 next
+**🌍 validate** · 1 junction · 0 next
 
 | Task | Contributor | Model | When |
 |---|---|---|---|
@@ -250,67 +250,67 @@ Over `4e2b` Sensor node and its 2 descendants.
 
 ### Contributes: 11 junctions, 1 next
 
-**📝 defined** · 1 junctions · 0 next
+**📝 defined** · 1 junction · 0 next
 
 | Task | Model | Reviewer | When |
 |---|---|---|---|
 | `3c5d` Dashboard |  |  | passed; the status stands here |
 
-**📌 mockup** · 1 junctions · 1 next
+**📌 mockup** · 1 junction · 1 next
 
 | Task | Model | Reviewer | When |
 |---|---|---|---|
 | `3c5d` Dashboard |  |  | next |
 
-**⚙️ function** · 1 junctions · 0 next
+**⚙️ function** · 1 junction · 0 next
 
 | Task | Model | Reviewer | When |
 |---|---|---|---|
 | `3c5d` Dashboard |  |  | later |
 
-**⚡ performance** · 1 junctions · 0 next
+**⚡ performance** · 1 junction · 0 next
 
 | Task | Model | Reviewer | When |
 |---|---|---|---|
 | `3c5d` Dashboard |  |  | later |
 
-**⚓ reliability** · 1 junctions · 0 next
+**⚓ reliability** · 1 junction · 0 next
 
 | Task | Model | Reviewer | When |
 |---|---|---|---|
 | `3c5d` Dashboard |  |  | later |
 
-**📐 design** · 1 junctions · 0 next
+**📐 design** · 1 junction · 0 next
 
 | Task | Model | Reviewer | When |
 |---|---|---|---|
 | `3c5d` Dashboard |  |  | later |
 
-**🛠️ implementation** · 1 junctions · 0 next
+**🛠️ implementation** · 1 junction · 0 next
 
 | Task | Model | Reviewer | When |
 |---|---|---|---|
 | `3c5d` Dashboard |  |  | later |
 
-**🧩 unit** · 1 junctions · 0 next
+**🧩 unit** · 1 junction · 0 next
 
 | Task | Model | Reviewer | When |
 |---|---|---|---|
 | `3c5d` Dashboard |  |  | later |
 
-**🖼️ integrate** · 1 junctions · 0 next
+**🖼️ integrate** · 1 junction · 0 next
 
 | Task | Model | Reviewer | When |
 |---|---|---|---|
 | `3c5d` Dashboard |  |  | later |
 
-**🌍 validate** · 1 junctions · 0 next
+**🌍 validate** · 1 junction · 0 next
 
 | Task | Model | Reviewer | When |
 |---|---|---|---|
 | `3c5d` Dashboard |  |  | later |
 
-**🚀 release** · 1 junctions · 0 next
+**🚀 release** · 1 junction · 0 next
 
 | Task | Model | Reviewer | When |
 |---|---|---|---|
@@ -344,9 +344,9 @@ None.
 
 ### Tasks assigned: none
 
-### Contributes: 1 junctions, 0 next
+### Contributes: 1 junction, 0 next
 
-**🧩 unit** · 1 junctions · 0 next
+**🧩 unit** · 1 junction · 0 next
 
 | Task | Model | Reviewer | When |
 |---|---|---|---|

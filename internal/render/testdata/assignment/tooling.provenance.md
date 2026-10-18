@@ -216,7 +216,7 @@ Over `437e` Tableaux tooling and its 36 descendants.
 | `e3cb` Schema files | `claude-sonnet` | noreply@anthropic.com | passed, reviewed; the status stands here |
 | `fcec` Conformance corpus | `claude-sonnet` | noreply@anthropic.com | next |
 
-**🔗 integrate** · 1 junctions · 0 next
+**🔗 integrate** · 1 junction · 0 next
 
 | Task | Model | Reviewer | When |
 |---|---|---|---|
@@ -263,7 +263,7 @@ Over `437e` Tableaux tooling and its 36 descendants.
 | `e3cb` Schema files | noreply@anthropic.com | `claude-sonnet` | passed, reviewed; the status stands here |
 | `fcec` Conformance corpus | noreply@anthropic.com | `claude-sonnet` | next |
 
-**🔗 integrate** · 1 junctions · 0 next
+**🔗 integrate** · 1 junction · 0 next
 
 | Task | Contributor | Model | When |
 |---|---|---|---|

@@ -79,7 +79,7 @@ func (p *page) peopleBlocks(v *view.Assignment) []doc.Block {
 			lead = one(symbol(m.Symbol, m.Key), txt(" "))
 		}
 		b = append(b, para(spans(lead,
-			one(txt(strconv.Itoa(len(v.Recursive))+" tasks hand their next junction to a subproject: ")),
+			one(txt(count(len(v.Recursive), "task hands its", "tasks hand their")+" next junction to a subproject: ")),
 			ids(v.Recursive), one(txt(".")))...))
 	}
 	return b
@@ -187,7 +187,7 @@ func (p *page) junctionSection(name string, rows []view.JunctionRow, reviews boo
 	if len(rows) == 0 {
 		return []doc.Block{countHeading(3, name, 0)}
 	}
-	b := []doc.Block{heading(3, txt(name+": "+strconv.Itoa(len(rows))+" junctions, "+strconv.Itoa(nextCount(rows))+" next"))}
+	b := []doc.Block{heading(3, txt(name+": "+count(len(rows), "junction", "junctions")+", "+strconv.Itoa(nextCount(rows))+" next"))}
 	for _, g := range p.byGate(rows) {
 		head := heads("Task", "Model", "Reviewer", "When")
 		if reviews {
@@ -207,7 +207,7 @@ func (p *page) junctionSection(name string, rows []view.JunctionRow, reviews boo
 		}
 		b = append(b,
 			para(spans(one(doc.Strong(p.gate(g.gate))),
-				one(txt(" · "+strconv.Itoa(len(g.rows))+" junctions · "+strconv.Itoa(nextCount(g.rows))+" next")))...),
+				one(txt(" · "+count(len(g.rows), "junction", "junctions")+" · "+strconv.Itoa(nextCount(g.rows))+" next")))...),
 			doc.Table{Head: head, Rows: p.foldRows(trs)})
 	}
 	return b
@@ -335,7 +335,7 @@ func (p *page) authoritySection(s view.PersonSection) []doc.Block {
 	}
 	for _, t := range s.Authority {
 		b = append(b, para(spans(one(txt("Over ")), task(t.Task),
-			one(txt(" and its "+strconv.Itoa(t.Descendants)+" descendants.")))...))
+			one(txt(" and its "+count(t.Descendants, "descendant", "descendants")+".")))...))
 	}
 	return b
 }
