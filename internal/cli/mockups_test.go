@@ -163,10 +163,14 @@ func (f mockupFixture) goldens(t *testing.T) map[string][]string {
 // toolingCopy copies the repository of the corpus entry tableaux-tooling,
 // as tablo's TestCorpus reaches it through TABLO_CORPUS, into a temporary
 // directory with its submodules. The entry reads the umbrella at the ref
-// its expected.yaml names, corpus/tooling; so that no fact of the view
-// depends on where a clone's branches stand today, the copy's main, local
-// and origin's, stands at that ref, and each submodule's at its pin there.
-// It skips without TABLO_CORPUS. It returns the copy and the ref.
+// its expected.yaml names, corpus/tooling. So that every caller reads the
+// tag's tree whatever clone TABLO_CORPUS names and wherever it stands, the
+// copy is checked out at that ref, detached, and each submodule's working
+// tree at its pin there, from the module stores the copied .git holds:
+// nothing is fetched. So that no fact of a view depends on where a clone's
+// branches stand today, the copy's main, local and origin's, stands at the
+// ref, and each submodule's at its pin. It skips without TABLO_CORPUS. It
+// returns the copy and the ref.
 func toolingCopy(t *testing.T) (dir, ref string) {
 	t.Helper()
 	corpus := os.Getenv("TABLO_CORPUS")
@@ -193,17 +197,25 @@ func toolingCopy(t *testing.T) (dir, ref string) {
 		t.Fatalf("copy the umbrella: %v\n%s", err, out)
 	}
 	commit := strings.TrimSpace(gitOut(t, dir, "rev-parse", ref+"^{commit}"))
-	pin := func(repo, commit string) {
+	// at checks a repository out at a commit, detached, then sets its main
+	// there; detached first, so that moving main moves no checkout.
+	at := func(repo, commit string) {
+		gitOut(t, repo, "checkout", "-q", "-f", "--detach", commit)
 		for _, r := range []string{"refs/heads/main", "refs/remotes/origin/main"} {
 			gitOut(t, repo, "update-ref", r, commit)
 		}
 	}
-	pin(dir, commit)
+	at(dir, commit)
 	for _, line := range strings.Split(strings.TrimSpace(gitOut(t, dir, "ls-tree", commit, "subprojects/")), "\n") {
 		f := strings.Fields(line)
-		if len(f) == 4 && f[1] == "commit" {
-			pin(filepath.Join(dir, f[3]), f[2])
+		if len(f) != 4 || f[1] != "commit" {
+			continue
 		}
+		sub := filepath.Join(dir, f[3])
+		if _, err := os.Stat(filepath.Join(sub, ".git")); err != nil {
+			t.Fatalf("the clone TABLO_CORPUS names has no checkout of the submodule %s; run git submodule update --init in it", f[3])
+		}
+		at(sub, f[2])
 	}
 	return dir, ref
 }
