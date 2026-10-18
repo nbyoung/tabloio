@@ -1,3 +1,3 @@
-gate: implementation
+gate: unit
 state: nominal
-note: action and the five write commands stand, and the unit gate runs T1 to T28; T29 waits at integrate on tablo's 4ed9, 8118 and 493e, and tablotui's 518e waits on a tabloio tag that holds action
+note: T1 to T28 pass under go test -race -count=1 ./action ./internal/cli, run by name with no skip, T27 through tablo's library on a repository under t.TempDir and T28 as TestWriteUsage in internal/cli; T29 waits at integrate on tablo's 4ed9, 8118 and 493e, as the design's Tests section states; integrate runs T29 on the eight corpus entries against tablo's views and validator, and tablotui's 518e waits on a tabloio tag that holds action
