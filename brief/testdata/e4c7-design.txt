@@ -54,19 +54,26 @@ noreply@anthropic.com on main at 4593882, 2026-10-02: work ready.
 
 5. The commit you make when done
 
-  Commit your work and .tableaux/status/e4c7.yaml, as noreply@anthropic.com,
-  on a branch off main. Do not merge. The reviewer nbyoung@nbyoung.com
-  accepts this gate, so hand the work off: the status stays at the gate it
-  stands at and takes the reason review.
+  Commit your work, as noreply@anthropic.com, on a branch off main, and
+  record .tableaux/status/e4c7.yaml there with tabloio record. Do not merge.
+  The reviewer nbyoung@nbyoung.com accepts this gate, so hand the work off:
+  the status stays at the gate it stands at and takes the reason review.
+
+  tabloio record writes the file so, with the note on one line, and makes
+  the commit that records it:
 
     gate: function
     state: nominal
     reason: review
     note: <one line that says what waits on the branch>
 
-  Edit the file by hand so that it reads as above, with the note on one line
-  and no colon followed by a space inside it. Change no other file under
-  .tableaux.
+    tabloio record e4c7 --state nominal --reason review \
+      --note "<one line that says what waits on the branch>" \
+      --model "<the identifier your harness reports, matching claude-opus>" \
+      --co-author "<your model's display name> <noreply@anthropic.com>" --yes
+
+  Change no file under .tableaux by hand: the command refuses a status the
+  method cannot read, and names the rule.
 
   Author and committer are both noreply@anthropic.com. Set the identity in
   the environment, which no configuration overrides, and check it on each
@@ -79,13 +86,14 @@ noreply@anthropic.com on main at 4593882, 2026-10-02: work ready.
     git log -1 --format='%an <%ae> / %cn <%ce>%n%B'
 
   End each commit message with one final paragraph of trailers, with no
-  blank line between them and nothing after them.
+  blank line between them and nothing after them. tabloio record composes
+  those of the commit that records the status from --model and --co-author.
 
     Model: <the identifier your harness reports, matching claude-opus>
     Co-Authored-By: <your model's display name> <noreply@anthropic.com>
 
-  The reviewer merges the branch and passes the gate with a commit that
-  carries the trailer Reviewed: e4c7 design
+  The reviewer merges the branch and accepts the gate with tabloio review
+  e4c7 design, whose commit carries the trailer Reviewed: e4c7 design
 
 6. The commands that reproduce this brief and show the task
 

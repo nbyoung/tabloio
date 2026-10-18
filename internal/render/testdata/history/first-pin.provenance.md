@@ -8,45 +8,92 @@ Legend: `tabloio gates`.
 
 ## 2026-09-29 · 4 events in 1 commit: 4 pin
 
-- **2026-09-29** · nbyoung@nbyoung.com · pin · `77b2` · `subprojects/tablo` new `dc669dd`
-  - Status after: ❔ undefined ⚪ undefined, 🪆 from the subproject `subprojects/tablo`
-  - Model: none recorded; exempt
+- **2026-09-29** · nbyoung@nbyoung.com · pin · `77b2` tablo: backend library and plumbing · `subprojects/tablo` new `dc669dd`
+  - Status after: ❔ undefined ⚪ undefined, unchanged
+  - `437e` Tableaux tooling after: ❔ undefined ⚪ undefined, rolled up from `bc63` Method
+  - Subproject events: 12 events in 1 commit of `subprojects/tablo`
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `b2c1` tablo · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `0d83` Bootstrap · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `4f60` Loader · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `8118` Validator · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `27a3` Derivation · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `dada` Audit · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `4091` Views · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `493e` Structural views · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `886d` Status views · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `8ed1` Temporal views · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `4ed9` Plumbing command · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `4b4f` Conformance · the task file appears
   - Commit: `37a08e92e840ea3cb48bc7ca6a5041c44096ef8e`
   - Subject: Pin the subprojects
   - Author: Norman Young \<nbyoung@nbyoung.com>, 2026-09-29 17:30:02 -0400
   - Committer: Norman Young \<nbyoung@nbyoung.com>
   - Trailers: `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`
-  - Files: `subprojects/tablo` (pin), `subprojects/tabloio` (pin), `subprojects/tablotui` (pin), `subprojects/tableaud` (pin)
-- **2026-09-29** · nbyoung@nbyoung.com · pin · `6103` · `subprojects/tabloio` new `46521bc`
-  - Status after: ❔ undefined ⚪ undefined, 🪆 from the subproject `subprojects/tabloio`
-  - Model: none recorded; exempt
+  - Files: `subprojects/tableaud` (pin), `subprojects/tablo` (pin), `subprojects/tabloio` (pin), `subprojects/tablotui` (pin)
+- **2026-09-29** · nbyoung@nbyoung.com · pin · `6103` tabloio: command line, output and input · `subprojects/tabloio` new `46521bc`
+  - Status after: ❔ undefined ⚪ undefined, unchanged
+  - `437e` Tableaux tooling after: ❔ undefined ⚪ undefined, rolled up from `bc63` Method
+  - Subproject events: 12 events in 1 commit of `subprojects/tabloio`
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `07e0` tabloio · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `0a2f` Bootstrap · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `1093` Renderers · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `e3ed` Legend and task renderers · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `c48a` Structural renderers · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `a3cc` Status renderers · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `9167` Temporal renderers · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `e0f7` Text renderers · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `5ca9` Read commands · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `b618` Write commands · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `1422` Snapshot workflow · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `e4c7` Agent briefs · the task file appears
   - Commit: `37a08e92e840ea3cb48bc7ca6a5041c44096ef8e`
   - Subject: Pin the subprojects
   - Author: Norman Young \<nbyoung@nbyoung.com>, 2026-09-29 17:30:02 -0400
   - Committer: Norman Young \<nbyoung@nbyoung.com>
   - Trailers: `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`
-  - Files: `subprojects/tablo` (pin), `subprojects/tabloio` (pin), `subprojects/tablotui` (pin), `subprojects/tableaud` (pin)
-- **2026-09-29** · nbyoung@nbyoung.com · pin · `c6e8` · `subprojects/tablotui` new `4544042`
-  - Status after: ❔ undefined ⚪ undefined, 🪆 from the subproject `subprojects/tablotui`
-  - Model: none recorded; exempt
+  - Files: `subprojects/tableaud` (pin), `subprojects/tablo` (pin), `subprojects/tabloio` (pin), `subprojects/tablotui` (pin)
+- **2026-09-29** · nbyoung@nbyoung.com · pin · `c6e8` tablotui: terminal user interface · `subprojects/tablotui` new `4544042`
+  - Status after: ❔ undefined ⚪ undefined, unchanged
+  - `437e` Tableaux tooling after: ❔ undefined ⚪ undefined, rolled up from `bc63` Method
+  - Subproject events: 7 events in 1 commit of `subprojects/tablotui`
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `40e8` tablotui · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `0098` Bootstrap · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `679b` Tableau grid · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `0afa` Detail panes · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `f394` Role and context · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `171b` Live refresh · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `518e` Actions · the task file appears
   - Commit: `37a08e92e840ea3cb48bc7ca6a5041c44096ef8e`
   - Subject: Pin the subprojects
   - Author: Norman Young \<nbyoung@nbyoung.com>, 2026-09-29 17:30:02 -0400
   - Committer: Norman Young \<nbyoung@nbyoung.com>
   - Trailers: `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`
-  - Files: `subprojects/tablo` (pin), `subprojects/tabloio` (pin), `subprojects/tablotui` (pin), `subprojects/tableaud` (pin)
-- **2026-09-29** · nbyoung@nbyoung.com · pin · `595e` · `subprojects/tableaud` new `59783a9`
-  - Status after: ❔ undefined ⚪ undefined, 🪆 from the subproject `subprojects/tableaud`
-  - Model: none recorded; exempt
+  - Files: `subprojects/tableaud` (pin), `subprojects/tablo` (pin), `subprojects/tabloio` (pin), `subprojects/tablotui` (pin)
+- **2026-09-29** · nbyoung@nbyoung.com · pin · `595e` tableaud: local daemon and HTML · `subprojects/tableaud` new `59783a9`
+  - Status after: ❔ undefined ⚪ undefined, unchanged
+  - `437e` Tableaux tooling after: ❔ undefined ⚪ undefined, rolled up from `bc63` Method
+  - Subproject events: 11 events in 1 commit of `subprojects/tableaud`
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `8608` tableaud · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `7425` Bootstrap · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `49ce` Server · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `097c` HTML views · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `438a` Legend and task templates · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `e2b6` Structural templates · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `44bf` Status templates · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `9a9c` Temporal templates · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `db74` Progressive disclosure · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `6160` Static export · the task file appears
+    - 2026-09-29 · nbyoung@nbyoung.com · task · `5a2f` Accessibility and theming · the task file appears
   - Commit: `37a08e92e840ea3cb48bc7ca6a5041c44096ef8e`
   - Subject: Pin the subprojects
   - Author: Norman Young \<nbyoung@nbyoung.com>, 2026-09-29 17:30:02 -0400
   - Committer: Norman Young \<nbyoung@nbyoung.com>
   - Trailers: `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`
-  - Files: `subprojects/tablo` (pin), `subprojects/tabloio` (pin), `subprojects/tablotui` (pin), `subprojects/tableaud` (pin)
+  - Files: `subprojects/tableaud` (pin), `subprojects/tablo` (pin), `subprojects/tabloio` (pin), `subprojects/tablotui` (pin)
 
 ```
-git log --format='%as %h %ae' a7932ae..37a08e9 -- .tableaux/tasks .tableaux/status subprojects/tablo subprojects/tabloio subprojects/tablotui subprojects/tableaud
+git log --format='%H %as %ae %s' a7932ae20ff969855f956540b80ff640f4e4c124..37a08e92e840ea3cb48bc7ca6a5041c44096ef8e -- .tableaux/tasks .tableaux/status subprojects/tablo subprojects/tabloio subprojects/tablotui subprojects/tableaud
+git log --format='%H %as %ae %s' -E --grep='^(Authorised|Reaffirmed): ([0-9a-f]{4})$' --grep='^Reviewed: ([0-9a-f]{4}) ' a7932ae20ff969855f956540b80ff640f4e4c124..37a08e92e840ea3cb48bc7ca6a5041c44096ef8e
 ```
 
-Command: `tabloio history --ref 37a08e9 --level provenance`
+Command: `tabloio history --ref a7932ae..37a08e9 --level provenance`

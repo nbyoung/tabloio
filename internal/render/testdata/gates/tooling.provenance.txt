@@ -1,8 +1,8 @@
 Gate definition
 ═══════════════
 
-*What do the columns and symbols mean?* Tableaux tooling · ref main at 3cdae52,
-2026-10-05 · level provenance
+*What do the columns and symbols mean?* Tableaux tooling · ref corpus/tooling at
+50a373b, 2026-10-17 · level provenance
 
 Gates
 ─────
@@ -74,20 +74,17 @@ README.md, Gates.
 Junction marks
 ──────────────
 
-┌────┬────────────────────────────┬────────────────────────────────────────────┐
-│Mark│ Meaning                    │ Junction                                   │
-├────┼────────────────────────────┼────────────────────────────────────────────┤
-│ 🧑 │ A person contributes       │ Plain; the contributor is a person         │
-│ 🤖 │ An agent contributes       │ Plain; the junction states a model         │
-│ 👀 │ A reviewer accepts         │ Plain; the reviewer accepts the work at    │
-│    │                            │ the gate                                   │
-│ 🪆 │ A subproject does the work │ Recursive; another Tableaux project does   │
-│    │                            │ the work                                   │
-│ —  │ The gate does not apply    │ Not applicable; the entry exempts the task │
-│    │                            │ from the gate                              │
-└────┴────────────────────────────┴────────────────────────────────────────────┘
+┌──────┬────────────────────────────┬────────────────┐
+│ Mark │ Meaning                    │ Junction       │
+├──────┼────────────────────────────┼────────────────┤
+│  🧑  │ A person contributes       │ Plain          │
+│  🤖  │ An agent contributes       │ Plain          │
+│  👀  │ A reviewer accepts         │ Plain          │
+│  🪆  │ A subproject does the work │ Recursive      │
+│  —   │ The gate does not apply    │ Not applicable │
+└──────┴────────────────────────────┴────────────────┘
 
-Source: README.md, Junctions, at language 0.3.1.
+Source: README.md, Junctions, at language 0.3.2.
 
 Provenance
 ──────────
@@ -95,12 +92,12 @@ Provenance
 ┌──────────────────┬─────────────────────────────┬─────────────────────────────┐
 │ Fact             │ Value                       │ Source                      │
 ├──────────────────┼─────────────────────────────┼─────────────────────────────┤
-│ Language version │ 0.3.1                       │ tableaux in                 │
+│ Language version │ 0.3.2                       │ tableaux in                 │
 │                  │                             │ .tableaux/version.yaml      │
 │ Trunk            │ main                        │ trunk in                    │
 │                  │                             │ .tableaux/version.yaml      │
-│ Ref              │ main at 3cdae52,            │ The --ref parameter         │
-│                  │ 2026-10-05, on the trunk    │                             │
+│ Ref              │ corpus/tooling at 50a373b,  │ The --ref parameter         │
+│                  │ 2026-10-17, on the trunk    │                             │
 └──────────────────┴─────────────────────────────┴─────────────────────────────┘
 
 ────────────────────────────────────────────────────────────────────────────────
@@ -114,16 +111,17 @@ File · Last changed by · Date · Author · Committer · Subject
   Subject: Mark four gates with symbols that need no variation selector
 ────────────────────────────────────────────────────────────────────────────────
 .tableaux/version.yaml
-  Last changed by: d95294b
-  Date: 2026-09-30
-  Author: Claude Fable 5.1, noreply@anthropic.com
-  Committer: Claude Fable 5.1, noreply@anthropic.com
-  Subject: Raise the language to 0.3.1
+  Last changed by: 50a373b
+  Date: 2026-10-17
+  Author: Norman Young, nbyoung@nbyoung.com
+  Committer: Norman Young, nbyoung@nbyoung.com
+  Subject: Say that a requirement whose from gate does not apply has no
+    condition
 ────────────────────────────────────────────────────────────────────────────────
 
-    git show 3cdae52:.tableaux/gates.yaml
-    git show 3cdae52:.tableaux/version.yaml
-    git log -1 --format='%h %as %an <%ae> / %cn <%ce> %s' 3cdae52 -- .tableaux/gates.yaml
-    git log -1 --format='%h %as %an <%ae> / %cn <%ce> %s' 3cdae52 -- .tableaux/version.yaml
+    git show 50a373b2857a36e4ef1a754605433943d6bfe324:.tableaux/gates.yaml
+    git show 50a373b2857a36e4ef1a754605433943d6bfe324:.tableaux/version.yaml
+    git log -1 --format='%H %as %an <%ae> / %cn <%ce> %s' 50a373b2857a36e4ef1a754605433943d6bfe324 -- .tableaux/gates.yaml
+    git log -1 --format='%H %as %an <%ae> / %cn <%ce> %s' 50a373b2857a36e4ef1a754605433943d6bfe324 -- .tableaux/version.yaml
 
-Command: tabloio gates --ref 3cdae52 --level provenance --text
+Command: tabloio gates --ref 50a373b --level provenance --text

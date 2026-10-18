@@ -55,18 +55,25 @@ noreply@anthropic.com on main at 3cdae52, 2026-10-05: work ready.
 
 5. The commit you make when done
 
-  Commit your work and .tableaux/status/e9c6.yaml, as noreply@anthropic.com,
-  on a branch off main. Do not merge. You are the reviewer of this gate as
-  well as its contributor, so the commit that records the status passes the
-  gate.
+  Commit your work, as noreply@anthropic.com, on a branch off main, and
+  record .tableaux/status/e9c6.yaml there with tabloio record. Do not merge.
+  You are the reviewer of this gate as well as its contributor, so the
+  commit that records the status passes the gate.
+
+  tabloio record writes the file so, with the note on one line, and makes
+  the commit that records it:
 
     gate: implementation
     state: nominal
     note: <one line that says what the gate now holds>
 
-  Edit the file by hand so that it reads as above, with the note on one line
-  and no colon followed by a space inside it. Change no other file under
-  .tableaux.
+    tabloio record e9c6 --gate implementation --state nominal \
+      --note "<one line that says what the gate now holds>" \
+      --model "<the identifier your harness reports, matching claude-sonnet>" \
+      --co-author "<your model's display name> <noreply@anthropic.com>" --yes
+
+  Change no file under .tableaux by hand: the command refuses a status the
+  method cannot read, and names the rule.
 
   Author and committer are both noreply@anthropic.com. Set the identity in
   the environment, which no configuration overrides, and check it on each
@@ -79,8 +86,10 @@ noreply@anthropic.com on main at 3cdae52, 2026-10-05: work ready.
     git log -1 --format='%an <%ae> / %cn <%ce>%n%B'
 
   End each commit message with one final paragraph of trailers, with no
-  blank line between them and nothing after them. The commit that changes
-  the status file carries all three; an earlier commit carries the last two.
+  blank line between them and nothing after them. tabloio record composes
+  those of the commit that records the status from --model and --co-author,
+  and adds the first, since you review this gate; an earlier commit carries
+  the last two.
 
     Reviewed: e9c6 implementation
     Model: <the identifier your harness reports, matching claude-sonnet>

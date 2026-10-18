@@ -2,20 +2,39 @@
   "schema": "tablo/1",
   "command": "authority",
   "source": {
-    "ref": "main",
-    "commit": "3cdae527d47d37fdff55bc302c76c017cf91c606",
-    "date": "2026-10-05",
+    "ref": "corpus/tooling",
+    "dir": ".",
+    "worktree": false,
+    "commit": "50a373b2857a36e4ef1a754605433943d6bfe324",
+    "date": "2026-10-17",
     "from": null,
     "trunk": {
-      "name": null
+      "name": "main",
+      "resolved": "stated"
     },
     "on_trunk": true
   },
   "project": {
+    "tableaux": "0.3.2",
     "root": "437e",
-    "title": "Tableaux tooling"
+    "title": "Tableaux tooling",
+    "owner": "nbyoung@nbyoung.com"
+  },
+  "viewer": {
+    "email": "nbyoung@nbyoung.com",
+    "roles": [
+      "owner",
+      "authority",
+      "assignee",
+      "contributor",
+      "reviewer"
+    ]
   },
   "params": {
+    "task": "437e",
+    "person": null,
+    "proposed": false,
+    "role": null,
     "level": "provenance"
   },
   "data": {
@@ -118,12 +137,14 @@
         {
           "key": "overloaded",
           "symbol": "🪫",
-          "synopsis": "The assigned resource is overloaded"
+          "synopsis": "The assigned resource is overloaded",
+          "reserved": false
         },
         {
           "key": "blocked",
           "symbol": "⛔",
-          "synopsis": "An external resource is unavailable"
+          "synopsis": "An external resource is unavailable",
+          "reserved": false
         },
         {
           "key": "review",
@@ -137,31 +158,31 @@
           "key": "person",
           "symbol": "🧑",
           "meaning": "A person contributes",
-          "junction": "Plain; the contributor is a person"
+          "junction": "plain"
         },
         {
           "key": "agent",
           "symbol": "🤖",
           "meaning": "An agent contributes",
-          "junction": "Plain; the junction states a `model`"
+          "junction": "plain"
         },
         {
           "key": "reviewer",
           "symbol": "👀",
           "meaning": "A reviewer accepts",
-          "junction": "Plain; the reviewer accepts the work at the gate"
+          "junction": "plain"
         },
         {
           "key": "subproject",
           "symbol": "🪆",
           "meaning": "A subproject does the work",
-          "junction": "Recursive; another Tableaux project does the work"
+          "junction": "recursive"
         },
         {
           "key": "exempt",
           "symbol": "—",
           "meaning": "The gate does not apply",
-          "junction": "Not applicable; the entry exempts the task from the gate"
+          "junction": "not_applicable"
         }
       ]
     },
@@ -174,7 +195,8 @@
         "parent": true,
         "delegated": false,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "bc63",
@@ -184,7 +206,8 @@
         "parent": true,
         "delegated": false,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "c2ad",
@@ -194,7 +217,8 @@
         "parent": false,
         "delegated": true,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "2034",
@@ -204,7 +228,8 @@
         "parent": true,
         "delegated": false,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "e9c6",
@@ -214,7 +239,8 @@
         "parent": false,
         "delegated": true,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "bc86",
@@ -224,7 +250,8 @@
         "parent": true,
         "delegated": true,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "99f0",
@@ -234,7 +261,8 @@
         "parent": false,
         "delegated": false,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "05a9",
@@ -244,7 +272,8 @@
         "parent": false,
         "delegated": false,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "a9ce",
@@ -254,7 +283,8 @@
         "parent": false,
         "delegated": false,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "bb7c",
@@ -264,7 +294,8 @@
         "parent": false,
         "delegated": false,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "c74a",
@@ -274,7 +305,8 @@
         "parent": false,
         "delegated": false,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "efff",
@@ -284,7 +316,8 @@
         "parent": false,
         "delegated": false,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "ab8e",
@@ -294,7 +327,8 @@
         "parent": false,
         "delegated": false,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "c545",
@@ -304,7 +338,8 @@
         "parent": false,
         "delegated": false,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "d615",
@@ -314,7 +349,8 @@
         "parent": false,
         "delegated": false,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "b14e",
@@ -324,7 +360,8 @@
         "parent": false,
         "delegated": false,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "5fe3",
@@ -334,7 +371,8 @@
         "parent": true,
         "delegated": true,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "a6f7",
@@ -344,7 +382,8 @@
         "parent": false,
         "delegated": false,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "7dff",
@@ -354,7 +393,8 @@
         "parent": false,
         "delegated": false,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "b1b7",
@@ -364,7 +404,8 @@
         "parent": false,
         "delegated": false,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "ea51",
@@ -374,7 +415,8 @@
         "parent": false,
         "delegated": false,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "7783",
@@ -384,7 +426,8 @@
         "parent": false,
         "delegated": false,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "5471",
@@ -394,7 +437,8 @@
         "parent": false,
         "delegated": false,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "32e7",
@@ -404,7 +448,8 @@
         "parent": false,
         "delegated": false,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "69eb",
@@ -414,7 +459,8 @@
         "parent": false,
         "delegated": false,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "3194",
@@ -424,7 +470,8 @@
         "parent": false,
         "delegated": false,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "a8b4",
@@ -434,7 +481,8 @@
         "parent": false,
         "delegated": false,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "e3cb",
@@ -444,7 +492,8 @@
         "parent": false,
         "delegated": true,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "fcec",
@@ -454,7 +503,8 @@
         "parent": false,
         "delegated": true,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "ac33",
@@ -464,7 +514,8 @@
         "parent": false,
         "delegated": false,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "9f3f",
@@ -474,7 +525,8 @@
         "parent": false,
         "delegated": false,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "7861",
@@ -484,7 +536,8 @@
         "parent": false,
         "delegated": true,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "7166",
@@ -494,7 +547,8 @@
         "parent": false,
         "delegated": false,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "77b2",
@@ -504,7 +558,8 @@
         "parent": false,
         "delegated": false,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "6103",
@@ -514,7 +569,8 @@
         "parent": false,
         "delegated": false,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "c6e8",
@@ -524,7 +580,8 @@
         "parent": false,
         "delegated": false,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "595e",
@@ -534,7 +591,8 @@
         "parent": false,
         "delegated": false,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       }
     ],
     "authorities": [],
@@ -559,17 +617,26 @@
         "defaults": [
           {
             "gate": "defined",
+            "kind": "plain",
             "marks": [
               "agent"
             ],
             "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
-            "reviewer": "",
-            "stands": ""
+            "reviewer": "nbyoung@nbyoung.com",
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "",
+            "reviewed": true,
+            "from": [
+              "437e"
+            ]
           },
           {
             "gate": "mockup",
+            "kind": "plain",
             "marks": [
               "agent",
               "reviewer"
@@ -578,21 +645,37 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": ""
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "",
+            "reviewed": false,
+            "from": [
+              "437e"
+            ]
           },
           {
             "gate": "function",
+            "kind": "plain",
             "marks": [
               "agent"
             ],
             "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
-            "reviewer": "",
-            "stands": ""
+            "reviewer": "nbyoung@nbyoung.com",
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "",
+            "reviewed": false,
+            "from": [
+              "437e"
+            ]
           },
           {
             "gate": "design",
+            "kind": "plain",
             "marks": [
               "agent",
               "reviewer"
@@ -601,43 +684,75 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": ""
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "",
+            "reviewed": false,
+            "from": [
+              "437e"
+            ]
           },
           {
             "gate": "implementation",
+            "kind": "plain",
             "marks": [
               "agent"
             ],
             "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
-            "reviewer": "",
-            "stands": ""
+            "reviewer": "nbyoung@nbyoung.com",
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "",
+            "reviewed": false,
+            "from": [
+              "437e"
+            ]
           },
           {
             "gate": "unit",
+            "kind": "plain",
             "marks": [
               "agent"
             ],
             "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
-            "reviewer": "",
-            "stands": ""
+            "reviewer": "nbyoung@nbyoung.com",
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "",
+            "reviewed": false,
+            "from": [
+              "437e"
+            ]
           },
           {
             "gate": "integrate",
+            "kind": "plain",
             "marks": [
               "agent"
             ],
             "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
-            "reviewer": "",
-            "stands": ""
+            "reviewer": "nbyoung@nbyoung.com",
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "",
+            "reviewed": false,
+            "from": [
+              "437e"
+            ]
           },
           {
             "gate": "validate",
+            "kind": "plain",
             "marks": [
               "agent",
               "reviewer"
@@ -646,10 +761,18 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": ""
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "",
+            "reviewed": false,
+            "from": [
+              "437e"
+            ]
           },
           {
             "gate": "release",
+            "kind": "plain",
             "marks": [
               "person"
             ],
@@ -657,10 +780,268 @@
             "contributor": "nbyoung@nbyoung.com",
             "model": "",
             "reviewer": "",
-            "stands": ""
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "",
+            "reviewed": false,
+            "from": [
+              "437e"
+            ]
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "gate": "defined",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e",
+            "key": "junctions.defined.contributor",
+            "file": ".tableaux/tasks/437e.yaml",
+            "line": 17,
+            "col": 34
+          },
+          {
+            "gate": "defined",
+            "field": "model",
+            "value": "claude-haiku",
+            "by": "437e",
+            "key": "junctions.defined.model",
+            "file": ".tableaux/tasks/437e.yaml",
+            "line": 17,
+            "col": 64
+          },
+          {
+            "gate": "defined",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "assignee",
+            "key": "assignee",
+            "file": "",
+            "line": 0,
+            "col": 0
+          },
+          {
+            "gate": "mockup",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e",
+            "key": "junctions.mockup.contributor",
+            "file": ".tableaux/tasks/437e.yaml",
+            "line": 18,
+            "col": 34
+          },
+          {
+            "gate": "mockup",
+            "field": "model",
+            "value": "claude-opus",
+            "by": "437e",
+            "key": "junctions.mockup.model",
+            "file": ".tableaux/tasks/437e.yaml",
+            "line": 18,
+            "col": 64
+          },
+          {
+            "gate": "mockup",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e",
+            "key": "junctions.mockup.reviewer",
+            "file": ".tableaux/tasks/437e.yaml",
+            "line": 18,
+            "col": 87
+          },
+          {
+            "gate": "function",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e",
+            "key": "junctions.function.contributor",
+            "file": ".tableaux/tasks/437e.yaml",
+            "line": 19,
+            "col": 34
+          },
+          {
+            "gate": "function",
+            "field": "model",
+            "value": "claude-sonnet",
+            "by": "437e",
+            "key": "junctions.function.model",
+            "file": ".tableaux/tasks/437e.yaml",
+            "line": 19,
+            "col": 64
+          },
+          {
+            "gate": "function",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "assignee",
+            "key": "assignee",
+            "file": "",
+            "line": 0,
+            "col": 0
+          },
+          {
+            "gate": "design",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e",
+            "key": "junctions.design.contributor",
+            "file": ".tableaux/tasks/437e.yaml",
+            "line": 20,
+            "col": 34
+          },
+          {
+            "gate": "design",
+            "field": "model",
+            "value": "claude-opus",
+            "by": "437e",
+            "key": "junctions.design.model",
+            "file": ".tableaux/tasks/437e.yaml",
+            "line": 20,
+            "col": 64
+          },
+          {
+            "gate": "design",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e",
+            "key": "junctions.design.reviewer",
+            "file": ".tableaux/tasks/437e.yaml",
+            "line": 20,
+            "col": 87
+          },
+          {
+            "gate": "implementation",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e",
+            "key": "junctions.implementation.contributor",
+            "file": ".tableaux/tasks/437e.yaml",
+            "line": 21,
+            "col": 34
+          },
+          {
+            "gate": "implementation",
+            "field": "model",
+            "value": "claude-sonnet",
+            "by": "437e",
+            "key": "junctions.implementation.model",
+            "file": ".tableaux/tasks/437e.yaml",
+            "line": 21,
+            "col": 64
+          },
+          {
+            "gate": "implementation",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "assignee",
+            "key": "assignee",
+            "file": "",
+            "line": 0,
+            "col": 0
+          },
+          {
+            "gate": "unit",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e",
+            "key": "junctions.unit.contributor",
+            "file": ".tableaux/tasks/437e.yaml",
+            "line": 22,
+            "col": 34
+          },
+          {
+            "gate": "unit",
+            "field": "model",
+            "value": "claude-sonnet",
+            "by": "437e",
+            "key": "junctions.unit.model",
+            "file": ".tableaux/tasks/437e.yaml",
+            "line": 22,
+            "col": 64
+          },
+          {
+            "gate": "unit",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "assignee",
+            "key": "assignee",
+            "file": "",
+            "line": 0,
+            "col": 0
+          },
+          {
+            "gate": "integrate",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e",
+            "key": "junctions.integrate.contributor",
+            "file": ".tableaux/tasks/437e.yaml",
+            "line": 23,
+            "col": 34
+          },
+          {
+            "gate": "integrate",
+            "field": "model",
+            "value": "claude-sonnet",
+            "by": "437e",
+            "key": "junctions.integrate.model",
+            "file": ".tableaux/tasks/437e.yaml",
+            "line": 23,
+            "col": 64
+          },
+          {
+            "gate": "integrate",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "assignee",
+            "key": "assignee",
+            "file": "",
+            "line": 0,
+            "col": 0
+          },
+          {
+            "gate": "validate",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "437e",
+            "key": "junctions.validate.contributor",
+            "file": ".tableaux/tasks/437e.yaml",
+            "line": 24,
+            "col": 34
+          },
+          {
+            "gate": "validate",
+            "field": "model",
+            "value": "claude-sonnet",
+            "by": "437e",
+            "key": "junctions.validate.model",
+            "file": ".tableaux/tasks/437e.yaml",
+            "line": 24,
+            "col": 64
+          },
+          {
+            "gate": "validate",
+            "field": "reviewer",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e",
+            "key": "junctions.validate.reviewer",
+            "file": ".tableaux/tasks/437e.yaml",
+            "line": 24,
+            "col": 89
+          },
+          {
+            "gate": "release",
+            "field": "contributor",
+            "value": "nbyoung@nbyoung.com",
+            "by": "437e",
+            "key": "junctions.release.contributor",
+            "file": ".tableaux/tasks/437e.yaml",
+            "line": 25,
+            "col": 34
+          }
+        ]
       },
       {
         "id": "bc63",
@@ -689,6 +1070,7 @@
         "defaults": [
           {
             "gate": "design",
+            "kind": "plain",
             "marks": [
               "agent",
               "reviewer"
@@ -697,10 +1079,19 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": ""
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "",
+            "reviewed": false,
+            "from": [
+              "bc63",
+              "437e"
+            ]
           },
           {
             "gate": "validate",
+            "kind": "plain",
             "marks": [
               "agent",
               "reviewer"
@@ -709,21 +1100,77 @@
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": ""
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "",
+            "reviewed": false,
+            "from": [
+              "bc63",
+              "437e"
+            ]
           }
         ],
         "sources": [
           {
             "gate": "design",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "bc63",
+            "key": "junctions.design.contributor",
+            "file": ".tableaux/tasks/bc63.yaml",
+            "line": 14,
+            "col": 28
+          },
+          {
+            "gate": "design",
+            "field": "model",
+            "value": "claude-fable",
+            "by": "bc63",
+            "key": "junctions.design.model",
+            "file": ".tableaux/tasks/bc63.yaml",
+            "line": 14,
+            "col": 58
+          },
+          {
+            "gate": "design",
             "field": "reviewer",
             "value": "nbyoung@nbyoung.com",
-            "by": "437e"
+            "by": "437e",
+            "key": "junctions.design.reviewer",
+            "file": ".tableaux/tasks/437e.yaml",
+            "line": 20,
+            "col": 87
+          },
+          {
+            "gate": "validate",
+            "field": "contributor",
+            "value": "noreply@anthropic.com",
+            "by": "bc63",
+            "key": "junctions.validate.contributor",
+            "file": ".tableaux/tasks/bc63.yaml",
+            "line": 15,
+            "col": 28
+          },
+          {
+            "gate": "validate",
+            "field": "model",
+            "value": "claude-opus",
+            "by": "bc63",
+            "key": "junctions.validate.model",
+            "file": ".tableaux/tasks/bc63.yaml",
+            "line": 15,
+            "col": 58
           },
           {
             "gate": "validate",
             "field": "reviewer",
             "value": "nbyoung@nbyoung.com",
-            "by": "437e"
+            "by": "437e",
+            "key": "junctions.validate.reviewer",
+            "file": ".tableaux/tasks/437e.yaml",
+            "line": 24,
+            "col": 89
           }
         ]
       },
@@ -790,6 +1237,7 @@
         "defaults": [
           {
             "gate": "function",
+            "kind": "not_applicable",
             "marks": [
               "exempt"
             ],
@@ -797,10 +1245,18 @@
             "contributor": "",
             "model": "",
             "reviewer": "",
-            "stands": ""
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "",
+            "reviewed": false,
+            "from": [
+              "bc86"
+            ]
           },
           {
             "gate": "design",
+            "kind": "not_applicable",
             "marks": [
               "exempt"
             ],
@@ -808,10 +1264,18 @@
             "contributor": "",
             "model": "",
             "reviewer": "",
-            "stands": ""
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "",
+            "reviewed": false,
+            "from": [
+              "bc86"
+            ]
           },
           {
             "gate": "implementation",
+            "kind": "not_applicable",
             "marks": [
               "exempt"
             ],
@@ -819,10 +1283,18 @@
             "contributor": "",
             "model": "",
             "reviewer": "",
-            "stands": ""
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "",
+            "reviewed": false,
+            "from": [
+              "bc86"
+            ]
           },
           {
             "gate": "unit",
+            "kind": "not_applicable",
             "marks": [
               "exempt"
             ],
@@ -830,10 +1302,18 @@
             "contributor": "",
             "model": "",
             "reviewer": "",
-            "stands": ""
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "",
+            "reviewed": false,
+            "from": [
+              "bc86"
+            ]
           },
           {
             "gate": "integrate",
+            "kind": "not_applicable",
             "marks": [
               "exempt"
             ],
@@ -841,10 +1321,18 @@
             "contributor": "",
             "model": "",
             "reviewer": "",
-            "stands": ""
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "",
+            "reviewed": false,
+            "from": [
+              "bc86"
+            ]
           },
           {
             "gate": "validate",
+            "kind": "not_applicable",
             "marks": [
               "exempt"
             ],
@@ -852,10 +1340,18 @@
             "contributor": "",
             "model": "",
             "reviewer": "",
-            "stands": ""
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "",
+            "reviewed": false,
+            "from": [
+              "bc86"
+            ]
           },
           {
             "gate": "release",
+            "kind": "not_applicable",
             "marks": [
               "exempt"
             ],
@@ -863,10 +1359,88 @@
             "contributor": "",
             "model": "",
             "reviewer": "",
-            "stands": ""
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "",
+            "reviewed": false,
+            "from": [
+              "bc86"
+            ]
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "gate": "function",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86",
+            "key": "junctions.function.applies",
+            "file": ".tableaux/tasks/bc86.yaml",
+            "line": 8,
+            "col": 3
+          },
+          {
+            "gate": "design",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86",
+            "key": "junctions.design.applies",
+            "file": ".tableaux/tasks/bc86.yaml",
+            "line": 9,
+            "col": 3
+          },
+          {
+            "gate": "implementation",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86",
+            "key": "junctions.implementation.applies",
+            "file": ".tableaux/tasks/bc86.yaml",
+            "line": 10,
+            "col": 3
+          },
+          {
+            "gate": "unit",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86",
+            "key": "junctions.unit.applies",
+            "file": ".tableaux/tasks/bc86.yaml",
+            "line": 11,
+            "col": 3
+          },
+          {
+            "gate": "integrate",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86",
+            "key": "junctions.integrate.applies",
+            "file": ".tableaux/tasks/bc86.yaml",
+            "line": 12,
+            "col": 3
+          },
+          {
+            "gate": "validate",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86",
+            "key": "junctions.validate.applies",
+            "file": ".tableaux/tasks/bc86.yaml",
+            "line": 13,
+            "col": 3
+          },
+          {
+            "gate": "release",
+            "field": "applies",
+            "value": "false",
+            "by": "bc86",
+            "key": "junctions.release.applies",
+            "file": ".tableaux/tasks/bc86.yaml",
+            "line": 14,
+            "col": 3
+          }
+        ]
       },
       {
         "id": "5fe3",
@@ -905,6 +1479,7 @@
         "defaults": [
           {
             "gate": "function",
+            "kind": "not_applicable",
             "marks": [
               "exempt"
             ],
@@ -912,10 +1487,18 @@
             "contributor": "",
             "model": "",
             "reviewer": "",
-            "stands": ""
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "",
+            "reviewed": false,
+            "from": [
+              "5fe3"
+            ]
           },
           {
             "gate": "design",
+            "kind": "not_applicable",
             "marks": [
               "exempt"
             ],
@@ -923,10 +1506,18 @@
             "contributor": "",
             "model": "",
             "reviewer": "",
-            "stands": ""
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "",
+            "reviewed": false,
+            "from": [
+              "5fe3"
+            ]
           },
           {
             "gate": "implementation",
+            "kind": "not_applicable",
             "marks": [
               "exempt"
             ],
@@ -934,10 +1525,18 @@
             "contributor": "",
             "model": "",
             "reviewer": "",
-            "stands": ""
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "",
+            "reviewed": false,
+            "from": [
+              "5fe3"
+            ]
           },
           {
             "gate": "unit",
+            "kind": "not_applicable",
             "marks": [
               "exempt"
             ],
@@ -945,10 +1544,18 @@
             "contributor": "",
             "model": "",
             "reviewer": "",
-            "stands": ""
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "",
+            "reviewed": false,
+            "from": [
+              "5fe3"
+            ]
           },
           {
             "gate": "integrate",
+            "kind": "not_applicable",
             "marks": [
               "exempt"
             ],
@@ -956,10 +1563,18 @@
             "contributor": "",
             "model": "",
             "reviewer": "",
-            "stands": ""
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "",
+            "reviewed": false,
+            "from": [
+              "5fe3"
+            ]
           },
           {
             "gate": "validate",
+            "kind": "not_applicable",
             "marks": [
               "exempt"
             ],
@@ -967,10 +1582,18 @@
             "contributor": "",
             "model": "",
             "reviewer": "",
-            "stands": ""
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "",
+            "reviewed": false,
+            "from": [
+              "5fe3"
+            ]
           },
           {
             "gate": "release",
+            "kind": "not_applicable",
             "marks": [
               "exempt"
             ],
@@ -978,28 +1601,125 @@
             "contributor": "",
             "model": "",
             "reviewer": "",
-            "stands": ""
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "",
+            "reviewed": false,
+            "from": [
+              "5fe3"
+            ]
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "gate": "function",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3",
+            "key": "junctions.function.applies",
+            "file": ".tableaux/tasks/5fe3.yaml",
+            "line": 8,
+            "col": 3
+          },
+          {
+            "gate": "design",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3",
+            "key": "junctions.design.applies",
+            "file": ".tableaux/tasks/5fe3.yaml",
+            "line": 9,
+            "col": 3
+          },
+          {
+            "gate": "implementation",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3",
+            "key": "junctions.implementation.applies",
+            "file": ".tableaux/tasks/5fe3.yaml",
+            "line": 10,
+            "col": 3
+          },
+          {
+            "gate": "unit",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3",
+            "key": "junctions.unit.applies",
+            "file": ".tableaux/tasks/5fe3.yaml",
+            "line": 11,
+            "col": 3
+          },
+          {
+            "gate": "integrate",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3",
+            "key": "junctions.integrate.applies",
+            "file": ".tableaux/tasks/5fe3.yaml",
+            "line": 12,
+            "col": 3
+          },
+          {
+            "gate": "validate",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3",
+            "key": "junctions.validate.applies",
+            "file": ".tableaux/tasks/5fe3.yaml",
+            "line": 13,
+            "col": 3
+          },
+          {
+            "gate": "release",
+            "field": "applies",
+            "value": "false",
+            "by": "5fe3",
+            "key": "junctions.release.applies",
+            "file": ".tableaux/tasks/5fe3.yaml",
+            "line": 14,
+            "col": 3
+          }
+        ]
       }
     ],
     "deciding": [
       {
         "commit": {
-          "hash": "8eb0cae",
-          "subject": "",
+          "hash": "8eb0cae73e119c170eed6c43f0a14f58696e4807",
+          "subject": "Name a model family per gate (D7)",
           "date": "2026-09-30",
+          "author_time": "2026-09-30T01:25:02-04:00",
           "author": {
+            "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
           },
           "committer": {
+            "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
-          }
+          },
+          "parents": [
+            "16fe62fcbaada3d64bbad2344c0cf5681a4c7a65",
+            "320cf2b8651f8cdaada64d38511f27385bc721ce"
+          ],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/tasks/437e.yaml",
+              "change": "changed"
+            },
+            {
+              "path": ".tableaux/tasks/bc63.yaml",
+              "change": "changed"
+            }
+          ]
         },
         "way": "merge",
-        "merged": "320cf2b",
+        "merged": "320cf2b8651f8cdaada64d38511f27385bc721ce",
         "by": "both",
+        "email": "nbyoung@nbyoung.com",
         "tasks": [
           "437e",
           "bc63"
@@ -1007,57 +1727,275 @@
       },
       {
         "commit": {
-          "hash": "16fe62f",
-          "subject": "",
+          "hash": "16fe62fcbaada3d64bbad2344c0cf5681a4c7a65",
+          "subject": "Accept the model plan-and-record proposal",
           "date": "2026-09-30",
+          "author_time": "2026-09-30T01:24:21-04:00",
           "author": {
+            "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
           },
           "committer": {
+            "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
-          }
+          },
+          "parents": [
+            "55018ec6bdb4e5723482d1e5ab1706dd19358eb7",
+            "018814ae8a357a09d644c619df931b2de6bd55e3"
+          ],
+          "trailers": [
+            "Reviewed: ac33 design"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/status/ac33.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/ac33.yaml",
+              "change": "changed"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "changed"
+            }
+          ]
         },
         "way": "merge",
-        "merged": "018814a",
+        "merged": "018814ae8a357a09d644c619df931b2de6bd55e3",
         "by": "both",
+        "email": "nbyoung@nbyoung.com",
         "tasks": [
           "ac33"
         ]
       },
       {
         "commit": {
-          "hash": "8d8b070",
-          "subject": "",
+          "hash": "8d8b070911302d7bb13db4522fa4a13c38ebd2b7",
+          "subject": "Accept the trunk clarification",
           "date": "2026-09-30",
+          "author_time": "2026-09-30T00:55:47-04:00",
           "author": {
+            "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
           },
           "committer": {
+            "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
-          }
+          },
+          "parents": [
+            "5c8700038b30a04f1b387e0268c7782eaa39d384",
+            "9d9fb88d5693eb78b3eab61937519faf8c727d16"
+          ],
+          "trailers": [
+            "Reviewed: 7166 design"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/status/7166.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/7166.yaml",
+              "change": "changed"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "changed"
+            }
+          ]
         },
         "way": "merge",
-        "merged": "9d9fb88",
+        "merged": "9d9fb88d5693eb78b3eab61937519faf8c727d16",
         "by": "both",
+        "email": "nbyoung@nbyoung.com",
         "tasks": [
           "7166"
         ]
       },
       {
         "commit": {
-          "hash": "6b6c99a",
-          "subject": "",
+          "hash": "6b6c99a2ca35f684674ad886a33916979137f227",
+          "subject": "Plan the Tableaux tooling",
           "date": "2026-09-29",
+          "author_time": "2026-09-29T16:38:16-04:00",
           "author": {
+            "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
           },
           "committer": {
+            "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
-          }
+          },
+          "parents": [
+            "0a0dcd584a43253286c778593d18ddbf610d0969"
+          ],
+          "trailers": [
+            "Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/05a9.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/2034.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/3194.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/32e7.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/437e.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/5471.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/595e.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/5fe3.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/6103.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/69eb.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/7166.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/7783.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/77b2.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/7861.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/7dff.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/99f0.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/9f3f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/a6f7.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/a8b4.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/a9ce.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/ab8e.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/ac33.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/b14e.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/b1b7.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/bb7c.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/bc63.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/bc86.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/c2ad.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/c545.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/c6e8.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/c74a.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/d615.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e3cb.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e9c6.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/ea51.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/efff.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/fcec.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
         },
         "way": "change",
         "merged": "",
         "by": "both",
+        "email": "nbyoung@nbyoung.com",
         "tasks": [
           "c2ad",
           "2034",
@@ -1095,16 +2033,129 @@
         ]
       }
     ],
+    "undecided": [],
     "commands": [
       {
-        "text": "git log --first-parent -1 --format='%h %as %ae %ce %p' main -- .tableaux/tasks/437e.yaml",
-        "comment": ""
-      },
-      {
-        "text": "git log --first-parent -1 --format='%h %as %ae %ce %p' -E --grep='^Authorised: 437e$' main",
+        "text": "git log --first-parent --format='%H %as %ae %ce %P' 50a373b2857a36e4ef1a754605433943d6bfe324 -- .tableaux/tasks",
         "comment": ""
       }
     ]
   },
-  "diagnostics": []
+  "diagnostics": [
+    {
+      "severity": "warning",
+      "code": "H3",
+      "task": "7166",
+      "gate": "implementation",
+      "commit": "56103af8cbaf561a90f9fa67fea02053372a4214",
+      "message": "Model claude-opus-5-5 is outside the stated model claude-sonnet"
+    },
+    {
+      "severity": "warning",
+      "code": "H3",
+      "task": "e9c6",
+      "gate": "implementation",
+      "commit": "ccb3947e3deb2f476a8c9c886266b2b4da66c6f6",
+      "message": "Model claude-opus-5-5 is outside the stated model claude-sonnet"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/7166.yaml",
+      "task": "7166",
+      "gate": "implementation",
+      "commit": "56103af8cbaf561a90f9fa67fea02053372a4214",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/7861.yaml",
+      "task": "7861",
+      "gate": "validate",
+      "commit": "c6f2655f1bda4469a6171b77cc21e326f0c99f87",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/9f3f.yaml",
+      "task": "9f3f",
+      "gate": "implementation",
+      "commit": "43d68e4f7d2b856c4d581983f34355d5b5f4f3b4",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/ac33.yaml",
+      "task": "ac33",
+      "gate": "implementation",
+      "commit": "6762222ddffef76008daad27ebe26069ac67cc5d",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/c2ad.yaml",
+      "task": "c2ad",
+      "gate": "validate",
+      "commit": "3d8ce0eee1e869c75453abba91cae03dec6587ce",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/e3cb.yaml",
+      "task": "e3cb",
+      "gate": "validate",
+      "commit": "c39ccac764b580ddb67789014c5f7f2c1bae9c6e",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/e9c6.yaml",
+      "task": "e9c6",
+      "gate": "validate",
+      "commit": "ccb3947e3deb2f476a8c9c886266b2b4da66c6f6",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/fcec.yaml",
+      "task": "fcec",
+      "gate": "unit",
+      "commit": "60495c26d886016b40069041386a811b24469312",
+      "message": "the newest event is the contributor's and the status states no review; noreply@anthropic.com may have unit to review"
+    },
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/595e.yaml",
+      "line": 13,
+      "col": 5,
+      "task": "595e",
+      "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    },
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/6103.yaml",
+      "line": 13,
+      "col": 5,
+      "task": "6103",
+      "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    },
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/c6e8.yaml",
+      "line": 13,
+      "col": 5,
+      "task": "c6e8",
+      "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    }
+  ]
 }

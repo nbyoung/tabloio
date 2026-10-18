@@ -1,6 +1,6 @@
 # Contributor work queue
 
-**What do I do next?** Tableaux tooling · ref `main` · person nbyoung@nbyoung.com · level glance
+**What do I do next?** Tableaux tooling · ref `corpus/tooling` · person nbyoung@nbyoung.com · level glance
 
 Legend: `tabloio gates`.
 
@@ -8,4 +8,4 @@ Legend: `tabloio gates`.
 
 **The queue is empty.**
 
-Command: `tabloio queue --person nbyoung@nbyoung.com --ref main --level glance`
+Command: `tabloio queue --person nbyoung@nbyoung.com --ref corpus/tooling --level glance`

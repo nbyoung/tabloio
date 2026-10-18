@@ -2,21 +2,41 @@
   "schema": "tablo/1",
   "command": "audit",
   "source": {
-    "ref": "main",
-    "commit": "3cdae527d47d37fdff55bc302c76c017cf91c606",
-    "date": "2026-10-05",
+    "ref": "corpus/tooling",
+    "dir": ".",
+    "worktree": false,
+    "commit": "50a373b2857a36e4ef1a754605433943d6bfe324",
+    "date": "2026-10-17",
     "from": null,
     "trunk": {
-      "name": null
+      "name": "main",
+      "resolved": "stated"
     },
     "on_trunk": true
   },
   "project": {
+    "tableaux": "0.3.2",
     "root": "437e",
-    "title": "Tableaux tooling"
+    "title": "Tableaux tooling",
+    "owner": "nbyoung@nbyoung.com"
+  },
+  "viewer": {
+    "email": "nbyoung@nbyoung.com",
+    "roles": [
+      "owner",
+      "authority",
+      "assignee",
+      "contributor",
+      "reviewer"
+    ]
   },
   "params": {
+    "task": "437e",
+    "person": null,
     "stale": 7,
+    "now": "2026-10-17",
+    "minimum": "warning",
+    "role": null,
     "level": "provenance"
   },
   "data": {
@@ -119,12 +139,14 @@
         {
           "key": "overloaded",
           "symbol": "🪫",
-          "synopsis": "The assigned resource is overloaded"
+          "synopsis": "The assigned resource is overloaded",
+          "reserved": false
         },
         {
           "key": "blocked",
           "symbol": "⛔",
-          "synopsis": "An external resource is unavailable"
+          "synopsis": "An external resource is unavailable",
+          "reserved": false
         },
         {
           "key": "review",
@@ -138,130 +160,268 @@
           "key": "person",
           "symbol": "🧑",
           "meaning": "A person contributes",
-          "junction": "Plain; the contributor is a person"
+          "junction": "plain"
         },
         {
           "key": "agent",
           "symbol": "🤖",
           "meaning": "An agent contributes",
-          "junction": "Plain; the junction states a `model`"
+          "junction": "plain"
         },
         {
           "key": "reviewer",
           "symbol": "👀",
           "meaning": "A reviewer accepts",
-          "junction": "Plain; the reviewer accepts the work at the gate"
+          "junction": "plain"
         },
         {
           "key": "subproject",
           "symbol": "🪆",
           "meaning": "A subproject does the work",
-          "junction": "Recursive; another Tableaux project does the work"
+          "junction": "recursive"
         },
         {
           "key": "exempt",
           "symbol": "—",
           "meaning": "The gate does not apply",
-          "junction": "Not applicable; the entry exempts the task from the gate"
+          "junction": "not_applicable"
         }
       ]
     },
+    "errors": 0,
+    "warnings": 13,
+    "information": 23,
+    "most": {
+      "email": "noreply@anthropic.com",
+      "count": 16
+    },
     "findings": [
       {
-        "rule": "S11",
-        "severity": "error",
-        "kind": "A status past a reviewed junction with no review",
-        "message": "The status stands at 📏 unit and passes 🧱 implementation, whose reviewer is noreply@anthropic.com; no commit carries the trailer `Reviewed: e3cb implementation`. `fbe3c97` writes that line in its body, not among its trailers",
-        "resolver": "noreply@anthropic.com",
+        "key": "R9",
+        "rule": "R9",
+        "severity": "warning",
+        "demoted": false,
+        "kind": "An unmet requirement",
         "tasks": [
           {
-            "id": "e3cb",
-            "title": "Schema files"
+            "id": "6103",
+            "title": "tabloio: command line, output and input"
+          },
+          {
+            "id": "c6e8",
+            "title": "tablotui: terminal user interface"
+          },
+          {
+            "id": "595e",
+            "title": "tableaud: local daemon and HTML"
+          }
+        ],
+        "gate": "",
+        "act": "await",
+        "resolver": "nbyoung@nbyoung.com",
+        "files": [
+          ".tableaux/tasks/6103.yaml",
+          ".tableaux/tasks/c6e8.yaml",
+          ".tableaux/tasks/595e.yaml"
+        ],
+        "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function",
+        "sentence": "A validator warns of an unmet requirement",
+        "source": {
+          "text": "README.md, Tasks",
+          "url": "https://github.com/nbyoung/tableaux/blob/main/README.md#tasks"
+        },
+        "facts": [
+          {
+            "task": "6103",
+            "junction": null,
+            "status": null,
+            "requirement": {
+              "task": {
+                "id": "77b2",
+                "title": "tablo: backend library and plumbing"
+              },
+              "from": "implementation",
+              "to": "implementation",
+              "text": "The library and plumbing it calls",
+              "met": false,
+              "due": true,
+              "condition": "unmet",
+              "why": "",
+              "status": {
+                "kind": "snapshot",
+                "gate": "function",
+                "state": "nominal",
+                "reason": "",
+                "note": "prototype/8ed1 derives the history and a stand-in audit between two refs from one git log pass and one cat-file batch, on the weather station",
+                "date": "2026-09-30",
+                "recorder": "",
+                "derived": true,
+                "why": "",
+                "uncommitted": false,
+                "from": {
+                  "kind": "snapshot",
+                  "task": {
+                    "id": "b2c1",
+                    "title": "tablo"
+                  },
+                  "url": "subprojects/tablo",
+                  "pin": "f7c3190c7f8b1ad5a0e8157349f136022e62c6b1",
+                  "gate": "function"
+                }
+              },
+              "subproject": "",
+              "commit": "",
+              "at_trunk": "unknown"
+            },
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          },
+          {
+            "task": "c6e8",
+            "junction": null,
+            "status": null,
+            "requirement": {
+              "task": {
+                "id": "77b2",
+                "title": "tablo: backend library and plumbing"
+              },
+              "from": "implementation",
+              "to": "implementation",
+              "text": "The library it embeds",
+              "met": false,
+              "due": true,
+              "condition": "unmet",
+              "why": "",
+              "status": {
+                "kind": "snapshot",
+                "gate": "function",
+                "state": "nominal",
+                "reason": "",
+                "note": "prototype/8ed1 derives the history and a stand-in audit between two refs from one git log pass and one cat-file batch, on the weather station",
+                "date": "2026-09-30",
+                "recorder": "",
+                "derived": true,
+                "why": "",
+                "uncommitted": false,
+                "from": {
+                  "kind": "snapshot",
+                  "task": {
+                    "id": "b2c1",
+                    "title": "tablo"
+                  },
+                  "url": "subprojects/tablo",
+                  "pin": "f7c3190c7f8b1ad5a0e8157349f136022e62c6b1",
+                  "gate": "function"
+                }
+              },
+              "subproject": "",
+              "commit": "",
+              "at_trunk": "unknown"
+            },
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          },
+          {
+            "task": "595e",
+            "junction": null,
+            "status": null,
+            "requirement": {
+              "task": {
+                "id": "77b2",
+                "title": "tablo: backend library and plumbing"
+              },
+              "from": "implementation",
+              "to": "implementation",
+              "text": "The library it embeds",
+              "met": false,
+              "due": true,
+              "condition": "unmet",
+              "why": "",
+              "status": {
+                "kind": "snapshot",
+                "gate": "function",
+                "state": "nominal",
+                "reason": "",
+                "note": "prototype/8ed1 derives the history and a stand-in audit between two refs from one git log pass and one cat-file batch, on the weather station",
+                "date": "2026-09-30",
+                "recorder": "",
+                "derived": true,
+                "why": "",
+                "uncommitted": false,
+                "from": {
+                  "kind": "snapshot",
+                  "task": {
+                    "id": "b2c1",
+                    "title": "tablo"
+                  },
+                  "url": "subprojects/tablo",
+                  "pin": "f7c3190c7f8b1ad5a0e8157349f136022e62c6b1",
+                  "gate": "function"
+                }
+              },
+              "subproject": "",
+              "commit": "",
+              "at_trunk": "unknown"
+            },
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          }
+        ],
+        "commits": [],
+        "commands": [
+          {
+            "text": "git log -1 --format='%as %H %ae' -- .tableaux/tasks/6103.yaml",
+            "comment": "shows the finding"
+          }
+        ]
+      },
+      {
+        "key": "H3",
+        "rule": "H3",
+        "severity": "warning",
+        "demoted": false,
+        "kind": "A model outside the one stated",
+        "tasks": [
+          {
+            "id": "e9c6",
+            "title": "Abstract views"
+          },
+          {
+            "id": "7166",
+            "title": "Language clarifications"
           }
         ],
         "gate": "implementation",
-        "files": [
-          "status/e3cb.yaml"
-        ],
-        "sentence": "A validator rejects a status whose gate passes a reviewed junction that has no such commit.",
+        "act": "none",
+        "resolver": "noreply@anthropic.com",
+        "files": [],
+        "message": "Model claude-opus-5-5 is outside the stated model claude-sonnet",
+        "sentence": "the audit reports a commit at the junction whose trailer names a model outside the one stated",
         "source": {
-          "text": "README.md, Status",
-          "url": "README.md#status"
+          "text": "README.md, Junctions",
+          "url": "https://github.com/nbyoung/tableaux/blob/main/README.md#junctions"
         },
-        "commits": [
-          {
-            "hash": "0529170",
-            "subject": "Accept the schema files design",
-            "date": "2026-09-29",
-            "author": {
-              "name": "Norman Young",
-              "email": "nbyoung@nbyoung.com"
-            },
-            "committer": {
-              "name": "Norman Young",
-              "email": "nbyoung@nbyoung.com"
-            },
-            "trailers": [
-              "Reviewed: e3cb design"
-            ]
-          },
-          {
-            "hash": "fbe3c97",
-            "subject": "Advance Roles, schema files and evidence past their design reviews",
-            "date": "2026-09-29",
-            "author": {
-              "name": "Claude Fable 5.1",
-              "email": "noreply@anthropic.com"
-            },
-            "committer": {
-              "name": "Norman Young",
-              "email": "nbyoung@nbyoung.com"
-            },
-            "trailers": [
-              "Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
-            ]
-          },
-          {
-            "hash": "5cbec7c",
-            "subject": "Record e3cb at unit, nominal",
-            "date": "2026-09-30",
-            "author": {
-              "name": "Claude Fable 5.1",
-              "email": "noreply@anthropic.com"
-            },
-            "committer": {
-              "name": "Claude Fable 5.1",
-              "email": "noreply@anthropic.com"
-            },
-            "trailers": [
-              "Reviewed: e3cb unit",
-              "Model: claude-sonnet-5-5"
-            ]
-          }
-        ],
-        "commands": [
-          {
-            "text": "git log --format='%h %(trailers:key=Reviewed)' -E --grep='^Reviewed: e3cb '",
-            "comment": "shows the finding: three trailers, none for implementation"
-          },
-          {
-            "text": "git commit --allow-empty -m 'Accept the schema files implementation' \\\n    --trailer 'Reviewed: e3cb implementation' --trailer 'Model: <the model that runs>'",
-            "comment": "resolves it: noreply@anthropic.com, the reviewer, accepts the gate"
-          }
-        ],
-        "key": "S11",
-        "demoted": false,
-        "act": "review",
         "facts": [
           {
-            "task": "e3cb",
+            "task": "e9c6",
             "junction": {
               "gate": "implementation",
               "kind": "plain",
+              "marks": [
+                "agent"
+              ],
+              "acts": false,
               "contributor": "noreply@anthropic.com",
               "model": "claude-sonnet",
               "reviewer": "noreply@anthropic.com",
               "reviewer_by_default": true,
+              "subproject": null,
+              "references": [],
+              "stands": "here",
+              "reviewed": true,
               "from": [
                 "437e"
               ]
@@ -270,779 +430,159 @@
             "requirement": null,
             "authorisation": null,
             "linkage": null,
-            "model": null
-          }
-        ]
-      },
-      {
-        "rule": "H3",
-        "severity": "warning",
-        "kind": "A `Model:` trailer outside the junction's model",
-        "message": "`320cf2b` edits both task files under `Model: claude-fable-5-1`; the junction states `claude-haiku`",
-        "resolver": "nbyoung@nbyoung.com",
-        "tasks": [
-          {
-            "id": "437e"
+            "model": {
+              "commit": "ccb3947e3deb2f476a8c9c886266b2b4da66c6f6",
+              "gate": "implementation",
+              "stated": "claude-sonnet",
+              "trailer": "claude-opus-5-5",
+              "reading": "differs"
+            }
           },
           {
-            "id": "bc63"
+            "task": "7166",
+            "junction": {
+              "gate": "implementation",
+              "kind": "plain",
+              "marks": [
+                "agent",
+                "reviewer"
+              ],
+              "acts": false,
+              "contributor": "noreply@anthropic.com",
+              "model": "claude-sonnet",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": true,
+              "subproject": null,
+              "references": [],
+              "stands": "next",
+              "reviewed": false,
+              "from": [
+                "437e"
+              ]
+            },
+            "status": null,
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": {
+              "commit": "56103af8cbaf561a90f9fa67fea02053372a4214",
+              "gate": "implementation",
+              "stated": "claude-sonnet",
+              "trailer": "claude-opus-5-5",
+              "reading": "differs"
+            }
           }
         ],
-        "gate": "defined",
-        "files": [
-          "tasks/437e.yaml",
-          "tasks/bc63.yaml"
-        ],
-        "sentence": "the audit reports a commit at the junction whose trailer names a model outside the one stated",
-        "source": {
-          "text": "README.md, Junctions",
-          "url": "README.md#junctions"
-        },
         "commits": [
           {
-            "hash": "320cf2b",
-            "subject": "Name a model family per gate (D7)",
-            "date": "2026-09-30",
+            "hash": "ccb3947e3deb2f476a8c9c886266b2b4da66c6f6",
+            "subject": "Record the abstract views task at its implementation gate",
+            "date": "2026-10-05",
+            "author_time": "2026-10-05T18:46:07-04:00",
             "author": {
-              "name": "Claude Fable 5.1",
+              "name": "Claude Opus 5.5",
               "email": "noreply@anthropic.com"
             },
             "committer": {
-              "name": "Norman Young",
-              "email": "nbyoung@nbyoung.com"
+              "name": "Claude Opus 5.5",
+              "email": "noreply@anthropic.com"
             },
+            "parents": [
+              "c5719cddaf83e56b29d0ca3f1ccb716d1cad01eb"
+            ],
             "trailers": [
-              "Model: claude-fable-5-1"
+              "Reviewed: e9c6 implementation",
+              "Model: claude-opus-5-5",
+              "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+            ],
+            "files": [
+              {
+                "path": ".tableaux/status/e9c6.yaml",
+                "change": "changed"
+              }
+            ]
+          },
+          {
+            "hash": "56103af8cbaf561a90f9fa67fea02053372a4214",
+            "subject": "Note that F7 is resolved in the language clarifications' status",
+            "date": "2026-10-07",
+            "author_time": "2026-10-07T09:33:17-04:00",
+            "author": {
+              "name": "Claude Opus 5.5",
+              "email": "noreply@anthropic.com"
+            },
+            "committer": {
+              "name": "Claude Opus 5.5",
+              "email": "noreply@anthropic.com"
+            },
+            "parents": [
+              "6ccdd29e8eb1e3d887c0ac632bac4fcdcef2f550"
+            ],
+            "trailers": [
+              "Model: claude-opus-5-5",
+              "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+            ],
+            "files": [
+              {
+                "path": ".tableaux/status/7166.yaml",
+                "change": "changed"
+              }
             ]
           }
         ],
         "commands": [
           {
-            "text": "git log --format='%h %(trailers:key=Model,valueonly)' -- \\\n    .tableaux/tasks/437e.yaml .tableaux/tasks/bc63.yaml",
-            "comment": "shows the finding: the model on each commit that changes the task files"
-          },
-          {
-            "text": "git commit .tableaux/tasks/437e.yaml -m 'State the model that defines the project'",
-            "comment": "resolves it: nbyoung@nbyoung.com, an authority, states the model that ran"
-          }
-        ],
-        "key": "H3",
-        "demoted": false,
-        "act": "revise",
-        "facts": [
-          {
-            "task": "437e",
-            "junction": {
-              "gate": "defined",
-              "kind": "plain",
-              "contributor": "noreply@anthropic.com",
-              "model": "claude-haiku",
-              "reviewer": "",
-              "reviewer_by_default": false,
-              "from": [
-                "437e"
-              ]
-            },
-            "status": null,
-            "requirement": null,
-            "authorisation": null,
-            "linkage": null,
-            "model": {
-              "commit": "320cf2b",
-              "gate": "defined",
-              "stated": "claude-haiku",
-              "trailer": "claude-fable-5-1",
-              "reading": "differs"
-            }
-          },
-          {
-            "task": "bc63",
-            "junction": {
-              "gate": "defined",
-              "kind": "plain",
-              "contributor": "noreply@anthropic.com",
-              "model": "claude-haiku",
-              "reviewer": "",
-              "reviewer_by_default": false,
-              "from": [
-                "437e"
-              ]
-            },
-            "status": null,
-            "requirement": null,
-            "authorisation": null,
-            "linkage": null,
-            "model": {
-              "commit": "320cf2b",
-              "gate": "defined",
-              "stated": "claude-haiku",
-              "trailer": "claude-fable-5-1",
-              "reading": "differs"
-            }
+            "text": "git show --no-patch --format='%as %H %ae %ce%n%(trailers)' ccb3947e3deb2f476a8c9c886266b2b4da66c6f6",
+            "comment": "shows the finding"
           }
         ]
       },
       {
-        "rule": "H3",
+        "key": "stale",
+        "rule": "",
         "severity": "warning",
-        "kind": "A `Model:` trailer outside the junction's model",
-        "message": "`018814a` edits the task file under `Model: claude-fable-5-1`; the junction states `claude-haiku`",
-        "resolver": "nbyoung@nbyoung.com",
+        "demoted": false,
+        "kind": "A stale status",
         "tasks": [
           {
             "id": "ac33",
             "title": "Agent identity"
-          }
-        ],
-        "gate": "defined",
-        "files": [
-          "tasks/ac33.yaml"
-        ],
-        "sentence": "the audit reports a commit at the junction whose trailer names a model outside the one stated",
-        "source": {
-          "text": "README.md, Junctions",
-          "url": "README.md#junctions"
-        },
-        "commits": [
-          {
-            "hash": "018814a",
-            "subject": "Record the model an agent runs (F20)",
-            "date": "2026-09-30",
-            "author": {
-              "name": "Claude Fable 5.1",
-              "email": "noreply@anthropic.com"
-            },
-            "committer": {
-              "name": "Norman Young",
-              "email": "nbyoung@nbyoung.com"
-            },
-            "trailers": [
-              "Model: claude-fable-5-1"
-            ]
-          }
-        ],
-        "commands": [
-          {
-            "text": "git log --format='%h %(trailers:key=Model,valueonly)' -- .tableaux/tasks/ac33.yaml",
-            "comment": "shows the finding: the model on each commit that changes the task file"
           },
           {
-            "text": "git commit .tableaux/tasks/ac33.yaml -m 'State the model that defines the agent identity task'",
-            "comment": "resolves it: nbyoung@nbyoung.com, an authority, states the model that ran"
+            "id": "9f3f",
+            "title": "Subproject linkage"
           }
         ],
-        "key": "H3",
-        "demoted": false,
-        "act": "revise",
+        "gate": "design",
+        "act": "reaffirm",
+        "resolver": "noreply@anthropic.com",
+        "files": [
+          ".tableaux/status/ac33.yaml",
+          ".tableaux/status/9f3f.yaml"
+        ],
+        "message": "The status dates from 2026-09-30, more than 7 days before 2026-10-17",
+        "sentence": "A review that finds no change reaffirms with an empty commit, so a status is never older than its last confirmation.",
+        "source": {
+          "text": "README.md, Status",
+          "url": "https://github.com/nbyoung/tableaux/blob/main/README.md#status"
+        },
         "facts": [
           {
             "task": "ac33",
-            "junction": {
-              "gate": "defined",
-              "kind": "plain",
-              "contributor": "noreply@anthropic.com",
-              "model": "claude-haiku",
-              "reviewer": "",
-              "reviewer_by_default": false,
-              "from": [
-                "437e"
-              ]
+            "junction": null,
+            "status": {
+              "kind": "recorded",
+              "gate": "design",
+              "state": "nominal",
+              "reason": "",
+              "note": "The model plan-and-record rule (F20) is on the trunk; F1, F2 and F10 remain for design",
+              "date": "2026-09-30",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
-            "status": null,
-            "requirement": null,
-            "authorisation": null,
-            "linkage": null,
-            "model": {
-              "commit": "018814a",
-              "gate": "defined",
-              "stated": "claude-haiku",
-              "trailer": "claude-fable-5-1",
-              "reading": "differs"
-            }
-          }
-        ]
-      },
-      {
-        "rule": "H4",
-        "severity": "information",
-        "kind": "A hand-off the history implies",
-        "message": "The contributor's `5958858` is the newest event and the status states no 👓 review; nbyoung@nbyoung.com may have a mockup to review",
-        "resolver": "noreply@anthropic.com",
-        "tasks": [
-          {
-            "id": "99f0"
-          },
-          {
-            "id": "05a9"
-          },
-          {
-            "id": "a9ce"
-          },
-          {
-            "id": "bb7c"
-          },
-          {
-            "id": "c74a"
-          },
-          {
-            "id": "efff"
-          },
-          {
-            "id": "ab8e"
-          },
-          {
-            "id": "c545"
-          },
-          {
-            "id": "d615"
-          },
-          {
-            "id": "b14e"
-          },
-          {
-            "id": "a6f7"
-          },
-          {
-            "id": "7dff"
-          },
-          {
-            "id": "b1b7"
-          },
-          {
-            "id": "ea51"
-          },
-          {
-            "id": "7783"
-          },
-          {
-            "id": "5471"
-          },
-          {
-            "id": "32e7"
-          },
-          {
-            "id": "69eb"
-          },
-          {
-            "id": "3194"
-          },
-          {
-            "id": "a8b4"
-          }
-        ],
-        "gate": "mockup",
-        "files": [
-          "status/<id>.yaml"
-        ],
-        "sentence": "it reports, as information, a task whose next junction has a reviewer, whose newest event is the contributor's and whose status states no `review`, since the work may be done or in progress",
-        "source": {
-          "text": "README.md, Status",
-          "url": "README.md#status"
-        },
-        "commits": [
-          {
-            "hash": "5958858",
-            "subject": "Accept the defined gate of the views and mockups",
-            "date": "2026-09-29",
-            "author": {
-              "name": "Claude Fable 5.1",
-              "email": "noreply@anthropic.com"
-            },
-            "committer": {
-              "name": "Norman Young",
-              "email": "nbyoung@nbyoung.com"
-            }
-          }
-        ],
-        "commands": [
-          {
-            "text": "git log -1 --format='%as %h %ae' -- .tableaux/tasks/99f0.yaml .tableaux/status/99f0.yaml\ngit log -1 --format='%as %h %ae' -E --grep='^(Authorised|Reaffirmed): 99f0$' --grep='^Reviewed: 99f0 '",
-            "comment": "shows the finding for one task: its newest event and who made it"
-          },
-          {
-            "text": "git commit .tableaux/status/99f0.yaml -m 'Mark the task as awaiting review' \\\n    --trailer 'Model: <the model that runs>'",
-            "comment": "resolves it: noreply@anthropic.com, the contributor, hands the finished work off"
-          }
-        ],
-        "key": "H4",
-        "demoted": false,
-        "act": "record_handoff",
-        "facts": [
-          {
-            "task": "99f0",
-            "junction": {
-              "gate": "mockup",
-              "kind": "plain",
-              "contributor": "noreply@anthropic.com",
-              "model": "",
-              "reviewer": "nbyoung@nbyoung.com",
-              "reviewer_by_default": false,
-              "from": [
-                "437e"
-              ]
-            },
-            "status": null,
-            "requirement": null,
-            "authorisation": null,
-            "linkage": null,
-            "model": null
-          },
-          {
-            "task": "05a9",
-            "junction": {
-              "gate": "mockup",
-              "kind": "plain",
-              "contributor": "noreply@anthropic.com",
-              "model": "",
-              "reviewer": "nbyoung@nbyoung.com",
-              "reviewer_by_default": false,
-              "from": [
-                "437e"
-              ]
-            },
-            "status": null,
-            "requirement": null,
-            "authorisation": null,
-            "linkage": null,
-            "model": null
-          },
-          {
-            "task": "a9ce",
-            "junction": {
-              "gate": "mockup",
-              "kind": "plain",
-              "contributor": "noreply@anthropic.com",
-              "model": "",
-              "reviewer": "nbyoung@nbyoung.com",
-              "reviewer_by_default": false,
-              "from": [
-                "437e"
-              ]
-            },
-            "status": null,
-            "requirement": null,
-            "authorisation": null,
-            "linkage": null,
-            "model": null
-          },
-          {
-            "task": "bb7c",
-            "junction": {
-              "gate": "mockup",
-              "kind": "plain",
-              "contributor": "noreply@anthropic.com",
-              "model": "",
-              "reviewer": "nbyoung@nbyoung.com",
-              "reviewer_by_default": false,
-              "from": [
-                "437e"
-              ]
-            },
-            "status": null,
-            "requirement": null,
-            "authorisation": null,
-            "linkage": null,
-            "model": null
-          },
-          {
-            "task": "c74a",
-            "junction": {
-              "gate": "mockup",
-              "kind": "plain",
-              "contributor": "noreply@anthropic.com",
-              "model": "",
-              "reviewer": "nbyoung@nbyoung.com",
-              "reviewer_by_default": false,
-              "from": [
-                "437e"
-              ]
-            },
-            "status": null,
-            "requirement": null,
-            "authorisation": null,
-            "linkage": null,
-            "model": null
-          },
-          {
-            "task": "efff",
-            "junction": {
-              "gate": "mockup",
-              "kind": "plain",
-              "contributor": "noreply@anthropic.com",
-              "model": "",
-              "reviewer": "nbyoung@nbyoung.com",
-              "reviewer_by_default": false,
-              "from": [
-                "437e"
-              ]
-            },
-            "status": null,
-            "requirement": null,
-            "authorisation": null,
-            "linkage": null,
-            "model": null
-          },
-          {
-            "task": "ab8e",
-            "junction": {
-              "gate": "mockup",
-              "kind": "plain",
-              "contributor": "noreply@anthropic.com",
-              "model": "",
-              "reviewer": "nbyoung@nbyoung.com",
-              "reviewer_by_default": false,
-              "from": [
-                "437e"
-              ]
-            },
-            "status": null,
-            "requirement": null,
-            "authorisation": null,
-            "linkage": null,
-            "model": null
-          },
-          {
-            "task": "c545",
-            "junction": {
-              "gate": "mockup",
-              "kind": "plain",
-              "contributor": "noreply@anthropic.com",
-              "model": "",
-              "reviewer": "nbyoung@nbyoung.com",
-              "reviewer_by_default": false,
-              "from": [
-                "437e"
-              ]
-            },
-            "status": null,
-            "requirement": null,
-            "authorisation": null,
-            "linkage": null,
-            "model": null
-          },
-          {
-            "task": "d615",
-            "junction": {
-              "gate": "mockup",
-              "kind": "plain",
-              "contributor": "noreply@anthropic.com",
-              "model": "",
-              "reviewer": "nbyoung@nbyoung.com",
-              "reviewer_by_default": false,
-              "from": [
-                "437e"
-              ]
-            },
-            "status": null,
-            "requirement": null,
-            "authorisation": null,
-            "linkage": null,
-            "model": null
-          },
-          {
-            "task": "b14e",
-            "junction": {
-              "gate": "mockup",
-              "kind": "plain",
-              "contributor": "noreply@anthropic.com",
-              "model": "",
-              "reviewer": "nbyoung@nbyoung.com",
-              "reviewer_by_default": false,
-              "from": [
-                "437e"
-              ]
-            },
-            "status": null,
-            "requirement": null,
-            "authorisation": null,
-            "linkage": null,
-            "model": null
-          },
-          {
-            "task": "a6f7",
-            "junction": {
-              "gate": "mockup",
-              "kind": "plain",
-              "contributor": "noreply@anthropic.com",
-              "model": "",
-              "reviewer": "nbyoung@nbyoung.com",
-              "reviewer_by_default": false,
-              "from": [
-                "437e"
-              ]
-            },
-            "status": null,
-            "requirement": null,
-            "authorisation": null,
-            "linkage": null,
-            "model": null
-          },
-          {
-            "task": "7dff",
-            "junction": {
-              "gate": "mockup",
-              "kind": "plain",
-              "contributor": "noreply@anthropic.com",
-              "model": "",
-              "reviewer": "nbyoung@nbyoung.com",
-              "reviewer_by_default": false,
-              "from": [
-                "437e"
-              ]
-            },
-            "status": null,
-            "requirement": null,
-            "authorisation": null,
-            "linkage": null,
-            "model": null
-          },
-          {
-            "task": "b1b7",
-            "junction": {
-              "gate": "mockup",
-              "kind": "plain",
-              "contributor": "noreply@anthropic.com",
-              "model": "",
-              "reviewer": "nbyoung@nbyoung.com",
-              "reviewer_by_default": false,
-              "from": [
-                "437e"
-              ]
-            },
-            "status": null,
-            "requirement": null,
-            "authorisation": null,
-            "linkage": null,
-            "model": null
-          },
-          {
-            "task": "ea51",
-            "junction": {
-              "gate": "mockup",
-              "kind": "plain",
-              "contributor": "noreply@anthropic.com",
-              "model": "",
-              "reviewer": "nbyoung@nbyoung.com",
-              "reviewer_by_default": false,
-              "from": [
-                "437e"
-              ]
-            },
-            "status": null,
-            "requirement": null,
-            "authorisation": null,
-            "linkage": null,
-            "model": null
-          },
-          {
-            "task": "7783",
-            "junction": {
-              "gate": "mockup",
-              "kind": "plain",
-              "contributor": "noreply@anthropic.com",
-              "model": "",
-              "reviewer": "nbyoung@nbyoung.com",
-              "reviewer_by_default": false,
-              "from": [
-                "437e"
-              ]
-            },
-            "status": null,
-            "requirement": null,
-            "authorisation": null,
-            "linkage": null,
-            "model": null
-          },
-          {
-            "task": "5471",
-            "junction": {
-              "gate": "mockup",
-              "kind": "plain",
-              "contributor": "noreply@anthropic.com",
-              "model": "",
-              "reviewer": "nbyoung@nbyoung.com",
-              "reviewer_by_default": false,
-              "from": [
-                "437e"
-              ]
-            },
-            "status": null,
-            "requirement": null,
-            "authorisation": null,
-            "linkage": null,
-            "model": null
-          },
-          {
-            "task": "32e7",
-            "junction": {
-              "gate": "mockup",
-              "kind": "plain",
-              "contributor": "noreply@anthropic.com",
-              "model": "",
-              "reviewer": "nbyoung@nbyoung.com",
-              "reviewer_by_default": false,
-              "from": [
-                "437e"
-              ]
-            },
-            "status": null,
-            "requirement": null,
-            "authorisation": null,
-            "linkage": null,
-            "model": null
-          },
-          {
-            "task": "69eb",
-            "junction": {
-              "gate": "mockup",
-              "kind": "plain",
-              "contributor": "noreply@anthropic.com",
-              "model": "",
-              "reviewer": "nbyoung@nbyoung.com",
-              "reviewer_by_default": false,
-              "from": [
-                "437e"
-              ]
-            },
-            "status": null,
-            "requirement": null,
-            "authorisation": null,
-            "linkage": null,
-            "model": null
-          },
-          {
-            "task": "3194",
-            "junction": {
-              "gate": "mockup",
-              "kind": "plain",
-              "contributor": "noreply@anthropic.com",
-              "model": "",
-              "reviewer": "nbyoung@nbyoung.com",
-              "reviewer_by_default": false,
-              "from": [
-                "437e"
-              ]
-            },
-            "status": null,
-            "requirement": null,
-            "authorisation": null,
-            "linkage": null,
-            "model": null
-          },
-          {
-            "task": "a8b4",
-            "junction": {
-              "gate": "mockup",
-              "kind": "plain",
-              "contributor": "noreply@anthropic.com",
-              "model": "",
-              "reviewer": "nbyoung@nbyoung.com",
-              "reviewer_by_default": false,
-              "from": [
-                "437e"
-              ]
-            },
-            "status": null,
-            "requirement": null,
-            "authorisation": null,
-            "linkage": null,
-            "model": null
-          }
-        ]
-      },
-      {
-        "rule": "H4",
-        "severity": "information",
-        "kind": "A hand-off the history implies",
-        "message": "The contributor's status commit is the newest event (`6762222`, `43d68e4`, `d9396b4`) and the status states no 👓 review; nbyoung@nbyoung.com, the assignee, reviews",
-        "resolver": "noreply@anthropic.com",
-        "tasks": [
-          {
-            "id": "ac33"
-          },
-          {
-            "id": "9f3f"
-          },
-          {
-            "id": "7166"
-          }
-        ],
-        "gate": "implementation",
-        "files": [
-          "status/<id>.yaml"
-        ],
-        "sentence": "it reports, as information, a task whose next junction has a reviewer, whose newest event is the contributor's and whose status states no `review`, since the work may be done or in progress",
-        "source": {
-          "text": "README.md, Status",
-          "url": "README.md#status"
-        },
-        "commits": [
-          {
-            "hash": "6762222",
-            "subject": "Advance the agent identity task to its design gate",
-            "date": "2026-09-30",
-            "author": {
-              "name": "Claude Fable 5.1",
-              "email": "noreply@anthropic.com"
-            },
-            "committer": {
-              "name": "Norman Young",
-              "email": "nbyoung@nbyoung.com"
-            }
-          },
-          {
-            "hash": "43d68e4",
-            "subject": "Advance the subproject linkage task to its design gate",
-            "date": "2026-09-30",
-            "author": {
-              "name": "Claude Fable 5.1",
-              "email": "noreply@anthropic.com"
-            },
-            "committer": {
-              "name": "Claude Fable 5.1",
-              "email": "noreply@anthropic.com"
-            }
-          },
-          {
-            "hash": "d9396b4",
-            "subject": "Advance the language clarifications to their design gate",
-            "date": "2026-09-30",
-            "author": {
-              "name": "Claude Fable 5.1",
-              "email": "noreply@anthropic.com"
-            },
-            "committer": {
-              "name": "Norman Young",
-              "email": "nbyoung@nbyoung.com"
-            }
-          }
-        ],
-        "commands": [
-          {
-            "text": "git log -1 --format='%as %h %ae' -- .tableaux/tasks/ac33.yaml .tableaux/status/ac33.yaml\ngit log -1 --format='%as %h %ae' -E --grep='^(Authorised|Reaffirmed): ac33$' --grep='^Reviewed: ac33 '",
-            "comment": "shows the finding for one task: its newest event and who made it"
-          },
-          {
-            "text": "git commit .tableaux/status/ac33.yaml -m 'Mark the task as awaiting review' \\\n    --trailer 'Model: <the model that runs>'",
-            "comment": "resolves it: noreply@anthropic.com, the contributor, hands the finished work off"
-          }
-        ],
-        "key": "H4",
-        "demoted": false,
-        "act": "record_handoff",
-        "facts": [
-          {
-            "task": "ac33",
-            "junction": {
-              "gate": "implementation",
-              "kind": "plain",
-              "contributor": "noreply@anthropic.com",
-              "model": "",
-              "reviewer": "nbyoung@nbyoung.com",
-              "reviewer_by_default": true,
-              "from": []
-            },
-            "status": null,
             "requirement": null,
             "authorisation": null,
             "linkage": null,
@@ -1050,66 +590,59 @@
           },
           {
             "task": "9f3f",
-            "junction": {
-              "gate": "implementation",
-              "kind": "plain",
-              "contributor": "noreply@anthropic.com",
-              "model": "",
-              "reviewer": "nbyoung@nbyoung.com",
-              "reviewer_by_default": true,
-              "from": []
+            "junction": null,
+            "status": {
+              "kind": "recorded",
+              "gate": "design",
+              "state": "nominal",
+              "reason": "",
+              "note": "The subproject linkage rule (F3, F5, F12) is on the trunk at language 0.3.0; tablo and the subprojects follow",
+              "date": "2026-09-30",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
-            "status": null,
-            "requirement": null,
-            "authorisation": null,
-            "linkage": null,
-            "model": null
-          },
-          {
-            "task": "7166",
-            "junction": {
-              "gate": "implementation",
-              "kind": "plain",
-              "contributor": "noreply@anthropic.com",
-              "model": "",
-              "reviewer": "nbyoung@nbyoung.com",
-              "reviewer_by_default": true,
-              "from": []
-            },
-            "status": null,
             "requirement": null,
             "authorisation": null,
             "linkage": null,
             "model": null
           }
-        ]
-      },
-      {
-        "rule": "H4",
-        "severity": "information",
-        "kind": "A hand-off the history implies",
-        "message": "The contributor's `879b447` is the newest event and the status states no 👓 review; the contributor is its own reviewer here",
-        "resolver": "noreply@anthropic.com",
-        "tasks": [
-          {
-            "id": "e9c6",
-            "title": "Abstract views"
-          }
         ],
-        "gate": "implementation",
-        "files": [
-          "status/e9c6.yaml"
-        ],
-        "sentence": "it reports, as information, a task whose next junction has a reviewer, whose newest event is the contributor's and whose status states no `review`, since the work may be done or in progress",
-        "source": {
-          "text": "README.md, Status",
-          "url": "README.md#status"
-        },
         "commits": [
           {
-            "hash": "879b447",
-            "subject": "Advance the abstract views task to its design gate",
+            "hash": "6762222ddffef76008daad27ebe26069ac67cc5d",
+            "subject": "Advance the agent identity task to its design gate",
             "date": "2026-09-30",
+            "author_time": "2026-09-30T01:25:02-04:00",
+            "author": {
+              "name": "Claude Fable 5.1",
+              "email": "noreply@anthropic.com"
+            },
+            "committer": {
+              "name": "Norman Young",
+              "email": "nbyoung@nbyoung.com"
+            },
+            "parents": [
+              "8eb0cae73e119c170eed6c43f0a14f58696e4807"
+            ],
+            "trailers": [
+              "Model: claude-fable-5-1",
+              "Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
+            ],
+            "files": [
+              {
+                "path": ".tableaux/status/ac33.yaml",
+                "change": "changed"
+              }
+            ]
+          },
+          {
+            "hash": "43d68e4f7d2b856c4d581983f34355d5b5f4f3b4",
+            "subject": "Advance the subproject linkage task to its design gate",
+            "date": "2026-09-30",
+            "author_time": "2026-09-30T11:54:14-04:00",
             "author": {
               "name": "Claude Fable 5.1",
               "email": "noreply@anthropic.com"
@@ -1117,225 +650,192 @@
             "committer": {
               "name": "Claude Fable 5.1",
               "email": "noreply@anthropic.com"
-            }
+            },
+            "parents": [
+              "7dde3bdff05a455e967503f013236689d315dc73"
+            ],
+            "trailers": [
+              "Model: claude-fable-5-1",
+              "Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
+            ],
+            "files": [
+              {
+                "path": ".tableaux/status/9f3f.yaml",
+                "change": "changed"
+              }
+            ]
           }
         ],
         "commands": [
           {
-            "text": "git log -1 --format='%as %h %ae' -- .tableaux/tasks/e9c6.yaml .tableaux/status/e9c6.yaml\ngit log -1 --format='%as %h %ae' -E --grep='^(Authorised|Reaffirmed): e9c6$' --grep='^Reviewed: e9c6 '",
-            "comment": "shows the finding for one task: its newest event and who made it"
+            "text": "git show --no-patch --format='%as %H %ae %ce%n%(trailers)' 6762222ddffef76008daad27ebe26069ac67cc5d",
+            "comment": "shows the finding"
           },
           {
-            "text": "git commit .tableaux/status/e9c6.yaml -m 'Mark the task as awaiting review' \\\n    --trailer 'Model: <the model that runs>'",
-            "comment": "resolves it: noreply@anthropic.com, the contributor, hands the finished work off"
+            "text": "git commit --allow-empty --trailer 'Reaffirmed: ac33'",
+            "comment": "resolves it"
+          }
+        ]
+      },
+      {
+        "key": "stale",
+        "rule": "",
+        "severity": "warning",
+        "demoted": false,
+        "kind": "A stale status",
+        "tasks": [
+          {
+            "id": "7166",
+            "title": "Language clarifications"
           }
         ],
-        "key": "H4",
-        "demoted": false,
-        "act": "record_handoff",
+        "gate": "design",
+        "act": "reaffirm",
+        "resolver": "noreply@anthropic.com",
+        "files": [
+          ".tableaux/status/7166.yaml"
+        ],
+        "message": "The status dates from 2026-10-07, more than 7 days before 2026-10-17",
+        "sentence": "A review that finds no change reaffirms with an empty commit, so a status is never older than its last confirmation.",
+        "source": {
+          "text": "README.md, Status",
+          "url": "https://github.com/nbyoung/tableaux/blob/main/README.md#status"
+        },
         "facts": [
           {
-            "task": "e9c6",
-            "junction": {
-              "gate": "implementation",
-              "kind": "plain",
-              "contributor": "noreply@anthropic.com",
-              "model": "",
-              "reviewer": "noreply@anthropic.com",
-              "reviewer_by_default": true,
-              "from": []
+            "task": "7166",
+            "junction": null,
+            "status": {
+              "kind": "recorded",
+              "gate": "design",
+              "state": "nominal",
+              "reason": "",
+              "note": "The trunk clarification (F19), with the order for a linked repository, and the exemption rule (F7) are on the trunk; F9 remains for design",
+              "date": "2026-10-07",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
-            "status": null,
             "requirement": null,
             "authorisation": null,
             "linkage": null,
             "model": null
           }
+        ],
+        "commits": [
+          {
+            "hash": "56103af8cbaf561a90f9fa67fea02053372a4214",
+            "subject": "Note that F7 is resolved in the language clarifications' status",
+            "date": "2026-10-07",
+            "author_time": "2026-10-07T09:33:17-04:00",
+            "author": {
+              "name": "Claude Opus 5.5",
+              "email": "noreply@anthropic.com"
+            },
+            "committer": {
+              "name": "Claude Opus 5.5",
+              "email": "noreply@anthropic.com"
+            },
+            "parents": [
+              "6ccdd29e8eb1e3d887c0ac632bac4fcdcef2f550"
+            ],
+            "trailers": [
+              "Model: claude-opus-5-5",
+              "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+            ],
+            "files": [
+              {
+                "path": ".tableaux/status/7166.yaml",
+                "change": "changed"
+              }
+            ]
+          }
+        ],
+        "commands": [
+          {
+            "text": "git show --no-patch --format='%as %H %ae %ce%n%(trailers)' 56103af8cbaf561a90f9fa67fea02053372a4214",
+            "comment": "shows the finding"
+          },
+          {
+            "text": "git commit --allow-empty --trailer 'Reaffirmed: 7166'",
+            "comment": "resolves it"
+          }
         ]
       },
       {
-        "rule": "H4",
-        "severity": "information",
-        "kind": "A hand-off the history implies",
-        "message": "The contributor's `60495c2` is the newest event and the status states no 👓 review; the contributor is its own reviewer here",
-        "resolver": "noreply@anthropic.com",
+        "key": "stale",
+        "rule": "",
+        "severity": "warning",
+        "demoted": false,
+        "kind": "A stale status",
         "tasks": [
+          {
+            "id": "c2ad",
+            "title": "Roles"
+          },
           {
             "id": "fcec",
             "title": "Conformance corpus"
-          }
-        ],
-        "gate": "unit",
-        "files": [
-          "status/fcec.yaml"
-        ],
-        "sentence": "it reports, as information, a task whose next junction has a reviewer, whose newest event is the contributor's and whose status states no `review`, since the work may be done or in progress",
-        "source": {
-          "text": "README.md, Status",
-          "url": "README.md#status"
-        },
-        "commits": [
-          {
-            "hash": "60495c2",
-            "subject": "Record all three corpus corrections at implementation",
-            "date": "2026-09-30",
-            "author": {
-              "name": "Claude Fable 5.1",
-              "email": "noreply@anthropic.com"
-            },
-            "committer": {
-              "name": "Claude Fable 5.1",
-              "email": "noreply@anthropic.com"
-            }
-          }
-        ],
-        "commands": [
-          {
-            "text": "git log -1 --format='%as %h %ae' -- .tableaux/tasks/fcec.yaml .tableaux/status/fcec.yaml\ngit log -1 --format='%as %h %ae' -E --grep='^(Authorised|Reaffirmed): fcec$' --grep='^Reviewed: fcec '",
-            "comment": "shows the finding for one task: its newest event and who made it"
           },
           {
-            "text": "git commit .tableaux/status/fcec.yaml -m 'Mark the task as awaiting review' \\\n    --trailer 'Model: <the model that runs>'",
-            "comment": "resolves it: noreply@anthropic.com, the contributor, hands the finished work off"
+            "id": "7861",
+            "title": "Productivity evidence"
           }
         ],
-        "key": "H4",
-        "demoted": false,
-        "act": "record_handoff",
-        "facts": [
-          {
-            "task": "fcec",
-            "junction": {
-              "gate": "unit",
-              "kind": "plain",
-              "contributor": "noreply@anthropic.com",
-              "model": "",
-              "reviewer": "noreply@anthropic.com",
-              "reviewer_by_default": true,
-              "from": []
-            },
-            "status": null,
-            "requirement": null,
-            "authorisation": null,
-            "linkage": null,
-            "model": null
-          }
-        ]
-      },
-      {
-        "rule": "H4",
-        "severity": "information",
-        "kind": "A hand-off the history implies",
-        "message": "The contributor's status commit is the newest event (`3d8ce0e`, `5cbec7c`, `c6f2655`) and the status states no 👓 review; nbyoung@nbyoung.com may have a validation to review",
+        "gate": "implementation",
+        "act": "reaffirm",
         "resolver": "noreply@anthropic.com",
-        "tasks": [
-          {
-            "id": "c2ad"
-          },
-          {
-            "id": "e3cb"
-          },
-          {
-            "id": "7861"
-          }
-        ],
-        "gate": "validate",
         "files": [
-          "status/<id>.yaml"
+          ".tableaux/status/c2ad.yaml",
+          ".tableaux/status/fcec.yaml",
+          ".tableaux/status/7861.yaml"
         ],
-        "sentence": "it reports, as information, a task whose next junction has a reviewer, whose newest event is the contributor's and whose status states no `review`, since the work may be done or in progress",
+        "message": "The status dates from 2026-09-30, more than 7 days before 2026-10-17",
+        "sentence": "A review that finds no change reaffirms with an empty commit, so a status is never older than its last confirmation.",
         "source": {
           "text": "README.md, Status",
-          "url": "README.md#status"
+          "url": "https://github.com/nbyoung/tableaux/blob/main/README.md#status"
         },
-        "commits": [
-          {
-            "hash": "3d8ce0e",
-            "subject": "Record the Roles task at its implementation gate",
-            "date": "2026-09-30",
-            "author": {
-              "name": "Claude Fable 5.1",
-              "email": "noreply@anthropic.com"
-            },
-            "committer": {
-              "name": "Claude Fable 5.1",
-              "email": "noreply@anthropic.com"
-            }
-          },
-          {
-            "hash": "5cbec7c",
-            "subject": "Record e3cb at unit, nominal",
-            "date": "2026-09-30",
-            "author": {
-              "name": "Claude Fable 5.1",
-              "email": "noreply@anthropic.com"
-            },
-            "committer": {
-              "name": "Claude Fable 5.1",
-              "email": "noreply@anthropic.com"
-            }
-          },
-          {
-            "hash": "c6f2655",
-            "subject": "Complete the productivity evidence report",
-            "date": "2026-09-30",
-            "author": {
-              "name": "Claude Fable 5.1",
-              "email": "noreply@anthropic.com"
-            },
-            "committer": {
-              "name": "Claude Fable 5.1",
-              "email": "noreply@anthropic.com"
-            }
-          }
-        ],
-        "commands": [
-          {
-            "text": "git log -1 --format='%as %h %ae' -- .tableaux/tasks/c2ad.yaml .tableaux/status/c2ad.yaml\ngit log -1 --format='%as %h %ae' -E --grep='^(Authorised|Reaffirmed): c2ad$' --grep='^Reviewed: c2ad '",
-            "comment": "shows the finding for one task: its newest event and who made it"
-          },
-          {
-            "text": "git commit .tableaux/status/c2ad.yaml -m 'Mark the task as awaiting review' \\\n    --trailer 'Model: <the model that runs>'",
-            "comment": "resolves it: noreply@anthropic.com, the contributor, hands the finished work off"
-          }
-        ],
-        "key": "H4",
-        "demoted": false,
-        "act": "record_handoff",
         "facts": [
           {
             "task": "c2ad",
-            "junction": {
-              "gate": "validate",
-              "kind": "plain",
-              "contributor": "noreply@anthropic.com",
-              "model": "",
-              "reviewer": "nbyoung@nbyoung.com",
-              "reviewer_by_default": false,
-              "from": [
-                "437e"
-              ]
+            "junction": null,
+            "status": {
+              "kind": "recorded",
+              "gate": "implementation",
+              "state": "nominal",
+              "reason": "",
+              "note": "The Roles text is on the trunk and covers all seven roles; the validate gate awaits the owner",
+              "date": "2026-09-30",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
-            "status": null,
             "requirement": null,
             "authorisation": null,
             "linkage": null,
             "model": null
           },
           {
-            "task": "e3cb",
-            "junction": {
-              "gate": "validate",
-              "kind": "plain",
-              "contributor": "noreply@anthropic.com",
-              "model": "",
-              "reviewer": "nbyoung@nbyoung.com",
-              "reviewer_by_default": false,
-              "from": [
-                "437e"
-              ]
+            "task": "fcec",
+            "junction": null,
+            "status": {
+              "kind": "recorded",
+              "gate": "implementation",
+              "state": "nominal",
+              "reason": "",
+              "note": "The corpus builds and checks clean, with 85 entries on the trunk; all three corrections from the tablo prototypes are in; the unit gate runs the tablo conformance test against it",
+              "date": "2026-09-30",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
-            "status": null,
             "requirement": null,
             "authorisation": null,
             "linkage": null,
@@ -1343,33 +843,493 @@
           },
           {
             "task": "7861",
-            "junction": {
-              "gate": "validate",
-              "kind": "plain",
-              "contributor": "noreply@anthropic.com",
-              "model": "",
-              "reviewer": "nbyoung@nbyoung.com",
-              "reviewer_by_default": false,
-              "from": [
-                "437e"
-              ]
+            "junction": null,
+            "status": {
+              "kind": "recorded",
+              "gate": "implementation",
+              "state": "nominal",
+              "reason": "",
+              "note": "The full report, its 23 tests and an example over five repositories are on the trunk",
+              "date": "2026-09-30",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
-            "status": null,
             "requirement": null,
             "authorisation": null,
             "linkage": null,
             "model": null
           }
+        ],
+        "commits": [
+          {
+            "hash": "3d8ce0eee1e869c75453abba91cae03dec6587ce",
+            "subject": "Record the Roles task at its implementation gate",
+            "date": "2026-09-30",
+            "author_time": "2026-09-30T07:33:11-04:00",
+            "author": {
+              "name": "Claude Sonnet 5.5",
+              "email": "noreply@anthropic.com"
+            },
+            "committer": {
+              "name": "Claude Sonnet 5.5",
+              "email": "noreply@anthropic.com"
+            },
+            "parents": [
+              "bf58fada2d632fae5e8f0608bbb996350e3f4ce6"
+            ],
+            "trailers": [
+              "Reviewed: c2ad implementation",
+              "Model: claude-sonnet-5-5",
+              "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
+            ],
+            "files": [
+              {
+                "path": ".tableaux/status/c2ad.yaml",
+                "change": "changed"
+              }
+            ]
+          },
+          {
+            "hash": "c6f2655f1bda4469a6171b77cc21e326f0c99f87",
+            "subject": "Complete the productivity evidence report",
+            "date": "2026-09-30",
+            "author_time": "2026-09-30T07:34:35-04:00",
+            "author": {
+              "name": "Claude Sonnet 5.5",
+              "email": "noreply@anthropic.com"
+            },
+            "committer": {
+              "name": "Claude Sonnet 5.5",
+              "email": "noreply@anthropic.com"
+            },
+            "parents": [
+              "bf58fada2d632fae5e8f0608bbb996350e3f4ce6"
+            ],
+            "trailers": [
+              "Reviewed: 7861 implementation",
+              "Model: claude-sonnet-5-5",
+              "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
+            ],
+            "files": [
+              {
+                "path": ".tableaux/status/7861.yaml",
+                "change": "changed"
+              }
+            ]
+          },
+          {
+            "hash": "60495c26d886016b40069041386a811b24469312",
+            "subject": "Record all three corpus corrections at implementation",
+            "date": "2026-09-30",
+            "author_time": "2026-09-30T09:32:18-04:00",
+            "author": {
+              "name": "Claude Sonnet 5.5",
+              "email": "noreply@anthropic.com"
+            },
+            "committer": {
+              "name": "Claude Sonnet 5.5",
+              "email": "noreply@anthropic.com"
+            },
+            "parents": [
+              "30af33725fab2714eaaf6a0a1d9871d5845f06a3"
+            ],
+            "trailers": [
+              "Reviewed: fcec implementation",
+              "Model: claude-sonnet-5-5",
+              "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
+            ],
+            "files": [
+              {
+                "path": ".tableaux/status/fcec.yaml",
+                "change": "changed"
+              }
+            ]
+          }
+        ],
+        "commands": [
+          {
+            "text": "git show --no-patch --format='%as %H %ae %ce%n%(trailers)' 3d8ce0eee1e869c75453abba91cae03dec6587ce",
+            "comment": "shows the finding"
+          },
+          {
+            "text": "git commit --allow-empty --trailer 'Reaffirmed: c2ad'",
+            "comment": "resolves it"
+          }
+        ]
+      },
+      {
+        "key": "stale",
+        "rule": "",
+        "severity": "warning",
+        "demoted": false,
+        "kind": "A stale status",
+        "tasks": [
+          {
+            "id": "e9c6",
+            "title": "Abstract views"
+          }
+        ],
+        "gate": "implementation",
+        "act": "reaffirm",
+        "resolver": "noreply@anthropic.com",
+        "files": [
+          ".tableaux/status/e9c6.yaml"
+        ],
+        "message": "The status dates from 2026-10-05, more than 7 days before 2026-10-17",
+        "sentence": "A review that finds no change reaffirms with an empty commit, so a status is never older than its last confirmation.",
+        "source": {
+          "text": "README.md, Status",
+          "url": "https://github.com/nbyoung/tableaux/blob/main/README.md#status"
+        },
+        "facts": [
+          {
+            "task": "e9c6",
+            "junction": null,
+            "status": {
+              "kind": "recorded",
+              "gate": "implementation",
+              "state": "nominal",
+              "reason": "",
+              "note": "VIEWS.md defines the ten views on the trunk and agrees with the twenty approved mockups on the gate window; validation checks that tablo and the front ends follow the text",
+              "date": "2026-10-05",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
+            },
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          }
+        ],
+        "commits": [
+          {
+            "hash": "ccb3947e3deb2f476a8c9c886266b2b4da66c6f6",
+            "subject": "Record the abstract views task at its implementation gate",
+            "date": "2026-10-05",
+            "author_time": "2026-10-05T18:46:07-04:00",
+            "author": {
+              "name": "Claude Opus 5.5",
+              "email": "noreply@anthropic.com"
+            },
+            "committer": {
+              "name": "Claude Opus 5.5",
+              "email": "noreply@anthropic.com"
+            },
+            "parents": [
+              "c5719cddaf83e56b29d0ca3f1ccb716d1cad01eb"
+            ],
+            "trailers": [
+              "Reviewed: e9c6 implementation",
+              "Model: claude-opus-5-5",
+              "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+            ],
+            "files": [
+              {
+                "path": ".tableaux/status/e9c6.yaml",
+                "change": "changed"
+              }
+            ]
+          }
+        ],
+        "commands": [
+          {
+            "text": "git show --no-patch --format='%as %H %ae %ce%n%(trailers)' ccb3947e3deb2f476a8c9c886266b2b4da66c6f6",
+            "comment": "shows the finding"
+          },
+          {
+            "text": "git commit --allow-empty --trailer 'Reaffirmed: e9c6'",
+            "comment": "resolves it"
+          }
+        ]
+      },
+      {
+        "key": "stale",
+        "rule": "",
+        "severity": "warning",
+        "demoted": false,
+        "kind": "A stale status",
+        "tasks": [
+          {
+            "id": "e3cb",
+            "title": "Schema files"
+          }
+        ],
+        "gate": "unit",
+        "act": "reaffirm",
+        "resolver": "noreply@anthropic.com",
+        "files": [
+          ".tableaux/status/e3cb.yaml"
+        ],
+        "message": "The status dates from 2026-09-30, more than 7 days before 2026-10-17",
+        "sentence": "A review that finds no change reaffirms with an empty commit, so a status is never older than its last confirmation.",
+        "source": {
+          "text": "README.md, Status",
+          "url": "https://github.com/nbyoung/tableaux/blob/main/README.md#status"
+        },
+        "facts": [
+          {
+            "task": "e3cb",
+            "junction": null,
+            "status": {
+              "kind": "recorded",
+              "gate": "unit",
+              "state": "nominal",
+              "reason": "",
+              "note": "schemas/check.sh (files agree with SYNTAX.md, version 0.2.1) and schemas/load.py (files load as JSON Schema 2020-12) pass; every .tableaux file validates",
+              "date": "2026-09-30",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
+            },
+            "requirement": null,
+            "authorisation": null,
+            "linkage": null,
+            "model": null
+          }
+        ],
+        "commits": [
+          {
+            "hash": "5cbec7cce7c3cb3bf99f2145713d13ccb0b23d0f",
+            "subject": "Record e3cb at unit, nominal",
+            "date": "2026-09-30",
+            "author_time": "2026-09-30T07:33:37-04:00",
+            "author": {
+              "name": "Claude Sonnet 5.5",
+              "email": "noreply@anthropic.com"
+            },
+            "committer": {
+              "name": "Claude Sonnet 5.5",
+              "email": "noreply@anthropic.com"
+            },
+            "parents": [
+              "bf58fada2d632fae5e8f0608bbb996350e3f4ce6"
+            ],
+            "trailers": [
+              "Reviewed: e3cb unit",
+              "Model: claude-sonnet-5-5",
+              "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
+            ],
+            "files": [
+              {
+                "path": ".tableaux/status/e3cb.yaml",
+                "change": "changed"
+              }
+            ]
+          }
+        ],
+        "commands": [
+          {
+            "text": "git show --no-patch --format='%as %H %ae %ce%n%(trailers)' 5cbec7cce7c3cb3bf99f2145713d13ccb0b23d0f",
+            "comment": "shows the finding"
+          },
+          {
+            "text": "git commit --allow-empty --trailer 'Reaffirmed: e3cb'",
+            "comment": "resolves it"
+          }
         ]
       }
     ],
-    "errors": 1,
-    "warnings": 3,
-    "information": 28,
-    "most": {
-      "email": "noreply@anthropic.com",
-      "count": 29
-    }
+    "silent": [
+      {
+        "key": "P5",
+        "rule": "P5",
+        "kind": "An undetermined trunk"
+      },
+      {
+        "key": "R12",
+        "rule": "R12",
+        "kind": "A requirement on what a junction reads"
+      },
+      {
+        "key": "R13",
+        "rule": "R13",
+        "kind": "A requirement its commit alone leaves unmet"
+      },
+      {
+        "key": "J8",
+        "rule": "J8",
+        "kind": "A subproject the tool cannot read"
+      },
+      {
+        "key": "J9",
+        "rule": "J9",
+        "kind": "A subproject task that does not exist"
+      },
+      {
+        "key": "J13",
+        "rule": "J13",
+        "kind": "A commit off the subproject's trunk"
+      },
+      {
+        "key": "J14",
+        "rule": "J14",
+        "kind": "A malformed commit"
+      },
+      {
+        "key": "J15",
+        "rule": "J15",
+        "kind": "An absolute URL without a commit"
+      },
+      {
+        "key": "J16",
+        "rule": "J16",
+        "kind": "A commit on a same-repository path"
+      },
+      {
+        "key": "J17",
+        "rule": "J17",
+        "kind": "A commit off the submodule's pin"
+      },
+      {
+        "key": "H1",
+        "rule": "H1",
+        "kind": "A trailer that names nothing"
+      },
+      {
+        "key": "H2",
+        "rule": "H2",
+        "kind": "A review from the wrong hand"
+      },
+      {
+        "key": "H5",
+        "rule": "H5",
+        "kind": "A stale hand-off"
+      },
+      {
+        "key": "H6",
+        "rule": "H6",
+        "kind": "No model trailer"
+      },
+      {
+        "key": "proposed",
+        "rule": "",
+        "kind": "A proposed task"
+      }
+    ]
   },
-  "diagnostics": []
+  "diagnostics": [
+    {
+      "severity": "warning",
+      "code": "H3",
+      "task": "7166",
+      "gate": "implementation",
+      "commit": "56103af8cbaf561a90f9fa67fea02053372a4214",
+      "message": "Model claude-opus-5-5 is outside the stated model claude-sonnet"
+    },
+    {
+      "severity": "warning",
+      "code": "H3",
+      "task": "e9c6",
+      "gate": "implementation",
+      "commit": "ccb3947e3deb2f476a8c9c886266b2b4da66c6f6",
+      "message": "Model claude-opus-5-5 is outside the stated model claude-sonnet"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/7166.yaml",
+      "task": "7166",
+      "gate": "implementation",
+      "commit": "56103af8cbaf561a90f9fa67fea02053372a4214",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/7861.yaml",
+      "task": "7861",
+      "gate": "validate",
+      "commit": "c6f2655f1bda4469a6171b77cc21e326f0c99f87",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/9f3f.yaml",
+      "task": "9f3f",
+      "gate": "implementation",
+      "commit": "43d68e4f7d2b856c4d581983f34355d5b5f4f3b4",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/ac33.yaml",
+      "task": "ac33",
+      "gate": "implementation",
+      "commit": "6762222ddffef76008daad27ebe26069ac67cc5d",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/c2ad.yaml",
+      "task": "c2ad",
+      "gate": "validate",
+      "commit": "3d8ce0eee1e869c75453abba91cae03dec6587ce",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/e3cb.yaml",
+      "task": "e3cb",
+      "gate": "validate",
+      "commit": "c39ccac764b580ddb67789014c5f7f2c1bae9c6e",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/e9c6.yaml",
+      "task": "e9c6",
+      "gate": "validate",
+      "commit": "ccb3947e3deb2f476a8c9c886266b2b4da66c6f6",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/fcec.yaml",
+      "task": "fcec",
+      "gate": "unit",
+      "commit": "60495c26d886016b40069041386a811b24469312",
+      "message": "the newest event is the contributor's and the status states no review; noreply@anthropic.com may have unit to review"
+    },
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/595e.yaml",
+      "line": 13,
+      "col": 5,
+      "task": "595e",
+      "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    },
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/6103.yaml",
+      "line": 13,
+      "col": 5,
+      "task": "6103",
+      "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    },
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/c6e8.yaml",
+      "line": 13,
+      "col": 5,
+      "task": "c6e8",
+      "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    }
+  ]
 }

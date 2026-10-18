@@ -1,24 +1,254 @@
 # Contributor work queue
 
-**What do I do next?** Tableaux tooling · ref `main` · person noreply@anthropic.com · level detail
+**What do I do next?** Tableaux tooling · ref `1b6916e` · person noreply@anthropic.com · level detail
 
 Legend: `tabloio gates`.
 
-1 item: 0 reviews owed, 0 authorisations owed, 0 work ready, 0 reaffirmations, 1 work waiting.
+56 items: 0 reviews owed, 0 authorisations owed, 8 work ready, 28 reaffirmations, 20 work waiting.
 
 | Kind | Task | Gate | Model | Since |
 |---|---|---|---|---|
-| Work waiting | `99f0` Gate definition view in Markdown; waits for `e9c6` at design | 📌 mockup | `claude-opus` | 2026-09-29 |
+| Work ready | `c2ad` Roles | 🌍 validate | `claude-opus` | 2026-09-30 |
+| Work ready | `e9c6` Abstract views | 📐 design | `claude-fable` | 2026-09-29 |
+| Work ready | `e3cb` Schema files | 🌍 validate | `claude-opus` | 2026-09-30 |
+| Work ready | `fcec` Conformance corpus | 🧩 unit | `claude-sonnet` | 2026-09-30 |
+| Work ready | `ac33` Agent identity | 🛠️ implementation | `claude-sonnet` | 2026-09-30 |
+| Work ready | `9f3f` Subproject linkage | 🛠️ implementation | `claude-sonnet` | 2026-09-30 |
+| Work ready | `7861` Productivity evidence | 🌍 validate | `claude-opus` | 2026-09-30 |
+| Work ready | `7166` Language clarifications | 🛠️ implementation | `claude-sonnet` | 2026-09-30 |
+| Reaffirmation | `e9c6` Abstract views | 📝 defined |  | 2026-09-29, 1 day |
+| Reaffirmation | `99f0` Gate definition view in Markdown | 📝 defined |  | 2026-09-29, 1 day |
+| Reaffirmation | `05a9` Task definition view in Markdown | 📝 defined |  | 2026-09-29, 1 day |
+| Reaffirmation | … and 18 more: `a9ce` `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` | 📝 defined |  | 2026-09-29, 1 day |
+| Reaffirmation | `7166` Language clarifications | 📐 design |  | 2026-09-30, 0 days |
+| Reaffirmation | `ac33` Agent identity | 📐 design |  | 2026-09-30, 0 days |
+| Reaffirmation | `c2ad` Roles | 🛠️ implementation |  | 2026-09-30, 0 days |
+| Reaffirmation | `e3cb` Schema files | 🧩 unit |  | 2026-09-30, 0 days |
+| Reaffirmation | `7861` Productivity evidence | 🛠️ implementation |  | 2026-09-30, 0 days |
+| Reaffirmation | `fcec` Conformance corpus | 🛠️ implementation |  | 2026-09-30, 0 days |
+| Reaffirmation | `9f3f` Subproject linkage | 📐 design |  | 2026-09-30, 0 days |
+| Work waiting | `99f0` Gate definition view in Markdown; waits for `e9c6` Abstract views at design | 📌 mockup | `claude-opus` | 2026-09-29 |
+| Work waiting | `05a9` Task definition view in Markdown; waits for `e9c6` Abstract views at design | 📌 mockup | `claude-opus` | 2026-09-29 |
+| Work waiting | `a9ce` Authority delegation view in Markdown; waits for `e9c6` Abstract views at design | 📌 mockup | `claude-opus` | 2026-09-29 |
+| Work waiting | `bb7c` Task assignment view in Markdown; waits for `e9c6` Abstract views at design | 📌 mockup | `claude-opus` | 2026-09-29 |
+| Work waiting | `c74a` Contributor work queue view in Markdown; waits for `e9c6` Abstract views at design | 📌 mockup | `claude-opus` | 2026-09-29 |
+| Work waiting | `efff` Work-blockage tree view in Markdown; waits for `e9c6` Abstract views at design | 📌 mockup | `claude-opus` | 2026-09-29 |
+| Work waiting | `ab8e` Global tableau view in Markdown; waits for `e9c6` Abstract views at design | 📌 mockup | `claude-opus` | 2026-09-29 |
+| Work waiting | `c545` Contextual tableau view in Markdown; waits for `e9c6` Abstract views at design | 📌 mockup | `claude-opus` | 2026-09-29 |
+| Work waiting | `d615` History view in Markdown; waits for `e9c6` Abstract views at design | 📌 mockup | `claude-opus` | 2026-09-29 |
+| Work waiting | `b14e` Audit view in Markdown; waits for `e9c6` Abstract views at design | 📌 mockup | `claude-opus` | 2026-09-29 |
+| Work waiting | `a6f7` Gate definition view in Html; waits for `e9c6` Abstract views at design | 📌 mockup | `claude-opus` | 2026-09-29 |
+| Work waiting | `7dff` Task definition view in Html; waits for `e9c6` Abstract views at design | 📌 mockup | `claude-opus` | 2026-09-29 |
+| Work waiting | `b1b7` Authority delegation view in Html; waits for `e9c6` Abstract views at design | 📌 mockup | `claude-opus` | 2026-09-29 |
+| Work waiting | `ea51` Task assignment view in Html; waits for `e9c6` Abstract views at design | 📌 mockup | `claude-opus` | 2026-09-29 |
+| Work waiting | `7783` Contributor work queue view in Html; waits for `e9c6` Abstract views at design | 📌 mockup | `claude-opus` | 2026-09-29 |
+| Work waiting | `5471` Work-blockage tree view in Html; waits for `e9c6` Abstract views at design | 📌 mockup | `claude-opus` | 2026-09-29 |
+| Work waiting | `32e7` Global tableau view in Html; waits for `e9c6` Abstract views at design | 📌 mockup | `claude-opus` | 2026-09-29 |
+| Work waiting | `69eb` Contextual tableau view in Html; waits for `e9c6` Abstract views at design | 📌 mockup | `claude-opus` | 2026-09-29 |
+| Work waiting | `3194` History view in Html; waits for `e9c6` Abstract views at design | 📌 mockup | `claude-opus` | 2026-09-29 |
+| Work waiting | `a8b4` Audit view in Html; waits for `e9c6` Abstract views at design | 📌 mockup | `claude-opus` | 2026-09-29 |
 
 ## 1. Reviews owed: none
 
 ## 2. Authorisations owed: none
 
-## 3. Work ready: none
+## 3. Work ready: 8
 
-## 4. Reaffirmations: none
+**`c2ad` Roles** at 🌍 validate, model `claude-opus`
 
-## 5. Work waiting: 1
+- Gate: 🌍 validate, Validation: Passes user and field tests
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-opus`, from `bc63`
+- Reviewer: 👀 nbyoung@nbyoung.com, from `437e`
+- References: [Proposed roles](PLAN.md#roles)
+- Also required by: `e9c6` Abstract views, design → design, The role names the views refer to: met
+- Status: 🛠️ implementation 🟢 nominal, 2026-09-30, **noreply@anthropic.com**, `3d8ce0e`: The Roles text is on the trunk and covers all seven roles; the validate gate awaits the owner
+- Brief: `tabloio queue --person noreply@anthropic.com --ref 1b6916e --brief c2ad validate`
+
+**`e9c6` Abstract views** at 📐 design, model `claude-fable`
+
+- Gate: 📐 design, Design: A model and sufficient tests exist
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-fable`, from `bc63`
+- Reviewer: 👀 nbyoung@nbyoung.com, from `437e`
+- References: [Proposed views](PLAN.md#views)
+- Requires: `c2ad` Roles, design → design, The role names the views refer to: met
+- Unblocks:
+  - `99f0` Gate definition view in Markdown, design → mockup, The abstract definition of the view: unmet
+  - `05a9` Task definition view in Markdown, design → mockup, The abstract definition of the view: unmet
+  - `a9ce` Authority delegation view in Markdown, design → mockup, The abstract definition of the view: unmet
+  - … and 17 more: `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4`, design → mockup, The abstract definition of the view: unmet
+- Also required by: `77b2` tablo: backend library and plumbing, implementation → design, The abstract views it derives: unmet, not yet due
+- Status: 📝 defined 🟢 nominal, 2026-09-29, **noreply@anthropic.com**, `1a17bfc`: Design waits for Roles (c2ad) at design
+- Brief: `tabloio queue --person noreply@anthropic.com --ref 1b6916e --brief e9c6 design`
+
+**`e3cb` Schema files** at 🌍 validate, model `claude-opus`
+
+- Gate: 🌍 validate, Validation: Passes user and field tests
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-opus`, from `bc63`
+- Reviewer: 👀 nbyoung@nbyoung.com, from `437e`
+- References: [The schemas in place](SYNTAX.md)
+- Also required by:
+  - `fcec` Conformance corpus, implementation → implementation, The schema files the corpus validates against: met
+  - `77b2` tablo: backend library and plumbing, implementation → implementation, The schema files it embeds: met, not yet due
+- Status: 🧩 unit 🟢 nominal, 2026-09-30, **noreply@anthropic.com**, `5cbec7c`: schemas/check.sh (files agree with SYNTAX.md, version 0.2.1) and schemas/load.py (files load as JSON Schema 2020-12) pass; every .tableaux file validates
+- Brief: `tabloio queue --person noreply@anthropic.com --ref 1b6916e --brief e3cb validate`
+
+**`fcec` Conformance corpus** at 🧩 unit, model `claude-sonnet`
+
+- Gate: 🧩 unit, Unit test: All prescribed tests pass
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-sonnet`, from `437e`
+- Reviewer: 👀 **noreply@anthropic.com**, the assignee
+- References: [The examples the corpus starts from](README.md)
+- Requires: `e3cb` Schema files, implementation → implementation, The schema files the corpus validates against: met
+- Also required by: `77b2` tablo: backend library and plumbing, implementation → unit, The corpus it conforms to: met, not yet due
+- Status: 🛠️ implementation 🟢 nominal, 2026-09-30, **noreply@anthropic.com**, `60495c2`: The corpus builds and checks clean, with 85 entries on the trunk; all three corrections from the tablo prototypes are in; the unit gate runs the tablo conformance test against it
+- Brief: `tabloio queue --person noreply@anthropic.com --ref 1b6916e --brief fcec unit`
+
+**`ac33` Agent identity** at 🛠️ implementation, model `claude-sonnet`
+
+- Gate: 🛠️ implementation, Implementation: Artifacts suffice for unit, integration and validation tests
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-sonnet`, from `437e`
+- Reviewer: 👀 nbyoung@nbyoung.com, the assignee
+- References: [Findings F1, F2, F10 and F20](PLAN.md#findings)
+- Status: 📐 design 🟢 nominal, 2026-09-30, **noreply@anthropic.com**, `6762222`: The model plan-and-record rule (F20) is on the trunk; F1, F2 and F10 remain for design
+- Brief: `tabloio queue --person noreply@anthropic.com --ref 1b6916e --brief ac33 implementation`
+
+**`9f3f` Subproject linkage** at 🛠️ implementation, model `claude-sonnet`
+
+- Gate: 🛠️ implementation, Implementation: Artifacts suffice for unit, integration and validation tests
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-sonnet`, from `437e`
+- Reviewer: 👀 nbyoung@nbyoung.com, the assignee
+- References: [Findings F3 to F5](PLAN.md#findings)
+- Status: 📐 design 🟢 nominal, 2026-09-30, **noreply@anthropic.com**, `43d68e4`: The subproject linkage rule (F3, F5, F12) is on the trunk at language 0.3.0; tablo and the subprojects follow
+- Brief: `tabloio queue --person noreply@anthropic.com --ref 1b6916e --brief 9f3f implementation`
+
+**`7861` Productivity evidence** at 🌍 validate, model `claude-opus`
+
+- Gate: 🌍 validate, Validation: Passes user and field tests
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-opus`, from `bc63`
+- Reviewer: 👀 nbyoung@nbyoung.com, from `437e`
+- References: [The review policy under test](PLAN.md#review-policy)
+- Status: 🛠️ implementation 🟢 nominal, 2026-09-30, **noreply@anthropic.com**, `c6f2655`: The full report, its 23 tests and an example over five repositories are on the trunk
+- Brief: `tabloio queue --person noreply@anthropic.com --ref 1b6916e --brief 7861 validate`
+
+**`7166` Language clarifications** at 🛠️ implementation, model `claude-sonnet`
+
+- Gate: 🛠️ implementation, Implementation: Artifacts suffice for unit, integration and validation tests
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-sonnet`, from `437e`
+- Reviewer: 👀 nbyoung@nbyoung.com, the assignee
+- References: [Findings F7 to F9 and F19](PLAN.md#findings)
+- Status: 📐 design 🟢 nominal, 2026-09-30, **noreply@anthropic.com**, `d9396b4`: The trunk clarification (F19) is on the trunk; F7 and F9 remain for design
+- Brief: `tabloio queue --person noreply@anthropic.com --ref 1b6916e --brief 7166 implementation`
+
+## 4. Reaffirmations: 28
+
+**`e9c6` Abstract views**, 📝 defined, 2026-09-29, 1 day
+
+- Gate: 📝 defined, Defined: Title, description, assignee and references exist
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-fable`
+- Reviewer: 👀 nbyoung@nbyoung.com
+- References: [Proposed views](PLAN.md#views)
+- Requires: `c2ad` Roles, design → design, The role names the views refer to: met
+- Also required by:
+  - `99f0` Gate definition view in Markdown, design → mockup, The abstract definition of the view: unmet
+  - `05a9` Task definition view in Markdown, design → mockup, The abstract definition of the view: unmet
+  - `a9ce` Authority delegation view in Markdown, design → mockup, The abstract definition of the view: unmet
+  - … and 17 more: `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4`, design → mockup, The abstract definition of the view: unmet
+  - `77b2` tablo: backend library and plumbing, implementation → design, The abstract views it derives: unmet, not yet due
+- Status: 📝 defined 🟢 nominal, 2026-09-29, **noreply@anthropic.com**, `1a17bfc`: Design waits for Roles (c2ad) at design
+- To reaffirm: `tabloio reaffirm e9c6`
+
+**`99f0` Gate definition view in Markdown**, 📝 defined, 2026-09-29, 1 day
+
+- Gate: 📝 defined, Defined: Title, description, assignee and references exist
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-opus`
+- Reviewer: 👀 nbyoung@nbyoung.com
+- References: [The mockup](docs/mockups/gates.md)
+- Requires: `e9c6` Abstract views, design → mockup, The abstract definition of the view: unmet
+- Status: 📝 defined 🟢 nominal, 2026-09-29, **noreply@anthropic.com**, `1a17bfc`: Mockup waits for Abstract views (e9c6) at design
+- To reaffirm: `tabloio reaffirm 99f0`
+
+**`05a9` Task definition view in Markdown**, 📝 defined, 2026-09-29, 1 day
+
+- Gate: 📝 defined, Defined: Title, description, assignee and references exist
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-opus`
+- Reviewer: 👀 nbyoung@nbyoung.com
+- References: [The mockup](docs/mockups/task.md)
+- Requires: `e9c6` Abstract views, design → mockup, The abstract definition of the view: unmet
+- Status: 📝 defined 🟢 nominal, 2026-09-29, **noreply@anthropic.com**, `1a17bfc`: Mockup waits for Abstract views (e9c6) at design
+- To reaffirm: `tabloio reaffirm 05a9`
+
+**… and 18 more**, 📝 defined, 2026-09-29, 1 day: `a9ce` `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4`.
+
+**`7166` Language clarifications**, 📐 design, 2026-09-30, 0 days
+
+- Gate: 📐 design, Design: A model and sufficient tests exist
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-sonnet`
+- Reviewer: 👀 nbyoung@nbyoung.com, the assignee
+- References: [Findings F7 to F9 and F19](PLAN.md#findings)
+- Status: 📐 design 🟢 nominal, 2026-09-30, **noreply@anthropic.com**, `d9396b4`: The trunk clarification (F19) is on the trunk; F7 and F9 remain for design
+- To reaffirm: `tabloio reaffirm 7166`
+
+**`ac33` Agent identity**, 📐 design, 2026-09-30, 0 days
+
+- Gate: 📐 design, Design: A model and sufficient tests exist
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-sonnet`
+- Reviewer: 👀 nbyoung@nbyoung.com, the assignee
+- References: [Findings F1, F2, F10 and F20](PLAN.md#findings)
+- Status: 📐 design 🟢 nominal, 2026-09-30, **noreply@anthropic.com**, `6762222`: The model plan-and-record rule (F20) is on the trunk; F1, F2 and F10 remain for design
+- To reaffirm: `tabloio reaffirm ac33`
+
+**`c2ad` Roles**, 🛠️ implementation, 2026-09-30, 0 days
+
+- Gate: 🛠️ implementation, Implementation: Artifacts suffice for unit, integration and validation tests
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-opus`
+- Reviewer: 👀 nbyoung@nbyoung.com
+- References: [Proposed roles](PLAN.md#roles)
+- Also required by: `e9c6` Abstract views, design → design, The role names the views refer to: met
+- Status: 🛠️ implementation 🟢 nominal, 2026-09-30, **noreply@anthropic.com**, `3d8ce0e`: The Roles text is on the trunk and covers all seven roles; the validate gate awaits the owner
+- To reaffirm: `tabloio reaffirm c2ad`
+
+**`e3cb` Schema files**, 🧩 unit, 2026-09-30, 0 days
+
+- Gate: 🧩 unit, Unit test: All prescribed tests pass
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-opus`
+- Reviewer: 👀 nbyoung@nbyoung.com
+- References: [The schemas in place](SYNTAX.md)
+- Also required by:
+  - `fcec` Conformance corpus, implementation → implementation, The schema files the corpus validates against: met
+  - `77b2` tablo: backend library and plumbing, implementation → implementation, The schema files it embeds: met, not yet due
+- Status: 🧩 unit 🟢 nominal, 2026-09-30, **noreply@anthropic.com**, `5cbec7c`: schemas/check.sh (files agree with SYNTAX.md, version 0.2.1) and schemas/load.py (files load as JSON Schema 2020-12) pass; every .tableaux file validates
+- To reaffirm: `tabloio reaffirm e3cb`
+
+**`7861` Productivity evidence**, 🛠️ implementation, 2026-09-30, 0 days
+
+- Gate: 🛠️ implementation, Implementation: Artifacts suffice for unit, integration and validation tests
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-opus`
+- Reviewer: 👀 nbyoung@nbyoung.com
+- References: [The review policy under test](PLAN.md#review-policy)
+- Status: 🛠️ implementation 🟢 nominal, 2026-09-30, **noreply@anthropic.com**, `c6f2655`: The full report, its 23 tests and an example over five repositories are on the trunk
+- To reaffirm: `tabloio reaffirm 7861`
+
+**`fcec` Conformance corpus**, 🛠️ implementation, 2026-09-30, 0 days
+
+- Gate: 🛠️ implementation, Implementation: Artifacts suffice for unit, integration and validation tests
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-sonnet`
+- Reviewer: 👀 **noreply@anthropic.com**, the assignee
+- References: [The examples the corpus starts from](README.md)
+- Requires: `e3cb` Schema files, implementation → implementation, The schema files the corpus validates against: met
+- Also required by: `77b2` tablo: backend library and plumbing, implementation → unit, The corpus it conforms to: met, not yet due
+- Status: 🛠️ implementation 🟢 nominal, 2026-09-30, **noreply@anthropic.com**, `60495c2`: The corpus builds and checks clean, with 85 entries on the trunk; all three corrections from the tablo prototypes are in; the unit gate runs the tablo conformance test against it
+- To reaffirm: `tabloio reaffirm fcec`
+
+**`9f3f` Subproject linkage**, 📐 design, 2026-09-30, 0 days
+
+- Gate: 📐 design, Design: A model and sufficient tests exist
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-sonnet`
+- Reviewer: 👀 nbyoung@nbyoung.com, the assignee
+- References: [Findings F3 to F5](PLAN.md#findings)
+- Status: 📐 design 🟢 nominal, 2026-09-30, **noreply@anthropic.com**, `43d68e4`: The subproject linkage rule (F3, F5, F12) is on the trunk at language 0.3.0; tablo and the subprojects follow
+- To reaffirm: `tabloio reaffirm 9f3f`
+
+## 5. Work waiting: 20
 
 **`99f0` Gate definition view in Markdown** at 📌 mockup, model `claude-opus`
 
@@ -26,11 +256,278 @@ Legend: `tabloio gates`.
 - Contributor: 🤖 **noreply@anthropic.com**, model `claude-opus`, from `437e`
 - Reviewer: 👀 nbyoung@nbyoung.com, from `437e`
 - References: [The mockup](docs/mockups/gates.md)
-- Waits for: waits for `e9c6` at design
+- Requires: `e9c6` Abstract views, design → mockup, The abstract definition of the view: unmet
+- Waits for: waits for `e9c6` Abstract views at design
 - Its parent unblocks:
   - `bc86` Markdown views at 📌 mockup is required by `6103` tabloio: command line, output and input, mockup → design, The Markdown mockups it reproduces: unmet, not yet due
   - `bc86` Markdown views at 📌 mockup is required by `c6e8` tablotui: terminal user interface, mockup → design, The Markdown mockups that fix the textual layout: unmet, not yet due
 - Status: 📝 defined 🟢 nominal, 2026-09-29, **noreply@anthropic.com**, `1a17bfc`: Mockup waits for Abstract views (e9c6) at design
 - Do not start: the cause stands.
 
-Command: `tabloio queue --person noreply@anthropic.com --ref main --level detail`
+**`05a9` Task definition view in Markdown** at 📌 mockup, model `claude-opus`
+
+- Gate: 📌 mockup, Mockup: A non-technical mockup of the outcome exists
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-opus`, from `437e`
+- Reviewer: 👀 nbyoung@nbyoung.com, from `437e`
+- References: [The mockup](docs/mockups/task.md)
+- Requires: `e9c6` Abstract views, design → mockup, The abstract definition of the view: unmet
+- Waits for: waits for `e9c6` Abstract views at design
+- Its parent unblocks:
+  - `bc86` Markdown views at 📌 mockup is required by `6103` tabloio: command line, output and input, mockup → design, The Markdown mockups it reproduces: unmet, not yet due
+  - `bc86` Markdown views at 📌 mockup is required by `c6e8` tablotui: terminal user interface, mockup → design, The Markdown mockups that fix the textual layout: unmet, not yet due
+- Status: 📝 defined 🟢 nominal, 2026-09-29, **noreply@anthropic.com**, `1a17bfc`: Mockup waits for Abstract views (e9c6) at design
+- Do not start: the cause stands.
+
+**`a9ce` Authority delegation view in Markdown** at 📌 mockup, model `claude-opus`
+
+- Gate: 📌 mockup, Mockup: A non-technical mockup of the outcome exists
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-opus`, from `437e`
+- Reviewer: 👀 nbyoung@nbyoung.com, from `437e`
+- References: [The mockup](docs/mockups/authority.md)
+- Requires: `e9c6` Abstract views, design → mockup, The abstract definition of the view: unmet
+- Waits for: waits for `e9c6` Abstract views at design
+- Its parent unblocks:
+  - `bc86` Markdown views at 📌 mockup is required by `6103` tabloio: command line, output and input, mockup → design, The Markdown mockups it reproduces: unmet, not yet due
+  - `bc86` Markdown views at 📌 mockup is required by `c6e8` tablotui: terminal user interface, mockup → design, The Markdown mockups that fix the textual layout: unmet, not yet due
+- Status: 📝 defined 🟢 nominal, 2026-09-29, **noreply@anthropic.com**, `1a17bfc`: Mockup waits for Abstract views (e9c6) at design
+- Do not start: the cause stands.
+
+**`bb7c` Task assignment view in Markdown** at 📌 mockup, model `claude-opus`
+
+- Gate: 📌 mockup, Mockup: A non-technical mockup of the outcome exists
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-opus`, from `437e`
+- Reviewer: 👀 nbyoung@nbyoung.com, from `437e`
+- References: [The mockup](docs/mockups/assignment.md)
+- Requires: `e9c6` Abstract views, design → mockup, The abstract definition of the view: unmet
+- Waits for: waits for `e9c6` Abstract views at design
+- Its parent unblocks:
+  - `bc86` Markdown views at 📌 mockup is required by `6103` tabloio: command line, output and input, mockup → design, The Markdown mockups it reproduces: unmet, not yet due
+  - `bc86` Markdown views at 📌 mockup is required by `c6e8` tablotui: terminal user interface, mockup → design, The Markdown mockups that fix the textual layout: unmet, not yet due
+- Status: 📝 defined 🟢 nominal, 2026-09-29, **noreply@anthropic.com**, `1a17bfc`: Mockup waits for Abstract views (e9c6) at design
+- Do not start: the cause stands.
+
+**`c74a` Contributor work queue view in Markdown** at 📌 mockup, model `claude-opus`
+
+- Gate: 📌 mockup, Mockup: A non-technical mockup of the outcome exists
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-opus`, from `437e`
+- Reviewer: 👀 nbyoung@nbyoung.com, from `437e`
+- References: [The mockup](docs/mockups/queue.md)
+- Requires: `e9c6` Abstract views, design → mockup, The abstract definition of the view: unmet
+- Waits for: waits for `e9c6` Abstract views at design
+- Its parent unblocks:
+  - `bc86` Markdown views at 📌 mockup is required by `6103` tabloio: command line, output and input, mockup → design, The Markdown mockups it reproduces: unmet, not yet due
+  - `bc86` Markdown views at 📌 mockup is required by `c6e8` tablotui: terminal user interface, mockup → design, The Markdown mockups that fix the textual layout: unmet, not yet due
+- Status: 📝 defined 🟢 nominal, 2026-09-29, **noreply@anthropic.com**, `1a17bfc`: Mockup waits for Abstract views (e9c6) at design
+- Do not start: the cause stands.
+
+**`efff` Work-blockage tree view in Markdown** at 📌 mockup, model `claude-opus`
+
+- Gate: 📌 mockup, Mockup: A non-technical mockup of the outcome exists
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-opus`, from `437e`
+- Reviewer: 👀 nbyoung@nbyoung.com, from `437e`
+- References: [The mockup](docs/mockups/blockage.md)
+- Requires: `e9c6` Abstract views, design → mockup, The abstract definition of the view: unmet
+- Waits for: waits for `e9c6` Abstract views at design
+- Its parent unblocks:
+  - `bc86` Markdown views at 📌 mockup is required by `6103` tabloio: command line, output and input, mockup → design, The Markdown mockups it reproduces: unmet, not yet due
+  - `bc86` Markdown views at 📌 mockup is required by `c6e8` tablotui: terminal user interface, mockup → design, The Markdown mockups that fix the textual layout: unmet, not yet due
+- Status: 📝 defined 🟢 nominal, 2026-09-29, **noreply@anthropic.com**, `1a17bfc`: Mockup waits for Abstract views (e9c6) at design
+- Do not start: the cause stands.
+
+**`ab8e` Global tableau view in Markdown** at 📌 mockup, model `claude-opus`
+
+- Gate: 📌 mockup, Mockup: A non-technical mockup of the outcome exists
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-opus`, from `437e`
+- Reviewer: 👀 nbyoung@nbyoung.com, from `437e`
+- References: [The mockup](docs/mockups/tableau.md)
+- Requires: `e9c6` Abstract views, design → mockup, The abstract definition of the view: unmet
+- Waits for: waits for `e9c6` Abstract views at design
+- Its parent unblocks:
+  - `bc86` Markdown views at 📌 mockup is required by `6103` tabloio: command line, output and input, mockup → design, The Markdown mockups it reproduces: unmet, not yet due
+  - `bc86` Markdown views at 📌 mockup is required by `c6e8` tablotui: terminal user interface, mockup → design, The Markdown mockups that fix the textual layout: unmet, not yet due
+- Status: 📝 defined 🟢 nominal, 2026-09-29, **noreply@anthropic.com**, `1a17bfc`: Mockup waits for Abstract views (e9c6) at design
+- Do not start: the cause stands.
+
+**`c545` Contextual tableau view in Markdown** at 📌 mockup, model `claude-opus`
+
+- Gate: 📌 mockup, Mockup: A non-technical mockup of the outcome exists
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-opus`, from `437e`
+- Reviewer: 👀 nbyoung@nbyoung.com, from `437e`
+- References: [The mockup](docs/mockups/context.md)
+- Requires: `e9c6` Abstract views, design → mockup, The abstract definition of the view: unmet
+- Waits for: waits for `e9c6` Abstract views at design
+- Its parent unblocks:
+  - `bc86` Markdown views at 📌 mockup is required by `6103` tabloio: command line, output and input, mockup → design, The Markdown mockups it reproduces: unmet, not yet due
+  - `bc86` Markdown views at 📌 mockup is required by `c6e8` tablotui: terminal user interface, mockup → design, The Markdown mockups that fix the textual layout: unmet, not yet due
+- Status: 📝 defined 🟢 nominal, 2026-09-29, **noreply@anthropic.com**, `1a17bfc`: Mockup waits for Abstract views (e9c6) at design
+- Do not start: the cause stands.
+
+**`d615` History view in Markdown** at 📌 mockup, model `claude-opus`
+
+- Gate: 📌 mockup, Mockup: A non-technical mockup of the outcome exists
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-opus`, from `437e`
+- Reviewer: 👀 nbyoung@nbyoung.com, from `437e`
+- References: [The mockup](docs/mockups/history.md)
+- Requires: `e9c6` Abstract views, design → mockup, The abstract definition of the view: unmet
+- Waits for: waits for `e9c6` Abstract views at design
+- Its parent unblocks:
+  - `bc86` Markdown views at 📌 mockup is required by `6103` tabloio: command line, output and input, mockup → design, The Markdown mockups it reproduces: unmet, not yet due
+  - `bc86` Markdown views at 📌 mockup is required by `c6e8` tablotui: terminal user interface, mockup → design, The Markdown mockups that fix the textual layout: unmet, not yet due
+- Status: 📝 defined 🟢 nominal, 2026-09-29, **noreply@anthropic.com**, `1a17bfc`: Mockup waits for Abstract views (e9c6) at design
+- Do not start: the cause stands.
+
+**`b14e` Audit view in Markdown** at 📌 mockup, model `claude-opus`
+
+- Gate: 📌 mockup, Mockup: A non-technical mockup of the outcome exists
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-opus`, from `437e`
+- Reviewer: 👀 nbyoung@nbyoung.com, from `437e`
+- References: [The mockup](docs/mockups/audit.md)
+- Requires: `e9c6` Abstract views, design → mockup, The abstract definition of the view: unmet
+- Waits for: waits for `e9c6` Abstract views at design
+- Its parent unblocks:
+  - `bc86` Markdown views at 📌 mockup is required by `6103` tabloio: command line, output and input, mockup → design, The Markdown mockups it reproduces: unmet, not yet due
+  - `bc86` Markdown views at 📌 mockup is required by `c6e8` tablotui: terminal user interface, mockup → design, The Markdown mockups that fix the textual layout: unmet, not yet due
+- Status: 📝 defined 🟢 nominal, 2026-09-29, **noreply@anthropic.com**, `1a17bfc`: Mockup waits for Abstract views (e9c6) at design
+- Do not start: the cause stands.
+
+**`a6f7` Gate definition view in Html** at 📌 mockup, model `claude-opus`
+
+- Gate: 📌 mockup, Mockup: A non-technical mockup of the outcome exists
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-opus`, from `437e`
+- Reviewer: 👀 nbyoung@nbyoung.com, from `437e`
+- References: [The mockup](docs/mockups/gates.html)
+- Requires: `e9c6` Abstract views, design → mockup, The abstract definition of the view: unmet
+- Waits for: waits for `e9c6` Abstract views at design
+- Its parent unblocks:
+  - `5fe3` HTML views at 📌 mockup is required by `c6e8` tablotui: terminal user interface, mockup → design, The HTML mockups that fix the disclosure levels: unmet, not yet due
+  - `5fe3` HTML views at 📌 mockup is required by `595e` tableaud: local daemon and HTML, mockup → design, The HTML mockups it reproduces: unmet, not yet due
+- Status: 📝 defined 🟢 nominal, 2026-09-29, **noreply@anthropic.com**, `1a17bfc`: Mockup waits for Abstract views (e9c6) at design
+- Do not start: the cause stands.
+
+**`7dff` Task definition view in Html** at 📌 mockup, model `claude-opus`
+
+- Gate: 📌 mockup, Mockup: A non-technical mockup of the outcome exists
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-opus`, from `437e`
+- Reviewer: 👀 nbyoung@nbyoung.com, from `437e`
+- References: [The mockup](docs/mockups/task.html)
+- Requires: `e9c6` Abstract views, design → mockup, The abstract definition of the view: unmet
+- Waits for: waits for `e9c6` Abstract views at design
+- Its parent unblocks:
+  - `5fe3` HTML views at 📌 mockup is required by `c6e8` tablotui: terminal user interface, mockup → design, The HTML mockups that fix the disclosure levels: unmet, not yet due
+  - `5fe3` HTML views at 📌 mockup is required by `595e` tableaud: local daemon and HTML, mockup → design, The HTML mockups it reproduces: unmet, not yet due
+- Status: 📝 defined 🟢 nominal, 2026-09-29, **noreply@anthropic.com**, `1a17bfc`: Mockup waits for Abstract views (e9c6) at design
+- Do not start: the cause stands.
+
+**`b1b7` Authority delegation view in Html** at 📌 mockup, model `claude-opus`
+
+- Gate: 📌 mockup, Mockup: A non-technical mockup of the outcome exists
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-opus`, from `437e`
+- Reviewer: 👀 nbyoung@nbyoung.com, from `437e`
+- References: [The mockup](docs/mockups/authority.html)
+- Requires: `e9c6` Abstract views, design → mockup, The abstract definition of the view: unmet
+- Waits for: waits for `e9c6` Abstract views at design
+- Its parent unblocks:
+  - `5fe3` HTML views at 📌 mockup is required by `c6e8` tablotui: terminal user interface, mockup → design, The HTML mockups that fix the disclosure levels: unmet, not yet due
+  - `5fe3` HTML views at 📌 mockup is required by `595e` tableaud: local daemon and HTML, mockup → design, The HTML mockups it reproduces: unmet, not yet due
+- Status: 📝 defined 🟢 nominal, 2026-09-29, **noreply@anthropic.com**, `1a17bfc`: Mockup waits for Abstract views (e9c6) at design
+- Do not start: the cause stands.
+
+**`ea51` Task assignment view in Html** at 📌 mockup, model `claude-opus`
+
+- Gate: 📌 mockup, Mockup: A non-technical mockup of the outcome exists
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-opus`, from `437e`
+- Reviewer: 👀 nbyoung@nbyoung.com, from `437e`
+- References: [The mockup](docs/mockups/assignment.html)
+- Requires: `e9c6` Abstract views, design → mockup, The abstract definition of the view: unmet
+- Waits for: waits for `e9c6` Abstract views at design
+- Its parent unblocks:
+  - `5fe3` HTML views at 📌 mockup is required by `c6e8` tablotui: terminal user interface, mockup → design, The HTML mockups that fix the disclosure levels: unmet, not yet due
+  - `5fe3` HTML views at 📌 mockup is required by `595e` tableaud: local daemon and HTML, mockup → design, The HTML mockups it reproduces: unmet, not yet due
+- Status: 📝 defined 🟢 nominal, 2026-09-29, **noreply@anthropic.com**, `1a17bfc`: Mockup waits for Abstract views (e9c6) at design
+- Do not start: the cause stands.
+
+**`7783` Contributor work queue view in Html** at 📌 mockup, model `claude-opus`
+
+- Gate: 📌 mockup, Mockup: A non-technical mockup of the outcome exists
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-opus`, from `437e`
+- Reviewer: 👀 nbyoung@nbyoung.com, from `437e`
+- References: [The mockup](docs/mockups/queue.html)
+- Requires: `e9c6` Abstract views, design → mockup, The abstract definition of the view: unmet
+- Waits for: waits for `e9c6` Abstract views at design
+- Its parent unblocks:
+  - `5fe3` HTML views at 📌 mockup is required by `c6e8` tablotui: terminal user interface, mockup → design, The HTML mockups that fix the disclosure levels: unmet, not yet due
+  - `5fe3` HTML views at 📌 mockup is required by `595e` tableaud: local daemon and HTML, mockup → design, The HTML mockups it reproduces: unmet, not yet due
+- Status: 📝 defined 🟢 nominal, 2026-09-29, **noreply@anthropic.com**, `1a17bfc`: Mockup waits for Abstract views (e9c6) at design
+- Do not start: the cause stands.
+
+**`5471` Work-blockage tree view in Html** at 📌 mockup, model `claude-opus`
+
+- Gate: 📌 mockup, Mockup: A non-technical mockup of the outcome exists
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-opus`, from `437e`
+- Reviewer: 👀 nbyoung@nbyoung.com, from `437e`
+- References: [The mockup](docs/mockups/blockage.html)
+- Requires: `e9c6` Abstract views, design → mockup, The abstract definition of the view: unmet
+- Waits for: waits for `e9c6` Abstract views at design
+- Its parent unblocks:
+  - `5fe3` HTML views at 📌 mockup is required by `c6e8` tablotui: terminal user interface, mockup → design, The HTML mockups that fix the disclosure levels: unmet, not yet due
+  - `5fe3` HTML views at 📌 mockup is required by `595e` tableaud: local daemon and HTML, mockup → design, The HTML mockups it reproduces: unmet, not yet due
+- Status: 📝 defined 🟢 nominal, 2026-09-29, **noreply@anthropic.com**, `1a17bfc`: Mockup waits for Abstract views (e9c6) at design
+- Do not start: the cause stands.
+
+**`32e7` Global tableau view in Html** at 📌 mockup, model `claude-opus`
+
+- Gate: 📌 mockup, Mockup: A non-technical mockup of the outcome exists
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-opus`, from `437e`
+- Reviewer: 👀 nbyoung@nbyoung.com, from `437e`
+- References: [The mockup](docs/mockups/tableau.html)
+- Requires: `e9c6` Abstract views, design → mockup, The abstract definition of the view: unmet
+- Waits for: waits for `e9c6` Abstract views at design
+- Its parent unblocks:
+  - `5fe3` HTML views at 📌 mockup is required by `c6e8` tablotui: terminal user interface, mockup → design, The HTML mockups that fix the disclosure levels: unmet, not yet due
+  - `5fe3` HTML views at 📌 mockup is required by `595e` tableaud: local daemon and HTML, mockup → design, The HTML mockups it reproduces: unmet, not yet due
+- Status: 📝 defined 🟢 nominal, 2026-09-29, **noreply@anthropic.com**, `1a17bfc`: Mockup waits for Abstract views (e9c6) at design
+- Do not start: the cause stands.
+
+**`69eb` Contextual tableau view in Html** at 📌 mockup, model `claude-opus`
+
+- Gate: 📌 mockup, Mockup: A non-technical mockup of the outcome exists
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-opus`, from `437e`
+- Reviewer: 👀 nbyoung@nbyoung.com, from `437e`
+- References: [The mockup](docs/mockups/context.html)
+- Requires: `e9c6` Abstract views, design → mockup, The abstract definition of the view: unmet
+- Waits for: waits for `e9c6` Abstract views at design
+- Its parent unblocks:
+  - `5fe3` HTML views at 📌 mockup is required by `c6e8` tablotui: terminal user interface, mockup → design, The HTML mockups that fix the disclosure levels: unmet, not yet due
+  - `5fe3` HTML views at 📌 mockup is required by `595e` tableaud: local daemon and HTML, mockup → design, The HTML mockups it reproduces: unmet, not yet due
+- Status: 📝 defined 🟢 nominal, 2026-09-29, **noreply@anthropic.com**, `1a17bfc`: Mockup waits for Abstract views (e9c6) at design
+- Do not start: the cause stands.
+
+**`3194` History view in Html** at 📌 mockup, model `claude-opus`
+
+- Gate: 📌 mockup, Mockup: A non-technical mockup of the outcome exists
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-opus`, from `437e`
+- Reviewer: 👀 nbyoung@nbyoung.com, from `437e`
+- References: [The mockup](docs/mockups/history.html)
+- Requires: `e9c6` Abstract views, design → mockup, The abstract definition of the view: unmet
+- Waits for: waits for `e9c6` Abstract views at design
+- Its parent unblocks:
+  - `5fe3` HTML views at 📌 mockup is required by `c6e8` tablotui: terminal user interface, mockup → design, The HTML mockups that fix the disclosure levels: unmet, not yet due
+  - `5fe3` HTML views at 📌 mockup is required by `595e` tableaud: local daemon and HTML, mockup → design, The HTML mockups it reproduces: unmet, not yet due
+- Status: 📝 defined 🟢 nominal, 2026-09-29, **noreply@anthropic.com**, `1a17bfc`: Mockup waits for Abstract views (e9c6) at design
+- Do not start: the cause stands.
+
+**`a8b4` Audit view in Html** at 📌 mockup, model `claude-opus`
+
+- Gate: 📌 mockup, Mockup: A non-technical mockup of the outcome exists
+- Contributor: 🤖 **noreply@anthropic.com**, model `claude-opus`, from `437e`
+- Reviewer: 👀 nbyoung@nbyoung.com, from `437e`
+- References: [The mockup](docs/mockups/audit.html)
+- Requires: `e9c6` Abstract views, design → mockup, The abstract definition of the view: unmet
+- Waits for: waits for `e9c6` Abstract views at design
+- Its parent unblocks:
+  - `5fe3` HTML views at 📌 mockup is required by `c6e8` tablotui: terminal user interface, mockup → design, The HTML mockups that fix the disclosure levels: unmet, not yet due
+  - `5fe3` HTML views at 📌 mockup is required by `595e` tableaud: local daemon and HTML, mockup → design, The HTML mockups it reproduces: unmet, not yet due
+- Status: 📝 defined 🟢 nominal, 2026-09-29, **noreply@anthropic.com**, `1a17bfc`: Mockup waits for Abstract views (e9c6) at design
+- Do not start: the cause stands.
+
+Command: `tabloio queue --person noreply@anthropic.com --ref 1b6916e --level detail`

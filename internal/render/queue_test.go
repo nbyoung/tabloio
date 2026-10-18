@@ -105,21 +105,31 @@ func TestQueueSections(t *testing.T) {
 	// The queue lines come from the data and each kind's command.
 	out = renderString(t, readFixture(t, "queue", "tooling-agent"), Options{Level: view.Detail})
 	for _, w := range []string{
-		"- Brief: `tabloio queue --person noreply@anthropic.com --ref main --brief c2ad validate`\n",
+		"- Brief: `tabloio queue --person noreply@anthropic.com --ref corpus/tooling --brief c2ad validate`\n",
 		"- Contributor: 🤖 **noreply@anthropic.com**, model `claude-opus`, from `bc63`\n",
 		"- Reviewer: 👀 nbyoung@nbyoung.com, from `437e`\n",
 		"- Reviewer: 👀 **noreply@anthropic.com**, the assignee\n",
 		"- References: [The mockup](docs/mockups/gates.md)\n",
-		"- Its parent unblocks:\n  - `bc86` Markdown views at 📌 mockup is required by `6103` tabloio: command line, output and input, mockup → design, The Markdown mockups it reproduces: unmet, not yet due\n",
-		"- Unblocks: `77b2` tablo: backend library and plumbing, implementation → design, The abstract views it derives: unmet, not yet due\n",
 	} {
 		if !strings.Contains(out, w) {
 			t.Errorf("the queue lacks %q", w)
 		}
 	}
+	// At 1b6916e twenty mockups wait for e9c6 at design, which unblocks
+	// them, and each one's parent unblocks the subprojects.
 	wait := renderString(t, readFixture(t, "queue", "waiting"), Options{Level: view.Detail})
-	if !strings.Contains(wait, "- Waits for: waits for `e9c6` at design\n") || !strings.HasSuffix(strings.SplitN(wait, "\n\nCommand:", 2)[0], "- Do not start: the cause stands.") {
-		t.Errorf("a waiting item:\n%s", wait)
+	for _, w := range []string{
+		"- Waits for: waits for `e9c6` Abstract views at design\n",
+		"- Its parent unblocks:\n  - `bc86` Markdown views at 📌 mockup is required by `6103` tabloio: command line, output and input, mockup → design, The Markdown mockups it reproduces: unmet, not yet due\n",
+		"- Unblocks:\n  - `99f0` Gate definition view in Markdown, design → mockup, The abstract definition of the view: unmet\n",
+		"- Also required by: `77b2` tablo: backend library and plumbing, implementation → design, The abstract views it derives: unmet, not yet due\n",
+	} {
+		if !strings.Contains(wait, w) {
+			t.Errorf("the waiting queue lacks %q", w)
+		}
+	}
+	if !strings.HasSuffix(strings.SplitN(wait, "\n\nCommand:", 2)[0], "- Do not start: the cause stands.") {
+		t.Errorf("a waiting item does not close with its instruction:\n%s", wait)
 	}
 }
 

@@ -3,20 +3,33 @@
   "command": "task",
   "source": {
     "ref": "main",
+    "dir": ".",
+    "worktree": true,
     "commit": "edb30d2baa5ea3c7e3fb8eef8ac6cce6e145221a",
     "date": "2026-09-28",
     "from": null,
     "trunk": {
-      "name": null
+      "name": "main",
+      "resolved": "stated"
     },
     "on_trunk": true
   },
   "project": {
+    "tableaux": "0.3.1",
     "root": "a1c0",
-    "title": "Weather station"
+    "title": "Weather station",
+    "owner": "ada@example.org"
+  },
+  "viewer": {
+    "email": "nbyoung@nbyoung.com",
+    "roles": [
+      "observer"
+    ]
   },
   "params": {
     "task": "3c5d",
+    "person": null,
+    "role": null,
     "level": "detail"
   },
   "data": {
@@ -131,18 +144,14 @@
         {
           "key": "overloaded",
           "symbol": "🪫",
-          "synopsis": "The assigned resource is overloaded"
+          "synopsis": "The assigned resource is overloaded",
+          "reserved": false
         },
         {
           "key": "blocked",
           "symbol": "⛔",
-          "synopsis": "An external resource is unavailable"
-        },
-        {
-          "key": "review",
-          "symbol": "👓",
-          "synopsis": "The work waits for its reviewer",
-          "reserved": true
+          "synopsis": "An external resource is unavailable",
+          "reserved": false
         }
       ],
       "marks": [
@@ -150,31 +159,31 @@
           "key": "person",
           "symbol": "🧑",
           "meaning": "A person contributes",
-          "junction": "Plain; the contributor is a person"
+          "junction": "plain"
         },
         {
           "key": "agent",
           "symbol": "🤖",
           "meaning": "An agent contributes",
-          "junction": "Plain; the junction states a `model`"
+          "junction": "plain"
         },
         {
           "key": "reviewer",
           "symbol": "👀",
           "meaning": "A reviewer accepts",
-          "junction": "Plain; the reviewer accepts the work at the gate"
+          "junction": "plain"
         },
         {
           "key": "subproject",
           "symbol": "🪆",
           "meaning": "A subproject does the work",
-          "junction": "Recursive; another Tableaux project does the work"
+          "junction": "recursive"
         },
         {
           "key": "exempt",
           "symbol": "—",
           "meaning": "The gate does not apply",
-          "junction": "Not applicable; the entry exempts the task from the gate"
+          "junction": "not_applicable"
         }
       ]
     },
@@ -189,14 +198,20 @@
       "order": null
     },
     "status": {
+      "kind": "recorded",
       "gate": "defined",
       "state": "nominal",
       "reason": "",
       "note": "",
       "date": "2026-09-22",
-      "recorder": "dan@example.org"
+      "recorder": "dan@example.org",
+      "derived": false,
+      "why": "",
+      "uncommitted": false,
+      "from": null
     },
-    "description": "A web page on the gateway that charts the last week of readings and the current values, with the battery state alongside.",
+    "authorised": false,
+    "description": "A web page on the gateway that charts the last week of readings and the current values, with the battery state alongside.\n",
     "references": [
       {
         "text": "Dashboard overview",
@@ -221,7 +236,6 @@
         "by": "a1c0"
       }
     ],
-    "authorised": false,
     "requires": [
       {
         "task": {
@@ -233,20 +247,31 @@
         "text": "Readings API",
         "met": false,
         "due": false,
+        "condition": "pending",
+        "why": "",
         "status": {
+          "kind": "absent",
           "gate": "undefined",
           "state": "undefined",
           "reason": "",
           "note": "",
-          "date": "",
-          "recorder": ""
-        }
+          "date": "2026-09-15",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "subproject": "",
+        "commit": "",
+        "at_trunk": "unknown"
       }
     ],
     "dependents": [],
     "junctions": [
       {
         "gate": "defined",
+        "kind": "plain",
         "marks": [
           "person"
         ],
@@ -255,11 +280,14 @@
         "model": "",
         "reviewer": "",
         "reviewer_by_default": false,
+        "subproject": null,
+        "references": [],
         "stands": "here",
         "reviewed": false
       },
       {
         "gate": "mockup",
+        "kind": "plain",
         "marks": [
           "person"
         ],
@@ -268,11 +296,14 @@
         "model": "",
         "reviewer": "",
         "reviewer_by_default": false,
+        "subproject": null,
+        "references": [],
         "stands": "next",
         "reviewed": false
       },
       {
         "gate": "function",
+        "kind": "plain",
         "marks": [
           "person"
         ],
@@ -281,11 +312,14 @@
         "model": "",
         "reviewer": "",
         "reviewer_by_default": false,
+        "subproject": null,
+        "references": [],
         "stands": "later",
         "reviewed": false
       },
       {
         "gate": "performance",
+        "kind": "plain",
         "marks": [
           "person"
         ],
@@ -294,11 +328,14 @@
         "model": "",
         "reviewer": "",
         "reviewer_by_default": false,
+        "subproject": null,
+        "references": [],
         "stands": "later",
         "reviewed": false
       },
       {
         "gate": "reliability",
+        "kind": "plain",
         "marks": [
           "person"
         ],
@@ -307,11 +344,14 @@
         "model": "",
         "reviewer": "",
         "reviewer_by_default": false,
+        "subproject": null,
+        "references": [],
         "stands": "later",
         "reviewed": false
       },
       {
         "gate": "design",
+        "kind": "plain",
         "marks": [
           "person"
         ],
@@ -320,11 +360,14 @@
         "model": "",
         "reviewer": "",
         "reviewer_by_default": false,
+        "subproject": null,
+        "references": [],
         "stands": "later",
         "reviewed": false
       },
       {
         "gate": "implementation",
+        "kind": "plain",
         "marks": [
           "person"
         ],
@@ -333,11 +376,14 @@
         "model": "",
         "reviewer": "",
         "reviewer_by_default": false,
+        "subproject": null,
+        "references": [],
         "stands": "later",
         "reviewed": false
       },
       {
         "gate": "unit",
+        "kind": "plain",
         "marks": [
           "person"
         ],
@@ -346,11 +392,14 @@
         "model": "",
         "reviewer": "",
         "reviewer_by_default": false,
+        "subproject": null,
+        "references": [],
         "stands": "later",
         "reviewed": false
       },
       {
         "gate": "integrate",
+        "kind": "plain",
         "marks": [
           "person"
         ],
@@ -359,11 +408,14 @@
         "model": "",
         "reviewer": "",
         "reviewer_by_default": false,
+        "subproject": null,
+        "references": [],
         "stands": "later",
         "reviewed": false
       },
       {
         "gate": "validate",
+        "kind": "plain",
         "marks": [
           "person"
         ],
@@ -372,11 +424,14 @@
         "model": "",
         "reviewer": "",
         "reviewer_by_default": false,
+        "subproject": null,
+        "references": [],
         "stands": "later",
         "reviewed": false
       },
       {
         "gate": "release",
+        "kind": "plain",
         "marks": [
           "person"
         ],
@@ -385,10 +440,23 @@
         "model": "",
         "reviewer": "",
         "reviewer_by_default": false,
+        "subproject": null,
+        "references": [],
         "stands": "later",
         "reviewed": false
       }
-    ]
+    ],
+    "snapshot": null
   },
-  "diagnostics": []
+  "diagnostics": [
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/c07d.yaml",
+      "line": 6,
+      "col": 5,
+      "task": "c07d",
+      "message": "the requirement on 9f31 from design is due at implementation and unmet: 9f31 stands at function"
+    }
+  ]
 }

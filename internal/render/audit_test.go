@@ -12,7 +12,8 @@ var detailProvenance = []view.Level{view.Detail, view.Provenance}
 // auditGoldens lists the golden cases of the audit: T8 to T11.
 var auditGoldens = []golden{
 	// T8 and T9
-	{view: "audit", name: "tooling", levels: allLevels},
+	{view: "audit", name: "tooling", levels: []view.Level{view.Glance, view.Provenance}},
+	{view: "audit", name: "tooling-detail", levels: []view.Level{view.Detail}},
 	{view: "audit", name: "tooling-nbyoung", levels: glanceDetail},
 	// T10
 	{view: "audit", name: "corpus-h2", levels: detailProvenance},
@@ -20,7 +21,8 @@ var auditGoldens = []golden{
 	{view: "audit", name: "corpus-h4", levels: detailProvenance},
 	{view: "audit", name: "corpus-h5", levels: detailProvenance},
 	{view: "audit", name: "corpus-h6", levels: detailProvenance},
-	{view: "audit", name: "weather", levels: allLevels},
+	{view: "audit", name: "weather", levels: []view.Level{view.Glance, view.Provenance}},
+	{view: "audit", name: "weather-detail", levels: []view.Level{view.Detail}},
 	// T11
 	{view: "audit", name: "empty", levels: allLevels},
 }
@@ -134,7 +136,7 @@ func TestAuditWords(t *testing.T) {
 	for _, want := range []string{
 		"| A `kind` of \\*finding\\* |",
 		"| A `message` with a \\| bar | Await `e9c6` at 📐 design |",
-		"**Rule.** \"The `sentence`.\" [README.md, Status](README.md#status)\n",
+		"**Rule.** \"The `sentence`.\" [README.md, Tasks](https://github.com/nbyoung/tableaux/blob/main/README.md#tasks)\n",
 		"**The requirement.** `e3cb`: `e9c6`, design → mockup, Views: unmet.\n",
 	} {
 		if !strings.Contains(out, want) {

@@ -3,20 +3,33 @@
   "command": "history",
   "source": {
     "ref": "main",
+    "dir": ".",
+    "worktree": true,
     "commit": "edb30d2baa5ea3c7e3fb8eef8ac6cce6e145221a",
     "date": "2026-09-28",
     "from": null,
     "trunk": {
-      "name": null
+      "name": "main",
+      "resolved": "stated"
     },
     "on_trunk": true
   },
   "project": {
+    "tableaux": "0.3.1",
     "root": "a1c0",
-    "title": "Weather station"
+    "title": "Weather station",
+    "owner": "ada@example.org"
+  },
+  "viewer": {
+    "email": "nbyoung@nbyoung.com",
+    "roles": [
+      "observer"
+    ]
   },
   "params": {
     "task": "9f31",
+    "person": null,
+    "role": null,
     "level": "detail"
   },
   "data": {
@@ -131,18 +144,14 @@
         {
           "key": "overloaded",
           "symbol": "🪫",
-          "synopsis": "The assigned resource is overloaded"
+          "synopsis": "The assigned resource is overloaded",
+          "reserved": false
         },
         {
           "key": "blocked",
           "symbol": "⛔",
-          "synopsis": "An external resource is unavailable"
-        },
-        {
-          "key": "review",
-          "symbol": "👓",
-          "synopsis": "The work waits for its reviewer",
-          "reserved": true
+          "synopsis": "An external resource is unavailable",
+          "reserved": false
         }
       ],
       "marks": [
@@ -150,31 +159,31 @@
           "key": "person",
           "symbol": "🧑",
           "meaning": "A person contributes",
-          "junction": "Plain; the contributor is a person"
+          "junction": "plain"
         },
         {
           "key": "agent",
           "symbol": "🤖",
           "meaning": "An agent contributes",
-          "junction": "Plain; the junction states a `model`"
+          "junction": "plain"
         },
         {
           "key": "reviewer",
           "symbol": "👀",
           "meaning": "A reviewer accepts",
-          "junction": "Plain; the reviewer accepts the work at the gate"
+          "junction": "plain"
         },
         {
           "key": "subproject",
           "symbol": "🪆",
           "meaning": "A subproject does the work",
-          "junction": "Recursive; another Tableaux project does the work"
+          "junction": "recursive"
         },
         {
           "key": "exempt",
           "symbol": "—",
           "meaning": "The gate does not apply",
-          "junction": "Not applicable; the entry exempts the task from the gate"
+          "junction": "not_applicable"
         }
       ]
     },
@@ -288,7 +297,7 @@
         "events": [
           {
             "date": "2026-09-18",
-            "commit": "",
+            "commit": "91aa7747f22ef4bb66becb6eab5d5f1f9c28836d",
             "by": "ada@example.org",
             "kind": "task",
             "recorded": null,
@@ -298,9 +307,20 @@
           }
         ],
         "after": {
+          "kind": "absent",
           "gate": "undefined",
-          "state": "undefined"
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
         },
+        "unchanged": false,
+        "subject_after": null,
         "effect": "proposed",
         "model": "",
         "check": null,
@@ -315,7 +335,7 @@
         "events": [
           {
             "date": "2026-09-19",
-            "commit": "",
+            "commit": "f9e8746736beb13aeab99f2cd2ff7e315596e616",
             "by": "ben@example.org",
             "kind": "authorised",
             "recorded": null,
@@ -325,10 +345,20 @@
           }
         ],
         "after": {
+          "kind": "absent",
           "gate": "undefined",
-          "state": "undefined"
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
         },
         "unchanged": true,
+        "subject_after": null,
         "effect": "authorised_merge",
         "model": "",
         "check": null,
@@ -343,7 +373,7 @@
         "events": [
           {
             "date": "2026-09-22",
-            "commit": "",
+            "commit": "63a1f88f84354726d5e1b431df5e11a518854cdb",
             "by": "ada@example.org",
             "kind": "status",
             "recorded": {
@@ -358,9 +388,20 @@
           }
         ],
         "after": {
+          "kind": "recorded",
           "gate": "mockup",
-          "state": "nominal"
+          "state": "nominal",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
         },
+        "unchanged": false,
+        "subject_after": null,
         "effect": "",
         "model": "",
         "check": null,
@@ -375,7 +416,7 @@
         "events": [
           {
             "date": "2026-09-24",
-            "commit": "",
+            "commit": "85adb9bd07783927046f987a17471c42eee97b87",
             "by": "ben@example.org",
             "kind": "reviewed",
             "recorded": null,
@@ -385,10 +426,20 @@
           }
         ],
         "after": {
+          "kind": "recorded",
           "gate": "mockup",
-          "state": "nominal"
+          "state": "nominal",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
         },
         "unchanged": true,
+        "subject_after": null,
         "effect": "accepts",
         "model": "",
         "check": null,
@@ -403,7 +454,7 @@
         "events": [
           {
             "date": "2026-09-25",
-            "commit": "",
+            "commit": "a2393fb3090844dd83d44a39739ad486e1fcecd2",
             "by": "ada@example.org",
             "kind": "status",
             "recorded": {
@@ -418,11 +469,20 @@
           }
         ],
         "after": {
+          "kind": "recorded",
           "gate": "function",
           "state": "stalled",
           "reason": "blocked",
-          "note": "Barometer ICs on 14-week backorder"
+          "note": "Barometer ICs on 14-week backorder",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
         },
+        "unchanged": false,
+        "subject_after": null,
         "effect": "",
         "model": "",
         "check": null,
@@ -437,7 +497,7 @@
         "events": [
           {
             "date": "2026-09-28",
-            "commit": "",
+            "commit": "edb30d2baa5ea3c7e3fb8eef8ac6cce6e145221a",
             "by": "ada@example.org",
             "kind": "reaffirmed",
             "recorded": null,
@@ -447,12 +507,20 @@
           }
         ],
         "after": {
+          "kind": "recorded",
           "gate": "function",
           "state": "stalled",
           "reason": "blocked",
-          "note": "Barometer ICs on 14-week backorder"
+          "note": "Barometer ICs on 14-week backorder",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
         },
         "unchanged": true,
+        "subject_after": null,
         "effect": "",
         "model": "",
         "check": null,
@@ -460,5 +528,15 @@
       }
     ]
   },
-  "diagnostics": []
+  "diagnostics": [
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/c07d.yaml",
+      "line": 6,
+      "col": 5,
+      "task": "c07d",
+      "message": "the requirement on 9f31 from design is due at implementation and unmet: 9f31 stands at function"
+    }
+  ]
 }

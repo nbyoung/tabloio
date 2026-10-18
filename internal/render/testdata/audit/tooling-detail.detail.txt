@@ -1,0 +1,80 @@
+Audit
+═════
+
+*Where do files and history disagree?* Tableaux tooling · ref corpus/tooling ·
+stale 7 days · level detail
+
+Legend: tabloio gates.
+
+*0 errors, 13 warnings, 23 items of information*: 36 findings in 7 rows.
+
+────────────────────────────────────────────────────────────────────────────────
+Rule · Severity · Task · Gate · File · Message · Action · Resolver
+────────────────────────────────────────────────────────────────────────────────
+R9
+  Severity: warning
+  Task: 6103 c6e8 595e
+  File: .tableaux/tasks/6103.yaml, .tableaux/tasks/c6e8.yaml,
+    .tableaux/tasks/595e.yaml
+  Message: the requirement on 77b2 from implementation is due at
+    implementation and unmet: 77b2 stands at function
+  Action: Await the task the requirement names
+  Resolver: nbyoung@nbyoung.com
+────────────────────────────────────────────────────────────────────────────────
+H3
+  Severity: warning
+  Task: e9c6 7166
+  Gate: 🧱 implementation
+  Message: Model claude-opus-5-5 is outside the stated model claude-sonnet
+  Resolver: noreply@anthropic.com
+────────────────────────────────────────────────────────────────────────────────
+  Severity: warning
+  Task: ac33 9f3f
+  Gate: 📐 design
+  File: .tableaux/status/ac33.yaml, .tableaux/status/9f3f.yaml
+  Message: The status dates from 2026-09-30, more than 7 days before
+    2026-10-17
+  Action: Reaffirm: commit Reaffirmed: <id>
+  Resolver: noreply@anthropic.com
+────────────────────────────────────────────────────────────────────────────────
+  Severity: warning
+  Task: 7166 Language clarifications
+  Gate: 📐 design
+  File: .tableaux/status/7166.yaml
+  Message: The status dates from 2026-10-07, more than 7 days before
+    2026-10-17
+  Action: Reaffirm: commit Reaffirmed: 7166
+  Resolver: noreply@anthropic.com
+────────────────────────────────────────────────────────────────────────────────
+  Severity: warning
+  Task: c2ad fcec 7861
+  Gate: 🧱 implementation
+  File: .tableaux/status/c2ad.yaml, .tableaux/status/fcec.yaml,
+    .tableaux/status/7861.yaml
+  Message: The status dates from 2026-09-30, more than 7 days before
+    2026-10-17
+  Action: Reaffirm: commit Reaffirmed: <id>
+  Resolver: noreply@anthropic.com
+────────────────────────────────────────────────────────────────────────────────
+  Severity: warning
+  Task: e9c6 Abstract views
+  Gate: 🧱 implementation
+  File: .tableaux/status/e9c6.yaml
+  Message: The status dates from 2026-10-05, more than 7 days before
+    2026-10-17
+  Action: Reaffirm: commit Reaffirmed: e9c6
+  Resolver: noreply@anthropic.com
+────────────────────────────────────────────────────────────────────────────────
+  Severity: warning
+  Task: e3cb Schema files
+  Gate: 📏 unit
+  File: .tableaux/status/e3cb.yaml
+  Message: The status dates from 2026-09-30, more than 7 days before
+    2026-10-17
+  Action: Reaffirm: commit Reaffirmed: e3cb
+  Resolver: noreply@anthropic.com
+────────────────────────────────────────────────────────────────────────────────
+
+*Most to resolve:* noreply@anthropic.com, 16 of 36.
+
+Command: tabloio audit --ref corpus/tooling --stale 7 --level detail --text

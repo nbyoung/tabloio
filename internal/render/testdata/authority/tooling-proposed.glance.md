@@ -1,6 +1,6 @@
 # Authority delegation
 
-**Who may accept what?** Tableaux tooling · ref `main` · proposed only · level glance
+**Who may accept what?** Tableaux tooling · ref `corpus/tooling` · proposed only · level glance
 
 Legend: `tabloio gates`.
 
@@ -8,4 +8,4 @@ Legend: `tabloio gates`.
 
 0 tasks, 0 delegations, 0 authorised, 0 proposed.
 
-Command: `tabloio authority --ref main --proposed --level glance`
+Command: `tabloio authority --ref corpus/tooling --proposed --level glance`

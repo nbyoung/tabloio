@@ -36,12 +36,12 @@ Authorities of its 2 children, nearest first: ben@example.org (4e2b); then
 
 Children: 9f31 c07d.
 
-┌───────────┬───────┬─────────────┬───────┬─────────────────┐
-│ Gate      │ Marks │ Contributor │ Model │ Reviewer        │
-├───────────┼───────┼─────────────┼───────┼─────────────────┤
-│ 📌 mockup │  👀   │             │       │ ben@example.org │
-└───────────┴───────┴─────────────┴───────┴─────────────────┘
+┌───────────┬───────┬─────────────────┬───────┬─────────────────┐
+│ Gate      │ Marks │ Contributor     │ Model │ Reviewer        │
+├───────────┼───────┼─────────────────┼───────┼─────────────────┤
+│ 📌 mockup │  🧑   │ ben@example.org │       │ ben@example.org │
+└───────────┴───────┴─────────────────┴───────┴─────────────────┘
 
-👀 a reviewer accepts.
+🧑 a person contributes.
 
 Command: tabloio authority --person ada@example.org --ref main --level detail --text

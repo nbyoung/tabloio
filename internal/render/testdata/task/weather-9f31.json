@@ -3,20 +3,33 @@
   "command": "task",
   "source": {
     "ref": "main",
+    "dir": ".",
+    "worktree": true,
     "commit": "edb30d2baa5ea3c7e3fb8eef8ac6cce6e145221a",
     "date": "2026-09-28",
     "from": null,
     "trunk": {
-      "name": null
+      "name": "main",
+      "resolved": "stated"
     },
     "on_trunk": true
   },
   "project": {
+    "tableaux": "0.3.1",
     "root": "a1c0",
-    "title": "Weather station"
+    "title": "Weather station",
+    "owner": "ada@example.org"
+  },
+  "viewer": {
+    "email": "nbyoung@nbyoung.com",
+    "roles": [
+      "observer"
+    ]
   },
   "params": {
     "task": "9f31",
+    "person": null,
+    "role": null,
     "level": "provenance"
   },
   "data": {
@@ -131,18 +144,14 @@
         {
           "key": "overloaded",
           "symbol": "🪫",
-          "synopsis": "The assigned resource is overloaded"
+          "synopsis": "The assigned resource is overloaded",
+          "reserved": false
         },
         {
           "key": "blocked",
           "symbol": "⛔",
-          "synopsis": "An external resource is unavailable"
-        },
-        {
-          "key": "review",
-          "symbol": "👓",
-          "synopsis": "The work waits for its reviewer",
-          "reserved": true
+          "synopsis": "An external resource is unavailable",
+          "reserved": false
         }
       ],
       "marks": [
@@ -150,31 +159,31 @@
           "key": "person",
           "symbol": "🧑",
           "meaning": "A person contributes",
-          "junction": "Plain; the contributor is a person"
+          "junction": "plain"
         },
         {
           "key": "agent",
           "symbol": "🤖",
           "meaning": "An agent contributes",
-          "junction": "Plain; the junction states a `model`"
+          "junction": "plain"
         },
         {
           "key": "reviewer",
           "symbol": "👀",
           "meaning": "A reviewer accepts",
-          "junction": "Plain; the reviewer accepts the work at the gate"
+          "junction": "plain"
         },
         {
           "key": "subproject",
           "symbol": "🪆",
           "meaning": "A subproject does the work",
-          "junction": "Recursive; another Tableaux project does the work"
+          "junction": "recursive"
         },
         {
           "key": "exempt",
           "symbol": "—",
           "meaning": "The gate does not apply",
-          "junction": "Not applicable; the entry exempts the task from the gate"
+          "junction": "not_applicable"
         }
       ]
     },
@@ -189,14 +198,20 @@
       "order": 1
     },
     "status": {
+      "kind": "recorded",
       "gate": "function",
       "state": "stalled",
       "reason": "blocked",
       "note": "Barometer ICs on 14-week backorder",
       "date": "2026-09-28",
-      "recorder": "ada@example.org"
+      "recorder": "ada@example.org",
+      "derived": false,
+      "why": "",
+      "uncommitted": false,
+      "from": null
     },
-    "description": "The PCB that carries the barometer, hygrometer and thermometer and powers them from the solar cell within the power budget.",
+    "authorised": true,
+    "description": "The PCB that carries the barometer, hygrometer and thermometer and powers them from the solar cell within the power budget.\n",
     "references": [
       {
         "text": "",
@@ -233,7 +248,6 @@
         "by": "a1c0"
       }
     ],
-    "authorised": true,
     "requires": [],
     "dependents": [
       {
@@ -245,12 +259,19 @@
         "to": "implementation",
         "text": "Pin map and sensor bus",
         "met": false,
-        "due": true
+        "due": true,
+        "condition": "unmet",
+        "why": "",
+        "status": null,
+        "subproject": "",
+        "commit": "",
+        "at_trunk": "unknown"
       }
     ],
     "junctions": [
       {
         "gate": "defined",
+        "kind": "plain",
         "marks": [
           "person"
         ],
@@ -259,11 +280,15 @@
         "model": "",
         "reviewer": "",
         "reviewer_by_default": false,
+        "subproject": null,
+        "references": [],
         "stands": "passed",
-        "reviewed": false
+        "reviewed": false,
+        "from": []
       },
       {
         "gate": "mockup",
+        "kind": "plain",
         "marks": [
           "person",
           "reviewer"
@@ -273,11 +298,17 @@
         "model": "",
         "reviewer": "ben@example.org",
         "reviewer_by_default": false,
+        "subproject": null,
+        "references": [],
         "stands": "passed",
-        "reviewed": true
+        "reviewed": true,
+        "from": [
+          "4e2b"
+        ]
       },
       {
         "gate": "function",
+        "kind": "plain",
         "marks": [
           "person"
         ],
@@ -286,11 +317,15 @@
         "model": "",
         "reviewer": "",
         "reviewer_by_default": false,
+        "subproject": null,
+        "references": [],
         "stands": "here",
-        "reviewed": false
+        "reviewed": false,
+        "from": []
       },
       {
         "gate": "performance",
+        "kind": "plain",
         "marks": [
           "person"
         ],
@@ -299,11 +334,22 @@
         "model": "",
         "reviewer": "",
         "reviewer_by_default": false,
+        "subproject": null,
+        "references": [
+          {
+            "text": "Power budget",
+            "url": "docs/sensor-board.md#power-budget"
+          }
+        ],
         "stands": "next",
-        "reviewed": false
+        "reviewed": false,
+        "from": [
+          "9f31"
+        ]
       },
       {
         "gate": "reliability",
+        "kind": "plain",
         "marks": [
           "person"
         ],
@@ -312,11 +358,15 @@
         "model": "",
         "reviewer": "",
         "reviewer_by_default": false,
+        "subproject": null,
+        "references": [],
         "stands": "later",
-        "reviewed": false
+        "reviewed": false,
+        "from": []
       },
       {
         "gate": "design",
+        "kind": "plain",
         "marks": [
           "person"
         ],
@@ -325,11 +375,15 @@
         "model": "",
         "reviewer": "",
         "reviewer_by_default": false,
+        "subproject": null,
+        "references": [],
         "stands": "later",
-        "reviewed": false
+        "reviewed": false,
+        "from": []
       },
       {
         "gate": "implementation",
+        "kind": "plain",
         "marks": [
           "person"
         ],
@@ -338,11 +392,15 @@
         "model": "",
         "reviewer": "",
         "reviewer_by_default": false,
+        "subproject": null,
+        "references": [],
         "stands": "later",
-        "reviewed": false
+        "reviewed": false,
+        "from": []
       },
       {
         "gate": "unit",
+        "kind": "plain",
         "marks": [
           "person"
         ],
@@ -351,11 +409,15 @@
         "model": "",
         "reviewer": "",
         "reviewer_by_default": false,
+        "subproject": null,
+        "references": [],
         "stands": "later",
-        "reviewed": false
+        "reviewed": false,
+        "from": []
       },
       {
         "gate": "integrate",
+        "kind": "plain",
         "marks": [
           "person"
         ],
@@ -364,11 +426,15 @@
         "model": "",
         "reviewer": "",
         "reviewer_by_default": false,
+        "subproject": null,
+        "references": [],
         "stands": "later",
-        "reviewed": false
+        "reviewed": false,
+        "from": []
       },
       {
         "gate": "validate",
+        "kind": "plain",
         "marks": [
           "person",
           "reviewer"
@@ -378,11 +444,17 @@
         "model": "",
         "reviewer": "ben@example.org",
         "reviewer_by_default": false,
+        "subproject": null,
+        "references": [],
         "stands": "later",
-        "reviewed": false
+        "reviewed": false,
+        "from": [
+          "9f31"
+        ]
       },
       {
         "gate": "release",
+        "kind": "plain",
         "marks": [
           "person"
         ],
@@ -391,25 +463,34 @@
         "model": "",
         "reviewer": "",
         "reviewer_by_default": false,
+        "subproject": null,
+        "references": [],
         "stands": "later",
-        "reviewed": false
+        "reviewed": false,
+        "from": []
       }
     ],
+    "snapshot": null,
     "status_commit": {
       "hash": "edb30d2baa5ea3c7e3fb8eef8ac6cce6e145221a",
       "subject": "Weekly review: no change",
       "date": "2026-09-28",
+      "author_time": "2026-09-28T12:00:00Z",
       "author": {
-        "name": "",
+        "name": "Ada Byron",
         "email": "ada@example.org"
       },
       "committer": {
-        "name": "",
+        "name": "Ada Byron",
         "email": "ada@example.org"
       },
+      "parents": [
+        "1b8cfb16a248f50eeefb76e0994234693ff4f4a6"
+      ],
       "trailers": [
         "Reaffirmed: 9f31"
-      ]
+      ],
+      "files": []
     },
     "own_commit": null,
     "authorisation": {
@@ -417,48 +498,94 @@
         "hash": "f9e8746736beb13aeab99f2cd2ff7e315596e616",
         "subject": "Merge the sensor board task",
         "date": "2026-09-19",
+        "author_time": "2026-09-19T12:00:00Z",
         "author": {
-          "name": "",
+          "name": "Ben Okafor",
           "email": "ben@example.org"
         },
         "committer": {
-          "name": "",
+          "name": "Ben Okafor",
           "email": "ben@example.org"
         },
+        "parents": [
+          "22a758bec2a079fd908bba970db5eb51ecccd0c6",
+          "91aa7747f22ef4bb66becb6eab5d5f1f9c28836d"
+        ],
         "trailers": [
           "Authorised: 9f31"
+        ],
+        "files": [
+          {
+            "path": ".tableaux/tasks/9f31.yaml",
+            "change": "added"
+          }
         ]
       },
       "way": "merge",
-      "by": "both"
+      "by": "both",
+      "email": "ben@example.org",
+      "judges": [
+        "ben@example.org",
+        "ada@example.org"
+      ],
+      "why": "",
+      "differs_from_trunk": false,
+      "uncommitted": false
     },
+    "considered": [],
+    "chain": [
+      {
+        "task": {
+          "id": "9f31",
+          "title": "Sensor board"
+        },
+        "url": "",
+        "status": {
+          "kind": "recorded",
+          "gate": "function",
+          "state": "stalled",
+          "reason": "blocked",
+          "note": "Barometer ICs on 14-week backorder",
+          "date": "2026-09-28",
+          "recorder": "ada@example.org",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        }
+      }
+    ],
+    "linkages": [],
     "sources": [
       {
         "gate": "mockup",
         "field": "reviewer",
         "value": "ben@example.org",
         "by": "4e2b",
-        "key": "",
-        "file": "",
-        "line": 0
+        "key": "junctions.mockup.reviewer",
+        "file": ".tableaux/tasks/4e2b.yaml",
+        "line": 10,
+        "col": 23
       },
       {
         "gate": "performance",
         "field": "references",
-        "value": "docs/sensor-board.md#power-budget",
+        "value": "1",
         "by": "9f31",
-        "key": "",
-        "file": "",
-        "line": 0
+        "key": "junctions.performance.references",
+        "file": ".tableaux/tasks/9f31.yaml",
+        "line": 11,
+        "col": 3
       },
       {
         "gate": "validate",
         "field": "reviewer",
         "value": "ben@example.org",
         "by": "9f31",
-        "key": "",
-        "file": "",
-        "line": 0
+        "key": "junctions.validate.reviewer",
+        "file": ".tableaux/tasks/9f31.yaml",
+        "line": 12,
+        "col": 28
       }
     ],
     "reviews": [
@@ -466,21 +593,27 @@
         "gate": "mockup",
         "reviewer": "ben@example.org",
         "effect": "accepts",
+        "by": "ben@example.org",
         "commit": {
           "hash": "85adb9bd07783927046f987a17471c42eee97b87",
           "subject": "Accept the sensor board mockup",
           "date": "2026-09-24",
+          "author_time": "2026-09-24T12:00:00Z",
           "author": {
-            "name": "",
+            "name": "Ben Okafor",
             "email": "ben@example.org"
           },
           "committer": {
-            "name": "",
+            "name": "Ben Okafor",
             "email": "ben@example.org"
           },
+          "parents": [
+            "55f57c1ea69a0e16894408dfbd32a50d3dbdb0a9"
+          ],
           "trailers": [
             "Reviewed: 9f31 mockup"
-          ]
+          ],
+          "files": []
         }
       }
     ],
@@ -545,27 +678,25 @@
         "gate": "",
         "pin": null,
         "subproject": null
-      },
-      {
-        "date": "2026-09-18",
-        "commit": "91aa7747f22ef4bb66becb6eab5d5f1f9c28836d",
-        "by": "ada@example.org",
-        "kind": "task",
-        "recorded": null,
-        "gate": "",
-        "pin": null,
-        "subproject": null
       }
     ],
     "event_count": 6,
     "commands": [
       {
-        "text": "git log --format='%as %h %ae' main -- .tableaux/tasks/9f31.yaml .tableaux/status/9f31.yaml",
+        "text": "git log --format='%H %as %ae %s' edb30d2baa5ea3c7e3fb8eef8ac6cce6e145221a -- .tableaux/tasks/9f31.yaml .tableaux/status/9f31.yaml",
         "comment": ""
       }
-    ],
-    "considered": [],
-    "chain": []
+    ]
   },
-  "diagnostics": []
+  "diagnostics": [
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/c07d.yaml",
+      "line": 6,
+      "col": 5,
+      "task": "c07d",
+      "message": "the requirement on 9f31 from design is due at implementation and unmet: 9f31 stands at function"
+    }
+  ]
 }

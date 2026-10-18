@@ -4,12 +4,12 @@
 
 Legend: `tabloio gates`.
 
-**0 errors, 1 warning, 0 items of information**: 1 finding in 1 row.
+**0 errors, 1 warning, 1 item of information**: 2 findings in 1 row.
 
 | Rule | Severity | Task | Gate | File | Message | Action | Resolver |
 |---|---|---|---|---|---|---|---|
-| H2 | warning | `b2c9` Leaf | 📐 design |  | pat is not the reviewer of the design junction; olive is | Review: commit `Reviewed: b2c9 design` | olive@example.org |
+| H2 | warning | `b2c9` Leaf | 📐 design |  | pat@example.org is not the reviewer of the design junction; olive@example.org is | Review: commit `Reviewed: b2c9 design` | olive@example.org |
 
-**Most to resolve:** olive@example.org, 1 of 1.
+**Most to resolve:** olive@example.org, 1 of 2.
 
 Command: `tabloio audit --ref main --stale 7 --level detail`

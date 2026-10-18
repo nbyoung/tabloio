@@ -19,8 +19,8 @@ Legend: `tabloio gates`.
 |---|---|
 | Commit | `edb30d2` Weekly review: no change |
 | Date | 2026-09-28 |
-| Author | ada@example.org |
-| Committer | ada@example.org |
+| Author | Ada Byron, ada@example.org |
+| Committer | Ada Byron, ada@example.org |
 | Trailers | `Reaffirmed: 9f31` |
 
 ## Description
@@ -48,8 +48,8 @@ References:
 |---|---|
 | Commit | `f9e8746` Merge the sensor board task |
 | Date | 2026-09-19 |
-| Author | ben@example.org |
-| Committer | ben@example.org |
+| Author | Ben Okafor, ben@example.org |
+| Committer | Ben Okafor, ben@example.org |
 | Accepts by | a merge |
 | The authority is | the author and the committer |
 
@@ -84,7 +84,7 @@ References:
 | Gate | Field | Value | Supplied by |
 |---|---|---|---|
 | 📌 mockup | reviewer | ben@example.org | `4e2b` Sensor node |
-| ⚡ performance | references | docs/sensor-board.md#power-budget | `9f31` Sensor board |
+| ⚡ performance | references | 1 | `9f31` Sensor board |
 | 🌍 validate | reviewer | ben@example.org | `9f31` Sensor board |
 
 ## Reviews: 1
@@ -97,7 +97,7 @@ References:
 
 ## Newest events
 
-6 events; the newest 6, newest first.
+6 events; the newest 5, newest first.
 
 | Date | Commit | By | Event | What it records |
 |---|---|---|---|---|
@@ -106,10 +106,10 @@ References:
 | 2026-09-24 | `85adb9b` | ben@example.org | reviewed | 📌 mockup |
 | 2026-09-22 | `63a1f88` | ada@example.org | status | 📌 mockup 🟢 nominal |
 | 2026-09-19 | `f9e8746` | ben@example.org | authorised |  |
-| 2026-09-18 | `91aa774` | ada@example.org | task |  |
+| … and 1 earlier |  |  |  |  |
 
 ```
-git log --format='%as %h %ae' main -- .tableaux/tasks/9f31.yaml .tableaux/status/9f31.yaml
+git log --format='%H %as %ae %s' edb30d2baa5ea3c7e3fb8eef8ac6cce6e145221a -- .tableaux/tasks/9f31.yaml .tableaux/status/9f31.yaml
 ```
 
 Command: `tabloio task 9f31 --ref edb30d2 --level provenance`

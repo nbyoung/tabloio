@@ -4,28 +4,30 @@
 
 Legend: `tabloio gates`.
 
-**0 errors, 1 warning, 0 items of information**: 1 finding in 1 row.
+**0 errors, 1 warning, 1 item of information**: 2 findings in 1 row.
 
 | Rule | Severity | Task | Gate | File | Message | Action | Resolver |
 |---|---|---|---|---|---|---|---|
-| H5 | warning | `b2c9` Leaf | 📐 design | `status/b2c9.yaml` | The status still states review after olive accepted design in S3 | Clear the hand-off: record the gate, or the next hand-off | pat@example.org |
+| H5 | warning | `b2c9` Leaf | 📐 design | `.tableaux/status/b2c9.yaml` | the status still states review after olive@example.org accepted design | Clear the hand-off: record the gate, or the next hand-off | pat@example.org |
 
-**Most to resolve:** pat@example.org, 1 of 1.
+**Most to resolve:** pat@example.org, 1 of 2.
 
 ## H5, warning: `b2c9` at 📐 design
 
-**Rule.** "it reports a status that still states `review` after the reviewer's `Reviewed:` commit for that junction" [README.md, Status](README.md#status)
+**Rule.** "it reports a status that still states `review` after the reviewer's `Reviewed:` commit for that junction" [README.md, Status](https://github.com/nbyoung/tableaux/blob/main/README.md#status)
 
-**The junction.** `b2c9` at 📐 design: contributor pat@example.org, reviewer olive@example.org.
+**The junction.** `b2c9` at 📐 design: contributor pat@example.org, reviewer olive@example.org, from `b2c9`.
+
+**The status.** `b2c9`: 📝 defined 🟢 nominal 👓 review: The design awaits olive's review, recorded 2026-09-02 by pat@example.org.
 
 | Commit | Date | Author | Committer | Subject | Trailers |
 |---|---|---|---|---|---|
-| `1ff946d` | 2026-09-02 | pat@example.org |  | Hand the design to its reviewer |  |
-| `3844b60` | 2026-09-03 | olive@example.org |  | Accept the design | `Reviewed: b2c9 design` |
+| `1ff946d` | 2026-09-02 | Pat Singh, pat@example.org |  | Hand the design to its reviewer |  |
+| `3844b60` | 2026-09-03 | Olive Marsh, olive@example.org |  | Accept the design | `Reviewed: b2c9 design` |
 
 ```
 # shows the finding
-git log --format='%h %(trailers:key=Reviewed)' -E --grep='^Reviewed: b2c9 '
+git show --no-patch --format='%as %H %ae %ce%n%(trailers)' 3844b6012d7387e48ad82532956456fd9ef1d42e
 ```
 
 Command: `tabloio audit --ref 3844b60 --stale 7 --level provenance`

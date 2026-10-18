@@ -1,8 +1,8 @@
 Authority delegation
 ════════════════════
 
-*Who may accept what?* Tableaux tooling · ref main at 3cdae52, 2026-10-05 ·
-level provenance
+*Who may accept what?* Tableaux tooling · ref corpus/tooling at 50a373b,
+2026-10-17 · level provenance
 
 Legend: tabloio gates.
 
@@ -64,6 +64,7 @@ Gate · Marks · Contributor · Model · Reviewer
   Marks: 🤖
   Contributor: noreply@anthropic.com
   Model: claude-haiku
+  Reviewer: nbyoung@nbyoung.com
 ────────────────────────────────────────────────────────────────────────────────
 📌 mockup
   Marks: 🤖👀
@@ -75,6 +76,7 @@ Gate · Marks · Contributor · Model · Reviewer
   Marks: 🤖
   Contributor: noreply@anthropic.com
   Model: claude-sonnet
+  Reviewer: nbyoung@nbyoung.com
 ────────────────────────────────────────────────────────────────────────────────
 📐 design
   Marks: 🤖👀
@@ -86,16 +88,19 @@ Gate · Marks · Contributor · Model · Reviewer
   Marks: 🤖
   Contributor: noreply@anthropic.com
   Model: claude-sonnet
+  Reviewer: nbyoung@nbyoung.com
 ────────────────────────────────────────────────────────────────────────────────
 📏 unit
   Marks: 🤖
   Contributor: noreply@anthropic.com
   Model: claude-sonnet
+  Reviewer: nbyoung@nbyoung.com
 ────────────────────────────────────────────────────────────────────────────────
 🔗 integrate
   Marks: 🤖
   Contributor: noreply@anthropic.com
   Model: claude-sonnet
+  Reviewer: nbyoung@nbyoung.com
 ────────────────────────────────────────────────────────────────────────────────
 🌍 validate
   Marks: 🤖👀
@@ -197,32 +202,32 @@ Commit · Date · Author · Committer · Accepts by · The authority is · Tasks
 ────────────────────────────────────────────────────────────────────────────────
 8eb0cae
   Date: 2026-09-30
-  Author: nbyoung@nbyoung.com
-  Committer: nbyoung@nbyoung.com
+  Author: Norman Young, nbyoung@nbyoung.com
+  Committer: Norman Young, nbyoung@nbyoung.com
   Accepts by: a merge of 320cf2b
   The authority is: the author and the committer
   Tasks: 2: 437e bc63
 ────────────────────────────────────────────────────────────────────────────────
 16fe62f
   Date: 2026-09-30
-  Author: nbyoung@nbyoung.com
-  Committer: nbyoung@nbyoung.com
+  Author: Norman Young, nbyoung@nbyoung.com
+  Committer: Norman Young, nbyoung@nbyoung.com
   Accepts by: a merge of 018814a
   The authority is: the author and the committer
   Tasks: 1: ac33
 ────────────────────────────────────────────────────────────────────────────────
 8d8b070
   Date: 2026-09-30
-  Author: nbyoung@nbyoung.com
-  Committer: nbyoung@nbyoung.com
+  Author: Norman Young, nbyoung@nbyoung.com
+  Committer: Norman Young, nbyoung@nbyoung.com
   Accepts by: a merge of 9d9fb88
   The authority is: the author and the committer
   Tasks: 1: 7166
 ────────────────────────────────────────────────────────────────────────────────
 6b6c99a
   Date: 2026-09-29
-  Author: nbyoung@nbyoung.com
-  Committer: nbyoung@nbyoung.com
+  Author: Norman Young, nbyoung@nbyoung.com
+  Committer: Norman Young, nbyoung@nbyoung.com
   Accepts by: a change on the trunk
   The authority is: the author and the committer
   Tasks: 33: c2ad 2034 e9c6 bc86 99f0 05a9 a9ce bb7c c74a efff ab8e c545 d615
@@ -230,7 +235,6 @@ Commit · Date · Author · Committer · Accepts by · The authority is · Tasks
     7861 77b2 6103 c6e8 595e
 ────────────────────────────────────────────────────────────────────────────────
 
-    git log --first-parent -1 --format='%h %as %ae %ce %p' main -- .tableaux/tasks/437e.yaml
-    git log --first-parent -1 --format='%h %as %ae %ce %p' -E --grep='^Authorised: 437e$' main
+    git log --first-parent --format='%H %as %ae %ce %P' 50a373b2857a36e4ef1a754605433943d6bfe324 -- .tableaux/tasks
 
-Command: tabloio authority --ref 3cdae52 --level provenance --text
+Command: tabloio authority --ref 50a373b --level provenance --text

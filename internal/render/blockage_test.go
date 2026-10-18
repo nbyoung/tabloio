@@ -31,31 +31,37 @@ func TestDecodeBlockage(t *testing.T) {
 // T10: the blockage tree's forms.
 func TestBlockageForms(t *testing.T) {
 	// The empty form at each level: the count line, the bold sentence, and
-	// the requirements not yet due.
-	empty := readFixture(t, "blockage", "tooling")
+	// the requirements not yet due. At corpus/tooling one cause holds four
+	// tasks; without it the tooling plan's data is the empty form.
+	empty := *readFixture(t, "blockage", "tooling").(*view.Blockage)
+	empty.Causes = nil
+	empty.Kinds = append([]view.KindCount(nil), empty.Kinds...)
+	for i := range empty.Kinds {
+		empty.Kinds[i].Count = 0
+	}
 	for _, l := range allLevels {
-		out := renderString(t, empty, Options{Level: l})
+		out := renderString(t, &empty, Options{Level: l})
 		if !strings.Contains(out, "0 causes: 0 unmet requirements, 0 statuses off nominal, 0 reviews outstanding, 0 authorisations outstanding, 0 snapshots not advanced.\n\n**No cause holds any task.**\n") {
 			t.Errorf("%s: the empty form:\n%s", l, out)
 		}
-		if l == view.Glance && !strings.Contains(out, "Next: 10 requirements are not yet due, 8 of them unmet.\n") {
+		if l == view.Glance && !strings.Contains(out, "Next: 2 requirements are not yet due, 0 of them unmet.\n") {
 			t.Errorf("glance: the line of requirements not yet due:\n%s", out)
 		}
-		if l >= view.Detail && !strings.Contains(out, "## Next: 10 requirements not yet due\n") {
+		if l >= view.Detail && !strings.Contains(out, "## Next: 2 requirements not yet due\n") {
 			t.Errorf("%s: the section of requirements not yet due:\n%s", l, out)
 		}
 	}
-	// Ten requirements are listed under their four tasks.
-	out := renderString(t, empty, Options{Level: view.Detail})
-	if got := strings.Count(out, ": requires `"); got != 10 {
-		t.Errorf("%d requirements listed, want 10", got)
+	// Two requirements are listed under their one task.
+	out := renderString(t, &empty, Options{Level: view.Detail})
+	if got := strings.Count(out, ": requires `"); got != 2 {
+		t.Errorf("%d requirements listed, want 2", got)
 	}
-	if !strings.Contains(out, "  - 📐 design: requires `e9c6` Abstract views at 🧱 implementation, The abstract views it derives: unmet, not yet due.\n") {
+	if !strings.Contains(out, "  - 🧱 implementation: requires `e3cb` Schema files at 🧱 implementation, The schema files it embeds: met, not yet due.\n") {
 		t.Errorf("an entry not yet due:\n%s", out)
 	}
 
 	// With none not yet due, glance prints no line and detail says none.
-	v := *empty.(*view.Blockage)
+	v := empty
 	v.NotDue, v.NotDueN, v.NotDueUnmet = nil, 0, 0
 	if out := renderString(t, &v, Options{Level: view.Glance}); strings.Contains(out, "Next:") {
 		t.Errorf("a Next line stands:\n%s", out)

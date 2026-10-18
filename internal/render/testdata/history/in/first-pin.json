@@ -3,21 +3,40 @@
   "command": "history",
   "source": {
     "ref": "37a08e9",
+    "dir": ".",
+    "worktree": false,
     "commit": "37a08e92e840ea3cb48bc7ca6a5041c44096ef8e",
     "date": "2026-09-29",
     "from": {
-      "ref": "a7932ae"
+      "ref": "a7932ae",
+      "commit": "a7932ae20ff969855f956540b80ff640f4e4c124"
     },
     "trunk": {
-      "name": null
+      "name": "main",
+      "resolved": "inferred"
     },
     "on_trunk": true
   },
   "project": {
+    "tableaux": "0.1.0",
     "root": "437e",
-    "title": "Tableaux tooling"
+    "title": "Tableaux tooling",
+    "owner": "nbyoung@nbyoung.com"
+  },
+  "viewer": {
+    "email": "nbyoung@nbyoung.com",
+    "roles": [
+      "owner",
+      "authority",
+      "assignee",
+      "contributor",
+      "reviewer"
+    ]
   },
   "params": {
+    "task": "437e",
+    "person": null,
+    "role": null,
     "level": "provenance"
   },
   "data": {
@@ -43,7 +62,7 @@
         },
         {
           "key": "function",
-          "symbol": "🔧",
+          "symbol": "⚙️",
           "name": "Functional prototype",
           "criteria": "A technical demonstration of function exists"
         },
@@ -55,19 +74,19 @@
         },
         {
           "key": "implementation",
-          "symbol": "🧱",
+          "symbol": "🛠️",
           "name": "Implementation",
           "criteria": "Artifacts suffice for unit, integration and validation tests"
         },
         {
           "key": "unit",
-          "symbol": "📏",
+          "symbol": "🧩",
           "name": "Unit test",
           "criteria": "All prescribed tests pass"
         },
         {
           "key": "integrate",
-          "symbol": "🔗",
+          "symbol": "🖼️",
           "name": "Integration",
           "criteria": "Assembled with neighbouring components"
         },
@@ -120,16 +139,18 @@
         {
           "key": "overloaded",
           "symbol": "🪫",
-          "synopsis": "The assigned resource is overloaded"
+          "synopsis": "The assigned resource is overloaded",
+          "reserved": false
         },
         {
           "key": "blocked",
           "symbol": "⛔",
-          "synopsis": "An external resource is unavailable"
+          "synopsis": "An external resource is unavailable",
+          "reserved": false
         },
         {
           "key": "review",
-          "symbol": "👓",
+          "symbol": "👀",
           "synopsis": "The work waits for its reviewer",
           "reserved": true
         }
@@ -139,31 +160,31 @@
           "key": "person",
           "symbol": "🧑",
           "meaning": "A person contributes",
-          "junction": "Plain; the contributor is a person"
+          "junction": "plain"
         },
         {
           "key": "agent",
           "symbol": "🤖",
           "meaning": "An agent contributes",
-          "junction": "Plain; the junction states a `model`"
+          "junction": "plain"
         },
         {
           "key": "reviewer",
           "symbol": "👀",
           "meaning": "A reviewer accepts",
-          "junction": "Plain; the reviewer accepts the work at the gate"
+          "junction": "plain"
         },
         {
           "key": "subproject",
           "symbol": "🪆",
           "meaning": "A subproject does the work",
-          "junction": "Recursive; another Tableaux project does the work"
+          "junction": "recursive"
         },
         {
           "key": "exempt",
           "symbol": "—",
           "meaning": "The gate does not apply",
-          "junction": "Not applicable; the entry exempts the task from the gate"
+          "junction": "not_applicable"
         }
       ]
     },
@@ -215,7 +236,4759 @@
     "lines": [
       {
         "task": {
-          "id": "77b2"
+          "id": "77b2",
+          "title": "tablo: backend library and plumbing"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "dc669dd1cbd5eca2c6e5c352caf9887945ad88b4",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tablo",
+              "task": "b2c1",
+              "title": "tablo"
+            }
+          }
+        ],
+        "after": {
+          "kind": "rollup",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
+          "from": {
+            "kind": "rollup",
+            "task": {
+              "id": "0d83",
+              "title": "Bootstrap"
+            },
+            "url": "",
+            "pin": "",
+            "gate": ""
+          }
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "dc669dd1cbd5eca2c6e5c352caf9887945ad88b4",
+          "subject": "Charter and plan for tablo",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:52-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0d83.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/27a3.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4091.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/493e.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4b4f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4ed9.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4f60.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8118.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/886d.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8ed1.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/b2c1.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/dada.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "77b2",
+          "title": "tablo: backend library and plumbing"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "dc669dd1cbd5eca2c6e5c352caf9887945ad88b4",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tablo",
+              "task": "0d83",
+              "title": "Bootstrap"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "dc669dd1cbd5eca2c6e5c352caf9887945ad88b4",
+          "subject": "Charter and plan for tablo",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:52-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0d83.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/27a3.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4091.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/493e.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4b4f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4ed9.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4f60.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8118.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/886d.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8ed1.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/b2c1.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/dada.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "77b2",
+          "title": "tablo: backend library and plumbing"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "dc669dd1cbd5eca2c6e5c352caf9887945ad88b4",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tablo",
+              "task": "4f60",
+              "title": "Loader"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "dc669dd1cbd5eca2c6e5c352caf9887945ad88b4",
+          "subject": "Charter and plan for tablo",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:52-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0d83.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/27a3.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4091.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/493e.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4b4f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4ed9.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4f60.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8118.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/886d.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8ed1.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/b2c1.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/dada.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "77b2",
+          "title": "tablo: backend library and plumbing"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "dc669dd1cbd5eca2c6e5c352caf9887945ad88b4",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tablo",
+              "task": "8118",
+              "title": "Validator"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "dc669dd1cbd5eca2c6e5c352caf9887945ad88b4",
+          "subject": "Charter and plan for tablo",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:52-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0d83.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/27a3.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4091.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/493e.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4b4f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4ed9.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4f60.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8118.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/886d.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8ed1.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/b2c1.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/dada.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "77b2",
+          "title": "tablo: backend library and plumbing"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "dc669dd1cbd5eca2c6e5c352caf9887945ad88b4",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tablo",
+              "task": "27a3",
+              "title": "Derivation"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "dc669dd1cbd5eca2c6e5c352caf9887945ad88b4",
+          "subject": "Charter and plan for tablo",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:52-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0d83.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/27a3.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4091.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/493e.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4b4f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4ed9.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4f60.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8118.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/886d.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8ed1.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/b2c1.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/dada.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "77b2",
+          "title": "tablo: backend library and plumbing"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "dc669dd1cbd5eca2c6e5c352caf9887945ad88b4",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tablo",
+              "task": "dada",
+              "title": "Audit"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "dc669dd1cbd5eca2c6e5c352caf9887945ad88b4",
+          "subject": "Charter and plan for tablo",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:52-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0d83.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/27a3.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4091.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/493e.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4b4f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4ed9.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4f60.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8118.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/886d.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8ed1.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/b2c1.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/dada.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "77b2",
+          "title": "tablo: backend library and plumbing"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "dc669dd1cbd5eca2c6e5c352caf9887945ad88b4",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tablo",
+              "task": "4091",
+              "title": "Views"
+            }
+          }
+        ],
+        "after": {
+          "kind": "rollup",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
+          "from": {
+            "kind": "rollup",
+            "task": {
+              "id": "493e",
+              "title": "Structural views"
+            },
+            "url": "",
+            "pin": "",
+            "gate": ""
+          }
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "dc669dd1cbd5eca2c6e5c352caf9887945ad88b4",
+          "subject": "Charter and plan for tablo",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:52-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0d83.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/27a3.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4091.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/493e.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4b4f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4ed9.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4f60.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8118.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/886d.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8ed1.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/b2c1.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/dada.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "77b2",
+          "title": "tablo: backend library and plumbing"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "dc669dd1cbd5eca2c6e5c352caf9887945ad88b4",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tablo",
+              "task": "493e",
+              "title": "Structural views"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "dc669dd1cbd5eca2c6e5c352caf9887945ad88b4",
+          "subject": "Charter and plan for tablo",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:52-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0d83.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/27a3.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4091.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/493e.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4b4f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4ed9.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4f60.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8118.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/886d.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8ed1.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/b2c1.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/dada.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "77b2",
+          "title": "tablo: backend library and plumbing"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "dc669dd1cbd5eca2c6e5c352caf9887945ad88b4",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tablo",
+              "task": "886d",
+              "title": "Status views"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "dc669dd1cbd5eca2c6e5c352caf9887945ad88b4",
+          "subject": "Charter and plan for tablo",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:52-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0d83.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/27a3.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4091.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/493e.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4b4f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4ed9.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4f60.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8118.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/886d.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8ed1.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/b2c1.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/dada.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "77b2",
+          "title": "tablo: backend library and plumbing"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "dc669dd1cbd5eca2c6e5c352caf9887945ad88b4",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tablo",
+              "task": "8ed1",
+              "title": "Temporal views"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "dc669dd1cbd5eca2c6e5c352caf9887945ad88b4",
+          "subject": "Charter and plan for tablo",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:52-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0d83.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/27a3.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4091.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/493e.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4b4f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4ed9.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4f60.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8118.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/886d.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8ed1.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/b2c1.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/dada.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "77b2",
+          "title": "tablo: backend library and plumbing"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "dc669dd1cbd5eca2c6e5c352caf9887945ad88b4",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tablo",
+              "task": "4ed9",
+              "title": "Plumbing command"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "dc669dd1cbd5eca2c6e5c352caf9887945ad88b4",
+          "subject": "Charter and plan for tablo",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:52-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0d83.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/27a3.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4091.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/493e.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4b4f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4ed9.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4f60.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8118.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/886d.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8ed1.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/b2c1.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/dada.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "77b2",
+          "title": "tablo: backend library and plumbing"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "dc669dd1cbd5eca2c6e5c352caf9887945ad88b4",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tablo",
+              "task": "4b4f",
+              "title": "Conformance"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "dc669dd1cbd5eca2c6e5c352caf9887945ad88b4",
+          "subject": "Charter and plan for tablo",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:52-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0d83.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/27a3.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4091.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/493e.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4b4f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4ed9.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4f60.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8118.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/886d.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8ed1.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/b2c1.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/dada.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "6103",
+          "title": "tabloio: command line, output and input"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "46521bc58cea1d194ca4ac8955c81394aa887773",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tabloio",
+              "task": "07e0",
+              "title": "tabloio"
+            }
+          }
+        ],
+        "after": {
+          "kind": "rollup",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
+          "from": {
+            "kind": "rollup",
+            "task": {
+              "id": "0a2f",
+              "title": "Bootstrap"
+            },
+            "url": "",
+            "pin": "",
+            "gate": ""
+          }
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "46521bc58cea1d194ca4ac8955c81394aa887773",
+          "subject": "Charter and plan for tabloio",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:53-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/07e0.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0a2f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/1093.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/1422.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/5ca9.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/9167.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/a3cc.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/b618.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/c48a.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e0f7.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e3ed.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e4c7.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "6103",
+          "title": "tabloio: command line, output and input"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "46521bc58cea1d194ca4ac8955c81394aa887773",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tabloio",
+              "task": "0a2f",
+              "title": "Bootstrap"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "46521bc58cea1d194ca4ac8955c81394aa887773",
+          "subject": "Charter and plan for tabloio",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:53-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/07e0.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0a2f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/1093.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/1422.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/5ca9.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/9167.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/a3cc.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/b618.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/c48a.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e0f7.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e3ed.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e4c7.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "6103",
+          "title": "tabloio: command line, output and input"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "46521bc58cea1d194ca4ac8955c81394aa887773",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tabloio",
+              "task": "1093",
+              "title": "Renderers"
+            }
+          }
+        ],
+        "after": {
+          "kind": "rollup",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
+          "from": {
+            "kind": "rollup",
+            "task": {
+              "id": "e3ed",
+              "title": "Legend and task renderers"
+            },
+            "url": "",
+            "pin": "",
+            "gate": ""
+          }
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "46521bc58cea1d194ca4ac8955c81394aa887773",
+          "subject": "Charter and plan for tabloio",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:53-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/07e0.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0a2f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/1093.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/1422.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/5ca9.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/9167.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/a3cc.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/b618.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/c48a.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e0f7.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e3ed.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e4c7.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "6103",
+          "title": "tabloio: command line, output and input"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "46521bc58cea1d194ca4ac8955c81394aa887773",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tabloio",
+              "task": "e3ed",
+              "title": "Legend and task renderers"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "46521bc58cea1d194ca4ac8955c81394aa887773",
+          "subject": "Charter and plan for tabloio",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:53-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/07e0.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0a2f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/1093.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/1422.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/5ca9.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/9167.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/a3cc.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/b618.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/c48a.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e0f7.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e3ed.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e4c7.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "6103",
+          "title": "tabloio: command line, output and input"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "46521bc58cea1d194ca4ac8955c81394aa887773",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tabloio",
+              "task": "c48a",
+              "title": "Structural renderers"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "46521bc58cea1d194ca4ac8955c81394aa887773",
+          "subject": "Charter and plan for tabloio",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:53-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/07e0.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0a2f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/1093.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/1422.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/5ca9.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/9167.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/a3cc.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/b618.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/c48a.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e0f7.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e3ed.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e4c7.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "6103",
+          "title": "tabloio: command line, output and input"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "46521bc58cea1d194ca4ac8955c81394aa887773",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tabloio",
+              "task": "a3cc",
+              "title": "Status renderers"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "46521bc58cea1d194ca4ac8955c81394aa887773",
+          "subject": "Charter and plan for tabloio",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:53-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/07e0.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0a2f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/1093.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/1422.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/5ca9.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/9167.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/a3cc.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/b618.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/c48a.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e0f7.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e3ed.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e4c7.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "6103",
+          "title": "tabloio: command line, output and input"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "46521bc58cea1d194ca4ac8955c81394aa887773",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tabloio",
+              "task": "9167",
+              "title": "Temporal renderers"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "46521bc58cea1d194ca4ac8955c81394aa887773",
+          "subject": "Charter and plan for tabloio",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:53-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/07e0.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0a2f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/1093.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/1422.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/5ca9.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/9167.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/a3cc.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/b618.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/c48a.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e0f7.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e3ed.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e4c7.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "6103",
+          "title": "tabloio: command line, output and input"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "46521bc58cea1d194ca4ac8955c81394aa887773",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tabloio",
+              "task": "e0f7",
+              "title": "Text renderers"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "46521bc58cea1d194ca4ac8955c81394aa887773",
+          "subject": "Charter and plan for tabloio",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:53-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/07e0.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0a2f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/1093.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/1422.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/5ca9.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/9167.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/a3cc.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/b618.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/c48a.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e0f7.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e3ed.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e4c7.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "6103",
+          "title": "tabloio: command line, output and input"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "46521bc58cea1d194ca4ac8955c81394aa887773",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tabloio",
+              "task": "5ca9",
+              "title": "Read commands"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "46521bc58cea1d194ca4ac8955c81394aa887773",
+          "subject": "Charter and plan for tabloio",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:53-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/07e0.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0a2f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/1093.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/1422.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/5ca9.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/9167.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/a3cc.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/b618.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/c48a.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e0f7.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e3ed.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e4c7.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "6103",
+          "title": "tabloio: command line, output and input"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "46521bc58cea1d194ca4ac8955c81394aa887773",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tabloio",
+              "task": "b618",
+              "title": "Write commands"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "46521bc58cea1d194ca4ac8955c81394aa887773",
+          "subject": "Charter and plan for tabloio",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:53-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/07e0.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0a2f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/1093.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/1422.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/5ca9.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/9167.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/a3cc.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/b618.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/c48a.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e0f7.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e3ed.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e4c7.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "6103",
+          "title": "tabloio: command line, output and input"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "46521bc58cea1d194ca4ac8955c81394aa887773",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tabloio",
+              "task": "1422",
+              "title": "Snapshot workflow"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "46521bc58cea1d194ca4ac8955c81394aa887773",
+          "subject": "Charter and plan for tabloio",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:53-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/07e0.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0a2f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/1093.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/1422.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/5ca9.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/9167.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/a3cc.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/b618.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/c48a.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e0f7.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e3ed.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e4c7.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "6103",
+          "title": "tabloio: command line, output and input"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "46521bc58cea1d194ca4ac8955c81394aa887773",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tabloio",
+              "task": "e4c7",
+              "title": "Agent briefs"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "46521bc58cea1d194ca4ac8955c81394aa887773",
+          "subject": "Charter and plan for tabloio",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:53-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/07e0.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0a2f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/1093.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/1422.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/5ca9.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/9167.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/a3cc.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/b618.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/c48a.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e0f7.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e3ed.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e4c7.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "595e",
+          "title": "tableaud: local daemon and HTML"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "59783a9ba38c2570d0fd0b632a8199e02265a213",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tableaud",
+              "task": "8608",
+              "title": "tableaud"
+            }
+          }
+        ],
+        "after": {
+          "kind": "rollup",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
+          "from": {
+            "kind": "rollup",
+            "task": {
+              "id": "7425",
+              "title": "Bootstrap"
+            },
+            "url": "",
+            "pin": "",
+            "gate": ""
+          }
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "59783a9ba38c2570d0fd0b632a8199e02265a213",
+          "subject": "Charter and plan for tableaud",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:54-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/097c.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/438a.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/44bf.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/49ce.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/5a2f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/6160.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/7425.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8608.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/9a9c.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/db74.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e2b6.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "595e",
+          "title": "tableaud: local daemon and HTML"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "59783a9ba38c2570d0fd0b632a8199e02265a213",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tableaud",
+              "task": "7425",
+              "title": "Bootstrap"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "59783a9ba38c2570d0fd0b632a8199e02265a213",
+          "subject": "Charter and plan for tableaud",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:54-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/097c.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/438a.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/44bf.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/49ce.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/5a2f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/6160.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/7425.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8608.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/9a9c.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/db74.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e2b6.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "595e",
+          "title": "tableaud: local daemon and HTML"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "59783a9ba38c2570d0fd0b632a8199e02265a213",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tableaud",
+              "task": "49ce",
+              "title": "Server"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "59783a9ba38c2570d0fd0b632a8199e02265a213",
+          "subject": "Charter and plan for tableaud",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:54-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/097c.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/438a.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/44bf.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/49ce.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/5a2f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/6160.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/7425.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8608.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/9a9c.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/db74.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e2b6.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "595e",
+          "title": "tableaud: local daemon and HTML"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "59783a9ba38c2570d0fd0b632a8199e02265a213",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tableaud",
+              "task": "097c",
+              "title": "HTML views"
+            }
+          }
+        ],
+        "after": {
+          "kind": "rollup",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
+          "from": {
+            "kind": "rollup",
+            "task": {
+              "id": "438a",
+              "title": "Legend and task templates"
+            },
+            "url": "",
+            "pin": "",
+            "gate": ""
+          }
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "59783a9ba38c2570d0fd0b632a8199e02265a213",
+          "subject": "Charter and plan for tableaud",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:54-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/097c.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/438a.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/44bf.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/49ce.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/5a2f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/6160.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/7425.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8608.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/9a9c.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/db74.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e2b6.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "595e",
+          "title": "tableaud: local daemon and HTML"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "59783a9ba38c2570d0fd0b632a8199e02265a213",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tableaud",
+              "task": "438a",
+              "title": "Legend and task templates"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "59783a9ba38c2570d0fd0b632a8199e02265a213",
+          "subject": "Charter and plan for tableaud",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:54-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/097c.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/438a.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/44bf.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/49ce.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/5a2f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/6160.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/7425.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8608.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/9a9c.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/db74.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e2b6.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "595e",
+          "title": "tableaud: local daemon and HTML"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "59783a9ba38c2570d0fd0b632a8199e02265a213",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tableaud",
+              "task": "e2b6",
+              "title": "Structural templates"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "59783a9ba38c2570d0fd0b632a8199e02265a213",
+          "subject": "Charter and plan for tableaud",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:54-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/097c.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/438a.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/44bf.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/49ce.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/5a2f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/6160.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/7425.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8608.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/9a9c.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/db74.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e2b6.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "595e",
+          "title": "tableaud: local daemon and HTML"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "59783a9ba38c2570d0fd0b632a8199e02265a213",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tableaud",
+              "task": "44bf",
+              "title": "Status templates"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "59783a9ba38c2570d0fd0b632a8199e02265a213",
+          "subject": "Charter and plan for tableaud",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:54-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/097c.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/438a.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/44bf.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/49ce.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/5a2f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/6160.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/7425.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8608.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/9a9c.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/db74.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e2b6.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "595e",
+          "title": "tableaud: local daemon and HTML"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "59783a9ba38c2570d0fd0b632a8199e02265a213",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tableaud",
+              "task": "9a9c",
+              "title": "Temporal templates"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "59783a9ba38c2570d0fd0b632a8199e02265a213",
+          "subject": "Charter and plan for tableaud",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:54-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/097c.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/438a.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/44bf.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/49ce.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/5a2f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/6160.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/7425.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8608.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/9a9c.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/db74.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e2b6.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "595e",
+          "title": "tableaud: local daemon and HTML"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "59783a9ba38c2570d0fd0b632a8199e02265a213",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tableaud",
+              "task": "db74",
+              "title": "Progressive disclosure"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "59783a9ba38c2570d0fd0b632a8199e02265a213",
+          "subject": "Charter and plan for tableaud",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:54-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/097c.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/438a.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/44bf.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/49ce.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/5a2f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/6160.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/7425.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8608.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/9a9c.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/db74.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e2b6.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "595e",
+          "title": "tableaud: local daemon and HTML"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "59783a9ba38c2570d0fd0b632a8199e02265a213",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tableaud",
+              "task": "6160",
+              "title": "Static export"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "59783a9ba38c2570d0fd0b632a8199e02265a213",
+          "subject": "Charter and plan for tableaud",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:54-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/097c.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/438a.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/44bf.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/49ce.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/5a2f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/6160.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/7425.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8608.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/9a9c.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/db74.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e2b6.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "595e",
+          "title": "tableaud: local daemon and HTML"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "59783a9ba38c2570d0fd0b632a8199e02265a213",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tableaud",
+              "task": "5a2f",
+              "title": "Accessibility and theming"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "59783a9ba38c2570d0fd0b632a8199e02265a213",
+          "subject": "Charter and plan for tableaud",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:54-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/097c.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/438a.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/44bf.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/49ce.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/5a2f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/6160.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/7425.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/8608.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/9a9c.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/db74.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e2b6.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "c6e8",
+          "title": "tablotui: terminal user interface"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "45440422b8f031cf7beaa4edd3507791c009c4d5",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tablotui",
+              "task": "40e8",
+              "title": "tablotui"
+            }
+          }
+        ],
+        "after": {
+          "kind": "rollup",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
+          "from": {
+            "kind": "rollup",
+            "task": {
+              "id": "0098",
+              "title": "Bootstrap"
+            },
+            "url": "",
+            "pin": "",
+            "gate": ""
+          }
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "45440422b8f031cf7beaa4edd3507791c009c4d5",
+          "subject": "Charter and plan for tablotui",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:54-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0098.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0afa.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/171b.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/40e8.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/518e.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/679b.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/f394.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "c6e8",
+          "title": "tablotui: terminal user interface"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "45440422b8f031cf7beaa4edd3507791c009c4d5",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tablotui",
+              "task": "0098",
+              "title": "Bootstrap"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "45440422b8f031cf7beaa4edd3507791c009c4d5",
+          "subject": "Charter and plan for tablotui",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:54-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0098.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0afa.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/171b.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/40e8.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/518e.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/679b.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/f394.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "c6e8",
+          "title": "tablotui: terminal user interface"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "45440422b8f031cf7beaa4edd3507791c009c4d5",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tablotui",
+              "task": "679b",
+              "title": "Tableau grid"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "45440422b8f031cf7beaa4edd3507791c009c4d5",
+          "subject": "Charter and plan for tablotui",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:54-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0098.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0afa.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/171b.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/40e8.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/518e.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/679b.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/f394.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "c6e8",
+          "title": "tablotui: terminal user interface"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "45440422b8f031cf7beaa4edd3507791c009c4d5",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tablotui",
+              "task": "0afa",
+              "title": "Detail panes"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "45440422b8f031cf7beaa4edd3507791c009c4d5",
+          "subject": "Charter and plan for tablotui",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:54-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0098.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0afa.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/171b.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/40e8.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/518e.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/679b.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/f394.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "c6e8",
+          "title": "tablotui: terminal user interface"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "45440422b8f031cf7beaa4edd3507791c009c4d5",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tablotui",
+              "task": "f394",
+              "title": "Role and context"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "45440422b8f031cf7beaa4edd3507791c009c4d5",
+          "subject": "Charter and plan for tablotui",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:54-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0098.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0afa.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/171b.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/40e8.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/518e.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/679b.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/f394.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "c6e8",
+          "title": "tablotui: terminal user interface"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "45440422b8f031cf7beaa4edd3507791c009c4d5",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tablotui",
+              "task": "171b",
+              "title": "Live refresh"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "45440422b8f031cf7beaa4edd3507791c009c4d5",
+          "subject": "Charter and plan for tablotui",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:54-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0098.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0afa.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/171b.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/40e8.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/518e.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/679b.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/f394.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "c6e8",
+          "title": "tablotui: terminal user interface"
+        },
+        "proposal": false,
+        "events": [
+          {
+            "date": "2026-09-29",
+            "commit": "45440422b8f031cf7beaa4edd3507791c009c4d5",
+            "by": "nbyoung@nbyoung.com",
+            "kind": "task",
+            "recorded": null,
+            "gate": "",
+            "pin": null,
+            "subproject": {
+              "url": "subprojects/tablotui",
+              "task": "518e",
+              "title": "Actions"
+            }
+          }
+        ],
+        "after": {
+          "kind": "absent",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": false,
+        "subject_after": null,
+        "effect": "authorised_commit",
+        "model": "",
+        "check": null,
+        "committer": "",
+        "commit": {
+          "hash": "45440422b8f031cf7beaa4edd3507791c009c4d5",
+          "subject": "Charter and plan for tablotui",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:45:54-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0098.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/0afa.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/171b.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/40e8.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/518e.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/679b.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/f394.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "task": {
+          "id": "77b2",
+          "title": "tablo: backend library and plumbing"
         },
         "proposal": false,
         "events": [
@@ -228,37 +5001,57 @@
             "gate": "",
             "pin": {
               "url": "subprojects/tablo",
-              "new": "dc669dd"
+              "old": "",
+              "new": "dc669dd1cbd5eca2c6e5c352caf9887945ad88b4"
             },
             "subproject": null
           }
         ],
         "after": {
+          "kind": "absent",
           "gate": "undefined",
           "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": true,
+        "subject_after": {
+          "kind": "rollup",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
           "from": {
-            "kind": "snapshot",
+            "kind": "rollup",
             "task": {
-              "id": "b2c1"
+              "id": "bc63",
+              "title": "Method"
             },
-            "url": "subprojects/tablo",
-            "pin": "dc669dd"
+            "url": "",
+            "pin": "",
+            "gate": ""
           }
         },
         "effect": "",
         "model": "",
-        "check": {
-          "commit": "37a08e92e840ea3cb48bc7ca6a5041c44096ef8e",
-          "gate": "",
-          "stated": "",
-          "trailer": "",
-          "reading": "exempt"
-        },
+        "check": null,
         "committer": "",
         "commit": {
           "hash": "37a08e92e840ea3cb48bc7ca6a5041c44096ef8e",
           "subject": "Pin the subprojects",
           "date": "2026-09-29",
+          "author_time": "2026-09-29T17:30:02-04:00",
           "author": {
             "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
@@ -267,11 +5060,17 @@
             "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
           },
-          "author_time": "2026-09-29T17:30:02-04:00",
+          "parents": [
+            "a7932ae20ff969855f956540b80ff640f4e4c124"
+          ],
           "trailers": [
             "Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
           ],
           "files": [
+            {
+              "path": "subprojects/tableaud",
+              "change": "pin"
+            },
             {
               "path": "subprojects/tablo",
               "change": "pin"
@@ -283,17 +5082,14 @@
             {
               "path": "subprojects/tablotui",
               "change": "pin"
-            },
-            {
-              "path": "subprojects/tableaud",
-              "change": "pin"
             }
           ]
         }
       },
       {
         "task": {
-          "id": "6103"
+          "id": "6103",
+          "title": "tabloio: command line, output and input"
         },
         "proposal": false,
         "events": [
@@ -306,37 +5102,57 @@
             "gate": "",
             "pin": {
               "url": "subprojects/tabloio",
-              "new": "46521bc"
+              "old": "",
+              "new": "46521bc58cea1d194ca4ac8955c81394aa887773"
             },
             "subproject": null
           }
         ],
         "after": {
+          "kind": "absent",
           "gate": "undefined",
           "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": true,
+        "subject_after": {
+          "kind": "rollup",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
           "from": {
-            "kind": "snapshot",
+            "kind": "rollup",
             "task": {
-              "id": "07e0"
+              "id": "bc63",
+              "title": "Method"
             },
-            "url": "subprojects/tabloio",
-            "pin": "46521bc"
+            "url": "",
+            "pin": "",
+            "gate": ""
           }
         },
         "effect": "",
         "model": "",
-        "check": {
-          "commit": "37a08e92e840ea3cb48bc7ca6a5041c44096ef8e",
-          "gate": "",
-          "stated": "",
-          "trailer": "",
-          "reading": "exempt"
-        },
+        "check": null,
         "committer": "",
         "commit": {
           "hash": "37a08e92e840ea3cb48bc7ca6a5041c44096ef8e",
           "subject": "Pin the subprojects",
           "date": "2026-09-29",
+          "author_time": "2026-09-29T17:30:02-04:00",
           "author": {
             "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
@@ -345,11 +5161,17 @@
             "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
           },
-          "author_time": "2026-09-29T17:30:02-04:00",
+          "parents": [
+            "a7932ae20ff969855f956540b80ff640f4e4c124"
+          ],
           "trailers": [
             "Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
           ],
           "files": [
+            {
+              "path": "subprojects/tableaud",
+              "change": "pin"
+            },
             {
               "path": "subprojects/tablo",
               "change": "pin"
@@ -361,17 +5183,14 @@
             {
               "path": "subprojects/tablotui",
               "change": "pin"
-            },
-            {
-              "path": "subprojects/tableaud",
-              "change": "pin"
             }
           ]
         }
       },
       {
         "task": {
-          "id": "c6e8"
+          "id": "c6e8",
+          "title": "tablotui: terminal user interface"
         },
         "proposal": false,
         "events": [
@@ -384,37 +5203,57 @@
             "gate": "",
             "pin": {
               "url": "subprojects/tablotui",
-              "new": "4544042"
+              "old": "",
+              "new": "45440422b8f031cf7beaa4edd3507791c009c4d5"
             },
             "subproject": null
           }
         ],
         "after": {
+          "kind": "absent",
           "gate": "undefined",
           "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": true,
+        "subject_after": {
+          "kind": "rollup",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
           "from": {
-            "kind": "snapshot",
+            "kind": "rollup",
             "task": {
-              "id": "40e8"
+              "id": "bc63",
+              "title": "Method"
             },
-            "url": "subprojects/tablotui",
-            "pin": "4544042"
+            "url": "",
+            "pin": "",
+            "gate": ""
           }
         },
         "effect": "",
         "model": "",
-        "check": {
-          "commit": "37a08e92e840ea3cb48bc7ca6a5041c44096ef8e",
-          "gate": "",
-          "stated": "",
-          "trailer": "",
-          "reading": "exempt"
-        },
+        "check": null,
         "committer": "",
         "commit": {
           "hash": "37a08e92e840ea3cb48bc7ca6a5041c44096ef8e",
           "subject": "Pin the subprojects",
           "date": "2026-09-29",
+          "author_time": "2026-09-29T17:30:02-04:00",
           "author": {
             "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
@@ -423,11 +5262,17 @@
             "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
           },
-          "author_time": "2026-09-29T17:30:02-04:00",
+          "parents": [
+            "a7932ae20ff969855f956540b80ff640f4e4c124"
+          ],
           "trailers": [
             "Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
           ],
           "files": [
+            {
+              "path": "subprojects/tableaud",
+              "change": "pin"
+            },
             {
               "path": "subprojects/tablo",
               "change": "pin"
@@ -439,17 +5284,14 @@
             {
               "path": "subprojects/tablotui",
               "change": "pin"
-            },
-            {
-              "path": "subprojects/tableaud",
-              "change": "pin"
             }
           ]
         }
       },
       {
         "task": {
-          "id": "595e"
+          "id": "595e",
+          "title": "tableaud: local daemon and HTML"
         },
         "proposal": false,
         "events": [
@@ -462,37 +5304,57 @@
             "gate": "",
             "pin": {
               "url": "subprojects/tableaud",
-              "new": "59783a9"
+              "old": "",
+              "new": "59783a9ba38c2570d0fd0b632a8199e02265a213"
             },
             "subproject": null
           }
         ],
         "after": {
+          "kind": "absent",
           "gate": "undefined",
           "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "unchanged": true,
+        "subject_after": {
+          "kind": "rollup",
+          "gate": "undefined",
+          "state": "undefined",
+          "reason": "",
+          "note": "",
+          "date": "",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
           "from": {
-            "kind": "snapshot",
+            "kind": "rollup",
             "task": {
-              "id": "8608"
+              "id": "bc63",
+              "title": "Method"
             },
-            "url": "subprojects/tableaud",
-            "pin": "59783a9"
+            "url": "",
+            "pin": "",
+            "gate": ""
           }
         },
         "effect": "",
         "model": "",
-        "check": {
-          "commit": "37a08e92e840ea3cb48bc7ca6a5041c44096ef8e",
-          "gate": "",
-          "stated": "",
-          "trailer": "",
-          "reading": "exempt"
-        },
+        "check": null,
         "committer": "",
         "commit": {
           "hash": "37a08e92e840ea3cb48bc7ca6a5041c44096ef8e",
           "subject": "Pin the subprojects",
           "date": "2026-09-29",
+          "author_time": "2026-09-29T17:30:02-04:00",
           "author": {
             "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
@@ -501,11 +5363,17 @@
             "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
           },
-          "author_time": "2026-09-29T17:30:02-04:00",
+          "parents": [
+            "a7932ae20ff969855f956540b80ff640f4e4c124"
+          ],
           "trailers": [
             "Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
           ],
           "files": [
+            {
+              "path": "subprojects/tableaud",
+              "change": "pin"
+            },
             {
               "path": "subprojects/tablo",
               "change": "pin"
@@ -517,10 +5385,6 @@
             {
               "path": "subprojects/tablotui",
               "change": "pin"
-            },
-            {
-              "path": "subprojects/tableaud",
-              "change": "pin"
             }
           ]
         }
@@ -528,7 +5392,12 @@
     ],
     "commands": [
       {
-        "text": "git log --format='%as %h %ae' a7932ae..37a08e9 -- .tableaux/tasks .tableaux/status subprojects/tablo subprojects/tabloio subprojects/tablotui subprojects/tableaud"
+        "text": "git log --format='%H %as %ae %s' a7932ae20ff969855f956540b80ff640f4e4c124..37a08e92e840ea3cb48bc7ca6a5041c44096ef8e -- .tableaux/tasks .tableaux/status subprojects/tablo subprojects/tabloio subprojects/tablotui subprojects/tableaud",
+        "comment": ""
+      },
+      {
+        "text": "git log --format='%H %as %ae %s' -E --grep='^(Authorised|Reaffirmed): ([0-9a-f]{4})$' --grep='^Reviewed: ([0-9a-f]{4}) ' a7932ae20ff969855f956540b80ff640f4e4c124..37a08e92e840ea3cb48bc7ca6a5041c44096ef8e",
+        "comment": ""
       }
     ]
   },

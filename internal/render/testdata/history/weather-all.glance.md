@@ -23,9 +23,9 @@ Legend: `tabloio gates`.
 
 | Date | By | Event | Task | Gate and state, or pin |
 |---|---|---|---|---|
+| 2026-09-15 | ada@example.org | task | `a1c0` Weather station | the task file appears |
 | 2026-09-15 | ada@example.org | task | `4e2b` Sensor node | the task file appears |
 | 2026-09-15 | ada@example.org | task | `7b2e` Gateway | the task file appears |
-| 2026-09-15 | ada@example.org | task | `a1c0` Weather station | the task file appears |
 | 2026-09-16 | ben@example.org | task | `c07d` Node firmware | the task file appears |
 | 2026-09-18 | ada@example.org | task | `9f31` Sensor board | the task file appears |
 | 2026-09-19 | ben@example.org | authorised | `9f31` Sensor board |  |

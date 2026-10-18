@@ -16,19 +16,18 @@ a1c0
     📐: 🧑 · 🛠: 🧑 · 🧩: 🧑
 ────────────────────────────────────────────────
 4e2b
-  Task: *Sensor node* (2)
-  📝: 🧑 · 📌: 🧑 · ⚙: 🔴⛔ · ⚡: 🧑 · ⚓: 🧑
-    📐: 🧑 · 🛠: 🧑 · 🧩: 🧑
+  Task: *Sensor node*
+  ⚙: 🔴⛔ · ⚡: 🧑 · ⚓: 🧑 · 📐: 🧑 · 🛠: 🧑
+    🧩: 🧑
 ────────────────────────────────────────────────
 9f31
   Task: Sensor board
-  📝: 🧑 · 📌: 🧑👀 · ⚙: 🔴⛔ · ⚡: 🧑
-    ⚓: 🧑 · 📐: 🧑 · 🛠: 🧑 · 🧩: 🧑
+  ⚙: 🔴⛔ · ⚡: 🧑 · ⚓: 🧑 · 📐: 🧑 · 🛠: 🧑
+    🧩: 🧑
 ────────────────────────────────────────────────
 c07d
   Task: Node firmware
-  📝: 🧑 · 📌: 🧑 · ⚙: 🧑 · ⚡: 🧑 · ⚓: —
-    📐: 🟢 · 🛠: 🪆 · 🧩: 🤖👀
+  📐: 🟢 · 🛠: 🪆 · 🧩: 🤖👀
 ────────────────────────────────────────────────
 7b2e
   Task: Gateway
@@ -48,7 +47,7 @@ c07d
 🟢 nominal · 🔴 stalled · ⛔ blocked · 🧑 a
 person contributes · 🤖 an agent contributes ·
 👀 a reviewer accepts · 🪆 a subproject does the
-work · — the gate does not apply.
+work.
 
 Notes
 ─────
@@ -71,7 +70,8 @@ Notes
 │      │            │ scheduler  │ Weather     │
 │      │            │ in         │ node image  │
 │      │            │ progress   │ in firmware │
-│      │            │            │ at F2, at   │
+│      │            │            │ at cf5b169, │
+│      │            │            │ at          │
 │      │            │            │ 📐 design   │
 │ 7b2e │ 2026-09-15 │            │             │
 │ 3c5d │ 2026-09-22 │            │             │

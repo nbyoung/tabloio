@@ -248,19 +248,25 @@ func TestRefAndCommit(t *testing.T) {
 		absent string // in neither
 	}{
 		{"glance", nil, Options{Level: view.Glance},
-			"Tableaux tooling · ref `main` · task", "`tabloio task e9c6 " + person + " --ref main --level glance`", "3cdae52"},
+			"Tableaux tooling · ref `corpus/tooling` · task", "`tabloio task e9c6 " + person + " --ref corpus/tooling --level glance`", "50a373b"},
 		{"glance with a stamp", nil, Options{Level: view.Glance, Stamp: true},
-			"ref `main` at `3cdae52`, 2026-10-05 · task", "`tabloio task e9c6 " + person + " --ref main --level glance`", ""},
+			"ref `corpus/tooling` at `50a373b`, 2026-10-17 · task", "`tabloio task e9c6 " + person + " --ref corpus/tooling --level glance`", ""},
 		{"provenance", nil, Options{Level: view.Provenance},
-			"ref `main` at `3cdae52`, 2026-10-05 · task", "`tabloio task e9c6 " + person + " --ref 3cdae52 --level provenance`", ""},
+			"ref `corpus/tooling` at `50a373b`, 2026-10-17 · task", "`tabloio task e9c6 " + person + " --ref 50a373b --level provenance`", ""},
 		{"HEAD at glance", func(v *view.Task) { v.Source.Ref = "HEAD" }, Options{Level: view.Glance},
 			"ref `HEAD` · task", "`tabloio task e9c6 " + person + " --level glance`", "--ref"},
 		{"HEAD at provenance", func(v *view.Task) { v.Source.Ref = "HEAD" }, Options{Level: view.Provenance},
-			"ref `HEAD` at `3cdae52`, 2026-10-05 · task", "`tabloio task e9c6 " + person + " --ref 3cdae52 --level provenance`", ""},
+			"ref `HEAD` at `50a373b`, 2026-10-17 · task", "`tabloio task e9c6 " + person + " --ref 50a373b --level provenance`", ""},
 		{"off the trunk", func(v *view.Task) { v.Source.OnTrunk = false }, Options{Level: view.Glance},
-			"ref `main`, off the trunk · task", "`tabloio task e9c6 " + person + " --ref main --level glance`", ""},
+			"ref `corpus/tooling`, off the trunk · task", "`tabloio task e9c6 " + person + " --ref corpus/tooling --level glance`", ""},
 		{"a range", func(v *view.Task) { v.Source.From = &view.SourceFrom{Ref: "v1"} }, Options{Level: view.Glance},
-			"ref `v1..main` · task", "`tabloio task e9c6 " + person + " --ref v1..main --level glance`", ""},
+			"ref `v1..corpus/tooling` · task", "`tabloio task e9c6 " + person + " --ref v1..corpus/tooling --level glance`", ""},
+		{"a range at provenance", func(v *view.Task) {
+			v.Source.From = &view.SourceFrom{Ref: "v1", Commit: "0704a09f00000000000000000000000000000000"}
+		}, Options{Level: view.Provenance},
+			"ref `v1..corpus/tooling` at `50a373b`, 2026-10-17 · task", "`tabloio task e9c6 " + person + " --ref 0704a09..50a373b --level provenance`", ""},
+		{"a range of a ref alone at provenance", func(v *view.Task) { v.Source.From = &view.SourceFrom{Ref: "v1"} }, Options{Level: view.Provenance},
+			"ref `v1..corpus/tooling` at `50a373b`, 2026-10-17 · task", "`tabloio task e9c6 " + person + " --ref v1..50a373b --level provenance`", ""},
 	}
 	for _, c := range cases {
 		t.Run(c.name, func(t *testing.T) {
@@ -300,10 +306,28 @@ func TestCommand(t *testing.T) {
 	h.Project = view.Project{Title: "Plan"}
 	h.Params = view.Params{Task: "e9c6", Person: "a@b.c", Window: &two, Historical: true, Proposed: true, Stale: 7}
 	p := newPage(h, Options{Level: view.Glance})
-	got = plainInline(p.paramLine("Q?").Text, map[string]bool{})
+	got = plainInline(p.paramLine("context", "Q?").Text, map[string]bool{})
 	want = "Q? Plan · ref main, off the trunk · task e9c6 · person a@b.c · window 2 · historical junctions on · proposed only · stale 7 days · level glance"
 	if got != want {
 		t.Errorf("got  %s\nwant %s", got, want)
+	}
+
+	// tablo echoes the root as the task of a view whose task defaults to
+	// it; there the root focuses nothing, and elsewhere it does.
+	h = &view.Head{Source: view.Source{Ref: "main", OnTrunk: true}, Project: view.Project{Root: "a1c0", Title: "Plan"}}
+	h.Params = view.Params{Task: "a1c0", Person: "a@b.c"}
+	for name, want := range map[string]string{
+		"queue": "tabloio queue --person a@b.c --ref main --level detail",
+		"audit": "tabloio audit --person a@b.c --ref main --level detail",
+		"gates": "tabloio gates --task a1c0 --person a@b.c --ref main --level detail",
+	} {
+		if got := command(name, "", h, Options{Level: view.Detail}); got != want {
+			t.Errorf("%s: got  %s\nwant %s", name, got, want)
+		}
+		line := plainInline(newPage(h, Options{Level: view.Detail}).paramLine(name, "Q?").Text, map[string]bool{})
+		if strings.Contains(line, "task a1c0") != (name == "gates") {
+			t.Errorf("%s: %s", name, line)
+		}
 	}
 }
 
@@ -621,13 +645,54 @@ func TestStandsAndConditions(t *testing.T) {
 	}
 }
 
+// TestJunctionKind: the marks table words tablo's junction kinds, and a
+// value that is no kind, as a draft gives it, prints as worded text.
+func TestJunctionKind(t *testing.T) {
+	for in, want := range map[string]string{
+		"plain": "Plain", "recursive": "Recursive", "not_applicable": "Not applicable",
+		"Plain; the junction states a `model`": "Plain; the junction states a model", "": "",
+	} {
+		var got strings.Builder
+		for _, x := range junctionKind(in) {
+			switch s := x.(type) {
+			case doc.Text:
+				got.WriteString(string(s))
+			case doc.Code:
+				got.WriteString(string(s))
+			}
+		}
+		if got.String() != want {
+			t.Errorf("%q: %q, want %q", in, got.String(), want)
+		}
+	}
+}
+
+// TestDescriptionLineEnd: a description from a folded block of YAML ends in
+// a line break, as tablo gives it, and renders as the same text without it.
+func TestDescriptionLineEnd(t *testing.T) {
+	v := *readFixture(t, "task", "e9c6").(*view.Task)
+	folded := v
+	folded.Description += "\n"
+	for _, o := range []Options{{Level: view.Detail}, {Level: view.Detail, Format: Text}} {
+		if got, want := renderString(t, &folded, o), renderString(t, &v, o); got != want {
+			t.Errorf("format %v: the line break changes the rendering\n%s", o.Format, got)
+		}
+	}
+	seen := map[string]bool{}
+	for _, ln := range plainDoc(buildFor(t, &folded, Options{Level: view.Detail}), seen) {
+		if strings.HasSuffix(ln, "\n") {
+			t.Errorf("a line holds a line end: %q", ln)
+		}
+	}
+}
+
 // TestLegendKeys covers R2 and A2: a key with no symbol prints as the key.
 func TestLegendKeys(t *testing.T) {
 	v := *readFixture(t, "task", "e9c6").(*view.Task)
 	v.Legend.States = []view.State{{Key: "nominal"}} // no symbol
 	v.Legend.Gates = nil
 	out := renderString(t, &v, Options{Level: view.Glance})
-	if !strings.Contains(out, "| Status | design nominal |") {
+	if !strings.Contains(out, "| Status | implementation nominal |") {
 		t.Errorf("a key with no symbol:\n%s", out)
 	}
 }

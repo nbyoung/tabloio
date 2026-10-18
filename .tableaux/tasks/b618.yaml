@@ -13,6 +13,9 @@ references:
 requires:
   - { id: "0a2f", from: implementation, to: implementation, text: The module and tablo's trailer subcommand }
   - { id: "5ca9", from: implementation, to: implementation, text: The dispatcher and the command table the write commands enter }
+  - { subproject: { url: https://github.com/nbyoung/tablo, id: "4ed9", commit: 03c5e35eac90d3da49fb63f29a4b3ca35b16c0e1 }, from: implementation, to: integrate, text: The library's trailer lines and the views the plans read }
+  - { subproject: { url: https://github.com/nbyoung/tablo, id: "8118", commit: 03c5e35eac90d3da49fb63f29a4b3ca35b16c0e1 }, from: implementation, to: integrate, text: The validator that proves a planned tree }
+  - { subproject: { url: https://github.com/nbyoung/tablo, id: "493e", commit: 03c5e35eac90d3da49fb63f29a4b3ca35b16c0e1 }, from: implementation, to: integrate, text: The gates and task views at provenance }
 junctions:
   mockup:         { applies: false }
 parent: { id: "07e0", order: 4 }

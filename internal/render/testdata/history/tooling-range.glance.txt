@@ -1,7 +1,7 @@
 History: 437e Tableaux tooling
 ══════════════════════════════
 
-*What happened, when, and who did it?* Tableaux tooling · ref 0704a09..main ·
+*What happened, when, and who did it?* Tableaux tooling · ref 0704a09..3cdae52 ·
 level glance
 
 Legend: tabloio gates.
@@ -30,74 +30,74 @@ Date · By · Event · Task · Gate and state, or pin
 2026-10-02
   By: nbyoung@nbyoung.com
   Event: pin
-  Task: 6103
+  Task: 6103 tabloio: command line, output and input
   Gate and state, or pin: subprojects/tabloio 62261d4 → 7eba1e5
 ────────────────────────────────────────────────────────────────────────────────
 2026-10-02
   By: nbyoung@nbyoung.com
   Event: pin
-  Task: 77b2
+  Task: 77b2 tablo: backend library and plumbing
   Gate and state, or pin: subprojects/tablo 7e94d58 → 816f2a0
 ────────────────────────────────────────────────────────────────────────────────
 2026-10-02
   By: nbyoung@nbyoung.com
   Event: pin
-  Task: 6103
+  Task: 6103 tabloio: command line, output and input
   Gate and state, or pin: subprojects/tabloio 7eba1e5 → 581ae98
 ────────────────────────────────────────────────────────────────────────────────
 2026-10-02
   By: nbyoung@nbyoung.com
   Event: pin
-  Task: c6e8
+  Task: c6e8 tablotui: terminal user interface
   Gate and state, or pin: subprojects/tablotui 159fdab → dbfb8e3
 ────────────────────────────────────────────────────────────────────────────────
 2026-10-02
   By: nbyoung@nbyoung.com
   Event: pin
-  Task: 595e
+  Task: 595e tableaud: local daemon and HTML
   Gate and state, or pin: subprojects/tableaud 2061a7f → b06cad0
 ────────────────────────────────────────────────────────────────────────────────
 2026-10-02
   By: nbyoung@nbyoung.com
   Event: pin
-  Task: 77b2
+  Task: 77b2 tablo: backend library and plumbing
   Gate and state, or pin: subprojects/tablo 816f2a0 → 00f8f68
 ────────────────────────────────────────────────────────────────────────────────
 2026-10-02
   By: nbyoung@nbyoung.com
   Event: pin
-  Task: 6103
+  Task: 6103 tabloio: command line, output and input
   Gate and state, or pin: subprojects/tabloio 581ae98 → cb9ff8f
 ────────────────────────────────────────────────────────────────────────────────
 2026-10-02
   By: nbyoung@nbyoung.com
   Event: pin
-  Task: c6e8
+  Task: c6e8 tablotui: terminal user interface
   Gate and state, or pin: subprojects/tablotui dbfb8e3 → 334df71
 ────────────────────────────────────────────────────────────────────────────────
 2026-10-02
   By: nbyoung@nbyoung.com
   Event: pin
-  Task: 595e
+  Task: 595e tableaud: local daemon and HTML
   Gate and state, or pin: subprojects/tableaud b06cad0 → cffbfa6
 ────────────────────────────────────────────────────────────────────────────────
 2026-10-02
   By: nbyoung@nbyoung.com
   Event: pin
-  Task: 6103
+  Task: 6103 tabloio: command line, output and input
   Gate and state, or pin: subprojects/tabloio cb9ff8f → 4593882
 ────────────────────────────────────────────────────────────────────────────────
 2026-10-04
   By: nbyoung@nbyoung.com
   Event: pin
-  Task: c6e8
+  Task: c6e8 tablotui: terminal user interface
   Gate and state, or pin: subprojects/tablotui 334df71 → a2878b5
 ────────────────────────────────────────────────────────────────────────────────
 2026-10-05
   By: nbyoung@nbyoung.com
   Event: pin
-  Task: 595e
+  Task: 595e tableaud: local daemon and HTML
   Gate and state, or pin: subprojects/tableaud cffbfa6 → e6ec4ec
 ────────────────────────────────────────────────────────────────────────────────
 
-Command: tabloio history --ref 0704a09..main --level glance --text
+Command: tabloio history --ref 0704a09..3cdae52 --level glance --text

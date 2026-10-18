@@ -1,83 +1,120 @@
 # Contextual tableau: nbyoung@nbyoung.com
 
-**How does my corner stand?** Tableaux tooling · ref `main` at `3cdae52`, 2026-10-05 · person nbyoung@nbyoung.com · window 1 · level provenance
+**How does my corner stand?** Tableaux tooling · ref `corpus/tooling` at `50a373b`, 2026-10-17 · person nbyoung@nbyoung.com · window 1 · level provenance
 
 Legend: `tabloio gates`.
 
-| Id | Task | ❔ ×0 | 📝 | 📌 | 🔧 | 📐 | 🧱 | 📏 | 🔗…🚀 ×0 |
-|---|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| `437e` | **Tableaux tooling** |  | 🟢 | 🤖👀 | 🤖 | 🤖👀 | 🤖 | 🤖 |  |
-| `bc63` | &nbsp;&nbsp;**Method** (4) |  | 🟢 | 🤖👀 | 🤖 | 🤖👀 | 🤖 | 🤖 |  |
-| `2034` | &nbsp;&nbsp;&nbsp;&nbsp;**Views** (3) |  | 🟢 | 🤖👀 | 🤖 | 🤖👀 | 🤖 | 🤖 |  |
-| `ac33` | &nbsp;&nbsp;&nbsp;&nbsp;Agent identity |  |  |  |  | 🟢 | \[🤖👀\] | — |  |
-| `9f3f` | &nbsp;&nbsp;&nbsp;&nbsp;Subproject linkage |  |  |  |  | 🟢 | \[🤖👀\] | — |  |
-| `7166` | &nbsp;&nbsp;&nbsp;&nbsp;Language clarifications |  |  |  |  | 🟢 | \[🤖👀\] | — |  |
-| `77b2` | &nbsp;&nbsp;tablo: backend library and plumbing |  | 🟢 | 🪆 | 🪆 | 🪆 | 🪆 | 🪆 |  |
-| `6103` | &nbsp;&nbsp;tabloio: command line, output and input |  | 🟢 | 🪆 | 🪆 | 🪆 | 🪆 | 🪆 |  |
-| `c6e8` | &nbsp;&nbsp;tablotui: terminal user interface |  | 🟢 | 🪆 | 🪆 | 🪆 | 🪆 | 🪆 |  |
-| `595e` | &nbsp;&nbsp;tableaud: local daemon and HTML |  | 🟢 | 🪆 | 🪆 | 🪆 | 🪆 | 🪆 |  |
+| Id | Task | ❔…📌 ×0 | 🔧 | 📐 | 🧱 | 📏 | 🔗 | 🌍…🚀 ×0 |
+|---|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| `437e` | **Tableaux tooling** |  | 🟢 | 🤖👀 | 🤖 | 🤖 | 🤖 |  |
+| `bc63` | &nbsp;&nbsp;**Method** |  |  | 🟢 | 🤖 | 🤖 | 🤖 |  |
+| `c2ad` | &nbsp;&nbsp;&nbsp;&nbsp;Roles · sibling |  |  |  | 🟢 | — | — |  |
+| `2034` | &nbsp;&nbsp;&nbsp;&nbsp;**Views** (23) |  |  |  | 🟢 | 🤖 | 🤖 |  |
+| `e3cb` | &nbsp;&nbsp;&nbsp;&nbsp;Schema files · sibling |  |  |  |  | 🟢 | — |  |
+| `fcec` | &nbsp;&nbsp;&nbsp;&nbsp;Conformance corpus · sibling |  |  |  | 🟢 | 🤖 | 🤖 |  |
+| `ac33` | &nbsp;&nbsp;&nbsp;&nbsp;Agent identity |  |  | 🟢 | \[🤖👀\] | — | — |  |
+| `9f3f` | &nbsp;&nbsp;&nbsp;&nbsp;Subproject linkage |  |  | 🟢 | \[🤖👀\] | — | — |  |
+| `7861` | &nbsp;&nbsp;&nbsp;&nbsp;Productivity evidence · sibling |  |  |  | 🟢 | — | — |  |
+| `7166` | &nbsp;&nbsp;&nbsp;&nbsp;Language clarifications |  |  | 🟢 | \[🤖👀\] | — | — |  |
+| `77b2` | &nbsp;&nbsp;tablo: backend library and plumbing |  | 🟢 | 🪆 | 🪆 | 🪆 | 🪆 |  |
+| `6103` | &nbsp;&nbsp;tabloio: command line, output and input |  |  | 🟢 | 🪆 | 🪆 | 🪆 |  |
+| `c6e8` | &nbsp;&nbsp;tablotui: terminal user interface |  |  | 🟢 | 🪆 | 🪆 | 🪆 |  |
+| `595e` | &nbsp;&nbsp;tableaud: local daemon and HTML |  |  | 🟢 | 🪆 | 🪆 | 🪆 |  |
 
-❔ undefined · 📝 defined · 📌 mockup · 🔧 function · 📐 design · 🧱 implementation · 📏 unit · 🔗 integrate · 🚀 release · 🟢 nominal · 🤖 an agent contributes · 👀 a reviewer accepts · 🪆 a subproject does the work · — the gate does not apply.
+❔ undefined · 📌 mockup · 🔧 function · 📐 design · 🧱 implementation · 📏 unit · 🔗 integrate · 🌍 validate · 🚀 release · 🟢 nominal · 🤖 an agent contributes · 👀 a reviewer accepts · 🪆 a subproject does the work · — the gate does not apply.
 
 ## Notes
 
 | Rows | Date | Note | From |
 |---|---|---|---|
-| `437e` `bc63` `2034` | 2026-09-29 | Mockup waits for Abstract views (e9c6) at design | rolled up from `99f0` Gate definition view in Markdown |
+| `437e` | 2026-09-30 | prototype/8ed1 derives the history and a stand-in audit between two refs from one git log pass and one cat-file batch, on the weather station | rolled up from `77b2` tablo: backend library and plumbing |
+| `bc63` | 2026-09-30 | The model plan-and-record rule (F20) is on the trunk; F1, F2 and F10 remain for design | rolled up from `ac33` Agent identity |
+| `c2ad` | 2026-09-30 | The Roles text is on the trunk and covers all seven roles; the validate gate awaits the owner |  |
+| `2034` | 2026-10-05 | VIEWS.md defines the ten views on the trunk and agrees with the twenty approved mockups on the gate window; validation checks that tablo and the front ends follow the text | rolled up from `e9c6` Abstract views |
+| `e3cb` | 2026-09-30 | schemas/check.sh (files agree with SYNTAX.md, version 0.2.1) and schemas/load.py (files load as JSON Schema 2020-12) pass; every .tableaux file validates |  |
+| `fcec` | 2026-09-30 | The corpus builds and checks clean, with 85 entries on the trunk; all three corrections from the tablo prototypes are in; the unit gate runs the tablo conformance test against it |  |
 | `ac33` | 2026-09-30 | The model plan-and-record rule (F20) is on the trunk; F1, F2 and F10 remain for design |  |
 | `9f3f` | 2026-09-30 | The subproject linkage rule (F3, F5, F12) is on the trunk at language 0.3.0; tablo and the subprojects follow |  |
-| `7166` | 2026-09-30 | The trunk clarification (F19) is on the trunk; F7 and F9 remain for design |  |
-| `77b2` | 2026-09-30 | The design is next and no requirement gates it | `b2c1` tablo in `subprojects/tablo` at `00f8f68`, at 📝 defined |
-| `6103` | 2026-09-30 | prototype/e3ed renders the gate and task definition views as Markdown at three levels from tablo view data | `07e0` tabloio in `subprojects/tabloio` at `4593882`, at 🔧 function |
-| `c6e8` | 2026-09-30 | prototype/679b renders the global tableau as a Bubble Tea grid with tree expand and collapse, scrolling, a folded gate window and hidden columns kept in a settings file; emoji lines align where the terminal widens U+FE0F | `40e8` tablotui in `subprojects/tablotui` at `a2878b5`, at 🔧 function |
-| `595e` | 2026-09-30 | prototype/49ce serves the ten views with a stdlib HEAD and .tableaux watcher, ETag 304 polling through htmx, a Source interface and a loopback Host check | `8608` tableaud in `subprojects/tableaud` at `e6ec4ec`, at 🔧 function |
+| `7861` | 2026-09-30 | The full report, its 23 tests and an example over five repositories are on the trunk |  |
+| `7166` | 2026-10-07 | The trunk clarification (F19), with the order for a linked repository, and the exemption rule (F7) are on the trunk; F9 remains for design |  |
+| `77b2` | 2026-09-30 | prototype/8ed1 derives the history and a stand-in audit between two refs from one git log pass and one cat-file batch, on the weather station | `b2c1` tablo in `subprojects/tablo` at `f7c3190`, at 🔧 function |
+| `6103` | 2026-09-30 | design/e0f7.md is on the trunk with the owner's decisions of 2026-10-07, after two revisions; implementation follows, with one writer over doc.Doc, golang.org/x/text for the width table, one rule for the variation selector and no option for it, and --width as the one new option; no terminal draws the output before validate | `07e0` tabloio in `subprojects/tabloio` at `4bb4300`, at 📐 design |
+| `c6e8` | 2026-09-30 | design/518e.md is on the trunk with the owner's decisions of 2026-10-07; implementation waits for tabloio's action package (b618) at implementation and a tabloio tag that go.mod can require | `40e8` tablotui in `subprojects/tablotui` at `ce24c31`, at 📐 design |
+| `595e` | 2026-09-30 | design/db74.md is on the trunk with the owner's decisions of 2026-10-07, after two revisions; implementation follows, and it meets the accessibility task (5a2f) in base.html, shared/grid.html, the sheet and the script; the adapters' focus and the audit's control wait for tablo's views and for the temporal templates (9a9c) | `8608` tableaud in `subprojects/tableaud` at `0da180c`, at 📐 design |
 
 ## Folded columns
 
 | Folded column | Gate | Tasks |
 |:-:|---|--:|
-| ❔ | ❔ undefined | 0 |
-| 🔗…🚀 | 🔗 integrate | 0 |
-| 🔗…🚀 | 🌍 validate | 0 |
-| 🔗…🚀 | 🚀 release | 0 |
+| ❔…📌 | ❔ undefined | 0 |
+| ❔…📌 | 📝 defined | 0 |
+| ❔…📌 | 📌 mockup | 0 |
+| 🌍…🚀 | 🌍 validate | 0 |
+| 🌍…🚀 | 🚀 release | 0 |
 
-## Status cells: 1
+## Status cells: 10
 
 | Rows | Cell | Date | Recorder | Deciding commit | Committer | Trailers |
 |---|---|---|---|---|---|---|
-| `77b2` `6103` `c6e8` `595e` | 📝 defined | 2026-09-30 | noreply@anthropic.com | `e66abe2` Record the defined gate for the subproject tasks | noreply@anthropic.com |  |
+| `c2ad` | 🧱 implementation | 2026-09-30 | Claude Sonnet 5.5, noreply@anthropic.com | `3d8ce0e` Record the Roles task at its implementation gate | Claude Sonnet 5.5, noreply@anthropic.com | `Reviewed: c2ad implementation`, `Model: claude-sonnet-5-5`, `Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>` |
+| `e3cb` | 📏 unit | 2026-09-30 | Claude Sonnet 5.5, noreply@anthropic.com | `5cbec7c` Record e3cb at unit, nominal | Claude Sonnet 5.5, noreply@anthropic.com | `Reviewed: e3cb unit`, `Model: claude-sonnet-5-5`, `Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>` |
+| `fcec` | 🧱 implementation | 2026-09-30 | Claude Sonnet 5.5, noreply@anthropic.com | `60495c2` Record all three corpus corrections at implementation | Claude Sonnet 5.5, noreply@anthropic.com | `Reviewed: fcec implementation`, `Model: claude-sonnet-5-5`, `Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>` |
+| `ac33` | 📐 design | 2026-09-30 | Claude Fable 5.1, noreply@anthropic.com | `6762222` Advance the agent identity task to its design gate | Norman Young, **nbyoung@nbyoung.com** | `Model: claude-fable-5-1`, `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>` |
+| `9f3f` | 📐 design | 2026-09-30 | Claude Fable 5.1, noreply@anthropic.com | `43d68e4` Advance the subproject linkage task to its design gate | Claude Fable 5.1, noreply@anthropic.com | `Model: claude-fable-5-1`, `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>` |
+| `7861` | 🧱 implementation | 2026-09-30 | Claude Sonnet 5.5, noreply@anthropic.com | `c6f2655` Complete the productivity evidence report | Claude Sonnet 5.5, noreply@anthropic.com | `Reviewed: 7861 implementation`, `Model: claude-sonnet-5-5`, `Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>` |
+| `7166` | 📐 design | 2026-10-07 | Claude Opus 5.5, noreply@anthropic.com | `56103af` Note that F7 is resolved in the language clarifications' status | Claude Opus 5.5, noreply@anthropic.com | `Model: claude-opus-5-5`, `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>` |
+| `77b2` | 🔧 function | 2026-10-07 | Claude Opus 5.5, noreply@anthropic.com | `8089171` Advance the tablo and tablotui tasks to their roots' gates | Claude Opus 5.5, noreply@anthropic.com | `Model: claude-opus-5-5`, `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>` |
+| `6103` `595e` | 📐 design | 2026-10-07 | Claude Opus 5.5, noreply@anthropic.com | `97c18d7` Advance the tabloio and tableaud tasks to their roots' gates | Claude Opus 5.5, noreply@anthropic.com | `Model: claude-opus-5-5`, `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>` |
+| `c6e8` | 📐 design | 2026-10-07 | Claude Opus 5.5, noreply@anthropic.com | `8089171` Advance the tablo and tablotui tasks to their roots' gates | Claude Opus 5.5, noreply@anthropic.com | `Model: claude-opus-5-5`, `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>` |
 
 ## Roll-ups: 3
 
 | Parent | Shows | Rolls up from | Date |
 |---|---|---|---|
-| `437e` Tableaux tooling | 📝 defined 🟢 nominal | `bc63` Method | 2026-09-29 |
-| `bc63` Method | 📝 defined 🟢 nominal | `2034` Views | 2026-09-29 |
-| `2034` Views | 📝 defined 🟢 nominal | `bc86` Markdown views | 2026-09-29 |
+| `437e` Tableaux tooling | 🔧 function 🟢 nominal | `77b2` tablo: backend library and plumbing | 2026-09-30 |
+| `bc63` Method | 📐 design 🟢 nominal | `ac33` Agent identity | 2026-09-30 |
+| `2034` Views | 🧱 implementation 🟢 nominal | `e9c6` Abstract views | 2026-10-05 |
 
-## Marks: 5
+## Marks: 22
 
 | Gate | Mark | Rows | Contributor and model | Reviewer |
 |---|:-:|---|---|---|
 | 📐 design | 🤖👀 | `437e` | noreply@anthropic.com, `claude-opus`, from `437e` | **nbyoung@nbyoung.com**, from `437e` |
-| 📐 design | 🪆 | `77b2` `6103` `c6e8` `595e` |  |  |
-| 🧱 implementation | 🤖 | `437e` `bc63` `2034` | noreply@anthropic.com, `claude-sonnet`, from `437e` |  |
-| 🧱 implementation | 🤖👀 | `ac33` `9f3f` `7166` | noreply@anthropic.com, `claude-sonnet`, from `437e` | **nbyoung@nbyoung.com**, by default |
+| 📐 design | 🪆 | `77b2` |  |  |
+| 🧱 implementation | 🤖 | `437e` `bc63` | noreply@anthropic.com, `claude-sonnet`, from `437e` | **nbyoung@nbyoung.com**, from the assignee |
+| 🧱 implementation | 🤖👀 | `ac33` `9f3f` `7166` | noreply@anthropic.com, `claude-sonnet`, from `437e` | **nbyoung@nbyoung.com**, from the assignee |
 | 🧱 implementation | 🪆 | `77b2` `6103` `c6e8` `595e` |  |  |
+| 📏 unit | 🤖 | `437e` `bc63` `2034` | noreply@anthropic.com, `claude-sonnet`, from `437e` | **nbyoung@nbyoung.com**, from the assignee |
+| 📏 unit | — | `c2ad` | Exempt, from `c2ad` |  |
+| 📏 unit | 🤖 | `fcec` | noreply@anthropic.com, `claude-sonnet`, from `437e` | noreply@anthropic.com, from the assignee |
+| 📏 unit | — | `ac33` | Exempt, from `ac33` |  |
+| 📏 unit | — | `9f3f` | Exempt, from `9f3f` |  |
+| 📏 unit | — | `7861` | Exempt, from `7861` |  |
+| 📏 unit | — | `7166` | Exempt, from `7166` |  |
+| 📏 unit | 🪆 | `77b2` `6103` `c6e8` `595e` |  |  |
+| 🔗 integrate | 🤖 | `437e` `bc63` `2034` | noreply@anthropic.com, `claude-sonnet`, from `437e` | **nbyoung@nbyoung.com**, from the assignee |
+| 🔗 integrate | — | `c2ad` | Exempt, from `c2ad` |  |
+| 🔗 integrate | — | `e3cb` | Exempt, from `e3cb` |  |
+| 🔗 integrate | 🤖 | `fcec` | noreply@anthropic.com, `claude-sonnet`, from `437e` | noreply@anthropic.com, from the assignee |
+| 🔗 integrate | — | `ac33` | Exempt, from `ac33` |  |
+| 🔗 integrate | — | `9f3f` | Exempt, from `9f3f` |  |
+| 🔗 integrate | — | `7861` | Exempt, from `7861` |  |
+| 🔗 integrate | — | `7166` | Exempt, from `7166` |  |
+| 🔗 integrate | 🪆 | `77b2` `6103` `c6e8` `595e` |  |  |
 
-🤖 an agent contributes · 👀 a reviewer accepts · 🪆 a subproject does the work.
+🤖 an agent contributes · 👀 a reviewer accepts · 🪆 a subproject does the work · — the gate does not apply.
 
 ## Snapshots: 4
 
 | Row | Subproject | Pin | Pin set by | Root task at the pin | Rolls up from |
 |---|---|---|---|---|---|
-| `77b2` | `subprojects/tablo` | `00f8f68` | `552d38f`, 2026-10-02, **nbyoung@nbyoung.com** | `b2c1` tablo: 📝 defined 🟢 nominal | `4b4f` Conformance |
-| `6103` | `subprojects/tabloio` | `4593882` | `1c0f04d`, 2026-10-02, **nbyoung@nbyoung.com** | `07e0` tabloio: 🔧 function 🟢 nominal | `1093` Renderers |
-| `c6e8` | `subprojects/tablotui` | `a2878b5` | `fa4551e`, 2026-10-04, **nbyoung@nbyoung.com** | `40e8` tablotui: 🔧 function 🟢 nominal | `679b` Tableau grid |
-| `595e` | `subprojects/tableaud` | `e6ec4ec` | `3cdae52`, 2026-10-05, **nbyoung@nbyoung.com** | `8608` tableaud: 🔧 function 🟢 nominal | `49ce` Server |
+| `77b2` | `subprojects/tablo` | `f7c3190` | `5fec596`, 2026-10-07, **nbyoung@nbyoung.com** | `b2c1` tablo: 🔧 function 🟢 nominal | `4091` Views |
+| `6103` | `subprojects/tabloio` | `4bb4300` | `5fec596`, 2026-10-07, **nbyoung@nbyoung.com** | `07e0` tabloio: 📐 design 🟢 nominal | `1093` Renderers |
+| `c6e8` | `subprojects/tablotui` | `ce24c31` | `5fec596`, 2026-10-07, **nbyoung@nbyoung.com** | `40e8` tablotui: 📐 design 🟢 nominal | `518e` Actions |
+| `595e` | `subprojects/tableaud` | `0da180c` | `5fec596`, 2026-10-07, **nbyoung@nbyoung.com** | `8608` tableaud: 📐 design 🟢 nominal | `db74` Progressive disclosure |
 
 ```
-git ls-tree HEAD subprojects/ # the pin each snapshot reads
+git log --format='%H %as %ae %ce %s' 50a373b2857a36e4ef1a754605433943d6bfe324 -- .tableaux/status
 ```
 
-Command: `tabloio context --person nbyoung@nbyoung.com --ref 3cdae52 --window 1 --level provenance`
+Command: `tabloio context --person nbyoung@nbyoung.com --ref 50a373b --window 1 --level provenance`

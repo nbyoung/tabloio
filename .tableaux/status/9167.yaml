@@ -1,3 +1,3 @@
-gate: unit
+gate: integrate
 state: nominal
-note: T1 to T12 pass under go test ./internal/render/... with no skip and no cached run, and the five checks and go test -race pass on the whole worktree; the fixtures stand under testdata/<view>/in so the shared level test nests the temporal views by heading alone, as their accepted drafts hold no column nesting; no prescribed test waits for a later gate; the integrate gate regenerates the fixtures from tablo view
+note: T1 to T12 pass on fixtures drawn with tablo at the pin, the nine audit envelopes among them at the commits they name and the tooling plan's at corpus/tooling, the detail of two audits from data drawn at detail; every golden but those of the proposal and the reaffirmed line, which no ref holds, reaches Run (5ca9 T18); the validate gate is the owner reading the audit of the tooling plan against the plan

@@ -1,8 +1,9 @@
 Task definition: e9c6 Abstract views
 ════════════════════════════════════
 
-*What is this task and where does it stand?* Tableaux tooling · ref main at
-3cdae52, 2026-10-05 · task e9c6 · person nbyoung@nbyoung.com · level provenance
+*What is this task and where does it stand?* Tableaux tooling · ref
+corpus/tooling at 50a373b, 2026-10-17 · task e9c6 · person nbyoung@nbyoung.com ·
+level provenance
 
 Legend: tabloio gates.
 
@@ -12,24 +13,27 @@ Legend: tabloio gates.
 │ Task     │ e9c6 Abstract views                                               │
 │ Assignee │ noreply@anthropic.com                                             │
 │ Parent   │ 2034 Views, order 1                                               │
-│ Status   │ 📐 design 🟢 nominal                                              │
-│ Note     │ VIEWS.md is on the trunk at language 0.3.1; the twenty mockups    │
-│          │ may start, and implementation puts the text in place              │
-│ Recorded │ 2026-09-30 by noreply@anthropic.com                               │
+│ Status   │ 🧱 implementation 🟢 nominal                                      │
+│ Note     │ VIEWS.md defines the ten views on the trunk and agrees with the   │
+│          │ twenty approved mockups on the gate window; validation checks     │
+│          │ that tablo and the front ends follow the text                     │
+│ Recorded │ 2026-10-05 by noreply@anthropic.com                               │
 └──────────┴───────────────────────────────────────────────────────────────────┘
 
 Status commit
 ─────────────
 
-┌───────────┬────────────────────────────────────────────────────────────┐
-│ Field     │ Value                                                      │
-├───────────┼────────────────────────────────────────────────────────────┤
-│ Commit    │ 879b447 Advance the abstract views task to its design gate │
-│ Date      │ 2026-09-30                                                 │
-│ Author    │ Claude Fable 5.1, noreply@anthropic.com                    │
-│ Committer │ Claude Fable 5.1, noreply@anthropic.com                    │
-│ Trailers  │ Model: claude-fable-5-1                                    │
-└───────────┴────────────────────────────────────────────────────────────┘
+┌───────────┬──────────────────────────────────────────────────────────────────┐
+│ Field     │ Value                                                            │
+├───────────┼──────────────────────────────────────────────────────────────────┤
+│ Commit    │ ccb3947 Record the abstract views task at its implementation     │
+│           │ gate                                                             │
+│ Date      │ 2026-10-05                                                       │
+│ Author    │ Claude Opus 5.5, noreply@anthropic.com                           │
+│ Committer │ Claude Opus 5.5, noreply@anthropic.com                           │
+│ Trailers  │ Reviewed: e9c6 implementation, Model: claude-opus-5-5,           │
+│           │ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>          │
+└───────────┴──────────────────────────────────────────────────────────────────┘
 
 Description
 ───────────
@@ -71,7 +75,7 @@ Authorisation commit
 │ Author           │ Norman Young, *nbyoung@nbyoung.com* │
 │ Committer        │ Norman Young, *nbyoung@nbyoung.com* │
 │ Accepts by       │ a change on the trunk               │
-│ The authority is │ the author                          │
+│ The authority is │ the author and the committer        │
 └──────────────────┴─────────────────────────────────────┘
 
 Requires: 1
@@ -88,33 +92,31 @@ Requires: 1
 Dependents: 21
 ──────────────
 
-┌──────────────────┬───────────────────┬───────────────────┬───────────────────┐
-│ Task             │ Edge              │ What passes       │ Condition         │
-├──────────────────┼───────────────────┼───────────────────┼───────────────────┤
-│ 99f0 Gate        │ design → mockup   │ The abstract      │ met               │
-│ definition view  │                   │ definition of the │                   │
-│ in Markdown      │                   │ view              │                   │
-├──────────────────┼───────────────────┼───────────────────┼───────────────────┤
-│ 05a9 Task        │ design → mockup   │ The abstract      │ met               │
-│ definition view  │                   │ definition of the │                   │
-│ in Markdown      │                   │ view              │                   │
-├──────────────────┼───────────────────┼───────────────────┼───────────────────┤
-│ a9ce Authority   │ design → mockup   │ The abstract      │ met               │
-│ delegation view  │                   │ definition of the │                   │
-│ in Markdown      │                   │ view              │                   │
-├──────────────────┼───────────────────┼───────────────────┼───────────────────┤
-│ … and 17 more:   │ design → mockup   │ The abstract      │ met               │
-│ bb7c c74a efff   │                   │ definition of the │                   │
-│ ab8e c545 d615   │                   │ view              │                   │
-│ b14e a6f7 7dff   │                   │                   │                   │
-│ b1b7 ea51 7783   │                   │                   │                   │
-│ 5471 32e7 69eb   │                   │                   │                   │
-│ 3194 a8b4        │                   │                   │                   │
-├──────────────────┼───────────────────┼───────────────────┼───────────────────┤
-│ 77b2 tablo:      │ implementation →  │ The abstract      │ unmet, not yet    │
-│ backend library  │ design            │ views it derives  │ due               │
-│ and plumbing     │                   │                   │                   │
-└──────────────────┴───────────────────┴───────────────────┴───────────────────┘
+┌─────────────────────┬─────────────────────┬──────────────────────┬───────────┐
+│ Task                │ Edge                │ What passes          │ Condition │
+├─────────────────────┼─────────────────────┼──────────────────────┼───────────┤
+│ 99f0 Gate           │ design → mockup     │ The abstract         │ met       │
+│ definition view in  │                     │ definition of the    │           │
+│ Markdown            │                     │ view                 │           │
+├─────────────────────┼─────────────────────┼──────────────────────┼───────────┤
+│ 05a9 Task           │ design → mockup     │ The abstract         │ met       │
+│ definition view in  │                     │ definition of the    │           │
+│ Markdown            │                     │ view                 │           │
+├─────────────────────┼─────────────────────┼──────────────────────┼───────────┤
+│ a9ce Authority      │ design → mockup     │ The abstract         │ met       │
+│ delegation view in  │                     │ definition of the    │           │
+│ Markdown            │                     │ view                 │           │
+├─────────────────────┼─────────────────────┼──────────────────────┼───────────┤
+│ … and 17 more: bb7c │ design → mockup     │ The abstract         │ met       │
+│ c74a efff ab8e c545 │                     │ definition of the    │           │
+│ d615 b14e a6f7 7dff │                     │ view                 │           │
+│ b1b7 ea51 7783 5471 │                     │                      │           │
+│ 32e7 69eb 3194 a8b4 │                     │                      │           │
+├─────────────────────┼─────────────────────┼──────────────────────┼───────────┤
+│ 77b2 tablo: backend │ implementation →    │ The abstract views   │ met       │
+│ library and         │ design              │ it derives           │           │
+│ plumbing            │                     │                      │           │
+└─────────────────────┴─────────────────────┴──────────────────────┴───────────┘
 
 Junctions
 ─────────
@@ -127,7 +129,7 @@ Gate · Marks · Contributor · Model · Reviewer · Stands
   Contributor: noreply@anthropic.com
   Model: claude-haiku
   Reviewer: the assignee, noreply@anthropic.com
-  Stands: passed
+  Stands: passed, reviewed
 ────────────────────────────────────────────────────────────────────────────────
 📌 mockup
   Marks: —
@@ -142,14 +144,14 @@ Gate · Marks · Contributor · Model · Reviewer · Stands
   Contributor: noreply@anthropic.com
   Model: claude-fable
   Reviewer: *nbyoung@nbyoung.com*
-  Stands: passed, reviewed; the status stands here
+  Stands: passed, reviewed
 ────────────────────────────────────────────────────────────────────────────────
 🧱 implementation
   Marks: 🤖
   Contributor: noreply@anthropic.com
   Model: claude-sonnet
   Reviewer: the assignee, noreply@anthropic.com
-  Stands: next
+  Stands: passed, reviewed; the status stands here
 ────────────────────────────────────────────────────────────────────────────────
 📏 unit
   Marks: —
@@ -164,7 +166,7 @@ Gate · Marks · Contributor · Model · Reviewer · Stands
   Contributor: noreply@anthropic.com
   Model: claude-opus
   Reviewer: *nbyoung@nbyoung.com*
-  Stands: later
+  Stands: next
 ────────────────────────────────────────────────────────────────────────────────
 🚀 release
   Marks: 🧑
@@ -187,7 +189,7 @@ Where each junction field comes from
 │                   │ model       │ claude-haiku          │ 437e Tableaux      │
 │                   │             │                       │ tooling            │
 ├───────────────────┼─────────────┼───────────────────────┼────────────────────┤
-│                   │ reviewer    │ noreply@anthropic.com │ the plain default  │
+│                   │ reviewer    │ noreply@anthropic.com │ the assignee       │
 ├───────────────────┼─────────────┼───────────────────────┼────────────────────┤
 │ 📌 mockup         │ applies     │ false                 │ e9c6 Abstract      │
 │                   │             │                       │ views              │
@@ -208,7 +210,7 @@ Where each junction field comes from
 │                   │ model       │ claude-sonnet         │ 437e Tableaux      │
 │                   │             │                       │ tooling            │
 ├───────────────────┼─────────────┼───────────────────────┼────────────────────┤
-│                   │ reviewer    │ noreply@anthropic.com │ the plain default  │
+│                   │ reviewer    │ noreply@anthropic.com │ the assignee       │
 ├───────────────────┼─────────────┼───────────────────────┼────────────────────┤
 │ 📏 unit           │ applies     │ false                 │ e9c6 Abstract      │
 │                   │             │                       │ views              │
@@ -227,39 +229,64 @@ Where each junction field comes from
 │                   │             │                       │ tooling            │
 └───────────────────┴─────────────┴───────────────────────┴────────────────────┘
 
-Reviews: 2
+Reviews: 3
 ──────────
 
-┌────────────┬───────────────────────┬────────────────────┬────────────────────┐
-│ Gate       │ Reviewer              │ Accepted by        │ Effect             │
-├────────────┼───────────────────────┼────────────────────┼────────────────────┤
-│ 📝 defined │ noreply@anthropic.com │ The authorisation, │ The authorisation  │
-│            │                       │ 6b6c99a,           │ stands as the      │
-│            │                       │ 2026-09-29         │ review             │
-│ 📐 design  │ *nbyoung@nbyoung.com* │ 0704a09 Accept the │ The reviewer       │
-│            │                       │ abstract views     │ accepts            │
-│            │                       │ design, 2026-09-30 │                    │
-└────────────┴───────────────────────┴────────────────────┴────────────────────┘
+┌───────────────────┬───────────────────────┬────────────────┬─────────────────┐
+│ Gate              │ Reviewer              │ Accepted by    │ Effect          │
+├───────────────────┼───────────────────────┼────────────────┼─────────────────┤
+│ 📝 defined        │ noreply@anthropic.com │ 6b6c99a Plan   │ The             │
+│                   │                       │ the Tableaux   │ authorisation   │
+│                   │                       │ tooling,       │ stands as the   │
+│                   │                       │ 2026-09-29     │ review          │
+│ 📐 design         │ *nbyoung@nbyoung.com* │ 0704a09 Accept │ The reviewer    │
+│                   │                       │ the abstract   │ accepts         │
+│                   │                       │ views design,  │                 │
+│                   │                       │ 2026-09-30     │                 │
+│ 🧱 implementation │ noreply@anthropic.com │ ccb3947 Record │ The reviewer    │
+│                   │                       │ the abstract   │ accepts         │
+│                   │                       │ views task at  │                 │
+│                   │                       │ its            │                 │
+│                   │                       │ implementation │                 │
+│                   │                       │ gate,          │                 │
+│                   │                       │ 2026-10-05     │                 │
+└───────────────────┴───────────────────────┴────────────────┴─────────────────┘
 
-Models: 4
+Models: 5
 ─────────
 
-┌─────────┬────────────┬─────────────────────┬──────────────────┬─────────┐
-│ Commit  │ Junction   │ The junction states │ Model: trailer   │ Reading │
-├─────────┼────────────┼─────────────────────┼──────────────────┼─────────┤
-│ 1a17bfc │ 📝 defined │ claude-haiku        │                  │ Exempt  │
-│ 0fed913 │ 📐 design  │ claude-fable        │ claude-fable-5-1 │ Agrees  │
-│ 26defc7 │ 📐 design  │ claude-fable        │ claude-fable-5-1 │ Agrees  │
-│ 879b447 │ 📐 design  │ claude-fable        │ claude-fable-5-1 │ Agrees  │
-└─────────┴────────────┴─────────────────────┴──────────────────┴─────────┘
+┌─────────┬───────────────────┬───────────────────┬──────────────────┬─────────┐
+│ Commit  │ Junction          │ The junction      │ Model: trailer   │ Reading │
+│         │                   │ states            │                  │         │
+├─────────┼───────────────────┼───────────────────┼──────────────────┼─────────┤
+│ 1a17bfc │ 📝 defined        │ claude-fable-5-1  │                  │ Exempt  │
+│ 0fed913 │ 📐 design         │ claude-fable      │ claude-fable-5-1 │ Agrees  │
+│ 26defc7 │ 📐 design         │ claude-fable      │ claude-fable-5-1 │ Agrees  │
+│ 879b447 │ 📐 design         │ claude-fable      │ claude-fable-5-1 │ Agrees  │
+│ ccb3947 │ 🧱 implementation │ claude-sonnet     │ claude-opus-5-5  │ Differs │
+└─────────┴───────────────────┴───────────────────┴──────────────────┴─────────┘
 
 Newest events
 ─────────────
 
-7 events; the newest 5, newest first.
+9 events; the newest 5, newest first.
 
 ────────────────────────────────────────────────────────────────────────────────
 Date · Commit · By · Event · What it records
+────────────────────────────────────────────────────────────────────────────────
+2026-10-05
+  Commit: ccb3947
+  By: noreply@anthropic.com
+  Event: reviewed
+  What it records: 🧱 implementation
+────────────────────────────────────────────────────────────────────────────────
+2026-10-05
+  Commit: ccb3947
+  By: noreply@anthropic.com
+  Event: status
+  What it records: 🧱 implementation 🟢 nominal: VIEWS.md defines the ten
+    views on the trunk and agrees with the twenty approved mockups on the gate
+    window; validation checks that tablo and the front ends follow the text
 ────────────────────────────────────────────────────────────────────────────────
 2026-09-30
   Commit: 879b447
@@ -283,28 +310,9 @@ Date · Commit · By · Event · What it records
     design on branch worktree-agent-a6b84238bbacc4fcd awaits the owner's
     acceptance at the design gate
 ────────────────────────────────────────────────────────────────────────────────
-2026-09-30
-  Commit: 0fed913
-  By: noreply@anthropic.com
-  Event: status
-  What it records: 📝 defined 🟢 nominal 👓 review: The VIEWS.md design on
-    branch worktree-agent-a6b84238bbacc4fcd awaits the owner's review at the
-    design gate
-────────────────────────────────────────────────────────────────────────────────
-2026-09-29
-  Commit: 5958858
-  By: noreply@anthropic.com
-  Event: reviewed
-  What it records: 📝 defined
-────────────────────────────────────────────────────────────────────────────────
-… and 2 earlier
+… and 4 earlier
 ────────────────────────────────────────────────────────────────────────────────
 
-    git log -1 --format='%h %as %ae' 3cdae52 -- .tableaux/status/e9c6.yaml # the status commit
-    git log --first-parent -1 --format='%h %as %ae %ce' 3cdae52 -- .tableaux/tasks/e9c6.yaml # the authorisation commit
-    grep -l 'id: "e9c6"' .tableaux/tasks/*.yaml # the dependents
-    git log --format='%h %as %ae %ce' -E --grep='^Reviewed: e9c6 ' 3cdae52 # the reviews
-    git log --format='%as %h %ae' 3cdae52 -- .tableaux/tasks/e9c6.yaml .tableaux/status/e9c6.yaml # the events
-    git log --format='%as %h %ae' -E --grep='^(Authorised|Reaffirmed): e9c6$' --grep='^Reviewed: e9c6 ' 3cdae52 # the events
+    git log --format='%H %as %ae %s' 50a373b2857a36e4ef1a754605433943d6bfe324 -- .tableaux/tasks/e9c6.yaml .tableaux/status/e9c6.yaml
 
-Command: tabloio task e9c6 --person nbyoung@nbyoung.com --ref 3cdae52 --level provenance --text
+Command: tabloio task e9c6 --person nbyoung@nbyoung.com --ref 50a373b --level provenance --text

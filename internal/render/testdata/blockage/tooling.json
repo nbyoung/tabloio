@@ -2,20 +2,38 @@
   "schema": "tablo/1",
   "command": "blockage",
   "source": {
-    "ref": "main",
-    "commit": "3cdae527d47d37fdff55bc302c76c017cf91c606",
-    "date": "2026-10-05",
+    "ref": "corpus/tooling",
+    "dir": ".",
+    "worktree": false,
+    "commit": "50a373b2857a36e4ef1a754605433943d6bfe324",
+    "date": "2026-10-17",
     "from": null,
     "trunk": {
-      "name": null
+      "name": "main",
+      "resolved": "stated"
     },
     "on_trunk": true
   },
   "project": {
+    "tableaux": "0.3.2",
     "root": "437e",
-    "title": "Tableaux tooling"
+    "title": "Tableaux tooling",
+    "owner": "nbyoung@nbyoung.com"
+  },
+  "viewer": {
+    "email": "nbyoung@nbyoung.com",
+    "roles": [
+      "owner",
+      "authority",
+      "assignee",
+      "contributor",
+      "reviewer"
+    ]
   },
   "params": {
+    "task": "437e",
+    "person": null,
+    "role": null,
     "level": "provenance"
   },
   "data": {
@@ -118,12 +136,14 @@
         {
           "key": "overloaded",
           "symbol": "🪫",
-          "synopsis": "The assigned resource is overloaded"
+          "synopsis": "The assigned resource is overloaded",
+          "reserved": false
         },
         {
           "key": "blocked",
           "symbol": "⛔",
-          "synopsis": "An external resource is unavailable"
+          "synopsis": "An external resource is unavailable",
+          "reserved": false
         },
         {
           "key": "review",
@@ -137,39 +157,307 @@
           "key": "person",
           "symbol": "🧑",
           "meaning": "A person contributes",
-          "junction": "Plain; the contributor is a person"
+          "junction": "plain"
         },
         {
           "key": "agent",
           "symbol": "🤖",
           "meaning": "An agent contributes",
-          "junction": "Plain; the junction states a `model`"
+          "junction": "plain"
         },
         {
           "key": "reviewer",
           "symbol": "👀",
           "meaning": "A reviewer accepts",
-          "junction": "Plain; the reviewer accepts the work at the gate"
+          "junction": "plain"
         },
         {
           "key": "subproject",
           "symbol": "🪆",
           "meaning": "A subproject does the work",
-          "junction": "Recursive; another Tableaux project does the work"
+          "junction": "recursive"
         },
         {
           "key": "exempt",
           "symbol": "—",
           "meaning": "The gate does not apply",
-          "junction": "Not applicable; the entry exempts the task from the gate"
+          "junction": "not_applicable"
         }
       ]
     },
-    "causes": [],
+    "causes": [
+      {
+        "kind": "requirement",
+        "task": {
+          "id": "77b2",
+          "title": "tablo: backend library and plumbing"
+        },
+        "url": "",
+        "gate": "design",
+        "status": {
+          "kind": "snapshot",
+          "gate": "function",
+          "state": "nominal",
+          "reason": "",
+          "note": "prototype/8ed1 derives the history and a stand-in audit between two refs from one git log pass and one cat-file batch, on the weather station",
+          "date": "2026-09-30",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
+          "from": {
+            "kind": "snapshot",
+            "task": {
+              "id": "b2c1",
+              "title": "tablo"
+            },
+            "url": "subprojects/tablo",
+            "pin": "f7c3190c7f8b1ad5a0e8157349f136022e62c6b1",
+            "gate": "function"
+          }
+        },
+        "pin": "",
+        "tip": "",
+        "resolver": "",
+        "mark": "subproject",
+        "act": "contributes",
+        "advance": "",
+        "holds": 4,
+        "held": [
+          {
+            "task": {
+              "id": "437e",
+              "title": "Tableaux tooling"
+            },
+            "gate": "design",
+            "parent": true,
+            "via": "parent",
+            "child": "77b2",
+            "requires": null,
+            "contributor": "",
+            "also": [],
+            "held": []
+          },
+          {
+            "task": {
+              "id": "6103",
+              "title": "tabloio: command line, output and input"
+            },
+            "gate": "implementation",
+            "parent": false,
+            "via": "requirement",
+            "child": "",
+            "requires": {
+              "task": {
+                "id": "77b2",
+                "title": "tablo: backend library and plumbing"
+              },
+              "from": "implementation",
+              "to": "implementation",
+              "text": "The library and plumbing it calls",
+              "met": false,
+              "due": true,
+              "condition": "unmet",
+              "why": "",
+              "status": {
+                "kind": "snapshot",
+                "gate": "function",
+                "state": "nominal",
+                "reason": "",
+                "note": "prototype/8ed1 derives the history and a stand-in audit between two refs from one git log pass and one cat-file batch, on the weather station",
+                "date": "2026-09-30",
+                "recorder": "",
+                "derived": true,
+                "why": "",
+                "uncommitted": false,
+                "from": {
+                  "kind": "snapshot",
+                  "task": {
+                    "id": "b2c1",
+                    "title": "tablo"
+                  },
+                  "url": "subprojects/tablo",
+                  "pin": "f7c3190c7f8b1ad5a0e8157349f136022e62c6b1",
+                  "gate": "function"
+                }
+              },
+              "subproject": "",
+              "commit": "",
+              "at_trunk": "unknown"
+            },
+            "contributor": "",
+            "also": [],
+            "held": []
+          },
+          {
+            "task": {
+              "id": "c6e8",
+              "title": "tablotui: terminal user interface"
+            },
+            "gate": "implementation",
+            "parent": false,
+            "via": "requirement",
+            "child": "",
+            "requires": {
+              "task": {
+                "id": "77b2",
+                "title": "tablo: backend library and plumbing"
+              },
+              "from": "implementation",
+              "to": "implementation",
+              "text": "The library it embeds",
+              "met": false,
+              "due": true,
+              "condition": "unmet",
+              "why": "",
+              "status": {
+                "kind": "snapshot",
+                "gate": "function",
+                "state": "nominal",
+                "reason": "",
+                "note": "prototype/8ed1 derives the history and a stand-in audit between two refs from one git log pass and one cat-file batch, on the weather station",
+                "date": "2026-09-30",
+                "recorder": "",
+                "derived": true,
+                "why": "",
+                "uncommitted": false,
+                "from": {
+                  "kind": "snapshot",
+                  "task": {
+                    "id": "b2c1",
+                    "title": "tablo"
+                  },
+                  "url": "subprojects/tablo",
+                  "pin": "f7c3190c7f8b1ad5a0e8157349f136022e62c6b1",
+                  "gate": "function"
+                }
+              },
+              "subproject": "",
+              "commit": "",
+              "at_trunk": "unknown"
+            },
+            "contributor": "",
+            "also": [],
+            "held": []
+          },
+          {
+            "task": {
+              "id": "595e",
+              "title": "tableaud: local daemon and HTML"
+            },
+            "gate": "implementation",
+            "parent": false,
+            "via": "requirement",
+            "child": "",
+            "requires": {
+              "task": {
+                "id": "77b2",
+                "title": "tablo: backend library and plumbing"
+              },
+              "from": "implementation",
+              "to": "implementation",
+              "text": "The library it embeds",
+              "met": false,
+              "due": true,
+              "condition": "unmet",
+              "why": "",
+              "status": {
+                "kind": "snapshot",
+                "gate": "function",
+                "state": "nominal",
+                "reason": "",
+                "note": "prototype/8ed1 derives the history and a stand-in audit between two refs from one git log pass and one cat-file batch, on the weather station",
+                "date": "2026-09-30",
+                "recorder": "",
+                "derived": true,
+                "why": "",
+                "uncommitted": false,
+                "from": {
+                  "kind": "snapshot",
+                  "task": {
+                    "id": "b2c1",
+                    "title": "tablo"
+                  },
+                  "url": "subprojects/tablo",
+                  "pin": "f7c3190c7f8b1ad5a0e8157349f136022e62c6b1",
+                  "gate": "function"
+                }
+              },
+              "subproject": "",
+              "commit": "",
+              "at_trunk": "unknown"
+            },
+            "contributor": "",
+            "also": [],
+            "held": []
+          }
+        ],
+        "status_commit": {
+          "hash": "73ce560eb35aa1cfcb2fe65188712ddd18c5fc7c",
+          "subject": "Record the temporal views at their function gate",
+          "date": "2026-09-30",
+          "author_time": "2026-09-30T09:15:16-04:00",
+          "author": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Claude Sonnet 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "parents": [
+            "83bffa7bf9747648f59ef8cd79714f19f785d631"
+          ],
+          "trailers": [
+            "Reviewed: 8ed1 function",
+            "Model: claude-sonnet-5-5",
+            "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/status/8ed1.yaml",
+              "change": "changed"
+            }
+          ]
+        },
+        "junction": {
+          "gate": "design",
+          "kind": "recursive",
+          "marks": [
+            "subproject"
+          ],
+          "acts": false,
+          "contributor": "",
+          "model": "",
+          "reviewer": "",
+          "reviewer_by_default": false,
+          "subproject": {
+            "url": "subprojects/tablo",
+            "id": "",
+            "task": {
+              "id": "b2c1",
+              "title": "tablo"
+            },
+            "form": "submodule",
+            "commit": "f7c3190c7f8b1ad5a0e8157349f136022e62c6b1",
+            "why": ""
+          },
+          "references": [],
+          "stands": "next",
+          "reviewed": false,
+          "from": [
+            "77b2"
+          ]
+        },
+        "authorisation": null,
+        "linkage": null,
+        "resolve": []
+      }
+    ],
     "kinds": [
       {
         "kind": "requirement",
-        "count": 0
+        "count": 1
       },
       {
         "kind": "status",
@@ -188,8 +476,8 @@
         "count": 0
       }
     ],
-    "not_due_count": 10,
-    "not_due_unmet": 8,
+    "not_due_count": 2,
+    "not_due_unmet": 0,
     "not_due": [
       {
         "task": {
@@ -197,10 +485,28 @@
           "title": "tablo: backend library and plumbing"
         },
         "status": {
-          "gate": "defined",
-          "state": "nominal"
+          "kind": "snapshot",
+          "gate": "function",
+          "state": "nominal",
+          "reason": "",
+          "note": "prototype/8ed1 derives the history and a stand-in audit between two refs from one git log pass and one cat-file batch, on the weather station",
+          "date": "2026-09-30",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
+          "from": {
+            "kind": "snapshot",
+            "task": {
+              "id": "b2c1",
+              "title": "tablo"
+            },
+            "url": "subprojects/tablo",
+            "pin": "f7c3190c7f8b1ad5a0e8157349f136022e62c6b1",
+            "gate": "function"
+          }
         },
-        "next": "mockup",
+        "next": "design",
         "requires": [
           {
             "task": {
@@ -211,18 +517,25 @@
             "to": "implementation",
             "text": "The schema files it embeds",
             "met": true,
-            "due": false
-          },
-          {
-            "task": {
-              "id": "e9c6",
-              "title": "Abstract views"
+            "due": false,
+            "condition": "met",
+            "why": "",
+            "status": {
+              "kind": "recorded",
+              "gate": "unit",
+              "state": "nominal",
+              "reason": "",
+              "note": "schemas/check.sh (files agree with SYNTAX.md, version 0.2.1) and schemas/load.py (files load as JSON Schema 2020-12) pass; every .tableaux file validates",
+              "date": "2026-09-30",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
-            "from": "implementation",
-            "to": "design",
-            "text": "The abstract views it derives",
-            "met": false,
-            "due": false
+            "subproject": "",
+            "commit": "",
+            "at_trunk": "unknown"
           },
           {
             "task": {
@@ -233,137 +546,151 @@
             "to": "unit",
             "text": "The corpus it conforms to",
             "met": true,
-            "due": false
-          }
-        ]
-      },
-      {
-        "task": {
-          "id": "6103",
-          "title": "tabloio: command line, output and input"
-        },
-        "status": {
-          "gate": "defined",
-          "state": "nominal"
-        },
-        "next": "mockup",
-        "requires": [
-          {
-            "task": {
-              "id": "77b2",
-              "title": "tablo: backend library and plumbing"
+            "due": false,
+            "condition": "met",
+            "why": "",
+            "status": {
+              "kind": "recorded",
+              "gate": "implementation",
+              "state": "nominal",
+              "reason": "",
+              "note": "The corpus builds and checks clean, with 85 entries on the trunk; all three corrections from the tablo prototypes are in; the unit gate runs the tablo conformance test against it",
+              "date": "2026-09-30",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
-            "from": "implementation",
-            "to": "implementation",
-            "text": "The library and plumbing it calls",
-            "met": false,
-            "due": false
-          },
-          {
-            "task": {
-              "id": "bc86",
-              "title": "Markdown views"
-            },
-            "from": "mockup",
-            "to": "design",
-            "text": "The Markdown mockups it reproduces",
-            "met": false,
-            "due": false
-          }
-        ]
-      },
-      {
-        "task": {
-          "id": "c6e8",
-          "title": "tablotui: terminal user interface"
-        },
-        "status": {
-          "gate": "defined",
-          "state": "nominal"
-        },
-        "next": "mockup",
-        "requires": [
-          {
-            "task": {
-              "id": "77b2",
-              "title": "tablo: backend library and plumbing"
-            },
-            "from": "implementation",
-            "to": "implementation",
-            "text": "The library it embeds",
-            "met": false,
-            "due": false
-          },
-          {
-            "task": {
-              "id": "bc86",
-              "title": "Markdown views"
-            },
-            "from": "mockup",
-            "to": "design",
-            "text": "The Markdown mockups that fix the textual layout",
-            "met": false,
-            "due": false
-          },
-          {
-            "task": {
-              "id": "5fe3",
-              "title": "HTML views"
-            },
-            "from": "mockup",
-            "to": "design",
-            "text": "The HTML mockups that fix the disclosure levels",
-            "met": false,
-            "due": false
-          }
-        ]
-      },
-      {
-        "task": {
-          "id": "595e",
-          "title": "tableaud: local daemon and HTML"
-        },
-        "status": {
-          "gate": "defined",
-          "state": "nominal"
-        },
-        "next": "mockup",
-        "requires": [
-          {
-            "task": {
-              "id": "77b2",
-              "title": "tablo: backend library and plumbing"
-            },
-            "from": "implementation",
-            "to": "implementation",
-            "text": "The library it embeds",
-            "met": false,
-            "due": false
-          },
-          {
-            "task": {
-              "id": "5fe3",
-              "title": "HTML views"
-            },
-            "from": "mockup",
-            "to": "design",
-            "text": "The HTML mockups it reproduces",
-            "met": false,
-            "due": false
+            "subproject": "",
+            "commit": "",
+            "at_trunk": "unknown"
           }
         ]
       }
     ],
     "commands": [
       {
-        "text": "git ls-tree 3cdae52 subprojects/",
-        "comment": "the four pins"
-      },
-      {
-        "text": "git -C subprojects/tableaud rev-parse main",
-        "comment": "the trunk tip a pin compares with"
+        "text": "git log --format='%H %as %ae %ce %s' 50a373b2857a36e4ef1a754605433943d6bfe324 -- .tableaux/status .tableaux/tasks",
+        "comment": ""
       }
     ]
   },
-  "diagnostics": []
+  "diagnostics": [
+    {
+      "severity": "warning",
+      "code": "H3",
+      "task": "7166",
+      "gate": "implementation",
+      "commit": "56103af8cbaf561a90f9fa67fea02053372a4214",
+      "message": "Model claude-opus-5-5 is outside the stated model claude-sonnet"
+    },
+    {
+      "severity": "warning",
+      "code": "H3",
+      "task": "e9c6",
+      "gate": "implementation",
+      "commit": "ccb3947e3deb2f476a8c9c886266b2b4da66c6f6",
+      "message": "Model claude-opus-5-5 is outside the stated model claude-sonnet"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/7166.yaml",
+      "task": "7166",
+      "gate": "implementation",
+      "commit": "56103af8cbaf561a90f9fa67fea02053372a4214",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/7861.yaml",
+      "task": "7861",
+      "gate": "validate",
+      "commit": "c6f2655f1bda4469a6171b77cc21e326f0c99f87",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/9f3f.yaml",
+      "task": "9f3f",
+      "gate": "implementation",
+      "commit": "43d68e4f7d2b856c4d581983f34355d5b5f4f3b4",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/ac33.yaml",
+      "task": "ac33",
+      "gate": "implementation",
+      "commit": "6762222ddffef76008daad27ebe26069ac67cc5d",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/c2ad.yaml",
+      "task": "c2ad",
+      "gate": "validate",
+      "commit": "3d8ce0eee1e869c75453abba91cae03dec6587ce",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/e3cb.yaml",
+      "task": "e3cb",
+      "gate": "validate",
+      "commit": "c39ccac764b580ddb67789014c5f7f2c1bae9c6e",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/e9c6.yaml",
+      "task": "e9c6",
+      "gate": "validate",
+      "commit": "ccb3947e3deb2f476a8c9c886266b2b4da66c6f6",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/fcec.yaml",
+      "task": "fcec",
+      "gate": "unit",
+      "commit": "60495c26d886016b40069041386a811b24469312",
+      "message": "the newest event is the contributor's and the status states no review; noreply@anthropic.com may have unit to review"
+    },
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/595e.yaml",
+      "line": 13,
+      "col": 5,
+      "task": "595e",
+      "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    },
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/6103.yaml",
+      "line": 13,
+      "col": 5,
+      "task": "6103",
+      "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    },
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/c6e8.yaml",
+      "line": 13,
+      "col": 5,
+      "task": "c6e8",
+      "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    }
+  ]
 }

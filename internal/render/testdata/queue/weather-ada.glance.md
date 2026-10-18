@@ -8,9 +8,9 @@ Legend: `tabloio gates`.
 
 | Kind | Task | Gate | Model | Since |
 |---|---|---|---|---|
-| Authorisation owed | `3c5d` Dashboard; proposed; the deciding commit is not by an authority | 📌 mockup |  | 2026-09-22 |
+| Authorisation owed | `3c5d` Dashboard; proposed; the deciding commit is not by an authority | 📝 defined |  | 2026-09-22 |
 | Work ready | `7b2e` Gateway | 📝 defined |  | 2026-09-15 |
-| Reaffirmation | `9f31` Sensor board | ⚙️ function |  | 2026-09-28, 3 days |
+| Reaffirmation | `9f31` Sensor board | ⚙️ function |  | 2026-09-28, 0 days |
 | Work waiting | `9f31` Sensor board; blocked: Barometer ICs on 14-week backorder | ⚡ performance |  | 2026-09-28 |
 
 Command: `tabloio queue --person ada@example.org --ref main --level glance`

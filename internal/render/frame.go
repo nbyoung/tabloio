@@ -20,7 +20,7 @@ type frame struct {
 // the title, the parameter line, the legend line, the blocks, the See also
 // line at detail and provenance, and the closing command.
 func (p *page) frame(f frame) doc.Doc {
-	blocks := []doc.Block{heading(1, f.Title...), p.paramLine(f.Question)}
+	blocks := []doc.Block{heading(1, f.Title...), p.paramLine(f.Name, f.Question)}
 	if f.Legend {
 		blocks = append(blocks, para(spans(one(txt("Legend: ")), p.viewRef("gates"), one(txt(".")))...))
 	}
@@ -50,7 +50,7 @@ func (p *page) namesAny(names []string) bool {
 
 // paramLine is the second line of the frame: the question in bold, then,
 // joined by " · ", the project, the ref, the parameters in force and the level.
-func (p *page) paramLine(question string) doc.Para {
+func (p *page) paramLine(name, question string) doc.Para {
 	proj := p.h.Project
 	var runs [][]doc.Inline
 	switch {
@@ -60,7 +60,7 @@ func (p *page) paramLine(question string) doc.Para {
 		runs = append(runs, one(code(proj.Root)))
 	}
 	runs = append(runs, p.refSpans())
-	runs = append(runs, p.paramSpans()...)
+	runs = append(runs, p.paramSpans(name)...)
 	runs = append(runs, one(txt("level "+p.o.Level.String())))
 	return para(spans(one(doc.Strong{txt(question)}, txt(" ")), joined(" · ", runs...))...)
 }

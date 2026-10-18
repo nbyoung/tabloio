@@ -35,18 +35,15 @@
 |:-:|---|---|
 | 🪫 | `overloaded` | The assigned resource is overloaded |
 | ⛔ | `blocked` | An external resource is unavailable |
-| 👓 | `review` | The work waits for its reviewer |
-
-The method reserves `review`: the contributor has handed the next junction's work to its reviewer, and the work queue lists the review as owed. 👓 beside a state says the work waits for its reviewer; 👀 in a cell says a reviewer accepts the work there.
 
 ## Junction marks
 
 | Mark | Meaning | Junction |
 |:-:|---|---|
-| 🧑 | A person contributes | Plain; the contributor is a person |
-| 🤖 | An agent contributes | Plain; the junction states a `model` |
-| 👀 | A reviewer accepts | Plain; the reviewer accepts the work at the gate |
-| 🪆 | A subproject does the work | Recursive; another Tableaux project does the work |
-| — | The gate does not apply | Not applicable; the entry exempts the task from the gate |
+| 🧑 | A person contributes | Plain |
+| 🤖 | An agent contributes | Plain |
+| 👀 | A reviewer accepts | Plain |
+| 🪆 | A subproject does the work | Recursive |
+| — | The gate does not apply | Not applicable |
 
 Command: `tabloio gates --task 9f31 --ref main --level detail`

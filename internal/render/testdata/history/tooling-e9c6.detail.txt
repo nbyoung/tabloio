@@ -1,23 +1,22 @@
 History: e9c6 Abstract views
 ════════════════════════════
 
-*What happened, when, and who did it?* Tableaux tooling · ref main · task e9c6 ·
-level detail
+*What happened, when, and who did it?* Tableaux tooling · ref corpus/tooling ·
+task e9c6 · level detail
 
 Legend: tabloio gates.
 
-8 events in 7 commits, 2026-09-29 to 2026-09-30: 1 task, 1 authorised, 4 status,
-0 reaffirmed, 2 reviewed, 0 pin.
+9 events in 8 commits, 2026-09-29 to 2026-10-05: 1 task, 0 authorised, 5 status,
+0 reaffirmed, 3 reviewed, 0 pin.
 
-2026-09-29 · 4 events in 3 commits: 1 task, 1 authorised, 1 status, 1 reviewed
-──────────────────────────────────────────────────────────────────────────────
+2026-09-29 · 3 events in 3 commits: 1 task, 1 status, 1 reviewed
+────────────────────────────────────────────────────────────────
 
-- *2026-09-29* · nbyoung@nbyoung.com · task, authorised · e9c6 Abstract views ·
-  the task file appears
+- *2026-09-29* · nbyoung@nbyoung.com · task · e9c6 Abstract views · the task
+  file appears
   - Status after: ❔ undefined ⚪ undefined
   - Effect: an authority commits the task file on the trunk, so the task is
     authorised
-  - Model: none recorded; exempt
 - *2026-09-29* · noreply@anthropic.com · status · e9c6 Abstract views ·
   📝 defined 🟢 nominal
   - Status after: 📝 defined 🟢 nominal
@@ -28,7 +27,6 @@ Legend: tabloio gates.
   📝 defined
   - Status after: 📝 defined 🟢 nominal, unchanged
   - Effect: none; the authorisation stands as the review
-  - Model: none recorded; exempt
   - Committer: nbyoung@nbyoung.com
 
 2026-09-30 · 4 events in 4 commits: 3 status, 1 reviewed
@@ -60,4 +58,17 @@ Legend: tabloio gates.
     start, and implementation puts the text in place
   - Model: claude-fable-5-1; the 📐 design junction states claude-fable
 
-Command: tabloio history --task e9c6 --ref main --level detail --text
+2026-10-05 · 2 events in 1 commit: 1 status, 1 reviewed
+───────────────────────────────────────────────────────
+
+- *2026-10-05* · noreply@anthropic.com · status, reviewed · e9c6 Abstract views
+  · 🧱 implementation 🟢 nominal
+  - Status after: 🧱 implementation 🟢 nominal
+  - Note: VIEWS.md defines the ten views on the trunk and agrees with the twenty
+    approved mockups on the gate window; validation checks that tablo and the
+    front ends follow the text
+  - Effect: the reviewer accepts the work at the gate
+  - Model: claude-opus-5-5; the 🧱 implementation junction states claude-sonnet,
+    which differs
+
+Command: tabloio history --task e9c6 --ref corpus/tooling --level detail --text

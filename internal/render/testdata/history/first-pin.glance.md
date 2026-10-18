@@ -8,9 +8,9 @@ Legend: `tabloio gates`.
 
 | Date | By | Event | Task | Gate and state, or pin |
 |---|---|---|---|---|
-| 2026-09-29 | nbyoung@nbyoung.com | pin | `77b2` | `subprojects/tablo` new `dc669dd` |
-| 2026-09-29 | nbyoung@nbyoung.com | pin | `6103` | `subprojects/tabloio` new `46521bc` |
-| 2026-09-29 | nbyoung@nbyoung.com | pin | `c6e8` | `subprojects/tablotui` new `4544042` |
-| 2026-09-29 | nbyoung@nbyoung.com | pin | `595e` | `subprojects/tableaud` new `59783a9` |
+| 2026-09-29 | nbyoung@nbyoung.com | pin | `77b2` tablo: backend library and plumbing | `subprojects/tablo` new `dc669dd` |
+| 2026-09-29 | nbyoung@nbyoung.com | pin | `6103` tabloio: command line, output and input | `subprojects/tabloio` new `46521bc` |
+| 2026-09-29 | nbyoung@nbyoung.com | pin | `c6e8` tablotui: terminal user interface | `subprojects/tablotui` new `4544042` |
+| 2026-09-29 | nbyoung@nbyoung.com | pin | `595e` tableaud: local daemon and HTML | `subprojects/tableaud` new `59783a9` |
 
 Command: `tabloio history --ref a7932ae..37a08e9 --level glance`

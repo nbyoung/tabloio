@@ -1,66 +1,88 @@
 Global tableau
 ══════════════
 
-*How does the whole project stand?* Tableaux tooling · ref main · window 1 ·
-level glance
+*How does the whole project stand?* Tableaux tooling · ref corpus/tooling ·
+window 1 · level glance
 
 Legend: tabloio gates.
 
-┌──────┬────────────────────────────────┬─────┬──┬────┬──┬────┬──┬──┬──┬────┬──┐
-│ Id   │ Task                           │❔ ×0│📝│ 📌 │🔧│ 📐 │🧱│📏│🔗│ 🌍 │🚀│
-├──────┼────────────────────────────────┼─────┼──┼────┼──┼────┼──┼──┼──┼────┼──┤
-│ 437e │ *Tableaux tooling*             │     │🟢│🤖👀│🤖│🤖👀│🤖│🤖│🤖│🤖👀│🧑│
-│ bc63 │   *Method* (31)                │     │🟢│🤖👀│🤖│🤖👀│🤖│🤖│🤖│🤖👀│🧑│
-│ 77b2 │   tablo: backend library and   │     │🟢│ 🪆 │🪆│ 🪆 │🪆│🪆│🪆│ 🪆 │🪆│
-│      │   plumbing                     │     │  │    │  │    │  │  │  │    │  │
-│ 6103 │   tabloio: command line,       │     │🟢│ 🪆 │🪆│ 🪆 │🪆│🪆│🪆│ 🪆 │🪆│
-│      │   output and input             │     │  │    │  │    │  │  │  │    │  │
-│ c6e8 │   tablotui: terminal user      │     │🟢│ 🪆 │🪆│ 🪆 │🪆│🪆│🪆│ 🪆 │🪆│
-│      │   interface                    │     │  │    │  │    │  │  │  │    │  │
-│ 595e │   tableaud: local daemon and   │     │🟢│ 🪆 │🪆│ 🪆 │🪆│🪆│🪆│ 🪆 │🪆│
-│      │   HTML                         │     │  │    │  │    │  │  │  │    │  │
-└──────┴────────────────────────────────┴─────┴──┴────┴──┴────┴──┴──┴──┴────┴──┘
+┌──────┬────────────────────────────────────┬─────────┬──┬────┬──┬──┬──┬────┬──┐
+│ Id   │ Task                               │❔…📌 ×22│🔧│ 📐 │🧱│📏│🔗│ 🌍 │🚀│
+├──────┼────────────────────────────────────┼─────────┼──┼────┼──┼──┼──┼────┼──┤
+│ 437e │ *Tableaux tooling*                 │         │🟢│🤖👀│🤖│🤖│🤖│🤖👀│🧑│
+│ bc63 │   *Method* (31)                    │         │  │ 🟢 │🤖│🤖│🤖│🤖👀│🧑│
+│ 77b2 │   tablo: backend library and       │         │🟢│ 🪆 │🪆│🪆│🪆│ 🪆 │🪆│
+│      │   plumbing                         │         │  │    │  │  │  │    │  │
+│ 6103 │   tabloio: command line, output    │         │  │ 🟢 │🪆│🪆│🪆│ 🪆 │🪆│
+│      │   and input                        │         │  │    │  │  │  │    │  │
+│ c6e8 │   tablotui: terminal user          │         │  │ 🟢 │🪆│🪆│🪆│ 🪆 │🪆│
+│      │   interface                        │         │  │    │  │  │  │    │  │
+│ 595e │   tableaud: local daemon and HTML  │         │  │ 🟢 │🪆│🪆│🪆│ 🪆 │🪆│
+└──────┴────────────────────────────────────┴─────────┴──┴────┴──┴──┴──┴────┴──┘
 
-❔ undefined · 📝 defined · 📌 mockup · 🔧 function · 📐 design ·
-🧱 implementation · 📏 unit · 🔗 integrate · 🌍 validate · 🚀 release ·
-🟢 nominal · 🧑 a person contributes · 🤖 an agent contributes · 👀 a reviewer
-accepts · 🪆 a subproject does the work.
+❔ undefined · 📌 mockup · 🔧 function · 📐 design · 🧱 implementation · 📏 unit
+· 🔗 integrate · 🌍 validate · 🚀 release · 🟢 nominal · 🧑 a person contributes
+· 🤖 an agent contributes · 👀 a reviewer accepts · 🪆 a subproject does the
+work.
 
 Notes
 ─────
 
-┌───────────┬────────────┬──────────────────────────┬──────────────────────────┐
-│ Rows      │ Date       │ Note                     │ From                     │
-├───────────┼────────────┼──────────────────────────┼──────────────────────────┤
-│ 437e bc63 │ 2026-09-29 │ Mockup waits for         │ rolled up from 99f0 Gate │
-│           │            │ Abstract views (e9c6) at │ definition view in       │
-│           │            │ design                   │ Markdown                 │
-│ 77b2      │ 2026-09-30 │ The design is next and   │ b2c1 tablo in            │
-│           │            │ no requirement gates it  │ subprojects/tablo at     │
-│           │            │                          │ 00f8f68, at 📝 defined   │
-│ 6103      │ 2026-09-30 │ prototype/e3ed renders   │ 07e0 tabloio in          │
-│           │            │ the gate and task        │ subprojects/tabloio at   │
-│           │            │ definition views as      │ 4593882, at 🔧 function  │
-│           │            │ Markdown at three levels │                          │
-│           │            │ from tablo view data     │                          │
-│ c6e8      │ 2026-09-30 │ prototype/679b renders   │ 40e8 tablotui in         │
-│           │            │ the global tableau as a  │ subprojects/tablotui at  │
-│           │            │ Bubble Tea grid with     │ a2878b5, at 🔧 function  │
-│           │            │ tree expand and          │                          │
-│           │            │ collapse, scrolling, a   │                          │
-│           │            │ folded gate window and   │                          │
-│           │            │ hidden columns kept in a │                          │
-│           │            │ settings file; emoji     │                          │
-│           │            │ lines align where the    │                          │
-│           │            │ terminal widens U+FE0F   │                          │
-│ 595e      │ 2026-09-30 │ prototype/49ce serves    │ 8608 tableaud in         │
-│           │            │ the ten views with a     │ subprojects/tableaud at  │
-│           │            │ stdlib HEAD and          │ e6ec4ec, at 🔧 function  │
-│           │            │ .tableaux watcher, ETag  │                          │
-│           │            │ 304 polling through      │                          │
-│           │            │ htmx, a Source interface │                          │
-│           │            │ and a loopback Host      │                          │
-│           │            │ check                    │                          │
-└───────────┴────────────┴──────────────────────────┴──────────────────────────┘
+┌──────┬────────────┬────────────────────────────┬─────────────────────────────┐
+│ Rows │ Date       │ Note                       │ From                        │
+├──────┼────────────┼────────────────────────────┼─────────────────────────────┤
+│ 437e │ 2026-09-30 │ prototype/8ed1 derives the │ rolled up from 77b2 tablo:  │
+│      │            │ history and a stand-in     │ backend library and         │
+│      │            │ audit between two refs     │ plumbing                    │
+│      │            │ from one git log pass and  │                             │
+│      │            │ one cat-file batch, on the │                             │
+│      │            │ weather station            │                             │
+│ bc63 │ 2026-09-30 │ The model plan-and-record  │ rolled up from ac33 Agent   │
+│      │            │ rule (F20) is on the       │ identity                    │
+│      │            │ trunk; F1, F2 and F10      │                             │
+│      │            │ remain for design          │                             │
+│ 77b2 │ 2026-09-30 │ prototype/8ed1 derives the │ b2c1 tablo in               │
+│      │            │ history and a stand-in     │ subprojects/tablo at        │
+│      │            │ audit between two refs     │ f7c3190, at 🔧 function     │
+│      │            │ from one git log pass and  │                             │
+│      │            │ one cat-file batch, on the │                             │
+│      │            │ weather station            │                             │
+│ 6103 │ 2026-09-30 │ design/e0f7.md is on the   │ 07e0 tabloio in             │
+│      │            │ trunk with the owner's     │ subprojects/tabloio at      │
+│      │            │ decisions of 2026-10-07,   │ 4bb4300, at 📐 design       │
+│      │            │ after two revisions;       │                             │
+│      │            │ implementation follows,    │                             │
+│      │            │ with one writer over       │                             │
+│      │            │ doc.Doc, golang.org/x/text │                             │
+│      │            │ for the width table, one   │                             │
+│      │            │ rule for the variation     │                             │
+│      │            │ selector and no option for │                             │
+│      │            │ it, and --width as the one │                             │
+│      │            │ new option; no terminal    │                             │
+│      │            │ draws the output before    │                             │
+│      │            │ validate                   │                             │
+│ c6e8 │ 2026-09-30 │ design/518e.md is on the   │ 40e8 tablotui in            │
+│      │            │ trunk with the owner's     │ subprojects/tablotui at     │
+│      │            │ decisions of 2026-10-07;   │ ce24c31, at 📐 design       │
+│      │            │ implementation waits for   │                             │
+│      │            │ tabloio's action package   │                             │
+│      │            │ (b618) at implementation   │                             │
+│      │            │ and a tabloio tag that     │                             │
+│      │            │ go.mod can require         │                             │
+│ 595e │ 2026-09-30 │ design/db74.md is on the   │ 8608 tableaud in            │
+│      │            │ trunk with the owner's     │ subprojects/tableaud at     │
+│      │            │ decisions of 2026-10-07,   │ 0da180c, at 📐 design       │
+│      │            │ after two revisions;       │                             │
+│      │            │ implementation follows,    │                             │
+│      │            │ and it meets the           │                             │
+│      │            │ accessibility task (5a2f)  │                             │
+│      │            │ in base.html,              │                             │
+│      │            │ shared/grid.html, the      │                             │
+│      │            │ sheet and the script; the  │                             │
+│      │            │ adapters' focus and the    │                             │
+│      │            │ audit's control wait for   │                             │
+│      │            │ tablo's views and for the  │                             │
+│      │            │ temporal templates (9a9c)  │                             │
+└──────┴────────────┴────────────────────────────┴─────────────────────────────┘
 
-Command: tabloio tableau --ref main --window 1 --level glance --text
+Command: tabloio tableau --ref corpus/tooling --window 1 --level glance --text

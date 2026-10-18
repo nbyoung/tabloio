@@ -1,6 +1,6 @@
 # History: `437e` Tableaux tooling
 
-**What happened, when, and who did it?** Tableaux tooling · ref `0704a09..main` · level detail
+**What happened, when, and who did it?** Tableaux tooling · ref `0704a09..3cdae52` · level detail
 
 Legend: `tabloio gates`.
 
@@ -11,85 +11,97 @@ Legend: `tabloio gates`.
 - **2026-09-30** · noreply@anthropic.com · status · `e9c6` Abstract views · 📐 design 🟢 nominal
   - Status after: 📐 design 🟢 nominal
   - Note: VIEWS.md is on the trunk at language 0.3.1; the twenty mockups may start, and implementation puts the text in place
-  - `437e` Tableaux tooling after: 📝 defined 🟢 nominal, rolled up from `99f0` Gate definition view in Markdown
+  - `437e` Tableaux tooling after: 📝 defined 🟢 nominal, rolled up from `bc63` Method
   - Model: `claude-fable-5-1`; the 📐 design junction states `claude-fable`
 
 ## 2026-10-02 · 10 events in 4 commits: 10 pin
 
-- **2026-10-02** · nbyoung@nbyoung.com · pin · `6103` · `subprojects/tabloio` `62261d4` → `7eba1e5`
+- **2026-10-02** · nbyoung@nbyoung.com · pin · `6103` tabloio: command line, output and input · `subprojects/tabloio` `62261d4` → `7eba1e5`
   - Status after: 📝 defined 🟢 nominal, 🪆 from the subproject `subprojects/tabloio`
+  - `437e` Tableaux tooling after: 📝 defined 🟢 nominal, rolled up from `bc63` Method
   - Model: `claude-opus-5-5`
-  - Subproject events: 16 events of `subprojects/tabloio`
-    - 2026-09-30 · noreply@anthropic.com · status, reviewed · `a3cc` · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
-    - 2026-09-30 · noreply@anthropic.com · status, reviewed · `c48a` · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
-    - 2026-09-30 · noreply@anthropic.com · status, reviewed · `9167` · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
-    - 2026-09-30 · noreply@anthropic.com · status, reviewed · `e0f7` · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
-    - 2026-09-30 · noreply@anthropic.com · status, reviewed · `b618` · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
-    - 2026-09-30 · noreply@anthropic.com · status, reviewed · `e3ed` · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
-    - 2026-09-30 · noreply@anthropic.com · status, reviewed · `e4c7` · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
-    - 2026-09-30 · noreply@anthropic.com · status, reviewed · `5ca9` · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
-- **2026-10-02** · nbyoung@nbyoung.com · pin · `77b2` · `subprojects/tablo` `7e94d58` → `816f2a0`
+  - Subproject events: 17 events in 9 commits of `subprojects/tabloio`
+    - 2026-09-30 · noreply@anthropic.com · status, reviewed · `a3cc` Status renderers · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
+    - 2026-09-30 · noreply@anthropic.com · status, reviewed · `c48a` Structural renderers · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
+    - 2026-09-30 · noreply@anthropic.com · status, reviewed · `9167` Temporal renderers · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
+    - 2026-09-30 · noreply@anthropic.com · status, reviewed · `e0f7` Text renderers · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
+    - 2026-09-30 · noreply@anthropic.com · status, reviewed · `b618` Write commands · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
+    - 2026-09-30 · noreply@anthropic.com · status, reviewed · `e3ed` Legend and task renderers · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
+    - 2026-09-30 · noreply@anthropic.com · status, reviewed · `e4c7` Agent briefs · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
+    - 2026-09-30 · noreply@anthropic.com · status, reviewed · `5ca9` Read commands · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
+    - 2026-09-30 · noreply@anthropic.com · status · `1422` Snapshot workflow · 📝 defined 🟢 nominal 👓 review · `claude-opus-5-5`
+- **2026-10-02** · nbyoung@nbyoung.com · pin · `77b2` tablo: backend library and plumbing · `subprojects/tablo` `7e94d58` → `816f2a0`
   - Status after: 📝 defined 🟢 nominal, 🪆 from the subproject `subprojects/tablo`, unchanged
+  - `437e` Tableaux tooling after: 📝 defined 🟢 nominal, rolled up from `bc63` Method
   - Model: `claude-opus-5-5`
-- **2026-10-02** · nbyoung@nbyoung.com · pin · `6103` · `subprojects/tabloio` `7eba1e5` → `581ae98`
+- **2026-10-02** · nbyoung@nbyoung.com · pin · `6103` tabloio: command line, output and input · `subprojects/tabloio` `7eba1e5` → `581ae98`
   - Status after: 📝 defined 🟢 nominal, 🪆 from the subproject `subprojects/tabloio`, unchanged
+  - `437e` Tableaux tooling after: 📝 defined 🟢 nominal, rolled up from `bc63` Method
   - Model: `claude-opus-5-5`
-- **2026-10-02** · nbyoung@nbyoung.com · pin · `c6e8` · `subprojects/tablotui` `159fdab` → `dbfb8e3`
+- **2026-10-02** · nbyoung@nbyoung.com · pin · `c6e8` tablotui: terminal user interface · `subprojects/tablotui` `159fdab` → `dbfb8e3`
   - Status after: 📝 defined 🟢 nominal, 🪆 from the subproject `subprojects/tablotui`, unchanged
+  - `437e` Tableaux tooling after: 📝 defined 🟢 nominal, rolled up from `bc63` Method
   - Model: `claude-opus-5-5`
-- **2026-10-02** · nbyoung@nbyoung.com · pin · `595e` · `subprojects/tableaud` `2061a7f` → `b06cad0`
+- **2026-10-02** · nbyoung@nbyoung.com · pin · `595e` tableaud: local daemon and HTML · `subprojects/tableaud` `2061a7f` → `b06cad0`
   - Status after: 📝 defined 🟢 nominal, 🪆 from the subproject `subprojects/tableaud`, unchanged
+  - `437e` Tableaux tooling after: 📝 defined 🟢 nominal, rolled up from `bc63` Method
   - Model: `claude-opus-5-5`
-- **2026-10-02** · nbyoung@nbyoung.com · pin · `77b2` · `subprojects/tablo` `816f2a0` → `00f8f68`
+- **2026-10-02** · nbyoung@nbyoung.com · pin · `77b2` tablo: backend library and plumbing · `subprojects/tablo` `816f2a0` → `00f8f68`
   - Status after: 📝 defined 🟢 nominal, 🪆 from the subproject `subprojects/tablo`, unchanged
+  - `437e` Tableaux tooling after: 📝 defined 🟢 nominal, rolled up from `bc63` Method
   - Model: `claude-opus-5-5`
-- **2026-10-02** · nbyoung@nbyoung.com · pin · `6103` · `subprojects/tabloio` `581ae98` → `cb9ff8f`
+- **2026-10-02** · nbyoung@nbyoung.com · pin · `6103` tabloio: command line, output and input · `subprojects/tabloio` `581ae98` → `cb9ff8f`
   - Status after: 📝 defined 🟢 nominal, 🪆 from the subproject `subprojects/tabloio`, unchanged
+  - `437e` Tableaux tooling after: 📝 defined 🟢 nominal, rolled up from `bc63` Method
   - Model: `claude-opus-5-5`
-- **2026-10-02** · nbyoung@nbyoung.com · pin · `c6e8` · `subprojects/tablotui` `dbfb8e3` → `334df71`
+- **2026-10-02** · nbyoung@nbyoung.com · pin · `c6e8` tablotui: terminal user interface · `subprojects/tablotui` `dbfb8e3` → `334df71`
   - Status after: 📝 defined 🟢 nominal, 🪆 from the subproject `subprojects/tablotui`, unchanged
+  - `437e` Tableaux tooling after: 📝 defined 🟢 nominal, rolled up from `bc63` Method
   - Model: `claude-opus-5-5`
-- **2026-10-02** · nbyoung@nbyoung.com · pin · `595e` · `subprojects/tableaud` `b06cad0` → `cffbfa6`
+- **2026-10-02** · nbyoung@nbyoung.com · pin · `595e` tableaud: local daemon and HTML · `subprojects/tableaud` `b06cad0` → `cffbfa6`
   - Status after: 📝 defined 🟢 nominal, 🪆 from the subproject `subprojects/tableaud`, unchanged
+  - `437e` Tableaux tooling after: 📝 defined 🟢 nominal, rolled up from `bc63` Method
   - Model: `claude-opus-5-5`
-- **2026-10-02** · nbyoung@nbyoung.com · pin · `6103` · `subprojects/tabloio` `cb9ff8f` → `4593882`
+- **2026-10-02** · nbyoung@nbyoung.com · pin · `6103` tabloio: command line, output and input · `subprojects/tabloio` `cb9ff8f` → `4593882`
   - Status after: 📝 defined 🟢 nominal, 🪆 from the subproject `subprojects/tabloio`
+  - `437e` Tableaux tooling after: 📝 defined 🟢 nominal, rolled up from `bc63` Method
   - Model: `claude-opus-5-5`
-  - Subproject events: 3 events of `subprojects/tabloio`
-    - 2026-09-30 · noreply@anthropic.com · status · `1422` · 📝 defined 🟢 nominal 👓 review · `claude-opus-5-5`
-    - 2026-10-02 · nbyoung@nbyoung.com · reviewed · `1422` · 📐 design · `claude-opus-5-5`
-    - 2026-10-02 · noreply@anthropic.com · status · `1422` · 📐 design 🟢 nominal · `claude-opus-5-5`
+  - Subproject events: 2 events in 2 commits of `subprojects/tabloio`
+    - 2026-10-02 · nbyoung@nbyoung.com · reviewed · `1422` Snapshot workflow · 📐 design · `claude-opus-5-5`
+    - 2026-10-02 · noreply@anthropic.com · status · `1422` Snapshot workflow · 📐 design 🟢 nominal · `claude-opus-5-5`
 
 ## 2026-10-04 · 1 event in 1 commit: 1 pin
 
-- **2026-10-04** · nbyoung@nbyoung.com · pin · `c6e8` · `subprojects/tablotui` `334df71` → `a2878b5`
+- **2026-10-04** · nbyoung@nbyoung.com · pin · `c6e8` tablotui: terminal user interface · `subprojects/tablotui` `334df71` → `a2878b5`
   - Status after: 📝 defined 🟢 nominal, 🪆 from the subproject `subprojects/tablotui`
+  - `437e` Tableaux tooling after: 📝 defined 🟢 nominal, rolled up from `bc63` Method
   - Model: `claude-opus-5-5`
-  - Subproject events: 10 events of `subprojects/tablotui`
-    - 2026-10-02 · noreply@anthropic.com · status, reviewed · `518e` · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
-    - 2026-10-02 · noreply@anthropic.com · status, reviewed · `f394` · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
-    - 2026-10-02 · noreply@anthropic.com · status, reviewed · `679b` · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
-    - 2026-10-02 · noreply@anthropic.com · status, reviewed · `171b` · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
-    - 2026-10-02 · noreply@anthropic.com · status, reviewed · `0afa` · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
+  - Subproject events: 10 events in 5 commits of `subprojects/tablotui`
+    - 2026-10-02 · noreply@anthropic.com · status, reviewed · `518e` Actions · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
+    - 2026-10-02 · noreply@anthropic.com · status, reviewed · `f394` Role and context · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
+    - 2026-10-02 · noreply@anthropic.com · status, reviewed · `679b` Tableau grid · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
+    - 2026-10-02 · noreply@anthropic.com · status, reviewed · `171b` Live refresh · `claude-sonnet-5-5`
+    - 2026-10-02 · noreply@anthropic.com · status, reviewed · `0afa` Detail panes · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
 
 ## 2026-10-05 · 1 event in 1 commit: 1 pin
 
-- **2026-10-05** · nbyoung@nbyoung.com · pin · `595e` · `subprojects/tableaud` `cffbfa6` → `e6ec4ec`
+- **2026-10-05** · nbyoung@nbyoung.com · pin · `595e` tableaud: local daemon and HTML · `subprojects/tableaud` `cffbfa6` → `e6ec4ec`
   - Status after: 📝 defined 🟢 nominal, 🪆 from the subproject `subprojects/tableaud`
+  - `437e` Tableaux tooling after: 📝 defined 🟢 nominal, rolled up from `bc63` Method
   - Model: `claude-opus-5-5`
-  - Subproject events: 21 events of `subprojects/tableaud`
-    - 2026-10-05 · noreply@anthropic.com · status, reviewed · `9a9c` · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
-    - 2026-10-05 · noreply@anthropic.com · status, reviewed · `44bf` · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
-    - 2026-10-05 · noreply@anthropic.com · reviewed · `438a` · 🔧 function · `claude-sonnet-5-5`
-    - 2026-10-05 · noreply@anthropic.com · status, reviewed · `438a` · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
-    - 2026-10-05 · noreply@anthropic.com · reviewed · `e2b6` · 🔧 function · `claude-sonnet-5-5`
-    - 2026-10-05 · noreply@anthropic.com · status, reviewed · `e2b6` · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
-    - 2026-10-05 · noreply@anthropic.com · reviewed · `49ce` · 🔧 function · `claude-sonnet-5-5`
-    - 2026-10-05 · noreply@anthropic.com · status, reviewed · `49ce` · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
-    - 2026-10-05 · noreply@anthropic.com · reviewed · `db74` · 🔧 function · `claude-sonnet-5-5`
-    - 2026-10-05 · noreply@anthropic.com · status, reviewed · `db74` · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
-    - 2026-10-05 · noreply@anthropic.com · reviewed · `5a2f` · 🔧 function · `claude-sonnet-5-5`
-    - 2026-10-05 · noreply@anthropic.com · status, reviewed · `5a2f` · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
-    - 2026-10-05 · noreply@anthropic.com · status, reviewed · `6160` · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
+  - Subproject events: 21 events in 13 commits of `subprojects/tableaud`
+    - 2026-10-05 · noreply@anthropic.com · status, reviewed · `9a9c` Temporal templates · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
+    - 2026-10-05 · noreply@anthropic.com · status, reviewed · `44bf` Status templates · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
+    - 2026-10-05 · noreply@anthropic.com · reviewed · `438a` Legend and task templates · 🔧 function · `claude-sonnet-5-5`
+    - 2026-10-05 · noreply@anthropic.com · status, reviewed · `438a` Legend and task templates · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
+    - 2026-10-05 · noreply@anthropic.com · reviewed · `e2b6` Structural templates · 🔧 function · `claude-sonnet-5-5`
+    - 2026-10-05 · noreply@anthropic.com · status, reviewed · `e2b6` Structural templates · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
+    - 2026-10-05 · noreply@anthropic.com · reviewed · `49ce` Server · 🔧 function · `claude-sonnet-5-5`
+    - 2026-10-05 · noreply@anthropic.com · status, reviewed · `49ce` Server · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
+    - 2026-10-05 · noreply@anthropic.com · reviewed · `db74` Progressive disclosure · 🔧 function · `claude-sonnet-5-5`
+    - 2026-10-05 · noreply@anthropic.com · status, reviewed · `db74` Progressive disclosure · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
+    - 2026-10-05 · noreply@anthropic.com · reviewed · `5a2f` Accessibility and theming · 🔧 function · `claude-sonnet-5-5`
+    - 2026-10-05 · noreply@anthropic.com · status, reviewed · `5a2f` Accessibility and theming · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
+    - 2026-10-05 · noreply@anthropic.com · status, reviewed · `6160` Static export · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
 
-Command: `tabloio history --ref 0704a09..main --level detail`
+Command: `tabloio history --ref 0704a09..3cdae52 --level detail`

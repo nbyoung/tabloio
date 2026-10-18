@@ -1,6 +1,6 @@
 # Authority delegation
 
-**Who may accept what?** Tableaux tooling · ref `main` · proposed only · level detail
+**Who may accept what?** Tableaux tooling · ref `corpus/tooling` · proposed only · level detail
 
 Legend: `tabloio gates`.
 
@@ -10,4 +10,4 @@ Legend: `tabloio gates`.
 
 ## Chains and defaults: none
 
-Command: `tabloio authority --ref main --proposed --level detail`
+Command: `tabloio authority --ref corpus/tooling --proposed --level detail`

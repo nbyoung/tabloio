@@ -1,8 +1,8 @@
 Authority delegation
 ════════════════════
 
-*Who may accept what?* Tableaux tooling · ref main at 3cdae52, 2026-10-05 ·
-proposed only · level provenance
+*Who may accept what?* Tableaux tooling · ref corpus/tooling at 50a373b,
+2026-10-17 · proposed only · level provenance
 
 Legend: tabloio gates.
 
@@ -16,7 +16,6 @@ Chains and defaults: none
 Deciding commits: none
 ──────────────────────
 
-    git log --first-parent -1 --format='%h %as %ae %ce %p' main -- .tableaux/tasks/437e.yaml
-    git log --first-parent -1 --format='%h %as %ae %ce %p' -E --grep='^Authorised: 437e$' main
+    git log --first-parent --format='%H %as %ae %ce %P' 50a373b2857a36e4ef1a754605433943d6bfe324 -- .tableaux/tasks
 
-Command: tabloio authority --ref 3cdae52 --proposed --level provenance --text
+Command: tabloio authority --ref 50a373b --proposed --level provenance --text

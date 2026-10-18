@@ -34,8 +34,8 @@ Children: `9f31` `c07d`.
 
 | Gate | Marks | Contributor | Model | Reviewer |
 |---|:-:|---|---|---|
-| 📌 mockup | 👀 |  |  | ben@example.org |
+| 📌 mockup | 🧑 | ben@example.org |  | ben@example.org |
 
-👀 a reviewer accepts.
+🧑 a person contributes.
 
 Command: `tabloio authority --ref main --level detail`

@@ -1,6 +1,6 @@
 # Gate definition
 
-**What do the columns and symbols mean?** Tableaux tooling · ref `main` at `3cdae52`, 2026-10-05 · level provenance
+**What do the columns and symbols mean?** Tableaux tooling · ref `corpus/tooling` at `50a373b`, 2026-10-17 · level provenance
 
 ## Gates
 
@@ -47,32 +47,32 @@ Source: `reasons` in `.tableaux/gates.yaml`; the reserved meaning of `review` in
 
 | Mark | Meaning | Junction |
 |:-:|---|---|
-| 🧑 | A person contributes | Plain; the contributor is a person |
-| 🤖 | An agent contributes | Plain; the junction states a `model` |
-| 👀 | A reviewer accepts | Plain; the reviewer accepts the work at the gate |
-| 🪆 | A subproject does the work | Recursive; another Tableaux project does the work |
-| — | The gate does not apply | Not applicable; the entry exempts the task from the gate |
+| 🧑 | A person contributes | Plain |
+| 🤖 | An agent contributes | Plain |
+| 👀 | A reviewer accepts | Plain |
+| 🪆 | A subproject does the work | Recursive |
+| — | The gate does not apply | Not applicable |
 
-Source: `README.md`, Junctions, at language 0.3.1.
+Source: `README.md`, Junctions, at language 0.3.2.
 
 ## Provenance
 
 | Fact | Value | Source |
 |---|---|---|
-| Language version | 0.3.1 | `tableaux` in `.tableaux/version.yaml` |
+| Language version | 0.3.2 | `tableaux` in `.tableaux/version.yaml` |
 | Trunk | `main` | `trunk` in `.tableaux/version.yaml` |
-| Ref | `main` at `3cdae52`, 2026-10-05, on the trunk | The `--ref` parameter |
+| Ref | `corpus/tooling` at `50a373b`, 2026-10-17, on the trunk | The `--ref` parameter |
 
 | File | Last changed by | Date | Author | Committer | Subject |
 |---|---|---|---|---|---|
 | `.tableaux/gates.yaml` | `e91ba68` | 2026-10-02 | Claude Opus 5.5, noreply@anthropic.com | Claude Opus 5.5, noreply@anthropic.com | Mark four gates with symbols that need no variation selector |
-| `.tableaux/version.yaml` | `d95294b` | 2026-09-30 | Claude Fable 5.1, noreply@anthropic.com | Claude Fable 5.1, noreply@anthropic.com | Raise the language to 0.3.1 |
+| `.tableaux/version.yaml` | `50a373b` | 2026-10-17 | Norman Young, nbyoung@nbyoung.com | Norman Young, nbyoung@nbyoung.com | Say that a requirement whose from gate does not apply has no condition |
 
 ```
-git show 3cdae52:.tableaux/gates.yaml
-git show 3cdae52:.tableaux/version.yaml
-git log -1 --format='%h %as %an <%ae> / %cn <%ce> %s' 3cdae52 -- .tableaux/gates.yaml
-git log -1 --format='%h %as %an <%ae> / %cn <%ce> %s' 3cdae52 -- .tableaux/version.yaml
+git show 50a373b2857a36e4ef1a754605433943d6bfe324:.tableaux/gates.yaml
+git show 50a373b2857a36e4ef1a754605433943d6bfe324:.tableaux/version.yaml
+git log -1 --format='%H %as %an <%ae> / %cn <%ce> %s' 50a373b2857a36e4ef1a754605433943d6bfe324 -- .tableaux/gates.yaml
+git log -1 --format='%H %as %an <%ae> / %cn <%ce> %s' 50a373b2857a36e4ef1a754605433943d6bfe324 -- .tableaux/version.yaml
 ```
 
-Command: `tabloio gates --ref 3cdae52 --level provenance`
+Command: `tabloio gates --ref 50a373b --level provenance`

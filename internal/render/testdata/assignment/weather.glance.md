@@ -11,4 +11,6 @@ Legend: `tabloio gates`.
 | dan@example.org | 1 | 1 | 0 |  |
 | opus@example.org | 0 | 0 | 0 | `claude-opus-5-5` |
 
+🪆 1 task hands its next junction to a subproject: `c07d`.
+
 Command: `tabloio assignment --ref main --level glance`

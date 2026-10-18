@@ -2,22 +2,40 @@
   "schema": "tablo/1",
   "command": "tableau",
   "source": {
-    "ref": "main",
-    "commit": "3cdae527d47d37fdff55bc302c76c017cf91c606",
-    "date": "2026-10-05",
+    "ref": "corpus/tooling",
+    "dir": ".",
+    "worktree": false,
+    "commit": "50a373b2857a36e4ef1a754605433943d6bfe324",
+    "date": "2026-10-17",
     "from": null,
     "trunk": {
-      "name": null
+      "name": "main",
+      "resolved": "stated"
     },
     "on_trunk": true
   },
   "project": {
+    "tableaux": "0.3.2",
     "root": "437e",
-    "title": "Tableaux tooling"
+    "title": "Tableaux tooling",
+    "owner": "nbyoung@nbyoung.com"
+  },
+  "viewer": {
+    "email": "nbyoung@nbyoung.com",
+    "roles": [
+      "owner",
+      "authority",
+      "assignee",
+      "contributor",
+      "reviewer"
+    ]
   },
   "params": {
+    "person": null,
     "window": 1,
+    "columns": null,
     "historical": true,
+    "role": null,
     "level": "detail"
   },
   "data": {
@@ -120,12 +138,14 @@
         {
           "key": "overloaded",
           "symbol": "🪫",
-          "synopsis": "The assigned resource is overloaded"
+          "synopsis": "The assigned resource is overloaded",
+          "reserved": false
         },
         {
           "key": "blocked",
           "symbol": "⛔",
-          "synopsis": "An external resource is unavailable"
+          "synopsis": "An external resource is unavailable",
+          "reserved": false
         },
         {
           "key": "review",
@@ -139,40 +159,95 @@
           "key": "person",
           "symbol": "🧑",
           "meaning": "A person contributes",
-          "junction": "Plain; the contributor is a person"
+          "junction": "plain"
         },
         {
           "key": "agent",
           "symbol": "🤖",
           "meaning": "An agent contributes",
-          "junction": "Plain; the junction states a `model`"
+          "junction": "plain"
         },
         {
           "key": "reviewer",
           "symbol": "👀",
           "meaning": "A reviewer accepts",
-          "junction": "Plain; the reviewer accepts the work at the gate"
+          "junction": "plain"
         },
         {
           "key": "subproject",
           "symbol": "🪆",
           "meaning": "A subproject does the work",
-          "junction": "Recursive; another Tableaux project does the work"
+          "junction": "recursive"
         },
         {
           "key": "exempt",
           "symbol": "—",
           "meaning": "The gate does not apply",
-          "junction": "Not applicable; the entry exempts the task from the gate"
+          "junction": "not_applicable"
         }
       ]
     },
+    "subject": null,
     "columns": [
       {
         "gates": [
-          "undefined"
+          "undefined",
+          "defined",
+          "mockup"
         ],
         "folded": true,
+        "count": 22,
+        "by_gate": [
+          0,
+          0,
+          22
+        ]
+      },
+      {
+        "gates": [
+          "function"
+        ],
+        "folded": false,
+        "count": 2,
+        "by_gate": [
+          2
+        ]
+      },
+      {
+        "gates": [
+          "design"
+        ],
+        "folded": false,
+        "count": 7,
+        "by_gate": [
+          7
+        ]
+      },
+      {
+        "gates": [
+          "implementation"
+        ],
+        "folded": false,
+        "count": 5,
+        "by_gate": [
+          5
+        ]
+      },
+      {
+        "gates": [
+          "unit"
+        ],
+        "folded": false,
+        "count": 1,
+        "by_gate": [
+          1
+        ]
+      },
+      {
+        "gates": [
+          "integrate"
+        ],
+        "folded": false,
         "count": 0,
         "by_gate": [
           0
@@ -180,85 +255,87 @@
       },
       {
         "gates": [
-          "defined"
-        ]
-      },
-      {
-        "gates": [
-          "mockup"
-        ]
-      },
-      {
-        "gates": [
-          "function"
-        ]
-      },
-      {
-        "gates": [
-          "design"
-        ]
-      },
-      {
-        "gates": [
-          "implementation"
-        ]
-      },
-      {
-        "gates": [
-          "unit"
-        ]
-      },
-      {
-        "gates": [
-          "integrate"
-        ]
-      },
-      {
-        "gates": [
           "validate"
+        ],
+        "folded": false,
+        "count": 0,
+        "by_gate": [
+          0
         ]
       },
       {
         "gates": [
           "release"
+        ],
+        "folded": false,
+        "count": 0,
+        "by_gate": [
+          0
         ]
       }
     ],
     "rows": [
       {
-        "id": "c2ad",
-        "title": "Roles",
-        "depth": 2,
-        "parent": false,
+        "id": "437e",
+        "title": "Tableaux tooling",
+        "under": "",
+        "depth": 0,
+        "parent": true,
         "hidden": 0,
+        "label": "",
         "status": {
-          "gate": "implementation",
+          "kind": "rollup",
+          "gate": "function",
           "state": "nominal",
-          "note": "The Roles text is on the trunk and covers all seven roles; the validate gate awaits the owner",
+          "reason": "",
+          "note": "prototype/8ed1 derives the history and a stand-in audit between two refs from one git log pass and one cat-file batch, on the weather station",
           "date": "2026-09-30",
-          "recorder": "noreply@anthropic.com"
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
+          "from": {
+            "kind": "rollup",
+            "task": {
+              "id": "77b2",
+              "title": "tablo: backend library and plumbing"
+            },
+            "url": "",
+            "pin": "",
+            "gate": ""
+          }
+        },
+        "leaf": {
+          "task": {
+            "id": "8ed1",
+            "title": "Temporal views"
+          },
+          "url": "subprojects/tablo"
         },
         "cells": [
           {
-            "kind": "empty"
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
             "marks": [
               "agent"
             ],
             "acts": false
           },
           {
-            "kind": "exempt",
-            "acts": false
-          },
-          {
-            "kind": "exempt",
-            "acts": false
-          },
-          {
             "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
             "marks": [
               "agent",
               "reviewer"
@@ -267,19 +344,17 @@
           },
           {
             "kind": "status",
+            "historical": false,
             "state": "nominal",
-            "acts": false
-          },
-          {
-            "kind": "exempt",
-            "acts": false
-          },
-          {
-            "kind": "exempt",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "agent",
               "reviewer"
@@ -288,123 +363,2984 @@
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
             ],
             "acts": false
           }
-        ],
-        "label": ""
+        ]
+      },
+      {
+        "id": "bc63",
+        "title": "Method",
+        "under": "437e",
+        "depth": 1,
+        "parent": true,
+        "hidden": 0,
+        "label": "",
+        "status": {
+          "kind": "rollup",
+          "gate": "design",
+          "state": "nominal",
+          "reason": "",
+          "note": "The model plan-and-record rule (F20) is on the trunk; F1, F2 and F10 remain for design",
+          "date": "2026-09-30",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
+          "from": {
+            "kind": "rollup",
+            "task": {
+              "id": "ac33",
+              "title": "Agent identity"
+            },
+            "url": "",
+            "pin": "",
+            "gate": ""
+          }
+        },
+        "leaf": {
+          "task": {
+            "id": "ac33",
+            "title": "Agent identity"
+          },
+          "url": ""
+        },
+        "cells": [
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "status",
+            "historical": false,
+            "state": "nominal",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "person"
+            ],
+            "acts": false
+          }
+        ]
+      },
+      {
+        "id": "c2ad",
+        "title": "Roles",
+        "under": "bc63",
+        "depth": 2,
+        "parent": false,
+        "hidden": 0,
+        "label": "",
+        "status": {
+          "kind": "recorded",
+          "gate": "implementation",
+          "state": "nominal",
+          "reason": "",
+          "note": "The Roles text is on the trunk and covers all seven roles; the validate gate awaits the owner",
+          "date": "2026-09-30",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "leaf": null,
+        "cells": [
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "status",
+            "historical": false,
+            "state": "nominal",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "person"
+            ],
+            "acts": false
+          }
+        ]
       },
       {
         "id": "2034",
         "title": "Views",
+        "under": "bc63",
         "depth": 2,
         "parent": true,
         "hidden": 0,
+        "label": "",
         "status": {
-          "gate": "defined",
+          "kind": "rollup",
+          "gate": "implementation",
           "state": "nominal",
-          "note": "Mockup waits for Abstract views (e9c6) at design",
-          "date": "2026-09-29",
+          "reason": "",
+          "note": "VIEWS.md defines the ten views on the trunk and agrees with the twenty approved mockups on the gate window; validation checks that tablo and the front ends follow the text",
+          "date": "2026-10-05",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
+          "from": {
+            "kind": "rollup",
+            "task": {
+              "id": "e9c6",
+              "title": "Abstract views"
+            },
+            "url": "",
+            "pin": "",
+            "gate": ""
+          }
+        },
+        "leaf": {
+          "task": {
+            "id": "e9c6",
+            "title": "Abstract views"
+          },
+          "url": ""
+        },
+        "cells": [
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "status",
+            "historical": false,
+            "state": "nominal",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "person"
+            ],
+            "acts": false
+          }
+        ]
+      },
+      {
+        "id": "e9c6",
+        "title": "Abstract views",
+        "under": "2034",
+        "depth": 3,
+        "parent": false,
+        "hidden": 0,
+        "label": "",
+        "status": {
+          "kind": "recorded",
+          "gate": "implementation",
+          "state": "nominal",
+          "reason": "",
+          "note": "VIEWS.md defines the ten views on the trunk and agrees with the twenty approved mockups on the gate window; validation checks that tablo and the front ends follow the text",
+          "date": "2026-10-05",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "leaf": null,
+        "cells": [
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "status",
+            "historical": false,
+            "state": "nominal",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "person"
+            ],
+            "acts": false
+          }
+        ]
+      },
+      {
+        "id": "bc86",
+        "title": "Markdown views",
+        "under": "2034",
+        "depth": 3,
+        "parent": true,
+        "hidden": 0,
+        "label": "",
+        "status": {
+          "kind": "rollup",
+          "gate": "mockup",
+          "state": "complete",
+          "reason": "",
+          "note": "The owner accepts docs/mockups/gates.md at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
           "from": {
             "kind": "rollup",
             "task": {
               "id": "99f0",
               "title": "Gate definition view in Markdown"
-            }
+            },
+            "url": "",
+            "pin": "",
+            "gate": ""
           }
+        },
+        "leaf": {
+          "task": {
+            "id": "99f0",
+            "title": "Gate definition view in Markdown"
+          },
+          "url": ""
         },
         "cells": [
           {
-            "kind": "empty"
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
           },
           {
             "kind": "status",
-            "state": "nominal",
+            "historical": false,
+            "state": "complete",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
-            "kind": "marks",
-            "marks": [
-              "agent",
-              "reviewer"
-            ],
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
-            "kind": "marks",
-            "marks": [
-              "agent"
-            ],
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
-            "kind": "marks",
-            "marks": [
-              "agent",
-              "reviewer"
-            ],
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
-            "kind": "marks",
-            "marks": [
-              "agent"
-            ],
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
-            "kind": "marks",
-            "marks": [
-              "agent"
-            ],
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
-            "kind": "marks",
-            "marks": [
-              "agent"
-            ],
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
-            "kind": "marks",
-            "marks": [
-              "agent",
-              "reviewer"
-            ],
-            "acts": false
-          },
-          {
-            "kind": "marks",
-            "marks": [
-              "person"
-            ],
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
             "acts": false
           }
-        ],
-        "label": ""
+        ]
+      },
+      {
+        "id": "99f0",
+        "title": "Gate definition view in Markdown",
+        "under": "bc86",
+        "depth": 4,
+        "parent": false,
+        "hidden": 0,
+        "label": "",
+        "status": {
+          "kind": "recorded",
+          "gate": "mockup",
+          "state": "complete",
+          "reason": "",
+          "note": "The owner accepts docs/mockups/gates.md at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "leaf": null,
+        "cells": [
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "status",
+            "historical": false,
+            "state": "complete",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          }
+        ]
+      },
+      {
+        "id": "05a9",
+        "title": "Task definition view in Markdown",
+        "under": "bc86",
+        "depth": 4,
+        "parent": false,
+        "hidden": 0,
+        "label": "",
+        "status": {
+          "kind": "recorded",
+          "gate": "mockup",
+          "state": "complete",
+          "reason": "",
+          "note": "The owner accepts docs/mockups/task.md at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "leaf": null,
+        "cells": [
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "status",
+            "historical": false,
+            "state": "complete",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          }
+        ]
+      },
+      {
+        "id": "a9ce",
+        "title": "Authority delegation view in Markdown",
+        "under": "bc86",
+        "depth": 4,
+        "parent": false,
+        "hidden": 0,
+        "label": "",
+        "status": {
+          "kind": "recorded",
+          "gate": "mockup",
+          "state": "complete",
+          "reason": "",
+          "note": "The owner accepts docs/mockups/authority.md at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "leaf": null,
+        "cells": [
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "status",
+            "historical": false,
+            "state": "complete",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          }
+        ]
+      },
+      {
+        "id": "bb7c",
+        "title": "Task assignment view in Markdown",
+        "under": "bc86",
+        "depth": 4,
+        "parent": false,
+        "hidden": 0,
+        "label": "",
+        "status": {
+          "kind": "recorded",
+          "gate": "mockup",
+          "state": "complete",
+          "reason": "",
+          "note": "The owner accepts docs/mockups/assignment.md at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "leaf": null,
+        "cells": [
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "status",
+            "historical": false,
+            "state": "complete",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          }
+        ]
+      },
+      {
+        "id": "c74a",
+        "title": "Contributor work queue view in Markdown",
+        "under": "bc86",
+        "depth": 4,
+        "parent": false,
+        "hidden": 0,
+        "label": "",
+        "status": {
+          "kind": "recorded",
+          "gate": "mockup",
+          "state": "complete",
+          "reason": "",
+          "note": "The owner accepts docs/mockups/queue.md at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "leaf": null,
+        "cells": [
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "status",
+            "historical": false,
+            "state": "complete",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          }
+        ]
+      },
+      {
+        "id": "efff",
+        "title": "Work-blockage tree view in Markdown",
+        "under": "bc86",
+        "depth": 4,
+        "parent": false,
+        "hidden": 0,
+        "label": "",
+        "status": {
+          "kind": "recorded",
+          "gate": "mockup",
+          "state": "complete",
+          "reason": "",
+          "note": "The owner accepts docs/mockups/blockage.md at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "leaf": null,
+        "cells": [
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "status",
+            "historical": false,
+            "state": "complete",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          }
+        ]
+      },
+      {
+        "id": "ab8e",
+        "title": "Global tableau view in Markdown",
+        "under": "bc86",
+        "depth": 4,
+        "parent": false,
+        "hidden": 0,
+        "label": "",
+        "status": {
+          "kind": "recorded",
+          "gate": "mockup",
+          "state": "complete",
+          "reason": "",
+          "note": "The owner accepts docs/mockups/tableau.md at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "leaf": null,
+        "cells": [
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "status",
+            "historical": false,
+            "state": "complete",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          }
+        ]
+      },
+      {
+        "id": "c545",
+        "title": "Contextual tableau view in Markdown",
+        "under": "bc86",
+        "depth": 4,
+        "parent": false,
+        "hidden": 0,
+        "label": "",
+        "status": {
+          "kind": "recorded",
+          "gate": "mockup",
+          "state": "complete",
+          "reason": "",
+          "note": "The owner accepts docs/mockups/context.md at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "leaf": null,
+        "cells": [
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "status",
+            "historical": false,
+            "state": "complete",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          }
+        ]
+      },
+      {
+        "id": "d615",
+        "title": "History view in Markdown",
+        "under": "bc86",
+        "depth": 4,
+        "parent": false,
+        "hidden": 0,
+        "label": "",
+        "status": {
+          "kind": "recorded",
+          "gate": "mockup",
+          "state": "complete",
+          "reason": "",
+          "note": "The owner accepts docs/mockups/history.md at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "leaf": null,
+        "cells": [
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "status",
+            "historical": false,
+            "state": "complete",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          }
+        ]
+      },
+      {
+        "id": "b14e",
+        "title": "Audit view in Markdown",
+        "under": "bc86",
+        "depth": 4,
+        "parent": false,
+        "hidden": 0,
+        "label": "",
+        "status": {
+          "kind": "recorded",
+          "gate": "mockup",
+          "state": "complete",
+          "reason": "",
+          "note": "The owner accepts docs/mockups/audit.md at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "leaf": null,
+        "cells": [
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "status",
+            "historical": false,
+            "state": "complete",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          }
+        ]
+      },
+      {
+        "id": "5fe3",
+        "title": "HTML views",
+        "under": "2034",
+        "depth": 3,
+        "parent": true,
+        "hidden": 0,
+        "label": "",
+        "status": {
+          "kind": "rollup",
+          "gate": "mockup",
+          "state": "complete",
+          "reason": "",
+          "note": "The owner accepts docs/mockups/gates.html at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
+          "from": {
+            "kind": "rollup",
+            "task": {
+              "id": "a6f7",
+              "title": "Gate definition view in Html"
+            },
+            "url": "",
+            "pin": "",
+            "gate": ""
+          }
+        },
+        "leaf": {
+          "task": {
+            "id": "a6f7",
+            "title": "Gate definition view in Html"
+          },
+          "url": ""
+        },
+        "cells": [
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "status",
+            "historical": false,
+            "state": "complete",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          }
+        ]
+      },
+      {
+        "id": "a6f7",
+        "title": "Gate definition view in Html",
+        "under": "5fe3",
+        "depth": 4,
+        "parent": false,
+        "hidden": 0,
+        "label": "",
+        "status": {
+          "kind": "recorded",
+          "gate": "mockup",
+          "state": "complete",
+          "reason": "",
+          "note": "The owner accepts docs/mockups/gates.html at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "leaf": null,
+        "cells": [
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "status",
+            "historical": false,
+            "state": "complete",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          }
+        ]
+      },
+      {
+        "id": "7dff",
+        "title": "Task definition view in Html",
+        "under": "5fe3",
+        "depth": 4,
+        "parent": false,
+        "hidden": 0,
+        "label": "",
+        "status": {
+          "kind": "recorded",
+          "gate": "mockup",
+          "state": "complete",
+          "reason": "",
+          "note": "The owner accepts docs/mockups/task.html at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "leaf": null,
+        "cells": [
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "status",
+            "historical": false,
+            "state": "complete",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          }
+        ]
+      },
+      {
+        "id": "b1b7",
+        "title": "Authority delegation view in Html",
+        "under": "5fe3",
+        "depth": 4,
+        "parent": false,
+        "hidden": 0,
+        "label": "",
+        "status": {
+          "kind": "recorded",
+          "gate": "mockup",
+          "state": "complete",
+          "reason": "",
+          "note": "The owner accepts docs/mockups/authority.html at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "leaf": null,
+        "cells": [
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "status",
+            "historical": false,
+            "state": "complete",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          }
+        ]
+      },
+      {
+        "id": "ea51",
+        "title": "Task assignment view in Html",
+        "under": "5fe3",
+        "depth": 4,
+        "parent": false,
+        "hidden": 0,
+        "label": "",
+        "status": {
+          "kind": "recorded",
+          "gate": "mockup",
+          "state": "complete",
+          "reason": "",
+          "note": "The owner accepts docs/mockups/assignment.html at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "leaf": null,
+        "cells": [
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "status",
+            "historical": false,
+            "state": "complete",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          }
+        ]
+      },
+      {
+        "id": "7783",
+        "title": "Contributor work queue view in Html",
+        "under": "5fe3",
+        "depth": 4,
+        "parent": false,
+        "hidden": 0,
+        "label": "",
+        "status": {
+          "kind": "recorded",
+          "gate": "mockup",
+          "state": "complete",
+          "reason": "",
+          "note": "The owner accepts docs/mockups/queue.html at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "leaf": null,
+        "cells": [
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "status",
+            "historical": false,
+            "state": "complete",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          }
+        ]
+      },
+      {
+        "id": "5471",
+        "title": "Work-blockage tree view in Html",
+        "under": "5fe3",
+        "depth": 4,
+        "parent": false,
+        "hidden": 0,
+        "label": "",
+        "status": {
+          "kind": "recorded",
+          "gate": "mockup",
+          "state": "complete",
+          "reason": "",
+          "note": "The owner accepts docs/mockups/blockage.html at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "leaf": null,
+        "cells": [
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "status",
+            "historical": false,
+            "state": "complete",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          }
+        ]
+      },
+      {
+        "id": "32e7",
+        "title": "Global tableau view in Html",
+        "under": "5fe3",
+        "depth": 4,
+        "parent": false,
+        "hidden": 0,
+        "label": "",
+        "status": {
+          "kind": "recorded",
+          "gate": "mockup",
+          "state": "complete",
+          "reason": "",
+          "note": "The owner accepts docs/mockups/tableau.html at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "leaf": null,
+        "cells": [
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "status",
+            "historical": false,
+            "state": "complete",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          }
+        ]
+      },
+      {
+        "id": "69eb",
+        "title": "Contextual tableau view in Html",
+        "under": "5fe3",
+        "depth": 4,
+        "parent": false,
+        "hidden": 0,
+        "label": "",
+        "status": {
+          "kind": "recorded",
+          "gate": "mockup",
+          "state": "complete",
+          "reason": "",
+          "note": "The owner accepts docs/mockups/context.html at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "leaf": null,
+        "cells": [
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "status",
+            "historical": false,
+            "state": "complete",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          }
+        ]
+      },
+      {
+        "id": "3194",
+        "title": "History view in Html",
+        "under": "5fe3",
+        "depth": 4,
+        "parent": false,
+        "hidden": 0,
+        "label": "",
+        "status": {
+          "kind": "recorded",
+          "gate": "mockup",
+          "state": "complete",
+          "reason": "",
+          "note": "The owner accepts docs/mockups/history.html at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "leaf": null,
+        "cells": [
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "status",
+            "historical": false,
+            "state": "complete",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          }
+        ]
+      },
+      {
+        "id": "a8b4",
+        "title": "Audit view in Html",
+        "under": "5fe3",
+        "depth": 4,
+        "parent": false,
+        "hidden": 0,
+        "label": "",
+        "status": {
+          "kind": "recorded",
+          "gate": "mockup",
+          "state": "complete",
+          "reason": "",
+          "note": "The owner accepts docs/mockups/audit.html at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "leaf": null,
+        "cells": [
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "status",
+            "historical": false,
+            "state": "complete",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          }
+        ]
       },
       {
         "id": "e3cb",
         "title": "Schema files",
+        "under": "bc63",
         "depth": 2,
         "parent": false,
         "hidden": 0,
+        "label": "",
         "status": {
+          "kind": "recorded",
           "gate": "unit",
           "state": "nominal",
+          "reason": "",
           "note": "schemas/check.sh (files agree with SYNTAX.md, version 0.2.1) and schemas/load.py (files load as JSON Schema 2020-12) pass; every .tableaux file validates",
           "date": "2026-09-30",
-          "recorder": "noreply@anthropic.com"
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
         },
+        "leaf": null,
         "cells": [
           {
-            "kind": "empty"
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
             "marks": [
               "agent"
             ],
@@ -412,14 +3348,25 @@
           },
           {
             "kind": "exempt",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
             "kind": "exempt",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
             "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
             "marks": [
               "agent",
               "reviewer"
@@ -428,6 +3375,9 @@
           },
           {
             "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
             "marks": [
               "agent"
             ],
@@ -435,15 +3385,25 @@
           },
           {
             "kind": "status",
+            "historical": false,
             "state": "nominal",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
             "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "agent",
               "reviewer"
@@ -452,33 +3412,52 @@
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
             ],
             "acts": false
           }
-        ],
-        "label": ""
+        ]
       },
       {
         "id": "fcec",
         "title": "Conformance corpus",
+        "under": "bc63",
         "depth": 2,
         "parent": false,
         "hidden": 0,
+        "label": "",
         "status": {
+          "kind": "recorded",
           "gate": "implementation",
           "state": "nominal",
+          "reason": "",
           "note": "The corpus builds and checks clean, with 85 entries on the trunk; all three corrections from the tablo prototypes are in; the unit gate runs the tablo conformance test against it",
           "date": "2026-09-30",
-          "recorder": "noreply@anthropic.com"
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
         },
+        "leaf": null,
         "cells": [
           {
-            "kind": "empty"
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
             "marks": [
               "agent"
             ],
@@ -486,14 +3465,25 @@
           },
           {
             "kind": "exempt",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
             "kind": "exempt",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
             "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
             "marks": [
               "agent",
               "reviewer"
@@ -502,11 +3492,17 @@
           },
           {
             "kind": "status",
+            "historical": false,
             "state": "nominal",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "agent"
             ],
@@ -514,6 +3510,9 @@
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "agent"
             ],
@@ -521,6 +3520,9 @@
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "agent",
               "reviewer"
@@ -529,33 +3531,52 @@
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
             ],
             "acts": false
           }
-        ],
-        "label": ""
+        ]
       },
       {
         "id": "ac33",
         "title": "Agent identity",
+        "under": "bc63",
         "depth": 2,
         "parent": false,
         "hidden": 0,
+        "label": "",
         "status": {
+          "kind": "recorded",
           "gate": "design",
           "state": "nominal",
+          "reason": "",
           "note": "The model plan-and-record rule (F20) is on the trunk; F1, F2 and F10 remain for design",
           "date": "2026-09-30",
-          "recorder": "noreply@anthropic.com"
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
         },
+        "leaf": null,
         "cells": [
           {
-            "kind": "empty"
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
             "marks": [
               "agent",
               "reviewer"
@@ -564,19 +3585,33 @@
           },
           {
             "kind": "exempt",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
             "kind": "exempt",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
             "kind": "status",
+            "historical": false,
             "state": "nominal",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "agent",
               "reviewer"
@@ -585,14 +3620,25 @@
           },
           {
             "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
             "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "agent",
               "reviewer"
@@ -601,33 +3647,52 @@
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
             ],
             "acts": false
           }
-        ],
-        "label": ""
+        ]
       },
       {
         "id": "9f3f",
         "title": "Subproject linkage",
+        "under": "bc63",
         "depth": 2,
         "parent": false,
         "hidden": 0,
+        "label": "",
         "status": {
+          "kind": "recorded",
           "gate": "design",
           "state": "nominal",
+          "reason": "",
           "note": "The subproject linkage rule (F3, F5, F12) is on the trunk at language 0.3.0; tablo and the subprojects follow",
           "date": "2026-09-30",
-          "recorder": "noreply@anthropic.com"
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
         },
+        "leaf": null,
         "cells": [
           {
-            "kind": "empty"
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
             "marks": [
               "agent",
               "reviewer"
@@ -636,19 +3701,33 @@
           },
           {
             "kind": "exempt",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
             "kind": "exempt",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
             "kind": "status",
+            "historical": false,
             "state": "nominal",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "agent",
               "reviewer"
@@ -657,14 +3736,25 @@
           },
           {
             "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
             "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "agent",
               "reviewer"
@@ -673,33 +3763,52 @@
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
             ],
             "acts": false
           }
-        ],
-        "label": ""
+        ]
       },
       {
         "id": "7861",
         "title": "Productivity evidence",
+        "under": "bc63",
         "depth": 2,
         "parent": false,
         "hidden": 0,
+        "label": "",
         "status": {
+          "kind": "recorded",
           "gate": "implementation",
           "state": "nominal",
+          "reason": "",
           "note": "The full report, its 23 tests and an example over five repositories are on the trunk",
           "date": "2026-09-30",
-          "recorder": "noreply@anthropic.com"
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
         },
+        "leaf": null,
         "cells": [
           {
-            "kind": "empty"
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
             "marks": [
               "agent"
             ],
@@ -707,14 +3816,25 @@
           },
           {
             "kind": "exempt",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
             "kind": "exempt",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
             "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
             "marks": [
               "agent",
               "reviewer"
@@ -723,19 +3843,33 @@
           },
           {
             "kind": "status",
+            "historical": false,
             "state": "nominal",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
             "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
             "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "agent",
               "reviewer"
@@ -744,33 +3878,52 @@
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
             ],
             "acts": false
           }
-        ],
-        "label": ""
+        ]
       },
       {
         "id": "7166",
         "title": "Language clarifications",
+        "under": "bc63",
         "depth": 2,
         "parent": false,
         "hidden": 0,
+        "label": "",
         "status": {
+          "kind": "recorded",
           "gate": "design",
           "state": "nominal",
-          "note": "The trunk clarification (F19) is on the trunk; F7 and F9 remain for design",
-          "date": "2026-09-30",
-          "recorder": "noreply@anthropic.com"
+          "reason": "",
+          "note": "The trunk clarification (F19), with the order for a linked repository, and the exemption rule (F7) are on the trunk; F9 remains for design",
+          "date": "2026-10-07",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
         },
+        "leaf": null,
         "cells": [
           {
-            "kind": "empty"
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
           },
           {
             "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
             "marks": [
               "agent",
               "reviewer"
@@ -779,19 +3932,33 @@
           },
           {
             "kind": "exempt",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
             "kind": "exempt",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
             "kind": "status",
+            "historical": false,
             "state": "nominal",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "agent",
               "reviewer"
@@ -800,14 +3967,25 @@
           },
           {
             "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
             "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
             "acts": false
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "agent",
               "reviewer"
@@ -816,15 +3994,681 @@
           },
           {
             "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
             "marks": [
               "person"
             ],
             "acts": false
           }
-        ],
-        "label": ""
+        ]
+      },
+      {
+        "id": "77b2",
+        "title": "tablo: backend library and plumbing",
+        "under": "437e",
+        "depth": 1,
+        "parent": false,
+        "hidden": 0,
+        "label": "",
+        "status": {
+          "kind": "snapshot",
+          "gate": "function",
+          "state": "nominal",
+          "reason": "",
+          "note": "prototype/8ed1 derives the history and a stand-in audit between two refs from one git log pass and one cat-file batch, on the weather station",
+          "date": "2026-09-30",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
+          "from": {
+            "kind": "snapshot",
+            "task": {
+              "id": "b2c1",
+              "title": "tablo"
+            },
+            "url": "subprojects/tablo",
+            "pin": "f7c3190c7f8b1ad5a0e8157349f136022e62c6b1",
+            "gate": "function"
+          }
+        },
+        "leaf": {
+          "task": {
+            "id": "8ed1",
+            "title": "Temporal views"
+          },
+          "url": "subprojects/tablo"
+        },
+        "cells": [
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "subproject"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "status",
+            "historical": false,
+            "state": "nominal",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "subproject"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "subproject"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "subproject"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "subproject"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "subproject"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "subproject"
+            ],
+            "acts": false
+          }
+        ]
+      },
+      {
+        "id": "6103",
+        "title": "tabloio: command line, output and input",
+        "under": "437e",
+        "depth": 1,
+        "parent": false,
+        "hidden": 0,
+        "label": "",
+        "status": {
+          "kind": "snapshot",
+          "gate": "design",
+          "state": "nominal",
+          "reason": "",
+          "note": "design/e0f7.md is on the trunk with the owner's decisions of 2026-10-07, after two revisions; implementation follows, with one writer over doc.Doc, golang.org/x/text for the width table, one rule for the variation selector and no option for it, and --width as the one new option; no terminal draws the output before validate",
+          "date": "2026-09-30",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
+          "from": {
+            "kind": "snapshot",
+            "task": {
+              "id": "07e0",
+              "title": "tabloio"
+            },
+            "url": "subprojects/tabloio",
+            "pin": "4bb4300132b378cb5bafc658fca0a681d92735db",
+            "gate": "design"
+          }
+        },
+        "leaf": {
+          "task": {
+            "id": "e0f7",
+            "title": "Text renderers"
+          },
+          "url": "subprojects/tabloio"
+        },
+        "cells": [
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "subproject"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "subproject"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "status",
+            "historical": false,
+            "state": "nominal",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "subproject"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "subproject"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "subproject"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "subproject"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "subproject"
+            ],
+            "acts": false
+          }
+        ]
+      },
+      {
+        "id": "c6e8",
+        "title": "tablotui: terminal user interface",
+        "under": "437e",
+        "depth": 1,
+        "parent": false,
+        "hidden": 0,
+        "label": "",
+        "status": {
+          "kind": "snapshot",
+          "gate": "design",
+          "state": "nominal",
+          "reason": "",
+          "note": "design/518e.md is on the trunk with the owner's decisions of 2026-10-07; implementation waits for tabloio's action package (b618) at implementation and a tabloio tag that go.mod can require",
+          "date": "2026-09-30",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
+          "from": {
+            "kind": "snapshot",
+            "task": {
+              "id": "40e8",
+              "title": "tablotui"
+            },
+            "url": "subprojects/tablotui",
+            "pin": "ce24c31003eccf735055bb169a85f3208d6206a4",
+            "gate": "design"
+          }
+        },
+        "leaf": {
+          "task": {
+            "id": "518e",
+            "title": "Actions"
+          },
+          "url": "subprojects/tablotui"
+        },
+        "cells": [
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "subproject"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "subproject"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "status",
+            "historical": false,
+            "state": "nominal",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "subproject"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "subproject"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "subproject"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "subproject"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "subproject"
+            ],
+            "acts": false
+          }
+        ]
+      },
+      {
+        "id": "595e",
+        "title": "tableaud: local daemon and HTML",
+        "under": "437e",
+        "depth": 1,
+        "parent": false,
+        "hidden": 0,
+        "label": "",
+        "status": {
+          "kind": "snapshot",
+          "gate": "design",
+          "state": "nominal",
+          "reason": "",
+          "note": "design/db74.md is on the trunk with the owner's decisions of 2026-10-07, after two revisions; implementation follows, and it meets the accessibility task (5a2f) in base.html, shared/grid.html, the sheet and the script; the adapters' focus and the audit's control wait for tablo's views and for the temporal templates (9a9c)",
+          "date": "2026-09-30",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
+          "from": {
+            "kind": "snapshot",
+            "task": {
+              "id": "8608",
+              "title": "tableaud"
+            },
+            "url": "subprojects/tableaud",
+            "pin": "0da180c6c9601904585bb18bcab12537df93bc88",
+            "gate": "design"
+          }
+        },
+        "leaf": {
+          "task": {
+            "id": "db74",
+            "title": "Progressive disclosure"
+          },
+          "url": "subprojects/tableaud"
+        },
+        "cells": [
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "subproject"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "subproject"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "status",
+            "historical": false,
+            "state": "nominal",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "subproject"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "subproject"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "subproject"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "subproject"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "subproject"
+            ],
+            "acts": false
+          }
+        ]
       }
     ]
   },
-  "diagnostics": []
+  "diagnostics": [
+    {
+      "severity": "warning",
+      "code": "H3",
+      "task": "7166",
+      "gate": "implementation",
+      "commit": "56103af8cbaf561a90f9fa67fea02053372a4214",
+      "message": "Model claude-opus-5-5 is outside the stated model claude-sonnet"
+    },
+    {
+      "severity": "warning",
+      "code": "H3",
+      "task": "e9c6",
+      "gate": "implementation",
+      "commit": "ccb3947e3deb2f476a8c9c886266b2b4da66c6f6",
+      "message": "Model claude-opus-5-5 is outside the stated model claude-sonnet"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/7166.yaml",
+      "task": "7166",
+      "gate": "implementation",
+      "commit": "56103af8cbaf561a90f9fa67fea02053372a4214",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/7861.yaml",
+      "task": "7861",
+      "gate": "validate",
+      "commit": "c6f2655f1bda4469a6171b77cc21e326f0c99f87",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/9f3f.yaml",
+      "task": "9f3f",
+      "gate": "implementation",
+      "commit": "43d68e4f7d2b856c4d581983f34355d5b5f4f3b4",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/ac33.yaml",
+      "task": "ac33",
+      "gate": "implementation",
+      "commit": "6762222ddffef76008daad27ebe26069ac67cc5d",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/c2ad.yaml",
+      "task": "c2ad",
+      "gate": "validate",
+      "commit": "3d8ce0eee1e869c75453abba91cae03dec6587ce",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/e3cb.yaml",
+      "task": "e3cb",
+      "gate": "validate",
+      "commit": "c39ccac764b580ddb67789014c5f7f2c1bae9c6e",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/e9c6.yaml",
+      "task": "e9c6",
+      "gate": "validate",
+      "commit": "ccb3947e3deb2f476a8c9c886266b2b4da66c6f6",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/fcec.yaml",
+      "task": "fcec",
+      "gate": "unit",
+      "commit": "60495c26d886016b40069041386a811b24469312",
+      "message": "the newest event is the contributor's and the status states no review; noreply@anthropic.com may have unit to review"
+    },
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/595e.yaml",
+      "line": 13,
+      "col": 5,
+      "task": "595e",
+      "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    },
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/6103.yaml",
+      "line": 13,
+      "col": 5,
+      "task": "6103",
+      "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    },
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/c6e8.yaml",
+      "line": 13,
+      "col": 5,
+      "task": "c6e8",
+      "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    }
+  ]
 }

@@ -3,20 +3,36 @@
   "command": "audit",
   "source": {
     "ref": "main",
+    "dir": ".",
+    "worktree": true,
     "commit": "df6b60cbb2a98df9ff66fa8e4253022b06502979",
     "date": "2026-09-04",
     "from": null,
     "trunk": {
-      "name": null
+      "name": "main",
+      "resolved": "stated"
     },
     "on_trunk": true
   },
   "project": {
+    "tableaux": "0.3.1",
     "root": "e4a1",
-    "title": "Base"
+    "title": "Base",
+    "owner": "olive@example.org"
+  },
+  "viewer": {
+    "email": "nbyoung@nbyoung.com",
+    "roles": [
+      "observer"
+    ]
   },
   "params": {
+    "task": "e4a1",
+    "person": null,
     "stale": 7,
+    "now": "2026-09-04",
+    "minimum": "warning",
+    "role": null,
     "level": "provenance"
   },
   "data": {
@@ -77,7 +93,8 @@
         {
           "key": "blocked",
           "symbol": "⛔",
-          "synopsis": "An external resource is unavailable"
+          "synopsis": "An external resource is unavailable",
+          "reserved": false
         }
       ],
       "marks": [
@@ -85,39 +102,48 @@
           "key": "person",
           "symbol": "🧑",
           "meaning": "A person contributes",
-          "junction": "Plain; the contributor is a person"
+          "junction": "plain"
         },
         {
           "key": "agent",
           "symbol": "🤖",
           "meaning": "An agent contributes",
-          "junction": "Plain; the junction states a `model`"
+          "junction": "plain"
         },
         {
           "key": "reviewer",
           "symbol": "👀",
           "meaning": "A reviewer accepts",
-          "junction": "Plain; the reviewer accepts the work at the gate"
+          "junction": "plain"
         },
         {
           "key": "subproject",
           "symbol": "🪆",
           "meaning": "A subproject does the work",
-          "junction": "Recursive; another Tableaux project does the work"
+          "junction": "recursive"
         },
         {
           "key": "exempt",
           "symbol": "—",
           "meaning": "The gate does not apply",
-          "junction": "Not applicable; the entry exempts the task from the gate"
+          "junction": "not_applicable"
         }
       ]
     },
+    "errors": 0,
+    "warnings": 1,
+    "information": 2,
+    "most": {
+      "email": "bot@example.org",
+      "count": 1
+    },
     "findings": [
       {
+        "key": "H6",
         "rule": "H6",
         "severity": "warning",
-        "kind": "A commit at a model junction with no `Model:` trailer",
+        "demoted": false,
+        "kind": "No model trailer",
         "tasks": [
           {
             "id": "b2c9",
@@ -125,48 +151,34 @@
           }
         ],
         "gate": "design",
-        "files": [
-          "status/b2c9.yaml"
-        ],
-        "message": "The contributor's commit at the design junction carries no Model: trailer; the junction states claude-fable",
+        "act": "none",
         "resolver": "bot@example.org",
+        "files": [],
+        "message": "the contributor's commit at the design junction carries no Model: trailer; the junction states claude-fable",
         "sentence": "a commit at the junction by its contributor that carries no trailer, unless the project's `version.yaml` at that commit states a language before 0.2.1",
         "source": {
           "text": "README.md, Junctions",
-          "url": "README.md#junctions"
+          "url": "https://github.com/nbyoung/tableaux/blob/main/README.md#junctions"
         },
-        "commits": [
-          {
-            "hash": "df6b60cbb2a98df9ff66fa8e4253022b06502979",
-            "subject": "Draft the design",
-            "date": "2026-09-04",
-            "author": {
-              "email": "bot@example.org"
-            },
-            "committer": {
-              "email": "bot@example.org"
-            }
-          }
-        ],
-        "commands": [
-          {
-            "text": "git log --format='%h %(trailers:key=Model,valueonly)' -- .tableaux/status/b2c9.yaml",
-            "comment": "shows the finding"
-          }
-        ],
-        "key": "H6",
-        "demoted": false,
-        "act": "none",
         "facts": [
           {
             "task": "b2c9",
             "junction": {
               "gate": "design",
               "kind": "plain",
+              "marks": [
+                "agent",
+                "reviewer"
+              ],
+              "acts": false,
               "contributor": "bot@example.org",
               "model": "claude-fable",
-              "reviewer": "",
-              "reviewer_by_default": false,
+              "reviewer": "pat@example.org",
+              "reviewer_by_default": true,
+              "subproject": null,
+              "references": [],
+              "stands": "next",
+              "reviewed": false,
               "from": [
                 "b2c9"
               ]
@@ -175,18 +187,154 @@
             "requirement": null,
             "authorisation": null,
             "linkage": null,
-            "model": null
+            "model": {
+              "commit": "df6b60cbb2a98df9ff66fa8e4253022b06502979",
+              "gate": "design",
+              "stated": "claude-fable",
+              "trailer": "",
+              "reading": "missing"
+            }
+          }
+        ],
+        "commits": [
+          {
+            "hash": "df6b60cbb2a98df9ff66fa8e4253022b06502979",
+            "subject": "Draft the design",
+            "date": "2026-09-04",
+            "author_time": "2026-09-04T12:00:00Z",
+            "author": {
+              "name": "Corpus Agent",
+              "email": "bot@example.org"
+            },
+            "committer": {
+              "name": "Corpus Agent",
+              "email": "bot@example.org"
+            },
+            "parents": [
+              "2802437812ff4a47b6a334e07ad4c25a5c40df5a"
+            ],
+            "trailers": [],
+            "files": [
+              {
+                "path": ".tableaux/status/b2c9.yaml",
+                "change": "changed"
+              }
+            ]
+          }
+        ],
+        "commands": [
+          {
+            "text": "git show --no-patch --format='%as %H %ae %ce%n%(trailers)' df6b60cbb2a98df9ff66fa8e4253022b06502979",
+            "comment": "shows the finding"
           }
         ]
       }
     ],
-    "errors": 0,
-    "warnings": 1,
-    "information": 0,
-    "most": {
-      "email": "bot@example.org",
-      "count": 1
-    }
+    "silent": [
+      {
+        "key": "P5",
+        "rule": "P5",
+        "kind": "An undetermined trunk"
+      },
+      {
+        "key": "R9",
+        "rule": "R9",
+        "kind": "An unmet requirement"
+      },
+      {
+        "key": "R12",
+        "rule": "R12",
+        "kind": "A requirement on what a junction reads"
+      },
+      {
+        "key": "R13",
+        "rule": "R13",
+        "kind": "A requirement its commit alone leaves unmet"
+      },
+      {
+        "key": "J8",
+        "rule": "J8",
+        "kind": "A subproject the tool cannot read"
+      },
+      {
+        "key": "J9",
+        "rule": "J9",
+        "kind": "A subproject task that does not exist"
+      },
+      {
+        "key": "J13",
+        "rule": "J13",
+        "kind": "A commit off the subproject's trunk"
+      },
+      {
+        "key": "J14",
+        "rule": "J14",
+        "kind": "A malformed commit"
+      },
+      {
+        "key": "J15",
+        "rule": "J15",
+        "kind": "An absolute URL without a commit"
+      },
+      {
+        "key": "J16",
+        "rule": "J16",
+        "kind": "A commit on a same-repository path"
+      },
+      {
+        "key": "J17",
+        "rule": "J17",
+        "kind": "A commit off the submodule's pin"
+      },
+      {
+        "key": "H1",
+        "rule": "H1",
+        "kind": "A trailer that names nothing"
+      },
+      {
+        "key": "H2",
+        "rule": "H2",
+        "kind": "A review from the wrong hand"
+      },
+      {
+        "key": "H3",
+        "rule": "H3",
+        "kind": "A model outside the one stated"
+      },
+      {
+        "key": "H5",
+        "rule": "H5",
+        "kind": "A stale hand-off"
+      },
+      {
+        "key": "proposed",
+        "rule": "",
+        "kind": "A proposed task"
+      },
+      {
+        "key": "stale",
+        "rule": "",
+        "kind": "A stale status"
+      }
+    ]
   },
-  "diagnostics": []
+  "diagnostics": [
+    {
+      "severity": "warning",
+      "code": "H6",
+      "task": "b2c9",
+      "gate": "design",
+      "commit": "df6b60cbb2a98df9ff66fa8e4253022b06502979",
+      "message": "the contributor's commit at the design junction carries no Model: trailer; the junction states claude-fable"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/b2c9.yaml",
+      "task": "b2c9",
+      "gate": "design",
+      "commit": "df6b60cbb2a98df9ff66fa8e4253022b06502979",
+      "message": "the newest event is the contributor's and the status states no review; pat@example.org may have design to review"
+    }
+  ]
 }

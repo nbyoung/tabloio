@@ -2,22 +2,38 @@
   "schema": "tablo/1",
   "command": "task",
   "source": {
-    "ref": "main",
-    "commit": "3cdae527d47d37fdff55bc302c76c017cf91c606",
-    "date": "2026-10-05",
+    "ref": "corpus/tooling",
+    "dir": ".",
+    "worktree": false,
+    "commit": "50a373b2857a36e4ef1a754605433943d6bfe324",
+    "date": "2026-10-17",
     "from": null,
     "trunk": {
-      "name": null
+      "name": "main",
+      "resolved": "stated"
     },
     "on_trunk": true
   },
   "project": {
+    "tableaux": "0.3.2",
     "root": "437e",
-    "title": "Tableaux tooling"
+    "title": "Tableaux tooling",
+    "owner": "nbyoung@nbyoung.com"
+  },
+  "viewer": {
+    "email": "nbyoung@nbyoung.com",
+    "roles": [
+      "owner",
+      "authority",
+      "assignee",
+      "contributor",
+      "reviewer"
+    ]
   },
   "params": {
     "task": "e9c6",
     "person": "nbyoung@nbyoung.com",
+    "role": null,
     "level": "provenance"
   },
   "data": {
@@ -120,12 +136,14 @@
         {
           "key": "overloaded",
           "symbol": "🪫",
-          "synopsis": "The assigned resource is overloaded"
+          "synopsis": "The assigned resource is overloaded",
+          "reserved": false
         },
         {
           "key": "blocked",
           "symbol": "⛔",
-          "synopsis": "An external resource is unavailable"
+          "synopsis": "An external resource is unavailable",
+          "reserved": false
         },
         {
           "key": "review",
@@ -139,31 +157,31 @@
           "key": "person",
           "symbol": "🧑",
           "meaning": "A person contributes",
-          "junction": "Plain; the contributor is a person"
+          "junction": "plain"
         },
         {
           "key": "agent",
           "symbol": "🤖",
           "meaning": "An agent contributes",
-          "junction": "Plain; the junction states a `model`"
+          "junction": "plain"
         },
         {
           "key": "reviewer",
           "symbol": "👀",
           "meaning": "A reviewer accepts",
-          "junction": "Plain; the reviewer accepts the work at the gate"
+          "junction": "plain"
         },
         {
           "key": "subproject",
           "symbol": "🪆",
           "meaning": "A subproject does the work",
-          "junction": "Recursive; another Tableaux project does the work"
+          "junction": "recursive"
         },
         {
           "key": "exempt",
           "symbol": "—",
           "meaning": "The gate does not apply",
-          "junction": "Not applicable; the entry exempts the task from the gate"
+          "junction": "not_applicable"
         }
       ]
     },
@@ -178,14 +196,20 @@
       "order": 1
     },
     "status": {
-      "gate": "design",
+      "kind": "recorded",
+      "gate": "implementation",
       "state": "nominal",
       "reason": "",
-      "note": "VIEWS.md is on the trunk at language 0.3.1; the twenty mockups may start, and implementation puts the text in place",
-      "date": "2026-09-30",
-      "recorder": "noreply@anthropic.com"
+      "note": "VIEWS.md defines the ten views on the trunk and agrees with the twenty approved mockups on the gate window; validation checks that tablo and the front ends follow the text",
+      "date": "2026-10-05",
+      "recorder": "noreply@anthropic.com",
+      "derived": false,
+      "why": "",
+      "uncommitted": false,
+      "from": null
     },
-    "description": "VIEWS.md defines each view independently of any format: its question, the roles it serves, the data it draws from the project and the history, the parameters that focus it (a task, a person, a gate window or a list of columns, a ref) and its progressive-disclosure levels. The views are the gate definition, the task definition, authority delegation, task assignment, the contributor work queue, the work-blockage tree, the global tableau, the contextual tableau, the history and the audit.",
+    "authorised": true,
+    "description": "VIEWS.md defines each view independently of any format: its question, the roles it serves, the data it draws from the project and the history, the parameters that focus it (a task, a person, a gate window or a list of columns, a ref) and its progressive-disclosure levels. The views are the gate definition, the task definition, authority delegation, task assignment, the contributor work queue, the work-blockage tree, the global tableau, the contextual tableau, the history and the audit.\n",
     "references": [
       {
         "text": "Proposed views",
@@ -226,7 +250,6 @@
         "by": "437e"
       }
     ],
-    "authorised": true,
     "requires": [
       {
         "task": {
@@ -238,14 +261,24 @@
         "text": "The role names the views refer to",
         "met": true,
         "due": true,
+        "condition": "met",
+        "why": "",
         "status": {
+          "kind": "recorded",
           "gate": "implementation",
           "state": "nominal",
           "reason": "",
-          "note": "",
-          "date": "",
-          "recorder": ""
-        }
+          "note": "The Roles text is on the trunk and covers all seven roles; the validate gate awaits the owner",
+          "date": "2026-09-30",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "subproject": "",
+        "commit": "",
+        "at_trunk": "unknown"
       }
     ],
     "dependents": [
@@ -258,7 +291,13 @@
         "to": "mockup",
         "text": "The abstract definition of the view",
         "met": true,
-        "due": true
+        "due": true,
+        "condition": "met",
+        "why": "",
+        "status": null,
+        "subproject": "",
+        "commit": "",
+        "at_trunk": "unknown"
       },
       {
         "task": {
@@ -269,7 +308,13 @@
         "to": "mockup",
         "text": "The abstract definition of the view",
         "met": true,
-        "due": true
+        "due": true,
+        "condition": "met",
+        "why": "",
+        "status": null,
+        "subproject": "",
+        "commit": "",
+        "at_trunk": "unknown"
       },
       {
         "task": {
@@ -280,194 +325,302 @@
         "to": "mockup",
         "text": "The abstract definition of the view",
         "met": true,
-        "due": true
+        "due": true,
+        "condition": "met",
+        "why": "",
+        "status": null,
+        "subproject": "",
+        "commit": "",
+        "at_trunk": "unknown"
       },
       {
         "task": {
           "id": "bb7c",
-          "title": ""
+          "title": "Task assignment view in Markdown"
         },
         "from": "design",
         "to": "mockup",
         "text": "The abstract definition of the view",
         "met": true,
-        "due": true
+        "due": true,
+        "condition": "met",
+        "why": "",
+        "status": null,
+        "subproject": "",
+        "commit": "",
+        "at_trunk": "unknown"
       },
       {
         "task": {
           "id": "c74a",
-          "title": ""
+          "title": "Contributor work queue view in Markdown"
         },
         "from": "design",
         "to": "mockup",
         "text": "The abstract definition of the view",
         "met": true,
-        "due": true
+        "due": true,
+        "condition": "met",
+        "why": "",
+        "status": null,
+        "subproject": "",
+        "commit": "",
+        "at_trunk": "unknown"
       },
       {
         "task": {
           "id": "efff",
-          "title": ""
+          "title": "Work-blockage tree view in Markdown"
         },
         "from": "design",
         "to": "mockup",
         "text": "The abstract definition of the view",
         "met": true,
-        "due": true
+        "due": true,
+        "condition": "met",
+        "why": "",
+        "status": null,
+        "subproject": "",
+        "commit": "",
+        "at_trunk": "unknown"
       },
       {
         "task": {
           "id": "ab8e",
-          "title": ""
+          "title": "Global tableau view in Markdown"
         },
         "from": "design",
         "to": "mockup",
         "text": "The abstract definition of the view",
         "met": true,
-        "due": true
+        "due": true,
+        "condition": "met",
+        "why": "",
+        "status": null,
+        "subproject": "",
+        "commit": "",
+        "at_trunk": "unknown"
       },
       {
         "task": {
           "id": "c545",
-          "title": ""
+          "title": "Contextual tableau view in Markdown"
         },
         "from": "design",
         "to": "mockup",
         "text": "The abstract definition of the view",
         "met": true,
-        "due": true
+        "due": true,
+        "condition": "met",
+        "why": "",
+        "status": null,
+        "subproject": "",
+        "commit": "",
+        "at_trunk": "unknown"
       },
       {
         "task": {
           "id": "d615",
-          "title": ""
+          "title": "History view in Markdown"
         },
         "from": "design",
         "to": "mockup",
         "text": "The abstract definition of the view",
         "met": true,
-        "due": true
+        "due": true,
+        "condition": "met",
+        "why": "",
+        "status": null,
+        "subproject": "",
+        "commit": "",
+        "at_trunk": "unknown"
       },
       {
         "task": {
           "id": "b14e",
-          "title": ""
+          "title": "Audit view in Markdown"
         },
         "from": "design",
         "to": "mockup",
         "text": "The abstract definition of the view",
         "met": true,
-        "due": true
+        "due": true,
+        "condition": "met",
+        "why": "",
+        "status": null,
+        "subproject": "",
+        "commit": "",
+        "at_trunk": "unknown"
       },
       {
         "task": {
           "id": "a6f7",
-          "title": ""
+          "title": "Gate definition view in Html"
         },
         "from": "design",
         "to": "mockup",
         "text": "The abstract definition of the view",
         "met": true,
-        "due": true
+        "due": true,
+        "condition": "met",
+        "why": "",
+        "status": null,
+        "subproject": "",
+        "commit": "",
+        "at_trunk": "unknown"
       },
       {
         "task": {
           "id": "7dff",
-          "title": ""
+          "title": "Task definition view in Html"
         },
         "from": "design",
         "to": "mockup",
         "text": "The abstract definition of the view",
         "met": true,
-        "due": true
+        "due": true,
+        "condition": "met",
+        "why": "",
+        "status": null,
+        "subproject": "",
+        "commit": "",
+        "at_trunk": "unknown"
       },
       {
         "task": {
           "id": "b1b7",
-          "title": ""
+          "title": "Authority delegation view in Html"
         },
         "from": "design",
         "to": "mockup",
         "text": "The abstract definition of the view",
         "met": true,
-        "due": true
+        "due": true,
+        "condition": "met",
+        "why": "",
+        "status": null,
+        "subproject": "",
+        "commit": "",
+        "at_trunk": "unknown"
       },
       {
         "task": {
           "id": "ea51",
-          "title": ""
+          "title": "Task assignment view in Html"
         },
         "from": "design",
         "to": "mockup",
         "text": "The abstract definition of the view",
         "met": true,
-        "due": true
+        "due": true,
+        "condition": "met",
+        "why": "",
+        "status": null,
+        "subproject": "",
+        "commit": "",
+        "at_trunk": "unknown"
       },
       {
         "task": {
           "id": "7783",
-          "title": ""
+          "title": "Contributor work queue view in Html"
         },
         "from": "design",
         "to": "mockup",
         "text": "The abstract definition of the view",
         "met": true,
-        "due": true
+        "due": true,
+        "condition": "met",
+        "why": "",
+        "status": null,
+        "subproject": "",
+        "commit": "",
+        "at_trunk": "unknown"
       },
       {
         "task": {
           "id": "5471",
-          "title": ""
+          "title": "Work-blockage tree view in Html"
         },
         "from": "design",
         "to": "mockup",
         "text": "The abstract definition of the view",
         "met": true,
-        "due": true
+        "due": true,
+        "condition": "met",
+        "why": "",
+        "status": null,
+        "subproject": "",
+        "commit": "",
+        "at_trunk": "unknown"
       },
       {
         "task": {
           "id": "32e7",
-          "title": ""
+          "title": "Global tableau view in Html"
         },
         "from": "design",
         "to": "mockup",
         "text": "The abstract definition of the view",
         "met": true,
-        "due": true
+        "due": true,
+        "condition": "met",
+        "why": "",
+        "status": null,
+        "subproject": "",
+        "commit": "",
+        "at_trunk": "unknown"
       },
       {
         "task": {
           "id": "69eb",
-          "title": ""
+          "title": "Contextual tableau view in Html"
         },
         "from": "design",
         "to": "mockup",
         "text": "The abstract definition of the view",
         "met": true,
-        "due": true
+        "due": true,
+        "condition": "met",
+        "why": "",
+        "status": null,
+        "subproject": "",
+        "commit": "",
+        "at_trunk": "unknown"
       },
       {
         "task": {
           "id": "3194",
-          "title": ""
+          "title": "History view in Html"
         },
         "from": "design",
         "to": "mockup",
         "text": "The abstract definition of the view",
         "met": true,
-        "due": true
+        "due": true,
+        "condition": "met",
+        "why": "",
+        "status": null,
+        "subproject": "",
+        "commit": "",
+        "at_trunk": "unknown"
       },
       {
         "task": {
           "id": "a8b4",
-          "title": ""
+          "title": "Audit view in Html"
         },
         "from": "design",
         "to": "mockup",
         "text": "The abstract definition of the view",
         "met": true,
-        "due": true
+        "due": true,
+        "condition": "met",
+        "why": "",
+        "status": null,
+        "subproject": "",
+        "commit": "",
+        "at_trunk": "unknown"
       },
       {
         "task": {
@@ -477,13 +630,20 @@
         "from": "implementation",
         "to": "design",
         "text": "The abstract views it derives",
-        "met": false,
-        "due": false
+        "met": true,
+        "due": true,
+        "condition": "met",
+        "why": "",
+        "status": null,
+        "subproject": "",
+        "commit": "",
+        "at_trunk": "unknown"
       }
     ],
     "junctions": [
       {
         "gate": "defined",
+        "kind": "plain",
         "marks": [
           "agent"
         ],
@@ -492,11 +652,17 @@
         "model": "claude-haiku",
         "reviewer": "noreply@anthropic.com",
         "reviewer_by_default": true,
+        "subproject": null,
+        "references": [],
         "stands": "passed",
-        "reviewed": false
+        "reviewed": true,
+        "from": [
+          "437e"
+        ]
       },
       {
         "gate": "mockup",
+        "kind": "not_applicable",
         "marks": [
           "exempt"
         ],
@@ -505,11 +671,17 @@
         "model": "",
         "reviewer": "",
         "reviewer_by_default": false,
+        "subproject": null,
+        "references": [],
         "stands": "exempt",
-        "reviewed": false
+        "reviewed": false,
+        "from": [
+          "e9c6"
+        ]
       },
       {
         "gate": "function",
+        "kind": "not_applicable",
         "marks": [
           "exempt"
         ],
@@ -518,11 +690,17 @@
         "model": "",
         "reviewer": "",
         "reviewer_by_default": false,
+        "subproject": null,
+        "references": [],
         "stands": "exempt",
-        "reviewed": false
+        "reviewed": false,
+        "from": [
+          "e9c6"
+        ]
       },
       {
         "gate": "design",
+        "kind": "plain",
         "marks": [
           "agent",
           "reviewer"
@@ -532,11 +710,18 @@
         "model": "claude-fable",
         "reviewer": "nbyoung@nbyoung.com",
         "reviewer_by_default": false,
-        "stands": "here",
-        "reviewed": true
+        "subproject": null,
+        "references": [],
+        "stands": "passed",
+        "reviewed": true,
+        "from": [
+          "bc63",
+          "437e"
+        ]
       },
       {
         "gate": "implementation",
+        "kind": "plain",
         "marks": [
           "agent"
         ],
@@ -545,11 +730,17 @@
         "model": "claude-sonnet",
         "reviewer": "noreply@anthropic.com",
         "reviewer_by_default": true,
-        "stands": "next",
-        "reviewed": false
+        "subproject": null,
+        "references": [],
+        "stands": "here",
+        "reviewed": true,
+        "from": [
+          "437e"
+        ]
       },
       {
         "gate": "unit",
+        "kind": "not_applicable",
         "marks": [
           "exempt"
         ],
@@ -558,11 +749,17 @@
         "model": "",
         "reviewer": "",
         "reviewer_by_default": false,
+        "subproject": null,
+        "references": [],
         "stands": "exempt",
-        "reviewed": false
+        "reviewed": false,
+        "from": [
+          "e9c6"
+        ]
       },
       {
         "gate": "integrate",
+        "kind": "not_applicable",
         "marks": [
           "exempt"
         ],
@@ -571,11 +768,17 @@
         "model": "",
         "reviewer": "",
         "reviewer_by_default": false,
+        "subproject": null,
+        "references": [],
         "stands": "exempt",
-        "reviewed": false
+        "reviewed": false,
+        "from": [
+          "e9c6"
+        ]
       },
       {
         "gate": "validate",
+        "kind": "plain",
         "marks": [
           "agent",
           "reviewer"
@@ -585,11 +788,18 @@
         "model": "claude-opus",
         "reviewer": "nbyoung@nbyoung.com",
         "reviewer_by_default": false,
-        "stands": "later",
-        "reviewed": false
+        "subproject": null,
+        "references": [],
+        "stands": "next",
+        "reviewed": false,
+        "from": [
+          "bc63",
+          "437e"
+        ]
       },
       {
         "gate": "release",
+        "kind": "plain",
         "marks": [
           "person"
         ],
@@ -598,32 +808,51 @@
         "model": "",
         "reviewer": "",
         "reviewer_by_default": false,
+        "subproject": null,
+        "references": [],
         "stands": "later",
-        "reviewed": false
+        "reviewed": false,
+        "from": [
+          "437e"
+        ]
       }
     ],
+    "snapshot": null,
     "status_commit": {
-      "hash": "879b447",
-      "subject": "Advance the abstract views task to its design gate",
-      "date": "2026-09-30",
+      "hash": "ccb3947e3deb2f476a8c9c886266b2b4da66c6f6",
+      "subject": "Record the abstract views task at its implementation gate",
+      "date": "2026-10-05",
+      "author_time": "2026-10-05T18:46:07-04:00",
       "author": {
-        "name": "Claude Fable 5.1",
+        "name": "Claude Opus 5.5",
         "email": "noreply@anthropic.com"
       },
       "committer": {
-        "name": "Claude Fable 5.1",
+        "name": "Claude Opus 5.5",
         "email": "noreply@anthropic.com"
       },
+      "parents": [
+        "c5719cddaf83e56b29d0ca3f1ccb716d1cad01eb"
+      ],
       "trailers": [
-        "Model: claude-fable-5-1"
+        "Reviewed: e9c6 implementation",
+        "Model: claude-opus-5-5",
+        "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+      ],
+      "files": [
+        {
+          "path": ".tableaux/status/e9c6.yaml",
+          "change": "changed"
+        }
       ]
     },
     "own_commit": null,
     "authorisation": {
       "commit": {
-        "hash": "6b6c99a",
+        "hash": "6b6c99a2ca35f684674ad886a33916979137f227",
         "subject": "Plan the Tableaux tooling",
         "date": "2026-09-29",
+        "author_time": "2026-09-29T16:38:16-04:00",
         "author": {
           "name": "Norman Young",
           "email": "nbyoung@nbyoung.com"
@@ -632,180 +861,388 @@
           "name": "Norman Young",
           "email": "nbyoung@nbyoung.com"
         },
-        "trailers": []
+        "parents": [
+          "0a0dcd584a43253286c778593d18ddbf610d0969"
+        ],
+        "trailers": [
+          "Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
+        ],
+        "files": [
+          {
+            "path": ".tableaux/gates.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/05a9.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/2034.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/3194.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/32e7.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/437e.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/5471.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/595e.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/5fe3.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/6103.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/69eb.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/7166.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/7783.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/77b2.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/7861.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/7dff.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/99f0.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/9f3f.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/a6f7.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/a8b4.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/a9ce.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/ab8e.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/ac33.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/b14e.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/b1b7.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/bb7c.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/bc63.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/bc86.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/c2ad.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/c545.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/c6e8.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/c74a.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/d615.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/e3cb.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/e9c6.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/ea51.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/efff.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/tasks/fcec.yaml",
+            "change": "added"
+          },
+          {
+            "path": ".tableaux/version.yaml",
+            "change": "added"
+          }
+        ]
       },
       "way": "change",
-      "by": "author"
+      "by": "both",
+      "email": "nbyoung@nbyoung.com",
+      "judges": [
+        "nbyoung@nbyoung.com"
+      ],
+      "why": "",
+      "differs_from_trunk": false,
+      "uncommitted": false
     },
+    "considered": [],
+    "chain": [
+      {
+        "task": {
+          "id": "e9c6",
+          "title": "Abstract views"
+        },
+        "url": "",
+        "status": {
+          "kind": "recorded",
+          "gate": "implementation",
+          "state": "nominal",
+          "reason": "",
+          "note": "VIEWS.md defines the ten views on the trunk and agrees with the twenty approved mockups on the gate window; validation checks that tablo and the front ends follow the text",
+          "date": "2026-10-05",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        }
+      }
+    ],
+    "linkages": [],
     "sources": [
       {
         "gate": "defined",
         "field": "contributor",
         "value": "noreply@anthropic.com",
         "by": "437e",
-        "key": "",
-        "file": "",
-        "line": 0
+        "key": "junctions.defined.contributor",
+        "file": ".tableaux/tasks/437e.yaml",
+        "line": 17,
+        "col": 34
       },
       {
         "gate": "defined",
         "field": "model",
         "value": "claude-haiku",
         "by": "437e",
-        "key": "",
-        "file": "",
-        "line": 0
+        "key": "junctions.defined.model",
+        "file": ".tableaux/tasks/437e.yaml",
+        "line": 17,
+        "col": 64
       },
       {
         "gate": "defined",
         "field": "reviewer",
         "value": "noreply@anthropic.com",
-        "by": "default",
-        "key": "",
+        "by": "assignee",
+        "key": "assignee",
         "file": "",
-        "line": 0
+        "line": 0,
+        "col": 0
       },
       {
         "gate": "mockup",
         "field": "applies",
         "value": "false",
         "by": "e9c6",
-        "key": "",
-        "file": "",
-        "line": 0
+        "key": "junctions.mockup.applies",
+        "file": ".tableaux/tasks/e9c6.yaml",
+        "line": 16,
+        "col": 3
       },
       {
         "gate": "function",
         "field": "applies",
         "value": "false",
         "by": "e9c6",
-        "key": "",
-        "file": "",
-        "line": 0
+        "key": "junctions.function.applies",
+        "file": ".tableaux/tasks/e9c6.yaml",
+        "line": 17,
+        "col": 3
       },
       {
         "gate": "design",
         "field": "contributor",
         "value": "noreply@anthropic.com",
         "by": "bc63",
-        "key": "",
-        "file": "",
-        "line": 0
+        "key": "junctions.design.contributor",
+        "file": ".tableaux/tasks/bc63.yaml",
+        "line": 14,
+        "col": 28
       },
       {
         "gate": "design",
         "field": "model",
         "value": "claude-fable",
         "by": "bc63",
-        "key": "",
-        "file": "",
-        "line": 0
+        "key": "junctions.design.model",
+        "file": ".tableaux/tasks/bc63.yaml",
+        "line": 14,
+        "col": 58
       },
       {
         "gate": "design",
         "field": "reviewer",
         "value": "nbyoung@nbyoung.com",
         "by": "437e",
-        "key": "",
-        "file": "",
-        "line": 0
+        "key": "junctions.design.reviewer",
+        "file": ".tableaux/tasks/437e.yaml",
+        "line": 20,
+        "col": 87
       },
       {
         "gate": "implementation",
         "field": "contributor",
         "value": "noreply@anthropic.com",
         "by": "437e",
-        "key": "",
-        "file": "",
-        "line": 0
+        "key": "junctions.implementation.contributor",
+        "file": ".tableaux/tasks/437e.yaml",
+        "line": 21,
+        "col": 34
       },
       {
         "gate": "implementation",
         "field": "model",
         "value": "claude-sonnet",
         "by": "437e",
-        "key": "",
-        "file": "",
-        "line": 0
+        "key": "junctions.implementation.model",
+        "file": ".tableaux/tasks/437e.yaml",
+        "line": 21,
+        "col": 64
       },
       {
         "gate": "implementation",
         "field": "reviewer",
         "value": "noreply@anthropic.com",
-        "by": "default",
-        "key": "",
+        "by": "assignee",
+        "key": "assignee",
         "file": "",
-        "line": 0
+        "line": 0,
+        "col": 0
       },
       {
         "gate": "unit",
         "field": "applies",
         "value": "false",
         "by": "e9c6",
-        "key": "",
-        "file": "",
-        "line": 0
+        "key": "junctions.unit.applies",
+        "file": ".tableaux/tasks/e9c6.yaml",
+        "line": 18,
+        "col": 3
       },
       {
         "gate": "integrate",
         "field": "applies",
         "value": "false",
         "by": "e9c6",
-        "key": "",
-        "file": "",
-        "line": 0
+        "key": "junctions.integrate.applies",
+        "file": ".tableaux/tasks/e9c6.yaml",
+        "line": 19,
+        "col": 3
       },
       {
         "gate": "validate",
         "field": "contributor",
         "value": "noreply@anthropic.com",
         "by": "bc63",
-        "key": "",
-        "file": "",
-        "line": 0
+        "key": "junctions.validate.contributor",
+        "file": ".tableaux/tasks/bc63.yaml",
+        "line": 15,
+        "col": 28
       },
       {
         "gate": "validate",
         "field": "model",
         "value": "claude-opus",
         "by": "bc63",
-        "key": "",
-        "file": "",
-        "line": 0
+        "key": "junctions.validate.model",
+        "file": ".tableaux/tasks/bc63.yaml",
+        "line": 15,
+        "col": 58
       },
       {
         "gate": "validate",
         "field": "reviewer",
         "value": "nbyoung@nbyoung.com",
         "by": "437e",
-        "key": "",
-        "file": "",
-        "line": 0
+        "key": "junctions.validate.reviewer",
+        "file": ".tableaux/tasks/437e.yaml",
+        "line": 24,
+        "col": 89
       },
       {
         "gate": "release",
         "field": "contributor",
         "value": "nbyoung@nbyoung.com",
         "by": "437e",
-        "key": "",
-        "file": "",
-        "line": 0
+        "key": "junctions.release.contributor",
+        "file": ".tableaux/tasks/437e.yaml",
+        "line": 25,
+        "col": 34
       }
     ],
     "reviews": [
       {
         "gate": "defined",
         "reviewer": "noreply@anthropic.com",
-        "effect": "authorisation"
-      },
-      {
-        "gate": "design",
-        "reviewer": "nbyoung@nbyoung.com",
-        "effect": "accepts",
+        "effect": "authorisation",
+        "by": "nbyoung@nbyoung.com",
         "commit": {
-          "hash": "0704a09",
-          "subject": "Accept the abstract views design",
-          "date": "2026-09-30",
+          "hash": "6b6c99a2ca35f684674ad886a33916979137f227",
+          "subject": "Plan the Tableaux tooling",
+          "date": "2026-09-29",
+          "author_time": "2026-09-29T16:38:16-04:00",
           "author": {
             "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
@@ -814,46 +1251,316 @@
             "name": "Norman Young",
             "email": "nbyoung@nbyoung.com"
           },
+          "parents": [
+            "0a0dcd584a43253286c778593d18ddbf610d0969"
+          ],
           "trailers": [
-            "Reviewed: e9c6 design"
+            "Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/05a9.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/2034.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/3194.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/32e7.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/437e.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/5471.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/595e.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/5fe3.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/6103.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/69eb.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/7166.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/7783.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/77b2.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/7861.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/7dff.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/99f0.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/9f3f.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/a6f7.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/a8b4.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/a9ce.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/ab8e.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/ac33.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/b14e.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/b1b7.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/bb7c.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/bc63.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/bc86.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/c2ad.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/c545.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/c6e8.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/c74a.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/d615.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e3cb.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/e9c6.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/ea51.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/efff.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/fcec.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
+        }
+      },
+      {
+        "gate": "design",
+        "reviewer": "nbyoung@nbyoung.com",
+        "effect": "accepts",
+        "by": "nbyoung@nbyoung.com",
+        "commit": {
+          "hash": "0704a0912297b3de0218b821384cf1b9956a44bb",
+          "subject": "Accept the abstract views design",
+          "date": "2026-09-30",
+          "author_time": "2026-09-30T15:16:33-04:00",
+          "author": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "committer": {
+            "name": "Norman Young",
+            "email": "nbyoung@nbyoung.com"
+          },
+          "parents": [
+            "1b6916eecdb8764f123b6aa923d86f9c90f43867",
+            "26defc75c452b21dcd9c86d4a2bfa71b685e52a3"
+          ],
+          "trailers": [
+            "Reviewed: e9c6 design",
+            "Model: claude-opus-5-5",
+            "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "changed"
+            },
+            {
+              "path": ".tableaux/status/e9c6.yaml",
+              "change": "changed"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "changed"
+            }
+          ]
+        }
+      },
+      {
+        "gate": "implementation",
+        "reviewer": "noreply@anthropic.com",
+        "effect": "accepts",
+        "by": "noreply@anthropic.com",
+        "commit": {
+          "hash": "ccb3947e3deb2f476a8c9c886266b2b4da66c6f6",
+          "subject": "Record the abstract views task at its implementation gate",
+          "date": "2026-10-05",
+          "author_time": "2026-10-05T18:46:07-04:00",
+          "author": {
+            "name": "Claude Opus 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "committer": {
+            "name": "Claude Opus 5.5",
+            "email": "noreply@anthropic.com"
+          },
+          "parents": [
+            "c5719cddaf83e56b29d0ca3f1ccb716d1cad01eb"
+          ],
+          "trailers": [
+            "Reviewed: e9c6 implementation",
+            "Model: claude-opus-5-5",
+            "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/status/e9c6.yaml",
+              "change": "changed"
+            }
           ]
         }
       }
     ],
     "models": [
       {
-        "commit": "1a17bfc",
+        "commit": "1a17bfcca843d4436e2eb4c75b5cfa98ec05d658",
         "gate": "defined",
-        "stated": "claude-haiku",
+        "stated": "claude-fable-5-1",
         "trailer": "",
         "reading": "exempt"
       },
       {
-        "commit": "0fed913",
+        "commit": "0fed913a401606e7d6d2bbee72385f2c56204231",
         "gate": "design",
         "stated": "claude-fable",
         "trailer": "claude-fable-5-1",
         "reading": "agrees"
       },
       {
-        "commit": "26defc7",
+        "commit": "26defc75c452b21dcd9c86d4a2bfa71b685e52a3",
         "gate": "design",
         "stated": "claude-fable",
         "trailer": "claude-fable-5-1",
         "reading": "agrees"
       },
       {
-        "commit": "879b447",
+        "commit": "879b447a920aad55e698906812350ea7d3785b4c",
         "gate": "design",
         "stated": "claude-fable",
         "trailer": "claude-fable-5-1",
         "reading": "agrees"
+      },
+      {
+        "commit": "ccb3947e3deb2f476a8c9c886266b2b4da66c6f6",
+        "gate": "implementation",
+        "stated": "claude-sonnet",
+        "trailer": "claude-opus-5-5",
+        "reading": "differs"
       }
     ],
     "events": [
       {
+        "date": "2026-10-05",
+        "commit": "ccb3947e3deb2f476a8c9c886266b2b4da66c6f6",
+        "by": "noreply@anthropic.com",
+        "kind": "reviewed",
+        "recorded": null,
+        "gate": "implementation",
+        "pin": null,
+        "subproject": null
+      },
+      {
+        "date": "2026-10-05",
+        "commit": "ccb3947e3deb2f476a8c9c886266b2b4da66c6f6",
+        "by": "noreply@anthropic.com",
+        "kind": "status",
+        "recorded": {
+          "gate": "implementation",
+          "state": "nominal",
+          "reason": "",
+          "note": "VIEWS.md defines the ten views on the trunk and agrees with the twenty approved mockups on the gate window; validation checks that tablo and the front ends follow the text"
+        },
+        "gate": "",
+        "pin": null,
+        "subproject": null
+      },
+      {
         "date": "2026-09-30",
-        "commit": "879b447",
+        "commit": "879b447a920aad55e698906812350ea7d3785b4c",
         "by": "noreply@anthropic.com",
         "kind": "status",
         "recorded": {
@@ -868,7 +1575,7 @@
       },
       {
         "date": "2026-09-30",
-        "commit": "0704a09",
+        "commit": "0704a0912297b3de0218b821384cf1b9956a44bb",
         "by": "nbyoung@nbyoung.com",
         "kind": "reviewed",
         "recorded": null,
@@ -878,7 +1585,7 @@
       },
       {
         "date": "2026-09-30",
-        "commit": "26defc7",
+        "commit": "26defc75c452b21dcd9c86d4a2bfa71b685e52a3",
         "by": "noreply@anthropic.com",
         "kind": "status",
         "recorded": {
@@ -890,62 +1597,131 @@
         "gate": "",
         "pin": null,
         "subproject": null
-      },
-      {
-        "date": "2026-09-30",
-        "commit": "0fed913",
-        "by": "noreply@anthropic.com",
-        "kind": "status",
-        "recorded": {
-          "gate": "defined",
-          "state": "nominal",
-          "reason": "review",
-          "note": "The VIEWS.md design on branch worktree-agent-a6b84238bbacc4fcd awaits the owner's review at the design gate"
-        },
-        "gate": "",
-        "pin": null,
-        "subproject": null
-      },
-      {
-        "date": "2026-09-29",
-        "commit": "5958858",
-        "by": "noreply@anthropic.com",
-        "kind": "reviewed",
-        "recorded": null,
-        "gate": "defined",
-        "pin": null,
-        "subproject": null
       }
     ],
-    "event_count": 7,
+    "event_count": 9,
     "commands": [
       {
-        "text": "git log -1 --format='%h %as %ae' 3cdae52 -- .tableaux/status/e9c6.yaml",
-        "comment": "the status commit"
-      },
-      {
-        "text": "git log --first-parent -1 --format='%h %as %ae %ce' 3cdae52 -- .tableaux/tasks/e9c6.yaml",
-        "comment": "the authorisation commit"
-      },
-      {
-        "text": "grep -l 'id: \"e9c6\"' .tableaux/tasks/*.yaml",
-        "comment": "the dependents"
-      },
-      {
-        "text": "git log --format='%h %as %ae %ce' -E --grep='^Reviewed: e9c6 ' 3cdae52",
-        "comment": "the reviews"
-      },
-      {
-        "text": "git log --format='%as %h %ae' 3cdae52 -- .tableaux/tasks/e9c6.yaml .tableaux/status/e9c6.yaml",
-        "comment": "the events"
-      },
-      {
-        "text": "git log --format='%as %h %ae' -E --grep='^(Authorised|Reaffirmed): e9c6$' --grep='^Reviewed: e9c6 ' 3cdae52",
-        "comment": "the events"
+        "text": "git log --format='%H %as %ae %s' 50a373b2857a36e4ef1a754605433943d6bfe324 -- .tableaux/tasks/e9c6.yaml .tableaux/status/e9c6.yaml",
+        "comment": ""
       }
-    ],
-    "considered": [],
-    "chain": []
+    ]
   },
-  "diagnostics": []
+  "diagnostics": [
+    {
+      "severity": "warning",
+      "code": "H3",
+      "task": "7166",
+      "gate": "implementation",
+      "commit": "56103af8cbaf561a90f9fa67fea02053372a4214",
+      "message": "Model claude-opus-5-5 is outside the stated model claude-sonnet"
+    },
+    {
+      "severity": "warning",
+      "code": "H3",
+      "task": "e9c6",
+      "gate": "implementation",
+      "commit": "ccb3947e3deb2f476a8c9c886266b2b4da66c6f6",
+      "message": "Model claude-opus-5-5 is outside the stated model claude-sonnet"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/7166.yaml",
+      "task": "7166",
+      "gate": "implementation",
+      "commit": "56103af8cbaf561a90f9fa67fea02053372a4214",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/7861.yaml",
+      "task": "7861",
+      "gate": "validate",
+      "commit": "c6f2655f1bda4469a6171b77cc21e326f0c99f87",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/9f3f.yaml",
+      "task": "9f3f",
+      "gate": "implementation",
+      "commit": "43d68e4f7d2b856c4d581983f34355d5b5f4f3b4",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/ac33.yaml",
+      "task": "ac33",
+      "gate": "implementation",
+      "commit": "6762222ddffef76008daad27ebe26069ac67cc5d",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/c2ad.yaml",
+      "task": "c2ad",
+      "gate": "validate",
+      "commit": "3d8ce0eee1e869c75453abba91cae03dec6587ce",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/e3cb.yaml",
+      "task": "e3cb",
+      "gate": "validate",
+      "commit": "c39ccac764b580ddb67789014c5f7f2c1bae9c6e",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/e9c6.yaml",
+      "task": "e9c6",
+      "gate": "validate",
+      "commit": "ccb3947e3deb2f476a8c9c886266b2b4da66c6f6",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/fcec.yaml",
+      "task": "fcec",
+      "gate": "unit",
+      "commit": "60495c26d886016b40069041386a811b24469312",
+      "message": "the newest event is the contributor's and the status states no review; noreply@anthropic.com may have unit to review"
+    },
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/595e.yaml",
+      "line": 13,
+      "col": 5,
+      "task": "595e",
+      "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    },
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/6103.yaml",
+      "line": 13,
+      "col": 5,
+      "task": "6103",
+      "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    },
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/c6e8.yaml",
+      "line": 13,
+      "col": 5,
+      "task": "c6e8",
+      "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    }
+  ]
 }

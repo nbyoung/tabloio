@@ -36,13 +36,13 @@ ada@example.org (a1c0).
 
 Children: 9f31 c07d.
 
-┌───────────┬───────┬─────────────┬───────┬─────────────────┐
-│ Gate      │ Marks │ Contributor │ Model │ Reviewer        │
-├───────────┼───────┼─────────────┼───────┼─────────────────┤
-│ 📌 mockup │  👀   │             │       │ ben@example.org │
-└───────────┴───────┴─────────────┴───────┴─────────────────┘
+┌───────────┬───────┬─────────────────┬───────┬─────────────────┐
+│ Gate      │ Marks │ Contributor     │ Model │ Reviewer        │
+├───────────┼───────┼─────────────────┼───────┼─────────────────┤
+│ 📌 mockup │  🧑   │ ben@example.org │       │ ben@example.org │
+└───────────┴───────┴─────────────────┴───────┴─────────────────┘
 
-👀 a reviewer accepts.
+🧑 a person contributes.
 
 Deciding commits: 4
 ───────────────────
@@ -52,36 +52,36 @@ Commit · Date · Author · Committer · Accepts by · The authority is · Tasks
 ────────────────────────────────────────────────────────────────────────────────
 1b8cfb1
   Date: 2026-09-27
-  Author: dan@example.org
-  Committer: dan@example.org
+  Author: Dan Reyes, dan@example.org
+  Committer: Dan Reyes, dan@example.org
   Accepts by: a change on the trunk
   Tasks: 1: 3c5d
 ────────────────────────────────────────────────────────────────────────────────
 f9e8746
   Date: 2026-09-19
-  Author: ben@example.org
-  Committer: ben@example.org
-  Accepts by: a merge
-  The authority is: the author
+  Author: Ben Okafor, ben@example.org
+  Committer: Ben Okafor, ben@example.org
+  Accepts by: a merge of 91aa774
+  The authority is: the author and the committer
   Tasks: 1: 9f31
 ────────────────────────────────────────────────────────────────────────────────
 22a758b
   Date: 2026-09-16
-  Author: ben@example.org
-  Committer: ben@example.org
+  Author: Ben Okafor, ben@example.org
+  Committer: Ben Okafor, ben@example.org
   Accepts by: a change on the trunk
-  The authority is: the author
+  The authority is: the author and the committer
   Tasks: 1: c07d
 ────────────────────────────────────────────────────────────────────────────────
 68d9021
   Date: 2026-09-15
-  Author: ada@example.org
-  Committer: ada@example.org
+  Author: Ada Byron, ada@example.org
+  Committer: Ada Byron, ada@example.org
   Accepts by: a change on the trunk
-  The authority is: the author
+  The authority is: the author and the committer
   Tasks: 3: a1c0 4e2b 7b2e
 ────────────────────────────────────────────────────────────────────────────────
 
-    git log --first-parent -1 --format='%h %as %ae %ce %p' main -- .tableaux/tasks/3c5d.yaml
+    git log --first-parent --format='%H %as %ae %ce %P' edb30d2baa5ea3c7e3fb8eef8ac6cce6e145221a -- .tableaux/tasks
 
 Command: tabloio authority --ref edb30d2 --level provenance --text

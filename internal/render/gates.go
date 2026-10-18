@@ -201,6 +201,24 @@ func (p *page) reservedSentence(r view.Reason) doc.Para {
 	)
 }
 
+// junctionKinds words the kind of junction a mark stands for, one phrase per
+// key of tablo's legend.
+var junctionKinds = map[string]string{
+	"plain":          "Plain",
+	"recursive":      "Recursive",
+	"not_applicable": "Not applicable",
+}
+
+// junctionKind words a mark's junction kind; a value that is no key of
+// junctionKinds prints as worded text, as a fixture drawn from a mockup
+// gives it.
+func junctionKind(key string) []doc.Inline {
+	if w, ok := junctionKinds[key]; ok {
+		return one(txt(w))
+	}
+	return worded(key)
+}
+
 func (p *page) marksTable(v *view.Gates) []doc.Block {
 	marks := p.h.Legend.Marks
 	if len(marks) == 0 {
@@ -217,7 +235,7 @@ func (p *page) marksTable(v *view.Gates) []doc.Block {
 	for _, m := range marks {
 		row := []doc.Cell{cell(one(symbol(m.Symbol, m.Key))), cell(worded(m.Meaning))}
 		if detail {
-			row = append(row, cell(worded(m.Junction)))
+			row = append(row, cell(junctionKind(m.Junction)))
 		}
 		rows = append(rows, row)
 	}

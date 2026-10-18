@@ -153,7 +153,7 @@ func (p *page) countLine(v *view.Delegation) doc.Block {
 		}
 	}
 	n := strconv.Itoa
-	return para(txt(n(len(v.Rows)) + " tasks, " + n(delegations) + " delegations, " +
+	return para(txt(count(len(v.Rows), "task", "tasks") + ", " + count(delegations, "delegation", "delegations") + ", " +
 		n(len(v.Rows)-proposed) + " authorised, " + n(proposed) + " proposed."))
 }
 
@@ -177,7 +177,7 @@ func (p *page) chains(v *view.Delegation) []doc.Block {
 	for _, c := range v.Parents {
 		b = append(b, heading(3, spans(p.fileLink(c.TaskRef, task(c.TaskRef)), one(txt(" · ")), p.person(c.Assignee))...))
 		b = append(b, para(spans(
-			one(txt("Authorities of its "+strconv.Itoa(len(c.Children))+" children, nearest first: ")),
+			one(txt("Authorities of its "+count(len(c.Children), "child", "children")+", nearest first: ")),
 			p.authorities(c.Authorities), one(txt(".")))...))
 		b = append(b, para(spans(one(txt("Children: ")), ids(c.Children), one(txt(".")))...))
 		b = append(b, p.defaults(c)...)

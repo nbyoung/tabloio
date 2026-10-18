@@ -23,6 +23,7 @@ Legend: `tabloio gates`.
   - `99f0` Gate definition view in Markdown, design → mockup, The abstract definition of the view: unmet
   - `05a9` Task definition view in Markdown, design → mockup, The abstract definition of the view: unmet
   - `a9ce` Authority delegation view in Markdown, design → mockup, The abstract definition of the view: unmet
+  - … and 17 more: `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4`, design → mockup, The abstract definition of the view: unmet
 - Also required by: `77b2` tablo: backend library and plumbing, implementation → design, The abstract views it derives: unmet, not yet due
 - Status: 📝 defined 🟢 nominal 👓 review, 2026-09-30, noreply@anthropic.com, `26defc7`: The revised VIEWS.md design on branch worktree-agent-a6b84238bbacc4fcd awaits the owner's acceptance at the design gate
 - To accept: `tabloio review e9c6 design`

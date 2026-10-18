@@ -1,6 +1,6 @@
 # Authority delegation
 
-**Who may accept what?** Tableaux tooling · ref `main` · level detail
+**Who may accept what?** Tableaux tooling · ref `corpus/tooling` · level detail
 
 Legend: `tabloio gates`.
 
@@ -57,13 +57,13 @@ Children: `bc63` `77b2` `6103` `c6e8` `595e`.
 
 | Gate | Marks | Contributor | Model | Reviewer |
 |---|:-:|---|---|---|
-| 📝 defined | 🤖 | noreply@anthropic.com | `claude-haiku` |  |
+| 📝 defined | 🤖 | noreply@anthropic.com | `claude-haiku` | nbyoung@nbyoung.com |
 | 📌 mockup | 🤖👀 | noreply@anthropic.com | `claude-opus` | nbyoung@nbyoung.com |
-| 🔧 function | 🤖 | noreply@anthropic.com | `claude-sonnet` |  |
+| 🔧 function | 🤖 | noreply@anthropic.com | `claude-sonnet` | nbyoung@nbyoung.com |
 | 📐 design | 🤖👀 | noreply@anthropic.com | `claude-opus` | nbyoung@nbyoung.com |
-| 🧱 implementation | 🤖 | noreply@anthropic.com | `claude-sonnet` |  |
-| 📏 unit | 🤖 | noreply@anthropic.com | `claude-sonnet` |  |
-| 🔗 integrate | 🤖 | noreply@anthropic.com | `claude-sonnet` |  |
+| 🧱 implementation | 🤖 | noreply@anthropic.com | `claude-sonnet` | nbyoung@nbyoung.com |
+| 📏 unit | 🤖 | noreply@anthropic.com | `claude-sonnet` | nbyoung@nbyoung.com |
+| 🔗 integrate | 🤖 | noreply@anthropic.com | `claude-sonnet` | nbyoung@nbyoung.com |
 | 🌍 validate | 🤖👀 | noreply@anthropic.com | `claude-sonnet` | nbyoung@nbyoung.com |
 | 🚀 release | 🧑 | nbyoung@nbyoung.com |  |  |
 
@@ -126,4 +126,4 @@ Children: `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4`.
 
 — the gate does not apply.
 
-Command: `tabloio authority --ref main --level detail`
+Command: `tabloio authority --ref corpus/tooling --level detail`

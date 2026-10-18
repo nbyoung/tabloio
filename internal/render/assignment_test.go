@@ -82,15 +82,15 @@ func TestGateGroupsAndFold(t *testing.T) {
 		out := renderString(t, v, Options{Level: view.Detail})
 		var groups []string
 		for _, ln := range strings.Split(out, "\n") {
-			if strings.HasPrefix(ln, "**") && strings.Contains(ln, " junctions · ") {
+			if strings.HasPrefix(ln, "**") && (strings.Contains(ln, " junctions · ") || strings.Contains(ln, " junction · ")) {
 				groups = append(groups, ln)
 			}
 		}
 		want := []string{
-			"**📝 defined** · 1 junctions · 1 next",
+			"**📝 defined** · 1 junction · 1 next",
 			"**📐 design** · 2 junctions · 2 next",
 			"**🌍 validate** · 2 junctions · 2 next",
-			"**🚀 release** · 1 junctions · 1 next",
+			"**🚀 release** · 1 junction · 1 next",
 		}
 		if !slices.Equal(groups, want) {
 			t.Errorf("groups\n%s\nwant\n%s", strings.Join(groups, "\n"), strings.Join(want, "\n"))
@@ -169,9 +169,18 @@ func TestGateGroupsAndFold(t *testing.T) {
 	})
 }
 
-// T9: empty sections.
+// T9: empty sections. In weather-station opus@example.org contributes one
+// junction, at unit; without it the agent's section holds every empty form
+// but its models.
 func TestEmptySections(t *testing.T) {
-	out := renderString(t, readFixture(t, "assignment", "weather"), Options{Level: view.Detail})
+	v := *readFixture(t, "assignment", "weather").(*view.Assignment)
+	v.Sections = append([]view.PersonSection(nil), v.Sections...)
+	for i := range v.Sections {
+		if v.Sections[i].Email == "opus@example.org" {
+			v.Sections[i].Contributes = nil
+		}
+	}
+	out := renderString(t, &v, Options{Level: view.Detail})
 	sec := func(email string) string {
 		i := strings.Index(out, "\n## "+email+"\n")
 		if i < 0 {
@@ -216,7 +225,7 @@ func TestAssignmentShapes(t *testing.T) {
 		out := renderString(t, tooling, Options{Level: view.Glance})
 		for _, want := range []string{
 			"|---|--:|--:|--:|---|\n",
-			"| noreply@anthropic.com | 27 | 28 | 2 | `claude-haiku`, `claude-opus`, `claude-fable`, `claude-sonnet` |\n",
+			"| noreply@anthropic.com | 27 | 8 | 1 | `claude-haiku`, `claude-opus`, `claude-fable`, `claude-sonnet` |\n",
 			"\n🪆 4 tasks hand their next junction to a subproject: `77b2` `6103` `c6e8` `595e`.\n",
 		} {
 			if !strings.Contains(out, want) {
@@ -225,6 +234,10 @@ func TestAssignmentShapes(t *testing.T) {
 		}
 		if strings.Contains(out, "## ") {
 			t.Errorf("a section stands at glance")
+		}
+		// One task takes the singular.
+		if out := renderString(t, readFixture(t, "assignment", "weather"), Options{Level: view.Glance}); !strings.Contains(out, "\n🪆 1 task hands its next junction to a subproject: `c07d`.\n") {
+			t.Errorf("one recursive task:\n%s", out)
 		}
 		// Without a task that hands its junction over, the line is absent.
 		v := *tooling.(*view.Assignment)
@@ -238,7 +251,7 @@ func TestAssignmentShapes(t *testing.T) {
 		v := readFixture(t, "assignment", "tooling-nbyoung")
 		out := renderString(t, v, Options{Level: view.Detail})
 		if !strings.Contains(out, "· person nbyoung@nbyoung.com · level detail") ||
-			!strings.Contains(out, "Command: `tabloio assignment --person nbyoung@nbyoung.com --ref main --level detail`") {
+			!strings.Contains(out, "Command: `tabloio assignment --person nbyoung@nbyoung.com --ref corpus/tooling --level detail`") {
 			t.Errorf("the frame:\n%s", out)
 		}
 		if strings.Contains(out, "**nbyoung") {
@@ -262,10 +275,10 @@ func TestAssignmentShapes(t *testing.T) {
 			"| Contributes at | Tasks | Contributor and model from | Reviewer | Reviewer from |\n",
 			"| Reviews at | Tasks | Reviewer from | Contributor and model from |\n",
 			"| Task | Stated in | Pinned at |\n",
-			"| `77b2` | `junctions.mockup.subproject.url` in `.tableaux/tasks/77b2.yaml` | `00f8f68` |\n",
+			"| `77b2` | `77b2` tablo: backend library and plumbing, `junctions.design.subproject` in `.tableaux/tasks/77b2.yaml`, line 19 | `f7c3190` |\n",
 			// A Stated reads the task and its title from the rows of the view.
-			"| 🚀 release | 8: `c2ad` `e9c6` `e3cb` `fcec` `ac33` `9f3f` `7861` `7166` | `437e` Tableaux tooling, `junctions.release` in `.tableaux/tasks/437e.yaml` |  |  |\n",
-			"Command: `tabloio assignment --ref 3cdae52 --level provenance`\n",
+			"| 🚀 release | 8: `c2ad` `e9c6` `e3cb` `fcec` `ac33` `9f3f` `7861` `7166` | `437e` Tableaux tooling, `junctions.release.contributor` in `.tableaux/tasks/437e.yaml`, line 25 |  | the plain default |\n",
+			"Command: `tabloio assignment --ref 50a373b --level provenance`\n",
 		} {
 			if !strings.Contains(out, want) {
 				t.Errorf("the provenance lacks %q", want)
@@ -336,11 +349,11 @@ func TestAssignmentCommands(t *testing.T) {
 		{Text: "git show edb30d2baa5ea3c7e3fb8eef8ac6cce6e145221a:.tableaux/tasks/a1c0.yaml"},
 		{Text: "git grep -n '^assignee:' edb30d2baa5ea3c7e3fb8eef8ac6cce6e145221a -- .tableaux/tasks", Comment: "the assignees"},
 	}
-	want := "## opus@example.org, provenance\n\n```\n" +
+	want := "\n```\n" +
 		"git show edb30d2baa5ea3c7e3fb8eef8ac6cce6e145221a:.tableaux/tasks/a1c0.yaml\n" +
 		"git grep -n '^assignee:' edb30d2baa5ea3c7e3fb8eef8ac6cce6e145221a -- .tableaux/tasks # the assignees\n" +
 		"```\n\nCommand: "
-	if out := renderString(t, v, Options{Level: view.Provenance}); !strings.Contains(out, want) {
+	if out := renderString(t, v, Options{Level: view.Provenance}); !strings.Contains(out[strings.Index(out, "## opus@example.org, provenance"):], want) {
 		t.Errorf("the provenance does not close with the commands:\n%s", out)
 	}
 	if out := renderString(t, v, Options{Level: view.Detail}); strings.Contains(out, "git show") {

@@ -6,7 +6,7 @@ stale 7 days · level provenance
 
 Legend: tabloio gates.
 
-*0 errors, 1 warning, 0 items of information*: 1 finding in 1 row.
+*0 errors, 1 warning, 1 item of information*: 2 findings in 1 row.
 
 ────────────────────────────────────────────────────────────────────────────────
 Rule · Severity · Task · Gate · File · Message · Action · Resolver
@@ -15,31 +15,36 @@ H2
   Severity: warning
   Task: b2c9 Leaf
   Gate: 📐 design
-  Message: pat is not the reviewer of the design junction; olive is
+  Message: pat@example.org is not the reviewer of the design junction;
+    olive@example.org is
   Action: Review: commit Reviewed: b2c9 design
   Resolver: olive@example.org
 ────────────────────────────────────────────────────────────────────────────────
 
-*Most to resolve:* olive@example.org, 1 of 1.
+*Most to resolve:* olive@example.org, 1 of 2.
 
 H2, warning: b2c9 at 📐 design
 ──────────────────────────────
 
 *Rule.* "A Reviewed: commit from anyone other than the junction's reviewer has
-no effect, and the audit reports it." README.md, Status <README.md#status>
+no effect, and the audit reports it." README.md, Status
+<https://github.com/nbyoung/tableaux/blob/main/README.md#status>
 
 *The junction.* b2c9 at 📐 design: contributor pat@example.org, reviewer
-olive@example.org.
+olive@example.org, from b2c9.
 
 ┌─────────┬────────────┬─────────────────┬───────────┬────────────┬────────────┐
 │ Commit  │ Date       │ Author          │ Committer │ Subject    │ Trailers   │
 ├─────────┼────────────┼─────────────────┼───────────┼────────────┼────────────┤
-│ 7064289 │ 2026-09-02 │ pat@example.org │           │ Accept the │ Reviewed:  │
-│         │            │                 │           │ design     │ b2c9       │
+│ 7064289 │ 2026-09-02 │ Pat Singh,      │           │ Accept the │ Reviewed:  │
+│         │            │ pat@example.org │           │ design     │ b2c9       │
 │         │            │                 │           │            │ design     │
 └─────────┴────────────┴─────────────────┴───────────┴────────────┴────────────┘
 
     # shows the finding
-    git log --format='%h %ae %(trailers:key=Reviewed)' -E --grep='^Reviewed: b2c9 '
+    git show --no-patch --format='%as %H %ae %ce%n%(trailers)' 70642890a0993adfaadc9bf56bdb6f4b189858db
+
+    # resolves it
+    git commit --allow-empty --trailer 'Reviewed: b2c9 design'
 
 Command: tabloio audit --ref 7064289 --stale 7 --level provenance --text

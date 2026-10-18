@@ -277,7 +277,11 @@ func partStatus(d Data) []string {
 	return append(l, "")
 }
 
-// partCommit returns part 5, the commit the agent makes when done.
+// partCommit returns part 5, the commit the agent makes when done. The
+// status file is the write commands' to change: the brief quotes the
+// `tabloio record` line that writes it and makes the commit (design b618,
+// A10 and decision 14 d), and, for a hand-off, the `tabloio review` line of
+// the reviewer.
 func partCommit(d Data) []string {
 	st, g, tid := d.Status, d.Gate, d.Task.ID
 	contributor, model, reviewer := d.Junction.Contributor.Value, d.Junction.Model.Value, d.Junction.Reviewer.Value
@@ -285,7 +289,8 @@ func partCommit(d Data) []string {
 	name, _ := base(d)
 	l := []string{"5. The commit you make when done", ""}
 
-	lead := fmt.Sprintf("Commit your work and %s, as %s, on a branch off %s. Do not merge. ", st.Path, contributor, name)
+	lead := fmt.Sprintf("Commit your work, as %s, on a branch off %s, and record %s there "+
+		"with tabloio record. Do not merge. ", contributor, name, st.Path)
 	switch w {
 	case wayHandoff:
 		lead += fmt.Sprintf("The reviewer %s accepts this gate, so hand the work off: the status stays at "+
@@ -302,34 +307,54 @@ func partCommit(d Data) []string {
 	l = append(l, wrap(lead, 2)...)
 	l = append(l, "")
 
+	// The file as the command writes it, and the command's own options.
+	var file, opts []string
 	switch {
 	case w == wayHandoff:
-		l = append(l,
-			"    gate: "+st.Gate,
+		file = []string{
+			"    gate: " + st.Gate,
 			"    state: nominal",
 			"    reason: review",
-			"    note: <one line that says what waits on the branch>")
+			"    note: <one line that says what waits on the branch>"}
+		opts = []string{"--state nominal --reason review", `--note "<one line that says what waits on the branch>"`}
 	case g.Follows == "recursive":
-		l = append(l, "    gate: "+g.Key)
+		file = []string{"    gate: " + g.Key}
+		opts = []string{"--gate " + g.Key}
 	default:
 		state := "complete"
 		if g.Follows != "" {
 			state = "nominal"
 		}
-		l = append(l,
-			"    gate: "+g.Key,
-			"    state: "+state,
-			"    note: <one line that says what the gate now holds>")
+		file = []string{
+			"    gate: " + g.Key,
+			"    state: " + state,
+			"    note: <one line that says what the gate now holds>"}
+		opts = []string{"--gate " + g.Key + " --state " + state, `--note "<one line that says what the gate now holds>"`}
+	}
+	if model != "" {
+		opts = append(opts,
+			fmt.Sprintf(`--model "<the identifier your harness reports, matching %s>"`, model),
+			fmt.Sprintf(`--co-author "<your model's display name> <%s>"`, contributor))
+	}
+	opts[len(opts)-1] += " --yes"
+	if w != wayHandoff && g.Follows == "recursive" {
+		l = append(l, wrap("The next junction is recursive, so the file holds the gate alone. tabloio "+
+			"record writes it so, and makes the commit that records it:", 2)...)
+	} else {
+		l = append(l, wrap("tabloio record writes the file so, with the note on one line, and makes "+
+			"the commit that records it:", 2)...)
 	}
 	l = append(l, "")
-	if w != wayHandoff && g.Follows == "recursive" {
-		l = append(l, wrap("The next junction is recursive, so the file holds the gate alone. Edit "+
-			"it by hand, and change no other file under .tableaux.", 2)...)
-	} else {
-		l = append(l, wrap("Edit the file by hand so that it reads as above, with the note on one "+
-			"line and no colon followed by a space inside it. Change no other file "+
-			"under .tableaux.", 2)...)
+	l = append(l, file...)
+	l = append(l, "")
+	cmd := "    tabloio record " + tid + " " + opts[0]
+	for _, o := range opts[1:] {
+		l = append(l, cmd+" \\")
+		cmd = "      " + o
 	}
+	l = append(l, cmd, "")
+	l = append(l, wrap("Change no file under .tableaux by hand: the command refuses a status the "+
+		"method cannot read, and names the rule.", 2)...)
 	l = append(l, "")
 
 	switch {
@@ -344,10 +369,13 @@ func partCommit(d Data) []string {
 			"    git log -1 --format='%an <%ae> / %cn <%ce>%n%B'",
 			"")
 		tail := "End each commit message with one final paragraph of trailers, with no blank " +
-			"line between them and nothing after them."
+			"line between them and nothing after them. tabloio record composes those of the " +
+			"commit that records the status from --model and --co-author"
 		if w == waySelf {
-			tail += " The commit that changes the status file carries all three; an earlier " +
-				"commit carries the last two."
+			tail += ", and adds the first, since you review this gate; an earlier commit " +
+				"carries the last two."
+		} else {
+			tail += "."
 		}
 		l = append(l, wrap(tail, 2)...)
 		l = append(l, "")
@@ -358,8 +386,8 @@ func partCommit(d Data) []string {
 			fmt.Sprintf("    Model: <the identifier your harness reports, matching %s>", model),
 			fmt.Sprintf("    Co-Authored-By: <your model's display name> <%s>", contributor))
 	case w == waySelf:
-		l = append(l, wrap("End the message of the commit that changes the status file with one "+
-			"final paragraph of one trailer:", 2)...)
+		l = append(l, wrap("tabloio record ends the message of the commit that records the status "+
+			"with one final paragraph of one trailer, since you review this gate:", 2)...)
 		l = append(l, "", fmt.Sprintf("    Reviewed: %s %s", tid, g.Key))
 	default:
 		l = append(l, wrap("A person contributes here, so the commit carries no trailer.", 2)...)
@@ -367,8 +395,8 @@ func partCommit(d Data) []string {
 	l = append(l, "")
 
 	if w == wayHandoff {
-		l = append(l, wrap(fmt.Sprintf("The reviewer merges the branch and passes the gate with a commit that "+
-			"carries the trailer Reviewed: %s %s", tid, g.Key), 2)...)
+		l = append(l, wrap(fmt.Sprintf("The reviewer merges the branch and accepts the gate with tabloio "+
+			"review %s %s, whose commit carries the trailer Reviewed: %s %s", tid, g.Key, tid, g.Key), 2)...)
 	} else {
 		l = append(l, wrap("Whoever dispatches you merges the branch.", 2)...)
 	}

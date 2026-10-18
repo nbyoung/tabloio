@@ -1,3 +1,3 @@
-gate: unit
+gate: integrate
 state: nominal
-note: T1 to T15 pass under go test ./internal/render/... with no skip and no cached run, and the five checks and go test -race pass on the whole worktree; no prescribed test waits for a later gate; the integrate gate replaces the transcribed fixtures with tablo view output and the Read commands (5ca9) call the renderers
+note: T1 to T15 pass on fixtures drawn with tablo at the pin, the tooling plan's at corpus/tooling and weather-station's at main, and the Read commands give every golden of the gate and task views through Run (5ca9 T18, TestRealMockups); gates/draft stays as the draft T2 compares; the validate gate is the owner reading STATUS.md and a task page on GitHub
