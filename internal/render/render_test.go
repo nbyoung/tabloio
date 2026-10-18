@@ -621,6 +621,25 @@ func TestStandsAndConditions(t *testing.T) {
 	}
 }
 
+// TestDescriptionLineEnd: a description from a folded block of YAML ends in
+// a line break, as tablo gives it, and renders as the same text without it.
+func TestDescriptionLineEnd(t *testing.T) {
+	v := *readFixture(t, "task", "e9c6").(*view.Task)
+	folded := v
+	folded.Description += "\n"
+	for _, o := range []Options{{Level: view.Detail}, {Level: view.Detail, Format: Text}} {
+		if got, want := renderString(t, &folded, o), renderString(t, &v, o); got != want {
+			t.Errorf("format %v: the line break changes the rendering\n%s", o.Format, got)
+		}
+	}
+	seen := map[string]bool{}
+	for _, ln := range plainDoc(buildFor(t, &folded, Options{Level: view.Detail}), seen) {
+		if strings.HasSuffix(ln, "\n") {
+			t.Errorf("a line holds a line end: %q", ln)
+		}
+	}
+}
+
 // TestLegendKeys covers R2 and A2: a key with no symbol prints as the key.
 func TestLegendKeys(t *testing.T) {
 	v := *readFixture(t, "task", "e9c6").(*view.Task)

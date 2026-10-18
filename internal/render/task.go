@@ -2,6 +2,7 @@ package render
 
 import (
 	"strconv"
+	"strings"
 
 	"github.com/nbyoung/tabloio/internal/render/doc"
 	"github.com/nbyoung/tabloio/internal/render/view"
@@ -104,13 +105,17 @@ func (p *page) recorded(st view.Status) []doc.Inline {
 	return spans(one(txt(st.Date+" by ")), p.person(st.Recorder))
 }
 
+// description draws the description and the references. A folded block of
+// YAML ends its value with a line break, which tablo passes on; the
+// paragraph drops the white space at either end.
 func (p *page) description(v *view.Task) []doc.Block {
-	if v.Description == "" && len(v.References) == 0 {
+	text := strings.TrimSpace(v.Description)
+	if text == "" && len(v.References) == 0 {
 		return nil
 	}
 	b := []doc.Block{heading(2, txt("Description"))}
-	if v.Description != "" {
-		b = append(b, para(txt(v.Description)))
+	if text != "" {
+		b = append(b, para(txt(text)))
 	}
 	if len(v.References) > 0 {
 		list := doc.List{}
