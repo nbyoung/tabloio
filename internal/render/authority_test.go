@@ -248,8 +248,18 @@ func TestDelegationFrame(t *testing.T) {
 	}
 
 	// Off the trunk the frame says so, and the word carries the difference.
-	br := renderString(t, readFixture(t, "authority", "weather-branch"), Options{Level: view.Glance})
-	if !strings.Contains(br, "ref `91aa774`, off the trunk") || !strings.Contains(br, "proposed (differs from trunk)") {
+	// At 91aa774 no task's file differs from the trunk's tip, so the test
+	// marks one row as tablo marks a file the branch changes.
+	b := *readFixture(t, "authority", "weather-branch").(*view.Delegation)
+	b.Rows = append([]view.DelegationRow(nil), b.Rows...)
+	for i := range b.Rows {
+		if b.Rows[i].ID == "9f31" {
+			b.Rows[i].Differs = true
+		}
+	}
+	br := renderString(t, &b, Options{Level: view.Glance})
+	if !strings.Contains(br, "ref `91aa774`, off the trunk") ||
+		!strings.Contains(br, "    9f31 Sensor board       ada@example.org  proposed (differs from trunk)\n") {
 		t.Errorf("an off-trunk ref is not marked:\n%s", br)
 	}
 	// An empty view that is no proposal view says so in its own words.
@@ -271,7 +281,7 @@ func TestProposedOnly(t *testing.T) {
 	for _, want := range []string{
 		"· proposed only · level glance\n",
 		"\n**No task is proposed.**\n\n0 tasks, 0 delegations, 0 authorised, 0 proposed.\n",
-		"Command: `tabloio authority --ref main --proposed --level glance`\n",
+		"Command: `tabloio authority --ref corpus/tooling --proposed --level glance`\n",
 	} {
 		if !strings.Contains(out, want) {
 			t.Errorf("the output lacks %q:\n%s", want, out)

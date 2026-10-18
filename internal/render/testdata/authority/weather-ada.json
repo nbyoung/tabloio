@@ -3,20 +3,34 @@
   "command": "authority",
   "source": {
     "ref": "main",
+    "dir": ".",
+    "worktree": true,
     "commit": "edb30d2baa5ea3c7e3fb8eef8ac6cce6e145221a",
     "date": "2026-09-28",
     "from": null,
     "trunk": {
-      "name": null
+      "name": "main",
+      "resolved": "stated"
     },
     "on_trunk": true
   },
   "project": {
+    "tableaux": "0.3.1",
     "root": "a1c0",
-    "title": "Weather station"
+    "title": "Weather station",
+    "owner": "ada@example.org"
+  },
+  "viewer": {
+    "email": "nbyoung@nbyoung.com",
+    "roles": [
+      "observer"
+    ]
   },
   "params": {
+    "task": "a1c0",
     "person": "ada@example.org",
+    "proposed": false,
+    "role": null,
     "level": "provenance"
   },
   "data": {
@@ -131,18 +145,14 @@
         {
           "key": "overloaded",
           "symbol": "🪫",
-          "synopsis": "The assigned resource is overloaded"
+          "synopsis": "The assigned resource is overloaded",
+          "reserved": false
         },
         {
           "key": "blocked",
           "symbol": "⛔",
-          "synopsis": "An external resource is unavailable"
-        },
-        {
-          "key": "review",
-          "symbol": "👓",
-          "synopsis": "The work waits for its reviewer",
-          "reserved": true
+          "synopsis": "An external resource is unavailable",
+          "reserved": false
         }
       ],
       "marks": [
@@ -150,31 +160,31 @@
           "key": "person",
           "symbol": "🧑",
           "meaning": "A person contributes",
-          "junction": "Plain; the contributor is a person"
+          "junction": "plain"
         },
         {
           "key": "agent",
           "symbol": "🤖",
           "meaning": "An agent contributes",
-          "junction": "Plain; the junction states a `model`"
+          "junction": "plain"
         },
         {
           "key": "reviewer",
           "symbol": "👀",
           "meaning": "A reviewer accepts",
-          "junction": "Plain; the reviewer accepts the work at the gate"
+          "junction": "plain"
         },
         {
           "key": "subproject",
           "symbol": "🪆",
           "meaning": "A subproject does the work",
-          "junction": "Recursive; another Tableaux project does the work"
+          "junction": "recursive"
         },
         {
           "key": "exempt",
           "symbol": "—",
           "meaning": "The gate does not apply",
-          "junction": "Not applicable; the entry exempts the task from the gate"
+          "junction": "not_applicable"
         }
       ]
     },
@@ -187,7 +197,8 @@
         "parent": true,
         "delegated": false,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "4e2b",
@@ -197,7 +208,8 @@
         "parent": true,
         "delegated": true,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "9f31",
@@ -207,7 +219,8 @@
         "parent": false,
         "delegated": true,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "c07d",
@@ -217,7 +230,8 @@
         "parent": false,
         "delegated": false,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "7b2e",
@@ -227,7 +241,8 @@
         "parent": false,
         "delegated": false,
         "proposed": false,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       },
       {
         "id": "3c5d",
@@ -237,7 +252,8 @@
         "parent": false,
         "delegated": true,
         "proposed": true,
-        "differs_from_trunk": false
+        "differs_from_trunk": false,
+        "uncommitted": false
       }
     ],
     "authorities": [],
@@ -281,92 +297,184 @@
         "defaults": [
           {
             "gate": "mockup",
+            "kind": "plain",
             "marks": [
-              "reviewer"
+              "person"
             ],
             "acts": false,
-            "contributor": "",
+            "contributor": "ben@example.org",
             "model": "",
             "reviewer": "ben@example.org",
-            "stands": ""
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "",
+            "reviewed": false,
+            "from": [
+              "4e2b"
+            ]
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "gate": "mockup",
+            "field": "reviewer",
+            "value": "ben@example.org",
+            "by": "4e2b",
+            "key": "junctions.mockup.reviewer",
+            "file": ".tableaux/tasks/4e2b.yaml",
+            "line": 10,
+            "col": 23
+          }
+        ]
       }
     ],
     "deciding": [
       {
         "commit": {
-          "hash": "1b8cfb1",
+          "hash": "1b8cfb16a248f50eeefb76e0994234693ff4f4a6",
           "subject": "Revise the dashboard scope",
           "date": "2026-09-27",
+          "author_time": "2026-09-27T12:00:00Z",
           "author": {
+            "name": "Dan Reyes",
             "email": "dan@example.org"
           },
           "committer": {
+            "name": "Dan Reyes",
             "email": "dan@example.org"
-          }
+          },
+          "parents": [
+            "97e423122790a250e4e067d7d33bbf88622b00d5"
+          ],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/tasks/3c5d.yaml",
+              "change": "changed"
+            }
+          ]
         },
         "way": "change",
         "merged": "",
         "by": "",
+        "email": "dan@example.org",
         "tasks": [
           "3c5d"
         ]
       },
       {
         "commit": {
-          "hash": "f9e8746",
+          "hash": "f9e8746736beb13aeab99f2cd2ff7e315596e616",
           "subject": "Merge the sensor board task",
           "date": "2026-09-19",
+          "author_time": "2026-09-19T12:00:00Z",
           "author": {
+            "name": "Ben Okafor",
             "email": "ben@example.org"
           },
           "committer": {
+            "name": "Ben Okafor",
             "email": "ben@example.org"
-          }
+          },
+          "parents": [
+            "22a758bec2a079fd908bba970db5eb51ecccd0c6",
+            "91aa7747f22ef4bb66becb6eab5d5f1f9c28836d"
+          ],
+          "trailers": [
+            "Authorised: 9f31"
+          ],
+          "files": [
+            {
+              "path": ".tableaux/tasks/9f31.yaml",
+              "change": "added"
+            }
+          ]
         },
         "way": "merge",
-        "merged": "",
-        "by": "author",
+        "merged": "91aa7747f22ef4bb66becb6eab5d5f1f9c28836d",
+        "by": "both",
+        "email": "ben@example.org",
         "tasks": [
           "9f31"
         ]
       },
       {
         "commit": {
-          "hash": "22a758b",
+          "hash": "22a758bec2a079fd908bba970db5eb51ecccd0c6",
           "subject": "Define the node firmware task",
           "date": "2026-09-16",
+          "author_time": "2026-09-16T12:00:00Z",
           "author": {
+            "name": "Ben Okafor",
             "email": "ben@example.org"
           },
           "committer": {
+            "name": "Ben Okafor",
             "email": "ben@example.org"
-          }
+          },
+          "parents": [
+            "68d9021206ec627755e2ead99b6be3f2c06ae815"
+          ],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/tasks/c07d.yaml",
+              "change": "added"
+            }
+          ]
         },
         "way": "change",
         "merged": "",
-        "by": "author",
+        "by": "both",
+        "email": "ben@example.org",
         "tasks": [
           "c07d"
         ]
       },
       {
         "commit": {
-          "hash": "68d9021",
+          "hash": "68d9021206ec627755e2ead99b6be3f2c06ae815",
           "subject": "Plan the weather station",
           "date": "2026-09-15",
+          "author_time": "2026-09-15T12:00:00Z",
           "author": {
+            "name": "Ada Byron",
             "email": "ada@example.org"
           },
           "committer": {
+            "name": "Ada Byron",
             "email": "ada@example.org"
-          }
+          },
+          "parents": [],
+          "trailers": [],
+          "files": [
+            {
+              "path": ".tableaux/gates.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/4e2b.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/7b2e.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/tasks/a1c0.yaml",
+              "change": "added"
+            },
+            {
+              "path": ".tableaux/version.yaml",
+              "change": "added"
+            }
+          ]
         },
         "way": "change",
         "merged": "",
-        "by": "author",
+        "by": "both",
+        "email": "ada@example.org",
         "tasks": [
           "a1c0",
           "4e2b",
@@ -374,12 +482,23 @@
         ]
       }
     ],
+    "undecided": [],
     "commands": [
       {
-        "text": "git log --first-parent -1 --format='%h %as %ae %ce %p' main -- .tableaux/tasks/3c5d.yaml",
+        "text": "git log --first-parent --format='%H %as %ae %ce %P' edb30d2baa5ea3c7e3fb8eef8ac6cce6e145221a -- .tableaux/tasks",
         "comment": ""
       }
     ]
   },
-  "diagnostics": []
+  "diagnostics": [
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/c07d.yaml",
+      "line": 6,
+      "col": 5,
+      "task": "c07d",
+      "message": "the requirement on 9f31 from design is due at implementation and unmet: 9f31 stands at function"
+    }
+  ]
 }

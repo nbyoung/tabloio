@@ -1,7 +1,7 @@
 Authority delegation
 ════════════════════
 
-*Who may accept what?* Tableaux tooling · ref main · level detail
+*Who may accept what?* Tableaux tooling · ref corpus/tooling · level detail
 
 Legend: tabloio gates.
 
@@ -63,6 +63,7 @@ Gate · Marks · Contributor · Model · Reviewer
   Marks: 🤖
   Contributor: noreply@anthropic.com
   Model: claude-haiku
+  Reviewer: nbyoung@nbyoung.com
 ────────────────────────────────────────────────────────────────────────────────
 📌 mockup
   Marks: 🤖👀
@@ -74,6 +75,7 @@ Gate · Marks · Contributor · Model · Reviewer
   Marks: 🤖
   Contributor: noreply@anthropic.com
   Model: claude-sonnet
+  Reviewer: nbyoung@nbyoung.com
 ────────────────────────────────────────────────────────────────────────────────
 📐 design
   Marks: 🤖👀
@@ -85,16 +87,19 @@ Gate · Marks · Contributor · Model · Reviewer
   Marks: 🤖
   Contributor: noreply@anthropic.com
   Model: claude-sonnet
+  Reviewer: nbyoung@nbyoung.com
 ────────────────────────────────────────────────────────────────────────────────
 📏 unit
   Marks: 🤖
   Contributor: noreply@anthropic.com
   Model: claude-sonnet
+  Reviewer: nbyoung@nbyoung.com
 ────────────────────────────────────────────────────────────────────────────────
 🔗 integrate
   Marks: 🤖
   Contributor: noreply@anthropic.com
   Model: claude-sonnet
+  Reviewer: nbyoung@nbyoung.com
 ────────────────────────────────────────────────────────────────────────────────
 🌍 validate
   Marks: 🤖👀
@@ -188,4 +193,4 @@ Children: a6f7 7dff b1b7 ea51 7783 5471 32e7 69eb 3194 a8b4.
 
 — the gate does not apply.
 
-Command: tabloio authority --ref main --level detail --text
+Command: tabloio authority --ref corpus/tooling --level detail --text

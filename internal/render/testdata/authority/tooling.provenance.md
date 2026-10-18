@@ -1,6 +1,6 @@
 # Authority delegation
 
-**Who may accept what?** Tableaux tooling · ref `main` at `3cdae52`, 2026-10-05 · level provenance
+**Who may accept what?** Tableaux tooling · ref `corpus/tooling` at `50a373b`, 2026-10-17 · level provenance
 
 Legend: `tabloio gates`.
 
@@ -57,13 +57,13 @@ Children: `bc63` `77b2` `6103` `c6e8` `595e`.
 
 | Gate | Marks | Contributor | Model | Reviewer |
 |---|:-:|---|---|---|
-| 📝 defined | 🤖 | noreply@anthropic.com | `claude-haiku` |  |
+| 📝 defined | 🤖 | noreply@anthropic.com | `claude-haiku` | nbyoung@nbyoung.com |
 | 📌 mockup | 🤖👀 | noreply@anthropic.com | `claude-opus` | nbyoung@nbyoung.com |
-| 🔧 function | 🤖 | noreply@anthropic.com | `claude-sonnet` |  |
+| 🔧 function | 🤖 | noreply@anthropic.com | `claude-sonnet` | nbyoung@nbyoung.com |
 | 📐 design | 🤖👀 | noreply@anthropic.com | `claude-opus` | nbyoung@nbyoung.com |
-| 🧱 implementation | 🤖 | noreply@anthropic.com | `claude-sonnet` |  |
-| 📏 unit | 🤖 | noreply@anthropic.com | `claude-sonnet` |  |
-| 🔗 integrate | 🤖 | noreply@anthropic.com | `claude-sonnet` |  |
+| 🧱 implementation | 🤖 | noreply@anthropic.com | `claude-sonnet` | nbyoung@nbyoung.com |
+| 📏 unit | 🤖 | noreply@anthropic.com | `claude-sonnet` | nbyoung@nbyoung.com |
+| 🔗 integrate | 🤖 | noreply@anthropic.com | `claude-sonnet` | nbyoung@nbyoung.com |
 | 🌍 validate | 🤖👀 | noreply@anthropic.com | `claude-sonnet` | nbyoung@nbyoung.com |
 | 🚀 release | 🧑 | nbyoung@nbyoung.com |  |  |
 
@@ -130,14 +130,13 @@ Children: `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4`.
 
 | Commit | Date | Author | Committer | Accepts by | The authority is | Tasks |
 |---|---|---|---|---|---|---|
-| `8eb0cae` | 2026-09-30 | nbyoung@nbyoung.com | nbyoung@nbyoung.com | a merge of `320cf2b` | the author and the committer | 2: `437e` `bc63` |
-| `16fe62f` | 2026-09-30 | nbyoung@nbyoung.com | nbyoung@nbyoung.com | a merge of `018814a` | the author and the committer | 1: `ac33` |
-| `8d8b070` | 2026-09-30 | nbyoung@nbyoung.com | nbyoung@nbyoung.com | a merge of `9d9fb88` | the author and the committer | 1: `7166` |
-| `6b6c99a` | 2026-09-29 | nbyoung@nbyoung.com | nbyoung@nbyoung.com | a change on the trunk | the author and the committer | 33: `c2ad` `2034` `e9c6` `bc86` `99f0` `05a9` `a9ce` `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `5fe3` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` `e3cb` `fcec` `9f3f` `7861` `77b2` `6103` `c6e8` `595e` |
+| `8eb0cae` | 2026-09-30 | Norman Young, nbyoung@nbyoung.com | Norman Young, nbyoung@nbyoung.com | a merge of `320cf2b` | the author and the committer | 2: `437e` `bc63` |
+| `16fe62f` | 2026-09-30 | Norman Young, nbyoung@nbyoung.com | Norman Young, nbyoung@nbyoung.com | a merge of `018814a` | the author and the committer | 1: `ac33` |
+| `8d8b070` | 2026-09-30 | Norman Young, nbyoung@nbyoung.com | Norman Young, nbyoung@nbyoung.com | a merge of `9d9fb88` | the author and the committer | 1: `7166` |
+| `6b6c99a` | 2026-09-29 | Norman Young, nbyoung@nbyoung.com | Norman Young, nbyoung@nbyoung.com | a change on the trunk | the author and the committer | 33: `c2ad` `2034` `e9c6` `bc86` `99f0` `05a9` `a9ce` `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `5fe3` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` `e3cb` `fcec` `9f3f` `7861` `77b2` `6103` `c6e8` `595e` |
 
 ```
-git log --first-parent -1 --format='%h %as %ae %ce %p' main -- .tableaux/tasks/437e.yaml
-git log --first-parent -1 --format='%h %as %ae %ce %p' -E --grep='^Authorised: 437e$' main
+git log --first-parent --format='%H %as %ae %ce %P' 50a373b2857a36e4ef1a754605433943d6bfe324 -- .tableaux/tasks
 ```
 
-Command: `tabloio authority --ref 3cdae52 --level provenance`
+Command: `tabloio authority --ref 50a373b --level provenance`

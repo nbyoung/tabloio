@@ -1,6 +1,6 @@
 # Authority delegation
 
-**Who may accept what?** Tableaux tooling · ref `main` · level glance
+**Who may accept what?** Tableaux tooling · ref `corpus/tooling` · level glance
 
 Legend: `tabloio gates`.
 
@@ -27,4 +27,4 @@ Task                                            Assignee
 
 37 tasks, 7 delegations, 37 authorised, 0 proposed.
 
-Command: `tabloio authority --ref main --level glance`
+Command: `tabloio authority --ref corpus/tooling --level glance`

@@ -2,20 +2,38 @@
   "schema": "tablo/1",
   "command": "assignment",
   "source": {
-    "ref": "main",
-    "commit": "3cdae527d47d37fdff55bc302c76c017cf91c606",
-    "date": "2026-10-05",
+    "ref": "corpus/tooling",
+    "dir": ".",
+    "worktree": false,
+    "commit": "50a373b2857a36e4ef1a754605433943d6bfe324",
+    "date": "2026-10-17",
     "from": null,
     "trunk": {
-      "name": null
+      "name": "main",
+      "resolved": "stated"
     },
     "on_trunk": true
   },
   "project": {
+    "tableaux": "0.3.2",
     "root": "437e",
-    "title": "Tableaux tooling"
+    "title": "Tableaux tooling",
+    "owner": "nbyoung@nbyoung.com"
+  },
+  "viewer": {
+    "email": "nbyoung@nbyoung.com",
+    "roles": [
+      "owner",
+      "authority",
+      "assignee",
+      "contributor",
+      "reviewer"
+    ]
   },
   "params": {
+    "task": "437e",
+    "person": null,
+    "role": null,
     "level": "provenance"
   },
   "data": {
@@ -118,12 +136,14 @@
         {
           "key": "overloaded",
           "symbol": "🪫",
-          "synopsis": "The assigned resource is overloaded"
+          "synopsis": "The assigned resource is overloaded",
+          "reserved": false
         },
         {
           "key": "blocked",
           "symbol": "⛔",
-          "synopsis": "An external resource is unavailable"
+          "synopsis": "An external resource is unavailable",
+          "reserved": false
         },
         {
           "key": "review",
@@ -137,53 +157,49 @@
           "key": "person",
           "symbol": "🧑",
           "meaning": "A person contributes",
-          "junction": "Plain; the contributor is a person"
+          "junction": "plain"
         },
         {
           "key": "agent",
           "symbol": "🤖",
           "meaning": "An agent contributes",
-          "junction": "Plain; the junction states a `model`"
+          "junction": "plain"
         },
         {
           "key": "reviewer",
           "symbol": "👀",
           "meaning": "A reviewer accepts",
-          "junction": "Plain; the reviewer accepts the work at the gate"
+          "junction": "plain"
         },
         {
           "key": "subproject",
           "symbol": "🪆",
           "meaning": "A subproject does the work",
-          "junction": "Recursive; another Tableaux project does the work"
+          "junction": "recursive"
         },
         {
           "key": "exempt",
           "symbol": "—",
           "meaning": "The gate does not apply",
-          "junction": "Not applicable; the entry exempts the task from the gate"
+          "junction": "not_applicable"
         }
       ]
     },
-    "recursive": [
-      "77b2",
-      "6103",
-      "c6e8",
-      "595e"
-    ],
     "people": [
       {
         "email": "nbyoung@nbyoung.com",
+        "owner": true,
         "assigned": 10,
         "contributes_next": 0,
-        "reviews_next": 26,
+        "reviews_next": 7,
         "models": []
       },
       {
         "email": "noreply@anthropic.com",
+        "owner": false,
         "assigned": 27,
-        "contributes_next": 28,
-        "reviews_next": 2,
+        "contributes_next": 8,
+        "reviews_next": 1,
         "models": [
           "claude-haiku",
           "claude-opus",
@@ -191,6 +207,12 @@
           "claude-sonnet"
         ]
       }
+    ],
+    "recursive": [
+      "77b2",
+      "6103",
+      "c6e8",
+      "595e"
     ],
     "sections": [
       {
@@ -201,18 +223,25 @@
             "title": "Tableaux tooling",
             "under": "",
             "status": {
-              "gate": "defined",
+              "kind": "rollup",
+              "gate": "function",
               "state": "nominal",
               "reason": "",
-              "note": "",
-              "date": "",
+              "note": "prototype/8ed1 derives the history and a stand-in audit between two refs from one git log pass and one cat-file batch, on the weather station",
+              "date": "2026-09-30",
               "recorder": "",
+              "derived": true,
+              "why": "",
+              "uncommitted": false,
               "from": {
                 "kind": "rollup",
                 "task": {
-                  "id": "99f0",
-                  "title": "Gate definition view in Markdown"
-                }
+                  "id": "77b2",
+                  "title": "tablo: backend library and plumbing"
+                },
+                "url": "",
+                "pin": "",
+                "gate": ""
               }
             },
             "next": null,
@@ -223,18 +252,25 @@
             "title": "Method",
             "under": "437e",
             "status": {
-              "gate": "defined",
+              "kind": "rollup",
+              "gate": "design",
               "state": "nominal",
               "reason": "",
-              "note": "",
-              "date": "",
+              "note": "The model plan-and-record rule (F20) is on the trunk; F1, F2 and F10 remain for design",
+              "date": "2026-09-30",
               "recorder": "",
+              "derived": true,
+              "why": "",
+              "uncommitted": false,
               "from": {
                 "kind": "rollup",
                 "task": {
-                  "id": "99f0",
-                  "title": "Gate definition view in Markdown"
-                }
+                  "id": "ac33",
+                  "title": "Agent identity"
+                },
+                "url": "",
+                "pin": "",
+                "gate": ""
               }
             },
             "next": null,
@@ -245,18 +281,25 @@
             "title": "Views",
             "under": "bc63",
             "status": {
-              "gate": "defined",
+              "kind": "rollup",
+              "gate": "implementation",
               "state": "nominal",
               "reason": "",
-              "note": "",
-              "date": "",
+              "note": "VIEWS.md defines the ten views on the trunk and agrees with the twenty approved mockups on the gate window; validation checks that tablo and the front ends follow the text",
+              "date": "2026-10-05",
               "recorder": "",
+              "derived": true,
+              "why": "",
+              "uncommitted": false,
               "from": {
                 "kind": "rollup",
                 "task": {
-                  "id": "99f0",
-                  "title": "Gate definition view in Markdown"
-                }
+                  "id": "e9c6",
+                  "title": "Abstract views"
+                },
+                "url": "",
+                "pin": "",
+                "gate": ""
               }
             },
             "next": null,
@@ -267,19 +310,34 @@
             "title": "Agent identity",
             "under": "bc63",
             "status": {
+              "kind": "recorded",
               "gate": "design",
               "state": "nominal",
               "reason": "",
-              "note": "",
-              "date": "",
-              "recorder": ""
+              "note": "The model plan-and-record rule (F20) is on the trunk; F1, F2 and F10 remain for design",
+              "date": "2026-09-30",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
             "next": {
+              "gate": "implementation",
+              "kind": "plain",
               "marks": [
                 "agent",
                 "reviewer"
               ],
-              "acts": false
+              "acts": false,
+              "contributor": "noreply@anthropic.com",
+              "model": "claude-sonnet",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": true,
+              "subproject": null,
+              "references": [],
+              "stands": "next",
+              "reviewed": false
             },
             "next_gate": "implementation"
           },
@@ -288,19 +346,34 @@
             "title": "Subproject linkage",
             "under": "bc63",
             "status": {
+              "kind": "recorded",
               "gate": "design",
               "state": "nominal",
               "reason": "",
-              "note": "",
-              "date": "",
-              "recorder": ""
+              "note": "The subproject linkage rule (F3, F5, F12) is on the trunk at language 0.3.0; tablo and the subprojects follow",
+              "date": "2026-09-30",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
             "next": {
+              "gate": "implementation",
+              "kind": "plain",
               "marks": [
                 "agent",
                 "reviewer"
               ],
-              "acts": false
+              "acts": false,
+              "contributor": "noreply@anthropic.com",
+              "model": "claude-sonnet",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": true,
+              "subproject": null,
+              "references": [],
+              "stands": "next",
+              "reviewed": false
             },
             "next_gate": "implementation"
           },
@@ -309,19 +382,34 @@
             "title": "Language clarifications",
             "under": "bc63",
             "status": {
+              "kind": "recorded",
               "gate": "design",
               "state": "nominal",
               "reason": "",
-              "note": "",
-              "date": "",
-              "recorder": ""
+              "note": "The trunk clarification (F19), with the order for a linked repository, and the exemption rule (F7) are on the trunk; F9 remains for design",
+              "date": "2026-10-07",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
             "next": {
+              "gate": "implementation",
+              "kind": "plain",
               "marks": [
                 "agent",
                 "reviewer"
               ],
-              "acts": false
+              "acts": false,
+              "contributor": "noreply@anthropic.com",
+              "model": "claude-sonnet",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": true,
+              "subproject": null,
+              "references": [],
+              "stands": "next",
+              "reviewed": false
             },
             "next_gate": "implementation"
           },
@@ -330,120 +418,216 @@
             "title": "tablo: backend library and plumbing",
             "under": "437e",
             "status": {
-              "gate": "defined",
+              "kind": "snapshot",
+              "gate": "function",
               "state": "nominal",
               "reason": "",
-              "note": "",
-              "date": "",
+              "note": "prototype/8ed1 derives the history and a stand-in audit between two refs from one git log pass and one cat-file batch, on the weather station",
+              "date": "2026-09-30",
               "recorder": "",
+              "derived": true,
+              "why": "",
+              "uncommitted": false,
               "from": {
                 "kind": "snapshot",
                 "task": {
                   "id": "b2c1",
-                  "title": ""
+                  "title": "tablo"
                 },
                 "url": "subprojects/tablo",
-                "pin": "00f8f68",
-                "gate": "defined"
+                "pin": "f7c3190c7f8b1ad5a0e8157349f136022e62c6b1",
+                "gate": "function"
               }
             },
             "next": {
+              "gate": "design",
+              "kind": "recursive",
               "marks": [
                 "subproject"
               ],
-              "acts": false
+              "acts": false,
+              "contributor": "",
+              "model": "",
+              "reviewer": "",
+              "reviewer_by_default": false,
+              "subproject": {
+                "url": "subprojects/tablo",
+                "id": "",
+                "task": {
+                  "id": "b2c1",
+                  "title": "tablo"
+                },
+                "form": "submodule",
+                "commit": "f7c3190c7f8b1ad5a0e8157349f136022e62c6b1",
+                "why": ""
+              },
+              "references": [],
+              "stands": "next",
+              "reviewed": false
             },
-            "next_gate": "mockup"
+            "next_gate": "design"
           },
           {
             "id": "6103",
             "title": "tabloio: command line, output and input",
             "under": "437e",
             "status": {
-              "gate": "defined",
+              "kind": "snapshot",
+              "gate": "design",
               "state": "nominal",
               "reason": "",
-              "note": "",
-              "date": "",
+              "note": "design/e0f7.md is on the trunk with the owner's decisions of 2026-10-07, after two revisions; implementation follows, with one writer over doc.Doc, golang.org/x/text for the width table, one rule for the variation selector and no option for it, and --width as the one new option; no terminal draws the output before validate",
+              "date": "2026-09-30",
               "recorder": "",
+              "derived": true,
+              "why": "",
+              "uncommitted": false,
               "from": {
                 "kind": "snapshot",
                 "task": {
                   "id": "07e0",
-                  "title": ""
+                  "title": "tabloio"
                 },
                 "url": "subprojects/tabloio",
-                "pin": "4593882",
-                "gate": "function"
+                "pin": "4bb4300132b378cb5bafc658fca0a681d92735db",
+                "gate": "design"
               }
             },
             "next": {
+              "gate": "implementation",
+              "kind": "recursive",
               "marks": [
                 "subproject"
               ],
-              "acts": false
+              "acts": false,
+              "contributor": "",
+              "model": "",
+              "reviewer": "",
+              "reviewer_by_default": false,
+              "subproject": {
+                "url": "subprojects/tabloio",
+                "id": "",
+                "task": {
+                  "id": "07e0",
+                  "title": "tabloio"
+                },
+                "form": "submodule",
+                "commit": "4bb4300132b378cb5bafc658fca0a681d92735db",
+                "why": ""
+              },
+              "references": [],
+              "stands": "next",
+              "reviewed": false
             },
-            "next_gate": "mockup"
+            "next_gate": "implementation"
           },
           {
             "id": "c6e8",
             "title": "tablotui: terminal user interface",
             "under": "437e",
             "status": {
-              "gate": "defined",
+              "kind": "snapshot",
+              "gate": "design",
               "state": "nominal",
               "reason": "",
-              "note": "",
-              "date": "",
+              "note": "design/518e.md is on the trunk with the owner's decisions of 2026-10-07; implementation waits for tabloio's action package (b618) at implementation and a tabloio tag that go.mod can require",
+              "date": "2026-09-30",
               "recorder": "",
+              "derived": true,
+              "why": "",
+              "uncommitted": false,
               "from": {
                 "kind": "snapshot",
                 "task": {
                   "id": "40e8",
-                  "title": ""
+                  "title": "tablotui"
                 },
                 "url": "subprojects/tablotui",
-                "pin": "a2878b5",
-                "gate": "function"
+                "pin": "ce24c31003eccf735055bb169a85f3208d6206a4",
+                "gate": "design"
               }
             },
             "next": {
+              "gate": "implementation",
+              "kind": "recursive",
               "marks": [
                 "subproject"
               ],
-              "acts": false
+              "acts": false,
+              "contributor": "",
+              "model": "",
+              "reviewer": "",
+              "reviewer_by_default": false,
+              "subproject": {
+                "url": "subprojects/tablotui",
+                "id": "",
+                "task": {
+                  "id": "40e8",
+                  "title": "tablotui"
+                },
+                "form": "submodule",
+                "commit": "ce24c31003eccf735055bb169a85f3208d6206a4",
+                "why": ""
+              },
+              "references": [],
+              "stands": "next",
+              "reviewed": false
             },
-            "next_gate": "mockup"
+            "next_gate": "implementation"
           },
           {
             "id": "595e",
             "title": "tableaud: local daemon and HTML",
             "under": "437e",
             "status": {
-              "gate": "defined",
+              "kind": "snapshot",
+              "gate": "design",
               "state": "nominal",
               "reason": "",
-              "note": "",
-              "date": "",
+              "note": "design/db74.md is on the trunk with the owner's decisions of 2026-10-07, after two revisions; implementation follows, and it meets the accessibility task (5a2f) in base.html, shared/grid.html, the sheet and the script; the adapters' focus and the audit's control wait for tablo's views and for the temporal templates (9a9c)",
+              "date": "2026-09-30",
               "recorder": "",
+              "derived": true,
+              "why": "",
+              "uncommitted": false,
               "from": {
                 "kind": "snapshot",
                 "task": {
                   "id": "8608",
-                  "title": ""
+                  "title": "tableaud"
                 },
                 "url": "subprojects/tableaud",
-                "pin": "e6ec4ec",
-                "gate": "function"
+                "pin": "0da180c6c9601904585bb18bcab12537df93bc88",
+                "gate": "design"
               }
             },
             "next": {
+              "gate": "implementation",
+              "kind": "recursive",
               "marks": [
                 "subproject"
               ],
-              "acts": false
+              "acts": false,
+              "contributor": "",
+              "model": "",
+              "reviewer": "",
+              "reviewer_by_default": false,
+              "subproject": {
+                "url": "subprojects/tableaud",
+                "id": "",
+                "task": {
+                  "id": "8608",
+                  "title": "tableaud"
+                },
+                "form": "submodule",
+                "commit": "0da180c6c9601904585bb18bcab12537df93bc88",
+                "why": ""
+              },
+              "references": [],
+              "stands": "next",
+              "reviewed": false
             },
-            "next_gate": "mockup"
+            "next_gate": "implementation"
           }
         ],
         "recursive": [
@@ -452,21 +636,39 @@
               "id": "77b2",
               "title": "tablo: backend library and plumbing"
             },
-            "gate": "mockup",
+            "gate": "design",
             "subproject": {
               "url": "subprojects/tablo",
+              "id": "",
               "task": {
                 "id": "b2c1",
-                "title": ""
-              }
+                "title": "tablo"
+              },
+              "form": "submodule",
+              "commit": "f7c3190c7f8b1ad5a0e8157349f136022e62c6b1",
+              "why": ""
             },
             "status": {
-              "gate": "defined",
+              "kind": "rollup",
+              "gate": "function",
               "state": "nominal",
               "reason": "",
-              "note": "",
-              "date": "",
-              "recorder": ""
+              "note": "prototype/8ed1 derives the history and a stand-in audit between two refs from one git log pass and one cat-file batch, on the weather station",
+              "date": "2026-09-30",
+              "recorder": "",
+              "derived": true,
+              "why": "",
+              "uncommitted": false,
+              "from": {
+                "kind": "rollup",
+                "task": {
+                  "id": "4091",
+                  "title": "Views"
+                },
+                "url": "",
+                "pin": "",
+                "gate": ""
+              }
             }
           },
           {
@@ -474,21 +676,39 @@
               "id": "6103",
               "title": "tabloio: command line, output and input"
             },
-            "gate": "mockup",
+            "gate": "implementation",
             "subproject": {
               "url": "subprojects/tabloio",
+              "id": "",
               "task": {
                 "id": "07e0",
-                "title": ""
-              }
+                "title": "tabloio"
+              },
+              "form": "submodule",
+              "commit": "4bb4300132b378cb5bafc658fca0a681d92735db",
+              "why": ""
             },
             "status": {
-              "gate": "function",
+              "kind": "rollup",
+              "gate": "design",
               "state": "nominal",
               "reason": "",
-              "note": "",
-              "date": "",
-              "recorder": ""
+              "note": "design/e0f7.md is on the trunk with the owner's decisions of 2026-10-07, after two revisions; implementation follows, with one writer over doc.Doc, golang.org/x/text for the width table, one rule for the variation selector and no option for it, and --width as the one new option; no terminal draws the output before validate",
+              "date": "2026-09-30",
+              "recorder": "",
+              "derived": true,
+              "why": "",
+              "uncommitted": false,
+              "from": {
+                "kind": "rollup",
+                "task": {
+                  "id": "1093",
+                  "title": "Renderers"
+                },
+                "url": "",
+                "pin": "",
+                "gate": ""
+              }
             }
           },
           {
@@ -496,21 +716,39 @@
               "id": "c6e8",
               "title": "tablotui: terminal user interface"
             },
-            "gate": "mockup",
+            "gate": "implementation",
             "subproject": {
               "url": "subprojects/tablotui",
+              "id": "",
               "task": {
                 "id": "40e8",
-                "title": ""
-              }
+                "title": "tablotui"
+              },
+              "form": "submodule",
+              "commit": "ce24c31003eccf735055bb169a85f3208d6206a4",
+              "why": ""
             },
             "status": {
-              "gate": "function",
+              "kind": "rollup",
+              "gate": "design",
               "state": "nominal",
               "reason": "",
-              "note": "",
-              "date": "",
-              "recorder": ""
+              "note": "design/518e.md is on the trunk with the owner's decisions of 2026-10-07; implementation waits for tabloio's action package (b618) at implementation and a tabloio tag that go.mod can require",
+              "date": "2026-09-30",
+              "recorder": "",
+              "derived": true,
+              "why": "",
+              "uncommitted": false,
+              "from": {
+                "kind": "rollup",
+                "task": {
+                  "id": "518e",
+                  "title": "Actions"
+                },
+                "url": "",
+                "pin": "",
+                "gate": ""
+              }
             }
           },
           {
@@ -518,21 +756,39 @@
               "id": "595e",
               "title": "tableaud: local daemon and HTML"
             },
-            "gate": "mockup",
+            "gate": "implementation",
             "subproject": {
               "url": "subprojects/tableaud",
+              "id": "",
               "task": {
                 "id": "8608",
-                "title": ""
-              }
+                "title": "tableaud"
+              },
+              "form": "submodule",
+              "commit": "0da180c6c9601904585bb18bcab12537df93bc88",
+              "why": ""
             },
             "status": {
-              "gate": "function",
+              "kind": "rollup",
+              "gate": "design",
               "state": "nominal",
               "reason": "",
-              "note": "",
-              "date": "",
-              "recorder": ""
+              "note": "design/db74.md is on the trunk with the owner's decisions of 2026-10-07, after two revisions; implementation follows, and it meets the accessibility task (5a2f) in base.html, shared/grid.html, the sheet and the script; the adapters' focus and the audit's control wait for tablo's views and for the temporal templates (9a9c)",
+              "date": "2026-09-30",
+              "recorder": "",
+              "derived": true,
+              "why": "",
+              "uncommitted": false,
+              "from": {
+                "kind": "rollup",
+                "task": {
+                  "id": "db74",
+                  "title": "Progressive disclosure"
+                },
+                "url": "",
+                "pin": "",
+                "gate": ""
+              }
             }
           }
         ],
@@ -543,10 +799,19 @@
               "title": "Roles"
             },
             "gate": "release",
+            "kind": "plain",
+            "marks": [
+              "person"
+            ],
+            "acts": false,
             "contributor": "nbyoung@nbyoung.com",
             "model": "",
             "reviewer": "",
-            "stands": "later"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "later",
+            "reviewed": false
           },
           {
             "task": {
@@ -554,10 +819,19 @@
               "title": "Abstract views"
             },
             "gate": "release",
+            "kind": "plain",
+            "marks": [
+              "person"
+            ],
+            "acts": false,
             "contributor": "nbyoung@nbyoung.com",
             "model": "",
             "reviewer": "",
-            "stands": "later"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "later",
+            "reviewed": false
           },
           {
             "task": {
@@ -565,10 +839,19 @@
               "title": "Schema files"
             },
             "gate": "release",
+            "kind": "plain",
+            "marks": [
+              "person"
+            ],
+            "acts": false,
             "contributor": "nbyoung@nbyoung.com",
             "model": "",
             "reviewer": "",
-            "stands": "later"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "later",
+            "reviewed": false
           },
           {
             "task": {
@@ -576,10 +859,19 @@
               "title": "Conformance corpus"
             },
             "gate": "release",
+            "kind": "plain",
+            "marks": [
+              "person"
+            ],
+            "acts": false,
             "contributor": "nbyoung@nbyoung.com",
             "model": "",
             "reviewer": "",
-            "stands": "later"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "later",
+            "reviewed": false
           },
           {
             "task": {
@@ -587,10 +879,19 @@
               "title": "Agent identity"
             },
             "gate": "release",
+            "kind": "plain",
+            "marks": [
+              "person"
+            ],
+            "acts": false,
             "contributor": "nbyoung@nbyoung.com",
             "model": "",
             "reviewer": "",
-            "stands": "later"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "later",
+            "reviewed": false
           },
           {
             "task": {
@@ -598,10 +899,19 @@
               "title": "Subproject linkage"
             },
             "gate": "release",
+            "kind": "plain",
+            "marks": [
+              "person"
+            ],
+            "acts": false,
             "contributor": "nbyoung@nbyoung.com",
             "model": "",
             "reviewer": "",
-            "stands": "later"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "later",
+            "reviewed": false
           },
           {
             "task": {
@@ -609,10 +919,19 @@
               "title": "Productivity evidence"
             },
             "gate": "release",
+            "kind": "plain",
+            "marks": [
+              "person"
+            ],
+            "acts": false,
             "contributor": "nbyoung@nbyoung.com",
             "model": "",
             "reviewer": "",
-            "stands": "later"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "later",
+            "reviewed": false
           },
           {
             "task": {
@@ -620,10 +939,19 @@
               "title": "Language clarifications"
             },
             "gate": "release",
+            "kind": "plain",
+            "marks": [
+              "person"
+            ],
+            "acts": false,
             "contributor": "nbyoung@nbyoung.com",
             "model": "",
             "reviewer": "",
-            "stands": "later"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "later",
+            "reviewed": false
           }
         ],
         "reviews": [
@@ -633,10 +961,20 @@
               "title": "Agent identity"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -644,10 +982,20 @@
               "title": "Subproject linkage"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -655,10 +1003,20 @@
               "title": "Language clarifications"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -666,10 +1024,20 @@
               "title": "tablo: backend library and plumbing"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -677,10 +1045,20 @@
               "title": "tabloio: command line, output and input"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -688,10 +1066,20 @@
               "title": "tablotui: terminal user interface"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -699,10 +1087,20 @@
               "title": "tableaud: local daemon and HTML"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -710,10 +1108,20 @@
               "title": "Gate definition view in Markdown"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -721,10 +1129,20 @@
               "title": "Task definition view in Markdown"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -732,10 +1150,20 @@
               "title": "Authority delegation view in Markdown"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -743,10 +1171,20 @@
               "title": "Task assignment view in Markdown"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -754,10 +1192,20 @@
               "title": "Contributor work queue view in Markdown"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -765,10 +1213,20 @@
               "title": "Work-blockage tree view in Markdown"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -776,10 +1234,20 @@
               "title": "Global tableau view in Markdown"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -787,10 +1255,20 @@
               "title": "Contextual tableau view in Markdown"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -798,10 +1276,20 @@
               "title": "History view in Markdown"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -809,10 +1297,20 @@
               "title": "Audit view in Markdown"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -820,10 +1318,20 @@
               "title": "Gate definition view in Html"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -831,10 +1339,20 @@
               "title": "Task definition view in Html"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -842,10 +1360,20 @@
               "title": "Authority delegation view in Html"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -853,10 +1381,20 @@
               "title": "Task assignment view in Html"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -864,10 +1402,20 @@
               "title": "Contributor work queue view in Html"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -875,10 +1423,20 @@
               "title": "Work-blockage tree view in Html"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -886,10 +1444,20 @@
               "title": "Global tableau view in Html"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -897,10 +1465,20 @@
               "title": "Contextual tableau view in Html"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -908,10 +1486,20 @@
               "title": "History view in Html"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -919,10 +1507,20 @@
               "title": "Audit view in Html"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -930,10 +1528,20 @@
               "title": "Roles"
             },
             "gate": "design",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "passed"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -941,10 +1549,20 @@
               "title": "Abstract views"
             },
             "gate": "design",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "passed"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -952,10 +1570,20 @@
               "title": "Schema files"
             },
             "gate": "design",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "passed"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -963,10 +1591,20 @@
               "title": "Conformance corpus"
             },
             "gate": "design",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "passed"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -974,10 +1612,20 @@
               "title": "Agent identity"
             },
             "gate": "design",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "passed"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -985,10 +1633,20 @@
               "title": "Subproject linkage"
             },
             "gate": "design",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "passed"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -996,10 +1654,20 @@
               "title": "Productivity evidence"
             },
             "gate": "design",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "passed"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -1007,10 +1675,20 @@
               "title": "Language clarifications"
             },
             "gate": "design",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "passed"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -1018,10 +1696,20 @@
               "title": "Agent identity"
             },
             "gate": "implementation",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "next",
+            "reviewed": false
           },
           {
             "task": {
@@ -1029,10 +1717,20 @@
               "title": "Subproject linkage"
             },
             "gate": "implementation",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "next",
+            "reviewed": false
           },
           {
             "task": {
@@ -1040,10 +1738,20 @@
               "title": "Language clarifications"
             },
             "gate": "implementation",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "next",
+            "reviewed": false
           },
           {
             "task": {
@@ -1051,10 +1759,20 @@
               "title": "Roles"
             },
             "gate": "validate",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "next",
+            "reviewed": false
           },
           {
             "task": {
@@ -1062,10 +1780,20 @@
               "title": "Abstract views"
             },
             "gate": "validate",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "later"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "next",
+            "reviewed": false
           },
           {
             "task": {
@@ -1073,10 +1801,20 @@
               "title": "Schema files"
             },
             "gate": "validate",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "next",
+            "reviewed": false
           },
           {
             "task": {
@@ -1084,10 +1822,20 @@
               "title": "Conformance corpus"
             },
             "gate": "validate",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "later"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "later",
+            "reviewed": false
           },
           {
             "task": {
@@ -1095,10 +1843,20 @@
               "title": "Agent identity"
             },
             "gate": "validate",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "later"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "later",
+            "reviewed": false
           },
           {
             "task": {
@@ -1106,10 +1864,20 @@
               "title": "Subproject linkage"
             },
             "gate": "validate",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "later"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "later",
+            "reviewed": false
           },
           {
             "task": {
@@ -1117,10 +1885,20 @@
               "title": "Productivity evidence"
             },
             "gate": "validate",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "next",
+            "reviewed": false
           },
           {
             "task": {
@@ -1128,10 +1906,20 @@
               "title": "Language clarifications"
             },
             "gate": "validate",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "later"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "later",
+            "reviewed": false
           }
         ],
         "models": [],
@@ -1146,7 +1934,7 @@
           },
           {
             "gate": "defined",
-            "standing": 7,
+            "standing": 0,
             "contributes": 0,
             "contributes_next": 0,
             "reviews": 7,
@@ -1158,11 +1946,11 @@
             "contributes": 0,
             "contributes_next": 0,
             "reviews": 20,
-            "reviews_next": 20
+            "reviews_next": 0
           },
           {
             "gate": "function",
-            "standing": 0,
+            "standing": 2,
             "contributes": 0,
             "contributes_next": 0,
             "reviews": 0,
@@ -1170,7 +1958,7 @@
           },
           {
             "gate": "design",
-            "standing": 3,
+            "standing": 7,
             "contributes": 0,
             "contributes_next": 0,
             "reviews": 8,
@@ -1178,7 +1966,7 @@
           },
           {
             "gate": "implementation",
-            "standing": 0,
+            "standing": 1,
             "contributes": 0,
             "contributes_next": 0,
             "reviews": 3,
@@ -1206,7 +1994,7 @@
             "contributes": 0,
             "contributes_next": 0,
             "reviews": 8,
-            "reviews_next": 3
+            "reviews_next": 4
           },
           {
             "gate": "release",
@@ -1244,14 +2032,18 @@
             ],
             "reviewer": "",
             "from": {
-              "by": "",
+              "by": "own",
               "key": "assignee",
-              "file": ".tableaux/tasks/ID.yaml"
+              "file": "",
+              "line": 0,
+              "col": 0
             },
             "reviewer_from": {
               "by": "",
               "key": "",
-              "file": ""
+              "file": "",
+              "line": 0,
+              "col": 0
             },
             "url": "",
             "pin": ""
@@ -1266,12 +2058,16 @@
             "from": {
               "by": "437e",
               "key": "assignee",
-              "file": ".tableaux/tasks/437e.yaml"
+              "file": ".tableaux/tasks/437e.yaml",
+              "line": 11,
+              "col": 11
             },
             "reviewer_from": {
               "by": "",
               "key": "",
-              "file": ""
+              "file": "",
+              "line": 0,
+              "col": 0
             },
             "url": "",
             "pin": ""
@@ -1292,13 +2088,17 @@
             "reviewer": "",
             "from": {
               "by": "437e",
-              "key": "junctions.release",
-              "file": ".tableaux/tasks/437e.yaml"
+              "key": "junctions.release.contributor",
+              "file": ".tableaux/tasks/437e.yaml",
+              "line": 25,
+              "col": 34
             },
             "reviewer_from": {
-              "by": "",
+              "by": "default",
               "key": "",
-              "file": ""
+              "file": "",
+              "line": 0,
+              "col": 0
             },
             "url": "",
             "pin": ""
@@ -1318,13 +2118,17 @@
             "reviewer": "",
             "from": {
               "by": "437e",
-              "key": "junctions.defined",
-              "file": ".tableaux/tasks/437e.yaml"
+              "key": "junctions.defined.contributor",
+              "file": ".tableaux/tasks/437e.yaml",
+              "line": 17,
+              "col": 34
             },
             "reviewer_from": {
-              "by": "default",
+              "by": "assignee",
               "key": "assignee",
-              "file": ".tableaux/tasks/ID.yaml"
+              "file": "",
+              "line": 0,
+              "col": 0
             },
             "url": "",
             "pin": ""
@@ -1357,13 +2161,17 @@
             "reviewer": "",
             "from": {
               "by": "437e",
-              "key": "junctions.mockup",
-              "file": ".tableaux/tasks/437e.yaml"
+              "key": "junctions.mockup.contributor",
+              "file": ".tableaux/tasks/437e.yaml",
+              "line": 18,
+              "col": 34
             },
             "reviewer_from": {
               "by": "437e",
-              "key": "junctions.mockup",
-              "file": ".tableaux/tasks/437e.yaml"
+              "key": "junctions.mockup.reviewer",
+              "file": ".tableaux/tasks/437e.yaml",
+              "line": 18,
+              "col": 87
             },
             "url": "",
             "pin": ""
@@ -1384,13 +2192,17 @@
             "reviewer": "",
             "from": {
               "by": "bc63",
-              "key": "junctions.design",
-              "file": ".tableaux/tasks/bc63.yaml"
+              "key": "junctions.design.contributor",
+              "file": ".tableaux/tasks/bc63.yaml",
+              "line": 14,
+              "col": 28
             },
             "reviewer_from": {
               "by": "437e",
-              "key": "junctions.design",
-              "file": ".tableaux/tasks/437e.yaml"
+              "key": "junctions.design.reviewer",
+              "file": ".tableaux/tasks/437e.yaml",
+              "line": 20,
+              "col": 87
             },
             "url": "",
             "pin": ""
@@ -1406,13 +2218,17 @@
             "reviewer": "",
             "from": {
               "by": "437e",
-              "key": "junctions.implementation",
-              "file": ".tableaux/tasks/437e.yaml"
+              "key": "junctions.implementation.contributor",
+              "file": ".tableaux/tasks/437e.yaml",
+              "line": 21,
+              "col": 34
             },
             "reviewer_from": {
-              "by": "default",
+              "by": "assignee",
               "key": "assignee",
-              "file": ".tableaux/tasks/ID.yaml"
+              "file": "",
+              "line": 0,
+              "col": 0
             },
             "url": "",
             "pin": ""
@@ -1433,96 +2249,116 @@
             "reviewer": "",
             "from": {
               "by": "bc63",
-              "key": "junctions.validate",
-              "file": ".tableaux/tasks/bc63.yaml"
+              "key": "junctions.validate.contributor",
+              "file": ".tableaux/tasks/bc63.yaml",
+              "line": 15,
+              "col": 28
             },
             "reviewer_from": {
               "by": "437e",
-              "key": "junctions.validate",
-              "file": ".tableaux/tasks/437e.yaml"
+              "key": "junctions.validate.reviewer",
+              "file": ".tableaux/tasks/437e.yaml",
+              "line": 24,
+              "col": 89
             },
             "url": "",
             "pin": ""
           },
           {
             "kind": "recursive",
-            "gate": "mockup",
+            "gate": "design",
             "tasks": [
               "77b2"
             ],
             "reviewer": "",
             "from": {
-              "by": "",
-              "key": "junctions.mockup.subproject.url",
-              "file": ".tableaux/tasks/77b2.yaml"
+              "by": "77b2",
+              "key": "junctions.design.subproject",
+              "file": ".tableaux/tasks/77b2.yaml",
+              "line": 19,
+              "col": 3
             },
             "reviewer_from": {
               "by": "",
               "key": "",
-              "file": ""
+              "file": "",
+              "line": 0,
+              "col": 0
             },
             "url": "subprojects/tablo",
-            "pin": "00f8f68"
+            "pin": "f7c3190c7f8b1ad5a0e8157349f136022e62c6b1"
           },
           {
             "kind": "recursive",
-            "gate": "mockup",
+            "gate": "implementation",
             "tasks": [
               "6103"
             ],
             "reviewer": "",
             "from": {
-              "by": "",
-              "key": "junctions.mockup.subproject.url",
-              "file": ".tableaux/tasks/6103.yaml"
+              "by": "6103",
+              "key": "junctions.implementation.subproject",
+              "file": ".tableaux/tasks/6103.yaml",
+              "line": 19,
+              "col": 3
             },
             "reviewer_from": {
               "by": "",
               "key": "",
-              "file": ""
+              "file": "",
+              "line": 0,
+              "col": 0
             },
             "url": "subprojects/tabloio",
-            "pin": "4593882"
+            "pin": "4bb4300132b378cb5bafc658fca0a681d92735db"
           },
           {
             "kind": "recursive",
-            "gate": "mockup",
+            "gate": "implementation",
             "tasks": [
               "c6e8"
             ],
             "reviewer": "",
             "from": {
-              "by": "",
-              "key": "junctions.mockup.subproject.url",
-              "file": ".tableaux/tasks/c6e8.yaml"
+              "by": "c6e8",
+              "key": "junctions.implementation.subproject",
+              "file": ".tableaux/tasks/c6e8.yaml",
+              "line": 20,
+              "col": 3
             },
             "reviewer_from": {
               "by": "",
               "key": "",
-              "file": ""
+              "file": "",
+              "line": 0,
+              "col": 0
             },
             "url": "subprojects/tablotui",
-            "pin": "a2878b5"
+            "pin": "ce24c31003eccf735055bb169a85f3208d6206a4"
           },
           {
             "kind": "recursive",
-            "gate": "mockup",
+            "gate": "implementation",
             "tasks": [
               "595e"
             ],
             "reviewer": "",
             "from": {
-              "by": "",
-              "key": "junctions.mockup.subproject.url",
-              "file": ".tableaux/tasks/595e.yaml"
+              "by": "595e",
+              "key": "junctions.implementation.subproject",
+              "file": ".tableaux/tasks/595e.yaml",
+              "line": 19,
+              "col": 3
             },
             "reviewer_from": {
               "by": "",
               "key": "",
-              "file": ""
+              "file": "",
+              "line": 0,
+              "col": 0
             },
             "url": "subprojects/tableaud",
-            "pin": "e6ec4ec"
+            "pin": "0da180c6c9601904585bb18bcab12537df93bc88"
           }
         ]
       },
@@ -1534,19 +2370,34 @@
             "title": "Roles",
             "under": "bc63",
             "status": {
+              "kind": "recorded",
               "gate": "implementation",
               "state": "nominal",
               "reason": "",
-              "note": "",
-              "date": "",
-              "recorder": ""
+              "note": "The Roles text is on the trunk and covers all seven roles; the validate gate awaits the owner",
+              "date": "2026-09-30",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
             "next": {
+              "gate": "validate",
+              "kind": "plain",
               "marks": [
                 "agent",
                 "reviewer"
               ],
-              "acts": false
+              "acts": false,
+              "contributor": "noreply@anthropic.com",
+              "model": "claude-opus",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": false,
+              "subproject": null,
+              "references": [],
+              "stands": "next",
+              "reviewed": false
             },
             "next_gate": "validate"
           },
@@ -1555,38 +2406,61 @@
             "title": "Abstract views",
             "under": "2034",
             "status": {
-              "gate": "design",
+              "kind": "recorded",
+              "gate": "implementation",
               "state": "nominal",
               "reason": "",
-              "note": "",
-              "date": "",
-              "recorder": ""
+              "note": "VIEWS.md defines the ten views on the trunk and agrees with the twenty approved mockups on the gate window; validation checks that tablo and the front ends follow the text",
+              "date": "2026-10-05",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
             "next": {
+              "gate": "validate",
+              "kind": "plain",
               "marks": [
-                "agent"
+                "agent",
+                "reviewer"
               ],
-              "acts": false
+              "acts": false,
+              "contributor": "noreply@anthropic.com",
+              "model": "claude-opus",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": false,
+              "subproject": null,
+              "references": [],
+              "stands": "next",
+              "reviewed": false
             },
-            "next_gate": "implementation"
+            "next_gate": "validate"
           },
           {
             "id": "bc86",
             "title": "Markdown views",
             "under": "2034",
             "status": {
-              "gate": "defined",
-              "state": "nominal",
+              "kind": "rollup",
+              "gate": "mockup",
+              "state": "complete",
               "reason": "",
-              "note": "",
-              "date": "",
+              "note": "The owner accepts docs/mockups/gates.md at the mockup gate, the last gate that applies to this task",
+              "date": "2026-10-05",
               "recorder": "",
+              "derived": true,
+              "why": "",
+              "uncommitted": false,
               "from": {
                 "kind": "rollup",
                 "task": {
                   "id": "99f0",
                   "title": "Gate definition view in Markdown"
-                }
+                },
+                "url": "",
+                "pin": "",
+                "gate": ""
               }
             },
             "next": null,
@@ -1597,228 +2471,225 @@
             "title": "Gate definition view in Markdown",
             "under": "bc86",
             "status": {
-              "gate": "defined",
-              "state": "nominal",
+              "kind": "recorded",
+              "gate": "mockup",
+              "state": "complete",
               "reason": "",
-              "note": "",
-              "date": "",
-              "recorder": ""
+              "note": "The owner accepts docs/mockups/gates.md at the mockup gate, the last gate that applies to this task",
+              "date": "2026-10-05",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
-            "next": {
-              "marks": [
-                "agent",
-                "reviewer"
-              ],
-              "acts": false
-            },
-            "next_gate": "mockup"
+            "next": null,
+            "next_gate": ""
           },
           {
             "id": "05a9",
             "title": "Task definition view in Markdown",
             "under": "bc86",
             "status": {
-              "gate": "defined",
-              "state": "nominal",
+              "kind": "recorded",
+              "gate": "mockup",
+              "state": "complete",
               "reason": "",
-              "note": "",
-              "date": "",
-              "recorder": ""
+              "note": "The owner accepts docs/mockups/task.md at the mockup gate, the last gate that applies to this task",
+              "date": "2026-10-05",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
-            "next": {
-              "marks": [
-                "agent",
-                "reviewer"
-              ],
-              "acts": false
-            },
-            "next_gate": "mockup"
+            "next": null,
+            "next_gate": ""
           },
           {
             "id": "a9ce",
             "title": "Authority delegation view in Markdown",
             "under": "bc86",
             "status": {
-              "gate": "defined",
-              "state": "nominal",
+              "kind": "recorded",
+              "gate": "mockup",
+              "state": "complete",
               "reason": "",
-              "note": "",
-              "date": "",
-              "recorder": ""
+              "note": "The owner accepts docs/mockups/authority.md at the mockup gate, the last gate that applies to this task",
+              "date": "2026-10-05",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
-            "next": {
-              "marks": [
-                "agent",
-                "reviewer"
-              ],
-              "acts": false
-            },
-            "next_gate": "mockup"
+            "next": null,
+            "next_gate": ""
           },
           {
             "id": "bb7c",
             "title": "Task assignment view in Markdown",
             "under": "bc86",
             "status": {
-              "gate": "defined",
-              "state": "nominal",
+              "kind": "recorded",
+              "gate": "mockup",
+              "state": "complete",
               "reason": "",
-              "note": "",
-              "date": "",
-              "recorder": ""
+              "note": "The owner accepts docs/mockups/assignment.md at the mockup gate, the last gate that applies to this task",
+              "date": "2026-10-05",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
-            "next": {
-              "marks": [
-                "agent",
-                "reviewer"
-              ],
-              "acts": false
-            },
-            "next_gate": "mockup"
+            "next": null,
+            "next_gate": ""
           },
           {
             "id": "c74a",
             "title": "Contributor work queue view in Markdown",
             "under": "bc86",
             "status": {
-              "gate": "defined",
-              "state": "nominal",
+              "kind": "recorded",
+              "gate": "mockup",
+              "state": "complete",
               "reason": "",
-              "note": "",
-              "date": "",
-              "recorder": ""
+              "note": "The owner accepts docs/mockups/queue.md at the mockup gate, the last gate that applies to this task",
+              "date": "2026-10-05",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
-            "next": {
-              "marks": [
-                "agent",
-                "reviewer"
-              ],
-              "acts": false
-            },
-            "next_gate": "mockup"
+            "next": null,
+            "next_gate": ""
           },
           {
             "id": "efff",
             "title": "Work-blockage tree view in Markdown",
             "under": "bc86",
             "status": {
-              "gate": "defined",
-              "state": "nominal",
+              "kind": "recorded",
+              "gate": "mockup",
+              "state": "complete",
               "reason": "",
-              "note": "",
-              "date": "",
-              "recorder": ""
+              "note": "The owner accepts docs/mockups/blockage.md at the mockup gate, the last gate that applies to this task",
+              "date": "2026-10-05",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
-            "next": {
-              "marks": [
-                "agent",
-                "reviewer"
-              ],
-              "acts": false
-            },
-            "next_gate": "mockup"
+            "next": null,
+            "next_gate": ""
           },
           {
             "id": "ab8e",
             "title": "Global tableau view in Markdown",
             "under": "bc86",
             "status": {
-              "gate": "defined",
-              "state": "nominal",
+              "kind": "recorded",
+              "gate": "mockup",
+              "state": "complete",
               "reason": "",
-              "note": "",
-              "date": "",
-              "recorder": ""
+              "note": "The owner accepts docs/mockups/tableau.md at the mockup gate, the last gate that applies to this task",
+              "date": "2026-10-05",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
-            "next": {
-              "marks": [
-                "agent",
-                "reviewer"
-              ],
-              "acts": false
-            },
-            "next_gate": "mockup"
+            "next": null,
+            "next_gate": ""
           },
           {
             "id": "c545",
             "title": "Contextual tableau view in Markdown",
             "under": "bc86",
             "status": {
-              "gate": "defined",
-              "state": "nominal",
+              "kind": "recorded",
+              "gate": "mockup",
+              "state": "complete",
               "reason": "",
-              "note": "",
-              "date": "",
-              "recorder": ""
+              "note": "The owner accepts docs/mockups/context.md at the mockup gate, the last gate that applies to this task",
+              "date": "2026-10-05",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
-            "next": {
-              "marks": [
-                "agent",
-                "reviewer"
-              ],
-              "acts": false
-            },
-            "next_gate": "mockup"
+            "next": null,
+            "next_gate": ""
           },
           {
             "id": "d615",
             "title": "History view in Markdown",
             "under": "bc86",
             "status": {
-              "gate": "defined",
-              "state": "nominal",
+              "kind": "recorded",
+              "gate": "mockup",
+              "state": "complete",
               "reason": "",
-              "note": "",
-              "date": "",
-              "recorder": ""
+              "note": "The owner accepts docs/mockups/history.md at the mockup gate, the last gate that applies to this task",
+              "date": "2026-10-05",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
-            "next": {
-              "marks": [
-                "agent",
-                "reviewer"
-              ],
-              "acts": false
-            },
-            "next_gate": "mockup"
+            "next": null,
+            "next_gate": ""
           },
           {
             "id": "b14e",
             "title": "Audit view in Markdown",
             "under": "bc86",
             "status": {
-              "gate": "defined",
-              "state": "nominal",
+              "kind": "recorded",
+              "gate": "mockup",
+              "state": "complete",
               "reason": "",
-              "note": "",
-              "date": "",
-              "recorder": ""
+              "note": "The owner accepts docs/mockups/audit.md at the mockup gate, the last gate that applies to this task",
+              "date": "2026-10-05",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
-            "next": {
-              "marks": [
-                "agent",
-                "reviewer"
-              ],
-              "acts": false
-            },
-            "next_gate": "mockup"
+            "next": null,
+            "next_gate": ""
           },
           {
             "id": "5fe3",
             "title": "HTML views",
             "under": "2034",
             "status": {
-              "gate": "defined",
-              "state": "nominal",
+              "kind": "rollup",
+              "gate": "mockup",
+              "state": "complete",
               "reason": "",
-              "note": "",
-              "date": "",
+              "note": "The owner accepts docs/mockups/gates.html at the mockup gate, the last gate that applies to this task",
+              "date": "2026-10-05",
               "recorder": "",
+              "derived": true,
+              "why": "",
+              "uncommitted": false,
               "from": {
                 "kind": "rollup",
                 "task": {
                   "id": "a6f7",
                   "title": "Gate definition view in Html"
-                }
+                },
+                "url": "",
+                "pin": "",
+                "gate": ""
               }
             },
             "next": null,
@@ -1829,229 +2700,234 @@
             "title": "Gate definition view in Html",
             "under": "5fe3",
             "status": {
-              "gate": "defined",
-              "state": "nominal",
+              "kind": "recorded",
+              "gate": "mockup",
+              "state": "complete",
               "reason": "",
-              "note": "",
-              "date": "",
-              "recorder": ""
+              "note": "The owner accepts docs/mockups/gates.html at the mockup gate, the last gate that applies to this task",
+              "date": "2026-10-05",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
-            "next": {
-              "marks": [
-                "agent",
-                "reviewer"
-              ],
-              "acts": false
-            },
-            "next_gate": "mockup"
+            "next": null,
+            "next_gate": ""
           },
           {
             "id": "7dff",
             "title": "Task definition view in Html",
             "under": "5fe3",
             "status": {
-              "gate": "defined",
-              "state": "nominal",
+              "kind": "recorded",
+              "gate": "mockup",
+              "state": "complete",
               "reason": "",
-              "note": "",
-              "date": "",
-              "recorder": ""
+              "note": "The owner accepts docs/mockups/task.html at the mockup gate, the last gate that applies to this task",
+              "date": "2026-10-05",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
-            "next": {
-              "marks": [
-                "agent",
-                "reviewer"
-              ],
-              "acts": false
-            },
-            "next_gate": "mockup"
+            "next": null,
+            "next_gate": ""
           },
           {
             "id": "b1b7",
             "title": "Authority delegation view in Html",
             "under": "5fe3",
             "status": {
-              "gate": "defined",
-              "state": "nominal",
+              "kind": "recorded",
+              "gate": "mockup",
+              "state": "complete",
               "reason": "",
-              "note": "",
-              "date": "",
-              "recorder": ""
+              "note": "The owner accepts docs/mockups/authority.html at the mockup gate, the last gate that applies to this task",
+              "date": "2026-10-05",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
-            "next": {
-              "marks": [
-                "agent",
-                "reviewer"
-              ],
-              "acts": false
-            },
-            "next_gate": "mockup"
+            "next": null,
+            "next_gate": ""
           },
           {
             "id": "ea51",
             "title": "Task assignment view in Html",
             "under": "5fe3",
             "status": {
-              "gate": "defined",
-              "state": "nominal",
+              "kind": "recorded",
+              "gate": "mockup",
+              "state": "complete",
               "reason": "",
-              "note": "",
-              "date": "",
-              "recorder": ""
+              "note": "The owner accepts docs/mockups/assignment.html at the mockup gate, the last gate that applies to this task",
+              "date": "2026-10-05",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
-            "next": {
-              "marks": [
-                "agent",
-                "reviewer"
-              ],
-              "acts": false
-            },
-            "next_gate": "mockup"
+            "next": null,
+            "next_gate": ""
           },
           {
             "id": "7783",
             "title": "Contributor work queue view in Html",
             "under": "5fe3",
             "status": {
-              "gate": "defined",
-              "state": "nominal",
+              "kind": "recorded",
+              "gate": "mockup",
+              "state": "complete",
               "reason": "",
-              "note": "",
-              "date": "",
-              "recorder": ""
+              "note": "The owner accepts docs/mockups/queue.html at the mockup gate, the last gate that applies to this task",
+              "date": "2026-10-05",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
-            "next": {
-              "marks": [
-                "agent",
-                "reviewer"
-              ],
-              "acts": false
-            },
-            "next_gate": "mockup"
+            "next": null,
+            "next_gate": ""
           },
           {
             "id": "5471",
             "title": "Work-blockage tree view in Html",
             "under": "5fe3",
             "status": {
-              "gate": "defined",
-              "state": "nominal",
+              "kind": "recorded",
+              "gate": "mockup",
+              "state": "complete",
               "reason": "",
-              "note": "",
-              "date": "",
-              "recorder": ""
+              "note": "The owner accepts docs/mockups/blockage.html at the mockup gate, the last gate that applies to this task",
+              "date": "2026-10-05",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
-            "next": {
-              "marks": [
-                "agent",
-                "reviewer"
-              ],
-              "acts": false
-            },
-            "next_gate": "mockup"
+            "next": null,
+            "next_gate": ""
           },
           {
             "id": "32e7",
             "title": "Global tableau view in Html",
             "under": "5fe3",
             "status": {
-              "gate": "defined",
-              "state": "nominal",
+              "kind": "recorded",
+              "gate": "mockup",
+              "state": "complete",
               "reason": "",
-              "note": "",
-              "date": "",
-              "recorder": ""
+              "note": "The owner accepts docs/mockups/tableau.html at the mockup gate, the last gate that applies to this task",
+              "date": "2026-10-05",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
-            "next": {
-              "marks": [
-                "agent",
-                "reviewer"
-              ],
-              "acts": false
-            },
-            "next_gate": "mockup"
+            "next": null,
+            "next_gate": ""
           },
           {
             "id": "69eb",
             "title": "Contextual tableau view in Html",
             "under": "5fe3",
             "status": {
-              "gate": "defined",
-              "state": "nominal",
+              "kind": "recorded",
+              "gate": "mockup",
+              "state": "complete",
               "reason": "",
-              "note": "",
-              "date": "",
-              "recorder": ""
+              "note": "The owner accepts docs/mockups/context.html at the mockup gate, the last gate that applies to this task",
+              "date": "2026-10-05",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
-            "next": {
-              "marks": [
-                "agent",
-                "reviewer"
-              ],
-              "acts": false
-            },
-            "next_gate": "mockup"
+            "next": null,
+            "next_gate": ""
           },
           {
             "id": "3194",
             "title": "History view in Html",
             "under": "5fe3",
             "status": {
-              "gate": "defined",
-              "state": "nominal",
+              "kind": "recorded",
+              "gate": "mockup",
+              "state": "complete",
               "reason": "",
-              "note": "",
-              "date": "",
-              "recorder": ""
+              "note": "The owner accepts docs/mockups/history.html at the mockup gate, the last gate that applies to this task",
+              "date": "2026-10-05",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
-            "next": {
-              "marks": [
-                "agent",
-                "reviewer"
-              ],
-              "acts": false
-            },
-            "next_gate": "mockup"
+            "next": null,
+            "next_gate": ""
           },
           {
             "id": "a8b4",
             "title": "Audit view in Html",
             "under": "5fe3",
             "status": {
-              "gate": "defined",
-              "state": "nominal",
+              "kind": "recorded",
+              "gate": "mockup",
+              "state": "complete",
               "reason": "",
-              "note": "",
-              "date": "",
-              "recorder": ""
+              "note": "The owner accepts docs/mockups/audit.html at the mockup gate, the last gate that applies to this task",
+              "date": "2026-10-05",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
-            "next": {
-              "marks": [
-                "agent",
-                "reviewer"
-              ],
-              "acts": false
-            },
-            "next_gate": "mockup"
+            "next": null,
+            "next_gate": ""
           },
           {
             "id": "e3cb",
             "title": "Schema files",
             "under": "bc63",
             "status": {
+              "kind": "recorded",
               "gate": "unit",
               "state": "nominal",
               "reason": "",
-              "note": "",
-              "date": "",
-              "recorder": ""
+              "note": "schemas/check.sh (files agree with SYNTAX.md, version 0.2.1) and schemas/load.py (files load as JSON Schema 2020-12) pass; every .tableaux file validates",
+              "date": "2026-09-30",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
             "next": {
+              "gate": "validate",
+              "kind": "plain",
               "marks": [
                 "agent",
                 "reviewer"
               ],
-              "acts": false
+              "acts": false,
+              "contributor": "noreply@anthropic.com",
+              "model": "claude-opus",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": false,
+              "subproject": null,
+              "references": [],
+              "stands": "next",
+              "reviewed": false
             },
             "next_gate": "validate"
           },
@@ -2060,18 +2936,33 @@
             "title": "Conformance corpus",
             "under": "bc63",
             "status": {
+              "kind": "recorded",
               "gate": "implementation",
               "state": "nominal",
               "reason": "",
-              "note": "",
-              "date": "",
-              "recorder": ""
+              "note": "The corpus builds and checks clean, with 85 entries on the trunk; all three corrections from the tablo prototypes are in; the unit gate runs the tablo conformance test against it",
+              "date": "2026-09-30",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
             "next": {
+              "gate": "unit",
+              "kind": "plain",
               "marks": [
                 "agent"
               ],
-              "acts": false
+              "acts": false,
+              "contributor": "noreply@anthropic.com",
+              "model": "claude-sonnet",
+              "reviewer": "noreply@anthropic.com",
+              "reviewer_by_default": true,
+              "subproject": null,
+              "references": [],
+              "stands": "next",
+              "reviewed": false
             },
             "next_gate": "unit"
           },
@@ -2080,19 +2971,34 @@
             "title": "Productivity evidence",
             "under": "bc63",
             "status": {
+              "kind": "recorded",
               "gate": "implementation",
               "state": "nominal",
               "reason": "",
-              "note": "",
-              "date": "",
-              "recorder": ""
+              "note": "The full report, its 23 tests and an example over five repositories are on the trunk",
+              "date": "2026-09-30",
+              "recorder": "noreply@anthropic.com",
+              "derived": false,
+              "why": "",
+              "uncommitted": false,
+              "from": null
             },
             "next": {
+              "gate": "validate",
+              "kind": "plain",
               "marks": [
                 "agent",
                 "reviewer"
               ],
-              "acts": false
+              "acts": false,
+              "contributor": "noreply@anthropic.com",
+              "model": "claude-opus",
+              "reviewer": "nbyoung@nbyoung.com",
+              "reviewer_by_default": false,
+              "subproject": null,
+              "references": [],
+              "stands": "next",
+              "reviewed": false
             },
             "next_gate": "validate"
           }
@@ -2105,10 +3011,19 @@
               "title": "Roles"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2116,10 +3031,19 @@
               "title": "Abstract views"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2127,10 +3051,19 @@
               "title": "Gate definition view in Markdown"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2138,10 +3071,19 @@
               "title": "Task definition view in Markdown"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2149,10 +3091,19 @@
               "title": "Authority delegation view in Markdown"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2160,10 +3111,19 @@
               "title": "Task assignment view in Markdown"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2171,10 +3131,19 @@
               "title": "Contributor work queue view in Markdown"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2182,10 +3151,19 @@
               "title": "Work-blockage tree view in Markdown"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2193,10 +3171,19 @@
               "title": "Global tableau view in Markdown"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2204,10 +3191,19 @@
               "title": "Contextual tableau view in Markdown"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2215,10 +3211,19 @@
               "title": "History view in Markdown"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2226,10 +3231,19 @@
               "title": "Audit view in Markdown"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2237,10 +3251,19 @@
               "title": "Gate definition view in Html"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2248,10 +3271,19 @@
               "title": "Task definition view in Html"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2259,10 +3291,19 @@
               "title": "Authority delegation view in Html"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2270,10 +3311,19 @@
               "title": "Task assignment view in Html"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2281,10 +3331,19 @@
               "title": "Contributor work queue view in Html"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2292,10 +3351,19 @@
               "title": "Work-blockage tree view in Html"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2303,10 +3371,19 @@
               "title": "Global tableau view in Html"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2314,10 +3391,19 @@
               "title": "Contextual tableau view in Html"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2325,10 +3411,19 @@
               "title": "History view in Html"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2336,10 +3431,19 @@
               "title": "Audit view in Html"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2347,10 +3451,19 @@
               "title": "Schema files"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2358,10 +3471,19 @@
               "title": "Conformance corpus"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2369,10 +3491,20 @@
               "title": "Agent identity"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2380,10 +3512,20 @@
               "title": "Subproject linkage"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2391,10 +3533,19 @@
               "title": "Productivity evidence"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2402,10 +3553,20 @@
               "title": "Language clarifications"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2413,10 +3574,20 @@
               "title": "tablo: backend library and plumbing"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2424,10 +3595,20 @@
               "title": "tabloio: command line, output and input"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2435,10 +3616,20 @@
               "title": "tablotui: terminal user interface"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2446,10 +3637,20 @@
               "title": "tableaud: local daemon and HTML"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2457,10 +3658,20 @@
               "title": "Gate definition view in Markdown"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -2468,10 +3679,20 @@
               "title": "Task definition view in Markdown"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -2479,10 +3700,20 @@
               "title": "Authority delegation view in Markdown"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -2490,10 +3721,20 @@
               "title": "Task assignment view in Markdown"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -2501,10 +3742,20 @@
               "title": "Contributor work queue view in Markdown"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -2512,10 +3763,20 @@
               "title": "Work-blockage tree view in Markdown"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -2523,10 +3784,20 @@
               "title": "Global tableau view in Markdown"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -2534,10 +3805,20 @@
               "title": "Contextual tableau view in Markdown"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -2545,10 +3826,20 @@
               "title": "History view in Markdown"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -2556,10 +3847,20 @@
               "title": "Audit view in Markdown"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -2567,10 +3868,20 @@
               "title": "Gate definition view in Html"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -2578,10 +3889,20 @@
               "title": "Task definition view in Html"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -2589,10 +3910,20 @@
               "title": "Authority delegation view in Html"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -2600,10 +3931,20 @@
               "title": "Task assignment view in Html"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -2611,10 +3952,20 @@
               "title": "Contributor work queue view in Html"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -2622,10 +3973,20 @@
               "title": "Work-blockage tree view in Html"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -2633,10 +3994,20 @@
               "title": "Global tableau view in Html"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -2644,10 +4015,20 @@
               "title": "Contextual tableau view in Html"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -2655,10 +4036,20 @@
               "title": "History view in Html"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -2666,10 +4057,20 @@
               "title": "Audit view in Html"
             },
             "gate": "mockup",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -2677,10 +4078,20 @@
               "title": "Roles"
             },
             "gate": "design",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "passed"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2688,10 +4099,20 @@
               "title": "Abstract views"
             },
             "gate": "design",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "passed"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2699,10 +4120,20 @@
               "title": "Schema files"
             },
             "gate": "design",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "passed"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2710,10 +4141,20 @@
               "title": "Conformance corpus"
             },
             "gate": "design",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "passed"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2721,10 +4162,20 @@
               "title": "Agent identity"
             },
             "gate": "design",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "passed"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -2732,10 +4183,20 @@
               "title": "Subproject linkage"
             },
             "gate": "design",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "passed"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -2743,10 +4204,20 @@
               "title": "Productivity evidence"
             },
             "gate": "design",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "passed"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2754,10 +4225,20 @@
               "title": "Language clarifications"
             },
             "gate": "design",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-fable",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "passed"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -2765,10 +4246,19 @@
               "title": "Roles"
             },
             "gate": "implementation",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -2776,10 +4266,19 @@
               "title": "Abstract views"
             },
             "gate": "implementation",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "noreply@anthropic.com",
-            "stands": "next"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -2787,10 +4286,19 @@
               "title": "Schema files"
             },
             "gate": "implementation",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2798,10 +4306,19 @@
               "title": "Conformance corpus"
             },
             "gate": "implementation",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -2809,10 +4326,20 @@
               "title": "Agent identity"
             },
             "gate": "implementation",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "next",
+            "reviewed": false
           },
           {
             "task": {
@@ -2820,10 +4347,20 @@
               "title": "Subproject linkage"
             },
             "gate": "implementation",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "next",
+            "reviewed": false
           },
           {
             "task": {
@@ -2831,10 +4368,19 @@
               "title": "Productivity evidence"
             },
             "gate": "implementation",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -2842,10 +4388,20 @@
               "title": "Language clarifications"
             },
             "gate": "implementation",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "next",
+            "reviewed": false
           },
           {
             "task": {
@@ -2853,10 +4409,19 @@
               "title": "Schema files"
             },
             "gate": "unit",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -2864,10 +4429,19 @@
               "title": "Conformance corpus"
             },
             "gate": "unit",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "noreply@anthropic.com",
-            "stands": "next"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "next",
+            "reviewed": false
           },
           {
             "task": {
@@ -2875,10 +4449,19 @@
               "title": "Conformance corpus"
             },
             "gate": "integrate",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "noreply@anthropic.com",
-            "stands": "later"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "later",
+            "reviewed": false
           },
           {
             "task": {
@@ -2886,10 +4469,20 @@
               "title": "Roles"
             },
             "gate": "validate",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "next",
+            "reviewed": false
           },
           {
             "task": {
@@ -2897,10 +4490,20 @@
               "title": "Abstract views"
             },
             "gate": "validate",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "later"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "next",
+            "reviewed": false
           },
           {
             "task": {
@@ -2908,10 +4511,20 @@
               "title": "Schema files"
             },
             "gate": "validate",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "next",
+            "reviewed": false
           },
           {
             "task": {
@@ -2919,10 +4532,20 @@
               "title": "Conformance corpus"
             },
             "gate": "validate",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "later"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "later",
+            "reviewed": false
           },
           {
             "task": {
@@ -2930,10 +4553,20 @@
               "title": "Agent identity"
             },
             "gate": "validate",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "later"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "later",
+            "reviewed": false
           },
           {
             "task": {
@@ -2941,10 +4574,20 @@
               "title": "Subproject linkage"
             },
             "gate": "validate",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "later"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "later",
+            "reviewed": false
           },
           {
             "task": {
@@ -2952,10 +4595,20 @@
               "title": "Productivity evidence"
             },
             "gate": "validate",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "next"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "next",
+            "reviewed": false
           },
           {
             "task": {
@@ -2963,10 +4616,20 @@
               "title": "Language clarifications"
             },
             "gate": "validate",
+            "kind": "plain",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-opus",
             "reviewer": "nbyoung@nbyoung.com",
-            "stands": "later"
+            "reviewer_by_default": false,
+            "subproject": null,
+            "references": [],
+            "stands": "later",
+            "reviewed": false
           }
         ],
         "reviews": [
@@ -2976,10 +4639,19 @@
               "title": "Roles"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2987,10 +4659,19 @@
               "title": "Abstract views"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -2998,10 +4679,19 @@
               "title": "Gate definition view in Markdown"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -3009,10 +4699,19 @@
               "title": "Task definition view in Markdown"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -3020,10 +4719,19 @@
               "title": "Authority delegation view in Markdown"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -3031,10 +4739,19 @@
               "title": "Task assignment view in Markdown"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -3042,10 +4759,19 @@
               "title": "Contributor work queue view in Markdown"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -3053,10 +4779,19 @@
               "title": "Work-blockage tree view in Markdown"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -3064,10 +4799,19 @@
               "title": "Global tableau view in Markdown"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -3075,10 +4819,19 @@
               "title": "Contextual tableau view in Markdown"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -3086,10 +4839,19 @@
               "title": "History view in Markdown"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -3097,10 +4859,19 @@
               "title": "Audit view in Markdown"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -3108,10 +4879,19 @@
               "title": "Gate definition view in Html"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -3119,10 +4899,19 @@
               "title": "Task definition view in Html"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -3130,10 +4919,19 @@
               "title": "Authority delegation view in Html"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -3141,10 +4939,19 @@
               "title": "Task assignment view in Html"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -3152,10 +4959,19 @@
               "title": "Contributor work queue view in Html"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -3163,10 +4979,19 @@
               "title": "Work-blockage tree view in Html"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -3174,10 +4999,19 @@
               "title": "Global tableau view in Html"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -3185,10 +5019,19 @@
               "title": "Contextual tableau view in Html"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -3196,10 +5039,19 @@
               "title": "History view in Html"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -3207,10 +5059,19 @@
               "title": "Audit view in Html"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -3218,10 +5079,19 @@
               "title": "Schema files"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -3229,10 +5099,19 @@
               "title": "Conformance corpus"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -3240,10 +5119,19 @@
               "title": "Productivity evidence"
             },
             "gate": "defined",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-haiku",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -3251,10 +5139,19 @@
               "title": "Roles"
             },
             "gate": "implementation",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -3262,10 +5159,19 @@
               "title": "Abstract views"
             },
             "gate": "implementation",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "noreply@anthropic.com",
-            "stands": "next"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -3273,10 +5179,19 @@
               "title": "Schema files"
             },
             "gate": "implementation",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "passed",
+            "reviewed": true
           },
           {
             "task": {
@@ -3284,10 +5199,19 @@
               "title": "Conformance corpus"
             },
             "gate": "implementation",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -3295,10 +5219,19 @@
               "title": "Productivity evidence"
             },
             "gate": "implementation",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -3306,10 +5239,19 @@
               "title": "Schema files"
             },
             "gate": "unit",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "noreply@anthropic.com",
-            "stands": "passed"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "here",
+            "reviewed": true
           },
           {
             "task": {
@@ -3317,10 +5259,19 @@
               "title": "Conformance corpus"
             },
             "gate": "unit",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "noreply@anthropic.com",
-            "stands": "next"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "next",
+            "reviewed": false
           },
           {
             "task": {
@@ -3328,10 +5279,19 @@
               "title": "Conformance corpus"
             },
             "gate": "integrate",
+            "kind": "plain",
+            "marks": [
+              "agent"
+            ],
+            "acts": false,
             "contributor": "noreply@anthropic.com",
             "model": "claude-sonnet",
             "reviewer": "noreply@anthropic.com",
-            "stands": "later"
+            "reviewer_by_default": true,
+            "subproject": null,
+            "references": [],
+            "stands": "later",
+            "reviewed": false
           }
         ],
         "models": [
@@ -3347,13 +5307,6 @@
             "model": "claude-opus",
             "stated_by": "437e",
             "junctions": 20,
-            "next": 20
-          },
-          {
-            "gate": "function",
-            "model": "claude-sonnet",
-            "stated_by": "437e",
-            "junctions": 0,
             "next": 0
           },
           {
@@ -3368,7 +5321,7 @@
             "model": "claude-sonnet",
             "stated_by": "437e",
             "junctions": 8,
-            "next": 4
+            "next": 3
           },
           {
             "gate": "unit",
@@ -3389,7 +5342,7 @@
             "model": "claude-opus",
             "stated_by": "bc63",
             "junctions": 8,
-            "next": 3
+            "next": 4
           }
         ],
         "counts": [
@@ -3403,7 +5356,7 @@
           },
           {
             "gate": "defined",
-            "standing": 22,
+            "standing": 0,
             "contributes": 32,
             "contributes_next": 0,
             "reviews": 25,
@@ -3411,9 +5364,9 @@
           },
           {
             "gate": "mockup",
-            "standing": 0,
+            "standing": 22,
             "contributes": 20,
-            "contributes_next": 20,
+            "contributes_next": 0,
             "reviews": 0,
             "reviews_next": 0
           },
@@ -3427,7 +5380,7 @@
           },
           {
             "gate": "design",
-            "standing": 1,
+            "standing": 0,
             "contributes": 8,
             "contributes_next": 0,
             "reviews": 0,
@@ -3435,11 +5388,11 @@
           },
           {
             "gate": "implementation",
-            "standing": 3,
+            "standing": 4,
             "contributes": 8,
-            "contributes_next": 4,
+            "contributes_next": 3,
             "reviews": 5,
-            "reviews_next": 1
+            "reviews_next": 0
           },
           {
             "gate": "unit",
@@ -3461,7 +5414,7 @@
             "gate": "validate",
             "standing": 0,
             "contributes": 8,
-            "contributes_next": 3,
+            "contributes_next": 4,
             "reviews": 0,
             "reviews_next": 0
           },
@@ -3525,14 +5478,18 @@
             ],
             "reviewer": "",
             "from": {
-              "by": "",
+              "by": "own",
               "key": "assignee",
-              "file": ".tableaux/tasks/ID.yaml"
+              "file": "",
+              "line": 0,
+              "col": 0
             },
             "reviewer_from": {
               "by": "",
               "key": "",
-              "file": ""
+              "file": "",
+              "line": 0,
+              "col": 0
             },
             "url": "",
             "pin": ""
@@ -3547,12 +5504,16 @@
             "from": {
               "by": "bc86",
               "key": "assignee",
-              "file": ".tableaux/tasks/bc86.yaml"
+              "file": ".tableaux/tasks/bc86.yaml",
+              "line": 4,
+              "col": 11
             },
             "reviewer_from": {
               "by": "",
               "key": "",
-              "file": ""
+              "file": "",
+              "line": 0,
+              "col": 0
             },
             "url": "",
             "pin": ""
@@ -3567,12 +5528,16 @@
             "from": {
               "by": "5fe3",
               "key": "assignee",
-              "file": ".tableaux/tasks/5fe3.yaml"
+              "file": ".tableaux/tasks/5fe3.yaml",
+              "line": 4,
+              "col": 11
             },
             "reviewer_from": {
               "by": "",
               "key": "",
-              "file": ""
+              "file": "",
+              "line": 0,
+              "col": 0
             },
             "url": "",
             "pin": ""
@@ -3610,13 +5575,17 @@
             "reviewer": "noreply@anthropic.com",
             "from": {
               "by": "437e",
-              "key": "junctions.defined",
-              "file": ".tableaux/tasks/437e.yaml"
+              "key": "junctions.defined.contributor",
+              "file": ".tableaux/tasks/437e.yaml",
+              "line": 17,
+              "col": 34
             },
             "reviewer_from": {
-              "by": "default",
+              "by": "assignee",
               "key": "assignee",
-              "file": ".tableaux/tasks/ID.yaml"
+              "file": "",
+              "line": 0,
+              "col": 0
             },
             "url": "",
             "pin": ""
@@ -3636,13 +5605,17 @@
             "reviewer": "nbyoung@nbyoung.com",
             "from": {
               "by": "437e",
-              "key": "junctions.defined",
-              "file": ".tableaux/tasks/437e.yaml"
+              "key": "junctions.defined.contributor",
+              "file": ".tableaux/tasks/437e.yaml",
+              "line": 17,
+              "col": 34
             },
             "reviewer_from": {
-              "by": "default",
+              "by": "assignee",
               "key": "assignee",
-              "file": ".tableaux/tasks/ID.yaml"
+              "file": "",
+              "line": 0,
+              "col": 0
             },
             "url": "",
             "pin": ""
@@ -3675,13 +5648,17 @@
             "reviewer": "nbyoung@nbyoung.com",
             "from": {
               "by": "437e",
-              "key": "junctions.mockup",
-              "file": ".tableaux/tasks/437e.yaml"
+              "key": "junctions.mockup.contributor",
+              "file": ".tableaux/tasks/437e.yaml",
+              "line": 18,
+              "col": 34
             },
             "reviewer_from": {
               "by": "437e",
-              "key": "junctions.mockup",
-              "file": ".tableaux/tasks/437e.yaml"
+              "key": "junctions.mockup.reviewer",
+              "file": ".tableaux/tasks/437e.yaml",
+              "line": 18,
+              "col": 87
             },
             "url": "",
             "pin": ""
@@ -3702,13 +5679,17 @@
             "reviewer": "nbyoung@nbyoung.com",
             "from": {
               "by": "bc63",
-              "key": "junctions.design",
-              "file": ".tableaux/tasks/bc63.yaml"
+              "key": "junctions.design.contributor",
+              "file": ".tableaux/tasks/bc63.yaml",
+              "line": 14,
+              "col": 28
             },
             "reviewer_from": {
               "by": "437e",
-              "key": "junctions.design",
-              "file": ".tableaux/tasks/437e.yaml"
+              "key": "junctions.design.reviewer",
+              "file": ".tableaux/tasks/437e.yaml",
+              "line": 20,
+              "col": 87
             },
             "url": "",
             "pin": ""
@@ -3726,13 +5707,17 @@
             "reviewer": "noreply@anthropic.com",
             "from": {
               "by": "437e",
-              "key": "junctions.implementation",
-              "file": ".tableaux/tasks/437e.yaml"
+              "key": "junctions.implementation.contributor",
+              "file": ".tableaux/tasks/437e.yaml",
+              "line": 21,
+              "col": 34
             },
             "reviewer_from": {
-              "by": "default",
+              "by": "assignee",
               "key": "assignee",
-              "file": ".tableaux/tasks/ID.yaml"
+              "file": "",
+              "line": 0,
+              "col": 0
             },
             "url": "",
             "pin": ""
@@ -3748,13 +5733,17 @@
             "reviewer": "nbyoung@nbyoung.com",
             "from": {
               "by": "437e",
-              "key": "junctions.implementation",
-              "file": ".tableaux/tasks/437e.yaml"
+              "key": "junctions.implementation.contributor",
+              "file": ".tableaux/tasks/437e.yaml",
+              "line": 21,
+              "col": 34
             },
             "reviewer_from": {
-              "by": "default",
+              "by": "assignee",
               "key": "assignee",
-              "file": ".tableaux/tasks/ID.yaml"
+              "file": "",
+              "line": 0,
+              "col": 0
             },
             "url": "",
             "pin": ""
@@ -3769,13 +5758,17 @@
             "reviewer": "noreply@anthropic.com",
             "from": {
               "by": "437e",
-              "key": "junctions.unit",
-              "file": ".tableaux/tasks/437e.yaml"
+              "key": "junctions.unit.contributor",
+              "file": ".tableaux/tasks/437e.yaml",
+              "line": 22,
+              "col": 34
             },
             "reviewer_from": {
-              "by": "default",
+              "by": "assignee",
               "key": "assignee",
-              "file": ".tableaux/tasks/ID.yaml"
+              "file": "",
+              "line": 0,
+              "col": 0
             },
             "url": "",
             "pin": ""
@@ -3789,13 +5782,17 @@
             "reviewer": "noreply@anthropic.com",
             "from": {
               "by": "437e",
-              "key": "junctions.integrate",
-              "file": ".tableaux/tasks/437e.yaml"
+              "key": "junctions.integrate.contributor",
+              "file": ".tableaux/tasks/437e.yaml",
+              "line": 23,
+              "col": 34
             },
             "reviewer_from": {
-              "by": "default",
+              "by": "assignee",
               "key": "assignee",
-              "file": ".tableaux/tasks/ID.yaml"
+              "file": "",
+              "line": 0,
+              "col": 0
             },
             "url": "",
             "pin": ""
@@ -3816,13 +5813,17 @@
             "reviewer": "nbyoung@nbyoung.com",
             "from": {
               "by": "bc63",
-              "key": "junctions.validate",
-              "file": ".tableaux/tasks/bc63.yaml"
+              "key": "junctions.validate.contributor",
+              "file": ".tableaux/tasks/bc63.yaml",
+              "line": 15,
+              "col": 28
             },
             "reviewer_from": {
               "by": "437e",
-              "key": "junctions.validate",
-              "file": ".tableaux/tasks/437e.yaml"
+              "key": "junctions.validate.reviewer",
+              "file": ".tableaux/tasks/437e.yaml",
+              "line": 24,
+              "col": 89
             },
             "url": "",
             "pin": ""
@@ -3860,13 +5861,17 @@
             "reviewer": "",
             "from": {
               "by": "437e",
-              "key": "junctions.defined",
-              "file": ".tableaux/tasks/437e.yaml"
+              "key": "junctions.defined.contributor",
+              "file": ".tableaux/tasks/437e.yaml",
+              "line": 17,
+              "col": 34
             },
             "reviewer_from": {
-              "by": "default",
+              "by": "assignee",
               "key": "assignee",
-              "file": ".tableaux/tasks/ID.yaml"
+              "file": "",
+              "line": 0,
+              "col": 0
             },
             "url": "",
             "pin": ""
@@ -3884,13 +5889,17 @@
             "reviewer": "",
             "from": {
               "by": "437e",
-              "key": "junctions.implementation",
-              "file": ".tableaux/tasks/437e.yaml"
+              "key": "junctions.implementation.contributor",
+              "file": ".tableaux/tasks/437e.yaml",
+              "line": 21,
+              "col": 34
             },
             "reviewer_from": {
-              "by": "default",
+              "by": "assignee",
               "key": "assignee",
-              "file": ".tableaux/tasks/ID.yaml"
+              "file": "",
+              "line": 0,
+              "col": 0
             },
             "url": "",
             "pin": ""
@@ -3905,13 +5914,17 @@
             "reviewer": "",
             "from": {
               "by": "437e",
-              "key": "junctions.unit",
-              "file": ".tableaux/tasks/437e.yaml"
+              "key": "junctions.unit.contributor",
+              "file": ".tableaux/tasks/437e.yaml",
+              "line": 22,
+              "col": 34
             },
             "reviewer_from": {
-              "by": "default",
+              "by": "assignee",
               "key": "assignee",
-              "file": ".tableaux/tasks/ID.yaml"
+              "file": "",
+              "line": 0,
+              "col": 0
             },
             "url": "",
             "pin": ""
@@ -3925,13 +5938,17 @@
             "reviewer": "",
             "from": {
               "by": "437e",
-              "key": "junctions.integrate",
-              "file": ".tableaux/tasks/437e.yaml"
+              "key": "junctions.integrate.contributor",
+              "file": ".tableaux/tasks/437e.yaml",
+              "line": 23,
+              "col": 34
             },
             "reviewer_from": {
-              "by": "default",
+              "by": "assignee",
               "key": "assignee",
-              "file": ".tableaux/tasks/ID.yaml"
+              "file": "",
+              "line": 0,
+              "col": 0
             },
             "url": "",
             "pin": ""
@@ -3939,7 +5956,164 @@
         ]
       }
     ],
-    "commands": []
+    "commands": [
+      {
+        "text": "git show 50a373b2857a36e4ef1a754605433943d6bfe324:.tableaux/tasks/437e.yaml",
+        "comment": ""
+      },
+      {
+        "text": "git show 50a373b2857a36e4ef1a754605433943d6bfe324:.tableaux/tasks/bc63.yaml",
+        "comment": ""
+      },
+      {
+        "text": "git show 50a373b2857a36e4ef1a754605433943d6bfe324:.tableaux/tasks/77b2.yaml",
+        "comment": ""
+      },
+      {
+        "text": "git show 50a373b2857a36e4ef1a754605433943d6bfe324:.tableaux/tasks/6103.yaml",
+        "comment": ""
+      },
+      {
+        "text": "git show 50a373b2857a36e4ef1a754605433943d6bfe324:.tableaux/tasks/c6e8.yaml",
+        "comment": ""
+      },
+      {
+        "text": "git show 50a373b2857a36e4ef1a754605433943d6bfe324:.tableaux/tasks/595e.yaml",
+        "comment": ""
+      },
+      {
+        "text": "git show 50a373b2857a36e4ef1a754605433943d6bfe324:.tableaux/tasks/bc86.yaml",
+        "comment": ""
+      },
+      {
+        "text": "git show 50a373b2857a36e4ef1a754605433943d6bfe324:.tableaux/tasks/5fe3.yaml",
+        "comment": ""
+      },
+      {
+        "text": "git grep -n '^assignee:' 50a373b2857a36e4ef1a754605433943d6bfe324 -- .tableaux/tasks",
+        "comment": ""
+      },
+      {
+        "text": "git ls-tree 50a373b2857a36e4ef1a754605433943d6bfe324 subprojects/tablo subprojects/tabloio subprojects/tablotui subprojects/tableaud",
+        "comment": ""
+      }
+    ]
   },
-  "diagnostics": []
+  "diagnostics": [
+    {
+      "severity": "warning",
+      "code": "H3",
+      "task": "7166",
+      "gate": "implementation",
+      "commit": "56103af8cbaf561a90f9fa67fea02053372a4214",
+      "message": "Model claude-opus-5-5 is outside the stated model claude-sonnet"
+    },
+    {
+      "severity": "warning",
+      "code": "H3",
+      "task": "e9c6",
+      "gate": "implementation",
+      "commit": "ccb3947e3deb2f476a8c9c886266b2b4da66c6f6",
+      "message": "Model claude-opus-5-5 is outside the stated model claude-sonnet"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/7166.yaml",
+      "task": "7166",
+      "gate": "implementation",
+      "commit": "56103af8cbaf561a90f9fa67fea02053372a4214",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/7861.yaml",
+      "task": "7861",
+      "gate": "validate",
+      "commit": "c6f2655f1bda4469a6171b77cc21e326f0c99f87",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/9f3f.yaml",
+      "task": "9f3f",
+      "gate": "implementation",
+      "commit": "43d68e4f7d2b856c4d581983f34355d5b5f4f3b4",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/ac33.yaml",
+      "task": "ac33",
+      "gate": "implementation",
+      "commit": "6762222ddffef76008daad27ebe26069ac67cc5d",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/c2ad.yaml",
+      "task": "c2ad",
+      "gate": "validate",
+      "commit": "3d8ce0eee1e869c75453abba91cae03dec6587ce",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/e3cb.yaml",
+      "task": "e3cb",
+      "gate": "validate",
+      "commit": "c39ccac764b580ddb67789014c5f7f2c1bae9c6e",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/e9c6.yaml",
+      "task": "e9c6",
+      "gate": "validate",
+      "commit": "ccb3947e3deb2f476a8c9c886266b2b4da66c6f6",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/fcec.yaml",
+      "task": "fcec",
+      "gate": "unit",
+      "commit": "60495c26d886016b40069041386a811b24469312",
+      "message": "the newest event is the contributor's and the status states no review; noreply@anthropic.com may have unit to review"
+    },
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/595e.yaml",
+      "line": 13,
+      "col": 5,
+      "task": "595e",
+      "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    },
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/6103.yaml",
+      "line": 13,
+      "col": 5,
+      "task": "6103",
+      "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    },
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/c6e8.yaml",
+      "line": 13,
+      "col": 5,
+      "task": "c6e8",
+      "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    }
+  ]
 }

@@ -1,13 +1,13 @@
 # Task assignment
 
-**What does each person carry?** Tableaux tooling · ref `main` · level detail
+**What does each person carry?** Tableaux tooling · ref `corpus/tooling` · level detail
 
 Legend: `tabloio gates`.
 
 | Email | Assigned | Contributes next | Reviews next | Models |
 |---|--:|--:|--:|---|
-| nbyoung@nbyoung.com | 10 | 0 | 26 |  |
-| noreply@anthropic.com | 27 | 28 | 2 | `claude-haiku`, `claude-opus`, `claude-fable`, `claude-sonnet` |
+| nbyoung@nbyoung.com | 10 | 0 | 7 |  |
+| noreply@anthropic.com | 27 | 8 | 1 | `claude-haiku`, `claude-opus`, `claude-fable`, `claude-sonnet` |
 
 🪆 4 tasks hand their next junction to a subproject: `77b2` `6103` `c6e8` `595e`.
 
@@ -17,16 +17,16 @@ Legend: `tabloio gates`.
 
 | Task | Under | Status | Next junction |
 |---|---|---|---|
-| `437e` Tableaux tooling |  | 📝 defined 🟢 nominal, rolled up from `99f0` Gate definition view in Markdown |  |
-| `bc63` Method | `437e` | 📝 defined 🟢 nominal, rolled up from `99f0` Gate definition view in Markdown |  |
-| `2034` Views | `bc63` | 📝 defined 🟢 nominal, rolled up from `99f0` Gate definition view in Markdown |  |
+| `437e` Tableaux tooling |  | 🔧 function 🟢 nominal, rolled up from `77b2` tablo: backend library and plumbing |  |
+| `bc63` Method | `437e` | 📐 design 🟢 nominal, rolled up from `ac33` Agent identity |  |
+| `2034` Views | `bc63` | 🧱 implementation 🟢 nominal, rolled up from `e9c6` Abstract views |  |
 | `ac33` Agent identity | `bc63` | 📐 design 🟢 nominal | 🧱 implementation 🤖👀 |
 | `9f3f` Subproject linkage | `bc63` | 📐 design 🟢 nominal | 🧱 implementation 🤖👀 |
 | `7166` Language clarifications | `bc63` | 📐 design 🟢 nominal | 🧱 implementation 🤖👀 |
-| `77b2` tablo: backend library and plumbing | `437e` | 📝 defined 🟢 nominal, 🪆 from the subproject `subprojects/tablo` | 📌 mockup 🪆 |
-| `6103` tabloio: command line, output and input | `437e` | 📝 defined 🟢 nominal, 🪆 from the subproject `subprojects/tabloio` | 📌 mockup 🪆 |
-| `c6e8` tablotui: terminal user interface | `437e` | 📝 defined 🟢 nominal, 🪆 from the subproject `subprojects/tablotui` | 📌 mockup 🪆 |
-| `595e` tableaud: local daemon and HTML | `437e` | 📝 defined 🟢 nominal, 🪆 from the subproject `subprojects/tableaud` | 📌 mockup 🪆 |
+| `77b2` tablo: backend library and plumbing | `437e` | 🔧 function 🟢 nominal, 🪆 from the subproject `subprojects/tablo` | 📐 design 🪆 |
+| `6103` tabloio: command line, output and input | `437e` | 📐 design 🟢 nominal, 🪆 from the subproject `subprojects/tabloio` | 🧱 implementation 🪆 |
+| `c6e8` tablotui: terminal user interface | `437e` | 📐 design 🟢 nominal, 🪆 from the subproject `subprojects/tablotui` | 🧱 implementation 🪆 |
+| `595e` tableaud: local daemon and HTML | `437e` | 📐 design 🟢 nominal, 🪆 from the subproject `subprojects/tableaud` | 🧱 implementation 🪆 |
 
 🤖 an agent contributes · 👀 a reviewer accepts · 🪆 a subproject does the work.
 
@@ -34,10 +34,10 @@ Legend: `tabloio gates`.
 
 | Task | Next gate | Subproject | Its root task stands at |
 |---|---|---|---|
-| `77b2` tablo: backend library and plumbing | 📌 mockup 🪆 | `subprojects/tablo` | `b2c1` 📝 defined 🟢 nominal |
-| `6103` tabloio: command line, output and input | 📌 mockup 🪆 | `subprojects/tabloio` | `07e0` 🔧 function 🟢 nominal |
-| `c6e8` tablotui: terminal user interface | 📌 mockup 🪆 | `subprojects/tablotui` | `40e8` 🔧 function 🟢 nominal |
-| `595e` tableaud: local daemon and HTML | 📌 mockup 🪆 | `subprojects/tableaud` | `8608` 🔧 function 🟢 nominal |
+| `77b2` tablo: backend library and plumbing | 📐 design 🪆 | `subprojects/tablo` | `b2c1` 🔧 function 🟢 nominal |
+| `6103` tabloio: command line, output and input | 🧱 implementation 🪆 | `subprojects/tabloio` | `07e0` 📐 design 🟢 nominal |
+| `c6e8` tablotui: terminal user interface | 🧱 implementation 🪆 | `subprojects/tablotui` | `40e8` 📐 design 🟢 nominal |
+| `595e` tableaud: local daemon and HTML | 🧱 implementation 🪆 | `subprojects/tableaud` | `8608` 📐 design 🟢 nominal |
 
 ### Contributes: 8 junctions, 0 next
 
@@ -54,41 +54,41 @@ Legend: `tabloio gates`.
 | `7861` Productivity evidence |  |  | later |
 | `7166` Language clarifications |  |  | later |
 
-### Reviews: 46 junctions, 26 next
+### Reviews: 46 junctions, 7 next
 
 **📝 defined** · 7 junctions · 0 next
 
 | Task | Contributor | Model | When |
 |---|---|---|---|
-| `ac33` Agent identity | noreply@anthropic.com | `claude-haiku` | passed |
-| `9f3f` Subproject linkage | noreply@anthropic.com | `claude-haiku` | passed |
-| `7166` Language clarifications | noreply@anthropic.com | `claude-haiku` | passed |
-| `77b2` tablo: backend library and plumbing | noreply@anthropic.com | `claude-haiku` | passed |
-| `6103` tabloio: command line, output and input | noreply@anthropic.com | `claude-haiku` | passed |
-| `c6e8` tablotui: terminal user interface | noreply@anthropic.com | `claude-haiku` | passed |
-| `595e` tableaud: local daemon and HTML | noreply@anthropic.com | `claude-haiku` | passed |
+| `ac33` Agent identity | noreply@anthropic.com | `claude-haiku` | passed, reviewed |
+| `9f3f` Subproject linkage | noreply@anthropic.com | `claude-haiku` | passed, reviewed |
+| `7166` Language clarifications | noreply@anthropic.com | `claude-haiku` | passed, reviewed |
+| `77b2` tablo: backend library and plumbing | noreply@anthropic.com | `claude-haiku` | passed, reviewed |
+| `6103` tabloio: command line, output and input | noreply@anthropic.com | `claude-haiku` | passed, reviewed |
+| `c6e8` tablotui: terminal user interface | noreply@anthropic.com | `claude-haiku` | passed, reviewed |
+| `595e` tableaud: local daemon and HTML | noreply@anthropic.com | `claude-haiku` | passed, reviewed |
 
-**📌 mockup** · 20 junctions · 20 next
+**📌 mockup** · 20 junctions · 0 next
 
 | Task | Contributor | Model | When |
 |---|---|---|---|
-| `99f0` Gate definition view in Markdown | noreply@anthropic.com | `claude-opus` | next |
-| `05a9` Task definition view in Markdown | noreply@anthropic.com | `claude-opus` | next |
-| `a9ce` Authority delegation view in Markdown | noreply@anthropic.com | `claude-opus` | next |
-| … and 17 more: `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` | noreply@anthropic.com | `claude-opus` | next |
+| `99f0` Gate definition view in Markdown | noreply@anthropic.com | `claude-opus` | passed, reviewed; the status stands here |
+| `05a9` Task definition view in Markdown | noreply@anthropic.com | `claude-opus` | passed, reviewed; the status stands here |
+| `a9ce` Authority delegation view in Markdown | noreply@anthropic.com | `claude-opus` | passed, reviewed; the status stands here |
+| … and 17 more: `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` | noreply@anthropic.com | `claude-opus` | passed, reviewed; the status stands here |
 
 **📐 design** · 8 junctions · 0 next
 
 | Task | Contributor | Model | When |
 |---|---|---|---|
-| `c2ad` Roles | noreply@anthropic.com | `claude-fable` | passed |
-| `e9c6` Abstract views | noreply@anthropic.com | `claude-fable` | passed |
-| `e3cb` Schema files | noreply@anthropic.com | `claude-fable` | passed |
-| `fcec` Conformance corpus | noreply@anthropic.com | `claude-fable` | passed |
-| `ac33` Agent identity | noreply@anthropic.com | `claude-fable` | passed |
-| `9f3f` Subproject linkage | noreply@anthropic.com | `claude-fable` | passed |
-| `7861` Productivity evidence | noreply@anthropic.com | `claude-fable` | passed |
-| `7166` Language clarifications | noreply@anthropic.com | `claude-fable` | passed |
+| `c2ad` Roles | noreply@anthropic.com | `claude-fable` | passed, reviewed |
+| `e9c6` Abstract views | noreply@anthropic.com | `claude-fable` | passed, reviewed |
+| `e3cb` Schema files | noreply@anthropic.com | `claude-fable` | passed, reviewed |
+| `fcec` Conformance corpus | noreply@anthropic.com | `claude-fable` | passed, reviewed |
+| `ac33` Agent identity | noreply@anthropic.com | `claude-fable` | passed, reviewed; the status stands here |
+| `9f3f` Subproject linkage | noreply@anthropic.com | `claude-fable` | passed, reviewed; the status stands here |
+| `7861` Productivity evidence | noreply@anthropic.com | `claude-fable` | passed, reviewed |
+| `7166` Language clarifications | noreply@anthropic.com | `claude-fable` | passed, reviewed; the status stands here |
 
 **🧱 implementation** · 3 junctions · 3 next
 
@@ -98,12 +98,12 @@ Legend: `tabloio gates`.
 | `9f3f` Subproject linkage | noreply@anthropic.com | `claude-sonnet` | next |
 | `7166` Language clarifications | noreply@anthropic.com | `claude-sonnet` | next |
 
-**🌍 validate** · 8 junctions · 3 next
+**🌍 validate** · 8 junctions · 4 next
 
 | Task | Contributor | Model | When |
 |---|---|---|---|
 | `c2ad` Roles | noreply@anthropic.com | `claude-opus` | next |
-| `e9c6` Abstract views | noreply@anthropic.com | `claude-opus` | later |
+| `e9c6` Abstract views | noreply@anthropic.com | `claude-opus` | next |
 | `e3cb` Schema files | noreply@anthropic.com | `claude-opus` | next |
 | `fcec` Conformance corpus | noreply@anthropic.com | `claude-opus` | later |
 | `ac33` Agent identity | noreply@anthropic.com | `claude-opus` | later |
@@ -116,16 +116,16 @@ Legend: `tabloio gates`.
 | Gate | Tasks standing here | Contributes | of which next | Reviews | of which next |
 |---|--:|--:|--:|--:|--:|
 | ❔ undefined | 0 | 0 | 0 | 0 | 0 |
-| 📝 defined | 7 | 0 | 0 | 7 | 0 |
-| 📌 mockup | 0 | 0 | 0 | 20 | 20 |
-| 🔧 function | 0 | 0 | 0 | 0 | 0 |
-| 📐 design | 3 | 0 | 0 | 8 | 0 |
-| 🧱 implementation | 0 | 0 | 0 | 3 | 3 |
+| 📝 defined | 0 | 0 | 0 | 7 | 0 |
+| 📌 mockup | 0 | 0 | 0 | 20 | 0 |
+| 🔧 function | 2 | 0 | 0 | 0 | 0 |
+| 📐 design | 7 | 0 | 0 | 8 | 0 |
+| 🧱 implementation | 1 | 0 | 0 | 3 | 3 |
 | 📏 unit | 0 | 0 | 0 | 0 | 0 |
 | 🔗 integrate | 0 | 0 | 0 | 0 | 0 |
-| 🌍 validate | 0 | 0 | 0 | 8 | 3 |
+| 🌍 validate | 0 | 0 | 0 | 8 | 4 |
 | 🚀 release | 0 | 8 | 0 | 0 | 0 |
-| **Total** | **10** | **8** | **0** | **46** | **26** |
+| **Total** | **10** | **8** | **0** | **46** | **7** |
 
 ### Authority
 
@@ -138,82 +138,82 @@ Over `437e` Tableaux tooling and its 36 descendants.
 | Task | Under | Status | Next junction |
 |---|---|---|---|
 | `c2ad` Roles | `bc63` | 🧱 implementation 🟢 nominal | 🌍 validate 🤖👀 |
-| `e9c6` Abstract views | `2034` | 📐 design 🟢 nominal | 🧱 implementation 🤖 |
-| `bc86` Markdown views | `2034` | 📝 defined 🟢 nominal, rolled up from `99f0` Gate definition view in Markdown |  |
-| `99f0` Gate definition view in Markdown | `bc86` | 📝 defined 🟢 nominal | 📌 mockup 🤖👀 |
-| `05a9` Task definition view in Markdown | `bc86` | 📝 defined 🟢 nominal | 📌 mockup 🤖👀 |
-| `a9ce` Authority delegation view in Markdown | `bc86` | 📝 defined 🟢 nominal | 📌 mockup 🤖👀 |
-| … and 7 more: `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` | `bc86` | 📝 defined 🟢 nominal | 📌 mockup 🤖👀 |
-| `5fe3` HTML views | `2034` | 📝 defined 🟢 nominal, rolled up from `a6f7` Gate definition view in Html |  |
-| `a6f7` Gate definition view in Html | `5fe3` | 📝 defined 🟢 nominal | 📌 mockup 🤖👀 |
-| `7dff` Task definition view in Html | `5fe3` | 📝 defined 🟢 nominal | 📌 mockup 🤖👀 |
-| `b1b7` Authority delegation view in Html | `5fe3` | 📝 defined 🟢 nominal | 📌 mockup 🤖👀 |
-| … and 7 more: `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` | `5fe3` | 📝 defined 🟢 nominal | 📌 mockup 🤖👀 |
+| `e9c6` Abstract views | `2034` | 🧱 implementation 🟢 nominal | 🌍 validate 🤖👀 |
+| `bc86` Markdown views | `2034` | 📌 mockup ✅ complete, rolled up from `99f0` Gate definition view in Markdown |  |
+| `99f0` Gate definition view in Markdown | `bc86` | 📌 mockup ✅ complete |  |
+| `05a9` Task definition view in Markdown | `bc86` | 📌 mockup ✅ complete |  |
+| `a9ce` Authority delegation view in Markdown | `bc86` | 📌 mockup ✅ complete |  |
+| … and 7 more: `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` | `bc86` | 📌 mockup ✅ complete |  |
+| `5fe3` HTML views | `2034` | 📌 mockup ✅ complete, rolled up from `a6f7` Gate definition view in Html |  |
+| `a6f7` Gate definition view in Html | `5fe3` | 📌 mockup ✅ complete |  |
+| `7dff` Task definition view in Html | `5fe3` | 📌 mockup ✅ complete |  |
+| `b1b7` Authority delegation view in Html | `5fe3` | 📌 mockup ✅ complete |  |
+| … and 7 more: `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` | `5fe3` | 📌 mockup ✅ complete |  |
 | `e3cb` Schema files | `bc63` | 📏 unit 🟢 nominal | 🌍 validate 🤖👀 |
 | `fcec` Conformance corpus | `bc63` | 🧱 implementation 🟢 nominal | 📏 unit 🤖 |
 | `7861` Productivity evidence | `bc63` | 🧱 implementation 🟢 nominal | 🌍 validate 🤖👀 |
 
 🤖 an agent contributes · 👀 a reviewer accepts.
 
-### Contributes: 79 junctions, 28 next
+### Contributes: 79 junctions, 8 next
 
 **📝 defined** · 32 junctions · 0 next
 
 | Task | Model | Reviewer | When |
 |---|---|---|---|
-| `c2ad` Roles | `claude-haiku` | noreply@anthropic.com | passed |
-| `e9c6` Abstract views | `claude-haiku` | noreply@anthropic.com | passed |
-| `99f0` Gate definition view in Markdown | `claude-haiku` | noreply@anthropic.com | passed |
-| … and 21 more: `05a9` `a9ce` `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` `e3cb` `fcec` | `claude-haiku` | noreply@anthropic.com | passed |
-| `ac33` Agent identity | `claude-haiku` | nbyoung@nbyoung.com | passed |
-| `9f3f` Subproject linkage | `claude-haiku` | nbyoung@nbyoung.com | passed |
-| `7861` Productivity evidence | `claude-haiku` | noreply@anthropic.com | passed |
-| `7166` Language clarifications | `claude-haiku` | nbyoung@nbyoung.com | passed |
-| `77b2` tablo: backend library and plumbing | `claude-haiku` | nbyoung@nbyoung.com | passed |
-| `6103` tabloio: command line, output and input | `claude-haiku` | nbyoung@nbyoung.com | passed |
-| `c6e8` tablotui: terminal user interface | `claude-haiku` | nbyoung@nbyoung.com | passed |
-| `595e` tableaud: local daemon and HTML | `claude-haiku` | nbyoung@nbyoung.com | passed |
+| `c2ad` Roles | `claude-haiku` | noreply@anthropic.com | passed, reviewed |
+| `e9c6` Abstract views | `claude-haiku` | noreply@anthropic.com | passed, reviewed |
+| `99f0` Gate definition view in Markdown | `claude-haiku` | noreply@anthropic.com | passed, reviewed |
+| … and 21 more: `05a9` `a9ce` `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` `e3cb` `fcec` | `claude-haiku` | noreply@anthropic.com | passed, reviewed |
+| `ac33` Agent identity | `claude-haiku` | nbyoung@nbyoung.com | passed, reviewed |
+| `9f3f` Subproject linkage | `claude-haiku` | nbyoung@nbyoung.com | passed, reviewed |
+| `7861` Productivity evidence | `claude-haiku` | noreply@anthropic.com | passed, reviewed |
+| `7166` Language clarifications | `claude-haiku` | nbyoung@nbyoung.com | passed, reviewed |
+| `77b2` tablo: backend library and plumbing | `claude-haiku` | nbyoung@nbyoung.com | passed, reviewed |
+| `6103` tabloio: command line, output and input | `claude-haiku` | nbyoung@nbyoung.com | passed, reviewed |
+| `c6e8` tablotui: terminal user interface | `claude-haiku` | nbyoung@nbyoung.com | passed, reviewed |
+| `595e` tableaud: local daemon and HTML | `claude-haiku` | nbyoung@nbyoung.com | passed, reviewed |
 
-**📌 mockup** · 20 junctions · 20 next
+**📌 mockup** · 20 junctions · 0 next
 
 | Task | Model | Reviewer | When |
 |---|---|---|---|
-| `99f0` Gate definition view in Markdown | `claude-opus` | nbyoung@nbyoung.com | next |
-| `05a9` Task definition view in Markdown | `claude-opus` | nbyoung@nbyoung.com | next |
-| `a9ce` Authority delegation view in Markdown | `claude-opus` | nbyoung@nbyoung.com | next |
-| … and 17 more: `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` | `claude-opus` | nbyoung@nbyoung.com | next |
+| `99f0` Gate definition view in Markdown | `claude-opus` | nbyoung@nbyoung.com | passed, reviewed; the status stands here |
+| `05a9` Task definition view in Markdown | `claude-opus` | nbyoung@nbyoung.com | passed, reviewed; the status stands here |
+| `a9ce` Authority delegation view in Markdown | `claude-opus` | nbyoung@nbyoung.com | passed, reviewed; the status stands here |
+| … and 17 more: `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` | `claude-opus` | nbyoung@nbyoung.com | passed, reviewed; the status stands here |
 
 **📐 design** · 8 junctions · 0 next
 
 | Task | Model | Reviewer | When |
 |---|---|---|---|
-| `c2ad` Roles | `claude-fable` | nbyoung@nbyoung.com | passed |
-| `e9c6` Abstract views | `claude-fable` | nbyoung@nbyoung.com | passed |
-| `e3cb` Schema files | `claude-fable` | nbyoung@nbyoung.com | passed |
-| `fcec` Conformance corpus | `claude-fable` | nbyoung@nbyoung.com | passed |
-| `ac33` Agent identity | `claude-fable` | nbyoung@nbyoung.com | passed |
-| `9f3f` Subproject linkage | `claude-fable` | nbyoung@nbyoung.com | passed |
-| `7861` Productivity evidence | `claude-fable` | nbyoung@nbyoung.com | passed |
-| `7166` Language clarifications | `claude-fable` | nbyoung@nbyoung.com | passed |
+| `c2ad` Roles | `claude-fable` | nbyoung@nbyoung.com | passed, reviewed |
+| `e9c6` Abstract views | `claude-fable` | nbyoung@nbyoung.com | passed, reviewed |
+| `e3cb` Schema files | `claude-fable` | nbyoung@nbyoung.com | passed, reviewed |
+| `fcec` Conformance corpus | `claude-fable` | nbyoung@nbyoung.com | passed, reviewed |
+| `ac33` Agent identity | `claude-fable` | nbyoung@nbyoung.com | passed, reviewed; the status stands here |
+| `9f3f` Subproject linkage | `claude-fable` | nbyoung@nbyoung.com | passed, reviewed; the status stands here |
+| `7861` Productivity evidence | `claude-fable` | nbyoung@nbyoung.com | passed, reviewed |
+| `7166` Language clarifications | `claude-fable` | nbyoung@nbyoung.com | passed, reviewed; the status stands here |
 
-**🧱 implementation** · 8 junctions · 4 next
+**🧱 implementation** · 8 junctions · 3 next
 
 | Task | Model | Reviewer | When |
 |---|---|---|---|
-| `c2ad` Roles | `claude-sonnet` | noreply@anthropic.com | passed |
-| `e9c6` Abstract views | `claude-sonnet` | noreply@anthropic.com | next |
-| `e3cb` Schema files | `claude-sonnet` | noreply@anthropic.com | passed |
-| `fcec` Conformance corpus | `claude-sonnet` | noreply@anthropic.com | passed |
+| `c2ad` Roles | `claude-sonnet` | noreply@anthropic.com | passed, reviewed; the status stands here |
+| `e9c6` Abstract views | `claude-sonnet` | noreply@anthropic.com | passed, reviewed; the status stands here |
+| `e3cb` Schema files | `claude-sonnet` | noreply@anthropic.com | passed, reviewed |
+| `fcec` Conformance corpus | `claude-sonnet` | noreply@anthropic.com | passed, reviewed; the status stands here |
 | `ac33` Agent identity | `claude-sonnet` | nbyoung@nbyoung.com | next |
 | `9f3f` Subproject linkage | `claude-sonnet` | nbyoung@nbyoung.com | next |
-| `7861` Productivity evidence | `claude-sonnet` | noreply@anthropic.com | passed |
+| `7861` Productivity evidence | `claude-sonnet` | noreply@anthropic.com | passed, reviewed; the status stands here |
 | `7166` Language clarifications | `claude-sonnet` | nbyoung@nbyoung.com | next |
 
 **📏 unit** · 2 junctions · 1 next
 
 | Task | Model | Reviewer | When |
 |---|---|---|---|
-| `e3cb` Schema files | `claude-sonnet` | noreply@anthropic.com | passed |
+| `e3cb` Schema files | `claude-sonnet` | noreply@anthropic.com | passed, reviewed; the status stands here |
 | `fcec` Conformance corpus | `claude-sonnet` | noreply@anthropic.com | next |
 
 **🔗 integrate** · 1 junctions · 0 next
@@ -222,12 +222,12 @@ Over `437e` Tableaux tooling and its 36 descendants.
 |---|---|---|---|
 | `fcec` Conformance corpus | `claude-sonnet` | noreply@anthropic.com | later |
 
-**🌍 validate** · 8 junctions · 3 next
+**🌍 validate** · 8 junctions · 4 next
 
 | Task | Model | Reviewer | When |
 |---|---|---|---|
 | `c2ad` Roles | `claude-opus` | nbyoung@nbyoung.com | next |
-| `e9c6` Abstract views | `claude-opus` | nbyoung@nbyoung.com | later |
+| `e9c6` Abstract views | `claude-opus` | nbyoung@nbyoung.com | next |
 | `e3cb` Schema files | `claude-opus` | nbyoung@nbyoung.com | next |
 | `fcec` Conformance corpus | `claude-opus` | nbyoung@nbyoung.com | later |
 | `ac33` Agent identity | `claude-opus` | nbyoung@nbyoung.com | later |
@@ -235,32 +235,32 @@ Over `437e` Tableaux tooling and its 36 descendants.
 | `7861` Productivity evidence | `claude-opus` | nbyoung@nbyoung.com | next |
 | `7166` Language clarifications | `claude-opus` | nbyoung@nbyoung.com | later |
 
-### Reviews: 33 junctions, 2 next
+### Reviews: 33 junctions, 1 next
 
 **📝 defined** · 25 junctions · 0 next
 
 | Task | Contributor | Model | When |
 |---|---|---|---|
-| `c2ad` Roles | noreply@anthropic.com | `claude-haiku` | passed |
-| `e9c6` Abstract views | noreply@anthropic.com | `claude-haiku` | passed |
-| `99f0` Gate definition view in Markdown | noreply@anthropic.com | `claude-haiku` | passed |
-| … and 22 more: `05a9` `a9ce` `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` `e3cb` `fcec` `7861` | noreply@anthropic.com | `claude-haiku` | passed |
+| `c2ad` Roles | noreply@anthropic.com | `claude-haiku` | passed, reviewed |
+| `e9c6` Abstract views | noreply@anthropic.com | `claude-haiku` | passed, reviewed |
+| `99f0` Gate definition view in Markdown | noreply@anthropic.com | `claude-haiku` | passed, reviewed |
+| … and 22 more: `05a9` `a9ce` `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` `e3cb` `fcec` `7861` | noreply@anthropic.com | `claude-haiku` | passed, reviewed |
 
-**🧱 implementation** · 5 junctions · 1 next
+**🧱 implementation** · 5 junctions · 0 next
 
 | Task | Contributor | Model | When |
 |---|---|---|---|
-| `c2ad` Roles | noreply@anthropic.com | `claude-sonnet` | passed |
-| `e9c6` Abstract views | noreply@anthropic.com | `claude-sonnet` | next |
-| `e3cb` Schema files | noreply@anthropic.com | `claude-sonnet` | passed |
-| `fcec` Conformance corpus | noreply@anthropic.com | `claude-sonnet` | passed |
-| `7861` Productivity evidence | noreply@anthropic.com | `claude-sonnet` | passed |
+| `c2ad` Roles | noreply@anthropic.com | `claude-sonnet` | passed, reviewed; the status stands here |
+| `e9c6` Abstract views | noreply@anthropic.com | `claude-sonnet` | passed, reviewed; the status stands here |
+| `e3cb` Schema files | noreply@anthropic.com | `claude-sonnet` | passed, reviewed |
+| `fcec` Conformance corpus | noreply@anthropic.com | `claude-sonnet` | passed, reviewed; the status stands here |
+| `7861` Productivity evidence | noreply@anthropic.com | `claude-sonnet` | passed, reviewed; the status stands here |
 
 **📏 unit** · 2 junctions · 1 next
 
 | Task | Contributor | Model | When |
 |---|---|---|---|
-| `e3cb` Schema files | noreply@anthropic.com | `claude-sonnet` | passed |
+| `e3cb` Schema files | noreply@anthropic.com | `claude-sonnet` | passed, reviewed; the status stands here |
 | `fcec` Conformance corpus | noreply@anthropic.com | `claude-sonnet` | next |
 
 **🔗 integrate** · 1 junctions · 0 next
@@ -274,29 +274,28 @@ Over `437e` Tableaux tooling and its 36 descendants.
 | Gate | Model | Stated by | Junctions | Next |
 |---|---|---|--:|--:|
 | 📝 defined | `claude-haiku` | `437e` | 32 | 0 |
-| 📌 mockup | `claude-opus` | `437e` | 20 | 20 |
-| 🔧 function | `claude-sonnet` | `437e` | 0 | 0 |
+| 📌 mockup | `claude-opus` | `437e` | 20 | 0 |
 | 📐 design | `claude-fable` | `bc63` | 8 | 0 |
-| 🧱 implementation | `claude-sonnet` | `437e` | 8 | 4 |
+| 🧱 implementation | `claude-sonnet` | `437e` | 8 | 3 |
 | 📏 unit | `claude-sonnet` | `437e` | 2 | 1 |
 | 🔗 integrate | `claude-sonnet` | `437e` | 1 | 0 |
-| 🌍 validate | `claude-opus` | `bc63` | 8 | 3 |
+| 🌍 validate | `claude-opus` | `bc63` | 8 | 4 |
 
 ### Counts by gate
 
 | Gate | Tasks standing here | Contributes | of which next | Reviews | of which next |
 |---|--:|--:|--:|--:|--:|
 | ❔ undefined | 0 | 0 | 0 | 0 | 0 |
-| 📝 defined | 22 | 32 | 0 | 25 | 0 |
-| 📌 mockup | 0 | 20 | 20 | 0 | 0 |
+| 📝 defined | 0 | 32 | 0 | 25 | 0 |
+| 📌 mockup | 22 | 20 | 0 | 0 | 0 |
 | 🔧 function | 0 | 0 | 0 | 0 | 0 |
-| 📐 design | 1 | 8 | 0 | 0 | 0 |
-| 🧱 implementation | 3 | 8 | 4 | 5 | 1 |
+| 📐 design | 0 | 8 | 0 | 0 | 0 |
+| 🧱 implementation | 4 | 8 | 3 | 5 | 0 |
 | 📏 unit | 1 | 2 | 1 | 2 | 1 |
 | 🔗 integrate | 0 | 1 | 0 | 1 | 0 |
-| 🌍 validate | 0 | 8 | 3 | 0 | 0 |
+| 🌍 validate | 0 | 8 | 4 | 0 | 0 |
 | 🚀 release | 0 | 0 | 0 | 0 | 0 |
-| **Total** | **27** | **79** | **28** | **33** | **2** |
+| **Total** | **27** | **79** | **8** | **33** | **1** |
 
 ### Authority
 
@@ -304,4 +303,4 @@ Over `bc86` Markdown views and its 10 descendants.
 
 Over `5fe3` HTML views and its 10 descendants.
 
-Command: `tabloio assignment --ref main --level detail`
+Command: `tabloio assignment --ref corpus/tooling --level detail`

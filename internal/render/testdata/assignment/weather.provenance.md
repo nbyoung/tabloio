@@ -11,19 +11,21 @@ Legend: `tabloio gates`.
 | dan@example.org | 1 | 1 | 0 |  |
 | opus@example.org | 0 | 0 | 0 | `claude-opus-5-5` |
 
+🪆 1 tasks hand their next junction to a subproject: `c07d`.
+
 ## ada@example.org
 
 ### Tasks assigned: 3
 
 | Task | Under | Status | Next junction |
 |---|---|---|---|
-| `a1c0` Weather station |  | 📝 defined 🟢 nominal |  |
+| `a1c0` Weather station |  | 📝 defined 🟢 nominal, rolled up from `3c5d` Dashboard |  |
 | `9f31` Sensor board | `4e2b` | ⚙️ function 🔴 stalled ⛔ blocked | ⚡ performance 🧑 |
 | `7b2e` Gateway | `a1c0` | ❔ undefined ⚪ undefined | 📝 defined 🧑 |
 
 🧑 a person contributes.
 
-### Contributes: 14 junctions, 2 next
+### Contributes: 22 junctions, 2 next
 
 **📝 defined** · 2 junctions · 1 next
 
@@ -36,14 +38,14 @@ Legend: `tabloio gates`.
 
 | Task | Model | Reviewer | When |
 |---|---|---|---|
-| `9f31` Sensor board |  | ben@example.org | passed |
+| `9f31` Sensor board |  | ben@example.org | passed, reviewed |
 | `7b2e` Gateway |  |  | later |
 
 **⚙️ function** · 2 junctions · 0 next
 
 | Task | Model | Reviewer | When |
 |---|---|---|---|
-| `9f31` Sensor board |  |  | passed |
+| `9f31` Sensor board |  |  | passed; the status stands here |
 | `7b2e` Gateway |  |  | later |
 
 **⚡ performance** · 2 junctions · 1 next
@@ -74,6 +76,34 @@ Legend: `tabloio gates`.
 | `9f31` Sensor board |  |  | later |
 | `7b2e` Gateway |  |  | later |
 
+**🧩 unit** · 2 junctions · 0 next
+
+| Task | Model | Reviewer | When |
+|---|---|---|---|
+| `9f31` Sensor board |  |  | later |
+| `7b2e` Gateway |  |  | later |
+
+**🖼️ integrate** · 2 junctions · 0 next
+
+| Task | Model | Reviewer | When |
+|---|---|---|---|
+| `9f31` Sensor board |  |  | later |
+| `7b2e` Gateway |  |  | later |
+
+**🌍 validate** · 2 junctions · 0 next
+
+| Task | Model | Reviewer | When |
+|---|---|---|---|
+| `9f31` Sensor board |  | ben@example.org | later |
+| `7b2e` Gateway |  |  | later |
+
+**🚀 release** · 2 junctions · 0 next
+
+| Task | Model | Reviewer | When |
+|---|---|---|---|
+| `9f31` Sensor board |  |  | later |
+| `7b2e` Gateway |  |  | later |
+
 ### Reviews: none
 
 ### Counts by gate
@@ -88,11 +118,11 @@ Legend: `tabloio gates`.
 | ⚓ reliability | 0 | 2 | 0 | 0 | 0 |
 | 📐 design | 0 | 2 | 0 | 0 | 0 |
 | 🛠️ implementation | 0 | 2 | 0 | 0 | 0 |
-| 🧩 unit | 0 | 0 | 0 | 0 | 0 |
-| 🖼️ integrate | 0 | 0 | 0 | 0 | 0 |
-| 🌍 validate | 0 | 0 | 0 | 0 | 0 |
-| 🚀 release | 0 | 0 | 0 | 0 | 0 |
-| **Total** | **3** | **14** | **2** | **0** | **0** |
+| 🧩 unit | 0 | 2 | 0 | 0 | 0 |
+| 🖼️ integrate | 0 | 2 | 0 | 0 | 0 |
+| 🌍 validate | 0 | 2 | 0 | 0 | 0 |
+| 🚀 release | 0 | 2 | 0 | 0 | 0 |
+| **Total** | **3** | **22** | **2** | **0** | **0** |
 
 ### Authority
 
@@ -104,12 +134,18 @@ Over `a1c0` Weather station and its 5 descendants.
 
 | Task | Under | Status | Next junction |
 |---|---|---|---|
-| `4e2b` Sensor node | `a1c0` | ⚙️ function 🔴 stalled ⛔ blocked |  |
-| `c07d` Node firmware | `4e2b` | 📐 design 🟢 nominal | 🛠️ implementation 🧑 |
+| `4e2b` Sensor node | `a1c0` | ⚙️ function 🔴 stalled ⛔ blocked, rolled up from `9f31` Sensor board |  |
+| `c07d` Node firmware | `4e2b` | 📐 design 🟢 nominal, 🪆 from the subproject `firmware` | 🛠️ implementation 🪆 |
 
-🧑 a person contributes.
+🪆 a subproject does the work.
 
-### Contributes: 5 junctions, 0 next
+### No contributor in this project: 1
+
+| Task | Next gate | Subproject | Its root task stands at |
+|---|---|---|---|
+| `c07d` Node firmware | 🛠️ implementation 🪆 | `firmware` | `f1a0` 📐 design 🟢 nominal |
+
+### Contributes: 8 junctions, 0 next
 
 **📝 defined** · 1 junctions · 0 next
 
@@ -121,7 +157,7 @@ Over `a1c0` Weather station and its 5 descendants.
 
 | Task | Model | Reviewer | When |
 |---|---|---|---|
-| `c07d` Node firmware |  | ben@example.org | passed |
+| `c07d` Node firmware |  | ben@example.org | passed, reviewed |
 
 **⚙️ function** · 1 junctions · 0 next
 
@@ -139,16 +175,46 @@ Over `a1c0` Weather station and its 5 descendants.
 
 | Task | Model | Reviewer | When |
 |---|---|---|---|
-| `c07d` Node firmware |  |  | passed |
+| `c07d` Node firmware |  |  | passed; the status stands here |
 
-### Reviews: 2 junctions, 0 next
+**🖼️ integrate** · 1 junctions · 0 next
+
+| Task | Model | Reviewer | When |
+|---|---|---|---|
+| `c07d` Node firmware |  |  | later |
+
+**🌍 validate** · 1 junctions · 0 next
+
+| Task | Model | Reviewer | When |
+|---|---|---|---|
+| `c07d` Node firmware |  |  | later |
+
+**🚀 release** · 1 junctions · 0 next
+
+| Task | Model | Reviewer | When |
+|---|---|---|---|
+| `c07d` Node firmware |  |  | later |
+
+### Reviews: 4 junctions, 0 next
 
 **📌 mockup** · 2 junctions · 0 next
 
 | Task | Contributor | Model | When |
 |---|---|---|---|
-| `9f31` Sensor board | ada@example.org |  | passed |
-| `c07d` Node firmware | ben@example.org |  | passed |
+| `9f31` Sensor board | ada@example.org |  | passed, reviewed |
+| `c07d` Node firmware | ben@example.org |  | passed, reviewed |
+
+**🧩 unit** · 1 junctions · 0 next
+
+| Task | Contributor | Model | When |
+|---|---|---|---|
+| `c07d` Node firmware | opus@example.org | `claude-opus-5-5` | later |
+
+**🌍 validate** · 1 junctions · 0 next
+
+| Task | Contributor | Model | When |
+|---|---|---|---|
+| `9f31` Sensor board | ada@example.org |  | later |
 
 ### Counts by gate
 
@@ -162,11 +228,11 @@ Over `a1c0` Weather station and its 5 descendants.
 | ⚓ reliability | 0 | 0 | 0 | 0 | 0 |
 | 📐 design | 1 | 1 | 0 | 0 | 0 |
 | 🛠️ implementation | 0 | 0 | 0 | 0 | 0 |
-| 🧩 unit | 0 | 0 | 0 | 0 | 0 |
-| 🖼️ integrate | 0 | 0 | 0 | 0 | 0 |
-| 🌍 validate | 0 | 0 | 0 | 0 | 0 |
-| 🚀 release | 0 | 0 | 0 | 0 | 0 |
-| **Total** | **2** | **5** | **0** | **2** | **0** |
+| 🧩 unit | 0 | 0 | 0 | 1 | 0 |
+| 🖼️ integrate | 0 | 1 | 0 | 0 | 0 |
+| 🌍 validate | 0 | 1 | 0 | 1 | 0 |
+| 🚀 release | 0 | 1 | 0 | 0 | 0 |
+| **Total** | **2** | **8** | **0** | **4** | **0** |
 
 ### Authority
 
@@ -182,13 +248,13 @@ Over `4e2b` Sensor node and its 2 descendants.
 
 🧑 a person contributes.
 
-### Contributes: 7 junctions, 1 next
+### Contributes: 11 junctions, 1 next
 
 **📝 defined** · 1 junctions · 0 next
 
 | Task | Model | Reviewer | When |
 |---|---|---|---|
-| `3c5d` Dashboard |  |  | passed |
+| `3c5d` Dashboard |  |  | passed; the status stands here |
 
 **📌 mockup** · 1 junctions · 1 next
 
@@ -226,6 +292,30 @@ Over `4e2b` Sensor node and its 2 descendants.
 |---|---|---|---|
 | `3c5d` Dashboard |  |  | later |
 
+**🧩 unit** · 1 junctions · 0 next
+
+| Task | Model | Reviewer | When |
+|---|---|---|---|
+| `3c5d` Dashboard |  |  | later |
+
+**🖼️ integrate** · 1 junctions · 0 next
+
+| Task | Model | Reviewer | When |
+|---|---|---|---|
+| `3c5d` Dashboard |  |  | later |
+
+**🌍 validate** · 1 junctions · 0 next
+
+| Task | Model | Reviewer | When |
+|---|---|---|---|
+| `3c5d` Dashboard |  |  | later |
+
+**🚀 release** · 1 junctions · 0 next
+
+| Task | Model | Reviewer | When |
+|---|---|---|---|
+| `3c5d` Dashboard |  |  | later |
+
 ### Reviews: none
 
 ### Counts by gate
@@ -240,11 +330,11 @@ Over `4e2b` Sensor node and its 2 descendants.
 | ⚓ reliability | 0 | 1 | 0 | 0 | 0 |
 | 📐 design | 0 | 1 | 0 | 0 | 0 |
 | 🛠️ implementation | 0 | 1 | 0 | 0 | 0 |
-| 🧩 unit | 0 | 0 | 0 | 0 | 0 |
-| 🖼️ integrate | 0 | 0 | 0 | 0 | 0 |
-| 🌍 validate | 0 | 0 | 0 | 0 | 0 |
-| 🚀 release | 0 | 0 | 0 | 0 | 0 |
-| **Total** | **1** | **7** | **1** | **0** | **0** |
+| 🧩 unit | 0 | 1 | 0 | 0 | 0 |
+| 🖼️ integrate | 0 | 1 | 0 | 0 | 0 |
+| 🌍 validate | 0 | 1 | 0 | 0 | 0 |
+| 🚀 release | 0 | 1 | 0 | 0 | 0 |
+| **Total** | **1** | **11** | **1** | **0** | **0** |
 
 ### Authority
 
@@ -254,7 +344,13 @@ None.
 
 ### Tasks assigned: none
 
-### Contributes: none
+### Contributes: 1 junctions, 0 next
+
+**🧩 unit** · 1 junctions · 0 next
+
+| Task | Model | Reviewer | When |
+|---|---|---|---|
+| `c07d` Node firmware | `claude-opus-5-5` | ben@example.org | later |
 
 ### Reviews: none
 
@@ -262,7 +358,7 @@ None.
 
 | Gate | Model | Stated by | Junctions | Next |
 |---|---|---|--:|--:|
-| 📐 design | `claude-opus-5-5` | `a1c0` | 0 | 0 |
+| 🧩 unit | `claude-opus-5-5` | `c07d` | 1 | 0 |
 
 ### Counts by gate
 
@@ -276,11 +372,11 @@ None.
 | ⚓ reliability | 0 | 0 | 0 | 0 | 0 |
 | 📐 design | 0 | 0 | 0 | 0 | 0 |
 | 🛠️ implementation | 0 | 0 | 0 | 0 | 0 |
-| 🧩 unit | 0 | 0 | 0 | 0 | 0 |
+| 🧩 unit | 0 | 1 | 0 | 0 | 0 |
 | 🖼️ integrate | 0 | 0 | 0 | 0 | 0 |
 | 🌍 validate | 0 | 0 | 0 | 0 | 0 |
 | 🚀 release | 0 | 0 | 0 | 0 | 0 |
-| **Total** | **0** | **0** | **0** | **0** | **0** |
+| **Total** | **0** | **1** | **0** | **0** | **0** |
 
 ### Authority
 
@@ -290,17 +386,86 @@ None.
 
 | Position | Tasks | Stated in |
 |---|---|---|
-| Assignee | 3: `a1c0` `9f31` `7b2e` | `assignee` in `.tableaux/tasks/ID.yaml` |
-| Authority | 1: `a1c0` | `a1c0` Weather station, `assignee` in `.tableaux/tasks/a1c0.yaml` |
+| Assignee | 3: `a1c0` `9f31` `7b2e` | each task's own file, `assignee` |
+| Authority | 1: `a1c0` | `a1c0` Weather station, `assignee` in `.tableaux/tasks/a1c0.yaml`, line 6 |
 
 | Contributes at | Tasks | Contributor and model from | Reviewer | Reviewer from |
 |---|---|---|---|---|
-| 📝 defined | 2: `9f31` `7b2e` | the plain default |  |  |
+| 📝 defined | 2: `9f31` `7b2e` | the assignee, `assignee` |  | the plain default |
+| 📌 mockup | 1: `9f31` | the assignee, `assignee` | ben@example.org | `4e2b` Sensor node, `junctions.mockup.reviewer` in `.tableaux/tasks/4e2b.yaml`, line 10 |
+| 📌 mockup | 1: `7b2e` | the assignee, `assignee` |  | the plain default |
+| ⚙️ function | 2: `9f31` `7b2e` | the assignee, `assignee` |  | the plain default |
+| ⚡ performance | 2: `9f31` `7b2e` | the assignee, `assignee` |  | the plain default |
+| ⚓ reliability | 2: `9f31` `7b2e` | the assignee, `assignee` |  | the plain default |
+| 📐 design | 2: `9f31` `7b2e` | the assignee, `assignee` |  | the plain default |
+| 🛠️ implementation | 2: `9f31` `7b2e` | the assignee, `assignee` |  | the plain default |
+| 🧩 unit | 2: `9f31` `7b2e` | the assignee, `assignee` |  | the plain default |
+| 🖼️ integrate | 2: `9f31` `7b2e` | the assignee, `assignee` |  | the plain default |
+| 🌍 validate | 1: `9f31` | the assignee, `assignee` | ben@example.org | `9f31` Sensor board, `junctions.validate.reviewer` in `.tableaux/tasks/9f31.yaml`, line 12 |
+| 🌍 validate | 1: `7b2e` | the assignee, `assignee` |  | the plain default |
+| 🚀 release | 2: `9f31` `7b2e` | the assignee, `assignee` |  | the plain default |
 
 ## ben@example.org, provenance
 
+| Position | Tasks | Stated in |
+|---|---|---|
+| Assignee | 2: `4e2b` `c07d` | each task's own file, `assignee` |
+| Authority | 1: `4e2b` | `4e2b` Sensor node, `assignee` in `.tableaux/tasks/4e2b.yaml`, line 6 |
+
+| Contributes at | Tasks | Contributor and model from | Reviewer | Reviewer from |
+|---|---|---|---|---|
+| 📝 defined | 1: `c07d` | the assignee, `assignee` |  | the plain default |
+| 📌 mockup | 1: `c07d` | the assignee, `assignee` | ben@example.org | `4e2b` Sensor node, `junctions.mockup.reviewer` in `.tableaux/tasks/4e2b.yaml`, line 10 |
+| ⚙️ function | 1: `c07d` | the assignee, `assignee` |  | the plain default |
+| ⚡ performance | 1: `c07d` | the assignee, `assignee` |  | the plain default |
+| 📐 design | 1: `c07d` | the assignee, `assignee` |  | the plain default |
+| 🖼️ integrate | 1: `c07d` | the assignee, `assignee` |  | the plain default |
+| 🌍 validate | 1: `c07d` | the assignee, `assignee` |  | the plain default |
+| 🚀 release | 1: `c07d` | the assignee, `assignee` |  | the plain default |
+
+| Reviews at | Tasks | Reviewer from | Contributor and model from |
+|---|---|---|---|
+| 📌 mockup | 2: `9f31` `c07d` | `4e2b` Sensor node, `junctions.mockup.reviewer` in `.tableaux/tasks/4e2b.yaml`, line 10 | the assignee, `assignee` |
+| 🧩 unit | 1: `c07d` | the assignee, `assignee` | `c07d` Node firmware, `junctions.unit.contributor` in `.tableaux/tasks/c07d.yaml`, line 10 |
+| 🌍 validate | 1: `9f31` | `9f31` Sensor board, `junctions.validate.reviewer` in `.tableaux/tasks/9f31.yaml`, line 12 | the assignee, `assignee` |
+
+| Task | Stated in | Pinned at |
+|---|---|---|
+| `c07d` | `c07d` Node firmware, `junctions.implementation.subproject` in `.tableaux/tasks/c07d.yaml`, line 9 | `cf5b169` |
+
 ## dan@example.org, provenance
 
+| Position | Tasks | Stated in |
+|---|---|---|
+| Assignee | 1: `3c5d` | each task's own file, `assignee` |
+
+| Contributes at | Tasks | Contributor and model from | Reviewer | Reviewer from |
+|---|---|---|---|---|
+| 📝 defined | 1: `3c5d` | the assignee, `assignee` |  | the plain default |
+| 📌 mockup | 1: `3c5d` | the assignee, `assignee` |  | the plain default |
+| ⚙️ function | 1: `3c5d` | the assignee, `assignee` |  | the plain default |
+| ⚡ performance | 1: `3c5d` | the assignee, `assignee` |  | the plain default |
+| ⚓ reliability | 1: `3c5d` | the assignee, `assignee` |  | the plain default |
+| 📐 design | 1: `3c5d` | the assignee, `assignee` |  | the plain default |
+| 🛠️ implementation | 1: `3c5d` | the assignee, `assignee` |  | the plain default |
+| 🧩 unit | 1: `3c5d` | the assignee, `assignee` |  | the plain default |
+| 🖼️ integrate | 1: `3c5d` | the assignee, `assignee` |  | the plain default |
+| 🌍 validate | 1: `3c5d` | the assignee, `assignee` |  | the plain default |
+| 🚀 release | 1: `3c5d` | the assignee, `assignee` |  | the plain default |
+
 ## opus@example.org, provenance
+
+| Contributes at | Tasks | Contributor and model from | Reviewer | Reviewer from |
+|---|---|---|---|---|
+| 🧩 unit | 1: `c07d` | `c07d` Node firmware, `junctions.unit.contributor` in `.tableaux/tasks/c07d.yaml`, line 10 | ben@example.org | the assignee, `assignee` |
+
+```
+git show edb30d2baa5ea3c7e3fb8eef8ac6cce6e145221a:.tableaux/tasks/a1c0.yaml
+git show edb30d2baa5ea3c7e3fb8eef8ac6cce6e145221a:.tableaux/tasks/4e2b.yaml
+git show edb30d2baa5ea3c7e3fb8eef8ac6cce6e145221a:.tableaux/tasks/9f31.yaml
+git show edb30d2baa5ea3c7e3fb8eef8ac6cce6e145221a:.tableaux/tasks/c07d.yaml
+git grep -n '^assignee:' edb30d2baa5ea3c7e3fb8eef8ac6cce6e145221a -- .tableaux/tasks
+git ls-tree edb30d2baa5ea3c7e3fb8eef8ac6cce6e145221a firmware
+```
 
 Command: `tabloio assignment --ref edb30d2 --level provenance`
