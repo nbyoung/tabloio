@@ -57,7 +57,12 @@ func (r *Repo) Record(ctx context.Context, rec Recording, o Options) (*Plan, err
 		if errors.As(err, &form) {
 			return nil, Refusals{{Code: "status-form", Task: rec.ID, Text: path + ": " + form.text}}
 		}
-		p.Files = []FileChange{{Path: path, Old: old, New: []byte(text)}}
+		if text != string(old) {
+			p.Files = []FileChange{{Path: path, Old: old, New: []byte(text)}}
+		}
+	}
+	if len(p.Files) == 0 && len(res.pins) == 0 && len(res.reviews) == 0 {
+		return nil, Refusals{{Code: "no-change", Task: rec.ID, Gate: res.gate, Text: "the status stands as recorded; reaffirm it to confirm it"}}
 	}
 
 	named := lowerTitle(t.Title) + " (" + rec.ID + ")"
@@ -237,6 +242,18 @@ func (s *session) resolve(ctx context.Context, project Project, t *Task, rec Rec
 	set("state", old.State, state)
 	set("reason", old.Reason, reason)
 	set("note", old.Note, note)
+	if holdsGate {
+		// tablo gives a status before a recursive junction as the
+		// subproject's snapshot, the gate alone, whatever else the file
+		// holds; the file holds the gate alone, so the edit removes the
+		// other fields wherever they stand, and Record finds whether the
+		// bytes change.
+		for _, key := range []string{"state", "reason", "note"} {
+			if _, ok := res.edits[key]; !ok {
+				res.edits[key] = nil
+			}
+		}
+	}
 	res.handOff = reason == "review" && old.Reason != "review"
 	if len(res.edits) == 0 && len(res.pins) == 0 && len(res.reviews) == 0 {
 		return nil, refuse("no-change", gate, "", "the status stands as recorded; reaffirm it to confirm it")

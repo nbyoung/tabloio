@@ -140,6 +140,19 @@ func TestRecursiveHoldsOnlyGate(t *testing.T) {
 	if got := tr.run("diff", "--numstat", res.Commit+"~1", res.Commit); got != "1\t4\t.tableaux/status/c07d.yaml" {
 		t.Errorf("numstat %q", got)
 	}
+
+	// tablo gives a status before a recursive junction as the gate alone,
+	// whatever the file holds: the record at that gate still drops the
+	// other fields, and a file of the gate alone is no change.
+	tr.write(".tableaux/status/c07d.yaml", "gate: design\nstate: nominal\nnote: Waits\n")
+	tr.run("commit", "-q", "-am", "Hold a state before the recursive junction")
+	tr.src.tasks["c07d"].Status = &Status{Gate: "design"}
+	tr.commit(r, record(Recording{ID: "c07d", Gate: "design"}, Options{}))
+	if got := tr.read(".tableaux/status/c07d.yaml"); got != "gate: design\n" {
+		t.Errorf("the file reads %q", got)
+	}
+	_, err = r.Record(ctx, Recording{ID: "c07d", Gate: "design"}, Options{})
+	wantRefusal(t, err, "no-change")
 }
 
 // TestPinAdvance is T11: with the submodule moved, --pin commits the gitlink
