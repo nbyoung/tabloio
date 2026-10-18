@@ -17,7 +17,7 @@ R9
   File: .tableaux/tasks/c07d.yaml
   Message: the requirement on 9f31 from design is due at implementation and
     unmet: 9f31 stands at function
-  Action: Await 9f31 at 📐 design
+  Action: Await the task the requirement names
   Resolver: ada@example.org
 ────────────────────────────────────────────────────────────────────────────────
   Severity: warning

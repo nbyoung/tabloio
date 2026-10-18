@@ -1,0 +1,864 @@
+{
+  "schema": "tablo/1",
+  "command": "context",
+  "source": {
+    "ref": "corpus/tooling",
+    "dir": ".",
+    "worktree": false,
+    "commit": "50a373b2857a36e4ef1a754605433943d6bfe324",
+    "date": "2026-10-17",
+    "from": null,
+    "trunk": {
+      "name": "main",
+      "resolved": "stated"
+    },
+    "on_trunk": true
+  },
+  "project": {
+    "tableaux": "0.3.2",
+    "root": "437e",
+    "title": "Tableaux tooling",
+    "owner": "nbyoung@nbyoung.com"
+  },
+  "viewer": {
+    "email": "nbyoung@nbyoung.com",
+    "roles": [
+      "owner",
+      "authority",
+      "assignee",
+      "contributor",
+      "reviewer"
+    ]
+  },
+  "params": {
+    "task": "2034",
+    "person": null,
+    "window": 1,
+    "columns": null,
+    "historical": false,
+    "role": null,
+    "level": "glance"
+  },
+  "data": {
+    "legend": {
+      "gates": [
+        {
+          "key": "undefined",
+          "symbol": "❔",
+          "name": "Undefined",
+          "criteria": "No one has started work on the definition"
+        },
+        {
+          "key": "defined",
+          "symbol": "📝",
+          "name": "Defined",
+          "criteria": "Title, description, assignee and references exist"
+        },
+        {
+          "key": "mockup",
+          "symbol": "📌",
+          "name": "Mockup",
+          "criteria": "A non-technical mockup of the outcome exists"
+        },
+        {
+          "key": "function",
+          "symbol": "🔧",
+          "name": "Functional prototype",
+          "criteria": "A technical demonstration of function exists"
+        },
+        {
+          "key": "design",
+          "symbol": "📐",
+          "name": "Design",
+          "criteria": "A model and sufficient tests exist"
+        },
+        {
+          "key": "implementation",
+          "symbol": "🧱",
+          "name": "Implementation",
+          "criteria": "Artifacts suffice for unit, integration and validation tests"
+        },
+        {
+          "key": "unit",
+          "symbol": "📏",
+          "name": "Unit test",
+          "criteria": "All prescribed tests pass"
+        },
+        {
+          "key": "integrate",
+          "symbol": "🔗",
+          "name": "Integration",
+          "criteria": "Assembled with neighbouring components"
+        },
+        {
+          "key": "validate",
+          "symbol": "🌍",
+          "name": "Validation",
+          "criteria": "Passes user and field tests"
+        },
+        {
+          "key": "release",
+          "symbol": "🚀",
+          "name": "Release",
+          "criteria": "All variants documented and approved"
+        }
+      ],
+      "states": [
+        {
+          "key": "undefined",
+          "symbol": "⚪",
+          "severity": 0,
+          "synopsis": "The work has not yet been defined"
+        },
+        {
+          "key": "nominal",
+          "symbol": "🟢",
+          "severity": 1,
+          "synopsis": "The work is proceeding as expected"
+        },
+        {
+          "key": "at_risk",
+          "symbol": "🟡",
+          "severity": 2,
+          "synopsis": "The work is at risk of stalling"
+        },
+        {
+          "key": "stalled",
+          "symbol": "🔴",
+          "severity": 3,
+          "synopsis": "Practically all progress has stalled"
+        },
+        {
+          "key": "complete",
+          "symbol": "✅",
+          "severity": 0,
+          "synopsis": "All deliverables satisfy their requirements"
+        }
+      ],
+      "reasons": [
+        {
+          "key": "overloaded",
+          "symbol": "🪫",
+          "synopsis": "The assigned resource is overloaded",
+          "reserved": false
+        },
+        {
+          "key": "blocked",
+          "symbol": "⛔",
+          "synopsis": "An external resource is unavailable",
+          "reserved": false
+        },
+        {
+          "key": "review",
+          "symbol": "👓",
+          "synopsis": "The work waits for its reviewer",
+          "reserved": true
+        }
+      ],
+      "marks": [
+        {
+          "key": "person",
+          "symbol": "🧑",
+          "meaning": "A person contributes",
+          "junction": "plain"
+        },
+        {
+          "key": "agent",
+          "symbol": "🤖",
+          "meaning": "An agent contributes",
+          "junction": "plain"
+        },
+        {
+          "key": "reviewer",
+          "symbol": "👀",
+          "meaning": "A reviewer accepts",
+          "junction": "plain"
+        },
+        {
+          "key": "subproject",
+          "symbol": "🪆",
+          "meaning": "A subproject does the work",
+          "junction": "recursive"
+        },
+        {
+          "key": "exempt",
+          "symbol": "—",
+          "meaning": "The gate does not apply",
+          "junction": "not_applicable"
+        }
+      ]
+    },
+    "subject": {
+      "id": "2034",
+      "title": "Views"
+    },
+    "columns": [
+      {
+        "gates": [
+          "undefined",
+          "defined",
+          "mockup",
+          "function",
+          "design"
+        ],
+        "folded": true,
+        "count": 27,
+        "by_gate": [
+          0,
+          0,
+          22,
+          1,
+          4
+        ]
+      },
+      {
+        "gates": [
+          "implementation"
+        ],
+        "folded": false,
+        "count": 5,
+        "by_gate": [
+          5
+        ]
+      },
+      {
+        "gates": [
+          "unit"
+        ],
+        "folded": false,
+        "count": 1,
+        "by_gate": [
+          1
+        ]
+      },
+      {
+        "gates": [
+          "integrate"
+        ],
+        "folded": false,
+        "count": 0,
+        "by_gate": [
+          0
+        ]
+      },
+      {
+        "gates": [
+          "validate"
+        ],
+        "folded": false,
+        "count": 0,
+        "by_gate": [
+          0
+        ]
+      },
+      {
+        "gates": [
+          "release"
+        ],
+        "folded": false,
+        "count": 0,
+        "by_gate": [
+          0
+        ]
+      }
+    ],
+    "rows": [
+      {
+        "id": "2034",
+        "title": "Views",
+        "under": "bc63",
+        "depth": 0,
+        "parent": true,
+        "hidden": 0,
+        "label": "",
+        "status": {
+          "kind": "rollup",
+          "gate": "implementation",
+          "state": "nominal",
+          "reason": "",
+          "note": "VIEWS.md defines the ten views on the trunk and agrees with the twenty approved mockups on the gate window; validation checks that tablo and the front ends follow the text",
+          "date": "2026-10-05",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
+          "from": {
+            "kind": "rollup",
+            "task": {
+              "id": "e9c6",
+              "title": "Abstract views"
+            },
+            "url": "",
+            "pin": "",
+            "gate": ""
+          }
+        },
+        "leaf": {
+          "task": {
+            "id": "e9c6",
+            "title": "Abstract views"
+          },
+          "url": ""
+        },
+        "cells": [
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "status",
+            "historical": false,
+            "state": "nominal",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "person"
+            ],
+            "acts": false
+          }
+        ]
+      },
+      {
+        "id": "e9c6",
+        "title": "Abstract views",
+        "under": "2034",
+        "depth": 1,
+        "parent": false,
+        "hidden": 0,
+        "label": "",
+        "status": {
+          "kind": "recorded",
+          "gate": "implementation",
+          "state": "nominal",
+          "reason": "",
+          "note": "VIEWS.md defines the ten views on the trunk and agrees with the twenty approved mockups on the gate window; validation checks that tablo and the front ends follow the text",
+          "date": "2026-10-05",
+          "recorder": "noreply@anthropic.com",
+          "derived": false,
+          "why": "",
+          "uncommitted": false,
+          "from": null
+        },
+        "leaf": null,
+        "cells": [
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "status",
+            "historical": false,
+            "state": "nominal",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "agent",
+              "reviewer"
+            ],
+            "acts": false
+          },
+          {
+            "kind": "marks",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [
+              "person"
+            ],
+            "acts": false
+          }
+        ]
+      },
+      {
+        "id": "bc86",
+        "title": "Markdown views",
+        "under": "2034",
+        "depth": 1,
+        "parent": true,
+        "hidden": 10,
+        "label": "",
+        "status": {
+          "kind": "rollup",
+          "gate": "mockup",
+          "state": "complete",
+          "reason": "",
+          "note": "The owner accepts docs/mockups/gates.md at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
+          "from": {
+            "kind": "rollup",
+            "task": {
+              "id": "99f0",
+              "title": "Gate definition view in Markdown"
+            },
+            "url": "",
+            "pin": "",
+            "gate": ""
+          }
+        },
+        "leaf": {
+          "task": {
+            "id": "99f0",
+            "title": "Gate definition view in Markdown"
+          },
+          "url": ""
+        },
+        "cells": [
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "status",
+            "historical": false,
+            "state": "complete",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          }
+        ]
+      },
+      {
+        "id": "5fe3",
+        "title": "HTML views",
+        "under": "2034",
+        "depth": 1,
+        "parent": true,
+        "hidden": 10,
+        "label": "",
+        "status": {
+          "kind": "rollup",
+          "gate": "mockup",
+          "state": "complete",
+          "reason": "",
+          "note": "The owner accepts docs/mockups/gates.html at the mockup gate, the last gate that applies to this task",
+          "date": "2026-10-05",
+          "recorder": "",
+          "derived": true,
+          "why": "",
+          "uncommitted": false,
+          "from": {
+            "kind": "rollup",
+            "task": {
+              "id": "a6f7",
+              "title": "Gate definition view in Html"
+            },
+            "url": "",
+            "pin": "",
+            "gate": ""
+          }
+        },
+        "leaf": {
+          "task": {
+            "id": "a6f7",
+            "title": "Gate definition view in Html"
+          },
+          "url": ""
+        },
+        "cells": [
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "empty",
+            "historical": true,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "status",
+            "historical": false,
+            "state": "complete",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          },
+          {
+            "kind": "exempt",
+            "historical": false,
+            "state": "",
+            "reason": "",
+            "marks": [],
+            "acts": false
+          }
+        ]
+      }
+    ]
+  },
+  "diagnostics": [
+    {
+      "severity": "warning",
+      "code": "H3",
+      "task": "7166",
+      "gate": "implementation",
+      "commit": "56103af8cbaf561a90f9fa67fea02053372a4214",
+      "message": "Model claude-opus-5-5 is outside the stated model claude-sonnet"
+    },
+    {
+      "severity": "warning",
+      "code": "H3",
+      "task": "e9c6",
+      "gate": "implementation",
+      "commit": "ccb3947e3deb2f476a8c9c886266b2b4da66c6f6",
+      "message": "Model claude-opus-5-5 is outside the stated model claude-sonnet"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/7166.yaml",
+      "task": "7166",
+      "gate": "implementation",
+      "commit": "56103af8cbaf561a90f9fa67fea02053372a4214",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/7861.yaml",
+      "task": "7861",
+      "gate": "validate",
+      "commit": "c6f2655f1bda4469a6171b77cc21e326f0c99f87",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/9f3f.yaml",
+      "task": "9f3f",
+      "gate": "implementation",
+      "commit": "43d68e4f7d2b856c4d581983f34355d5b5f4f3b4",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/ac33.yaml",
+      "task": "ac33",
+      "gate": "implementation",
+      "commit": "6762222ddffef76008daad27ebe26069ac67cc5d",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/c2ad.yaml",
+      "task": "c2ad",
+      "gate": "validate",
+      "commit": "3d8ce0eee1e869c75453abba91cae03dec6587ce",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/e3cb.yaml",
+      "task": "e3cb",
+      "gate": "validate",
+      "commit": "c39ccac764b580ddb67789014c5f7f2c1bae9c6e",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/e9c6.yaml",
+      "task": "e9c6",
+      "gate": "validate",
+      "commit": "ccb3947e3deb2f476a8c9c886266b2b4da66c6f6",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/fcec.yaml",
+      "task": "fcec",
+      "gate": "unit",
+      "commit": "60495c26d886016b40069041386a811b24469312",
+      "message": "the newest event is the contributor's and the status states no review; noreply@anthropic.com may have unit to review"
+    },
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/595e.yaml",
+      "line": 13,
+      "col": 5,
+      "task": "595e",
+      "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    },
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/6103.yaml",
+      "line": 13,
+      "col": 5,
+      "task": "6103",
+      "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    },
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/c6e8.yaml",
+      "line": 13,
+      "col": 5,
+      "task": "c6e8",
+      "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    }
+  ]
+}

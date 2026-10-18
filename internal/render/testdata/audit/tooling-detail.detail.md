@@ -8,7 +8,7 @@ Legend: `tabloio gates`.
 
 | Rule | Severity | Task | Gate | File | Message | Action | Resolver |
 |---|---|---|---|---|---|---|---|
-| R9 | warning | `6103` `c6e8` `595e` |  | `.tableaux/tasks/6103.yaml`, `.tableaux/tasks/c6e8.yaml`, `.tableaux/tasks/595e.yaml` | the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function | Await `77b2` at 🧱 implementation | nbyoung@nbyoung.com |
+| R9 | warning | `6103` `c6e8` `595e` |  | `.tableaux/tasks/6103.yaml`, `.tableaux/tasks/c6e8.yaml`, `.tableaux/tasks/595e.yaml` | the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function | Await the task the requirement names | nbyoung@nbyoung.com |
 | H3 | warning | `e9c6` `7166` | 🧱 implementation |  | Model claude-opus-5-5 is outside the stated model claude-sonnet |  | noreply@anthropic.com |
 |  | warning | `ac33` `9f3f` | 📐 design | `.tableaux/status/ac33.yaml`, `.tableaux/status/9f3f.yaml` | The status dates from 2026-09-30, more than 7 days before 2026-10-17 | Reaffirm: commit `Reaffirmed: <id>` | noreply@anthropic.com |
 |  | warning | `7166` Language clarifications | 📐 design | `.tableaux/status/7166.yaml` | The status dates from 2026-10-07, more than 7 days before 2026-10-17 | Reaffirm: commit `Reaffirmed: 7166` | noreply@anthropic.com |

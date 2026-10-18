@@ -18,7 +18,7 @@ R9
     .tableaux/tasks/595e.yaml
   Message: the requirement on 77b2 from implementation is due at
     implementation and unmet: 77b2 stands at function
-  Action: Await 77b2 at 🧱 implementation
+  Action: Await the task the requirement names
   Resolver: nbyoung@nbyoung.com
 ────────────────────────────────────────────────────────────────────────────────
 H3

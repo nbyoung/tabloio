@@ -7,14 +7,10 @@ Legend: `tabloio gates`.
 | Id | Task | ❔…📌 ×0 | 🔧 | 📐 | 🧱 | 📏 | 🔗 | 🌍…🚀 ×0 |
 |---|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | `437e` | **Tableaux tooling** |  | 🟢 | 🤖👀 | 🤖 | 🤖 | 🤖 |  |
-| `bc63` | &nbsp;&nbsp;**Method** |  |  | 🟢 | 🤖 | 🤖 | 🤖 |  |
-| `c2ad` | &nbsp;&nbsp;&nbsp;&nbsp;Roles · sibling |  |  |  | 🟢 | — | — |  |
+| `bc63` | &nbsp;&nbsp;**Method** (4) |  |  | 🟢 | 🤖 | 🤖 | 🤖 |  |
 | `2034` | &nbsp;&nbsp;&nbsp;&nbsp;**Views** (23) |  |  |  | 🟢 | 🤖 | 🤖 |  |
-| `e3cb` | &nbsp;&nbsp;&nbsp;&nbsp;Schema files · sibling |  |  |  |  | 🟢 | — |  |
-| `fcec` | &nbsp;&nbsp;&nbsp;&nbsp;Conformance corpus · sibling |  |  |  | 🟢 | 🤖 | 🤖 |  |
 | `ac33` | &nbsp;&nbsp;&nbsp;&nbsp;Agent identity |  |  | 🟢 | \[🤖👀\] | — | — |  |
 | `9f3f` | &nbsp;&nbsp;&nbsp;&nbsp;Subproject linkage |  |  | 🟢 | \[🤖👀\] | — | — |  |
-| `7861` | &nbsp;&nbsp;&nbsp;&nbsp;Productivity evidence · sibling |  |  |  | 🟢 | — | — |  |
 | `7166` | &nbsp;&nbsp;&nbsp;&nbsp;Language clarifications |  |  | 🟢 | \[🤖👀\] | — | — |  |
 | `77b2` | &nbsp;&nbsp;tablo: backend library and plumbing |  | 🟢 | 🪆 | 🪆 | 🪆 | 🪆 |  |
 | `6103` | &nbsp;&nbsp;tabloio: command line, output and input |  |  | 🟢 | 🪆 | 🪆 | 🪆 |  |

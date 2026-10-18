@@ -17,21 +17,26 @@ var tableauGoldens = []statusGolden{
 	// T1
 	{"tableau", "tooling-glance", []view.Level{view.Glance}},
 	// T2
-	{"context", "tooling-2034", allLevels},
+	{"context", "tooling-2034", []view.Level{view.Detail, view.Provenance}},
+	{"context", "tooling-2034-glance", []view.Level{view.Glance}},
 	// T3
 	{"tableau", "tooling", []view.Level{view.Detail, view.Provenance}},
 	{"context", "tooling-2034-spine", []view.Level{view.Detail}},
-	{"context", "tooling-nbyoung", allLevels},
+	{"context", "tooling-nbyoung", []view.Level{view.Detail, view.Provenance}},
+	{"context", "tooling-nbyoung-glance", []view.Level{view.Glance}},
 	// T4
 	{"tableau", "tooling-historical", []view.Level{view.Detail}},
 	{"tableau", "tooling-person", []view.Level{view.Detail}},
 	{"tableau", "tooling-window0", []view.Level{view.Detail}},
 	{"tableau", "tooling-reason", []view.Level{view.Detail}},
 	// T5
-	{"tableau", "weather", glanceDetail},
+	{"tableau", "weather", []view.Level{view.Detail}},
+	{"tableau", "weather-glance", []view.Level{view.Glance}},
 	{"tableau", "weather-window0", []view.Level{view.Detail}},
-	{"context", "weather-4e2b", glanceDetail},
-	{"context", "weather-ben", glanceDetail},
+	{"context", "weather-4e2b", []view.Level{view.Detail}},
+	{"context", "weather-4e2b-glance", []view.Level{view.Glance}},
+	{"context", "weather-ben", []view.Level{view.Detail}},
+	{"context", "weather-ben-glance", []view.Level{view.Glance}},
 }
 
 func TestTableauGolden(t *testing.T) { runStatusGoldens(t, tableauGoldens) }

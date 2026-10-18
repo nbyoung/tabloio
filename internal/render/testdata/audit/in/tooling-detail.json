@@ -1,0 +1,562 @@
+{
+  "schema": "tablo/1",
+  "command": "audit",
+  "source": {
+    "ref": "corpus/tooling",
+    "dir": ".",
+    "worktree": false,
+    "commit": "50a373b2857a36e4ef1a754605433943d6bfe324",
+    "date": "2026-10-17",
+    "from": null,
+    "trunk": {
+      "name": "main",
+      "resolved": "stated"
+    },
+    "on_trunk": true
+  },
+  "project": {
+    "tableaux": "0.3.2",
+    "root": "437e",
+    "title": "Tableaux tooling",
+    "owner": "nbyoung@nbyoung.com"
+  },
+  "viewer": {
+    "email": "nbyoung@nbyoung.com",
+    "roles": [
+      "owner",
+      "authority",
+      "assignee",
+      "contributor",
+      "reviewer"
+    ]
+  },
+  "params": {
+    "task": "437e",
+    "person": null,
+    "stale": 7,
+    "now": "2026-10-17",
+    "minimum": "warning",
+    "role": null,
+    "level": "detail"
+  },
+  "data": {
+    "legend": {
+      "gates": [
+        {
+          "key": "undefined",
+          "symbol": "❔",
+          "name": "Undefined",
+          "criteria": "No one has started work on the definition"
+        },
+        {
+          "key": "defined",
+          "symbol": "📝",
+          "name": "Defined",
+          "criteria": "Title, description, assignee and references exist"
+        },
+        {
+          "key": "mockup",
+          "symbol": "📌",
+          "name": "Mockup",
+          "criteria": "A non-technical mockup of the outcome exists"
+        },
+        {
+          "key": "function",
+          "symbol": "🔧",
+          "name": "Functional prototype",
+          "criteria": "A technical demonstration of function exists"
+        },
+        {
+          "key": "design",
+          "symbol": "📐",
+          "name": "Design",
+          "criteria": "A model and sufficient tests exist"
+        },
+        {
+          "key": "implementation",
+          "symbol": "🧱",
+          "name": "Implementation",
+          "criteria": "Artifacts suffice for unit, integration and validation tests"
+        },
+        {
+          "key": "unit",
+          "symbol": "📏",
+          "name": "Unit test",
+          "criteria": "All prescribed tests pass"
+        },
+        {
+          "key": "integrate",
+          "symbol": "🔗",
+          "name": "Integration",
+          "criteria": "Assembled with neighbouring components"
+        },
+        {
+          "key": "validate",
+          "symbol": "🌍",
+          "name": "Validation",
+          "criteria": "Passes user and field tests"
+        },
+        {
+          "key": "release",
+          "symbol": "🚀",
+          "name": "Release",
+          "criteria": "All variants documented and approved"
+        }
+      ],
+      "states": [
+        {
+          "key": "undefined",
+          "symbol": "⚪",
+          "severity": 0,
+          "synopsis": "The work has not yet been defined"
+        },
+        {
+          "key": "nominal",
+          "symbol": "🟢",
+          "severity": 1,
+          "synopsis": "The work is proceeding as expected"
+        },
+        {
+          "key": "at_risk",
+          "symbol": "🟡",
+          "severity": 2,
+          "synopsis": "The work is at risk of stalling"
+        },
+        {
+          "key": "stalled",
+          "symbol": "🔴",
+          "severity": 3,
+          "synopsis": "Practically all progress has stalled"
+        },
+        {
+          "key": "complete",
+          "symbol": "✅",
+          "severity": 0,
+          "synopsis": "All deliverables satisfy their requirements"
+        }
+      ],
+      "reasons": [
+        {
+          "key": "overloaded",
+          "symbol": "🪫",
+          "synopsis": "The assigned resource is overloaded",
+          "reserved": false
+        },
+        {
+          "key": "blocked",
+          "symbol": "⛔",
+          "synopsis": "An external resource is unavailable",
+          "reserved": false
+        },
+        {
+          "key": "review",
+          "symbol": "👓",
+          "synopsis": "The work waits for its reviewer",
+          "reserved": true
+        }
+      ],
+      "marks": [
+        {
+          "key": "person",
+          "symbol": "🧑",
+          "meaning": "A person contributes",
+          "junction": "plain"
+        },
+        {
+          "key": "agent",
+          "symbol": "🤖",
+          "meaning": "An agent contributes",
+          "junction": "plain"
+        },
+        {
+          "key": "reviewer",
+          "symbol": "👀",
+          "meaning": "A reviewer accepts",
+          "junction": "plain"
+        },
+        {
+          "key": "subproject",
+          "symbol": "🪆",
+          "meaning": "A subproject does the work",
+          "junction": "recursive"
+        },
+        {
+          "key": "exempt",
+          "symbol": "—",
+          "meaning": "The gate does not apply",
+          "junction": "not_applicable"
+        }
+      ]
+    },
+    "errors": 0,
+    "warnings": 13,
+    "information": 23,
+    "most": {
+      "email": "noreply@anthropic.com",
+      "count": 16
+    },
+    "findings": [
+      {
+        "key": "R9",
+        "rule": "R9",
+        "severity": "warning",
+        "demoted": false,
+        "kind": "An unmet requirement",
+        "tasks": [
+          {
+            "id": "6103",
+            "title": "tabloio: command line, output and input"
+          },
+          {
+            "id": "c6e8",
+            "title": "tablotui: terminal user interface"
+          },
+          {
+            "id": "595e",
+            "title": "tableaud: local daemon and HTML"
+          }
+        ],
+        "gate": "",
+        "act": "await",
+        "resolver": "nbyoung@nbyoung.com",
+        "files": [
+          ".tableaux/tasks/6103.yaml",
+          ".tableaux/tasks/c6e8.yaml",
+          ".tableaux/tasks/595e.yaml"
+        ],
+        "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+      },
+      {
+        "key": "H3",
+        "rule": "H3",
+        "severity": "warning",
+        "demoted": false,
+        "kind": "A model outside the one stated",
+        "tasks": [
+          {
+            "id": "e9c6",
+            "title": "Abstract views"
+          },
+          {
+            "id": "7166",
+            "title": "Language clarifications"
+          }
+        ],
+        "gate": "implementation",
+        "act": "none",
+        "resolver": "noreply@anthropic.com",
+        "files": [],
+        "message": "Model claude-opus-5-5 is outside the stated model claude-sonnet"
+      },
+      {
+        "key": "stale",
+        "rule": "",
+        "severity": "warning",
+        "demoted": false,
+        "kind": "A stale status",
+        "tasks": [
+          {
+            "id": "ac33",
+            "title": "Agent identity"
+          },
+          {
+            "id": "9f3f",
+            "title": "Subproject linkage"
+          }
+        ],
+        "gate": "design",
+        "act": "reaffirm",
+        "resolver": "noreply@anthropic.com",
+        "files": [
+          ".tableaux/status/ac33.yaml",
+          ".tableaux/status/9f3f.yaml"
+        ],
+        "message": "The status dates from 2026-09-30, more than 7 days before 2026-10-17"
+      },
+      {
+        "key": "stale",
+        "rule": "",
+        "severity": "warning",
+        "demoted": false,
+        "kind": "A stale status",
+        "tasks": [
+          {
+            "id": "7166",
+            "title": "Language clarifications"
+          }
+        ],
+        "gate": "design",
+        "act": "reaffirm",
+        "resolver": "noreply@anthropic.com",
+        "files": [
+          ".tableaux/status/7166.yaml"
+        ],
+        "message": "The status dates from 2026-10-07, more than 7 days before 2026-10-17"
+      },
+      {
+        "key": "stale",
+        "rule": "",
+        "severity": "warning",
+        "demoted": false,
+        "kind": "A stale status",
+        "tasks": [
+          {
+            "id": "c2ad",
+            "title": "Roles"
+          },
+          {
+            "id": "fcec",
+            "title": "Conformance corpus"
+          },
+          {
+            "id": "7861",
+            "title": "Productivity evidence"
+          }
+        ],
+        "gate": "implementation",
+        "act": "reaffirm",
+        "resolver": "noreply@anthropic.com",
+        "files": [
+          ".tableaux/status/c2ad.yaml",
+          ".tableaux/status/fcec.yaml",
+          ".tableaux/status/7861.yaml"
+        ],
+        "message": "The status dates from 2026-09-30, more than 7 days before 2026-10-17"
+      },
+      {
+        "key": "stale",
+        "rule": "",
+        "severity": "warning",
+        "demoted": false,
+        "kind": "A stale status",
+        "tasks": [
+          {
+            "id": "e9c6",
+            "title": "Abstract views"
+          }
+        ],
+        "gate": "implementation",
+        "act": "reaffirm",
+        "resolver": "noreply@anthropic.com",
+        "files": [
+          ".tableaux/status/e9c6.yaml"
+        ],
+        "message": "The status dates from 2026-10-05, more than 7 days before 2026-10-17"
+      },
+      {
+        "key": "stale",
+        "rule": "",
+        "severity": "warning",
+        "demoted": false,
+        "kind": "A stale status",
+        "tasks": [
+          {
+            "id": "e3cb",
+            "title": "Schema files"
+          }
+        ],
+        "gate": "unit",
+        "act": "reaffirm",
+        "resolver": "noreply@anthropic.com",
+        "files": [
+          ".tableaux/status/e3cb.yaml"
+        ],
+        "message": "The status dates from 2026-09-30, more than 7 days before 2026-10-17"
+      }
+    ],
+    "silent": [
+      {
+        "key": "P5",
+        "rule": "P5",
+        "kind": "An undetermined trunk"
+      },
+      {
+        "key": "R12",
+        "rule": "R12",
+        "kind": "A requirement on what a junction reads"
+      },
+      {
+        "key": "R13",
+        "rule": "R13",
+        "kind": "A requirement its commit alone leaves unmet"
+      },
+      {
+        "key": "J8",
+        "rule": "J8",
+        "kind": "A subproject the tool cannot read"
+      },
+      {
+        "key": "J9",
+        "rule": "J9",
+        "kind": "A subproject task that does not exist"
+      },
+      {
+        "key": "J13",
+        "rule": "J13",
+        "kind": "A commit off the subproject's trunk"
+      },
+      {
+        "key": "J14",
+        "rule": "J14",
+        "kind": "A malformed commit"
+      },
+      {
+        "key": "J15",
+        "rule": "J15",
+        "kind": "An absolute URL without a commit"
+      },
+      {
+        "key": "J16",
+        "rule": "J16",
+        "kind": "A commit on a same-repository path"
+      },
+      {
+        "key": "J17",
+        "rule": "J17",
+        "kind": "A commit off the submodule's pin"
+      },
+      {
+        "key": "H1",
+        "rule": "H1",
+        "kind": "A trailer that names nothing"
+      },
+      {
+        "key": "H2",
+        "rule": "H2",
+        "kind": "A review from the wrong hand"
+      },
+      {
+        "key": "H5",
+        "rule": "H5",
+        "kind": "A stale hand-off"
+      },
+      {
+        "key": "H6",
+        "rule": "H6",
+        "kind": "No model trailer"
+      },
+      {
+        "key": "proposed",
+        "rule": "",
+        "kind": "A proposed task"
+      }
+    ]
+  },
+  "diagnostics": [
+    {
+      "severity": "warning",
+      "code": "H3",
+      "task": "7166",
+      "gate": "implementation",
+      "commit": "56103af8cbaf561a90f9fa67fea02053372a4214",
+      "message": "Model claude-opus-5-5 is outside the stated model claude-sonnet"
+    },
+    {
+      "severity": "warning",
+      "code": "H3",
+      "task": "e9c6",
+      "gate": "implementation",
+      "commit": "ccb3947e3deb2f476a8c9c886266b2b4da66c6f6",
+      "message": "Model claude-opus-5-5 is outside the stated model claude-sonnet"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/7166.yaml",
+      "task": "7166",
+      "gate": "implementation",
+      "commit": "56103af8cbaf561a90f9fa67fea02053372a4214",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/7861.yaml",
+      "task": "7861",
+      "gate": "validate",
+      "commit": "c6f2655f1bda4469a6171b77cc21e326f0c99f87",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/9f3f.yaml",
+      "task": "9f3f",
+      "gate": "implementation",
+      "commit": "43d68e4f7d2b856c4d581983f34355d5b5f4f3b4",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/ac33.yaml",
+      "task": "ac33",
+      "gate": "implementation",
+      "commit": "6762222ddffef76008daad27ebe26069ac67cc5d",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have implementation to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/c2ad.yaml",
+      "task": "c2ad",
+      "gate": "validate",
+      "commit": "3d8ce0eee1e869c75453abba91cae03dec6587ce",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/e3cb.yaml",
+      "task": "e3cb",
+      "gate": "validate",
+      "commit": "c39ccac764b580ddb67789014c5f7f2c1bae9c6e",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/e9c6.yaml",
+      "task": "e9c6",
+      "gate": "validate",
+      "commit": "ccb3947e3deb2f476a8c9c886266b2b4da66c6f6",
+      "message": "the newest event is the contributor's and the status states no review; nbyoung@nbyoung.com may have validate to review"
+    },
+    {
+      "severity": "information",
+      "code": "H4",
+      "path": ".tableaux/status/fcec.yaml",
+      "task": "fcec",
+      "gate": "unit",
+      "commit": "60495c26d886016b40069041386a811b24469312",
+      "message": "the newest event is the contributor's and the status states no review; noreply@anthropic.com may have unit to review"
+    },
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/595e.yaml",
+      "line": 13,
+      "col": 5,
+      "task": "595e",
+      "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    },
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/6103.yaml",
+      "line": 13,
+      "col": 5,
+      "task": "6103",
+      "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    },
+    {
+      "severity": "warning",
+      "code": "R9",
+      "path": ".tableaux/tasks/c6e8.yaml",
+      "line": 13,
+      "col": 5,
+      "task": "c6e8",
+      "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    }
+  ]
+}
