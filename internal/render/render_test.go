@@ -261,6 +261,12 @@ func TestRefAndCommit(t *testing.T) {
 			"ref `main`, off the trunk · task", "`tabloio task e9c6 " + person + " --ref main --level glance`", ""},
 		{"a range", func(v *view.Task) { v.Source.From = &view.SourceFrom{Ref: "v1"} }, Options{Level: view.Glance},
 			"ref `v1..main` · task", "`tabloio task e9c6 " + person + " --ref v1..main --level glance`", ""},
+		{"a range at provenance", func(v *view.Task) {
+			v.Source.From = &view.SourceFrom{Ref: "v1", Commit: "0704a09f00000000000000000000000000000000"}
+		}, Options{Level: view.Provenance},
+			"ref `v1..main` at `3cdae52`, 2026-10-05 · task", "`tabloio task e9c6 " + person + " --ref 0704a09..3cdae52 --level provenance`", ""},
+		{"a range of a ref alone at provenance", func(v *view.Task) { v.Source.From = &view.SourceFrom{Ref: "v1"} }, Options{Level: view.Provenance},
+			"ref `v1..main` at `3cdae52`, 2026-10-05 · task", "`tabloio task e9c6 " + person + " --ref v1..3cdae52 --level provenance`", ""},
 	}
 	for _, c := range cases {
 		t.Run(c.name, func(t *testing.T) {

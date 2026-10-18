@@ -49,4 +49,4 @@ Legend: `tabloio gates`.
 git log --format='%as %h %ae' a7932ae..37a08e9 -- .tableaux/tasks .tableaux/status subprojects/tablo subprojects/tabloio subprojects/tablotui subprojects/tableaud
 ```
 
-Command: `tabloio history --ref 37a08e9 --level provenance`
+Command: `tabloio history --ref a7932ae..37a08e9 --level provenance`

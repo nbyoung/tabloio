@@ -47,8 +47,8 @@ func refName(r view.Source) string {
 // gates.md and task.md draw --ref first): --task, --person, --ref, --window
 // or --columns, --historical, --proposed, --stale, --level. The --ref flag
 // is absent when the name is HEAD. At provenance the flag names the commit,
-// so the command reproduces the bytes; below it, the ref as given, so a
-// snapshot does not change with every push. A view with a positional
+// and a range its two commits, so the command reproduces the bytes; below
+// it, the ref as given, so a snapshot does not change with every push. A view with a positional
 // argument never repeats it as --task.
 func command(name, positional string, h *view.Head, o Options) string {
 	parts := []string{"tabloio", name}
@@ -65,6 +65,11 @@ func command(name, positional string, h *view.Head, o Options) string {
 	ref := refName(h.Source)
 	if o.Level >= view.Provenance && h.Source.Commit != "" {
 		ref = short(h.Source.Commit)
+		if f := h.Source.From; f != nil && f.Commit != "" {
+			ref = short(f.Commit) + ".." + ref
+		} else if f != nil && f.Ref != "" {
+			ref = f.Ref + ".." + ref
+		}
 	}
 	if ref != "HEAD" {
 		parts = append(parts, flagRef, ref)

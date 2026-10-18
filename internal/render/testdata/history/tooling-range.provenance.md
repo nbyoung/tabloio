@@ -175,4 +175,4 @@ git log --format='%as %h %ae' 0704a09..main -- .tableaux/tasks .tableaux/status 
 git log --format='%as %h %ae' 0704a09..main -E --grep='^(Authorised|Reaffirmed): [0-9a-f]{4}$' --grep='^Reviewed: [0-9a-f]{4} '
 ```
 
-Command: `tabloio history --ref 3cdae52 --level provenance`
+Command: `tabloio history --ref 0704a09..3cdae52 --level provenance`
