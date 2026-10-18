@@ -210,7 +210,7 @@ func (s *session) resolve(ctx context.Context, project Project, t *Task, rec Rec
 			res.reviews = append(res.reviews, request{"reviewed", t.ID, g})
 			continue
 		}
-		add("unreviewed", g, "S11", fmt.Sprintf("the reviewer %s has not accepted %s; hand the work off with --reason review", reviewer, g))
+		add("unreviewed", g, "S11", fmt.Sprintf("the reviewer %s has not accepted %s; hand the work off with the reason review", reviewer, g))
 	}
 
 	// Step 7: the pins.

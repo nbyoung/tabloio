@@ -263,7 +263,8 @@ func TestReviewsOwed(t *testing.T) {
 	r := tr.repo("Ada", ada)
 	_, err := r.Record(ctx, Recording{ID: "9f31", Gate: "design", State: "nominal"}, Options{})
 	if got := theRefusal(t, err, "unreviewed"); got.Gate != "design" || got.Rule != "S11" ||
-		!strings.Contains(got.Text, ben) || !strings.Contains(got.Text, "--reason review") {
+		!strings.Contains(got.Text, ben) || !strings.HasSuffix(got.Text, "; hand the work off with the reason review") ||
+		strings.Contains(got.Text, "--") {
 		t.Errorf("unreviewed: %+v", got)
 	}
 	tr.src.tasks["9f31"].Reviews = []Review{{Gate: "design", By: ben}}
