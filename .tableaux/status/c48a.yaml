@@ -1,3 +1,3 @@
-gate: unit
+gate: integrate
 state: nominal
-note: T1 to T10 pass under go test ./internal/render/... with no skip and no cached run, and the five checks and go test -race pass on the whole worktree; T8 and T6 read the run fold and the collapse as decisions 1 and 3 of the design amend them, so the golden file of the person detail shows five alike rows where the draft folds them; no prescribed test waits for a later gate; the integrate gate regenerates the fixtures from tablo view
+note: T1 to T10 pass on fixtures drawn with tablo at the pin, and the Read commands give every golden of the authority and assignment views through Run (5ca9 T18); T4 and T9 change the decoded fixture where tablo's data holds no such case; the design names no validate check, so at validate the owner reads the two views of the tooling plan against the mockups
