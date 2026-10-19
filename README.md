@@ -139,6 +139,9 @@ git config tableaux.project sub/dir   # only when .tableaux is not at the root
 
 `git commit --no-verify` bypasses it once. `snapshot/test.sh` tests the
 action's steps and the hook on stubs; CI runs it beside `go test`.
+`snapshot/test.sh --real` installs the released binaries from GitHub instead,
+reruns four of the cases with them on a corpus entry, and times the hook on
+the Tableaux plan; CI does not run it.
 
 ## Build and test
 
