@@ -2,8 +2,8 @@
 
 The JSON files here are tablo's golden data of the `tableau` view, copied
 unchanged from `github.com/nbyoung/tablo` at commit
-`03c5e35eac90d3da49fb63f29a4b3ca35b16c0e1`, the module version
-`v0.0.0-20261017141209-03c5e35eac90` that `go.mod` requires; each file
+`77ec4fa857e294e72d336006a41831d8c04ce113`, the module version
+`v0.1.0` that `go.mod` requires; each file
 there equals its copy here byte for byte. Each holds the `data` of one
 envelope: the view of the corpus entry `weather-station` at `main`.
 

@@ -195,10 +195,9 @@ The dependency follows one policy:
   version. While `tablo` is at `v0`, a minor version may break compatibility,
   so the range is one minor series, `v0.N.x`, and a bump of `N` is a deliberate
   commit that names what changed. From `v1` the range is the major version.
-- **When the line enters `go.mod`.** The line names tablo's tag `v0.1.0`,
-  added with `go get github.com/nbyoung/tablo@v0.1.0`; `go.sum` pins the
-  hash. The Read commands task adds it, since `internal/cli` is the first
-  package here to import `tablo`.
+- **When the line enters `go.mod`.** The Read commands task adds the line,
+  since `internal/cli` is the first package here to import `tablo`; it names
+  the tag `v0.1.0`, and `go.sum` pins the hash.
 - **Day-to-day development.** The family builds against local checkouts through
   a personal `go.work` in the directory above the `tableaux` clone, created
   with `go work init ./tablo ./tabloio ./tablotui ./tableaud` and never
