@@ -171,6 +171,11 @@ func TestWriteUsage(t *testing.T) {
 		if code != ExitInvalid || strings.Count(errs, "\n") != 1 || !strings.Contains(errs, "rev@example.org") {
 			t.Errorf("by the wrong hand: exit %d, stderr %q", code, errs)
 		}
+		code, _, errs = writeRun(false, "", none, "-C", dir, "record", "b2c9", "--gate", "design", "--state", "nominal", "-n")
+		if want := "tabloio record: b2c9 design: the reviewer rev@example.org has not accepted design; " +
+			"hand the work off with --reason review (unreviewed, S11)\n"; code != ExitInvalid || errs != want {
+			t.Errorf("unreviewed: exit %d, stderr %q", code, errs)
+		}
 	})
 	t.Run("TABLOIO_MODEL and --model", func(t *testing.T) {
 		vars := map[string]string{"TABLOIO_MODEL": "claude-fable-5-1", "TABLOIO_CO_AUTHOR": "Claude Fable <noreply@anthropic.com>"}

@@ -85,14 +85,24 @@ func writeFailure(env *Env, c *Command, err error) int {
 	switch {
 	case errors.As(err, &refusals):
 		for _, r := range refusals {
-			_, _ = fmt.Fprintf(env.Stderr, "tabloio %s: %v\n", c.Name, r)
+			_, _ = fmt.Fprintf(env.Stderr, "tabloio %s: %v\n", c.Name, withFlag(r))
 		}
 		return ExitInvalid
 	case errors.As(err, &refusal):
-		_, _ = fmt.Fprintf(env.Stderr, "tabloio %s: %v\n", c.Name, refusal)
+		_, _ = fmt.Fprintf(env.Stderr, "tabloio %s: %v\n", c.Name, withFlag(refusal))
 		return ExitInvalid
 	}
 	return failure(env, c, err)
+}
+
+// withFlag returns the refusal as the command line prints it: the refusal
+// unreviewed names the reason review, and the command line names its flag
+// for that reason (design b618, decision 15 (e)).
+func withFlag(r action.Refusal) action.Refusal {
+	if r.Code == "unreviewed" {
+		r.Text = strings.Replace(r.Text, "with the reason review", "with --reason review", 1)
+	}
+	return r
 }
 
 // writeRequest turns a write command's line into its plan function, or a
