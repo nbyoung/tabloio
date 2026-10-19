@@ -109,7 +109,7 @@ func TestQueueSections(t *testing.T) {
 		"- Contributor: 🤖 **noreply@anthropic.com**, model `claude-opus`, from `bc63`\n",
 		"- Reviewer: 👀 nbyoung@nbyoung.com, from `437e`\n",
 		"- Reviewer: 👀 **noreply@anthropic.com**, the assignee\n",
-		"- References: [The mockup](docs/mockups/gates.md)\n",
+		"- References: [Proposed roles](PLAN.md#roles)\n",
 	} {
 		if !strings.Contains(out, w) {
 			t.Errorf("the queue lacks %q", w)

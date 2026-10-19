@@ -4,7 +4,7 @@
 
 Legend: `tabloio gates`.
 
-36 items: 0 reviews owed, 0 authorisations owed, 8 work ready, 28 reaffirmations, 0 work waiting.
+16 items: 0 reviews owed, 0 authorisations owed, 8 work ready, 8 reaffirmations, 0 work waiting.
 
 | Kind | Task | Gate | Model | Since |
 |---|---|---|---|---|
@@ -22,10 +22,6 @@ Legend: `tabloio gates`.
 | Reaffirmation | `7861` Productivity evidence | 🧱 implementation |  | 2026-09-30, 17 days |
 | Reaffirmation | `fcec` Conformance corpus | 🧱 implementation |  | 2026-09-30, 17 days |
 | Reaffirmation | `9f3f` Subproject linkage | 📐 design |  | 2026-09-30, 17 days |
-| Reaffirmation | `99f0` Gate definition view in Markdown | 📌 mockup |  | 2026-10-05, 12 days |
-| Reaffirmation | `05a9` Task definition view in Markdown | 📌 mockup |  | 2026-10-05, 12 days |
-| Reaffirmation | `a9ce` Authority delegation view in Markdown | 📌 mockup |  | 2026-10-05, 12 days |
-| Reaffirmation | … and 17 more: `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` | 📌 mockup |  | 2026-10-05, 12 days |
 | Reaffirmation | `e9c6` Abstract views | 🧱 implementation |  | 2026-10-05, 12 days |
 | Reaffirmation | `7166` Language clarifications | 📐 design |  | 2026-10-07, 10 days |
 
@@ -120,7 +116,7 @@ Legend: `tabloio gates`.
 - Status: 📐 design 🟢 nominal, 2026-10-07, **noreply@anthropic.com**, `56103af`: The trunk clarification (F19), with the order for a linked repository, and the exemption rule (F7) are on the trunk; F9 remains for design
 - Brief: `tabloio queue --person noreply@anthropic.com --ref corpus/tooling --brief 7166 implementation`
 
-## 4. Reaffirmations: 28
+## 4. Reaffirmations: 8
 
 **`ac33` Agent identity**, 📐 design, 2026-09-30, 17 days
 
@@ -181,32 +177,6 @@ Legend: `tabloio gates`.
 - References: [Findings F3 to F5](PLAN.md#findings)
 - Status: 📐 design 🟢 nominal, 2026-09-30, **noreply@anthropic.com**, `43d68e4`: The subproject linkage rule (F3, F5, F12) is on the trunk at language 0.3.0; tablo and the subprojects follow
 - To reaffirm: `tabloio reaffirm 9f3f`
-
-**`99f0` Gate definition view in Markdown**, 📌 mockup, 2026-10-05, 12 days
-
-- Gate: 📌 mockup, Mockup: A non-technical mockup of the outcome exists
-- References: [The mockup](docs/mockups/gates.md)
-- Requires: `e9c6` Abstract views, design → mockup, The abstract definition of the view: met
-- Status: 📌 mockup ✅ complete, 2026-10-05, **noreply@anthropic.com**, `266cb8b`: The owner accepts docs/mockups/gates.md at the mockup gate, the last gate that applies to this task
-- To reaffirm: `tabloio reaffirm 99f0`
-
-**`05a9` Task definition view in Markdown**, 📌 mockup, 2026-10-05, 12 days
-
-- Gate: 📌 mockup, Mockup: A non-technical mockup of the outcome exists
-- References: [The mockup](docs/mockups/task.md)
-- Requires: `e9c6` Abstract views, design → mockup, The abstract definition of the view: met
-- Status: 📌 mockup ✅ complete, 2026-10-05, **noreply@anthropic.com**, `266cb8b`: The owner accepts docs/mockups/task.md at the mockup gate, the last gate that applies to this task
-- To reaffirm: `tabloio reaffirm 05a9`
-
-**`a9ce` Authority delegation view in Markdown**, 📌 mockup, 2026-10-05, 12 days
-
-- Gate: 📌 mockup, Mockup: A non-technical mockup of the outcome exists
-- References: [The mockup](docs/mockups/authority.md)
-- Requires: `e9c6` Abstract views, design → mockup, The abstract definition of the view: met
-- Status: 📌 mockup ✅ complete, 2026-10-05, **noreply@anthropic.com**, `266cb8b`: The owner accepts docs/mockups/authority.md at the mockup gate, the last gate that applies to this task
-- To reaffirm: `tabloio reaffirm a9ce`
-
-**… and 17 more**, 📌 mockup, 2026-10-05, 12 days: `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4`.
 
 **`e9c6` Abstract views**, 🧱 implementation, 2026-10-05, 12 days
 
