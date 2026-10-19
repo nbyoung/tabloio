@@ -1,3 +1,3 @@
-gate: unit
+gate: integrate
 state: nominal
-note: T1 to T13 of snapshot/test.sh pass with no skip, T3 and T4 under gojq 0.12.17 as jq since this host lacks jq, and T8 through a pre-receive hook that refuses the push (decision 9); actionlint passes on the consumer example and the action; T14 waits on releases of tablo and tabloio, and the trunk-only and protected-trunk checks wait on GitHub at validate
+note: T14 passes through snapshot/test.sh --real with the releases tabloio v0.1.1 and tablo v0.1.0, T3, T5, T6 and T11 on a copy of version-trunk-empty and the hook in a median of 59 ms on the Tableaux plan, and T1 to T13 pass as CI runs them; the validate gate needs the trunk-only condition, the permissions, a protected trunk with a bypass credential and loop avoidance seen on GitHub, which waits on a workflow of this repository that calls the action at a tag

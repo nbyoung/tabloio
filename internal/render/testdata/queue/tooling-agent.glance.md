@@ -4,7 +4,7 @@
 
 Legend: `tabloio gates`.
 
-36 items: 0 reviews owed, 0 authorisations owed, 8 work ready, 28 reaffirmations, 0 work waiting.
+16 items: 0 reviews owed, 0 authorisations owed, 8 work ready, 8 reaffirmations, 0 work waiting.
 
 | Kind | Task | Gate | Model | Since |
 |---|---|---|---|---|
@@ -22,10 +22,6 @@ Legend: `tabloio gates`.
 | Reaffirmation | `7861` Productivity evidence | 🧱 implementation |  | 2026-09-30, 17 days |
 | Reaffirmation | `fcec` Conformance corpus | 🧱 implementation |  | 2026-09-30, 17 days |
 | Reaffirmation | `9f3f` Subproject linkage | 📐 design |  | 2026-09-30, 17 days |
-| Reaffirmation | `99f0` Gate definition view in Markdown | 📌 mockup |  | 2026-10-05, 12 days |
-| Reaffirmation | `05a9` Task definition view in Markdown | 📌 mockup |  | 2026-10-05, 12 days |
-| Reaffirmation | `a9ce` Authority delegation view in Markdown | 📌 mockup |  | 2026-10-05, 12 days |
-| Reaffirmation | … and 17 more: `bb7c` `c74a` `efff` `ab8e` `c545` `d615` `b14e` `a6f7` `7dff` `b1b7` `ea51` `7783` `5471` `32e7` `69eb` `3194` `a8b4` | 📌 mockup |  | 2026-10-05, 12 days |
 | Reaffirmation | `e9c6` Abstract views | 🧱 implementation |  | 2026-10-05, 12 days |
 | Reaffirmation | `7166` Language clarifications | 📐 design |  | 2026-10-07, 10 days |
 

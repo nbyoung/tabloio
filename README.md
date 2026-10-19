@@ -139,6 +139,9 @@ git config tableaux.project sub/dir   # only when .tableaux is not at the root
 
 `git commit --no-verify` bypasses it once. `snapshot/test.sh` tests the
 action's steps and the hook on stubs; CI runs it beside `go test`.
+`snapshot/test.sh --real` installs the released binaries from GitHub instead,
+reruns four of the cases with them on a corpus entry, and times the hook on
+the Tableaux plan; CI does not run it.
 
 ## Build and test
 
@@ -192,12 +195,9 @@ The dependency follows one policy:
   version. While `tablo` is at `v0`, a minor version may break compatibility,
   so the range is one minor series, `v0.N.x`, and a bump of `N` is a deliberate
   commit that names what changed. From `v1` the range is the major version.
-- **When the line enters `go.mod`.** `tablo` has no tag yet, so the line
-  names a pseudo-version of tablo's `main`, added with
-  `go get github.com/nbyoung/tablo@<commit>`; `go.sum` pins the hash. The
-  line moves to `v0.N.M`, with `go get github.com/nbyoung/tablo@v0.N.M`,
-  when tablo tags its first release. The Read commands task adds it, since
-  `internal/cli` is the first package here to import `tablo`.
+- **When the line enters `go.mod`.** The Read commands task adds the line,
+  since `internal/cli` is the first package here to import `tablo`; it names
+  the tag `v0.1.0`, and `go.sum` pins the hash.
 - **Day-to-day development.** The family builds against local checkouts through
   a personal `go.work` in the directory above the `tableaux` clone, created
   with `go work init ./tablo ./tabloio ./tablotui ./tableaud` and never
