@@ -252,9 +252,11 @@
           "gate": "",
           "stated": "",
           "trailer": "",
-          "reading": "exempt"
+          "reading": "exempt",
+          "co_author": ""
         },
-        "committer": ""
+        "committer": "",
+        "co_author": ""
       }
     ]
   },

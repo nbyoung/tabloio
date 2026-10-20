@@ -27,7 +27,7 @@ type Finding struct {
 	Kind     string    `json:"kind"`     // the rule in a few words: worded text (R17)
 	Tasks    []TaskRef `json:"tasks"`
 	Gate     string    `json:"gate"`
-	Act      string    `json:"act"` // one of the ten acts; none where nothing resolves it
+	Act      string    `json:"act"` // one of the twelve acts; none where nothing resolves it
 	Resolver string    `json:"resolver"`
 
 	Files   []string `json:"files"`   // detail from here

@@ -253,8 +253,15 @@ func TestHistoryWords(t *testing.T) {
 			t.Errorf("effect %q does not read %q:\n%s", key, words, out)
 		}
 	}
-	if out := render(view.Line{Events: []view.Event{statusEvent("2026-09-01", "")}}); strings.Contains(out, "Effect:") || strings.Contains(out, "Model:") {
-		t.Errorf("a line with no effect and no model prints them:\n%s", out)
+	if out := render(view.Line{Events: []view.Event{statusEvent("2026-09-01", "")}}); strings.Contains(out, "Effect:") || strings.Contains(out, "Model:") || strings.Contains(out, "Co-author:") {
+		t.Errorf("a line with no effect, no model and no co-author prints them:\n%s", out)
+	}
+	// The agent a person's commit co-authors (cdb0 decision 3) follows the
+	// model and stands before the committer.
+	l := view.Line{Events: []view.Event{statusEvent("2026-09-01", "")}, Check: &view.ModelCheck{Reading: "missing", Stated: "m", Gate: "defined"},
+		CoAuthor: "bot@example.org", Committer: "c@example.org"}
+	if out := render(l); !strings.Contains(out, "\n  - Model: no trailer; the 📝 defined junction states `m`\n  - Co-author: bot@example.org\n  - Committer: c@example.org\n") {
+		t.Errorf("the co-author:\n%s", out)
 	}
 	readings := []struct {
 		name string

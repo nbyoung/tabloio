@@ -405,6 +405,9 @@ func (p *page) historyItem(v *view.History, l view.Line, sub []view.Line) doc.It
 	if m := p.historyModel(l); len(m) > 0 {
 		fact("Model:", m)
 	}
+	if l.CoAuthor != "" {
+		fact("Co-author:", p.person(l.CoAuthor))
+	}
 	if l.Committer != "" {
 		fact("Committer:", p.person(l.Committer))
 	}

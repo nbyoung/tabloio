@@ -246,6 +246,10 @@ func (p *page) auditAction(f view.Finding) []doc.Inline {
 		return one(txt("Move the pin or the "), code("commit"))
 	case "checkout":
 		return one(txt("Check out the submodule"))
+	case "state_commit":
+		return one(txt("State the "), code("commit"), txt(" the requirement lacks"))
+	case "raise_language":
+		return one(txt("Raise the subproject's language"))
 	case "await":
 		for _, x := range f.Facts {
 			if r := x.Requirement; r != nil {
@@ -332,7 +336,8 @@ func (p *page) auditFacts(f view.Finding) []doc.Block {
 }
 
 // modelLine words a model check on one line: the commit and the gate, the
-// model the junction states, the commit's Model: trailer, and the reading.
+// model the junction states, the commit's Model: trailer, the reading, and
+// the agent the commit names in Co-Authored-By: where it names one.
 func (p *page) modelLine(m view.ModelCheck) []doc.Inline {
 	out := spans(commit(m.Commit), one(txt(" at ")), p.gate(m.Gate))
 	if m.Stated != "" {
@@ -341,7 +346,7 @@ func (p *page) modelLine(m view.ModelCheck) []doc.Inline {
 	if m.Trailer != "" {
 		out = append(out, txt(", the trailer "), code("Model: "+m.Trailer))
 	}
-	return append(out, txt(": "+reading(m.Reading)))
+	return spans(append(out, txt(": "+reading(m.Reading))), p.coAuthor(m.CoAuthor))
 }
 
 // auditCommits is the table of the commits a finding involves, oldest first;

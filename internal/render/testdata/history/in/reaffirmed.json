@@ -238,7 +238,8 @@
         "effect": "",
         "model": "claude-fable-5-1",
         "check": null,
-        "committer": ""
+        "committer": "",
+        "co_author": ""
       }
     ]
   },

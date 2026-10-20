@@ -160,12 +160,30 @@ func TestAuditWords(t *testing.T) {
 		{"revise", one, "Revise the file"},
 		{"move_pin", one, "Move the pin or the commit"},
 		{"checkout", one, "Check out the submodule"},
+		{"state_commit", one, "State the commit the requirement lacks"},
+		{"raise_language", one, "Raise the subproject's language"},
 		{"await", one, "Await the task the requirement names"},
 		{"none", one, ""},
 	} {
 		got := plainInline(p.auditAction(view.Finding{Act: c.act, Tasks: c.tasks, Gate: "implementation"}), map[string]bool{})
 		if got != c.want {
 			t.Errorf("%s: %q, want %q", c.act, got, c.want)
+		}
+	}
+
+	// A model check names the agent a person's commit co-authors (cdb0
+	// decision 3), and one with none reads as before.
+	for _, c := range []struct {
+		m    view.ModelCheck
+		want string
+	}{
+		{view.ModelCheck{Commit: "abcdef1234", Gate: "implementation", Stated: "m", Reading: "missing", CoAuthor: "bot@example.org"},
+			"abcdef1 at 🧱 implementation, the junction states m: No trailer; co-author bot@example.org"},
+		{view.ModelCheck{Commit: "abcdef1234", Gate: "implementation", Trailer: "m", Reading: "agrees"},
+			"abcdef1 at 🧱 implementation, the trailer Model: m: Agrees"},
+	} {
+		if got := plainInline(p.modelLine(c.m), map[string]bool{}); got != c.want {
+			t.Errorf("the model line: %q, want %q", got, c.want)
 		}
 	}
 }
