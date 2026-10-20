@@ -676,6 +676,15 @@
     },
     {
       "severity": "warning",
+      "code": "J19",
+      "path": ".tableaux/tasks/595e.yaml",
+      "line": 16,
+      "col": 40,
+      "task": "595e",
+      "message": "the project at subprojects/tableaud states tableaux 0.3.1, before this project's 0.3.2"
+    },
+    {
+      "severity": "warning",
       "code": "R9",
       "path": ".tableaux/tasks/6103.yaml",
       "line": 13,
@@ -685,12 +694,39 @@
     },
     {
       "severity": "warning",
+      "code": "J19",
+      "path": ".tableaux/tasks/6103.yaml",
+      "line": 16,
+      "col": 40,
+      "task": "6103",
+      "message": "the project at subprojects/tabloio states tableaux 0.3.1, before this project's 0.3.2"
+    },
+    {
+      "severity": "warning",
+      "code": "J19",
+      "path": ".tableaux/tasks/77b2.yaml",
+      "line": 17,
+      "col": 40,
+      "task": "77b2",
+      "message": "the project at subprojects/tablo states tableaux 0.3.1, before this project's 0.3.2"
+    },
+    {
+      "severity": "warning",
       "code": "R9",
       "path": ".tableaux/tasks/c6e8.yaml",
       "line": 13,
       "col": 5,
       "task": "c6e8",
       "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    },
+    {
+      "severity": "warning",
+      "code": "J19",
+      "path": ".tableaux/tasks/c6e8.yaml",
+      "line": 17,
+      "col": 40,
+      "task": "c6e8",
+      "message": "the project at subprojects/tablotui states tableaux 0.3.1, before this project's 0.3.2"
     }
   ]
 }

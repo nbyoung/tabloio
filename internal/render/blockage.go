@@ -274,7 +274,10 @@ func (p *page) junctionFields(j view.Junction) []doc.Inline {
 	if who := p.person(j.Reviewer); len(who) > 0 {
 		r := spans(one(txt("reviewer ")), who)
 		if j.ByDefault {
-			r = append(r, txt(", the assignee"))
+			// The line names no assignee and no supplier, so it says the
+			// default supplies the reviewer, the assignee or the nearest
+			// person (cdb0 decision 2).
+			r = append(r, txt(", "+reviewerDefaults[""]))
 		}
 		fields = append(fields, r)
 	}

@@ -4,11 +4,15 @@
 
 Legend: `tabloio gates`.
 
-**0 errors, 13 warnings, 23 items of information**: 36 findings in 7 rows.
+**0 errors, 17 warnings, 23 items of information**: 40 findings in 11 rows.
 
 | Rule | Severity | Task | Gate | File | Message | Action | Resolver |
 |---|---|---|---|---|---|---|---|
 | R9 | warning | `6103` `c6e8` `595e` |  | `.tableaux/tasks/6103.yaml`, `.tableaux/tasks/c6e8.yaml`, `.tableaux/tasks/595e.yaml` | the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function | Await `77b2` at 🧱 implementation | nbyoung@nbyoung.com |
+| J19 | warning | `77b2` tablo: backend library and plumbing |  | `.tableaux/tasks/77b2.yaml` | the project at subprojects/tablo states tableaux 0.3.1, before this project's 0.3.2 | Raise the subproject's language | nbyoung@nbyoung.com |
+| J19 | warning | `6103` tabloio: command line, output and input |  | `.tableaux/tasks/6103.yaml` | the project at subprojects/tabloio states tableaux 0.3.1, before this project's 0.3.2 | Raise the subproject's language | nbyoung@nbyoung.com |
+| J19 | warning | `c6e8` tablotui: terminal user interface |  | `.tableaux/tasks/c6e8.yaml` | the project at subprojects/tablotui states tableaux 0.3.1, before this project's 0.3.2 | Raise the subproject's language | nbyoung@nbyoung.com |
+| J19 | warning | `595e` tableaud: local daemon and HTML |  | `.tableaux/tasks/595e.yaml` | the project at subprojects/tableaud states tableaux 0.3.1, before this project's 0.3.2 | Raise the subproject's language | nbyoung@nbyoung.com |
 | H3 | warning | `e9c6` `7166` | 🧱 implementation |  | Model claude-opus-5-5 is outside the stated model claude-sonnet |  | noreply@anthropic.com |
 |  | warning | `ac33` `9f3f` | 📐 design | `.tableaux/status/ac33.yaml`, `.tableaux/status/9f3f.yaml` | The status dates from 2026-09-30, more than 7 days before 2026-10-17 | Reaffirm: commit `Reaffirmed: <id>` | noreply@anthropic.com |
 |  | warning | `7166` Language clarifications | 📐 design | `.tableaux/status/7166.yaml` | The status dates from 2026-10-07, more than 7 days before 2026-10-17 | Reaffirm: commit `Reaffirmed: 7166` | noreply@anthropic.com |
@@ -16,7 +20,7 @@ Legend: `tabloio gates`.
 |  | warning | `e9c6` Abstract views | 🧱 implementation | `.tableaux/status/e9c6.yaml` | The status dates from 2026-10-05, more than 7 days before 2026-10-17 | Reaffirm: commit `Reaffirmed: e9c6` | noreply@anthropic.com |
 |  | warning | `e3cb` Schema files | 📏 unit | `.tableaux/status/e3cb.yaml` | The status dates from 2026-09-30, more than 7 days before 2026-10-17 | Reaffirm: commit `Reaffirmed: e3cb` | noreply@anthropic.com |
 
-**Most to resolve:** noreply@anthropic.com, 16 of 36.
+**Most to resolve:** noreply@anthropic.com, 16 of 40.
 
 ## R9, warning: `6103` `c6e8` `595e`
 
@@ -31,13 +35,49 @@ Legend: `tabloio gates`.
 git log -1 --format='%as %H %ae' -- .tableaux/tasks/6103.yaml
 ```
 
+## J19, warning: `77b2`
+
+**Rule.** "A validator warns of a project that a recursive junction or a task's `subproject` field names whose `version.yaml`, read at the commit the linkage fixes, states a version before the parent's own, patch included" [README.md, Version](https://github.com/nbyoung/tableaux/blob/main/README.md#version)
+
+```
+# shows the finding
+git log -1 --format='%as %H %ae' -- .tableaux/tasks/77b2.yaml
+```
+
+## J19, warning: `6103`
+
+**Rule.** "A validator warns of a project that a recursive junction or a task's `subproject` field names whose `version.yaml`, read at the commit the linkage fixes, states a version before the parent's own, patch included" [README.md, Version](https://github.com/nbyoung/tableaux/blob/main/README.md#version)
+
+```
+# shows the finding
+git log -1 --format='%as %H %ae' -- .tableaux/tasks/6103.yaml
+```
+
+## J19, warning: `c6e8`
+
+**Rule.** "A validator warns of a project that a recursive junction or a task's `subproject` field names whose `version.yaml`, read at the commit the linkage fixes, states a version before the parent's own, patch included" [README.md, Version](https://github.com/nbyoung/tableaux/blob/main/README.md#version)
+
+```
+# shows the finding
+git log -1 --format='%as %H %ae' -- .tableaux/tasks/c6e8.yaml
+```
+
+## J19, warning: `595e`
+
+**Rule.** "A validator warns of a project that a recursive junction or a task's `subproject` field names whose `version.yaml`, read at the commit the linkage fixes, states a version before the parent's own, patch included" [README.md, Version](https://github.com/nbyoung/tableaux/blob/main/README.md#version)
+
+```
+# shows the finding
+git log -1 --format='%as %H %ae' -- .tableaux/tasks/595e.yaml
+```
+
 ## H3, warning: `e9c6` `7166` at 🧱 implementation
 
 **Rule.** "the audit reports a commit at the junction whose trailer names a model outside the one stated" [README.md, Junctions](https://github.com/nbyoung/tableaux/blob/main/README.md#junctions)
 
-**The junction.** `e9c6` at 🧱 implementation: contributor noreply@anthropic.com, model `claude-sonnet`, reviewer noreply@anthropic.com, the assignee, from `437e`.
+**The junction.** `e9c6` at 🧱 implementation: contributor noreply@anthropic.com, model `claude-sonnet`, reviewer noreply@anthropic.com, by default, from `437e`.
 
-**The junction.** `7166` at 🧱 implementation: contributor noreply@anthropic.com, model `claude-sonnet`, reviewer nbyoung@nbyoung.com, the assignee, from `437e`.
+**The junction.** `7166` at 🧱 implementation: contributor noreply@anthropic.com, model `claude-sonnet`, reviewer nbyoung@nbyoung.com, by default, from `437e`.
 
 **The model check.** `e9c6`: `ccb3947` at 🧱 implementation, the junction states `claude-sonnet`, the trailer `Model: claude-opus-5-5`: Differs.
 

@@ -214,7 +214,7 @@ func TestT6WaysOfTheCommit(t *testing.T) {
 	defined := render(t, variant(base, func(d *Data) { d.Gate.Key = "defined" }))
 	has(t, defined, trailers, "    gate: defined\n", "\n    tabloio record e9c6 --gate defined --state nominal \\\n")
 	hasFlat(t, defined, "Authorisation stands as the review of defined", "carries no Reviewed: trailer")
-	lacks(t, defined, "\n    Reviewed:", "hand the work off", "You are the reviewer", "A person contributes")
+	lacks(t, defined, "\n    Reviewed:", "hand the work off", "You are the reviewer", "The junction states no model")
 
 	handoff := render(t, variant(base, func(d *Data) { d.Junction.Reviewer.Value = "nbyoung@nbyoung.com" }))
 	has(t, handoff, trailers,
@@ -232,16 +232,17 @@ func TestT6WaysOfTheCommit(t *testing.T) {
 		"\n    tabloio record e9c6 --gate implementation --state nominal \\\n")
 	hasFlat(t, self, "tabloio record composes those of the commit that records the status from --model and --co-author, and adds the first")
 	hasFlat(t, self, "You are the reviewer of this gate as well as its contributor")
-	lacks(t, self, "Authorisation stands", "hand the work off", "A person contributes")
+	lacks(t, self, "Authorisation stands", "hand the work off", "The junction states no model")
 
 	none := render(t, variant(base, func(d *Data) {
 		d.Junction.Model = Field{}
 		d.Junction.Reviewer = Field{}
 	}))
-	has(t, none, "A person contributes here, so the commit carries no trailer.", "  Reviewer     none\n",
+	hasFlat(t, none, "The junction states no model: an agent records the model it runs in a Model: trailer, and a person's commit carries none.")
+	has(t, none, "  Reviewer     none\n",
 		"\n    tabloio record e9c6 --gate implementation --state nominal \\\n      --note \"<one line that says what the gate now holds>\" --yes\n")
 	hasFlat(t, none, "No one reviews this gate, so the commit that records the status passes it.")
-	lacks(t, none, "Reviewed:", "Model:", "Co-Authored-By:", "--model", "--co-author", "hand the work off", "You are the reviewer")
+	lacks(t, none, "Reviewed:", "\n    Model:", "Co-Authored-By:", "--model", "--co-author", "hand the work off", "You are the reviewer")
 }
 
 func TestT7CompleteAndRecursive(t *testing.T) {
@@ -275,8 +276,8 @@ func TestT8Person(t *testing.T) {
 		d.Junction.Model = Field{}
 		d.Junction.Reviewer = Field{}
 	}))
-	lacks(t, person, "  Model ", "The model is the plan's statement", "export ", "Model:", "git log", "Co-Authored-By")
-	has(t, person, "A person contributes here, so the commit carries no trailer.")
+	lacks(t, person, "  Model ", "The model is the plan's statement", "export ", "\n    Model:", "git log", "Co-Authored-By")
+	hasFlat(t, person, "The junction states no model: an agent records the model it runs in a Model: trailer, and a person's commit carries none.")
 
 	// A person who reviews their own gate carries the Reviewed: trailer alone.
 	self := render(t, variant(base, func(d *Data) {
@@ -415,6 +416,33 @@ func TestT11SourceLabels(t *testing.T) {
 	has(t, render(t, base), "\n  Junction references: none\n")
 }
 
+// TestLanguage04 covers the words language 0.4.0 adds (cdb0 decision 2,
+// e4c7 A3 as cdb0 amends it), on tablo's briefs of two corpus entries. In
+// review-nearest-person the agent bot works at b2c9's release, whose
+// junction states no model, and olive, the assignee of the root e4a1,
+// reviews as the nearest person. In junction-review-waived the root's
+// entry waives the review of bot's design at b2c9, at W1.
+func TestLanguage04(t *testing.T) {
+	if got := sourceLabel(Source{Kind: "nearest", ID: "e4a1", Title: "Base"}, "b2c9"); got != "(the nearest person, the assignee of Base, e4a1)" {
+		t.Errorf("the nearest person's label: %q", got)
+	}
+	nearest := render(t, load(t, "nearest-b2c9-release"))
+	sameText(t, nearest, golden(t, "nearest-b2c9-release.txt"))
+	has(t, nearest, "\n  Reviewer     olive@example.org   (the nearest person, the assignee of Base, e4a1)\n")
+	hasFlat(t, nearest, "The junction states no model: an agent records the model it runs in a Model: trailer, and a person's commit carries none.")
+	lacks(t, nearest, "  Model ", "\n    Model:", "--model", "export ")
+
+	waived := render(t, load(t, "waived-b2c9-design"))
+	sameText(t, waived, golden(t, "waived-b2c9-design.txt"))
+	has(t, waived, "\n  Reviewer     none              (Base, e4a1)\n")
+	hasFlat(t, waived, "No one reviews this gate, so the commit that records the status passes it.")
+	lacks(t, waived, "Reviewed:")
+
+	// A reviewer the plain default leaves empty names no source.
+	none := render(t, variant(load(t, "waived-b2c9-design"), func(d *Data) { d.Junction.Reviewer.Source = Source{Kind: "default"} }))
+	has(t, none, "\n  Reviewer     none\n")
+}
+
 func TestT12RefForms(t *testing.T) {
 	base := load(t, "e4c7-design")
 	const hash = "4593882"
@@ -510,7 +538,7 @@ func TestStatusLeavesOutEmptyFields(t *testing.T) {
 func outputs(t *testing.T) map[string]string {
 	t.Helper()
 	out := map[string]string{}
-	for _, n := range []string{"e4c7-design", "e9c6-implementation", "c74a-mockup"} {
+	for _, n := range []string{"e4c7-design", "e9c6-implementation", "c74a-mockup", "nearest-b2c9-release", "waived-b2c9-design"} {
 		d := load(t, n)
 		out[n] = render(t, d)
 		out[n+"/defined"] = render(t, variant(d, func(d *Data) { d.Gate.Key = "defined" }))

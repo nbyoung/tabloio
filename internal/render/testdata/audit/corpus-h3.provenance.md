@@ -14,7 +14,7 @@ Legend: `tabloio gates`.
 
 **Rule.** "the audit reports a commit at the junction whose trailer names a model outside the one stated" [README.md, Junctions](https://github.com/nbyoung/tableaux/blob/main/README.md#junctions)
 
-**The junction.** `b2c9` at 📐 design: contributor bot@example.org, model `claude-fable`, reviewer pat@example.org, the assignee, from `b2c9`.
+**The junction.** `b2c9` at 📐 design: contributor bot@example.org, model `claude-fable`, reviewer pat@example.org, by default, from `b2c9`.
 
 **The model check.** `b2c9`: `b16817c` at 📐 design, the junction states `claude-fable`, the trailer `Model: claude-sonnet-5`: Differs.
 

@@ -61,6 +61,8 @@ func sourceLabel(s Source, taskID string) string {
 		return fmt.Sprintf("(%s, %s)", s.Title, s.ID)
 	case "assignee":
 		return "(the assignee; the junction states none)"
+	case "nearest":
+		return fmt.Sprintf("(the nearest person, the assignee of %s, %s)", s.Title, s.ID)
 	case "default":
 		return "(the assignee, by default)"
 	}

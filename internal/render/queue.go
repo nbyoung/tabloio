@@ -357,7 +357,11 @@ func (p *page) queueJunction(it view.QueueItem, j *view.Junction, add func(doc.I
 		}
 		out = append(out, p.person(j.Reviewer)...)
 		if j.ByDefault {
-			out = append(out, txt(", the assignee"))
+			// The reviewer's supplier is the assignee, or the ancestor at
+			// whose assignee the nearest person stands (cdb0 decision 2).
+			src := queueSource(it, "reviewer")
+			_, word := statedBy[src]
+			out = append(out, txt(", "+reviewerDefaults[defaultReviewer(word || src == "")]))
 		} else {
 			out = append(out, markFrom(queueSource(it, "reviewer"))...)
 		}

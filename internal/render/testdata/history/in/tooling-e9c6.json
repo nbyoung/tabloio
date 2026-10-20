@@ -306,6 +306,7 @@
         "model": "",
         "check": null,
         "committer": "",
+        "co_author": "noreply@anthropic.com",
         "commit": {
           "hash": "6b6c99a2ca35f684674ad886a33916979137f227",
           "subject": "Plan the Tableaux tooling",
@@ -530,9 +531,11 @@
           "gate": "defined",
           "stated": "claude-fable-5-1",
           "trailer": "",
-          "reading": "exempt"
+          "reading": "exempt",
+          "co_author": ""
         },
         "committer": "nbyoung@nbyoung.com",
+        "co_author": "",
         "commit": {
           "hash": "1a17bfcca843d4436e2eb4c75b5cfa98ec05d658",
           "subject": "Record the defined gate for the views and mockups",
@@ -677,6 +680,7 @@
         "model": "",
         "check": null,
         "committer": "nbyoung@nbyoung.com",
+        "co_author": "",
         "commit": {
           "hash": "5958858ff25a624aea18f26471f95b92616fc7e6",
           "subject": "Accept the defined gate of the views and mockups",
@@ -765,9 +769,11 @@
           "gate": "design",
           "stated": "claude-fable",
           "trailer": "claude-fable-5-1",
-          "reading": "agrees"
+          "reading": "agrees",
+          "co_author": ""
         },
         "committer": "",
+        "co_author": "",
         "commit": {
           "hash": "0fed913a401606e7d6d2bbee72385f2c56204231",
           "subject": "Mark the abstract views design as awaiting review",
@@ -841,9 +847,11 @@
           "gate": "design",
           "stated": "claude-fable",
           "trailer": "claude-fable-5-1",
-          "reading": "agrees"
+          "reading": "agrees",
+          "co_author": ""
         },
         "committer": "",
+        "co_author": "",
         "commit": {
           "hash": "26defc75c452b21dcd9c86d4a2bfa71b685e52a3",
           "subject": "Mark the revised abstract views design as awaiting acceptance",
@@ -909,6 +917,7 @@
         "model": "claude-opus-5-5",
         "check": null,
         "committer": "",
+        "co_author": "noreply@anthropic.com",
         "commit": {
           "hash": "0704a0912297b3de0218b821384cf1b9956a44bb",
           "subject": "Accept the abstract views design",
@@ -992,9 +1001,11 @@
           "gate": "design",
           "stated": "claude-fable",
           "trailer": "claude-fable-5-1",
-          "reading": "agrees"
+          "reading": "agrees",
+          "co_author": ""
         },
         "committer": "",
+        "co_author": "",
         "commit": {
           "hash": "879b447a920aad55e698906812350ea7d3785b4c",
           "subject": "Advance the abstract views task to its design gate",
@@ -1078,9 +1089,11 @@
           "gate": "implementation",
           "stated": "claude-sonnet",
           "trailer": "claude-opus-5-5",
-          "reading": "differs"
+          "reading": "differs",
+          "co_author": ""
         },
         "committer": "",
+        "co_author": "",
         "commit": {
           "hash": "ccb3947e3deb2f476a8c9c886266b2b4da66c6f6",
           "subject": "Record the abstract views task at its implementation gate",
@@ -1118,6 +1131,10 @@
       },
       {
         "text": "git log --format='%H %as %ae %s' -E --grep='^(Authorised|Reaffirmed): (e9c6)$' --grep='^Reviewed: (e9c6) ' 50a373b2857a36e4ef1a754605433943d6bfe324",
+        "comment": ""
+      },
+      {
+        "text": "git log --format='%H %as %ae %s' --first-parent --merges main -- .tableaux/tasks/e9c6.yaml",
         "comment": ""
       }
     ]
@@ -1222,6 +1239,15 @@
     },
     {
       "severity": "warning",
+      "code": "J19",
+      "path": ".tableaux/tasks/595e.yaml",
+      "line": 16,
+      "col": 40,
+      "task": "595e",
+      "message": "the project at subprojects/tableaud states tableaux 0.3.1, before this project's 0.3.2"
+    },
+    {
+      "severity": "warning",
       "code": "R9",
       "path": ".tableaux/tasks/6103.yaml",
       "line": 13,
@@ -1231,12 +1257,39 @@
     },
     {
       "severity": "warning",
+      "code": "J19",
+      "path": ".tableaux/tasks/6103.yaml",
+      "line": 16,
+      "col": 40,
+      "task": "6103",
+      "message": "the project at subprojects/tabloio states tableaux 0.3.1, before this project's 0.3.2"
+    },
+    {
+      "severity": "warning",
+      "code": "J19",
+      "path": ".tableaux/tasks/77b2.yaml",
+      "line": 17,
+      "col": 40,
+      "task": "77b2",
+      "message": "the project at subprojects/tablo states tableaux 0.3.1, before this project's 0.3.2"
+    },
+    {
+      "severity": "warning",
       "code": "R9",
       "path": ".tableaux/tasks/c6e8.yaml",
       "line": 13,
       "col": 5,
       "task": "c6e8",
       "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    },
+    {
+      "severity": "warning",
+      "code": "J19",
+      "path": ".tableaux/tasks/c6e8.yaml",
+      "line": 17,
+      "col": 40,
+      "task": "c6e8",
+      "message": "the project at subprojects/tablotui states tableaux 0.3.1, before this project's 0.3.2"
     }
   ]
 }

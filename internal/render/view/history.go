@@ -12,7 +12,7 @@ type History struct {
 	Kinds    []KindCount `json:"kinds"`    // task, authorised, status, reaffirmed, reviewed, pin
 	Days     []Day       `json:"days"`     // one per author date of those lines
 	Lines    []Line      `json:"lines"`    // oldest first; a subproject's lines from detail on
-	Commands []Command   `json:"commands"` // provenance: the git log commands that give the list
+	Commands []Command   `json:"commands"` // provenance: the git log commands that give the list: two, and a third where the trunk is determined
 }
 
 // Day counts one day's events of the project's own lines.
@@ -39,6 +39,7 @@ type Line struct {
 	Model        string      `json:"model"`         // the commit's first Model: trailer
 	Check        *ModelCheck `json:"check"`         // the model check of the line's status or reaffirmed event
 	Committer    string      `json:"committer"`     // only where it differs from the author
+	CoAuthor     string      `json:"co_author"`     // the first agent a Co-Authored-By: trailer names on a person's commit; else ""
 
 	Commit *Commit `json:"commit"` // provenance
 }

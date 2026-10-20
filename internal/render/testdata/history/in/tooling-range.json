@@ -333,9 +333,11 @@
           "gate": "design",
           "stated": "claude-fable",
           "trailer": "claude-fable-5-1",
-          "reading": "agrees"
+          "reading": "agrees",
+          "co_author": ""
         },
         "committer": "",
+        "co_author": "",
         "commit": {
           "hash": "879b447a920aad55e698906812350ea7d3785b4c",
           "subject": "Advance the abstract views task to its design gate",
@@ -427,9 +429,11 @@
           "gate": "function",
           "stated": "claude-sonnet",
           "trailer": "claude-sonnet-5-5",
-          "reading": "agrees"
+          "reading": "agrees",
+          "co_author": ""
         },
         "committer": "",
+        "co_author": "",
         "commit": {
           "hash": "f3b354977675bfee44ed62ead6a991769b1f7992",
           "subject": "Record the status renderers prototype at function",
@@ -522,9 +526,11 @@
           "gate": "function",
           "stated": "claude-sonnet",
           "trailer": "claude-sonnet-5-5",
-          "reading": "agrees"
+          "reading": "agrees",
+          "co_author": ""
         },
         "committer": "",
+        "co_author": "",
         "commit": {
           "hash": "7e3ea9aaa493f8ba29f1cce0e437de56a868f4fa",
           "subject": "Record the function gate for c48a",
@@ -617,9 +623,11 @@
           "gate": "function",
           "stated": "claude-sonnet",
           "trailer": "claude-sonnet-5-5",
-          "reading": "agrees"
+          "reading": "agrees",
+          "co_author": ""
         },
         "committer": "",
+        "co_author": "",
         "commit": {
           "hash": "3ee2131abfb073e0cf17aaed3b754102574cf2e1",
           "subject": "Record the function gate for 9167",
@@ -712,9 +720,11 @@
           "gate": "function",
           "stated": "claude-sonnet",
           "trailer": "claude-sonnet-5-5",
-          "reading": "agrees"
+          "reading": "agrees",
+          "co_author": ""
         },
         "committer": "",
+        "co_author": "",
         "commit": {
           "hash": "00a8dec59fc02ac0bf5ff657a40f011c2152caee",
           "subject": "Record the function gate for e0f7",
@@ -807,9 +817,11 @@
           "gate": "function",
           "stated": "claude-sonnet",
           "trailer": "claude-sonnet-5-5",
-          "reading": "agrees"
+          "reading": "agrees",
+          "co_author": ""
         },
         "committer": "",
+        "co_author": "",
         "commit": {
           "hash": "c5e669564b7f79233c0187a5373feffe37a61b83",
           "subject": "Record the function gate for the write commands",
@@ -902,9 +914,11 @@
           "gate": "function",
           "stated": "claude-sonnet",
           "trailer": "claude-sonnet-5-5",
-          "reading": "agrees"
+          "reading": "agrees",
+          "co_author": ""
         },
         "committer": "",
+        "co_author": "",
         "commit": {
           "hash": "90e66fc4f1f975f48c089027cf5099046e250240",
           "subject": "Record the function gate for e3ed",
@@ -997,9 +1011,11 @@
           "gate": "function",
           "stated": "claude-sonnet",
           "trailer": "claude-sonnet-5-5",
-          "reading": "agrees"
+          "reading": "agrees",
+          "co_author": ""
         },
         "committer": "",
+        "co_author": "",
         "commit": {
           "hash": "baab0e56e65e136dfdf012fc8654149342b85d2c",
           "subject": "Record the agent briefs at their functional prototype",
@@ -1092,9 +1108,11 @@
           "gate": "function",
           "stated": "claude-sonnet",
           "trailer": "claude-sonnet-5-5",
-          "reading": "agrees"
+          "reading": "agrees",
+          "co_author": ""
         },
         "committer": "",
+        "co_author": "",
         "commit": {
           "hash": "92200e035a6af4750f45d92a716c3bf9ed0976e0",
           "subject": "Record the read commands at function",
@@ -1173,9 +1191,11 @@
           "gate": "design",
           "stated": "claude-opus",
           "trailer": "claude-opus-5-5",
-          "reading": "agrees"
+          "reading": "agrees",
+          "co_author": ""
         },
         "committer": "",
+        "co_author": "",
         "commit": {
           "hash": "c2ba78eb2e1ee68435eb363bcfaab587e4544158",
           "subject": "Record the snapshot workflow design awaiting review",
@@ -1275,6 +1295,7 @@
         "model": "claude-opus-5-5",
         "check": null,
         "committer": "",
+        "co_author": "noreply@anthropic.com",
         "commit": {
           "hash": "55e32e32d65e9cc04da707b215f4b9009a4806e6",
           "subject": "Advance tabloio to its function prototypes",
@@ -1374,6 +1395,7 @@
         "model": "claude-opus-5-5",
         "check": null,
         "committer": "",
+        "co_author": "noreply@anthropic.com",
         "commit": {
           "hash": "fb8c0b2b527789760956b0a238c5f07b97c7f277",
           "subject": "Advance the subprojects to the eyeglasses review symbol",
@@ -1485,6 +1507,7 @@
         "model": "claude-opus-5-5",
         "check": null,
         "committer": "",
+        "co_author": "noreply@anthropic.com",
         "commit": {
           "hash": "fb8c0b2b527789760956b0a238c5f07b97c7f277",
           "subject": "Advance the subprojects to the eyeglasses review symbol",
@@ -1596,6 +1619,7 @@
         "model": "claude-opus-5-5",
         "check": null,
         "committer": "",
+        "co_author": "noreply@anthropic.com",
         "commit": {
           "hash": "fb8c0b2b527789760956b0a238c5f07b97c7f277",
           "subject": "Advance the subprojects to the eyeglasses review symbol",
@@ -1707,6 +1731,7 @@
         "model": "claude-opus-5-5",
         "check": null,
         "committer": "",
+        "co_author": "noreply@anthropic.com",
         "commit": {
           "hash": "fb8c0b2b527789760956b0a238c5f07b97c7f277",
           "subject": "Advance the subprojects to the eyeglasses review symbol",
@@ -1818,6 +1843,7 @@
         "model": "claude-opus-5-5",
         "check": null,
         "committer": "",
+        "co_author": "noreply@anthropic.com",
         "commit": {
           "hash": "552d38fd8adf40e41b39f65d5904e6fc6a88b265",
           "subject": "Advance the subprojects to the wrench, brick, ruler and link gate symbols",
@@ -1929,6 +1955,7 @@
         "model": "claude-opus-5-5",
         "check": null,
         "committer": "",
+        "co_author": "noreply@anthropic.com",
         "commit": {
           "hash": "552d38fd8adf40e41b39f65d5904e6fc6a88b265",
           "subject": "Advance the subprojects to the wrench, brick, ruler and link gate symbols",
@@ -2040,6 +2067,7 @@
         "model": "claude-opus-5-5",
         "check": null,
         "committer": "",
+        "co_author": "noreply@anthropic.com",
         "commit": {
           "hash": "552d38fd8adf40e41b39f65d5904e6fc6a88b265",
           "subject": "Advance the subprojects to the wrench, brick, ruler and link gate symbols",
@@ -2151,6 +2179,7 @@
         "model": "claude-opus-5-5",
         "check": null,
         "committer": "",
+        "co_author": "noreply@anthropic.com",
         "commit": {
           "hash": "552d38fd8adf40e41b39f65d5904e6fc6a88b265",
           "subject": "Advance the subprojects to the wrench, brick, ruler and link gate symbols",
@@ -2232,6 +2261,7 @@
         "model": "claude-opus-5-5",
         "check": null,
         "committer": "",
+        "co_author": "noreply@anthropic.com",
         "commit": {
           "hash": "2b58033993a06140eebd075d21a04b90ef28a7d1",
           "subject": "Accept the snapshot workflow design",
@@ -2311,9 +2341,11 @@
           "gate": "design",
           "stated": "claude-opus",
           "trailer": "claude-opus-5-5",
-          "reading": "agrees"
+          "reading": "agrees",
+          "co_author": ""
         },
         "committer": "",
+        "co_author": "",
         "commit": {
           "hash": "2b911fd5b13a3528973453963a44f9443ddc0c5b",
           "subject": "Advance the snapshot workflow to its design gate",
@@ -2413,6 +2445,7 @@
         "model": "claude-opus-5-5",
         "check": null,
         "committer": "",
+        "co_author": "noreply@anthropic.com",
         "commit": {
           "hash": "1c0f04daa18af8b4140e8eab2948466981b65010",
           "subject": "Advance tabloio to its snapshot workflow design",
@@ -2504,9 +2537,11 @@
           "gate": "function",
           "stated": "claude-sonnet",
           "trailer": "claude-sonnet-5-5",
-          "reading": "agrees"
+          "reading": "agrees",
+          "co_author": ""
         },
         "committer": "",
+        "co_author": "",
         "commit": {
           "hash": "ff14d4e0aa30b8e27d99cfdfab26e11c924a527d",
           "subject": "Record task 518e at the function gate",
@@ -2599,9 +2634,11 @@
           "gate": "function",
           "stated": "claude-sonnet",
           "trailer": "claude-sonnet-5-5",
-          "reading": "agrees"
+          "reading": "agrees",
+          "co_author": ""
         },
         "committer": "",
+        "co_author": "",
         "commit": {
           "hash": "358c6e304052bc2d4697fb3085040751a12b7827",
           "subject": "Record f394 at function",
@@ -2694,9 +2731,11 @@
           "gate": "function",
           "stated": "claude-sonnet",
           "trailer": "claude-sonnet-5-5",
-          "reading": "agrees"
+          "reading": "agrees",
+          "co_author": ""
         },
         "committer": "",
+        "co_author": "",
         "commit": {
           "hash": "66c04126c5d1e654ca8dbb2067fbbf97e68f9c8e",
           "subject": "Record the function demonstration of the tableau grid",
@@ -2789,9 +2828,11 @@
           "gate": "",
           "stated": "",
           "trailer": "claude-sonnet-5-5",
-          "reading": "unstated"
+          "reading": "unstated",
+          "co_author": ""
         },
         "committer": "",
+        "co_author": "",
         "commit": {
           "hash": "8fe12c3a63ddc7fb374063deaf4027c312f6e186",
           "subject": "Record the function gate for live refresh",
@@ -2884,9 +2925,11 @@
           "gate": "function",
           "stated": "claude-sonnet",
           "trailer": "claude-sonnet-5-5",
-          "reading": "agrees"
+          "reading": "agrees",
+          "co_author": ""
         },
         "committer": "",
+        "co_author": "",
         "commit": {
           "hash": "97991e8da6593e6ee8ad3466b6ecfb6d29f8f45d",
           "subject": "Record the detail panes at function",
@@ -2987,6 +3030,7 @@
         "model": "claude-opus-5-5",
         "check": null,
         "committer": "",
+        "co_author": "noreply@anthropic.com",
         "commit": {
           "hash": "fa4551ecdc8d106722ac41b25a9213abc453fab0",
           "subject": "Advance tablotui to its five function prototypes",
@@ -3078,9 +3122,11 @@
           "gate": "function",
           "stated": "claude-sonnet",
           "trailer": "claude-sonnet-5-5",
-          "reading": "agrees"
+          "reading": "agrees",
+          "co_author": ""
         },
         "committer": "",
+        "co_author": "",
         "commit": {
           "hash": "1a3f5a2bcce6c320b1cd25f179e743e2956a41c6",
           "subject": "Record task 9a9c at the function gate",
@@ -3173,9 +3219,11 @@
           "gate": "function",
           "stated": "claude-sonnet",
           "trailer": "claude-sonnet-5-5",
-          "reading": "agrees"
+          "reading": "agrees",
+          "co_author": ""
         },
         "committer": "",
+        "co_author": "",
         "commit": {
           "hash": "4320f45fa44bf2b7e248cdef95bfde789412a50b",
           "subject": "Record task 44bf at the function gate",
@@ -3246,6 +3294,7 @@
         "model": "claude-sonnet-5-5",
         "check": null,
         "committer": "",
+        "co_author": "",
         "commit": {
           "hash": "af1ec7782bbf4d633f0c82ebc98197538e142b19",
           "subject": "Add the legend and task template prototype 438a",
@@ -3333,9 +3382,11 @@
           "gate": "function",
           "stated": "claude-sonnet",
           "trailer": "claude-sonnet-5-5",
-          "reading": "agrees"
+          "reading": "agrees",
+          "co_author": ""
         },
         "committer": "",
+        "co_author": "",
         "commit": {
           "hash": "11ab533590594cf66b55a3029ac265bbe98d3e94",
           "subject": "Record task 438a at the function gate",
@@ -3406,6 +3457,7 @@
         "model": "claude-sonnet-5-5",
         "check": null,
         "committer": "",
+        "co_author": "",
         "commit": {
           "hash": "7c98883a0b5d02ffa0d667672ecf39177957d6b3",
           "subject": "Add the structural templates prototype e2b6",
@@ -3493,9 +3545,11 @@
           "gate": "function",
           "stated": "claude-sonnet",
           "trailer": "claude-sonnet-5-5",
-          "reading": "agrees"
+          "reading": "agrees",
+          "co_author": ""
         },
         "committer": "",
+        "co_author": "",
         "commit": {
           "hash": "2f2304c6d075b2859d5cdc7b03b0d3561bb0f5a2",
           "subject": "Record task e2b6 at the function gate",
@@ -3566,6 +3620,7 @@
         "model": "claude-sonnet-5-5",
         "check": null,
         "committer": "",
+        "co_author": "",
         "commit": {
           "hash": "7d3306034435e3d642d85e54a575bef931116845",
           "subject": "Add the server prototype 49ce",
@@ -3653,9 +3708,11 @@
           "gate": "function",
           "stated": "claude-sonnet",
           "trailer": "claude-sonnet-5-5",
-          "reading": "agrees"
+          "reading": "agrees",
+          "co_author": ""
         },
         "committer": "",
+        "co_author": "",
         "commit": {
           "hash": "967df1fb2f8918bfd7713eee996c1ae235390f22",
           "subject": "Record task 49ce at the function gate",
@@ -3726,6 +3783,7 @@
         "model": "claude-sonnet-5-5",
         "check": null,
         "committer": "",
+        "co_author": "",
         "commit": {
           "hash": "d3fa0f8c9fcfe749a302f55f0b09653a3290c4d4",
           "subject": "Add the progressive disclosure prototype db74",
@@ -3813,9 +3871,11 @@
           "gate": "function",
           "stated": "claude-sonnet",
           "trailer": "claude-sonnet-5-5",
-          "reading": "agrees"
+          "reading": "agrees",
+          "co_author": ""
         },
         "committer": "",
+        "co_author": "",
         "commit": {
           "hash": "0a2a0b6954a30a018480f817fd8f87469a53cf2d",
           "subject": "Record task db74 at the function gate",
@@ -3886,6 +3946,7 @@
         "model": "claude-sonnet-5-5",
         "check": null,
         "committer": "",
+        "co_author": "",
         "commit": {
           "hash": "9e0855198970fd7362c3b5196ceb1b8c44a0cc4b",
           "subject": "Add the accessibility and theming prototype 5a2f",
@@ -3973,9 +4034,11 @@
           "gate": "function",
           "stated": "claude-sonnet",
           "trailer": "claude-sonnet-5-5",
-          "reading": "agrees"
+          "reading": "agrees",
+          "co_author": ""
         },
         "committer": "",
+        "co_author": "",
         "commit": {
           "hash": "0c38023efa2ec8082969462a461366fbc4774bd7",
           "subject": "Record task 5a2f at the function gate",
@@ -4068,9 +4131,11 @@
           "gate": "function",
           "stated": "claude-sonnet",
           "trailer": "claude-sonnet-5-5",
-          "reading": "agrees"
+          "reading": "agrees",
+          "co_author": ""
         },
         "committer": "",
+        "co_author": "",
         "commit": {
           "hash": "218d8f35bb43a6c118d0ea4e892e5905ec526910",
           "subject": "Record task 6160 at the function gate",
@@ -4171,6 +4236,7 @@
         "model": "claude-opus-5-5",
         "check": null,
         "committer": "",
+        "co_author": "noreply@anthropic.com",
         "commit": {
           "hash": "3cdae527d47d37fdff55bc302c76c017cf91c606",
           "subject": "Advance tableaud to the eight function prototypes",
@@ -4207,6 +4273,10 @@
       },
       {
         "text": "git log --format='%H %as %ae %s' -E --grep='^(Authorised|Reaffirmed): ([0-9a-f]{4})$' --grep='^Reviewed: ([0-9a-f]{4}) ' 0704a0912297b3de0218b821384cf1b9956a44bb..3cdae527d47d37fdff55bc302c76c017cf91c606",
+        "comment": ""
+      },
+      {
+        "text": "git log --format='%H %as %ae %s' --first-parent --merges 0704a0912297b3de0218b821384cf1b9956a44bb..main -- .tableaux/tasks",
         "comment": ""
       }
     ]
@@ -4473,6 +4543,42 @@
       "gate": "unit",
       "commit": "60495c26d886016b40069041386a811b24469312",
       "message": "the newest event is the contributor's and the status states no review; noreply@anthropic.com may have unit to review"
+    },
+    {
+      "severity": "warning",
+      "code": "J19",
+      "path": ".tableaux/tasks/595e.yaml",
+      "line": 16,
+      "col": 40,
+      "task": "595e",
+      "message": "the project at subprojects/tableaud states tableaux 0.2.0, before this project's 0.3.1"
+    },
+    {
+      "severity": "warning",
+      "code": "J19",
+      "path": ".tableaux/tasks/6103.yaml",
+      "line": 16,
+      "col": 40,
+      "task": "6103",
+      "message": "the project at subprojects/tabloio states tableaux 0.2.0, before this project's 0.3.1"
+    },
+    {
+      "severity": "warning",
+      "code": "J19",
+      "path": ".tableaux/tasks/77b2.yaml",
+      "line": 17,
+      "col": 40,
+      "task": "77b2",
+      "message": "the project at subprojects/tablo states tableaux 0.3.0, before this project's 0.3.1"
+    },
+    {
+      "severity": "warning",
+      "code": "J19",
+      "path": ".tableaux/tasks/c6e8.yaml",
+      "line": 17,
+      "col": 40,
+      "task": "c6e8",
+      "message": "the project at subprojects/tablotui states tableaux 0.2.0, before this project's 0.3.1"
     }
   ]
 }

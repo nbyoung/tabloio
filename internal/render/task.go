@@ -264,7 +264,7 @@ func (p *page) junctions(v *view.Task) []doc.Block {
 		}
 		reviewer := p.person(j.Reviewer)
 		if j.ByDefault {
-			reviewer = spans(one(txt("the assignee")), prefixed(", ", reviewer))
+			reviewer = spans(one(txt(reviewerDefaults[defaultReviewer(j.Reviewer == v.Assignee)])), prefixed(", ", reviewer))
 		}
 		var model []doc.Inline
 		if j.Model != "" {
@@ -659,13 +659,42 @@ func (p *page) models(v *view.Task) []doc.Block {
 		if m.Trailer != "" {
 			trailer = one(code(m.Trailer))
 		}
-		rows = append(rows, []doc.Cell{cell(commit(m.Commit)), cell(p.gate(m.Gate)), cell(stated), cell(trailer), cellText(reading(m.Reading))})
+		read := spans(one(txt(reading(m.Reading))), p.coAuthor(m.CoAuthor))
+		rows = append(rows, []doc.Cell{cell(commit(m.Commit)), cell(p.gate(m.Gate)), cell(stated), cell(trailer), cell(read)})
 	}
 	return append(b, doc.Table{
 		Head: []doc.Cell{cellText("Commit"), cellText("Junction"), cellText("The junction states"),
 			cell(one(code("Model:"), txt(" trailer"))), cellText("Reading")},
 		Rows: rows,
 	})
+}
+
+// coAuthor words the agent that a person's commit names in a
+// Co-Authored-By: trailer, after a model check's reading (cdb0 decision 3):
+// `; co-author <email>`, or nothing where the commit names none.
+func (p *page) coAuthor(email string) []doc.Inline {
+	return prefixed("; co-author ", p.person(email))
+}
+
+// reviewerDefaults words the default that supplies a junction's reviewer
+// where no entry states one (cdb0 decision 2): the task's assignee, or, at
+// an agent's junction from 0.4.0, the nearest person among the authorities.
+// Where a view cannot tell the two apart, the reviewer stands by default.
+var reviewerDefaults = map[string]string{
+	"assignee": "the assignee",
+	"nearest":  "the nearest person",
+	"":         "by default",
+}
+
+// defaultReviewer returns the key of reviewerDefaults for a default
+// reviewer: assignee where the reviewer is the task's assignee, else
+// nearest, since the nearest person is an authority that is no assignee of
+// the task.
+func defaultReviewer(isAssignee bool) string {
+	if isAssignee {
+		return "assignee"
+	}
+	return "nearest"
 }
 
 func reading(r string) string {

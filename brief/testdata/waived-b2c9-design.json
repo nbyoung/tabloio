@@ -1,0 +1,103 @@
+{
+  "schema": "tablo/1",
+  "command": "queue",
+  "source": {
+    "ref": "daded294017e13801b08e1f499abe7b53d682f48",
+    "commit": "daded294017e13801b08e1f499abe7b53d682f48",
+    "date": "2026-09-01"
+  },
+  "project": null,
+  "params": {
+    "task": null,
+    "person": "bot@example.org",
+    "brief": {
+      "task": "b2c9",
+      "gate": "design"
+    },
+    "level": "provenance"
+  },
+  "data": {
+    "items": [],
+    "brief": {
+      "kind": "ready",
+      "causes": [],
+      "task": {
+        "id": "b2c9",
+        "title": "Leaf",
+        "description": "A leaf task with a status.",
+        "references": [
+          {
+            "text": "",
+            "url": "README.md"
+          }
+        ],
+        "path": [
+          {
+            "id": "e4a1",
+            "title": "Base"
+          }
+        ]
+      },
+      "gate": {
+        "key": "design",
+        "symbol": "📐",
+        "name": "Design",
+        "criteria": "A model and sufficient tests exist",
+        "follows": "plain"
+      },
+      "junction": {
+        "contributor": {
+          "value": "bot@example.org",
+          "source": {
+            "kind": "task",
+            "id": "e4a1",
+            "title": "Base"
+          }
+        },
+        "model": {
+          "value": "claude-fable",
+          "source": {
+            "kind": "task",
+            "id": "e4a1",
+            "title": "Base"
+          }
+        },
+        "reviewer": {
+          "value": "",
+          "source": {
+            "kind": "task",
+            "id": "e4a1",
+            "title": "Base"
+          }
+        },
+        "references": []
+      },
+      "supplier": {
+        "id": "e4a1",
+        "title": "Base",
+        "description": "The smallest valid project; every invalid entry starts from it."
+      },
+      "requires": [],
+      "dependents": [],
+      "parent": {
+        "id": "e4a1",
+        "title": "Base",
+        "dependents": []
+      },
+      "status": {
+        "path": ".tableaux/status/b2c9.yaml",
+        "gate": "defined",
+        "gate_symbol": "📝",
+        "state": "nominal",
+        "state_symbol": "🟢",
+        "reason": "",
+        "reason_symbol": "",
+        "note": "",
+        "date": "2026-09-01",
+        "recorder": "olive@example.org",
+        "commit": "daded294017e13801b08e1f499abe7b53d682f48"
+      }
+    }
+  },
+  "diagnostics": []
+}
