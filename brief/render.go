@@ -395,7 +395,7 @@ func partCommit(d Data) []string {
 		l = append(l, "", fmt.Sprintf("    Reviewed: %s %s", tid, g.Key))
 	default:
 		// A person, or an agent whose junction states no model.
-		l = append(l, wrap("The junction states no model, so the commit carries no trailer.", 2)...)
+		l = append(l, wrap("The junction states no model: an agent records the model it runs in a Model: trailer, and a person's commit carries none.", 2)...)
 	}
 	l = append(l, "")
 

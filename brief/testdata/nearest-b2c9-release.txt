@@ -48,7 +48,8 @@ on main at a36fba2, 2026-09-05: work ready.
   Change no file under .tableaux by hand: the command refuses a status the
   method cannot read, and names the rule.
 
-  The junction states no model, so the commit carries no trailer.
+  The junction states no model: an agent records the model it runs in a
+  Model: trailer, and a person's commit carries none.
 
   The reviewer merges the branch and accepts the gate with tabloio review
   b2c9 release, whose commit carries the trailer Reviewed: b2c9 release

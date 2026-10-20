@@ -238,10 +238,11 @@ func TestT6WaysOfTheCommit(t *testing.T) {
 		d.Junction.Model = Field{}
 		d.Junction.Reviewer = Field{}
 	}))
-	has(t, none, "The junction states no model, so the commit carries no trailer.", "  Reviewer     none\n",
+	hasFlat(t, none, "The junction states no model: an agent records the model it runs in a Model: trailer, and a person's commit carries none.")
+	has(t, none, "  Reviewer     none\n",
 		"\n    tabloio record e9c6 --gate implementation --state nominal \\\n      --note \"<one line that says what the gate now holds>\" --yes\n")
 	hasFlat(t, none, "No one reviews this gate, so the commit that records the status passes it.")
-	lacks(t, none, "Reviewed:", "Model:", "Co-Authored-By:", "--model", "--co-author", "hand the work off", "You are the reviewer")
+	lacks(t, none, "Reviewed:", "\n    Model:", "Co-Authored-By:", "--model", "--co-author", "hand the work off", "You are the reviewer")
 }
 
 func TestT7CompleteAndRecursive(t *testing.T) {
@@ -275,8 +276,8 @@ func TestT8Person(t *testing.T) {
 		d.Junction.Model = Field{}
 		d.Junction.Reviewer = Field{}
 	}))
-	lacks(t, person, "  Model ", "The model is the plan's statement", "export ", "Model:", "git log", "Co-Authored-By")
-	has(t, person, "The junction states no model, so the commit carries no trailer.")
+	lacks(t, person, "  Model ", "The model is the plan's statement", "export ", "\n    Model:", "git log", "Co-Authored-By")
+	hasFlat(t, person, "The junction states no model: an agent records the model it runs in a Model: trailer, and a person's commit carries none.")
 
 	// A person who reviews their own gate carries the Reviewed: trailer alone.
 	self := render(t, variant(base, func(d *Data) {
@@ -428,8 +429,8 @@ func TestLanguage04(t *testing.T) {
 	nearest := render(t, load(t, "nearest-b2c9-release"))
 	sameText(t, nearest, golden(t, "nearest-b2c9-release.txt"))
 	has(t, nearest, "\n  Reviewer     olive@example.org   (the nearest person, the assignee of Base, e4a1)\n")
-	hasFlat(t, nearest, "The junction states no model, so the commit carries no trailer.")
-	lacks(t, nearest, "  Model ", "Model:", "--model", "export ")
+	hasFlat(t, nearest, "The junction states no model: an agent records the model it runs in a Model: trailer, and a person's commit carries none.")
+	lacks(t, nearest, "  Model ", "\n    Model:", "--model", "export ")
 
 	waived := render(t, load(t, "waived-b2c9-design"))
 	sameText(t, waived, golden(t, "waived-b2c9-design.txt"))
