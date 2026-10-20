@@ -1,0 +1,103 @@
+{
+  "schema": "tablo/1",
+  "command": "queue",
+  "source": {
+    "ref": "main",
+    "commit": "a36fba270dcc2187aabc34f8a34817082d6b134e",
+    "date": "2026-09-05"
+  },
+  "project": null,
+  "params": {
+    "task": null,
+    "person": "bot@example.org",
+    "brief": {
+      "task": "b2c9",
+      "gate": "release"
+    },
+    "level": "provenance"
+  },
+  "data": {
+    "items": [],
+    "brief": {
+      "kind": "ready",
+      "causes": [],
+      "task": {
+        "id": "b2c9",
+        "title": "Agent leaf",
+        "description": "A leaf whose assignee and whose parent's assignee are agents.",
+        "references": [
+          {
+            "text": "",
+            "url": "README.md"
+          }
+        ],
+        "path": [
+          {
+            "id": "e4a1",
+            "title": "Base"
+          },
+          {
+            "id": "c5f0",
+            "title": "Agent subtree"
+          }
+        ]
+      },
+      "gate": {
+        "key": "release",
+        "symbol": "🚀",
+        "name": "Release",
+        "criteria": "All variants documented and approved",
+        "follows": ""
+      },
+      "junction": {
+        "contributor": {
+          "value": "bot@example.org",
+          "source": {
+            "kind": "assignee",
+            "id": "",
+            "title": ""
+          }
+        },
+        "model": {
+          "value": "",
+          "source": {
+            "kind": "default",
+            "id": "",
+            "title": ""
+          }
+        },
+        "reviewer": {
+          "value": "olive@example.org",
+          "source": {
+            "kind": "nearest",
+            "id": "e4a1",
+            "title": "Base"
+          }
+        },
+        "references": []
+      },
+      "supplier": null,
+      "requires": [],
+      "dependents": [],
+      "parent": {
+        "id": "c5f0",
+        "title": "Agent subtree",
+        "dependents": []
+      },
+      "status": {
+        "path": ".tableaux/status/b2c9.yaml",
+        "gate": "design",
+        "gate_symbol": "📐",
+        "state": "nominal",
+        "state_symbol": "🟢",
+        "reason": "",
+        "reason_symbol": "",
+        "note": "",
+        "date": "2026-09-02",
+        "recorder": "bot@example.org",
+        "commit": "885d0c0dbc88d28b760c3feca6885a0556e56226"
+      }
+    }
+  },
+  "diagnostics": []
+}

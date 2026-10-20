@@ -73,8 +73,10 @@ type Gate struct {
 }
 
 // Junction holds the resolved fields, each with the entry that supplies it.
-// Model.Value is "" for a person, and Reviewer.Value is "" when no one
-// reviews.
+// Model.Value is "" for a person and for an agent whose junction states no
+// model, and Reviewer.Value is "" when no one reviews: a person's plain
+// junction with no reviewer, from the default, or a junction whose entry
+// waives review with reviewer: false, from that task.
 type Junction struct {
 	Contributor Field       `json:"contributor"`
 	Model       Field       `json:"model"`
@@ -89,8 +91,10 @@ type Field struct {
 }
 
 // Source names where a field resolves from. Kind is "task" (an entry of
-// the task ID, Title), "assignee" (a reviewer the method gives an agent) or
-// "default" (the plain default).
+// the task ID, Title), "assignee" (a reviewer the method gives an agent),
+// "nearest" (the reviewer the method gives an agent from language 0.4.0,
+// the assignee of the ancestor ID, Title, the nearest person) or "default"
+// (the plain default).
 type Source struct {
 	Kind  string `json:"kind"`
 	ID    string `json:"id"`

@@ -1,0 +1,59 @@
+Brief: b2c9 Agent leaf at release
+
+This brief stands alone. It is one item of the work queue of bot@example.org
+on main at a36fba2, 2026-09-05: work ready.
+
+1. The item
+
+  Task         b2c9 Agent leaf
+  Gate         🚀 release, Release: All variants documented and approved
+  Contributor  bot@example.org     (the assignee; the junction states none)
+  Reviewer     olive@example.org   (the nearest person, the assignee of Base, e4a1)
+
+2. The task
+
+  A leaf whose assignee and whose parent's assignee are agents.
+
+  Reference: README.md
+  Junction references: none
+  Under: Base › Agent subtree
+
+3. The requirements
+
+  Requires: nothing
+  Unblocks: nothing; no task requires b2c9
+
+4. The status
+
+  📐 design 🟢 nominal, 2026-09-02, bot@example.org, 885d0c0
+
+5. The commit you make when done
+
+  Commit your work, as bot@example.org, on a branch off main, and record
+  .tableaux/status/b2c9.yaml there with tabloio record. Do not merge. The
+  reviewer olive@example.org accepts this gate, so hand the work off: the
+  status stays at the gate it stands at and takes the reason review.
+
+  tabloio record writes the file so, with the note on one line, and makes
+  the commit that records it:
+
+    gate: design
+    state: nominal
+    reason: review
+    note: <one line that says what waits on the branch>
+
+    tabloio record b2c9 --state nominal --reason review \
+      --note "<one line that says what waits on the branch>" --yes
+
+  Change no file under .tableaux by hand: the command refuses a status the
+  method cannot read, and names the rule.
+
+  The junction states no model, so the commit carries no trailer.
+
+  The reviewer merges the branch and accepts the gate with tabloio review
+  b2c9 release, whose commit carries the trailer Reviewed: b2c9 release
+
+6. The commands that reproduce this brief and show the task
+
+  tabloio queue --person bot@example.org --ref a36fba2 --brief b2c9 release
+  tabloio task b2c9 --ref a36fba2

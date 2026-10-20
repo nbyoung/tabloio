@@ -109,9 +109,13 @@ func partItem(d Data) []string {
 	if j.Model.Value != "" {
 		rows = append(rows, junctionRow{"Model", j.Model.Value, sourceLabel(j.Model.Source, tid)})
 	}
-	if j.Reviewer.Value != "" {
+	switch {
+	case j.Reviewer.Value != "":
 		rows = append(rows, junctionRow{"Reviewer", j.Reviewer.Value, sourceLabel(j.Reviewer.Source, tid)})
-	} else {
+	case j.Reviewer.Source.Kind == "task":
+		// The entry waives review with reviewer: false.
+		rows = append(rows, junctionRow{"Reviewer", "none", sourceLabel(j.Reviewer.Source, tid)})
+	default:
 		rows = append(rows, junctionRow{"Reviewer", "none", ""})
 	}
 	pad := 0
@@ -390,7 +394,8 @@ func partCommit(d Data) []string {
 			"with one final paragraph of one trailer, since you review this gate:", 2)...)
 		l = append(l, "", fmt.Sprintf("    Reviewed: %s %s", tid, g.Key))
 	default:
-		l = append(l, wrap("A person contributes here, so the commit carries no trailer.", 2)...)
+		// A person, or an agent whose junction states no model.
+		l = append(l, wrap("The junction states no model, so the commit carries no trailer.", 2)...)
 	}
 	l = append(l, "")
 
