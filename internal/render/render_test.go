@@ -645,6 +645,68 @@ func TestStandsAndConditions(t *testing.T) {
 	}
 }
 
+// TestDefaultReviewer covers cdb0 decision 2: a reviewer the default
+// supplies is the assignee where it is the task's assignee, else the
+// nearest person; the queue tells them apart by the reviewer's supplier,
+// and a junction line, which names neither, says by default.
+func TestDefaultReviewer(t *testing.T) {
+	v := *readFixture(t, "task", "e9c6").(*view.Task)
+	j := view.Junction{Gate: "design", Contributor: "bot@example.org", Reviewer: v.Assignee, ByDefault: true}
+	for _, c := range []struct {
+		reviewer, want string
+	}{
+		{v.Assignee, "| the assignee, " + v.Assignee + " |"},
+		{"olive@example.org", "| the nearest person, olive@example.org |"},
+	} {
+		j.Reviewer = c.reviewer
+		v.Junctions = []view.Junction{j}
+		if out := renderString(t, &v, Options{Level: view.Detail}); !strings.Contains(out, c.want) {
+			t.Errorf("the reviewer %s does not read %q:\n%s", c.reviewer, c.want, out)
+		}
+	}
+
+	q := readFixture(t, "queue", "tooling-agent").(*view.Queue)
+	p := newPage(&q.Head, Options{Level: view.Detail})
+	plain := func(xs []doc.Inline) string { return plainInline(xs, map[string]bool{}) }
+	for _, c := range []struct {
+		by, want string
+	}{
+		{"assignee", "the assignee"},
+		{"", "the assignee"},
+		{"e4a1", "the nearest person"},
+	} {
+		it := view.QueueItem{Gate: "design"}
+		if c.by != "" {
+			it.Sources = []view.Supplier{{Gate: "design", Field: "reviewer", Stated: view.Stated{By: c.by, Key: "assignee"}}}
+		}
+		var got []string
+		p.queueJunction(it, &view.Junction{Gate: "design", Reviewer: "olive@example.org", ByDefault: true}, func(i doc.Item) { got = append(got, plain(i.Text)) })
+		if want := "olive@example.org, " + c.want; len(got) != 1 || !strings.HasSuffix(got[0], want) {
+			t.Errorf("the supplier %q: %q, want %q", c.by, got, want)
+		}
+	}
+	if got := plain(p.junctionFields(view.Junction{Gate: "design", Reviewer: "olive@example.org", ByDefault: true})); !strings.HasSuffix(got, "reviewer olive@example.org, by default") {
+		t.Errorf("a junction line: %q", got)
+	}
+}
+
+// TestModelCoAuthor covers cdb0 decision 3 in the task view: a model check
+// names the agent a person's commit co-authors after its reading, and one
+// with no co-author reads as before.
+func TestModelCoAuthor(t *testing.T) {
+	v := *readFixture(t, "task", "e9c6").(*view.Task)
+	v.Models = []view.ModelCheck{
+		{Commit: "abcdef1234", Gate: "design", Stated: "m", Reading: "missing", CoAuthor: "bot@example.org"},
+		{Commit: "1234abcdef", Gate: "design", Stated: "m", Trailer: "m", Reading: "agrees"},
+	}
+	out := renderString(t, &v, Options{Level: view.Provenance})
+	for _, w := range []string{"| No trailer; co-author bot@example.org |\n", "| `m` | Agrees |\n"} {
+		if !strings.Contains(out, w) {
+			t.Errorf("the models lack %q:\n%s", w, out)
+		}
+	}
+}
+
 // TestJunctionKind: the marks table words tablo's junction kinds, and a
 // value that is no kind, as a draft gives it, prints as worded text.
 func TestJunctionKind(t *testing.T) {

@@ -31,7 +31,7 @@ README.md, Junctions
 <https://github.com/nbyoung/tableaux/blob/main/README.md#junctions>
 
 *The junction.* b2c9 at 📐 design: contributor bot@example.org, model
-claude-fable, reviewer pat@example.org, the assignee, from b2c9.
+claude-fable, reviewer pat@example.org, by default, from b2c9.
 
 *The model check.* b2c9: df6b60c at 📐 design, the junction states claude-fable:
 No trailer.

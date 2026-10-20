@@ -100,10 +100,10 @@ outside the one stated" README.md, Junctions
 <https://github.com/nbyoung/tableaux/blob/main/README.md#junctions>
 
 *The junction.* e9c6 at 🧱 implementation: contributor noreply@anthropic.com,
-model claude-sonnet, reviewer noreply@anthropic.com, the assignee, from 437e.
+model claude-sonnet, reviewer noreply@anthropic.com, by default, from 437e.
 
 *The junction.* 7166 at 🧱 implementation: contributor noreply@anthropic.com,
-model claude-sonnet, reviewer nbyoung@nbyoung.com, the assignee, from 437e.
+model claude-sonnet, reviewer nbyoung@nbyoung.com, by default, from 437e.
 
 *The model check.* e9c6: ccb3947 at 🧱 implementation, the junction states
 claude-sonnet, the trailer Model: claude-opus-5-5: Differs.

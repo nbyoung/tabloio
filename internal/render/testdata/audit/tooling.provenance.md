@@ -35,9 +35,9 @@ git log -1 --format='%as %H %ae' -- .tableaux/tasks/6103.yaml
 
 **Rule.** "the audit reports a commit at the junction whose trailer names a model outside the one stated" [README.md, Junctions](https://github.com/nbyoung/tableaux/blob/main/README.md#junctions)
 
-**The junction.** `e9c6` at 🧱 implementation: contributor noreply@anthropic.com, model `claude-sonnet`, reviewer noreply@anthropic.com, the assignee, from `437e`.
+**The junction.** `e9c6` at 🧱 implementation: contributor noreply@anthropic.com, model `claude-sonnet`, reviewer noreply@anthropic.com, by default, from `437e`.
 
-**The junction.** `7166` at 🧱 implementation: contributor noreply@anthropic.com, model `claude-sonnet`, reviewer nbyoung@nbyoung.com, the assignee, from `437e`.
+**The junction.** `7166` at 🧱 implementation: contributor noreply@anthropic.com, model `claude-sonnet`, reviewer nbyoung@nbyoung.com, by default, from `437e`.
 
 **The model check.** `e9c6`: `ccb3947` at 🧱 implementation, the junction states `claude-sonnet`, the trailer `Model: claude-opus-5-5`: Differs.
 
