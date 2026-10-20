@@ -1,7 +1,7 @@
 # The Tableaux snapshot action (design 1422). A consumer calls it as
 # nbyoung/tabloio/snapshot@<tag>; snapshot.sh beside it holds each step's logic.
 name: Tableaux snapshot
-description: Validate a Tableaux project on every push and regenerate STATUS.md on the trunk
+description: Validate a Tableaux project on every push and regenerate TABLEAUX.md on the trunk
 
 inputs:
   project:
@@ -9,7 +9,7 @@ inputs:
     default: "."
   output:
     description: The file the snapshot writes, relative to the repository root
-    default: STATUS.md
+    default: TABLEAUX.md
   view:
     description: The tabloio arguments that render the snapshot
     default: tableau --level glance

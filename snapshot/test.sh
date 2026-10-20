@@ -114,17 +114,17 @@ $got"
     (
         cd "$work/real-clone"
         source=$(git rev-parse HEAD)
-        "$snapshot" render . STATUS.md tableau --level glance >/dev/null
-        "$snapshot" commit STATUS.md "$trunk" >/dev/null
+        "$snapshot" render . TABLEAUX.md tableau --level glance >/dev/null
+        "$snapshot" commit TABLEAUX.md "$trunk" >/dev/null
         who=$(git log -1 --format='%an <%ae>|%cn <%ce>')
         bot='github-actions[bot] <41898283+github-actions[bot]@users.noreply.github.com>'
         files=$(git diff-tree --no-commit-id --name-only -r HEAD)
         trailers=$(git log -1 --format=%B | git interpret-trailers --parse)
         if [ "$who" != "$bot|$bot" ]; then
             fail T14/T5 "the commit is by $who"
-        elif [ "$files" != STATUS.md ] || [ "$(head -n 1 STATUS.md)" != "# Global tableau" ]; then
-            fail T14/T5 "the commit changes $files to $(head -n 1 STATUS.md)"
-        elif [ -n "$trailers" ] || [ "$(git log -1 --format=%s)" != "Regenerate STATUS.md" ]; then
+        elif [ "$files" != TABLEAUX.md ] || [ "$(head -n 1 TABLEAUX.md)" != "# Global tableau" ]; then
+            fail T14/T5 "the commit changes $files to $(head -n 1 TABLEAUX.md)"
+        elif [ -n "$trailers" ] || [ "$(git log -1 --format=%s)" != "Regenerate TABLEAUX.md" ]; then
             fail T14/T5 "subject $(git log -1 --format=%s), trailers $trailers"
         elif [ "$(git log -1 --format=%b)" != "$(tabloio version) renders it from $source." ]; then
             fail T14/T5 "body $(git log -1 --format=%b)"
@@ -135,8 +135,8 @@ $got"
         fi
 
         before=$(git rev-list --count HEAD)
-        "$snapshot" render . STATUS.md tableau --level glance >/dev/null
-        if out=$("$snapshot" commit STATUS.md "$trunk") && [ "$(git rev-list --count HEAD)" = "$before" ] && [ "$out" = "STATUS.md is current" ]; then
+        "$snapshot" render . TABLEAUX.md tableau --level glance >/dev/null
+        if out=$("$snapshot" commit TABLEAUX.md "$trunk") && [ "$(git rev-list --count HEAD)" = "$before" ] && [ "$out" = "TABLEAUX.md is current" ]; then
             pass "T14/T6 tabloio renders the same bytes after the snapshot commit, so commit makes none"
         else
             fail T14/T6 "commits $before then $(git rev-list --count HEAD): $out"
@@ -376,7 +376,7 @@ origin() {
         cd "$1"
         mkdir .tableaux
         echo "gates: []" >.tableaux/gates.yaml
-        echo "old snapshot" >STATUS.md
+        echo "old snapshot" >TABLEAUX.md
         git add .
         git commit -q -m "Start"
         git push -q origin HEAD:refs/heads/main
@@ -391,8 +391,8 @@ export STUB_RENDER="$work/render"
 (
     cd "$clone"
     source=$(git rev-parse HEAD)
-    "$snapshot" render . STATUS.md tableau --level glance >/dev/null
-    "$snapshot" commit STATUS.md main >/dev/null
+    "$snapshot" render . TABLEAUX.md tableau --level glance >/dev/null
+    "$snapshot" commit TABLEAUX.md main >/dev/null
     who=$(git log -1 --format='%an <%ae>|%cn <%ce>')
     bot='github-actions[bot] <41898283+github-actions[bot]@users.noreply.github.com>'
     files=$(git diff-tree --no-commit-id --name-only -r HEAD)
@@ -400,9 +400,9 @@ export STUB_RENDER="$work/render"
     body=$(git log -1 --format=%b)
     if [ "$who" != "$bot|$bot" ]; then
         fail T5 "the commit is by $who"
-    elif [ "$files" != STATUS.md ] || [ "$(cat STATUS.md)" != "new snapshot" ]; then
+    elif [ "$files" != TABLEAUX.md ] || [ "$(cat TABLEAUX.md)" != "new snapshot" ]; then
         fail T5 "the commit changes $files"
-    elif [ -n "$trailers" ] || [ "$(git log -1 --format=%s)" != "Regenerate STATUS.md" ]; then
+    elif [ -n "$trailers" ] || [ "$(git log -1 --format=%s)" != "Regenerate TABLEAUX.md" ]; then
         fail T5 "subject $(git log -1 --format=%s), trailers $trailers"
     elif [ "$body" != "tabloio v0.2.0 renders it from $source." ]; then
         fail T5 "body $body"
@@ -415,8 +415,8 @@ export STUB_RENDER="$work/render"
     fi
 
     before=$(count .)
-    "$snapshot" render . STATUS.md tableau --level glance >/dev/null
-    if out=$("$snapshot" commit STATUS.md main) && [ "$(count .)" = "$before" ] && [ "$out" = "STATUS.md is current" ]; then
+    "$snapshot" render . TABLEAUX.md tableau --level glance >/dev/null
+    if out=$("$snapshot" commit TABLEAUX.md main) && [ "$(count .)" = "$before" ] && [ "$out" = "TABLEAUX.md is current" ]; then
         pass "T6 commit makes no commit when the snapshot is unchanged"
     else
         fail T6 "commits $before then $(count .): $out"
@@ -434,8 +434,8 @@ git clone -q "$work/origin.git" "$work/other" 2>/dev/null
 ) || fail T7 "the case stops early"
 (
     cd "$clone"
-    "$snapshot" render . STATUS.md tableau --level glance >/dev/null
-    if out=$("$snapshot" commit STATUS.md main 2>&1) &&
+    "$snapshot" render . TABLEAUX.md tableau --level glance >/dev/null
+    if out=$("$snapshot" commit TABLEAUX.md main 2>&1) &&
         [ "$(git -C "$work/origin.git" rev-parse main)" = "$(git -C "$work/other" rev-parse HEAD)" ] &&
         echo "$out" | grep -q '^::notice::main moved past'; then
         pass "T7 commit exits 0 without a commit on the trunk when the trunk moved"
@@ -450,10 +450,10 @@ printf '#!/bin/sh\necho "the trunk is protected" >&2\nexit 1\n' >"$work/origin.g
 chmod +x "$work/origin.git/hooks/pre-receive"
 (
     cd "$clone"
-    "$snapshot" render . STATUS.md tableau --level glance >/dev/null
-    if out=$("$snapshot" commit STATUS.md main 2>&1); then
+    "$snapshot" render . TABLEAUX.md tableau --level glance >/dev/null
+    if out=$("$snapshot" commit TABLEAUX.md main 2>&1); then
         fail T8 "a rejected push passes: $out"
-    elif ! echo "$out" | grep -q '^::error::the push of STATUS.md to main fails'; then
+    elif ! echo "$out" | grep -q '^::error::the push of TABLEAUX.md to main fails'; then
         fail T8 "$out"
     else
         pass "T8 commit fails when the push fails for another reason"
@@ -463,10 +463,10 @@ chmod +x "$work/origin.git/hooks/pre-receive"
 origin "$clone"
 (
     cd "$clone"
-    if STUB_RENDER_EXIT=1 "$snapshot" render . STATUS.md tableau --level glance >/dev/null 2>&1; then
+    if STUB_RENDER_EXIT=1 "$snapshot" render . TABLEAUX.md tableau --level glance >/dev/null 2>&1; then
         fail T9 "a failed render passes"
-    elif [ "$(cat STATUS.md)" != "old snapshot" ]; then
-        fail T9 "a failed render writes $(cat STATUS.md)"
+    elif [ "$(cat TABLEAUX.md)" != "old snapshot" ]; then
+        fail T9 "a failed render writes $(cat TABLEAUX.md)"
     else
         pass "T9 a render failure leaves the output untouched and fails the step"
     fi

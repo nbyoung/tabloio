@@ -20,11 +20,11 @@ never reads a task file itself.
 
 ## What it does
 
-- **Output** any view in one of two textual formats. `--markdown`, the default, reads in a plain renderer: a `STATUS.md` that CI regenerates, an attachment to email or chat, a brief pasted into an agent's session. `--text` draws the view with Unicode box characters for a terminal or a log with no Markdown viewer. Scripts that want the view data call `tablo <view>` for JSON or YAML.
+- **Output** any view in one of two textual formats. `--markdown`, the default, reads in a plain renderer: a `TABLEAUX.md` that CI regenerates, an attachment to email or chat, a brief pasted into an agent's session. `--text` draws the view with Unicode box characters for a terminal or a log with no Markdown viewer. Scripts that want the view data call `tablo <view>` for JSON or YAML.
 - **Input** to the method: `propose`, `record`, `review`, `reaffirm` and `authorise` write the right file or compose the commit with the right trailers, and show the commit before making it.
 
 ```
-tabloio tableau > STATUS.md                    # the global tableau in Markdown
+tabloio tableau > TABLEAUX.md                  # the global tableau in Markdown
 tabloio tableau --text                         # the same drawn in Unicode
 tabloio context --person ben@example.org        # a contributor's neighbourhood
 tabloio queue --person opus@example.org --ref 4f2a9c1 --brief 9f31 design  # a brief for an agent session
@@ -69,7 +69,7 @@ A prototype under `prototype/` is the function gate's demonstration. It goes whe
 ## Snapshot workflow
 
 A project that keeps its plan in `.tableaux` validates it on every push and
-regenerates `STATUS.md` on its trunk with the composite action in
+regenerates `TABLEAUX.md` on its trunk with the composite action in
 [`snapshot/`](snapshot/), and validates the staged plan before each commit
 with the hook in [`hooks/`](hooks/). Both run the released `tablo` and
 `tabloio` binaries and need no Go.
@@ -99,7 +99,7 @@ jobs:
 
 Every push and pull request runs `tablo validate` and annotates each
 diagnostic at its file and line; an error fails the job. A push to the trunk
-then renders `tabloio tableau --level glance` into `STATUS.md` and commits it
+then renders `tabloio tableau --level glance` into `TABLEAUX.md` and commits it
 as `github-actions[bot]` when it changed. The inputs `project`, `output`,
 `view`, `trunk`, `tabloio-version` and `tablo-version` change the defaults;
 [`snapshot/action.yml`](snapshot/action.yml) describes each.
