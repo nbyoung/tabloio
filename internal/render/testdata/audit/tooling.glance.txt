@@ -6,13 +6,18 @@ stale 7 days · level glance
 
 Legend: tabloio gates.
 
-*0 errors, 13 warnings, 23 items of information*: 36 findings.
+*0 errors, 17 warnings, 23 items of information*: 40 findings.
 
 ┌──────────┬──────┬─────────────┬──────────┬───────────┬───────────────────────┐
 │ Severity │ Rule │ Kind        │ Findings │ Tasks     │ Resolver              │
 ├──────────┼──────┼─────────────┼──────────┼───────────┼───────────────────────┤
 │ warning  │ R9   │ An unmet    │        3 │ 6103 c6e8 │ nbyoung@nbyoung.com   │
 │          │      │ requirement │          │ 595e      │                       │
+│ warning  │ J19  │ A           │        4 │ 77b2 6103 │ nbyoung@nbyoung.com   │
+│          │      │ subproject  │          │ c6e8 595e │                       │
+│          │      │ whose       │          │           │                       │
+│          │      │ language    │          │           │                       │
+│          │      │ lags        │          │           │                       │
 │ warning  │ H3   │ A model     │        2 │ e9c6 7166 │ noreply@anthropic.com │
 │          │      │ outside the │          │           │                       │
 │          │      │ one stated  │          │           │                       │
@@ -22,6 +27,6 @@ Legend: tabloio gates.
 │          │      │             │          │ e9c6 e3cb │                       │
 └──────────┴──────┴─────────────┴──────────┴───────────┴───────────────────────┘
 
-*Most to resolve:* noreply@anthropic.com, 16 of 36.
+*Most to resolve:* noreply@anthropic.com, 16 of 40.
 
 Command: tabloio audit --ref corpus/tooling --stale 7 --level glance --text

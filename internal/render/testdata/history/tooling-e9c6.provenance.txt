@@ -17,6 +17,7 @@ Legend: tabloio gates.
   - Status after: ❔ undefined ⚪ undefined
   - Effect: an authority commits the task file on the trunk, so the task is
     authorised
+  - Co-author: noreply@anthropic.com
   - Commit: 6b6c99a2ca35f684674ad886a33916979137f227
   - Subject: Plan the Tableaux tooling
   - Author: Norman Young <nbyoung@nbyoung.com>, 2026-09-29 16:38:16 -0400
@@ -118,6 +119,7 @@ Legend: tabloio gates.
   - Status after: 📝 defined 🟢 nominal 👓 review, unchanged
   - Effect: the reviewer accepts the work at the gate
   - Model: claude-opus-5-5
+  - Co-author: noreply@anthropic.com
   - Commit: 0704a0912297b3de0218b821384cf1b9956a44bb
   - Subject: Accept the abstract views design
   - Author: Norman Young <nbyoung@nbyoung.com>, 2026-09-30 15:16:33 -0400
@@ -162,5 +164,6 @@ Legend: tabloio gates.
 
     git log --format='%H %as %ae %s' 50a373b2857a36e4ef1a754605433943d6bfe324 -- .tableaux/tasks/e9c6.yaml .tableaux/status/e9c6.yaml
     git log --format='%H %as %ae %s' -E --grep='^(Authorised|Reaffirmed): (e9c6)$' --grep='^Reviewed: (e9c6) ' 50a373b2857a36e4ef1a754605433943d6bfe324
+    git log --format='%H %as %ae %s' --first-parent --merges main -- .tableaux/tasks/e9c6.yaml
 
 Command: tabloio history --task e9c6 --ref 50a373b --level provenance --text

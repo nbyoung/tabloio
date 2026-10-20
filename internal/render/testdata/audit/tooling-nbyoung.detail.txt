@@ -6,7 +6,7 @@ person nbyoung@nbyoung.com · stale 7 days · level detail
 
 Legend: tabloio gates.
 
-*0 errors, 3 warnings, 15 items of information*: 18 findings in 1 row.
+*0 errors, 7 warnings, 15 items of information*: 22 findings in 5 rows.
 
 ────────────────────────────────────────────────────────────────────────────────
 Rule · Severity · Task · Gate · File · Message · Action · Resolver
@@ -21,7 +21,43 @@ R9
   Action: Await the task the requirement names
   Resolver: *nbyoung@nbyoung.com*
 ────────────────────────────────────────────────────────────────────────────────
+J19
+  Severity: warning
+  Task: 77b2 tablo: backend library and plumbing
+  File: .tableaux/tasks/77b2.yaml
+  Message: the project at subprojects/tablo states tableaux 0.3.1, before this
+    project's 0.3.2
+  Action: Raise the subproject's language
+  Resolver: *nbyoung@nbyoung.com*
+────────────────────────────────────────────────────────────────────────────────
+J19
+  Severity: warning
+  Task: 6103 tabloio: command line, output and input
+  File: .tableaux/tasks/6103.yaml
+  Message: the project at subprojects/tabloio states tableaux 0.3.1, before
+    this project's 0.3.2
+  Action: Raise the subproject's language
+  Resolver: *nbyoung@nbyoung.com*
+────────────────────────────────────────────────────────────────────────────────
+J19
+  Severity: warning
+  Task: c6e8 tablotui: terminal user interface
+  File: .tableaux/tasks/c6e8.yaml
+  Message: the project at subprojects/tablotui states tableaux 0.3.1, before
+    this project's 0.3.2
+  Action: Raise the subproject's language
+  Resolver: *nbyoung@nbyoung.com*
+────────────────────────────────────────────────────────────────────────────────
+J19
+  Severity: warning
+  Task: 595e tableaud: local daemon and HTML
+  File: .tableaux/tasks/595e.yaml
+  Message: the project at subprojects/tableaud states tableaux 0.3.1, before
+    this project's 0.3.2
+  Action: Raise the subproject's language
+  Resolver: *nbyoung@nbyoung.com*
+────────────────────────────────────────────────────────────────────────────────
 
-*Most to resolve:* *nbyoung@nbyoung.com*, 3 of 18.
+*Most to resolve:* *nbyoung@nbyoung.com*, 7 of 22.
 
 Command: tabloio audit --person nbyoung@nbyoung.com --ref corpus/tooling --stale 7 --level detail --text

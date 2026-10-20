@@ -189,7 +189,7 @@
       ]
     },
     "errors": 0,
-    "warnings": 13,
+    "warnings": 17,
     "information": 23,
     "most": {
       "email": "noreply@anthropic.com",
@@ -379,6 +379,138 @@
         ]
       },
       {
+        "key": "J19",
+        "rule": "J19",
+        "severity": "warning",
+        "demoted": false,
+        "kind": "A subproject whose language lags",
+        "tasks": [
+          {
+            "id": "77b2",
+            "title": "tablo: backend library and plumbing"
+          }
+        ],
+        "gate": "",
+        "act": "raise_language",
+        "resolver": "nbyoung@nbyoung.com",
+        "files": [
+          ".tableaux/tasks/77b2.yaml"
+        ],
+        "message": "the project at subprojects/tablo states tableaux 0.3.1, before this project's 0.3.2",
+        "sentence": "A validator warns of a project that a recursive junction or a task's `subproject` field names whose `version.yaml`, read at the commit the linkage fixes, states a version before the parent's own, patch included",
+        "source": {
+          "text": "README.md, Version",
+          "url": "https://github.com/nbyoung/tableaux/blob/main/README.md#version"
+        },
+        "facts": [],
+        "commits": [],
+        "commands": [
+          {
+            "text": "git log -1 --format='%as %H %ae' -- .tableaux/tasks/77b2.yaml",
+            "comment": "shows the finding"
+          }
+        ]
+      },
+      {
+        "key": "J19",
+        "rule": "J19",
+        "severity": "warning",
+        "demoted": false,
+        "kind": "A subproject whose language lags",
+        "tasks": [
+          {
+            "id": "6103",
+            "title": "tabloio: command line, output and input"
+          }
+        ],
+        "gate": "",
+        "act": "raise_language",
+        "resolver": "nbyoung@nbyoung.com",
+        "files": [
+          ".tableaux/tasks/6103.yaml"
+        ],
+        "message": "the project at subprojects/tabloio states tableaux 0.3.1, before this project's 0.3.2",
+        "sentence": "A validator warns of a project that a recursive junction or a task's `subproject` field names whose `version.yaml`, read at the commit the linkage fixes, states a version before the parent's own, patch included",
+        "source": {
+          "text": "README.md, Version",
+          "url": "https://github.com/nbyoung/tableaux/blob/main/README.md#version"
+        },
+        "facts": [],
+        "commits": [],
+        "commands": [
+          {
+            "text": "git log -1 --format='%as %H %ae' -- .tableaux/tasks/6103.yaml",
+            "comment": "shows the finding"
+          }
+        ]
+      },
+      {
+        "key": "J19",
+        "rule": "J19",
+        "severity": "warning",
+        "demoted": false,
+        "kind": "A subproject whose language lags",
+        "tasks": [
+          {
+            "id": "c6e8",
+            "title": "tablotui: terminal user interface"
+          }
+        ],
+        "gate": "",
+        "act": "raise_language",
+        "resolver": "nbyoung@nbyoung.com",
+        "files": [
+          ".tableaux/tasks/c6e8.yaml"
+        ],
+        "message": "the project at subprojects/tablotui states tableaux 0.3.1, before this project's 0.3.2",
+        "sentence": "A validator warns of a project that a recursive junction or a task's `subproject` field names whose `version.yaml`, read at the commit the linkage fixes, states a version before the parent's own, patch included",
+        "source": {
+          "text": "README.md, Version",
+          "url": "https://github.com/nbyoung/tableaux/blob/main/README.md#version"
+        },
+        "facts": [],
+        "commits": [],
+        "commands": [
+          {
+            "text": "git log -1 --format='%as %H %ae' -- .tableaux/tasks/c6e8.yaml",
+            "comment": "shows the finding"
+          }
+        ]
+      },
+      {
+        "key": "J19",
+        "rule": "J19",
+        "severity": "warning",
+        "demoted": false,
+        "kind": "A subproject whose language lags",
+        "tasks": [
+          {
+            "id": "595e",
+            "title": "tableaud: local daemon and HTML"
+          }
+        ],
+        "gate": "",
+        "act": "raise_language",
+        "resolver": "nbyoung@nbyoung.com",
+        "files": [
+          ".tableaux/tasks/595e.yaml"
+        ],
+        "message": "the project at subprojects/tableaud states tableaux 0.3.1, before this project's 0.3.2",
+        "sentence": "A validator warns of a project that a recursive junction or a task's `subproject` field names whose `version.yaml`, read at the commit the linkage fixes, states a version before the parent's own, patch included",
+        "source": {
+          "text": "README.md, Version",
+          "url": "https://github.com/nbyoung/tableaux/blob/main/README.md#version"
+        },
+        "facts": [],
+        "commits": [],
+        "commands": [
+          {
+            "text": "git log -1 --format='%as %H %ae' -- .tableaux/tasks/595e.yaml",
+            "comment": "shows the finding"
+          }
+        ]
+      },
+      {
         "key": "H3",
         "rule": "H3",
         "severity": "warning",
@@ -435,7 +567,8 @@
               "gate": "implementation",
               "stated": "claude-sonnet",
               "trailer": "claude-opus-5-5",
-              "reading": "differs"
+              "reading": "differs",
+              "co_author": ""
             }
           },
           {
@@ -469,7 +602,8 @@
               "gate": "implementation",
               "stated": "claude-sonnet",
               "trailer": "claude-opus-5-5",
-              "reading": "differs"
+              "reading": "differs",
+              "co_author": ""
             }
           }
         ],
@@ -1154,6 +1288,11 @@
         "kind": "A requirement its commit alone leaves unmet"
       },
       {
+        "key": "R14",
+        "rule": "R14",
+        "kind": "An unpinned requirement"
+      },
+      {
         "key": "J8",
         "rule": "J8",
         "kind": "A subproject the tool cannot read"
@@ -1207,6 +1346,16 @@
         "key": "H6",
         "rule": "H6",
         "kind": "No model trailer"
+      },
+      {
+        "key": "H7",
+        "rule": "H7",
+        "kind": "An agent's work under a person's identity"
+      },
+      {
+        "key": "H8",
+        "rule": "H8",
+        "kind": "A reaffirmation that confirms nothing"
       },
       {
         "key": "proposed",
@@ -1315,6 +1464,15 @@
     },
     {
       "severity": "warning",
+      "code": "J19",
+      "path": ".tableaux/tasks/595e.yaml",
+      "line": 16,
+      "col": 40,
+      "task": "595e",
+      "message": "the project at subprojects/tableaud states tableaux 0.3.1, before this project's 0.3.2"
+    },
+    {
+      "severity": "warning",
       "code": "R9",
       "path": ".tableaux/tasks/6103.yaml",
       "line": 13,
@@ -1324,12 +1482,39 @@
     },
     {
       "severity": "warning",
+      "code": "J19",
+      "path": ".tableaux/tasks/6103.yaml",
+      "line": 16,
+      "col": 40,
+      "task": "6103",
+      "message": "the project at subprojects/tabloio states tableaux 0.3.1, before this project's 0.3.2"
+    },
+    {
+      "severity": "warning",
+      "code": "J19",
+      "path": ".tableaux/tasks/77b2.yaml",
+      "line": 17,
+      "col": 40,
+      "task": "77b2",
+      "message": "the project at subprojects/tablo states tableaux 0.3.1, before this project's 0.3.2"
+    },
+    {
+      "severity": "warning",
       "code": "R9",
       "path": ".tableaux/tasks/c6e8.yaml",
       "line": 13,
       "col": 5,
       "task": "c6e8",
       "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    },
+    {
+      "severity": "warning",
+      "code": "J19",
+      "path": ".tableaux/tasks/c6e8.yaml",
+      "line": 17,
+      "col": 40,
+      "task": "c6e8",
+      "message": "the project at subprojects/tablotui states tableaux 0.3.1, before this project's 0.3.2"
     }
   ]
 }

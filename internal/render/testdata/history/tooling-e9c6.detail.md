@@ -11,6 +11,7 @@ Legend: `tabloio gates`.
 - **2026-09-29** · nbyoung@nbyoung.com · task · `e9c6` Abstract views · the task file appears
   - Status after: ❔ undefined ⚪ undefined
   - Effect: an authority commits the task file on the trunk, so the task is authorised
+  - Co-author: noreply@anthropic.com
 - **2026-09-29** · noreply@anthropic.com · status · `e9c6` Abstract views · 📝 defined 🟢 nominal
   - Status after: 📝 defined 🟢 nominal
   - Note: Design waits for Roles (c2ad) at design
@@ -37,6 +38,7 @@ Legend: `tabloio gates`.
   - Status after: 📝 defined 🟢 nominal 👓 review, unchanged
   - Effect: the reviewer accepts the work at the gate
   - Model: `claude-opus-5-5`
+  - Co-author: noreply@anthropic.com
 - **2026-09-30** · noreply@anthropic.com · status · `e9c6` Abstract views · 📐 design 🟢 nominal
   - Status after: 📐 design 🟢 nominal
   - Note: VIEWS.md is on the trunk at language 0.3.1; the twenty mockups may start, and implementation puts the text in place

@@ -1493,21 +1493,24 @@
         "gate": "defined",
         "stated": "claude-haiku",
         "trailer": "claude-haiku-4-5-20251001",
-        "reading": "agrees"
+        "reading": "agrees",
+        "co_author": ""
       },
       {
         "commit": "2c8be50d70a56ba4c3319bc9805836c5b2a0972d",
         "gate": "function",
         "stated": "",
         "trailer": "claude-opus-5-5",
-        "reading": "unstated"
+        "reading": "unstated",
+        "co_author": ""
       },
       {
         "commit": "97c18d7fc3bc9d4427a60d9dda3bb4b9da5979a2",
         "gate": "design",
         "stated": "",
         "trailer": "claude-opus-5-5",
-        "reading": "unstated"
+        "reading": "unstated",
+        "co_author": ""
       }
     ],
     "events": [
@@ -1588,7 +1591,7 @@
         }
       }
     ],
-    "event_count": 123,
+    "event_count": 133,
     "commands": [
       {
         "text": "git log --format='%H %as %ae %s' 50a373b2857a36e4ef1a754605433943d6bfe324 -- .tableaux/tasks/595e.yaml .tableaux/status/595e.yaml subprojects/tableaud",
@@ -1696,6 +1699,15 @@
     },
     {
       "severity": "warning",
+      "code": "J19",
+      "path": ".tableaux/tasks/595e.yaml",
+      "line": 16,
+      "col": 40,
+      "task": "595e",
+      "message": "the project at subprojects/tableaud states tableaux 0.3.1, before this project's 0.3.2"
+    },
+    {
+      "severity": "warning",
       "code": "R9",
       "path": ".tableaux/tasks/6103.yaml",
       "line": 13,
@@ -1705,12 +1717,39 @@
     },
     {
       "severity": "warning",
+      "code": "J19",
+      "path": ".tableaux/tasks/6103.yaml",
+      "line": 16,
+      "col": 40,
+      "task": "6103",
+      "message": "the project at subprojects/tabloio states tableaux 0.3.1, before this project's 0.3.2"
+    },
+    {
+      "severity": "warning",
+      "code": "J19",
+      "path": ".tableaux/tasks/77b2.yaml",
+      "line": 17,
+      "col": 40,
+      "task": "77b2",
+      "message": "the project at subprojects/tablo states tableaux 0.3.1, before this project's 0.3.2"
+    },
+    {
+      "severity": "warning",
       "code": "R9",
       "path": ".tableaux/tasks/c6e8.yaml",
       "line": 13,
       "col": 5,
       "task": "c6e8",
       "message": "the requirement on 77b2 from implementation is due at implementation and unmet: 77b2 stands at function"
+    },
+    {
+      "severity": "warning",
+      "code": "J19",
+      "path": ".tableaux/tasks/c6e8.yaml",
+      "line": 17,
+      "col": 40,
+      "task": "c6e8",
+      "message": "the project at subprojects/tablotui states tableaux 0.3.1, before this project's 0.3.2"
     }
   ]
 }

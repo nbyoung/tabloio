@@ -11,6 +11,7 @@ Legend: `tabloio gates`.
 - **2026-09-29** · nbyoung@nbyoung.com · pin · `77b2` tablo: backend library and plumbing · `subprojects/tablo` new `dc669dd`
   - Status after: ❔ undefined ⚪ undefined, unchanged
   - `437e` Tableaux tooling after: ❔ undefined ⚪ undefined, rolled up from `bc63` Method
+  - Co-author: noreply@anthropic.com
   - Subproject events: 12 events in 1 commit of `subprojects/tablo`
     - 2026-09-29 · nbyoung@nbyoung.com · task · `b2c1` tablo · the task file appears
     - 2026-09-29 · nbyoung@nbyoung.com · task · `0d83` Bootstrap · the task file appears
@@ -27,6 +28,7 @@ Legend: `tabloio gates`.
 - **2026-09-29** · nbyoung@nbyoung.com · pin · `6103` tabloio: command line, output and input · `subprojects/tabloio` new `46521bc`
   - Status after: ❔ undefined ⚪ undefined, unchanged
   - `437e` Tableaux tooling after: ❔ undefined ⚪ undefined, rolled up from `bc63` Method
+  - Co-author: noreply@anthropic.com
   - Subproject events: 12 events in 1 commit of `subprojects/tabloio`
     - 2026-09-29 · nbyoung@nbyoung.com · task · `07e0` tabloio · the task file appears
     - 2026-09-29 · nbyoung@nbyoung.com · task · `0a2f` Bootstrap · the task file appears
@@ -43,6 +45,7 @@ Legend: `tabloio gates`.
 - **2026-09-29** · nbyoung@nbyoung.com · pin · `c6e8` tablotui: terminal user interface · `subprojects/tablotui` new `4544042`
   - Status after: ❔ undefined ⚪ undefined, unchanged
   - `437e` Tableaux tooling after: ❔ undefined ⚪ undefined, rolled up from `bc63` Method
+  - Co-author: noreply@anthropic.com
   - Subproject events: 7 events in 1 commit of `subprojects/tablotui`
     - 2026-09-29 · nbyoung@nbyoung.com · task · `40e8` tablotui · the task file appears
     - 2026-09-29 · nbyoung@nbyoung.com · task · `0098` Bootstrap · the task file appears
@@ -54,6 +57,7 @@ Legend: `tabloio gates`.
 - **2026-09-29** · nbyoung@nbyoung.com · pin · `595e` tableaud: local daemon and HTML · `subprojects/tableaud` new `59783a9`
   - Status after: ❔ undefined ⚪ undefined, unchanged
   - `437e` Tableaux tooling after: ❔ undefined ⚪ undefined, rolled up from `bc63` Method
+  - Co-author: noreply@anthropic.com
   - Subproject events: 11 events in 1 commit of `subprojects/tableaud`
     - 2026-09-29 · nbyoung@nbyoung.com · task · `8608` tableaud · the task file appears
     - 2026-09-29 · nbyoung@nbyoung.com · task · `7425` Bootstrap · the task file appears

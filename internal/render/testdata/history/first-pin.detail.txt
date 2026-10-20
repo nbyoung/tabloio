@@ -17,6 +17,7 @@ Legend: tabloio gates.
   - Status after: ❔ undefined ⚪ undefined, unchanged
   - 437e Tableaux tooling after: ❔ undefined ⚪ undefined, rolled up from bc63
     Method
+  - Co-author: noreply@anthropic.com
   - Subproject events: 12 events in 1 commit of subprojects/tablo
     - 2026-09-29 · nbyoung@nbyoung.com · task · b2c1 tablo · the task file
       appears
@@ -47,6 +48,7 @@ Legend: tabloio gates.
   - Status after: ❔ undefined ⚪ undefined, unchanged
   - 437e Tableaux tooling after: ❔ undefined ⚪ undefined, rolled up from bc63
     Method
+  - Co-author: noreply@anthropic.com
   - Subproject events: 12 events in 1 commit of subprojects/tabloio
     - 2026-09-29 · nbyoung@nbyoung.com · task · 07e0 tabloio · the task file
       appears
@@ -77,6 +79,7 @@ Legend: tabloio gates.
   - Status after: ❔ undefined ⚪ undefined, unchanged
   - 437e Tableaux tooling after: ❔ undefined ⚪ undefined, rolled up from bc63
     Method
+  - Co-author: noreply@anthropic.com
   - Subproject events: 7 events in 1 commit of subprojects/tablotui
     - 2026-09-29 · nbyoung@nbyoung.com · task · 40e8 tablotui · the task file
       appears
@@ -97,6 +100,7 @@ Legend: tabloio gates.
   - Status after: ❔ undefined ⚪ undefined, unchanged
   - 437e Tableaux tooling after: ❔ undefined ⚪ undefined, rolled up from bc63
     Method
+  - Co-author: noreply@anthropic.com
   - Subproject events: 11 events in 1 commit of subprojects/tableaud
     - 2026-09-29 · nbyoung@nbyoung.com · task · 8608 tableaud · the task file
       appears

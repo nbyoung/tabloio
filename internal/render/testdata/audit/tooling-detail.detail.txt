@@ -6,7 +6,7 @@ stale 7 days · level detail
 
 Legend: tabloio gates.
 
-*0 errors, 13 warnings, 23 items of information*: 36 findings in 7 rows.
+*0 errors, 17 warnings, 23 items of information*: 40 findings in 11 rows.
 
 ────────────────────────────────────────────────────────────────────────────────
 Rule · Severity · Task · Gate · File · Message · Action · Resolver
@@ -19,6 +19,42 @@ R9
   Message: the requirement on 77b2 from implementation is due at
     implementation and unmet: 77b2 stands at function
   Action: Await the task the requirement names
+  Resolver: nbyoung@nbyoung.com
+────────────────────────────────────────────────────────────────────────────────
+J19
+  Severity: warning
+  Task: 77b2 tablo: backend library and plumbing
+  File: .tableaux/tasks/77b2.yaml
+  Message: the project at subprojects/tablo states tableaux 0.3.1, before this
+    project's 0.3.2
+  Action: Raise the subproject's language
+  Resolver: nbyoung@nbyoung.com
+────────────────────────────────────────────────────────────────────────────────
+J19
+  Severity: warning
+  Task: 6103 tabloio: command line, output and input
+  File: .tableaux/tasks/6103.yaml
+  Message: the project at subprojects/tabloio states tableaux 0.3.1, before
+    this project's 0.3.2
+  Action: Raise the subproject's language
+  Resolver: nbyoung@nbyoung.com
+────────────────────────────────────────────────────────────────────────────────
+J19
+  Severity: warning
+  Task: c6e8 tablotui: terminal user interface
+  File: .tableaux/tasks/c6e8.yaml
+  Message: the project at subprojects/tablotui states tableaux 0.3.1, before
+    this project's 0.3.2
+  Action: Raise the subproject's language
+  Resolver: nbyoung@nbyoung.com
+────────────────────────────────────────────────────────────────────────────────
+J19
+  Severity: warning
+  Task: 595e tableaud: local daemon and HTML
+  File: .tableaux/tasks/595e.yaml
+  Message: the project at subprojects/tableaud states tableaux 0.3.1, before
+    this project's 0.3.2
+  Action: Raise the subproject's language
   Resolver: nbyoung@nbyoung.com
 ────────────────────────────────────────────────────────────────────────────────
 H3
@@ -75,6 +111,6 @@ H3
   Resolver: noreply@anthropic.com
 ────────────────────────────────────────────────────────────────────────────────
 
-*Most to resolve:* noreply@anthropic.com, 16 of 36.
+*Most to resolve:* noreply@anthropic.com, 16 of 40.
 
 Command: tabloio audit --ref corpus/tooling --stale 7 --level detail --text

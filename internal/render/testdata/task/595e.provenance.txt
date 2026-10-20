@@ -318,7 +318,7 @@ Models: 3
 Newest events
 ─────────────
 
-123 events; the newest 5, newest first.
+133 events; the newest 5, newest first.
 
 ────────────────────────────────────────────────────────────────────────────────
 Date · Commit · By · Event · What it records
@@ -361,7 +361,7 @@ Date · Commit · By · Event · What it records
   What it records: 📐 design; in the subproject subprojects/tableaud, task
     5a2f Accessibility and theming
 ────────────────────────────────────────────────────────────────────────────────
-… and 118 earlier
+… and 128 earlier
 ────────────────────────────────────────────────────────────────────────────────
 
     git log --format='%H %as %ae %s' 50a373b2857a36e4ef1a754605433943d6bfe324 -- .tableaux/tasks/595e.yaml .tableaux/status/595e.yaml subprojects/tableaud

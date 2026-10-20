@@ -26,6 +26,7 @@ Legend: `tabloio gates`.
   - Status after: 📝 defined 🟢 nominal, 🪆 from the subproject `subprojects/tabloio`
   - `437e` Tableaux tooling after: 📝 defined 🟢 nominal, rolled up from `bc63` Method
   - Model: `claude-opus-5-5`
+  - Co-author: noreply@anthropic.com
   - Subproject events: 17 events in 9 commits of `subprojects/tabloio`
     - 2026-09-30 · noreply@anthropic.com · status, reviewed · `a3cc` Status renderers · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
     - 2026-09-30 · noreply@anthropic.com · status, reviewed · `c48a` Structural renderers · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
@@ -46,6 +47,7 @@ Legend: `tabloio gates`.
   - Status after: 📝 defined 🟢 nominal, 🪆 from the subproject `subprojects/tablo`, unchanged
   - `437e` Tableaux tooling after: 📝 defined 🟢 nominal, rolled up from `bc63` Method
   - Model: `claude-opus-5-5`
+  - Co-author: noreply@anthropic.com
   - Commit: `fb8c0b2b527789760956b0a238c5f07b97c7f277`
   - Subject: Advance the subprojects to the eyeglasses review symbol
   - Author: Norman Young \<nbyoung@nbyoung.com>, 2026-10-02 07:12:40 -0400
@@ -56,6 +58,7 @@ Legend: `tabloio gates`.
   - Status after: 📝 defined 🟢 nominal, 🪆 from the subproject `subprojects/tabloio`, unchanged
   - `437e` Tableaux tooling after: 📝 defined 🟢 nominal, rolled up from `bc63` Method
   - Model: `claude-opus-5-5`
+  - Co-author: noreply@anthropic.com
   - Commit: `fb8c0b2b527789760956b0a238c5f07b97c7f277`
   - Subject: Advance the subprojects to the eyeglasses review symbol
   - Author: Norman Young \<nbyoung@nbyoung.com>, 2026-10-02 07:12:40 -0400
@@ -66,6 +69,7 @@ Legend: `tabloio gates`.
   - Status after: 📝 defined 🟢 nominal, 🪆 from the subproject `subprojects/tablotui`, unchanged
   - `437e` Tableaux tooling after: 📝 defined 🟢 nominal, rolled up from `bc63` Method
   - Model: `claude-opus-5-5`
+  - Co-author: noreply@anthropic.com
   - Commit: `fb8c0b2b527789760956b0a238c5f07b97c7f277`
   - Subject: Advance the subprojects to the eyeglasses review symbol
   - Author: Norman Young \<nbyoung@nbyoung.com>, 2026-10-02 07:12:40 -0400
@@ -76,6 +80,7 @@ Legend: `tabloio gates`.
   - Status after: 📝 defined 🟢 nominal, 🪆 from the subproject `subprojects/tableaud`, unchanged
   - `437e` Tableaux tooling after: 📝 defined 🟢 nominal, rolled up from `bc63` Method
   - Model: `claude-opus-5-5`
+  - Co-author: noreply@anthropic.com
   - Commit: `fb8c0b2b527789760956b0a238c5f07b97c7f277`
   - Subject: Advance the subprojects to the eyeglasses review symbol
   - Author: Norman Young \<nbyoung@nbyoung.com>, 2026-10-02 07:12:40 -0400
@@ -86,6 +91,7 @@ Legend: `tabloio gates`.
   - Status after: 📝 defined 🟢 nominal, 🪆 from the subproject `subprojects/tablo`, unchanged
   - `437e` Tableaux tooling after: 📝 defined 🟢 nominal, rolled up from `bc63` Method
   - Model: `claude-opus-5-5`
+  - Co-author: noreply@anthropic.com
   - Commit: `552d38fd8adf40e41b39f65d5904e6fc6a88b265`
   - Subject: Advance the subprojects to the wrench, brick, ruler and link gate symbols
   - Author: Norman Young \<nbyoung@nbyoung.com>, 2026-10-02 07:34:57 -0400
@@ -96,6 +102,7 @@ Legend: `tabloio gates`.
   - Status after: 📝 defined 🟢 nominal, 🪆 from the subproject `subprojects/tabloio`, unchanged
   - `437e` Tableaux tooling after: 📝 defined 🟢 nominal, rolled up from `bc63` Method
   - Model: `claude-opus-5-5`
+  - Co-author: noreply@anthropic.com
   - Commit: `552d38fd8adf40e41b39f65d5904e6fc6a88b265`
   - Subject: Advance the subprojects to the wrench, brick, ruler and link gate symbols
   - Author: Norman Young \<nbyoung@nbyoung.com>, 2026-10-02 07:34:57 -0400
@@ -106,6 +113,7 @@ Legend: `tabloio gates`.
   - Status after: 📝 defined 🟢 nominal, 🪆 from the subproject `subprojects/tablotui`, unchanged
   - `437e` Tableaux tooling after: 📝 defined 🟢 nominal, rolled up from `bc63` Method
   - Model: `claude-opus-5-5`
+  - Co-author: noreply@anthropic.com
   - Commit: `552d38fd8adf40e41b39f65d5904e6fc6a88b265`
   - Subject: Advance the subprojects to the wrench, brick, ruler and link gate symbols
   - Author: Norman Young \<nbyoung@nbyoung.com>, 2026-10-02 07:34:57 -0400
@@ -116,6 +124,7 @@ Legend: `tabloio gates`.
   - Status after: 📝 defined 🟢 nominal, 🪆 from the subproject `subprojects/tableaud`, unchanged
   - `437e` Tableaux tooling after: 📝 defined 🟢 nominal, rolled up from `bc63` Method
   - Model: `claude-opus-5-5`
+  - Co-author: noreply@anthropic.com
   - Commit: `552d38fd8adf40e41b39f65d5904e6fc6a88b265`
   - Subject: Advance the subprojects to the wrench, brick, ruler and link gate symbols
   - Author: Norman Young \<nbyoung@nbyoung.com>, 2026-10-02 07:34:57 -0400
@@ -126,6 +135,7 @@ Legend: `tabloio gates`.
   - Status after: 📝 defined 🟢 nominal, 🪆 from the subproject `subprojects/tabloio`
   - `437e` Tableaux tooling after: 📝 defined 🟢 nominal, rolled up from `bc63` Method
   - Model: `claude-opus-5-5`
+  - Co-author: noreply@anthropic.com
   - Subproject events: 2 events in 2 commits of `subprojects/tabloio`
     - 2026-10-02 · nbyoung@nbyoung.com · reviewed · `1422` Snapshot workflow · 📐 design · `claude-opus-5-5`
     - 2026-10-02 · noreply@anthropic.com · status · `1422` Snapshot workflow · 📐 design 🟢 nominal · `claude-opus-5-5`
@@ -142,6 +152,7 @@ Legend: `tabloio gates`.
   - Status after: 📝 defined 🟢 nominal, 🪆 from the subproject `subprojects/tablotui`
   - `437e` Tableaux tooling after: 📝 defined 🟢 nominal, rolled up from `bc63` Method
   - Model: `claude-opus-5-5`
+  - Co-author: noreply@anthropic.com
   - Subproject events: 10 events in 5 commits of `subprojects/tablotui`
     - 2026-10-02 · noreply@anthropic.com · status, reviewed · `518e` Actions · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
     - 2026-10-02 · noreply@anthropic.com · status, reviewed · `f394` Role and context · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
@@ -161,6 +172,7 @@ Legend: `tabloio gates`.
   - Status after: 📝 defined 🟢 nominal, 🪆 from the subproject `subprojects/tableaud`
   - `437e` Tableaux tooling after: 📝 defined 🟢 nominal, rolled up from `bc63` Method
   - Model: `claude-opus-5-5`
+  - Co-author: noreply@anthropic.com
   - Subproject events: 21 events in 13 commits of `subprojects/tableaud`
     - 2026-10-05 · noreply@anthropic.com · status, reviewed · `9a9c` Temporal templates · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
     - 2026-10-05 · noreply@anthropic.com · status, reviewed · `44bf` Status templates · 🔧 function 🟢 nominal · `claude-sonnet-5-5`
@@ -185,6 +197,7 @@ Legend: `tabloio gates`.
 ```
 git log --format='%H %as %ae %s' 0704a0912297b3de0218b821384cf1b9956a44bb..3cdae527d47d37fdff55bc302c76c017cf91c606 -- .tableaux/tasks .tableaux/status subprojects/tablo subprojects/tabloio subprojects/tablotui subprojects/tableaud
 git log --format='%H %as %ae %s' -E --grep='^(Authorised|Reaffirmed): ([0-9a-f]{4})$' --grep='^Reviewed: ([0-9a-f]{4}) ' 0704a0912297b3de0218b821384cf1b9956a44bb..3cdae527d47d37fdff55bc302c76c017cf91c606
+git log --format='%H %as %ae %s' --first-parent --merges 0704a0912297b3de0218b821384cf1b9956a44bb..main -- .tableaux/tasks
 ```
 
 Command: `tabloio history --ref 0704a09..3cdae52 --level provenance`

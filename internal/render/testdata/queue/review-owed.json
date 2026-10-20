@@ -987,6 +987,24 @@
     },
     {
       "severity": "warning",
+      "code": "J19",
+      "path": ".tableaux/tasks/595e.yaml",
+      "line": 16,
+      "col": 40,
+      "task": "595e",
+      "message": "the project at subprojects/tableaud states tableaux 0.2.0, before this project's 0.3.1"
+    },
+    {
+      "severity": "warning",
+      "code": "J19",
+      "path": ".tableaux/tasks/6103.yaml",
+      "line": 16,
+      "col": 40,
+      "task": "6103",
+      "message": "the project at subprojects/tabloio states tableaux 0.2.0, before this project's 0.3.1"
+    },
+    {
+      "severity": "warning",
       "code": "R9",
       "path": ".tableaux/tasks/69eb.yaml",
       "line": 9,
@@ -1002,6 +1020,15 @@
       "col": 5,
       "task": "7783",
       "message": "the requirement on e9c6 from design is due at mockup and unmet: e9c6 stands at defined"
+    },
+    {
+      "severity": "warning",
+      "code": "J19",
+      "path": ".tableaux/tasks/77b2.yaml",
+      "line": 17,
+      "col": 40,
+      "task": "77b2",
+      "message": "the project at subprojects/tablo states tableaux 0.3.0, before this project's 0.3.1"
     },
     {
       "severity": "warning",
@@ -1092,6 +1119,15 @@
       "col": 5,
       "task": "c545",
       "message": "the requirement on e9c6 from design is due at mockup and unmet: e9c6 stands at defined"
+    },
+    {
+      "severity": "warning",
+      "code": "J19",
+      "path": ".tableaux/tasks/c6e8.yaml",
+      "line": 17,
+      "col": 40,
+      "task": "c6e8",
+      "message": "the project at subprojects/tablotui states tableaux 0.2.0, before this project's 0.3.1"
     },
     {
       "severity": "warning",
