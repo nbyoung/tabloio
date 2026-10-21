@@ -160,17 +160,24 @@ func (f mockupFixture) goldens(t *testing.T) map[string][]string {
 	return out
 }
 
+// corpusLock is the lock of the CI job corpus, whose tooling names the
+// commit of the umbrella that the tooling plan's fixtures describe.
+const corpusLock = "../../.github/corpus.lock.yaml"
+
 // toolingCopy copies the repository of the corpus entry tableaux-tooling,
 // as tablo's TestCorpus reaches it through TABLO_CORPUS, into a temporary
 // directory with its submodules. The entry reads the umbrella at the ref
-// its expected.yaml names, corpus/tooling. So that every caller reads the
-// tag's tree whatever clone TABLO_CORPUS names and wherever it stands, the
-// copy is checked out at that ref, detached, and each submodule's working
-// tree at its pin there, from the module stores the copied .git holds:
-// nothing is fetched. So that no fact of a view depends on where a clone's
-// branches stand today, the copy's main, local and origin's, stands at the
-// ref, and each submodule's at its pin. It skips without TABLO_CORPUS. It
-// returns the copy and the ref.
+// its expected.yaml names, corpus/tooling. The umbrella's owner moves that
+// tag whenever the plan's facts change, and the fixtures follow only when a
+// person moves the lock's tooling and draws them again; so the copy's own
+// tag names the lock's tooling, as corpus.sh fetch sets it in CI. So that
+// every caller reads that tree whatever clone TABLO_CORPUS names and
+// wherever it stands, the copy is checked out at the tag, detached, and
+// each submodule's working tree at its pin there, from the module stores
+// the copied .git holds: nothing is fetched. So that no fact of a view
+// depends on where a clone's branches stand today, the copy's main, local
+// and origin's, stands at the tag, and each submodule's at its pin. It
+// skips without TABLO_CORPUS. It returns the copy and the ref.
 func toolingCopy(t *testing.T) (dir, ref string) {
 	t.Helper()
 	corpus := os.Getenv("TABLO_CORPUS")
@@ -196,6 +203,18 @@ func toolingCopy(t *testing.T) (dir, ref string) {
 	if out, err := exec.Command("cp", "-a", src, dir).CombinedOutput(); err != nil {
 		t.Fatalf("copy the umbrella: %v\n%s", err, out)
 	}
+	lock, err := os.ReadFile(corpusLock)
+	if err != nil {
+		t.Fatal(err)
+	}
+	tooling := regexp.MustCompile(`(?m)^tooling:\s*([0-9a-f]{40})\b`).FindSubmatch(lock)
+	if tooling == nil {
+		t.Fatalf("%s names no tooling commit", corpusLock)
+	}
+	if err := exec.Command("git", "-C", dir, "rev-parse", "-q", "--verify", string(tooling[1])+"^{commit}").Run(); err != nil {
+		t.Fatalf("the clone TABLO_CORPUS names holds no commit %s, the lock's tooling; fetch it", tooling[1])
+	}
+	gitOut(t, dir, "tag", "-f", ref, string(tooling[1]))
 	commit := strings.TrimSpace(gitOut(t, dir, "rev-parse", ref+"^{commit}"))
 	// at checks a repository out at a commit, detached, then sets its main
 	// there; detached first, so that moving main moves no checkout.

@@ -14,17 +14,18 @@ import (
 
 // TestRealBrief is the integrate gate of design e4c7: the brief of a ready
 // item of this repository, from tablo's library, confirms A1 to A7. The
-// repository is tabloio at the pin the tooling plan's tag corpus/tooling
-// holds, the submodule subprojects/tabloio of the corpus entry
-// tableaux-tooling, where the agent's queue holds e3ed at integrate as work
-// ready, 5ca9 at implementation as work waiting and 0a2f at implementation
-// as a reaffirmation.
+// repository is tabloio as the submodule subprojects/tabloio of the corpus
+// entry tableaux-tooling holds it, read at 4bb4300, its pin when the brief
+// shipped, where the agent's queue holds e3ed at integrate as work ready,
+// 5ca9 at implementation as work waiting and 0a2f at implementation as a
+// reaffirmation. The fixed ref keeps all three kinds, which a later pin
+// need not hold, whatever pin the tag's tree names.
 func TestRealBrief(t *testing.T) {
 	dir, _ := toolingCopy(t)
 	proj := filepath.Join(dir, "subprojects", "tabloio")
-	const agent = "noreply@anthropic.com"
+	const agent, at = "noreply@anthropic.com", "4bb4300"
 	ask := func(task, gate string) (Result, error) {
-		return tabloSource{}.View(context.Background(), Query{Dir: proj, View: "queue", Person: agent,
+		return tabloSource{}.View(context.Background(), Query{Dir: proj, Ref: at, View: "queue", Person: agent,
 			Brief: &Brief{Task: task, Gate: gate}, Level: "provenance"})
 	}
 
@@ -62,7 +63,7 @@ func TestRealBrief(t *testing.T) {
 	}
 	full := regexp.MustCompile(`^[0-9a-f]{40}$`)
 	// A2: the brief stands alone, with the person and the ref.
-	if d.Person != agent || d.Ref.Name != "HEAD" || !full.MatchString(d.Ref.Commit) || d.Ref.Date != "2026-10-07" {
+	if d.Person != agent || d.Ref.Name != at || !full.MatchString(d.Ref.Commit) || d.Ref.Date != "2026-10-07" {
 		t.Errorf("A2: person %q, ref %+v", d.Person, d.Ref)
 	}
 	// A3: each junction field with its value and source; an agent's
@@ -109,7 +110,7 @@ func TestRealBrief(t *testing.T) {
 	// The command: the brief on standard output, in the write commands'
 	// vocabulary (b618 A10); a waiting item and an item that is no work
 	// exit 1 with the table's messages.
-	code, out, errs := runReal(t, "-C", proj, "queue", "--person", agent, "--brief", "e3ed", "integrate")
+	code, out, errs := runReal(t, "-C", proj, "queue", "--ref", at, "--person", agent, "--brief", "e3ed", "integrate")
 	if code != ExitOK || errs != "" || !strings.HasPrefix(out, "Brief: e3ed Legend and task renderers at integrate\n") {
 		t.Fatalf("exit %d, stderr %q:\n%s", code, errs, out)
 	}
@@ -128,7 +129,7 @@ func TestRealBrief(t *testing.T) {
 		{"5ca9", "implementation", "tabloio queue: 5ca9 at implementation waits and no brief starts it: waits for 1093 Renderers at implementation\n"},
 		{"0a2f", "implementation", "tabloio queue: no work for noreply@anthropic.com at 0a2f implementation; tabloio queue --person noreply@anthropic.com lists the items\n"},
 	} {
-		if code, out, errs := runReal(t, "-C", proj, "queue", "--person", agent, "--brief", c.task, c.gate); code != ExitInvalid || out != "" || errs != c.msg {
+		if code, out, errs := runReal(t, "-C", proj, "queue", "--ref", at, "--person", agent, "--brief", c.task, c.gate); code != ExitInvalid || out != "" || errs != c.msg {
 			t.Errorf("%s %s: exit %d, stdout %q, stderr %q", c.task, c.gate, code, out, errs)
 		}
 	}
