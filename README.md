@@ -171,8 +171,8 @@ too.
 A release is a tag on `main`:
 
 ```
-git tag v0.1.0
-git push origin v0.1.0
+git tag v0.2.0
+git push origin v0.2.0
 ```
 
 `release.yml` runs GoReleaser on the tag. It builds `cmd/tabloio` with
@@ -197,8 +197,8 @@ The dependency follows one policy:
   commit that names what changed. From `v1` the range is the major version.
 - **When the line enters `go.mod`.** The Read commands task adds the line,
   since `internal/cli` is the first package here to import `tablo`; it names
-  the pseudo-version `v0.1.1-0.20261020192233-fd3ecc37057b` and moves to
-  tablo's next tag, and `go.sum` pins the hash.
+  the tag `v0.2.0`, the first tablo that reads language 0.4.0, and `go.sum`
+  pins the hash.
 - **Day-to-day development.** The family builds against local checkouts through
   a personal `go.work` in the directory above the `tableaux` clone, created
   with `go work init ./tablo ./tabloio ./tablotui ./tableaud` and never

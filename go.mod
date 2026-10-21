@@ -3,7 +3,7 @@ module github.com/nbyoung/tabloio
 go 1.27
 
 require (
-	github.com/nbyoung/tablo v0.1.1-0.20261020192233-fd3ecc37057b
+	github.com/nbyoung/tablo v0.2.0
 	golang.org/x/text v0.42.0
 )
 
