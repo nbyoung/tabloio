@@ -1,3 +1,3 @@
 gate: integrate
 state: nominal
-note: T1 to T18 pass, T16 and T17 again on a copy of weather-station with TABLEAUX_CORPUS set, and T18 TestRealMockups reaches 231 golden files through Run, those of the tooling plan on tableaux-tooling through TABLO_CORPUS on a clone of the umbrella at corpus/tooling; the design names no validate check, so at validate the owner runs the read commands on the plan; 1422 T14 waits on releases of tablo and tabloio
+note: validate waits on the owner's checks and on a person's own plan through the close of Parcelang's migration, with the cost and the views of the read commands on that plan as its evidence. The field tests now show the ten read commands exit 0 at three levels in both formats on nine plans in 540 runs, the slowest command at 390 ms on the largest plan under a load of about 4.
