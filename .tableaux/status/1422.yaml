@@ -1,3 +1,4 @@
 gate: integrate
 state: nominal
-note: T14 passes through snapshot/test.sh --real with the releases tabloio v0.1.1 and tablo v0.1.0, T3, T5, T6 and T11 on a copy of version-trunk-empty and the hook in a median of 59 ms on the Tableaux plan, and T1 to T13 pass as CI runs them; the validate gate needs the trunk-only condition, the permissions, a protected trunk with a bypass credential and loop avoidance seen on GitHub, which waits on a workflow of this repository that calls the action at a tag
+reason: review
+note: Validate awaits the owner's review; it shows the action, the workflow and the README matching the design (7 of 7 points), T1 to T13 and T14 passing on the releases tabloio v0.2.0 and tablo v0.2.0 with the hook in a median of 66 ms on the Tableaux plan, tabloio's own plan giving J8 without the clone and valid with it, and GitHub showing the bot's GITHUB_TOKEN push f5d2558 starting no run, the deploy key's checkout on e321143 and the ruleset 25741481; the owner's push of this branch shows the trunk-only condition, and the push of its merge shows the protected trunk with its bypass key and the fixed point
