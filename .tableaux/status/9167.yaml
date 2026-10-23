@@ -1,3 +1,4 @@
 gate: integrate
 state: nominal
-note: T1 to T12 pass on fixtures drawn with tablo at the pin, the nine audit envelopes among them at the commits they name and the tooling plan's at corpus/tooling, the detail of two audits from data drawn at detail; every golden but those of the proposal and the reaffirmed line, which no ref holds, reaches Run (5ca9 T18); the validate gate is the owner reading the audit of the tooling plan against the plan
+reason: review
+note: validate awaits the owner's review. The audit of the tooling plan at stale 60 gives 0 errors, 1 warning and 31 items of information in 12 findings, and 93 of 93 checks hold that each named commit exists, each named task has a task file and each rule's condition holds. The owner reads the audit beside the plan and the log.
