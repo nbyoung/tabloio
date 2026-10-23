@@ -104,6 +104,21 @@ as `github-actions[bot]` when it changed. The inputs `project`, `output`,
 `view`, `trunk`, `tabloio-version` and `tablo-version` change the defaults;
 [`snapshot/action.yml`](snapshot/action.yml) describes each.
 
+**Projects by URL.** A plan that requires a task of another repository by its
+URL reads that repository in a clone that a local mapping names, outside the
+project files. The checkout fetches only the project and its submodules, so
+`tablo validate` reports J8, "no clone", and the job fails, until a step
+before the action clones each such repository and maps its URL. tabloio's own
+[`.github/workflows/tableaux.yml`](.github/workflows/tableaux.yml) does so for
+tablo:
+
+```yaml
+      - name: Clone the projects the plan requires by URL
+        run: |
+          git clone -q https://github.com/nbyoung/tablo "$RUNNER_TEMP/tablo"
+          git config --global tableaux.https://github.com/nbyoung/tablo.path "$RUNNER_TEMP/tablo"
+```
+
 **A protected trunk.** A trunk that requires pull requests rejects a push
 made with `GITHUB_TOKEN`. The project then gives the checkout step a
 credential that the trunk's ruleset lets bypass, and the action stays as it

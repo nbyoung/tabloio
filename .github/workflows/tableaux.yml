@@ -1,0 +1,26 @@
+# tabloio's own Tableaux workflow: the consumer workflow of the snapshot
+# action (design 1422), as snapshot/consumer.yml gives it, with one step more.
+# b618 requires tasks of tablo by its URL at a commit, and a tool reads such a
+# project in a clone that a mapping outside the project files names (README.md
+# of the umbrella, Junctions), so the step clones tablo and maps its URL there.
+name: Tableaux
+on:
+  push:
+  pull_request:
+permissions:
+  contents: write
+concurrency:
+  group: tableaux-${{ github.ref }}
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0          # history: authorisation, reviews, dates
+          submodules: recursive   # pins: recursive junctions read subprojects
+      - name: Clone the projects the plan requires by URL
+        run: |
+          git clone -q https://github.com/nbyoung/tablo "$RUNNER_TEMP/tablo"
+          git config --global tableaux.https://github.com/nbyoung/tablo.path "$RUNNER_TEMP/tablo"
+      - uses: nbyoung/tabloio/snapshot@v0.2.0
