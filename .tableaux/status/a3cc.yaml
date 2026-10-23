@@ -1,3 +1,4 @@
 gate: integrate
 state: nominal
-note: T1 to T12 pass on fixtures drawn with tablo at the pin, the glance of tableau/weather and of the four contexts from data drawn at glance, and the Read commands give every golden through Run (5ca9 T18); the brief joins through queue --brief and brief.Decode (e4c7 decision 16 b), so T9 proves that a brief in the queue's data changes nothing and TestRealBrief proves the brief; the validate gate is the owner reading STATUS.md as 1422 renders it
+reason: review
+note: validate awaits the owner's review. The field tests show TABLEAUX.md equal to the glance tableau, and the context, queue and blockage views render at detail with exit 0. The owner reads TABLEAUX.md and the three views.
