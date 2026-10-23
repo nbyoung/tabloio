@@ -1,4 +1,3 @@
-gate: integrate
+gate: validate
 state: nominal
-reason: review
-note: Validate awaits the owner's review; it shows the action, the workflow and the README matching the design (7 of 7 points), T1 to T13 and T14 passing on the releases tabloio v0.2.0 and tablo v0.2.0 with the hook in a median of 66 ms on the Tableaux plan, tabloio's own plan giving J8 without the clone and valid with it, and GitHub showing the bot's GITHUB_TOKEN push f5d2558 starting no run, the deploy key's checkout on e321143 and the ruleset 25741481; the owner's push of this branch shows the trunk-only condition, and the push of its merge shows the protected trunk with its bypass key and the fixed point
+note: The tools follow design 1422 under the owner's review (8ebdc09), on 7 of 7 points of the text, T1 to T14 on tabloio v0.2.0 and tablo v0.2.0 with the hook in a median of 66 ms, and the plan valid with the tablo clone mapped; GitHub shows the trunk-only regenerate skipped on the branch push 28444e5, contents write against the default read, the GITHUB_TOKEN push f5d2558 starting no run, and the deploy key's push 71f5ab7 onto the ruleset-protected main followed by one run at the fixed point
