@@ -119,6 +119,28 @@ tablo:
           git config --global tableaux.https://github.com/nbyoung/tablo.path "$RUNNER_TEMP/tablo"
 ```
 
+A private repository needs a credential that can read it, and the workflow's
+own token reads only its own repository. The project stores a read-only token
+as a secret and gives it to the clone alone, through `insteadOf`, so the
+checkout's credential still pushes `TABLEAUX.md` and the token reaches no
+other command:
+
+```yaml
+      - name: Clone the projects the plan requires by URL
+        env:
+          TOKEN: ${{ secrets.TABLEAUX_READ_TOKEN }}
+        run: |
+          for repo in example/lib example/app; do
+            git -c "url.https://x-access-token:${TOKEN}@github.com/.insteadOf=https://github.com/" \
+              clone -q "https://github.com/$repo" "$RUNNER_TEMP/$repo"
+            git config --global "tableaux.https://github.com/$repo.path" "$RUNNER_TEMP/$repo"
+          done
+```
+
+Without such a step, a checkout of a plan with a requirement by URL fails
+J8 wherever it runs, as the method intends: the mapping from URL to clone is
+the reader's, and the project files name only the URL and the commit.
+
 **A protected trunk.** A trunk that requires pull requests rejects a push
 made with `GITHUB_TOKEN`. The project then gives the checkout step a
 credential that the trunk's ruleset lets bypass, and the action stays as it
