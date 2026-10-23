@@ -71,3 +71,16 @@ jobs:
                   | map(select(test("^\\s+\\S+\\.go:\\d+: ")) | sub("^\\s+\\S+\\.go:\\d+: "; "") | rtrimstr("\n") | gsub("\\|"; "\\|"))
                   | join(" ")) |")
               end' "$RUNNER_TEMP/tests.json" >> "$GITHUB_STEP_SUMMARY"
+
+  text:
+    # The plan as text in a CI log, which e0f7's validate gate reads.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0          # history: authorisation, reviews, dates
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: tabloio tableau --text
+        run: go run ./cmd/tabloio tableau --text --width 100
