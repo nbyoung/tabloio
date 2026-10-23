@@ -1,3 +1,4 @@
 gate: integrate
 state: nominal
-note: T1 to T10 pass on fixtures drawn with tablo at the pin, and the Read commands give every golden of the authority and assignment views through Run (5ca9 T18); T4 and T9 change the decoded fixture where tablo's data holds no such case; the design names no validate check, so at validate the owner reads the two views of the tooling plan against the mockups
+reason: review
+note: validate awaits the owner's review. The field tests render the authority and assignment views of the tooling plan at glance, detail and provenance with exit 0, and their counts of 37 tasks and of 10 and 27 assigned agree with the task files. The owner reads the two views beside their mockups.
