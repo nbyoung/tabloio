@@ -3,6 +3,8 @@
 # b618 requires tasks of tablo by its URL at a commit, and a tool reads such a
 # project in a clone that a mapping outside the project files names (README.md
 # of the umbrella, Junctions), so the step clones tablo and maps its URL there.
+# main is protected, so the checkout pushes with the deploy key the ruleset's
+# bypass list holds (README.md, A protected trunk).
 name: Tableaux
 on:
   push:
@@ -19,6 +21,7 @@ jobs:
         with:
           fetch-depth: 0          # history: authorisation, reviews, dates
           submodules: recursive   # pins: recursive junctions read subprojects
+          ssh-key: ${{ secrets.TABLEAUX_DEPLOY_KEY }}  # the deploy key main's ruleset lets bypass
       - name: Clone the projects the plan requires by URL
         run: |
           git clone -q https://github.com/nbyoung/tablo "$RUNNER_TEMP/tablo"
