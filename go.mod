@@ -4,10 +4,12 @@ go 1.27
 
 require (
 	github.com/nbyoung/tablo v0.2.0
+	golang.org/x/term v0.47.0
 	golang.org/x/text v0.42.0
 )
 
 require (
 	github.com/santhosh-tekuri/jsonschema/v6 v6.0.3 // indirect
+	golang.org/x/sys v0.49.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
