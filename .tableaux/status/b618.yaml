@@ -1,3 +1,4 @@
 gate: integrate
 state: nominal
-note: validate waits on a repair. The five write commands pass the field tests with standard input a pipe, which exits 2 without --yes and commits with it, and a hand the method refuses exits 1 with no commit. They fail with standard input on /dev/null, which the terminal check counts as a terminal, so the prompt shows and the command exits 1 where decision 6 and T28 state exit 2. The prompt on a real terminal and tablotui's use wait on that repair.
+reason: review
+note: validate awaits the owner's review. The five write commands, run in a scratch clone on the repaired binary, exit 2 with no plan and no commit without --yes on standard input from a pipe and from /dev/null, commit with --yes, and exit 1 with no commit for a hand the method refuses, and CI passes on the repair. The owner runs the prompt on a real terminal and the terminal checks of tablotui's use of the action package.
