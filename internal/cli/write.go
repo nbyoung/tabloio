@@ -9,6 +9,8 @@ import (
 	"os"
 	"strings"
 
+	"golang.org/x/term"
+
 	"github.com/nbyoung/tabloio/action"
 )
 
@@ -196,8 +198,14 @@ func (env *Env) terminal() bool {
 	if env.Terminal != nil {
 		return env.Terminal()
 	}
-	info, err := os.Stdin.Stat()
-	return err == nil && info.Mode()&os.ModeCharDevice != 0
+	return isTerminal(os.Stdin)
+}
+
+// isTerminal reports whether f is a terminal. It asks the descriptor, not
+// the mode: /dev/null is a character device and no terminal (design b618,
+// decision 17).
+func isTerminal(f *os.File) bool {
+	return term.IsTerminal(int(f.Fd()))
 }
 
 // getenv reads the process environment, or the test's.

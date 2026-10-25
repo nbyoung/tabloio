@@ -149,6 +149,39 @@ func TestWriteUsage(t *testing.T) {
 			t.Errorf("exit %d, stdout %q, stderr %q", code, out, errs)
 		}
 	})
+	// The default check reads /dev/null and a pipe as no terminal. A file
+	// that is a terminal needs a pseudo-terminal, which no dependency of the
+	// module gives; the validate gate's real terminal proves that case.
+	t.Run("the default check", func(t *testing.T) {
+		null, err := os.Open(os.DevNull)
+		if err != nil {
+			t.Fatal(err)
+		}
+		t.Cleanup(func() { _ = null.Close() })
+		if isTerminal(null) {
+			t.Errorf("%s reads as a terminal", os.DevNull)
+		}
+		r, w, err := os.Pipe()
+		if err != nil {
+			t.Fatal(err)
+		}
+		t.Cleanup(func() { _ = r.Close() })
+		t.Cleanup(func() { _ = w.Close() })
+		if isTerminal(r) {
+			t.Errorf("a pipe reads as a terminal")
+		}
+		saved := os.Stdin
+		os.Stdin = null
+		t.Cleanup(func() { os.Stdin = saved })
+		var out, errb bytes.Buffer
+		code := Run(context.Background(), []string{"-C", dir, "reaffirm", "b2c9"}, &Env{
+			Stdout: &out, Stderr: &errb, Version: "1.2.3", Source: newSource(),
+			Getenv: func(k string) string { return "" },
+		})
+		if code != ExitUsage || out.Len() != 0 || !strings.Contains(errb.String(), "--yes") || !strings.Contains(errb.String(), "--dry-run") {
+			t.Errorf("exit %d, stdout %q, stderr %q", code, out.String(), errb.String())
+		}
+	})
 	t.Run("n at the prompt", func(t *testing.T) {
 		before := head()
 		code, out, errs := writeRun(true, "n\n", none, "-C", dir, "reaffirm", "b2c9")
