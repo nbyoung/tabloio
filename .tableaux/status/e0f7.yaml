@@ -1,3 +1,4 @@
 gate: integrate
 state: nominal
-note: T1 to T17 pass on the regenerated fixtures, and the Read commands give every text golden of a drawn fixture through Run with --text and --width (A2, 5ca9 T18); TestTextDrafts goes (decision 8 a) and the drafts are no contract; the validate gate is the owner reading tabloio tableau --text in the terminals of daily use and one rendering in a CI log
+reason: review
+note: validate awaits the owner's review. The field tests render tableau --text at 80, 100 and 132 cells with no line wider than its width, and the text job of CI passes on main with a log rendering equal to a local one at width 100. The owner reads the text in the terminals of daily use, and the plain gear, the box under Ambiguous set wide and the tight box.

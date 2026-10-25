@@ -1,3 +1,4 @@
 gate: integrate
 state: nominal
-note: T1 to T15 pass on fixtures drawn with tablo at the pin, the tooling plan's at corpus/tooling and weather-station's at main, and the Read commands give every golden of the gate and task views through Run (5ca9 T18, TestRealMockups); gates/draft stays as the draft T2 compares; the validate gate is the owner reading STATUS.md and a task page on GitHub
+reason: review
+note: validate awaits the owner's review. The field tests show TABLEAUX.md on GitHub at main equal to tableau --level glance on a clone at that commit, and the gate and task views render at detail with exit 0. The owner reads TABLEAUX.md and a task page in a GitHub comment preview.
