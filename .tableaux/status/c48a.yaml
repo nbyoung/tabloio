@@ -1,4 +1,3 @@
-gate: integrate
+gate: validate
 state: nominal
-reason: review
-note: validate awaits the owner's review. The field tests render the authority and assignment views of the tooling plan at glance, detail and provenance with exit 0, and their counts of 37 tasks and of 10 and 27 assigned agree with the task files. The owner reads the two views beside their mockups.
+note: The owner accepted validate in fb9fd65 on the checks c48a.1 and c48a.2 of the validate checklist, reading the authority and assignment views of the tooling plan beside their mockups. The field tests rendered both views at glance, detail and provenance with exit 0, and their counts of 37 tasks and of 10 and 27 assigned agreed with the task files.
