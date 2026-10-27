@@ -1,4 +1,3 @@
-gate: integrate
+gate: validate
 state: nominal
-reason: review
-note: validate awaits the owner's review. The field tests show TABLEAUX.md equal to the glance tableau, and the context, queue and blockage views render at detail with exit 0. The owner reads TABLEAUX.md and the three views.
+note: The owner accepted validate in fb9fd65 on the checks e3ed.1 and e3ed.2 for TABLEAUX.md and a3cc.1 to a3cc.3 for the context, queue and blockage views of the validate checklist. The field tests found TABLEAUX.md equal to the glance tableau and the three views rendering at detail with exit 0.
