@@ -1,4 +1,3 @@
-gate: integrate
+gate: validate
 state: nominal
-reason: review
-note: validate awaits the owner's review. The five write commands, run in a scratch clone on the repaired binary, exit 2 with no plan and no commit without --yes on standard input from a pipe and from /dev/null, commit with --yes, and exit 1 with no commit for a hand the method refuses, and CI passes on the repair. The owner runs the prompt on a real terminal and the terminal checks of tablotui's use of the action package.
+note: The owner accepted validate in 100cf5e on the checks b618.1 to b618.5 of the validate checklist on a real terminal, and on b618.6, tablotui's use, through the checks 518e.1 to 518e.17 of tablotui's checklist, which the owner passed in tablotui's review abbfb12. The repair of the terminal check (merge e8864c5, decision 17) stands, so standard input from /dev/null or a pipe exits 2 with no plan and no commit without --yes. The field tests ran the five write commands in a scratch clone on the repaired binary and found them committing with --yes, and exit 1 with no commit for a hand the method refuses.
