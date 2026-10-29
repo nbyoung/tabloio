@@ -64,6 +64,11 @@ func newFake() *fakeSource {
 	set(b618, Junction{Gate: "design", Kind: plain, Contributor: agent, Model: "claude-opus", Reviewer: owner})
 	set(b618, Junction{Gate: "validate", Kind: plain, Contributor: agent, Model: "claude-sonnet", Reviewer: owner})
 	set(b618, Junction{Gate: "release", Kind: plain, Contributor: owner})
+	for i := range b618 { // tablo's view resolves the default: the assignee reviews an agent
+		if j := &b618[i]; j.Kind == plain && j.Model != "" && j.Reviewer == "" {
+			j.Reviewer = agent
+		}
+	}
 	f931 := plainAll(ada, "", "")
 	set(f931, Junction{Gate: "design", Kind: plain, Contributor: ada, Reviewer: ben})
 	c07d := plainAll(ada, "", "")
