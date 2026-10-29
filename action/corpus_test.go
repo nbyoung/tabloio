@@ -276,4 +276,44 @@ func TestCorpusEntries(t *testing.T) {
 		}
 		tr.applied(tr.as("Olive Marsh", "olive@example.org"), review, "b2c9", "reviewed")
 	})
+
+	t.Run("junction-review-waived", func(t *testing.T) {
+		tr := corpusRepo(t, "junction-review-waived")
+		tr.run("reset", "-q", "--hard", tr.run("rev-list", "--max-parents=0", "HEAD")) // W1, "Plan the project"
+		bot := tr.as("Corpus Agent", "bot@example.org")
+		agent := Options{Agent: Agent{Model: "claude-fable", CoAuthor: "Corpus Agent <bot@example.org>"}}
+		p, err := bot.Record(ctx, Recording{ID: "b2c9", Gate: "design", State: "nominal"}, agent)
+		if err != nil {
+			t.Fatalf("a waived design: %v", err)
+		}
+		for _, tl := range p.Trailers {
+			if tl.Key == "Reviewed" {
+				t.Errorf("a waived design owes no review: %v", p.Trailers)
+			}
+		}
+		_, err = bot.Record(ctx, Recording{ID: "c3d8", Gate: "design", State: "nominal"}, agent)
+		if r := theRefusal(t, err, "unreviewed"); r.Rule != "S11" || !strings.Contains(r.Text, "pat@example.org") {
+			t.Errorf("a stated reviewer survives the waiver: %+v", r)
+		}
+	})
+
+	t.Run("review-nearest-person", func(t *testing.T) {
+		tr := corpusRepo(t, "review-nearest-person")
+		bot, olive := tr.as("Corpus Agent", "bot@example.org"), tr.as("Olive Marsh", "olive@example.org")
+		agent := Options{Agent: Agent{Model: "claude-fable", CoAuthor: "Corpus Agent <bot@example.org>"}}
+		review := func(r *Repo, id, gate string) error {
+			_, err := r.Review(ctx, []string{id}, gate, Options{})
+			return err
+		}
+		if r := theRefusal(t, review(bot, "b2c9", "design"), "wrong-hand"); !strings.Contains(r.Text, "olive@example.org") {
+			t.Errorf("b2c9 at design: %+v", r)
+		}
+		_, err := bot.Record(ctx, Recording{ID: "b2c9", Gate: "release"}, agent)
+		if r := theRefusal(t, err, "unreviewed"); r.Gate != "release" || !strings.Contains(r.Text, "olive@example.org") {
+			t.Errorf("b2c9 at release: %+v", r)
+		}
+		if r := theRefusal(t, review(olive, "d3a6", "design"), "wrong-hand"); !strings.Contains(r.Text, "pat@example.org") {
+			t.Errorf("d3a6 at design: %+v", r)
+		}
+	})
 }

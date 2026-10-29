@@ -76,16 +76,12 @@ func (t *Task) junction(gate string) *Junction {
 	return nil
 }
 
-// reviewer returns a plain junction's reviewer: the one it states, or the
-// task's assignee when it states a model and no reviewer; "" for none.
+// reviewer returns a plain junction's reviewer as tablo's task view resolves
+// it: the one stated, the default, or "" for none, which a waiver
+// (reviewer: false) gives. It supplies no default of its own.
 func (t *Task) reviewer(j *Junction) string {
-	switch {
-	case j == nil || j.Kind != plain:
+	if j == nil || j.Kind != plain {
 		return ""
-	case j.Reviewer != "":
-		return j.Reviewer
-	case j.Model != "":
-		return t.Assignee
 	}
-	return ""
+	return j.Reviewer
 }

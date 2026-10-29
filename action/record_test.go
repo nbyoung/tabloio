@@ -282,6 +282,29 @@ func TestReviewsOwed(t *testing.T) {
 	}
 }
 
+// TestWaivedReview is the waiver beside T13 and T14: a junction with a model
+// and no reviewer, as tablo's view gives reviewer: false, owes no review, so
+// a record to it carries no Reviewed: and the reason review is no-reviewer;
+// the same junction with a stated reviewer still refuses unreviewed.
+func TestWaivedReview(t *testing.T) {
+	tr := newRepo(t)
+	r := tr.repo("Ada", ada)
+	task := tr.src.tasks["9f31"]
+	task.Junctions[3].Model = "claude-opus" // design, the junction the view resolves
+	task.Junctions[3].Reviewer = ""
+	p, err := r.Record(ctx, Recording{ID: "9f31", Gate: "design", State: "nominal"}, Options{})
+	if err != nil || len(p.Trailers) != 0 {
+		t.Errorf("waived: %v, %+v", err, p)
+	}
+	task.Status = &Status{Gate: "design", State: "nominal"}
+	_, err = r.Record(ctx, Recording{ID: "9f31", Reason: "review"}, Options{})
+	wantRefusal(t, err, "no-reviewer")
+	task.Status = &Status{Gate: "function", State: "nominal"}
+	task.Junctions[3].Reviewer = ben
+	_, err = r.Record(ctx, Recording{ID: "9f31", Gate: "design", State: "nominal"}, Options{})
+	wantRefusal(t, err, "unreviewed")
+}
+
 // TestHandOff is T14: --reason review on 9f31 writes the reason, keeps the
 // gate and takes the hand-off subject; on a task with no reviewer ahead it
 // is no-reviewer.
