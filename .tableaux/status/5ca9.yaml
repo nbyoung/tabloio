@@ -1,3 +1,4 @@
 gate: integrate
 state: nominal
-note: validate waits on the owner's checks and on a person's own plan through the close of Parcelang's migration, with the cost and the views of the read commands on that plan as its evidence. The field tests now show the ten read commands exit 0 at three levels in both formats on nine plans in 540 runs, the slowest command at 390 ms on the largest plan under a load of about 4.
+reason: review
+note: validate awaits the owner's review; the ten read commands at three levels in two formats on 15 plans ran 900 times and all exit 0, the slowest on the plan of 67 tasks being history at provenance in 1131 ms; the owner runs the ten commands on the plan, reads the renderings beside it and judges the cost
