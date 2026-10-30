@@ -1,4 +1,3 @@
-gate: integrate
+gate: validate
 state: nominal
-reason: review
-note: validate awaits the owner's review; the ten read commands at three levels in two formats on 15 plans ran 900 times and all exit 0, the slowest on the plan of 67 tasks being history at provenance in 1131 ms; the owner runs the ten commands on the plan, reads the renderings beside it and judges the cost
+note: The owner reviews validate in d3e6f76 and the checks of the ten commands on the plan, of the renderings beside the plan and of the cost pass; the ten read commands at three levels in two formats on 15 plans run 900 times and all exit 0, the slowest on the plan of 67 tasks being history at provenance in 1131 ms
