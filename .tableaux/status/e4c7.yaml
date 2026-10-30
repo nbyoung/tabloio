@@ -1,4 +1,3 @@
-gate: integrate
+gate: validate
 state: nominal
-reason: review
-note: validate awaits the owner's review; 156 items of work ready on 15 plans each have a brief that holds A1 to A7, its six parts and part 6's reproduction, A1's negative probe holds on every plan, and the migration dispatched agents from generated briefs plus the dispatcher's own lines at waves 3 and 4; the owner checks the dispatched brief against the generated one, the identity and trailers of the agent's commits, and that no validator error appears beyond the base
+note: The owner reviews validate in d3e6f76 and the checks of the dispatched brief against the generated one, of the identity and trailers of the agent's commits and of the validator pass; 156 items of work ready on 15 plans each have a brief that holds A1 to A7, its six parts and part 6's reproduction, A1's negative probe holds on every plan, and agents dispatch from generated briefs plus the dispatcher's own lines at waves 3 and 4
