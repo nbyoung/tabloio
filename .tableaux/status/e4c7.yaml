@@ -1,3 +1,4 @@
 gate: integrate
 state: nominal
-note: validate waits on the owner's checks and on a person's own plan through the close of Parcelang's migration, with an agent dispatched from a generated brief for a real item as its evidence. The field tests now show 110 items of work ready on nine plans, each with a generated brief that holds A1 to A7, its six parts and the reproduction by its last command.
+reason: review
+note: validate awaits the owner's review; 156 items of work ready on 15 plans each have a brief that holds A1 to A7, its six parts and part 6's reproduction, A1's negative probe holds on every plan, and the migration dispatched agents from generated briefs plus the dispatcher's own lines at waves 3 and 4; the owner checks the dispatched brief against the generated one, the identity and trailers of the agent's commits, and that no validator error appears beyond the base
