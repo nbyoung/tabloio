@@ -86,6 +86,9 @@ func readInvocation(c *Command, a *Args) (*invocation, error) {
 	}
 	inv.Text = has("text")
 	if v, ok := value("width"); ok {
+		if has("brief") {
+			return nil, errors.New("--brief excludes --width")
+		}
 		if !inv.Text {
 			return nil, errors.New("--width applies to --text only")
 		}
@@ -157,9 +160,6 @@ func readInvocation(c *Command, a *Args) (*invocation, error) {
 		}
 		if has("level") || has("task") {
 			return nil, errors.New("--brief excludes --level and --task")
-		}
-		if has("width") {
-			return nil, errors.New("--brief excludes --width")
 		}
 		q.Brief = &Brief{Task: v[0], Gate: v[1]}
 		q.Level = "provenance"

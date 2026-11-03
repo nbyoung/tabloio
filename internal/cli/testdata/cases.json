@@ -70,6 +70,7 @@
   {"args": ["queue", "--brief", "c2ad", "validate", "--level", "detail"], "error": "--brief excludes"},
   {"args": ["queue", "--brief", "c2ad", "validate", "--task", "2034"], "error": "--brief excludes"},
   {"args": ["audit", "--stale", "7d"], "error": "whole number"},
+  {"args": ["queue", "--brief", "c2ad", "validate", "--width", "100"], "error": "--brief excludes --width"},
   {"args": ["tableau", "--width", "100"], "error": "--width applies to --text only"},
   {"args": ["tableau", "--text", "--width", "19"], "error": "--width takes a whole number, 20 or more, not \"19\""},
   {"args": ["tableau", "--text", "--width", "0"], "error": "--width takes a whole number, 20 or more, not \"0\""},

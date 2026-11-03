@@ -54,7 +54,7 @@ func invocationOf(argv []string) (*invocation, error) {
 	return readInvocation(c, a)
 }
 
-// TestCases is T1: the 81 command lines of cases.json build the invocation
+// TestCases is T1: the 82 command lines of cases.json build the invocation
 // the draft names, or earn the usage error it names.
 func TestCases(t *testing.T) {
 	cases := loadCases(t)
@@ -78,8 +78,8 @@ func TestCases(t *testing.T) {
 			t.Errorf("%s: error %v, want one with %q", name, err, c.Error)
 		}
 	}
-	if accepted != 26 || refused != 55 {
-		t.Errorf("cases.json holds %d accepted and %d refused lines, want 26 and 55", accepted, refused)
+	if accepted != 26 || refused != 56 {
+		t.Errorf("cases.json holds %d accepted and %d refused lines, want 26 and 56", accepted, refused)
 	}
 }
 
