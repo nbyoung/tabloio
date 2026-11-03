@@ -86,6 +86,9 @@ func readInvocation(c *Command, a *Args) (*invocation, error) {
 	}
 	inv.Text = has("text")
 	if v, ok := value("width"); ok {
+		if has("brief") {
+			return nil, errors.New("--brief excludes --width")
+		}
 		if !inv.Text {
 			return nil, errors.New("--width applies to --text only")
 		}
