@@ -52,16 +52,34 @@ func buildAudit(v *view.Audit, o Options) doc.Doc {
 func auditTotal(v *view.Audit) int { return v.Errors + v.Warnings + v.Information }
 
 // auditCount is the count line: every severity named, zeros included, in
-// bold, then the total; at detail it also counts the rows of the table.
+// bold, then the total; at detail it also counts the rows of the table. tablo
+// counts every finding in view and lists only those at or above its minimum
+// severity, so where the rows list fewer findings than the total, the line
+// says how many they list.
 func (p *page) auditCount(v *view.Audit) doc.Para {
 	counts := count(v.Errors, "error", "errors") + ", " +
 		count(v.Warnings, "warning", "warnings") + ", " +
 		count(v.Information, "item", "items") + " of information"
 	tail := ": " + count(auditTotal(v), "finding", "findings")
 	if p.o.Level >= view.Detail && len(v.Findings) > 0 {
-		tail += " in " + count(len(v.Findings), "row", "rows")
+		rows := count(len(v.Findings), "row", "rows")
+		if listed := auditListed(auditRows(v.Findings)); listed < auditTotal(v) {
+			tail += "; " + strconv.Itoa(listed) + " listed in " + rows
+		} else {
+			tail += " in " + rows
+		}
 	}
 	return para(doc.Strong{txt(counts)}, txt(tail+"."))
+}
+
+// auditListed is the number of findings the rows hold, as the Findings column
+// of the glance table counts them.
+func auditListed(rows []*auditRow) int {
+	n := 0
+	for _, r := range rows {
+		n += r.findings
+	}
+	return n
 }
 
 // auditMost is the line naming the person with the most to resolve.

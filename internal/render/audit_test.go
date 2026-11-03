@@ -103,7 +103,7 @@ func TestAuditCounts(t *testing.T) {
 	v.Findings = []view.Finding{{Rule: "S11", Severity: "error", Tasks: []view.TaskRef{{ID: "aaaa"}}}}
 	v.Most = &view.Resolving{Email: "a@example.org", Count: 1}
 	out := renderString(t, v, Options{Level: view.Detail})
-	if want := "**1 error, 1 warning, 1 item of information**: 3 findings in 1 row.\n"; !strings.Contains(out, want) {
+	if want := "**1 error, 1 warning, 1 item of information**: 3 findings; 1 listed in 1 row.\n"; !strings.Contains(out, want) {
 		t.Errorf("want %q:\n%s", want, out)
 	}
 	if want := "**Most to resolve:** a@example.org, 1 of 3.\n"; !strings.Contains(out, want) {
@@ -118,6 +118,46 @@ func TestAuditCounts(t *testing.T) {
 	}
 	if strings.Contains(out, "Most to resolve") || strings.Contains(out, "| Rule") {
 		t.Errorf("an empty audit prints a table or the line of the most to resolve:\n%s", out)
+	}
+}
+
+// TestAuditRowsCount covers the detail count line's tail: where the rows list
+// fewer findings than the total, it says how many they list; where they list
+// all, it counts the rows alone.
+func TestAuditRowsCount(t *testing.T) {
+	ref := func(ids ...string) []view.TaskRef {
+		var out []view.TaskRef
+		for _, id := range ids {
+			out = append(out, view.TaskRef{ID: id})
+		}
+		return out
+	}
+	v := &view.Audit{}
+	v.Level = view.Detail
+	v.Source = view.Source{Ref: "main", OnTrunk: true}
+	v.Params.Stale = 7
+	v.Warnings, v.Information = 3, 31
+	v.Findings = []view.Finding{
+		{Rule: "H3", Severity: "warning", Tasks: ref("aaaa", "bbbb")},
+		{Rule: "H4", Severity: "warning", Tasks: ref("cccc")},
+	}
+	for _, c := range []struct {
+		name  string
+		level view.Level
+		want  string
+	}{
+		{"detail", view.Detail, "**0 errors, 3 warnings, 31 items of information**: 34 findings; 3 listed in 2 rows.\n"},
+		{"provenance", view.Provenance, "**0 errors, 3 warnings, 31 items of information**: 34 findings; 3 listed in 2 rows.\n"},
+		{"glance", view.Glance, "**0 errors, 3 warnings, 31 items of information**: 34 findings.\n"},
+	} {
+		v.Level = c.level
+		if out := renderString(t, v, Options{Level: c.level}); !strings.Contains(out, c.want) {
+			t.Errorf("%s: want %q:\n%s", c.name, c.want, out)
+		}
+	}
+	v.Level, v.Information = view.Detail, 0
+	if out := renderString(t, v, Options{Level: view.Detail}); !strings.Contains(out, ": 3 findings in 2 rows.\n") {
+		t.Errorf("rows that list every finding: the tail changed:\n%s", out)
 	}
 }
 
