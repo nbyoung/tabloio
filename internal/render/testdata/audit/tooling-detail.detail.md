@@ -4,7 +4,7 @@
 
 Legend: `tabloio gates`.
 
-**0 errors, 17 warnings, 23 items of information**: 40 findings in 11 rows.
+**0 errors, 17 warnings, 23 items of information**: 40 findings; 17 listed in 11 rows.
 
 | Rule | Severity | Task | Gate | File | Message | Action | Resolver |
 |---|---|---|---|---|---|---|---|
