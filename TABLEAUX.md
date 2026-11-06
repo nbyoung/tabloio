@@ -4,24 +4,24 @@
 
 Legend: `tabloio gates`.
 
-| Id | Task | ❔…📐 ×0 | 🧱 | 📏 | 🔗 | 🌍 | 🚀 |
-|---|---|:-:|:-:|:-:|:-:|:-:|:-:|
-| [`07e0`](.tableaux/tasks/07e0.yaml) | **tabloio** |  | 🟢 | 🤖 | 🤖 | 🤖👀 | 🧑 |
-| [`0a2f`](.tableaux/tasks/0a2f.yaml) | &nbsp;&nbsp;Bootstrap |  | 🟢 | — | — | — | 🧑 |
-| [`1093`](.tableaux/tasks/1093.yaml) | &nbsp;&nbsp;**Renderers** (5) |  |  |  |  | 🟢 | 🧑 |
-| [`5ca9`](.tableaux/tasks/5ca9.yaml) | &nbsp;&nbsp;Read commands |  |  |  |  | 🟢 | 🧑 |
-| [`b618`](.tableaux/tasks/b618.yaml) | &nbsp;&nbsp;Write commands |  |  |  |  | 🟢 | 🧑 |
-| [`1422`](.tableaux/tasks/1422.yaml) | &nbsp;&nbsp;Snapshot workflow |  |  |  |  | 🟢 | 🧑 |
-| [`e4c7`](.tableaux/tasks/e4c7.yaml) | &nbsp;&nbsp;Agent briefs |  |  |  |  | 🟢 | 🧑 |
+| Id | Task | ❔…🔗 ×0 | 🌍 | 🚀 |
+|---|---|:-:|:-:|:-:|
+| [`07e0`](.tableaux/tasks/07e0.yaml) | **tabloio** |  | 🟢 | 🧑 |
+| [`0a2f`](.tableaux/tasks/0a2f.yaml) | &nbsp;&nbsp;Bootstrap |  |  | ✅ |
+| [`1093`](.tableaux/tasks/1093.yaml) | &nbsp;&nbsp;**Renderers** (5) |  | 🟢 | 🧑 |
+| [`5ca9`](.tableaux/tasks/5ca9.yaml) | &nbsp;&nbsp;Read commands |  | 🟢 | 🧑 |
+| [`b618`](.tableaux/tasks/b618.yaml) | &nbsp;&nbsp;Write commands |  | 🟢 | 🧑 |
+| [`1422`](.tableaux/tasks/1422.yaml) | &nbsp;&nbsp;Snapshot workflow |  | 🟢 | 🧑 |
+| [`e4c7`](.tableaux/tasks/e4c7.yaml) | &nbsp;&nbsp;Agent briefs |  | 🟢 | 🧑 |
 
-❔ undefined · 📐 design · 🧱 implementation · 📏 unit · 🔗 integrate · 🌍 validate · 🚀 release · 🟢 nominal · 🧑 a person contributes · 🤖 an agent contributes · 👀 a reviewer accepts · — the gate does not apply.
+❔ undefined · 🔗 integrate · 🌍 validate · 🚀 release · 🟢 nominal · ✅ complete · 🧑 a person contributes.
 
 ## Notes
 
 | Rows | Date | Note | From |
 |---|---|---|---|
-| `07e0` | 2026-09-30 | The skeleton is on the trunk and passes vet and test locally and in CI run 36673447631 on d6eaed1; the tablo require line waits for the Renderers task, as the README states | rolled up from `0a2f` Bootstrap |
-| `0a2f` | 2026-09-30 | The skeleton is on the trunk and passes vet and test locally and in CI run 36673447631 on d6eaed1; the tablo require line waits for the Renderers task, as the README states |  |
+| `07e0` | 2026-10-23 | The owner accepted validate in fb9fd65 on the checks e3ed.1 to e3ed.3 of the validate checklist. TABLEAUX.md on GitHub equals tableau --level glance on a clone at main (EQUAL after the pull to 77e8bdf), it reads well on GitHub, and a task page reads well in the Preview tab of a comment box. The field tests found the two equal at 4069962 and the gate and task views rendering at detail with exit 0. | rolled up from `1093` Renderers |
+| `0a2f` | 2026-11-06 | Released as v0.2.1 on baee4c0 by Release run 41651428332, which publishes six archives for Linux, macOS and Windows on amd64 and arm64 with checksums.txt; go.mod requires tablo v0.2.0 |  |
 | `1093` | 2026-10-27 | The owner accepted validate in fb9fd65 on the checks e3ed.1 to e3ed.3 of the validate checklist. TABLEAUX.md on GitHub equals tableau --level glance on a clone at main (EQUAL after the pull to 77e8bdf), it reads well on GitHub, and a task page reads well in the Preview tab of a comment box. The field tests found the two equal at 4069962 and the gate and task views rendering at detail with exit 0. | rolled up from `e3ed` Legend and task renderers |
 | `5ca9` | 2026-10-30 | The owner reviews validate in d3e6f76 and the checks of the ten commands on the plan, of the renderings beside the plan and of the cost pass; the ten read commands at three levels in two formats on 15 plans run 900 times and all exit 0, the slowest on the plan of 67 tasks being history at provenance in 1131 ms |  |
 | `b618` | 2026-10-28 | The owner accepted validate in 100cf5e on the checks b618.1 to b618.5 of the validate checklist on a real terminal, and on b618.6, tablotui's use, through the checks 518e.1 to 518e.17 of tablotui's checklist, which the owner passed in tablotui's review abbfb12. The repair of the terminal check (merge e8864c5, decision 17) stands, so standard input from /dev/null or a pipe exits 2 with no plan and no commit without --yes. The field tests ran the five write commands in a scratch clone on the repaired binary and found them committing with --yes, and exit 1 with no commit for a hand the method refuses. |  |
